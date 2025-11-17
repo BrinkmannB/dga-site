@@ -2,49 +2,47 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – Dutch Governance Advisory</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-
 <header>
   <nav class="topnav">
     <a href="/">Home</a>
     <a href="/diensten">Diensten</a>
     <a href="/over-bas">Over Bas</a>
+    <a href="/contact" class="active">Contact</a>
     <span class="lang-switch"><a href="/en/contact">EN</a></span>
   </nav>
 </header>
 
-<section class="hero small">
+<section class="hero">
   <h1>Contact</h1>
-  <p class="subtitle">Neem gerust contact op — snel en persoonlijk</p>
+  <p class="subtitle">Neem contact op voor AI-governance advies</p>
 </section>
 
-<main>
+<section class="content">
+  <h2>Stel je vraag</h2>
+  <p>Gebruik het formulier hieronder. Je bericht komt rechtstreeks binnen via Cloudflare Forms.</p>
 
-  <section>
-    <h2>Stuur een bericht</h2>
-    <p>Voor vragen, samenwerkingen of een vrijblijvende intake:</p>
+  <form method="POST" action="https://formspree.io/f/xqkreqwy" data-cf="true">
+    <!-- Cloudflare Forms werkt op HTML-niveau. -->
+    
+    <label for="name">Naam</label>
+    <input type="text" id="name" name="name" required />
 
-    <ul class="contact-list">
-      <li><strong>E-mail:</strong> bas.brinkmann@icloud.com</li>
-      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bas-brinkmann">linkedin.com/in/bas-brinkmann</a></li>
-    </ul>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required />
 
-    <p>
-      Je kunt ook meteen een intakegesprek boeken via je voorkeurskanaal.  
-      Ik reageer doorgaans dezelfde dag.
-    </p>
-  </section>
+    <label for="message">Bericht</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
 
-  <a href="/" class="button">Terug naar home</a>
-
-</main>
+    <button type="submit" class="btn-primary">Verstuur</button>
+  </form>
+</section>
 
 <footer>
-  © 2025 Dutch Governance Advisory — Bas Brinkmann
+  <p>© 2025 Dutch Governance Advisory – AI Governance Consultant Bas Brinkmann</p>
 </footer>
 
 </body>
