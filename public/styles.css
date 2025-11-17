@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fc;
+  color: #111;
+}
+
+.topnav {
+  background: #003c8f;
+  padding: 16px;
+  display: flex;
+  gap: 20px;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background: linear-gradient(180deg, #003c8f 0%, #002a66 100%);
+  color: white;
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.hero .btn-primary {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #00c16e;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #003c8f;
+  color: white;
+  margin-top: 40px;
+}
+
+.lang-switch {
+  margin-left: auto;
+}
