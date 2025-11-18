@@ -1,0 +1,4 @@
+Contact: mailto:bas@jouwdomein.nl
+Preferred-Languages: en, nl
+Canonical: https://jouwdomein.nl/.well-known/security.txt
+Encryption: none
