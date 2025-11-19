@@ -1,96 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Independent AI Governance Advisory | Dutch Governance Advisory</title>
-    <meta name="description" content="Independent, transparent and legally sound AI governance advisory for governments and organisations. Focus on risk, accountability and public values.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent AI Governance Advice | Dutch Governance Advisory</title>
+    <meta name="description" content="Independent, transparent and legally sound AI governance advice for government, financial institutions and public organisations. Focus on risk management, explainability and AI Act compliance.">
 
     <style>
         body {
             margin: 0;
             font-family: system-ui, sans-serif;
+            color: #0a0a0a;
             line-height: 1.6;
-            color: #111;
+            background: #f7f9fb;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 2rem;
-            background: #fff;
-            border-bottom: 1px solid #eee;
+            padding: 1.3rem 2rem;
+            background: white;
+            border-bottom: 1px solid #e5e9ef;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         nav a {
-            margin-left: 1.5rem;
+            margin-left: 1.6rem;
             text-decoration: none;
             color: #111;
             font-weight: 500;
         }
 
+        /* HERO */
         .hero {
-            padding: 6rem 2rem;
+            padding: 3rem 2rem 4rem;
             text-align: center;
             background: linear-gradient(135deg, #0057FF, #00C39A);
             color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 130%;
+            height: 130%;
+            background: url('/assets/pattern-light.svg');
+            background-size: 450px;
+            opacity: 0.12;
+            transform: rotate(6deg);
+            pointer-events: none;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             max-width: 650px;
             margin: 0 auto 2rem;
+            opacity: 0.95;
         }
 
         .cta-button {
-            background: #fff;
-            padding: 0.9rem 1.6rem;
-            border-radius: 8px;
+            background: white;
             color: #0057FF;
             font-weight: 600;
-            text-decoration: none;
+            padding: 0.85rem 1.6rem;
+            border-radius: 8px;
             display: inline-block;
+            text-decoration: none;
+            margin-top: 1rem;
         }
 
-        section {
+        /* USP BLOCKS */
+        .usp-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
             padding: 4rem 2rem;
-            max-width: 900px;
+            max-width: 1100px;
             margin: auto;
         }
 
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+        .usp {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e1e4ea;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+        }
+
+        .usp h3 {
+            margin-top: 0;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        /* SERVICES */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .services-grid {
             display: grid;
-            gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .service-box {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid #eee;
+            background: #fff;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid #e4e7ed;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+        }
+
+        /* WHO */
+        .who-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e1e4ea;
+            margin-top: 2rem;
         }
 
         footer {
+            margin-top: 4rem;
             padding: 2rem;
+            background: #eef1f5;
             text-align: center;
-            background: #fafafa;
-            margin-top: 3rem;
-            border-top: 1px solid #eee;
         }
     </style>
 </head>
@@ -109,39 +161,76 @@
     </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-    <h1>Independent AI Governance Advisory</h1>
-    <p>Responsible, transparent and legally sound AI advice for governments and organisations. Focused on risk, accountability and public values.</p>
-    <a href="/en/contact" class="cta-button">Schedule a call</a>
+    <h1>Independent AI Governance Advice</h1>
+    <p>Transparent, responsible and legally sound AI governance for governments, financial institutions and public organisations. Focus on risk management, explainability and public values.</p>
+    <a href="/en/quick-scan" class="cta-button">Take the 1-Minute Quick Scan</a>
 </div>
 
+<!-- USP BLOCKS -->
+<div class="usp-wrapper">
+
+    <div class="usp">
+        <h3>Independent & transparent</h3>
+        <p>Clear, unbiased insights into AI risks and governance — with no external interests.</p>
+    </div>
+
+    <div class="usp">
+        <h3>AI Act expertise</h3>
+        <p>Assessment of obligations, documentation and risks under the EU AI Act.</p>
+    </div>
+
+    <div class="usp">
+        <h3>Public values & explainability</h3>
+        <p>Focus on safety, proportionality, human oversight and responsible use.</p>
+    </div>
+
+</div>
+
+<!-- SERVICES -->
 <section>
     <h2>Services</h2>
-    <div class="services-grid">
 
+    <div class="services-grid">
         <div class="service-box">
             <h3>AI Governance Advisory</h3>
-            <p>Clear, independent guidance on responsible AI use—legally grounded and easy to understand.</p>
+            <p>Strategic and policy advice for responsible AI and algorithm use.</p>
         </div>
 
         <div class="service-box">
             <h3>AI Act Compliance</h3>
-            <p>Assessment of European AI Act requirements, documentation, risk management and transparency obligations.</p>
+            <p>Assessment, documentation and guidance for EU legal obligations.</p>
         </div>
 
         <div class="service-box">
-            <h3>AI Governance Quick Scan</h3>
-            <p>Fast assessment of AI risks, data quality, explainability and governance maturity.</p>
+            <h3>Quick Scan</h3>
+            <p>Fast, objective evaluation of risks, data use, transparency and governance maturity.</p>
         </div>
 
         <div class="service-box">
-            <h3>Transparency & Accountability</h3>
-            <p>Support with algorithm registers, impact assessments and accountability documentation.</p>
+            <h3>Risk & Explainability</h3>
+            <p>Analysis of bias, explainability, data quality and governance maturity.</p>
         </div>
-
     </div>
 </section>
 
+<!-- WHO -->
 <section>
-    <h2>About Bas</h2>
-    <p>AI governance consultant specialising in risk assessment, transparency, AI
+    <h2>Who do I work with?</h2>
+    <div class="who-box">
+        <p>I support organisations that aim to use AI responsibly:</p>
+        <ul>
+            <li>Government and public sector</li>
+            <li>Financial institutions & insurers</li>
+            <li>NGOs & public value organisations</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    © 2025 Bas Brinkmann — Dutch Governance Advisory
+</footer>
+
+</body>
+</html>
