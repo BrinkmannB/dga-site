@@ -1,15 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI Governance Consultant | Bas Brinkmann</title>
 
-  <meta name="description" content="Independent AI governance consultant for public institutions, financial sector and society.">
+  <meta name="description"
+    content="Independent AI governance consulting for government, financial sector and society — including AI Act compliance, risk assessment and transparency." />
+
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/" />
   <link rel="stylesheet" href="/styles.css" />
-</head>
 
+</head>
 <body>
 
 <header id="site-header">
@@ -30,38 +34,56 @@
 <section class="hero">
   <h2>AI Governance Consultant</h2>
   <p>Responsible AI for government, financial sector and society — clear, independent and actionable.</p>
-  <a class="button" href="/en/services/">View services</a>
+  <a class="button" href="/en/services/">Explore Services</a>
 </section>
 
-<main class="content-section">
+<section class="content-section">
+  <h3>Clear and trustworthy AI governance</h3>
+  <p>
+    AI creates value but also demands conscious choices.  
+    I help organisations deploy AI responsibly and transparently — 
+    with attention to risks, governance, accountability and compliance.
+  </p>
+  <p>
+    My advice is independent, sharp and immediately applicable — 
+    designed for policymakers, executives and professionals in the public and financial sectors.
+  </p>
+</section>
 
-  <h3>Clear, independent and actionable advice</h3>
-  <p>AI transforms organisations — but also requires responsible choices about risks, transparency, governance and compliance. I help you deploy AI responsibly, explainable and audit-ready.</p>
-
-  <h3>What I Deliver</h3>
+<section class="content-section">
+  <h3>Expertise</h3>
   <ul>
-    <li>AI Act Quick Scan</li>
-    <li>AI Act compliance guidance</li>
-    <li>Risk and impact assessments</li>
-    <li>Governance frameworks & transparency</li>
+    <li><strong>AI Governance Quick Scan</strong> — rapid insights into risks, governance maturity and AI Act alignment.</li>
+    <li><strong>AI Act compliance</strong> — classification, documentation and technical + organisational requirements.</li>
+    <li><strong>Risk & impact assessments</strong> — independent, value-driven, rights-aware.</li>
+    <li><strong>Policy & governance frameworks</strong> — practical and scalable for public institutions.</li>
   </ul>
 
-</main>
+  <p><a class="button" href="/en/quick-scan/">View Quick Scan</a></p>
+</section>
+
+<section class="content-section">
+  <h3>Who I work with</h3>
+  <p>I support organisations that want to deploy AI responsibly and transparently:</p>
+  <ul>
+    <li>Government ministries & public institutions</li>
+    <li>Municipalities & social organisations</li>
+    <li>Financial institutions & regulators</li>
+    <li>Non-profit & knowledge organisations</li>
+  </ul>
+</section>
 
 <footer>
   <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
 
 <script>
-  window.addEventListener('scroll', function () {
-    const header = document.getElementById('site-header');
-    if (window.scrollY > 20) { header.classList.add('scrolled'); }
-    else { header.classList.remove('scrolled'); }
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('site-header');
+    if (scrollY > 20) h.classList.add('scrolled');
+    else h.classList.remove('scrolled');
   });
-
-  function toggleMenu() {
-    document.getElementById('main-nav').classList.toggle('open');
-  }
+  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
 </script>
 
 </body>
