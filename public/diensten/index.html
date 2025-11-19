@@ -1,172 +1,173 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://dutchgovernanceadvisory.nl/diensten/#webpage",
-      "url": "https://dutchgovernanceadvisory.nl/diensten/",
-      "name": "Diensten | AI Governance & Risicobeoordeling",
-      "inLanguage": "nl",
-      "isPartOf": {
-        "@id": "https://dutchgovernanceadvisory.nl/#website"
-      },
-      "about": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "description": "Diensten in AI governance: Quick Scan, risicobeoordeling, AI Act-compliance, transparantie en verantwoord AI-beleid."
-    },
-    {
-      "@type": "Service",
-      "@id": "https://dutchgovernanceadvisory.nl/#service-quickscan",
-      "name": "AI Governance Quick Scan",
-      "description": "Snelle, onafhankelijke beoordeling van AI-risico’s, governance, transparantie en AI Act-verplichtingen.",
-      "provider": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "serviceType": "AI Risk Assessment & Compliance",
-      "areaServed": "Netherlands"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://dutchgovernanceadvisory.nl/#service-governance",
-      "name": "AI Governance Advies",
-      "description": "Heldere, onafhankelijke ondersteuning bij verantwoord AI-beleid, governance-structuren en transparantie.",
-      "provider": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "serviceType": "Governance Consulting",
-      "areaServed": "Netherlands"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://dutchgovernanceadvisory.nl/#service-risk",
-      "name": "AI Risicoanalyse & Impact",
-      "description": "Analyse van risico’s, schade, bias, datakwaliteit en impact op rechten.",
-      "provider": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "serviceType": "Risk Assessment",
-      "areaServed": "Netherlands"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://dutchgovernanceadvisory.nl/diensten/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://dutchgovernanceadvisory.nl/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Diensten",
-          "item": "https://dutchgovernanceadvisory.nl/diensten/"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diensten | Dutch Governance Advisory</title>
+    <meta name="description" content="Diensten in AI governance: Quick Scan, risicoanalyse, AI Act-compliance, transparantie en verantwoord AI-beleid.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #111;
         }
-      ]
-    }
-  ]
-}
 
-  <link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/diensten/" />
-<link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/services/" />
-<link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/diensten/" />
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+        }
 
-  <title>Diensten | AI Governance Consultant | Bas Brinkmann</title>
-  <meta name="description" content="Onafhankelijk AI governance advies: risicobeoordeling, AI Act compliance en transparantie. Gericht op overheid, financiële sector en maatschappelijke organisaties.">
-  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/diensten/" />
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0057FF, #00C39A);
+            color: white;
+        }
 
-  <!-- OG -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Bas Brinkmann – AI Governance Consultant">
-  <meta property="og:title" content="AI Governance Diensten – Risico, Transparantie, AI Act">
-  <meta property="og:description" content="Professioneel en onafhankelijk advies over AI governance, risico’s, transparantie en AI Act-naleving.">
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/diensten/">
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-  <meta name="twitter:card" content="summary_large_image">
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
 
-  <link rel="stylesheet" href="/styles.css" />
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AI Governance Consulting",
-    "provider": {
-      "@type": "Person",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant"
-    },
-    "serviceType": "Risk assessment, transparency, AI Act compliance"
-  }
-  </script>
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-block {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
 </head>
 
 <body>
-<header id="site-header">
-  <h1>Bas Brinkmann</h1>
-  <nav id="main-nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/diensten/">Diensten</a></li>
-      <li><a href="/over-bas/">Over Bas</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/en/services/">EN</a></li>
-    </ul>
-  </nav>
+
+<header>
+    <div style="font-weight:700;">Bas Brinkmann</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/diensten">Diensten</a>
+        <a href="/quick-scan">Quick Scan</a>
+        <a href="/over-bas">Over Bas</a>
+        <a href="/contact">Contact</a>
+        <a href="/en">EN</a>
+    </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Diensten</h2>
+<!-- Hero -->
+<div class="hero">
+    <h1>Diensten</h1>
     <p>Onafhankelijk AI governance advies voor overheid, financiële sector en maatschappelijke organisaties.</p>
-  </div>
-</section>
+</div>
 
-<section class="content-block">
-  <h2>AI Governance Quick Scan</h2>
-  <p>
-    In vijf stappen inzicht in risico’s, governance-volwassenheid en AI Act-verplichtingen. 
-    Concreet, onafhankelijk en toepasbaar binnen vier weken.
-  </p>
-  <a class="button" href="/quick-scan/">Meer over de Quick Scan</a>
+<section>
 
-  <h2>AI Act Compliance</h2>
-  <p>
-    Ondersteuning bij classificatie, verplichtingen, documentatie en implementatie van AI Act-eisen. 
-    Gericht op hoog-risico AI, transparantie, datagebruik en technische documentatie.
-  </p>
+    <div class="service-block">
+        <h2>AI Governance Advies</h2>
+        <p>
+            Helder, onafhankelijk advies voor verantwoord AI-beleid, governance-structuren en transparantie.  
+            Gericht op publieke waarden, uitlegbaarheid en risicobeheersing.
+        </p>
+    </div>
 
-  <h2>Risico- en Impactbeoordelingen</h2>
-  <p>
-    Onafhankelijke beoordeling van impact op mensen, processen en publieke waarden. 
-    Inclusief bias-analyse, datakwaliteit, uitlegbaarheid en risico’s voor grondrechten.
-  </p>
+    <div class="service-block">
+        <h2>AI Act-Compliance</h2>
+        <p>
+            Praktische begeleiding bij het voldoen aan Europese verplichtingen onder de AI Act.  
+            Inclusief documentatie, risicobeoordeling en transparantie-eisen voor hoog-​risico systemen.
+        </p>
+    </div>
 
-  <h2>Beleid & Governance-raamwerken</h2>
-  <p>
-    Ontwerp van AI-governancebeleid, rollen, controles, audit-mechanismen en beslismodellen.
-  </p>
-</section>
+    <div class="service-block">
+        <h2>AI Governance Quick Scan</h2>
+        <p>
+            Snelle, onafhankelijke beoordeling van AI-risico’s, datakwaliteit, uitlegbaarheid, proportionaliteit  
+            en governance-verplichtingen. Duidelijk overzicht van verbeterpunten in één week.
+        </p>
+    </div>
 
-<section class="cta-block">
-  <h2>Meer weten?</h2>
-  <p>Neem contact op voor een vrijblijvend gesprek of vraag direct de Quick Scan aan.</p>
-  <a href="/contact/" class="button">Contact opnemen</a>
+    <div class="service-block">
+        <h2>AI Risicoanalyse & Impact</h2>
+        <p>
+            Analyse van risico’s op schade, bias, datakwaliteit, discriminatie en maatschappelijke impact.  
+            Inclusief aanbevelingen voor mitigatie en verantwoord gebruik.
+        </p>
+    </div>
+
+    <div class="service-block">
+        <h2>Transparantie & Verantwoording</h2>
+        <p>
+            Ondersteuning bij algoritmeregisters, impactassessments, governance-documentatie,  
+            verantwoordingsrapportages en audits.
+        </p>
+    </div>
+
 </section>
 
 <footer>
-  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
+    © 2025 Bas Brinkmann — Dutch Governance Advisory  
 </footer>
+
+<!-- JSON-LD (correct & veilig) -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dutch Governance Advisory",
+        "url": "https://dutchgovernanceadvisory.nl/"
+    },
+    "serviceType": [
+        "AI Governance Advies",
+        "AI Act Compliance",
+        "AI Quick Scan",
+        "AI Risicoanalyse & Impact",
+        "Transparantie & Verantwoording"
+    ],
+    "areaServed": "Netherlands"
+}
+</script>
 
 </body>
 </html>
