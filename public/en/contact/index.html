@@ -3,81 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contact | Bas Brinkmann</title>
 
-  <meta name="description" content="Get in touch with Bas Brinkmann for AI governance, risk assessments and AI Act compliance support.">
+  <meta name="description"
+    content="Get in touch with Bas Brinkmann for AI governance, risk assessment and AI Act compliance." />
+
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/contact/" />
   <link rel="stylesheet" href="/styles.css" />
+
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header id="site-header">
-    <h1>Bas Brinkmann</h1>
+<header id="site-header">
+  <h1>Bas Brinkmann</h1>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
 
-    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/services/">Services</a></li>
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/contact/">Contact</a></li>
+      <li><a href="/contact/">NL</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/en/">Home</a></li>
-        <li><a href="/en/services/">Services</a></li>
-        <li><a href="/en/about/">About</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
-        <li><a href="/contact/">NL</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="hero">
+  <h2>Contact</h2>
+  <p>Direct support for AI governance, risks and compliance.</p>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Contact</h2>
-    <p>Connect directly with Bas Brinkmann — fast, clear and independent support on AI governance, risks and compliance.</p>
-  </section>
+<section class="content-section">
+  <h3>Contact details</h3>
 
-  <!-- CONTENT -->
-  <main class="content-section">
-    <h3>Contact details</h3>
+  <p><strong>Bas Brinkmann</strong></p>
+  <p>AI Governance Consultant</p>
 
-    <p><strong>Bas Brinkmann</strong></p>
-    <p>AI Governance Consultant</p>
+  <p>
+    <strong>Phone:</strong><br>
+    <a href="tel:+31658946641">+31 6 5894 6641</a>
+  </p>
 
-    <p>
-      <strong>Phone:</strong><br>
-      <a href="tel:+31658946641">+31 6 5894 6641</a>
-    </p>
+  <p>
+    <strong>Email:</strong><br>
+    <a href="mailto:bas@dutchgovernanceadvisory.nl">bas@dutchgovernanceadvisory.nl</a>
+  </p>
 
-    <p>
-      <strong>Email:</strong><br>
-      <a href="mailto:bas@dutchgovernanceadvisory.nl">bas@dutchgovernanceadvisory.nl</a>
-    </p>
+  <p>
+    <strong>Focus:</strong><br>
+    Public sector, financial institutions & society
+  </p>
+</section>
 
-    <p>
-      <strong>Focus areas:</strong><br>
-      Public sector, financial sector & society
-    </p>
-  </main>
+<footer>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    window.addEventListener('scroll', function () {
-      const header = document.getElementById('site-header');
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('site-header');
+    if (scrollY > 20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+  });
+  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
+</script>
 
 </body>
 </html>
