@@ -1,200 +1,91 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://dutchgovernanceadvisory.nl/#website",
-      "url": "https://dutchgovernanceadvisory.nl/",
-      "name": "Dutch Governance Advisory",
-      "description": "Onafhankelijk AI governance advies, AI Act Quick Scans, risicoanalyse en verantwoord AI-beleid voor overheid, financiële sector en organisaties.",
-      "inLanguage": "nl",
-      "publisher": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://dutchgovernanceadvisory.nl/#organization",
-      "name": "Dutch Governance Advisory",
-      "url": "https://dutchgovernanceadvisory.nl/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/logo.svg"
-      },
-      "description": "AI governance consultancy door Bas Brinkmann — risicoanalyse, AI Act-naleving, transparantie en verantwoord AI-beleid.",
-      "email": "info@dutchgovernanceadvisory.nl",
-      "telephone": "+31658946641",
-      "founder": {
-        "@id": "https://dutchgovernanceadvisory.nl/#person"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/basbrinkmann"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://dutchgovernanceadvisory.nl/#person",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant",
-      "url": "https://dutchgovernanceadvisory.nl/",
-      "image": "https://dutchgovernanceadvisory.nl/social-preview.png",
-      "description": "Expert in AI governance, risicoanalyse, transparantie, AI Act-compliance en verantwoord AI-gebruik voor overheid en financiële sector.",
-      "worksFor": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/basbrinkmann"
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://dutchgovernanceadvisory.nl/#webpage",
-      "url": "https://dutchgovernanceadvisory.nl/",
-      "name": "AI Governance Consultant | Bas Brinkmann",
-      "inLanguage": "nl",
-      "isPartOf": {
-        "@id": "https://dutchgovernanceadvisory.nl/#website"
-      },
-      "about": {
-        "@id": "https://dutchgovernanceadvisory.nl/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/social-preview.png"
-      },
-      "description": "Helder, onafhankelijk AI governance advies: risicoanalyse, AI Act-naleving en verantwoord AI-beleid door Bas Brinkmann."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://dutchgovernanceadvisory.nl/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://dutchgovernanceadvisory.nl/"
-        }
-      ]
-    }
-  ]
-}
-  <link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/" />
-<link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/" />
-<link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/" />
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>AI Governance Consultant | Bas Brinkmann</title>
-  <meta name="description" content="Onafhankelijk AI governance advies: risicoanalyse, AI Act-naleving en verantwoorde inzet van AI voor overheid, financiële sector en maatschappelijke organisaties.">
-  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/" />
+  <meta name="description" content="Onafhankelijk AI governance advies – risicoanalyse, AI Act-naleving en verantwoorde inzet van AI voor overheid, financiële sector en organisaties.">
+
+  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/" />
+  <link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/" />
 
   <!-- OG -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Dutch Governance Advisory">
-  <meta property="og:title" content="AI Governance Consultant – Bas Brinkmann">
-  <meta property="og:description" content="Helder, onafhankelijk advies over AI-risico’s, transparantie en AI Act-naleving.">
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dutch Governance Advisory" />
+  <meta property="og:title" content="AI Governance Consultant – Bas Brinkmann" />
+  <meta property="og:description" content="Heldere, onafhankelijke AI governance expertise: risicoanalyse, transparantie en AI Act-naleving." />
+  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png" />
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/" />
 
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/styles.css" />
-
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://dutchgovernanceadvisory.nl",
-    "name": "Dutch Governance Advisory",
-    "creator": {
-      "@type": "Person",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant"
-    }
-  }
-  </script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
 </head>
-
 <body>
 
 <header id="site-header">
-  <h1>Bas Brinkmann</h1>
-  <nav id="main-nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/diensten/">Diensten</a></li>
-      <li><a href="/quick-scan/">Quick Scan</a></li>
-      <li><a href="/over-bas/">Over Bas</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/en/">EN</a></li>
-    </ul>
-  </nav>
+  <div class="container header-flex">
+    <h1 class="logo">Bas Brinkmann</h1>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/diensten/">Diensten</a></li>
+        <li><a href="/quick-scan/">Quick Scan</a></li>
+        <li><a href="/over-bas/">Over Bas</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/en/">EN</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
+<section class="hero-block" style="background: linear-gradient(90deg, #0066ff, #00c29a);">
+  <div class="container hero-content">
     <h2>Onafhankelijk AI Governance Advies</h2>
     <p>Verantwoorde, uitlegbare en juridisch solide inzet van AI voor overheid & financiële sector.</p>
+
     <a href="/quick-scan/" class="button">AI Governance Quick Scan</a>
   </div>
 </section>
 
 <!-- KERN -->
 <section class="content-block">
-  <h2>Mijn expertise</h2>
+  <div class="container">
+    <h2>Mijn expertise</h2>
 
-  <ul>
-    <li><strong>AI Governance & toezicht</strong><br>Structuur, rollen, beslismodellen en controlemechanismen.</li>
-
-    <li><strong>AI Act Compliance</strong><br>Classificatie, documentatie, transparantie, dataprincipes en verplichtingen.</li>
-
-    <li><strong>Risico- en impactbeoordeling</strong><br>Bias, uitlegbaarheid, data governance, grondrechten & publieke waarden.</li>
-  </ul>
+    <ul>
+      <li><strong>AI Governance & toezicht</strong><br>Structuur, rollen, beslismodellen en controlemechanismen.</li>
+      <li><strong>AI Act Compliance</strong><br>Classificatie, documentatie, transparantie, dataprincipes en verplichtingen.</li>
+      <li><strong>Risico- en impactbeoordeling</strong><br>Bias, uitlegbaarheid, data governance, grondrechten & publieke waarden.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- WAT IK OPLOS -->
-<section class="content-block">
-  <h2>Wat ik voor je oplos</h2>
-  <p>Organisaties worstelen met AI omdat het:</p>
+<section class="content-block alt">
+  <div class="container">
+    <h2>Wat ik voor je oplos</h2>
+    <p>Organisaties worstelen met AI omdat het:</p>
 
-  <ul>
-    <li>niet duidelijk is welke risico’s er spelen</li>
-    <li>onduidelijk blijft of AI voldoet aan de AI Act</li>
-    <li>te weinig uitlegbaar en toetsbaar is</li>
-    <li>geen duidelijke governance-structuur heeft</li>
-  </ul>
+    <ul>
+      <li>niet duidelijk is welke risico’s er spelen</li>
+      <li>onduidelijk blijft of AI voldoet aan de AI Act</li>
+      <li>te weinig uitlegbaar en toetsbaar is</li>
+      <li>geen duidelijke governance-structuur heeft</li>
+    </ul>
 
-  <p><strong>Ik help je dit helder, gestructureerd en praktisch op te lossen.</strong></p>
+    <p><strong>Ik help je dit helder, gestructureerd en praktisch op te lossen.</strong></p>
+  </div>
 </section>
 
 <!-- VOOR WIE -->
-<section class="content-block">
-  <h2>Voor wie?</h2>
-
-  <ul>
-    <li>Ministeries & uitvoeringsorganisaties</li>
-    <li>Gemeenten & toezichthouders</li>
-    <li>Financiële instellingen</li>
-    <li>Maatschappelijke & non-profit organisaties</li>
-  </ul>
-</section>
-
-<section class="cta-block">
-  <h2>Behoefte aan helderheid?</h2>
-  <p>Plan een kennismaking of start direct met de Quick Scan.</p>
-  <a href="/contact/" class="button">Neem contact op</a>
-</section>
-
-<footer>
-  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
-</footer>
-
-</body>
-</html>
-
+<section class
