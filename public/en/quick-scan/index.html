@@ -1,114 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://dutchgovernanceadvisory.nl/en/quick-scan/#webpage",
-      "url": "https://dutchgovernanceadvisory.nl/en/quick-scan/",
-      "name": "AI Governance Quick Scan",
-      "inLanguage": "en",
-      "description": "Fast, independent assessment of AI risks, governance maturity, transparency and AI Act compliance — in five clear steps.",
-      "isPartOf": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#website"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/social-preview.png"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#service-quickscan",
-      "name": "AI Governance Quick Scan",
-      "serviceType": "AI Risk Assessment & AI Act Compliance",
-      "provider": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#organization"
-      },
-      "description": "Five-step independent assessment of risk, transparency, governance maturity and EU AI Act obligations."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://dutchgovernanceadvisory.nl/en/quick-scan/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://dutchgovernanceadvisory.nl/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Quick Scan",
-          "item": "https://dutchgovernanceadvisory.nl/en/quick-scan/"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Governance Quick Scan | Dutch Governance Advisory</title>
+    <meta name="description" content="Fast, independent assessment of AI risks, governance maturity and AI Act compliance in five clear steps.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #111;
         }
-      ]
-    }
-  ]
-}
 
- <link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/quick-scan/" />
-<link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/quick-scan/" />
-<link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/en/quick-scan/" />
- <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Governance Quick Scan | Bas Brinkmann</title>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-  <meta name="description" content="Clear, independent and actionable insight into AI risks, governance, transparency and AI Act alignment.">
-  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/quick-scan/" />
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+        }
 
-  <!-- OG -->
-  <meta property="og:site_name" content="Bas Brinkmann – AI Governance Consultant">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Governance Quick Scan – Fast & Independent Insight">
-  <meta property="og:description" content="Independent insight into AI risk, transparency, governance maturity and AI Act alignment.">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/quick-scan/">
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0057FF, #00C39A);
+            color: white;
+        }
 
-  <meta name="twitter:card" content="summary_large_image">
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-  <link rel="icon" href="/favicon.svg" />
-  <link rel="stylesheet" href="/styles.css" />
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div style="font-weight:700;">Bas Brinkmann</div>
+    <nav>
+        <a href="/en">Home</a>
+        <a href="/en/services">Services</a>
+        <a href="/en/quick-scan">Quick Scan</a>
+        <a href="/en/about">About</a>
+        <a href="/en/contact">Contact</a>
+        <a href="/">NL</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>AI Governance Quick Scan</h1>
+    <p>Five clear steps to assess risks, governance maturity and AI Act compliance.</p>
+</div>
+
+<section>
+
+    <h2>How the Quick Scan Works</h2>
+    <p>
+        The Quick Scan provides a clear assessment within one week.  
+        It gives insight into risks, data usage, transparency requirements  
+        and obligations under the European AI Act.
+    </p>
+
+    <div class="step">
+        <h3>Step 1 — Intake & Scoping</h3>
+        <p>Short assessment of the AI system, its purpose, data flows and stakeholders.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 2 — Risks & Public Values</h3>
+        <p>Analysis of risks related to harm, bias, explainability, transparency and societal impact.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 3 — AI Act Check</h3>
+        <p>Initial determination of whether the system qualifies as high-risk and which obligations apply.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 4 — Governance & Maturity</h3>
+        <p>Assessment of documentation, oversight, processes, risk controls and data quality.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 5 — Final Report</h3>
+        <p>A concise report including findings, risks, improvement steps and compliance priorities.</p>
+    </div>
+
+</section>
+
+<section>
+    <h2>Example Output</h2>
+    <p>A clear, compact report including:</p>
+
+    <ul>
+        <li>risk overview (technical, legal, organisational)</li>
+        <li>applicable AI Act obligations</li>
+        <li>governance and maturity scores</li>
+        <li>practical improvements that can be implemented immediately</li>
+        <li>recommended next steps toward compliance</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Who Is It For?</h2>
+    <p>Suitable for governments, financial institutions, NGOs and organisations that want:</p>
+
+    <ul>
+        <li>clear insight into AI risks</li>
+        <li>quick understanding of AI Act obligations</li>
+        <li>responsible, transparent AI practices</li>
+        <li>to prepare for future audits or oversight</li>
+    </ul>
+</section>
+
+<footer>
+    © 2025 Bas Brinkmann — Dutch Governance Advisory
+</footer>
+
+<!-- SAFE JSON-LD -->
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "AI Governance Quick Scan",
     "provider": {
-      "@type": "Person",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant",
-      "url": "https://dutchgovernanceadvisory.nl"
+        "@type": "Organization",
+        "name": "Dutch Governance Advisory",
+        "url": "https://dutchgovernanceadvisory.nl/en"
     },
-    "description": "Independent assessment of AI risks, governance maturity, transparency and AI Act compliance."
-  }
-  </script>
-</head>
+    "serviceType": "AI Risk Assessment & AI Act Compliance",
+    "description": "Fast, independent assessment of AI risks, transparency, governance maturity and AI Act obligations.",
+    "areaServed": "Netherlands"
+}
+</script>
 
-<body>
-<header id="site-header">
-  <h1>Bas Brinkmann</h1>
-  <nav id="main-nav">
-    <ul>
-      <li><a href="/en/">Home</a></li>
-      <li><a href="/en/services/">Services</a></li>
-      <li><a href="/en/about/">About</a></li>
-      <li><a href="/en/contact/">Contact</a></li>
-      <li><a href="/quick-scan/">NL</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h2>AI Governance Quick Scan</h2>
-    <p>Fast insight into risks, transparency, governance maturity and AI Act alignment.</p>
-  </div>
-</section>
-
-<section cla
+</body>
+</html>
