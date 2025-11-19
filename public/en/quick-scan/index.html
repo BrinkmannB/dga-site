@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Governance Quick Scan | Dutch Governance Advisory</title>
-    <meta name="description" content="Fast, independent assessment of AI risks, governance maturity and AI Act compliance in five clear steps.">
+    <meta name="description" content="Fast assessment of AI risks, governance maturity and AI Act obligations in five steps, plus a 1-minute Quick Scan.">
 
     <style>
         body {
@@ -51,16 +51,23 @@
             margin: 0 auto 2rem;
         }
 
+        .cta-button {
+            background: #fff;
+            color: #0057FF;
+            font-weight: 600;
+            padding: 0.9rem 1.6rem;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         section {
             padding: 4rem 2rem;
             max-width: 1000px;
             margin: auto;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
 
         .step {
             background: #f8f9fa;
@@ -77,7 +84,18 @@
             margin-top: 3rem;
             border-top: 1px solid #eee;
         }
+
+        /* Quick Scan Result Box */
+        #scanResultEN {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            display: none;
+        }
     </style>
+
 </head>
 
 <body>
@@ -94,92 +112,118 @@
     </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
     <h1>AI Governance Quick Scan</h1>
-    <p>Five clear steps to assess risks, governance maturity and AI Act compliance.</p>
+    <p>Five clear steps to understand risks, governance maturity and AI Act obligations.</p>
+    <a href="#quickscan" class="cta-button">Take the 1-Minute Quick Scan</a>
 </div>
 
 <section>
-
     <h2>How the Quick Scan Works</h2>
     <p>
-        The Quick Scan provides a clear assessment within one week.  
-        It gives insight into risks, data usage, transparency requirements  
+        The Quick Scan delivers insights within one week: risks, data usage, transparency requirements  
         and obligations under the European AI Act.
     </p>
 
-    <div class="step">
-        <h3>Step 1 — Intake & Scoping</h3>
-        <p>Short assessment of the AI system, its purpose, data flows and stakeholders.</p>
-    </div>
-
-    <div class="step">
-        <h3>Step 2 — Risks & Public Values</h3>
-        <p>Analysis of risks related to harm, bias, explainability, transparency and societal impact.</p>
-    </div>
-
-    <div class="step">
-        <h3>Step 3 — AI Act Check</h3>
-        <p>Initial determination of whether the system qualifies as high-risk and which obligations apply.</p>
-    </div>
-
-    <div class="step">
-        <h3>Step 4 — Governance & Maturity</h3>
-        <p>Assessment of documentation, oversight, processes, risk controls and data quality.</p>
-    </div>
-
-    <div class="step">
-        <h3>Step 5 — Final Report</h3>
-        <p>A concise report including findings, risks, improvement steps and compliance priorities.</p>
-    </div>
-
+    <div class="step"><h3>Step 1 — Intake</h3><p>Short assessment of purpose, data flows and system scope.</p></div>
+    <div class="step"><h3>Step 2 — Risks & Impact</h3><p>Assessment of risks around bias, harm, explainability and public values.</p></div>
+    <div class="step"><h3>Step 3 — AI Act Check</h3><p>Initial determination of obligations and risk category.</p></div>
+    <div class="step"><h3>Step 4 — Governance Maturity</h3><p>Insight into oversight, documentation, processes and data quality.</p></div>
+    <div class="step"><h3>Step 5 — Final Report</h3><p>Clear recommendations and next steps.</p></div>
 </section>
 
-<section>
-    <h2>Example Output</h2>
-    <p>A clear, compact report including:</p>
+<!-- 1-Minute Quick Scan — HIGH VISIBILITY -->
+<section id="quickscan">
+    <h2>1-Minute Quick Scan</h2>
+    <p>Answer five short questions for an instant first assessment.</p>
 
-    <ul>
-        <li>risk overview (technical, legal, organisational)</li>
-        <li>applicable AI Act obligations</li>
-        <li>governance and maturity scores</li>
-        <li>practical improvements that can be implemented immediately</li>
-        <li>recommended next steps toward compliance</li>
-    </ul>
-</section>
+    <form id="quickScanEN">
 
-<section>
-    <h2>Who Is It For?</h2>
-    <p>Suitable for governments, financial institutions, NGOs and organisations that want:</p>
+        <label><strong>1. Does the AI system make decisions about people?</strong></label><br>
+        <select name="q1" required>
+            <option value="">-- Select an option --</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
 
-    <ul>
-        <li>clear insight into AI risks</li>
-        <li>quick understanding of AI Act obligations</li>
-        <li>responsible, transparent AI practices</li>
-        <li>to prepare for future audits or oversight</li>
-    </ul>
+        <label><strong>2. Does the system impact rights, safety or evaluation of individuals?</strong></label><br>
+        <select name="q2" required>
+            <option value="">-- Select an option --</option>
+            <option value="high">Yes, significant impact</option>
+            <option value="medium">Some impact</option>
+            <option value="low">Little or no impact</option>
+        </select><br><br>
+
+        <label><strong>3. Does it use personal data?</strong></label><br>
+        <select name="q3" required>
+            <option value="">-- Select an option --</option>
+            <option value="yes">Yes</option>
+            <option value="partial">Partially</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label><strong>4. Was the model or dataset purchased from an external vendor?</strong></label><br>
+        <select name="q4" required>
+            <option value="">-- Select an option --</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label><strong>5. Is the system live or launching soon?</strong></label><br>
+        <select name="q5" required>
+            <option value="">-- Select an option --</option>
+            <option value="live">Live</option>
+            <option value="soon">Launching soon</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <button type="submit" style="
+            padding:0.7rem 1.4rem;
+            background:#0057FF;
+            border:none;
+            border-radius:8px;
+            color:white;
+            font-weight:600;
+            cursor:pointer;
+        ">Run Scan</button>
+    </form>
+
+    <div id="scanResultEN"></div>
+
 </section>
 
 <footer>
     © 2025 Bas Brinkmann — Dutch Governance Advisory
 </footer>
 
-<!-- SAFE JSON-LD -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AI Governance Quick Scan",
-    "provider": {
-        "@type": "Organization",
-        "name": "Dutch Governance Advisory",
-        "url": "https://dutchgovernanceadvisory.nl/en"
-    },
-    "serviceType": "AI Risk Assessment & AI Act Compliance",
-    "description": "Fast, independent assessment of AI risks, transparency, governance maturity and AI Act obligations.",
-    "areaServed": "Netherlands"
-}
+<script>
+document.getElementById("quickScanEN").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const q1 = this.q1.value, q2 = this.q2.value, q3 = this.q3.value,
+          q4 = this.q4.value, q5 = this.q5.value;
+
+    let score = 0;
+    if (q1 === "yes") score += 2;
+    if (q2 === "high") score += 2;
+    if (q2 === "medium") score += 1;
+    if (q3 === "yes") score += 1;
+    if (q4 === "yes") score += 1;
+    if (q5 === "live" || q5 === "soon") score += 1;
+
+    let result = "";
+    if (score >= 5) {
+        result = `<h3>Result: High Risk</h3><p>Likely AI Act obligations apply. A full Quick Scan is recommended.</p>`;
+    } else if (score >= 3) {
+        result = `<h3>Result: Medium Risk</h3><p>A more detailed assessment is advised.</p>`;
+    } else {
+        result = `<h3>Result: Low Risk</h3><p>The system likely does not trigger strict AI Act obligations.</p>`;
+    }
+
+    const box = document.getElementById("scanResultEN");
+    box.innerHTML = result;
+    box.style.display = "block";
+});
 </script>
 
 </body>
