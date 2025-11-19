@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Bas Brinkmann</title>
 
-  <meta name="description"
-        content="AI governance, risk assessment, transparency and AI Act compliance — clear, independent and actionable advisory." />
+  <meta name="description" content="AI governance services: risk assessments, AI Act compliance, transparency, maturity and responsible AI practices.">
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/services/" />
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-<header>
+<header id="site-header">
   <h1>Bas Brinkmann</h1>
-  <nav>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="main-nav">
     <ul>
       <li><a href="/en/">Home</a></li>
       <li><a href="/en/services/">Services</a></li>
@@ -28,42 +29,41 @@
 
 <section class="hero">
   <h2>Services</h2>
-  <p>Responsible AI, risk assessment and governance — clear, independent and actionable.</p>
+  <p>Independent, practical and responsible AI governance for public sector, financial sector and society.</p>
 </section>
 
-<section>
+<main class="content-section">
+
   <h3>AI Governance Quick Scan</h3>
-  <p>
-    Fast insight into risks, transparency, governance maturity and AI Act obligations.
-  </p>
-  <a class="button" href="/en/quick-scan/">View Quick Scan</a>
-</section>
+  <p>Fast, independent insight into AI risks, transparency, maturity, and AI Act compliance obligations.</p>
+  <p><a href="/en/quick-scan/" class="button">Learn more</a></p>
 
-<section>
-  <h3>AI Act Compliance & Implementation</h3>
-  <p>
-    Support with classification, documentation, risk assessment and implementing technical
-    and organizational measures aligned with the AI Act.
-  </p>
-</section>
+  <h3>AI Act Compliance Support</h3>
+  <p>Clear guidance on documentation, risk management, technical files, transparency requirements and governance structures.</p>
 
-<section>
-  <h3>Governance & Risk Assessment</h3>
-  <p>
-    Setting up governance structures, accountability processes, audit trails and maturity models.
-  </p>
-</section>
+  <h3>Risk Assessments & Impact Analysis</h3>
+  <p>Sharp, independent assessment of potential harms, rights impacts, governance weaknesses and integrity risks.</p>
 
-<section>
-  <h3>Advisory for Government & Financial Institutions</h3>
-  <p>
-    Policies, impact assessments, guidelines and regulatory alignment for public sector and finance.
-  </p>
-</section>
+  <h3>AI Governance Frameworks</h3>
+  <p>Practical, scalable governance structures to embed responsible AI in policy, processes and culture.</p>
+
+</main>
 
 <footer>
-  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 20) { header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  });
+
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
