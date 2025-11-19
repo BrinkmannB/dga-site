@@ -1,48 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- NL pages -->
+  <!-- Home NL -->
   <url>
-    <loc>https://jouwdomein.nl/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/" />
   </url>
 
+  <!-- Home EN -->
   <url>
-    <loc>https://jouwdomein.nl/diensten/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/" />
   </url>
 
+  <!-- Diensten / Services -->
   <url>
-    <loc>https://jouwdomein.nl/diensten/quick-scan/</loc>
-  </url>
-
-  <url>
-    <loc>https://jouwdomein.nl/over-bas/</loc>
-  </url>
-
-  <url>
-    <loc>https://jouwdomein.nl/contact/</loc>
-  </url>
-
-  <!-- EN pages -->
-  <url>
-    <loc>https://jouwdomein.nl/en/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/diensten/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/services/" />
   </url>
 
   <url>
-    <loc>https://jouwdomein.nl/en/services/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/en/services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/diensten/" />
+  </url>
+
+  <!-- Over Bas / About Bas -->
+  <url>
+    <loc>https://dutchgovernanceadvisory.nl/over-bas/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/about/" />
   </url>
 
   <url>
-    <loc>https://jouwdomein.nl/en/quick-scan/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/en/about/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/over-bas/" />
+  </url>
+
+  <!-- Quick Scan NL / EN -->
+  <url>
+    <loc>https://dutchgovernanceadvisory.nl/quick-scan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/quick-scan/" />
   </url>
 
   <url>
-    <loc>https://jouwdomein.nl/en/about/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/en/quick-scan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/quick-scan/" />
+  </url>
+
+  <!-- Contact NL / EN -->
+  <url>
+    <loc>https://dutchgovernanceadvisory.nl/contact/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/contact/" />
   </url>
 
   <url>
-    <loc>https://jouwdomein.nl/en/contact/</loc>
+    <loc>https://dutchgovernanceadvisory.nl/en/contact/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/contact/" />
   </url>
 
 </urlset>
