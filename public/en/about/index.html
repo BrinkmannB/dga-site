@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Bas | Bas Brinkmann</title>
+  <title>About | Bas Brinkmann</title>
 
-  <meta name="description"
-        content="Bas Brinkmann is an AI Governance Consultant specialised in AI Act compliance, risk assessment, transparency and responsible AI." />
+  <meta name="description" content="Learn more about Bas Brinkmann — AI governance consultant focused on public sector, financial institutions and society.">
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/about/" />
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-<header>
+<header id="site-header">
   <h1>Bas Brinkmann</h1>
-  <nav>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="main-nav">
     <ul>
       <li><a href="/en/">Home</a></li>
       <li><a href="/en/services/">Services</a></li>
@@ -27,39 +28,43 @@
 </header>
 
 <section class="hero">
-  <h2>About Bas</h2>
-  <p>AI Governance Consultant for government, finance and society.</p>
+  <h2>About Bas Brinkmann</h2>
+  <p>AI governance consultant focused on responsible AI for public institutions, financial organisations and society.</p>
 </section>
 
-<section>
-  <h3>My mission</h3>
-  <p>
-    Helping organisations deploy AI responsibly, transparently and accountably —
-    with a sharp, independent and practical approach.
-  </p>
-</section>
+<main class="content-section">
 
-<section>
-  <h3>Background</h3>
-  <p>
-    I work on AI governance structures, risk assessments, AI Act conformity,
-    transparency frameworks and public-sector aligned policies.
-  </p>
-</section>
+  <h3>Who I Am</h3>
+  <p>I help organisations make conscious, responsible choices about AI risks, transparency, governance structures and compliance obligations.</p>
 
-<section>
-  <h3>How I work</h3>
+  <h3>What Drives Me</h3>
+  <p>AI can deliver enormous value — but only when it is deployed safely, transparently and in alignment with societal values. My work focuses on enabling that balance.</p>
+
+  <h3>My Approach</h3>
   <ul>
-    <li>Analytical and independent</li>
-    <li>Clear governance and risk assessments</li>
-    <li>Practical recommendations</li>
-    <li>Transparency and explainability first</li>
+    <li>Independent and evidence-based</li>
+    <li>Practical and directly useful for decision makers</li>
+    <li>Aligned with the AI Act, integrity principles and public values</li>
+    <li>Sharp, clear and transparent advice</li>
   </ul>
-</section>
+
+</main>
 
 <footer>
-  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 20) { header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  });
+
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
