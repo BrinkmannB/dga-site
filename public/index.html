@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -6,146 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>AI Governance Consultant | Bas Brinkmann</title>
-
-  <meta name="description"
-    content="Onafhankelijk AI governance advies. Verantwoorde AI voor overheid, financiële sector en maatschappelijke organisaties — inclusief AI Act compliance, risicobeoordeling en transparantie." />
-
+  <meta name="description" content="Onafhankelijk AI governance advies: risicoanalyse, AI Act-naleving en verantwoorde inzet van AI voor overheid, financiële sector en maatschappelijke organisaties.">
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/" />
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dutch Governance Advisory">
+  <meta property="og:title" content="AI Governance Consultant – Bas Brinkmann">
+  <meta property="og:description" content="Helder, onafhankelijk advies over AI-risico’s, transparantie en AI Act-naleving.">
+  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/">
+
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="/styles.css" />
 
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://dutchgovernanceadvisory.nl",
+    "name": "Dutch Governance Advisory",
+    "creator": {
+      "@type": "Person",
+      "name": "Bas Brinkmann",
+      "jobTitle": "AI Governance Consultant"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <header id="site-header">
-    <h1>Bas Brinkmann</h1>
-
-    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
-
-    <nav id="main-nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/diensten/">Diensten</a></li>
-        <li><a href="/over-bas/">Over Bas</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/en/">EN</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h2>AI Governance Consultant</h2>
-    <p>Verantwoorde AI voor overheid, financiële sector & maatschappij — onafhankelijk, helder en uitvoerbaar.</p>
-    <a class="button" href="/diensten/">Ontdek mijn diensten</a>
-  </section>
-
-  <!-- INTRO -->
-  <section class="content-section">
-    <h3>Heldere en betrouwbare AI governance</h3>
-    <p>
-      AI biedt kansen, maar vraagt om bewuste keuzes. Ik help organisaties om AI verantwoord en uitlegbaar in te zetten —
-      met aandacht voor risico’s, transparantie, toezicht en compliance.
-    </p>
-    <p>
-      Mijn advies is onafhankelijk, scherp en meteen toepasbaar. Gericht op bestuurders, beleidsmakers en professionals
-      in de publieke sector en financiële wereld.
-    </p>
-  </section>
-
-  <!-- SERVICES OVERVIEW -->
-  <section class="content-section">
-    <h3>Mijn expertise</h3>
+<header id="site-header">
+  <h1>Bas Brinkmann</h1>
+  <nav id="main-nav">
     <ul>
-      <li><strong>AI Governance Quick Scan</strong> — direct inzicht in risico’s, governance-volwassenheid en AI Act-verplichtingen.</li>
-      <li><strong>AI Act compliance</strong> — ondersteuning bij classificatie, documentatie en technische vereisten.</li>
-      <li><strong>Risico- en impactbeoordelingen</strong> — onafhankelijk en gericht op publieke waarden.</li>
-      <li><strong>Beleid & richtlijnen</strong> — voor ministeries, gemeenten en financiële instellingen.</li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/diensten/">Diensten</a></li>
+      <li><a href="/quick-scan/">Quick Scan</a></li>
+      <li><a href="/over-bas/">Over Bas</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/en/">EN</a></li>
     </ul>
+  </nav>
+</header>
 
-    <p>
-      <a class="button" href="/quick-scan/">Bekijk de Quick Scan</a>
-    </p>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Onafhankelijk AI Governance Advies</h2>
+    <p>Verantwoorde, uitlegbare en juridisch solide inzet van AI voor overheid & financiële sector.</p>
+    <a href="/quick-scan/" class="button">AI Governance Quick Scan</a>
+  </div>
+</section>
 
-  <!-- AUDIENCE -->
-  <section class="content-section">
-    <h3>Voor wie?</h3>
-    <p>
-      Ik werk voor organisaties die AI verantwoord willen inzetten en daarbij streven naar transparantie, uitlegbaarheid
-      en naleving van wetgeving.
-    </p>
+<!-- KERN -->
+<section class="content-block">
+  <h2>Mijn expertise</h2>
 
-    <ul>
-      <li>Ministeries en overheidsorganisaties</li>
-      <li>Gemeenten en maatschappelijke instellingen</li>
-      <li>Financiële instellingen en toezichthouders</li>
-      <li>Non-profit en kennisorganisaties</li>
-    </ul>
-  </section>
+  <ul>
+    <li><strong>AI Governance & toezicht</strong><br>Structuur, rollen, beslismodellen en controlemechanismen.</li>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
-  </footer>
+    <li><strong>AI Act Compliance</strong><br>Classificatie, documentatie, transparantie, dataprincipes en verplichtingen.</li>
 
-  <!-- NAV JS -->
-  <script>
-    window.addEventListener('scroll', function () {
-      const header = document.getElementById('site-header');
-      if (window.scrollY > 20) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    });
+    <li><strong>Risico- en impactbeoordeling</strong><br>Bias, uitlegbaarheid, data governance, grondrechten & publieke waarden.</li>
+  </ul>
+</section>
 
-    function toggleMenu() {
-      document.getElementById('main-nav').classList.toggle('open');
-    }
-  </script>
+<!-- WAT IK OPLOS -->
+<section class="content-block">
+  <h2>Wat ik voor je oplos</h2>
+  <p>Organisaties worstelen met AI omdat het:</p>
+
+  <ul>
+    <li>niet duidelijk is welke risico’s er spelen</li>
+    <li>onduidelijk blijft of AI voldoet aan de AI Act</li>
+    <li>te weinig uitlegbaar en toetsbaar is</li>
+    <li>geen duidelijke governance-structuur heeft</li>
+  </ul>
+
+  <p><strong>Ik help je dit helder, gestructureerd en praktisch op te lossen.</strong></p>
+</section>
+
+<!-- VOOR WIE -->
+<section class="content-block">
+  <h2>Voor wie?</h2>
+
+  <ul>
+    <li>Ministeries & uitvoeringsorganisaties</li>
+    <li>Gemeenten & toezichthouders</li>
+    <li>Financiële instellingen</li>
+    <li>Maatschappelijke & non-profit organisaties</li>
+  </ul>
+</section>
+
+<section class="cta-block">
+  <h2>Behoefte aan helderheid?</h2>
+  <p>Plan een kennismaking of start direct met de Quick Scan.</p>
+  <a href="/contact/" class="button">Neem contact op</a>
+</section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
+</footer>
 
 </body>
 </html>
-<footer class="site-footer">
-  <div class="footer-container">
 
-    <div class="footer-brand">
-      <h3>Bas Brinkmann</h3>
-      <p>AI Governance Consultant</p>
-    </div>
-
-    <div class="footer-links">
-      <h4>Menu</h4>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/diensten/">Diensten</a></li>
-        <li><a href="/quick-scan/">AI Act Quick Scan</a></li>
-        <li><a href="/over-bas/">Over Bas</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:brinkmann.bas@icloud.com">brinkmann.bas@icloud.com</a></li>
-        <li><a href="tel:+31658946641">06-58946641</a></li>
-        <li>Amsterdam, Nederland</li>
-      </ul>
-    </div>
-
-    <div class="footer-lang">
-      <h4>Taal</h4>
-      <ul>
-        <li><a href="/en/">English</a></li>
-        <li><a href="/">Nederlands</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Bas Brinkmann — Dutch Governance Advisory</p>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
