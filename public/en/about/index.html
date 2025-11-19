@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>About | Bas Brinkmann</title>
 
-  <meta name="description" content="Learn more about Bas Brinkmann — AI governance consultant focused on public sector, financial institutions and society.">
+  <meta name="description"
+    content="About Bas Brinkmann — AI Governance Consultant specialising in risk assessment, transparency and AI Act compliance." />
+
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/about/" />
   <link rel="stylesheet" href="/styles.css" />
+
 </head>
 
 <body>
@@ -28,42 +32,43 @@
 </header>
 
 <section class="hero">
-  <h2>About Bas Brinkmann</h2>
-  <p>AI governance consultant focused on responsible AI for public institutions, financial organisations and society.</p>
+  <h2>About Bas</h2>
+  <p>AI governance consultant focused on responsible AI for public sector and financial institutions.</p>
 </section>
 
-<main class="content-section">
+<section class="content-section">
 
   <h3>Who I Am</h3>
-  <p>I help organisations make conscious, responsible choices about AI risks, transparency, governance structures and compliance obligations.</p>
-
-  <h3>What Drives Me</h3>
-  <p>AI can deliver enormous value — but only when it is deployed safely, transparently and in alignment with societal values. My work focuses on enabling that balance.</p>
+  <p>
+    I help organisations deploy AI responsibly and transparently — balancing innovation with risk,
+    accountability and societal values.
+  </p>
 
   <h3>My Approach</h3>
   <ul>
-    <li>Independent and evidence-based</li>
-    <li>Practical and directly useful for decision makers</li>
-    <li>Aligned with the AI Act, integrity principles and public values</li>
-    <li>Sharp, clear and transparent advice</li>
+    <li>Independent and analytical</li>
+    <li>Concrete, sharp and actionable recommendations</li>
+    <li>Aligned with public values and integrity principles</li>
+    <li>Expertise based on AI Act requirements</li>
   </ul>
 
-</main>
+  <h3>What Drives Me</h3>
+  <p>
+    AI should contribute to trust, safety and societal value.
+    My mission is to guide organisations in achieving that.
+  </p>
+</section>
 
 <footer>
   <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
 
 <script>
-  window.addEventListener('scroll', function () {
-    const header = document.getElementById('site-header');
-    if (window.scrollY > 20) { header.classList.add('scrolled'); }
-    else { header.classList.remove('scrolled'); }
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('site-header');
+    if (scrollY > 20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
   });
-
-  function toggleMenu() {
-    document.getElementById('main-nav').classList.toggle('open');
-  }
+  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
 </script>
 
 </body>
