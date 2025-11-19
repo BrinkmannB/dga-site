@@ -4,21 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Services | Bas Brinkmann</title>
-
-  <meta name="description"
-    content="AI governance, risk assessment, transparency and AI Act compliance. Clear and independent advisory for public sector and financial institutions." />
-
+  <title>Services | AI Governance Consultant | Bas Brinkmann</title>
+  <meta name="description" content="Independent AI governance consulting: risk assessment, transparency, explainability and AI Act compliance.">
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/services/" />
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bas Brinkmann – AI Governance Consultant">
+  <meta property="og:title" content="AI Governance Services – Risk, Transparency, AI Act">
+  <meta property="og:description" content="Independent consulting on AI governance, transparency, risk and AI Act alignment.">
+  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/services/">
+
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Governance Consulting",
+    "provider": {
+      "@type": "Person",
+      "name": "Bas Brinkmann",
+      "jobTitle": "AI Governance Consultant"
+    },
+    "serviceType": "Risk assessment, transparency, AI Act compliance"
+  }
+  </script>
 </head>
 
 <body>
-
 <header id="site-header">
   <h1>Bas Brinkmann</h1>
-  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
-
   <nav id="main-nav">
     <ul>
       <li><a href="/en/">Home</a></li>
@@ -31,38 +51,45 @@
 </header>
 
 <section class="hero">
-  <h2>Services</h2>
-  <p>AI governance, risk assessment and AI Act compliance — clear, independent and actionable.</p>
+  <div class="hero-content">
+    <h2>Services</h2>
+    <p>Independent AI governance support for public sector, financial institutions and civil society.</p>
+  </div>
 </section>
 
-<section class="content-section">
+<section class="content-block">
+  <h2>AI Governance Quick Scan</h2>
+  <p>
+    A five-step expert assessment of risks, governance maturity and AI Act obligations.
+    Independent, fast and highly actionable.
+  </p>
+  <a class="button" href="/en/quick-scan/">Learn more about the Quick Scan</a>
 
-  <h3>AI Governance Quick Scan</h3>
-  <p>Fast and sharp insights into AI risks, governance maturity and AI Act obligations.</p>
-  <a class="button" href="/en/quick-scan/">Learn more</a>
+  <h2>AI Act Compliance</h2>
+  <p>
+    Support with classification, obligations, technical documentation, transparency and high-risk requirements.
+  </p>
 
-  <h3>AI Act Compliance</h3>
-  <p>Guidance for classification, documentation, transparency requirements and organisational controls.</p>
+  <h2>Risk & Impact Assessments</h2>
+  <p>
+    Independent analysis of human, organisational and societal impact, bias, transparency and data quality.
+  </p>
 
-  <h3>Risk & Impact Assessment</h3>
-  <p>Independent evaluation of risks, potential harms, rights impacts and governance gaps.</p>
+  <h2>Policy & Governance Frameworks</h2>
+  <p>
+    Design of AI governance structures, accountability models, audit controls and oversight processes.
+  </p>
+</section>
 
-  <h3>Governance & Policy</h3>
-  <p>Responsible AI frameworks, accountability structures and clear policy guidelines.</p>
-
+<section class="cta-block">
+  <h2>Ready to move forward?</h2>
+  <p>Contact me for an introduction or request a Quick Scan directly.</p>
+  <a href="/en/contact/" class="button">Get in touch</a>
 </section>
 
 <footer>
   <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
-
-<script>
-  window.addEventListener('scroll', () => {
-    const h = document.getElementById('site-header');
-    if (scrollY > 20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
-  });
-  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
-</script>
 
 </body>
 </html>
