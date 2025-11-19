@@ -3,63 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI Governance Quick Scan | Bas Brinkmann</title>
 
-  <meta name="description" content="Fast insight into AI risks, transparency, maturity and AI Act alignment." />
+  <meta name="description"
+    content="The AI Governance Quick Scan provides clear insights into risks, transparency, maturity and AI Act compliance — delivered in five practical steps." />
+
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/quick-scan/" />
-
-  <meta property="og:title" content="AI Governance Quick Scan — Fast Independent Assessment" />
-  <meta property="og:description" content="Clear, practical and independent assessment of AI risks and AI Act compliance." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png" />
-
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Bas Brinkmann</h1>
-    <nav>
-      <ul>
-        <li><a href="/en/">Home</a></li>
-        <li><a href="/en/services/">Services</a></li>
-        <li><a href="/en/about/">About</a></li>
-        <li><a href="/en/contact/">Contact</a></li>
-        <li><a href="/quick-scan/">NL</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>AI Governance Quick Scan</h2>
-    <p>Fast insight into risks, transparency, governance and AI Act obligations.</p>
-  </section>
+<header id="site-header">
+  <h1>Bas Brinkmann</h1>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
 
-  <section>
-    <h3>Rapid assessment for better decisions</h3>
-    <p>The Quick Scan provides clear, independent and actionable insight into:</p>
-
+  <nav id="main-nav">
     <ul>
-      <li>AI risks & impact</li>
-      <li>Transparency & explainability</li>
-      <li>Governance maturity</li>
-      <li>AI Act classification & obligations</li>
-      <li>Concrete next steps toward compliance</li>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/services/">Services</a></li>
+      <li><a href="/en/about/">About</a></li>
+      <li><a href="/en/contact/">Contact</a></li>
+      <li><a href="/quick-scan/">NL</a></li>
     </ul>
-  </section>
+  </nav>
+</header>
 
-  <section>
-    <h3>What you receive</h3>
-    <ul>
-      <li>Risk overview</li>
-      <li>Governance & transparency indicators</li>
-      <li>Gap analysis against AI Act</li>
-      <li>Clear, practical recommendations</li>
-    </ul>
-  </section>
+<section class="hero">
+  <h2>AI Governance Quick Scan</h2>
+  <p>Five clear steps to assess risks, transparency and AI Act alignment.</p>
+</section>
 
-  <footer>
-    <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
-  </footer>
+<section class="content-section">
+
+  <h3>Step 1 — Risk Analysis</h3>
+  <p>Assessment of potential harms, bias, data quality and rights impacts.</p>
+
+  <h3>Step 2 — Transparency & Explainability</h3>
+  <p>Documentation review, model behaviour, audit trails and explainability.</p>
+
+  <h3>Step 3 — Governance & Accountability</h3>
+  <p>Evaluation of roles, responsibilities, oversight and organisational controls.</p>
+
+  <h3>Step 4 — AI Act Classification</h3>
+  <p>Determining whether a system is high-risk, limited-risk or prohibited.</p>
+
+  <h3>Step 5 — Recommendations</h3>
+  <p>Practical next steps: policy updates, safeguards and transparency measures.</p>
+
+  <p><a class="button" href="/en/contact/">Schedule a Quick Scan</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('site-header');
+    if (scrollY > 20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+  });
+  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
+</script>
+
 </body>
 </html>
