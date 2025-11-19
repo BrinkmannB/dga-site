@@ -1,157 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://dutchgovernanceadvisory.nl/en/about/#webpage",
-      "url": "https://dutchgovernanceadvisory.nl/en/about/",
-      "name": "About Bas | AI Governance Consultant",
-      "inLanguage": "en",
-      "description": "Bas Brinkmann — independent AI governance consultant, specialising in risk assessment, transparency, responsible AI and EU AI Act compliance.",
-      "isPartOf": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#website"
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#person-bas",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant",
-      "image": "https://dutchgovernanceadvisory.nl/social-preview.png",
-      "description": "Expert in AI governance, risk assessment, transparency, responsible AI and AI Act compliance.",
-      "worksFor": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#organization"
-      },
-      "url": "https://dutchgovernanceadvisory.nl/en/",
-      "sameAs": [
-        "https://www.linkedin.com/in/basbrinkmann"
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://dutchgovernanceadvisory.nl/en/about/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://dutchgovernanceadvisory.nl/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About Bas",
-          "item": "https://dutchgovernanceadvisory.nl/en/about/"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Bas | Dutch Governance Advisory</title>
+    <meta name="description" content="Bas Brinkmann — independent AI governance consultant focused on risk assessment, transparency and AI Act compliance.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #111;
         }
-      ]
-    }
-  ]
-}
 
-<link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/about/" />
-<link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/over-bas/" />
-<link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/en/about/" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-  <title>About Bas | AI Governance Consultant</title>
-  <meta name="description" content="Bas Brinkmann is an independent AI Governance Consultant with expertise in risk assessment, transparency, explainability and AI Act compliance.">
-  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/about/">
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+        }
 
-  <!-- OG -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="About Bas – AI Governance Consultant">
-  <meta property="og:description" content="Independent specialist in AI governance, risk and AI Act alignment.">
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/about/">
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0057FF, #00C39A);
+            color: white;
+        }
 
-  <meta name="twitter:card" content="summary_large_image">
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-  <link rel="stylesheet" href="/styles.css" />
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Bas Brinkmann",
-    "jobTitle":"AI Governance Consultant",
-    "url":"https://dutchgovernanceadvisory.nl",
-    "description":"Independent AI governance consultant.",
-    "worksFor":{
-      "@type":"Organization",
-      "name":"Dutch Governance Advisory"
-    }
-  }
-  </script>
+        section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .bio-block {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
 </head>
 
 <body>
 
-<header id="site-header">
-  <h1>Bas Brinkmann</h1>
-  <nav id="main-nav">
-    <ul>
-      <li><a href="/en/">Home</a></li>
-      <li><a href="/en/services/">Services</a></li>
-      <li><a href="/en/quick-scan/">Quick Scan</a></li>
-      <li><a href="/en/about/">About</a></li>
-      <li><a href="/en/contact/">Contact</a></li>
-      <li><a href="/over-bas/">NL</a></li>
-    </ul>
-  </nav>
+<header>
+    <div style="font-weight:700;">Bas Brinkmann</div>
+    <nav>
+        <a href="/en">Home</a>
+        <a href="/en/services">Services</a>
+        <a href="/en/quick-scan">Quick Scan</a>
+        <a href="/en/about">About</a>
+        <a href="/en/contact">Contact</a>
+        <a href="/">NL</a>
+    </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>About Bas</h2>
-    <p>Independent AI governance adviser — focused on risk, transparency and societal impact.</p>
-  </div>
-</section>
+<div class="hero">
+    <h1>About Bas</h1>
+    <p>Independent AI governance consultant — focused on risk, transparency and public values.</p>
+</div>
 
-<section class="content-block">
-  <h2>Who I am</h2>
-  <p>
-    I am Bas Brinkmann, AI Governance Consultant.  
-    I help organisations deploy AI responsibly, explainably and in compliance with legal and societal expectations.
-  </p>
+<section>
 
-  <h2>What I stand for</h2>
-  <ul>
-    <li><strong>Clarity:</strong> reducing complexity to practical decisions.</li>
-    <li><strong>Independence:</strong> no commercial ties to vendors.</li>
-    <li><strong>Public value:</strong> AI must work for society.</li>
-    <li><strong>Transparency:</strong> oversight, control and clear explanations are essential.</li>
-  </ul>
+    <div class="bio-block">
+        <h2>Who I Am</h2>
+        <p>
+            I’m Bas Brinkmann, an AI governance consultant specialising in risk assessment,  
+            transparency and compliance with the European AI Act.  
+            My work centres on responsible, explainable and legally grounded use of AI.
+        </p>
+        <p>
+            I support governments, financial institutions and civil society organisations  
+            in building trustworthy and transparent AI systems.
+        </p>
+    </div>
 
-  <h2>My expertise</h2>
-  <p>I operate at the intersection of AI, governance, policy and regulation:</p>
-  <ul>
-    <li>AI governance & risk assessments</li>
-    <li>AI Act alignment & documentation</li>
-    <li>Policy & governance frameworks</li>
-    <li>Public sector & financial domain</li>
-  </ul>
+    <div class="bio-block">
+        <h2>My Approach</h2>
+        <p>
+            Independent, pragmatic and clear.  
+            I avoid unnecessary complexity and focus on risks, public values and proportionate governance.
+        </p>
+        <ul>
+            <li>clear guidance without jargon</li>
+            <li>risk-focused, value-based approach</li>
+            <li>AI Act expertise combined with governance experience</li>
+            <li>practical and actionable recommendations</li>
+        </ul>
+    </div>
 
-  <h2>My approach</h2>
-  <p>
-    I combine analytical depth, critical thinking and empathetic communication.  
-    My advice is independent, sharp and directly applicable.
-  </p>
-</section>
+    <div class="bio-block">
+        <h2>Who I Work With</h2>
+        <p>
+            Governments, financial institutions, NGOs and organisations  
+            that want to use AI responsibly, transparently and in line with legal and societal expectations.
+        </p>
+    </div>
 
-<section class="cta-block">
-  <h2>Want to connect?</h2>
-  <p>Feel free to reach out to discuss your AI governance questions.</p>
-  <a href="/en/contact/" class="button">Get in touch</a>
 </section>
 
 <footer>
-  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
+    © 2025 Bas Brinkmann — Dutch Governance Advisory
 </footer>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bas Brinkmann",
+    "jobTitle": "AI Governance Consultant",
+    "url": "https://dutchgovernanceadvisory.nl/en/about",
+    "description": "Independent AI governance consultant specialising in risk assessment, transparency and AI Act compliance.",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Dutch Governance Advisory",
+        "url": "https://dutchgovernanceadvisory.nl/en"
+    }
+}
+</script>
 
 </body>
 </html>
