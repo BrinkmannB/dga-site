@@ -6,18 +6,21 @@
   <title>Diensten | Bas Brinkmann</title>
 
   <meta name="description"
-        content="AI governance, risicobeoordeling, transparantie en AI Act-compliance — heldere, onafhankelijke en uitvoerbare ondersteuning." />
+    content="AI governance, risicobeoordeling, AI Act compliance en transparantie. Onafhankelijk en praktisch advies voor overheid en financiële sector." />
+
   <link rel="canonical" href="https://dutchgovernanceadvisory.nl/diensten/" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-<header>
+<header id="site-header">
   <h1>Bas Brinkmann</h1>
-  <nav>
+  <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="main-nav">
     <ul>
-      <li><a href="/index.html">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/diensten/">Diensten</a></li>
       <li><a href="/over-bas/">Over Bas</a></li>
       <li><a href="/contact/">Contact</a></li>
@@ -28,42 +31,35 @@
 
 <section class="hero">
   <h2>Diensten</h2>
-  <p>Verantwoorde AI, risicobeoordeling en governance — helder, onafhankelijk en uitvoerbaar.</p>
+  <p>AI governance, risicobeoordeling en AI Act-compliance — helder, onafhankelijk en toepasbaar.</p>
 </section>
 
-<section>
+<section class="content-section">
   <h3>AI Governance Quick Scan</h3>
-  <p>Snel inzicht in risico’s, transparantie, governance-volwassenheid en AI Act-verplichtingen.</p>
+  <p>Een snelle, heldere analyse van risico’s, governance-volwassenheid en AI Act-verplichtingen.</p>
   <a class="button" href="/quick-scan/">Bekijk Quick Scan</a>
-</section>
 
-<section>
-  <h3>AI Act Compliance & Implementatie</h3>
-  <p>
-    Ondersteuning bij classificatie, documentatie, technische vereisten en organisatorische maatregelen
-    om te voldoen aan AI Act-artikelen, inclusief risicobeoordelingen en mitigatie.
-  </p>
-</section>
+  <h3>AI Act Compliance</h3>
+  <p>Ondersteuning bij classificatie, technische documentatie, transparantie-eisen en organisatorische maatregelen.</p>
 
-<section>
-  <h3>Governance & Risicobeoordeling</h3>
-  <p>
-    Inrichting van AI governance-structuren, audit-trails, verantwoordingsprocessen
-    en volwassenheidsmodellen.
-  </p>
-</section>
+  <h3>Risico- en Impactbeoordeling</h3>
+  <p>Onafhankelijke beoordeling van risico’s, mogelijke schade, rechtenimpact en governance-zwaktes.</p>
 
-<section>
-  <h3>Advies aan Overheid en Financiële Sector</h3>
-  <p>
-    Beleid, richtlijnen, impactanalyses en naleving van publieke AI-kaders
-    voor ministeries, gemeenten en financiële instellingen.
-  </p>
+  <h3>Governance & Beleid</h3>
+  <p>Ontwikkeling van AI governance-frameworks, verantwoordelijkheden, processen en documentatie voor verantwoorde AI.</p>
 </section>
 
 <footer>
-  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+  <p>© 2025 Bas Brinkmann — Dutch Governance Advisory</p>
 </footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.getElementById('site-header');
+    if (scrollY > 20) h.classList.add('scrolled'); else h.classList.remove('scrolled');
+  });
+  function toggleMenu(){ document.getElementById('main-nav').classList.toggle('open'); }
+</script>
 
 </body>
 </html>
