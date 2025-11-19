@@ -1,120 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#website",
-      "url": "https://dutchgovernanceadvisory.nl/en/",
-      "name": "Dutch Governance Advisory",
-      "description": "Independent AI governance consulting, AI Act Quick Scans, risk assessments and responsible AI advice for government, finance and organisations.",
-      "inLanguage": "en",
-      "publisher": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#organization",
-      "name": "Dutch Governance Advisory",
-      "url": "https://dutchgovernanceadvisory.nl/en/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/logo.svg"
-      },
-      "description": "AI governance consultancy led by Bas Brinkmann — risk assessment, AI Act compliance, transparency and responsible AI practices.",
-      "email": "info@dutchgovernanceadvisory.nl",
-      "telephone": "+31658946641",
-      "founder": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#person"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/basbrinkmann"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#person",
-      "name": "Bas Brinkmann",
-      "jobTitle": "AI Governance Consultant",
-      "url": "https://dutchgovernanceadvisory.nl/en/",
-      "image": "https://dutchgovernanceadvisory.nl/social-preview.png",
-      "description": "Expert in AI governance, risk assessment, transparency, AI Act compliance and responsible AI practices for government and financial sector.",
-      "worksFor": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#organization"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/basbrinkmann"
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#webpage",
-      "url": "https://dutchgovernanceadvisory.nl/en/",
-      "name": "AI Governance Consultant | Bas Brinkmann",
-      "inLanguage": "en",
-      "isPartOf": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#website"
-      },
-      "about": {
-        "@id": "https://dutchgovernanceadvisory.nl/en/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/social-preview.png"
-      },
-      "description": "Independent and actionable AI governance consulting: risk assessment, AI Act compliance and responsible AI guidance by Bas Brinkmann."
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://dutchgovernanceadvisory.nl/en/#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://dutchgovernanceadvisory.nl/en/"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Independent AI Governance Advisory | Dutch Governance Advisory</title>
+    <meta name="description" content="Independent, transparent and legally sound AI governance advisory for governments and organisations. Focus on risk, accountability and public values.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #111;
         }
-      ]
-    }
-  ]
-}
 
-  <link rel="alternate" hreflang="en" href="https://dutchgovernanceadvisory.nl/en/" />
-<link rel="alternate" hreflang="nl" href="https://dutchgovernanceadvisory.nl/" />
-<link rel="alternate" hreflang="x-default" href="https://dutchgovernanceadvisory.nl/en/" />
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+        }
 
-  <title>AI Governance Consultant | Bas Brinkmann</title>
-  <meta name="description" content="Independent AI governance consulting for public institutions and financial organisations — risk assessment, transparency and AI Act compliance.">
-  <link rel="canonical" href="https://dutchgovernanceadvisory.nl/en/" />
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0057FF, #00C39A);
+            color: white;
+        }
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Dutch Governance Advisory">
-  <meta property="og:title" content="AI Governance Consultant – Bas Brinkmann">
-  <meta property="og:description" content="Independent advice on AI risk, transparency, governance maturity and AI Act compliance.">
-  <meta property="og:image" content="https://dutchgovernanceadvisory.nl/social-preview.png">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/">
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-  <meta name="twitter:card" content="summary_large_image">
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
 
-  <link rel="stylesheet" href="/styles.css" />
+        .cta-button {
+            background: #fff;
+            padding: 0.9rem 1.6rem;
+            border-radius: 8px;
+            color: #0057FF;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "url":"https://dutchgovernanceadvisory.nl/en",
-    "name":"Dutch Governance Advisory"
-  }
-  </script>
+        section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .service-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
 </head>
 
 <body>
 
-<header id="site-header">
-  <h1>Ba
+<header>
+    <div style="font-weight:700;">Bas Brinkmann</div>
+    <nav>
+        <a href="/en">Home</a>
+        <a href="/en/services">Services</a>
+        <a href="/en/quick-scan">Quick Scan</a>
+        <a href="/en/about">About</a>
+        <a href="/en/contact">Contact</a>
+        <a href="/">NL</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Independent AI Governance Advisory</h1>
+    <p>Responsible, transparent and legally sound AI advice for governments and organisations. Focused on risk, accountability and public values.</p>
+    <a href="/en/contact" class="cta-button">Schedule a call</a>
+</div>
+
+<section>
+    <h2>Services</h2>
+    <div class="services-grid">
+
+        <div class="service-box">
+            <h3>AI Governance Advisory</h3>
+            <p>Clear, independent guidance on responsible AI use—legally grounded and easy to understand.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>AI Act Compliance</h3>
+            <p>Assessment of European AI Act requirements, documentation, risk management and transparency obligations.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>AI Governance Quick Scan</h3>
+            <p>Fast assessment of AI risks, data quality, explainability and governance maturity.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Transparency & Accountability</h3>
+            <p>Support with algorithm registers, impact assessments and accountability documentation.</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>About Bas</h2>
+    <p>AI governance consultant specialising in risk assessment, transparency, AI
