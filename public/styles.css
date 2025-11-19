@@ -1,6 +1,72 @@
-/* ---------------------------------------------------------
-   Global Reset & Base Styling
----------------------------------------------------------- */
+/* =========================================================
+   Bas Brinkmann — Dutch Governance Advisory
+   STYLE SYSTEM 2.0 — Clean Governance European (A2)
+   ========================================================= */
+
+/* =========================================================
+   Root Variables
+   ========================================================= */
+:root {
+  --color-primary: #0A2540;
+  --color-accent: #12C6A9;
+  --color-text: #0A0A0A;
+  --color-text-muted: #6a6a6a;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f7f9fc;
+  --color-border: #e5e8eb;
+
+  --radius: 8px;
+  --radius-card: 12px;
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.35s ease;
+
+  --container-width: 1150px;
+
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-card: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+/* =========================================================
+   Dark Mode
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b1524;
+    --color-bg-soft: #132033;
+    --color-text: #e8e8e8;
+    --color-text-muted: #c0c0c0;
+    --color-border: #1e2b42;
+    --shadow-card: 0 4px 14px rgba(0,0,0,0.45);
+  }
+}
+
+body.dark {
+  --color-bg: #0b1524;
+  --color-bg-soft: #132033;
+  --color-text: #e8e8e8;
+  --color-text-muted: #bcbcbc;
+  --color-border: #1e2b42;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  z-index: 9999;
+}
+
+/* =========================================================
+   Reset & Base
+   ========================================================= */
 
 * {
   margin: 0;
@@ -11,186 +77,266 @@
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #111;
-  background: #fff;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
-/* ---------------------------------------------------------
-   Layout Helpers
----------------------------------------------------------- */
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   Layout Utilities
+   ========================================================= */
 
 section {
-  max-width: 1100px;
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem;
 }
 
-h1, h2, h3 {
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+
+h1 {
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #0A2540;
+  color: var(--color-primary);
 }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
 p {
+  margin-bottom: 1.2rem;
   font-size: 1.05rem;
-  margin-bottom: 1rem;
+  color: var(--color-text);
 }
 
-/* ---------------------------------------------------------
-   Header / Navigation
----------------------------------------------------------- */
+/* =========================================================
+   HEADER + NAVIGATION
+   ========================================================= */
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-  position: sticky;
-  top: 0;
+  background: transparent;
+  transition: background var(--transition-medium),
+              box-shadow var(--transition-medium);
   z-index: 1000;
 }
 
-header h1 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #0A2540;
+header.scrolled {
+  background: var(--color-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #0A2540;
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: opacity 0.2s;
+  color: var(--color-primary);
 }
 
-nav ul li a:hover {
-  opacity: 0.6;
+/* Mobile Menu */
+.nav-toggle {
+  display: none;
 }
 
-/* ---------------------------------------------------------
-   Hero Banner
----------------------------------------------------------- */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--color-bg);
+    padding: 1.5rem;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    width: 200px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  nav.open ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+  }
+}
+
+/* =========================================================
+   HERO (A2 Clean Governance)
+   ========================================================= */
 
 .hero {
   width: 100%;
-  padding: 6rem 1.5rem;
+  padding: 7rem 1.5rem 5rem;
   text-align: center;
-  color: white;
-  background: linear-gradient(90deg, #0A6FF0, #12C6A9);
+  background: linear-gradient(135deg,
+              rgba(10, 37, 64, 0.04),
+              rgba(18, 198, 169, 0.12));
+  border-bottom: 1px solid var(--color-border);
 }
 
 .hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: white;
+  font-size: 3rem;
+  color: var(--color-primary);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: rgba(255,255,255,0.9);
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 1rem auto 2rem;
 }
 
-/* ---------------------------------------------------------
-   Buttons
----------------------------------------------------------- */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .button {
   display: inline-block;
-  background: #0A2540;
+  background: var(--color-primary);
   color: white;
-  padding: 0.9rem 1.6rem;
-  border-radius: 6px;
+  padding: 0.9rem 1.7rem;
+  border-radius: var(--radius);
   text-decoration: none;
-  font-size: 1.05rem;
   font-weight: 600;
-  transition: background 0.2s, transform 0.1s;
+  font-size: 1rem;
+  transition: transform var(--transition-fast),
+              background var(--transition-fast);
 }
 
 .button:hover {
-  background: #173a63;
+  background: #12345a;
   transform: translateY(-2px);
 }
 
-/* ---------------------------------------------------------
-   Feature Lists
----------------------------------------------------------- */
+/* =========================================================
+   CARD GRID (Diensten / Services / Quick Scan)
+   ========================================================= */
 
-.feature-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 2rem 0;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.feature-list li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1.05rem;
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-medium);
 }
 
-.feature-list li strong {
-  color: #0A2540;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
 }
 
-/* ---------------------------------------------------------
-   Footer
----------------------------------------------------------- */
+/* Mobile Grid */
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   QUICK SCAN — Step layout
+   ========================================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.step {
+  padding: 2rem;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-soft);
+}
+
+.step h3 {
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+@media (max-width: 800px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
+  padding: 2.5rem 1.5rem;
   text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  background: #f7f9fc;
-  border-top: 1px solid #eee;
+  background: var(--color-bg-soft);
+  border-top: 1px solid var(--color-border);
 }
 
 footer p {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
-/* ---------------------------------------------------------
-   Mobile Responsiveness
----------------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-  nav ul {
-    gap: 1rem;
-  }
-
-  .hero {
-    padding: 4rem 1rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-}
+/* END OF STYLES */
