@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-# No sensitive folders to block, all content is public-facing.
-# Cloudflare Pages serves everything under /public/ automatically.
-
 Sitemap: https://dutchgovernanceadvisory.nl/sitemap.xml
