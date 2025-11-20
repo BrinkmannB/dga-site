@@ -1,238 +1,68 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onafhankelijk AI Governance Advies | Dutch Governance Advisory</title>
-    <meta name="description" content="Helder, onafhankelijk AI governance advies voor overheid, financiële sector en maatschappelijke organisaties. Focus op risico’s, uitleg, transparantie en AI Act-naleving.">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: system-ui, sans-serif;
-            color: #0a0a0a;
-            line-height: 1.6;
-            background: #f7f9fb;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.3rem 2rem;
-            background: white;
-            border-bottom: 1px solid #e5e9ef;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            margin-left: 1.6rem;
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        /* HERO */
-        .hero {
-    padding: 3rem 2rem 4rem;
-    text-align: center;
-    background: linear-gradient(135deg, #0057FF, #00C39A);
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-
-
-        /* Subtle abstract pattern */
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 120%;
-            height: 120%;
-            background: url('/assets/pattern-light.svg');
-            background-size: 500px;
-            opacity: 0.12;
-            transform: rotate(8deg);
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            background: white;
-            color: #0057FF;
-            font-weight: 600;
-            padding: 0.85rem 1.6rem;
-            border-radius: 8px;
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 1rem;
-        }
-
-        /* USP BLOCKS */
-        .usp-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .usp {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e1e4ea;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.04);
-        }
-
-        .usp h3 {
-            margin-top: 0;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        /* SERVICES */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-box {
-            background: #fff;
-            padding: 1.8rem;
-            border-radius: 12px;
-            border: 1px solid #e4e7ed;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.04);
-        }
-
-        /* WHO */
-        .who-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e1e4ea;
-            margin-top: 2rem;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding: 2rem;
-            background: #eef1f5;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div style="font-weight:700;">Bas Brinkmann</div>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/diensten">Diensten</a>
-        <a href="/quick-scan">Quick Scan</a>
-        <a href="/over-bas">Over Bas</a>
-        <a href="/contact">Contact</a>
-        <a href="/en">EN</a>
-    </nav>
-</header>
-
-<!-- HERO -->
-<div class="hero">
+<!-- ==== HERO SECTION ==== -->
+<section class="hero">
+  <div class="hero-content">
     <h1>Onafhankelijk AI Governance Advies</h1>
-    <p>Verantwoorde, uitlegbare en juridisch solide inzet van AI voor overheid & organisaties. Transparantie, risicobeheersing en publieke waarde centraal.</p>
-    <a href="/quick-scan" class="cta-button">Doe de 1-minuut Quick Scan</a>
-</div>
-
-<!-- USP BLOCKS -->
-<div class="usp-wrapper">
-
-    <div class="usp">
-        <h3>Onafhankelijk & transparant</h3>
-        <p>Altijd eerlijk, helder advies over AI-risico’s en governance — zonder belangen.</p>
-    </div>
-
-    <div class="usp">
-        <h3>AI Act & juridische zekerheid</h3>
-        <p>Beoordeling van verplichtingen, documentatie en risico’s onder de Europese AI Act.</p>
-    </div>
-
-    <div class="usp">
-        <h3>Publieke waarden & uitlegbaarheid</h3>
-        <p>Focus op veiligheid, proportionaliteit, menselijk toezicht en verantwoord gebruik.</p>
-    </div>
-
-</div>
-
-<!-- SERVICES -->
-<section>
-    <h2>Diensten</h2>
-
-    <div class="services-grid">
-        <div class="service-box">
-            <h3>AI Governance Advies</h3>
-            <p>Beleids- en strategisch advies voor verantwoord gebruik van AI en algoritmes.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>AI Act-Compliance</h3>
-            <p>Toetsing, documentatie en begeleiding bij Europese verplichtingen.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>Quick Scan</h3>
-            <p>Snelle, objectieve beoordeling van risico’s, datagebruik, transparantie en governance.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>Risico & Uitlegbaarheid</h3>
-            <p>Analyse van bias, uitlegbaarheid, datakwaliteit en governance-volwassenheid.</p>
-        </div>
-    </div>
+    <p>Verantwoord, uitlegbaar en juridisch stevig AI-gebruik — voor organisaties die klaar zijn om volwassen keuzes te maken. 
+    Transparantie, risicobeheersing en publieke waarde staan bij mij voorop.</p>
+    <a href="/quick-scan" class="cta-button">Doe nu de 1-minuut Quick Scan</a>
+  </div>
 </section>
 
-<!-- WHO -->
-<section>
-    <h2>Voor wie werk ik?</h2>
-    <div class="who-box">
-        <p>Ik ondersteun organisaties die AI verantwoord willen inzetten:</p>
-        <ul>
-            <li>Overheid en publieke sector</li>
-            <li>Financiële sector & verzekeraars</li>
-            <li>Maatschappelijke organisaties & NGO’s</li>
-        </ul>
-    </div>
+<!-- ==== FEATURES SECTION ==== -->
+<section class="features">
+  <div class="feature-card">
+    <h3>Onafhankelijk & glashelder</h3>
+    <p>Je krijgt advies waar je echt iets aan hebt — eerlijk, scherp en zonder belangen. Ik help organisaties AI-risico’s te begrijpen, te beperken en beter te besluiten.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>AI Act & praktische juridische zekerheid</h3>
+    <p>Geen dikke rapporten die niemand leest. Wel heldere uitleg: wat moet je, wat mag je, wat kun je beter laten. 
+    Beoordeling van risicoklassen, verplichtingen, documentatie én realistische vervolgstappen.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Uitlegbaarheid & publieke waarden</h3>
+    <p>AI hoort niet in een black box. Ik help teams keuzes transparant te maken: proportionaliteit, menselijk toezicht, 
+    uitlegbaarheid en veiligheid. Zodat je AI-systemen bouwt én gebruikt op een manier die je kunt verdedigen.</p>
+  </div>
 </section>
 
-<footer>
-    © 2025 Bas Brinkmann — Dutch Governance Advisory
-</footer>
+<!-- ==== RESULTS SECTION ==== -->
+<section class="results">
+  <h2>Concreet. Uitvoerbaar. Audit-proof.</h2>
+  <p>Je krijgt geen theoretische modelletjes, maar praktische governance die werkt:</p>
 
-</body>
-</html>
+  <ul>
+    <li>Heldere rollen & verantwoordelijkheden</li>
+    <li>Minimumchecks voor veilige AI-toepassingen</li>
+    <li>Documentatie die klopt (en blijft kloppen)</li>
+    <li>Heldere routes van pilot → productie</li>
+    <li>Governance die past bij jouw organisatie, niet andersom</li>
+  </ul>
+
+  <p>Mijn werk draait om één ding: <strong>AI die verantwoord doet wat het moet doen — en niet wat je niet doorhebt.</strong></p>
+</section>
+
+<!-- ==== TARGET GROUP SECTION ==== -->
+<section class="target">
+  <h2>Voor overheid, publieke sector en organisaties die serieus met AI omgaan</h2>
+  <p>Gemeenten, ministeries, zorg, onderwijs, corporates, mkb — als AI impact heeft op mensen, dan is goede governance geen luxe. 
+  Ik help waar beleid, risico’s en dagelijkse praktijk samenkomen.</p>
+</section>
+
+<!-- ==== ABOUT BAS ==== -->
+<section class="about">
+  <h2>Over Bas Brinkmann</h2>
+  <p>AI Governance Consultant met een gezonde dosis nuchterheid. Achtergrond in beleid, risico’s, publieke waarden en duidelijke communicatie. 
+  Ik geloof niet in AI als hype, maar in AI die werkt, uitlegbaar is en juridisch klopt.</p>
+
+  <p>Ik neem je mee van “we moeten iets met AI” naar “we weten precies hoe het zit”.</p>
+</section>
+
+<!-- ==== FINAL CTA ==== -->
+<section class="final-cta">
+  <h2>Snel weten waar je staat?</h2>
+  <p>Doe de 1-minuut Quick Scan en ontvang direct helderheid over je AI-positie.</p>
+  <a href="/quick-scan" class="cta-button">Start de Quick Scan</a>
+</section>
