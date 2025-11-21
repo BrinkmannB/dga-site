@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Act Compliance Calculator</title>
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .calculator-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    .calculator-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .question {
+      margin-bottom: 30px;
+    }
+
+    .question label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .result-box {
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 10px;
+      background: #E7F1FB;
+      display: none;
+    }
+
+    .btn-calc {
+      background: #1B4E8C;
+      border: none;
+      padding: 14px 24px;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Bas Brinkmann</div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/diensten">Diensten</a></li>
+    <li><a href="/quick-scan">Quick Scan</a></li>
+    <li><a href="/ai-act">AI Act</a></li>
+    <li><a href="/over-bas">Over Bas</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/en">EN</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>AI Act Compliance Calculator</h1>
+  <p>Ontdek binnen 1 minuut onder welke risicoklasse jouw AI-systeem waarschijnlijk valt.</p>
+</section>
+
+<div class="calculator-container">
+
+  <h2>Beantwoord de 6 vragen</h2>
+
+  <div class="question">
+    <label>1. Neemt of beïnvloedt het AI-systeem beslissingen over personen?</label>
+    <select id="q1">
+      <option value="0">Nee</option>
+      <option value="2">Ja, autonoom</option>
+      <option value="1">Ja, met menselijk toezicht</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>2. Wordt het systeem gebruikt in een domein dat in de AI Act als risicovol staat (werk, zorg, overheid, rechtshandhaving, onderwijs)?</label>
+    <select id="q2">
+      <option value="0">Nee</option>
+      <option value="2">Ja</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>3. Gebruikt het systeem biometrische identificatie of categorisatie?</label>
+    <select id="q3">
+      <option value="0">Nee</option>
+      <option value="3">Ja, realtime</option>
+      <option value="2">Ja, niet-realtime</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>4. Is het model een generatief AI-model dat impact heeft op externe gebruikers?</label>
+    <select id="q4">
+      <option value="0">Nee</option>
+      <option value="1">Ja, intern gebruik</option>
+      <option value="2">Ja, extern gebruik</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>5. Is de output bepalend voor rechten, kansen of plichten van burgers of klanten?</label>
+    <select id="q5">
+      <option value="0">Nee</option>
+      <option value="2">Ja</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>6. Is er menselijke controle ingebouwd (human-in-the-loop)?</label>
+    <select id="q6">
+      <option value="0">Ja</option>
+      <option value="2">Nee</option>
+    </select>
+  </div>
+
+  <button class="btn-calc" onclick="calculate()">Bereken risicoklasse</button>
+
+  <div class="result-box" id="resultBox">
+    <h3>Resultaat</h3>
+    <p id="resultText"></p>
+  </div>
+
+</div>
+
+<script>
+  function calculate() {
+    let score = 
+      parseInt(q1.value) +
+      parseInt(q2.value) +
+      parseInt(q3.value) +
+      parseInt(q4.value) +
+      parseInt(q5.value) +
+      parseInt(q6.value);
+
+    let result = "";
+
+    if (score >= 7) {
+      result = "<strong>Waarschijnlijke classificatie: HOOG RISICO AI</strong><br><br>\
+      Dit betekent dat je verplichtingen hebt zoals:<br>\
+      • Risicoanalyse<br>\
+      • Dataset-kwaliteitsdocumentatie<br>\
+      • Transparantie & uitlegbaarheid<br>\
+      • Technische documentatie<br>\
+      • Logbestanden<br>\
+      • Menselijk toezicht<br><br>\
+      <a href='/contact' class='cta-button'>Plan een compliance-gesprek</a>";
+    } 
+    else if (score >= 3) {
+      result = "<strong>Waarschijnlijke classificatie: BEPERKT RISICO AI</strong><br><br>\
+      Verplichtingen:<br>\
+      • Transparantie<br>\
+      • Gebruikersinformatie<br><br>\
+      <a href='/contact' class='cta-button'>Bespreek vervolgstappen</a>";
+    } 
+    else {
+      result = "<strong>Waarschijnlijke classificatie: MINIMAAL RISICO AI</strong><br><br>\
+      Geen verplichtingen, wel advies: periodieke governance review.<br><br>\
+      <a href='/contact' class='cta-button'>Vraag governance-advies</a>";
+    }
+
+    document.getElementById("resultText").innerHTML = result;
+    document.getElementById("resultBox").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
 
