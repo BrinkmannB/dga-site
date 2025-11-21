@@ -1,229 +1,57 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Governance Quick Scan | Dutch Governance Advisory</title>
-    <meta name="description" content="Snelle beoordeling van AI-risico’s, governance-volwassenheid en AI Act-verplichtingen in vijf stappen en een 1-minuut Quick Scan.">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: system-ui, sans-serif;
-            line-height: 1.6;
-            color: #111;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            margin-left: 1.5rem;
-            text-decoration: none;
-            color: #111;
-            font-weight: 500;
-        }
-
-        .hero {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, #0057FF, #00C39A);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 650px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-button {
-            background: #fff;
-            color: #0057FF;
-            font-weight: 600;
-            padding: 0.9rem 1.6rem;
-            border-radius: 8px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        h2 { font-size: 2rem; margin-bottom: 1rem; }
-
-        .step {
-            background: #f8f9fa;
-            border: 1px solid #eee;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-
-        footer {
-            padding: 2rem;
-            text-align: center;
-            background: #fafafa;
-            margin-top: 3rem;
-            border-top: 1px solid #eee;
-        }
-
-        /* Quick Scan Box */
-        #scanResultNL {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            display: none;
-        }
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Scan – AI Governance in 1 minuut</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Doe de 1-minuut AI Governance Quick Scan van Bas Brinkmann en ontdek je volwassenheidsniveau en risico's.">
 </head>
 
 <body>
 
-<header>
-    <div style="font-weight:700;">Bas Brinkmann</div>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/diensten">Diensten</a>
-        <a href="/quick-scan">Quick Scan</a>
-        <a href="/over-bas">Over Bas</a>
-        <a href="/contact">Contact</a>
-        <a href="/en">EN</a>
-    </nav>
-</header>
+<nav>
+  <div class="logo">Bas Brinkmann</div>
+  <ul>
+    <li><a href="/diensten">Diensten</a></li>
+    <li><a href="/quick-scan">Quick Scan</a></li>
+    <li><a href="/over-bas">Over Bas</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/en">EN</a></li>
+  </ul>
+</nav>
 
-<div class="hero">
-    <h1>AI Governance Quick Scan</h1>
-    <p>In vijf stappen inzicht in risico’s, governance en AI Act-verplichtingen.</p>
-    <a href="#quickscan" class="cta-button">Doe de 1-minuut Quick Scan</a>
-</div>
-
-<section>
-    <h2>Hoe de Quick Scan werkt</h2>
-    <p>
-        De Quick Scan biedt binnen één week inzicht in risico’s, datagebruik, governance en verplichtingen onder de AI Act.
-    </p>
-
-    <div class="step"><h3>Stap 1 — Intake</h3><p>Korte inventarisatie van doel, datastromen en systeem.</p></div>
-    <div class="step"><h3>Stap 2 — Risico’s</h3><p>Analyse van risico’s op impact, uitlegbaarheid en publieke waarden.</p></div>
-    <div class="step"><h3>Stap 3 — AI Act Check</h3><p>Beoordeling van verplichtingen en risiconiveau.</p></div>
-    <div class="step"><h3>Stap 4 — Governance</h3><p>Inzicht in volwassenheid van processen en toezicht.</p></div>
-    <div class="step"><h3>Stap 5 — Eindrapport</h3><p>Duidelijke aanbevelingen voor vervolgstappen.</p></div>
+<section class="hero">
+  <h1>1-minuut AI Governance Quick Scan</h1>
+  <p>
+    Een snelle, scherpe check van de belangrijkste AI Governance-elementen.
+    Geen formulier, geen gedoe — gewoon inzicht.
+  </p>
 </section>
 
-<!-- 1-Minute Quick Scan — HIGH VISIBILITY -->
-<section id="quickscan">
-    <h2>Doe de 1-minuut Quick Scan</h2>
-    <p>Beantwoord vijf korte vragen voor een directe eerste inschatting.</p>
+<section style="padding:60px 40px; max-width:900px; margin:auto;">
 
-    <form id="quickScanNL">
+  <h2>Beantwoord deze 4 vragen:</h2>
 
-        <label><strong>1. Wordt het AI-systeem gebruikt om beslissingen te nemen over mensen?</strong></label><br>
-        <select name="q1" required>
-            <option value="">-- Kies een optie --</option>
-            <option value="yes">Ja</option>
-            <option value="no">Nee</option>
-        </select><br><br>
+  <ol>
+    <li>Weet je welke AI-systemen er binnen je organisatie worden gebruikt?</li>
+    <li>Is duidelijk wie waarvoor verantwoordelijk is?</li>
+    <li>Is de documentatie compleet, actueel en vindbaar?</li>
+    <li>Ken je de verplichtingen vanuit de EU AI Act?</li>
+  </ol>
 
-        <label><strong>2. Heeft het systeem impact op rechten, veiligheid of beoordeling van personen?</strong></label><br>
-        <select name="q2" required>
-            <option value="">-- Kies een optie --</option>
-            <option value="high">Ja, grote impact</option>
-            <option value="medium">Enige impact</option>
-            <option value="low">Weinig tot geen impact</option>
-        </select><br><br>
+  <h2>Wat dit zegt over jouw volwassenheid</h2>
+  <p>
+    0–1 “ja”: startpunt — risico’s onbekend  
+    <br>2–3 “ja”: groeiend — maar kwetsbaar  
+    <br>4 “ja”: volwassen — check nodig op volledigheid
+  </p>
 
-        <label><strong>3. Worden persoonsgegevens gebruikt?</strong></label><br>
-        <select name="q3" required>
-            <option value="">-- Kies een optie --</option>
-            <option value="yes">Ja</option>
-            <option value="partial">Gedeeltelijk</option>
-            <option value="no">Nee</option>
-        </select><br><br>
-
-        <label><strong>4. Is het model/dataset ingekocht bij een externe partij?</strong></label><br>
-        <select name="q4" required>
-            <option value="">-- Kies een optie --</option>
-            <option value="yes">Ja</option>
-            <option value="no">Nee</option>
-        </select><br><br>
-
-        <label><strong>5. Staat het systeem live of bijna live?</strong></label><br>
-        <select name="q5" required>
-            <option value="">-- Kies een optie --</option>
-            <option value="live">Live</option>
-            <option value="soon">Binnenkort</option>
-            <option value="no">Nee</option>
-        </select><br><br>
-
-        <button type="submit" style="
-            padding:0.7rem 1.4rem;
-            background:#0057FF;
-            border:none;
-            border-radius:8px;
-            color:white;
-            font-weight:600;
-            cursor:pointer;
-        ">Scan uitvoeren</button>
-    </form>
-
-    <div id="scanResultNL"></div>
+  <div style="margin-top:40px; text-align:center;">
+    <a href="/contact" class="cta-button">Bespreek je resultaat</a>
+  </div>
 
 </section>
-
-<footer>
-    © 2025 Bas Brinkmann — Dutch Governance Advisory
-</footer>
-
-<script>
-document.getElementById("quickScanNL").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const q1 = this.q1.value, q2 = this.q2.value, q3 = this.q3.value,
-          q4 = this.q4.value, q5 = this.q5.value;
-
-    let score = 0;
-    if (q1 === "yes") score += 2;
-    if (q2 === "high") score += 2;
-    if (q2 === "medium") score += 1;
-    if (q3 === "yes") score += 1;
-    if (q4 === "yes") score += 1;
-    if (q5 === "live" || q5 === "soon") score += 1;
-
-    let result = "";
-    if (score >= 5) {
-        result = `<h3>Resultaat: Hoog risico</h3><p>Waarschijnlijk AI Act-verplichtingen. Een volledige Quick Scan wordt aanbevolen.</p>`;
-    } else if (score >= 3) {
-        result = `<h3>Resultaat: Middelgroot risico</h3><p>Nadere beoordeling verstandig.</p>`;
-    } else {
-        result = `<h3>Resultaat: Laag risico</h3><p>Waarschijnlijk geen streng AI Act-regime.</p>`;
-    }
-
-    const box = document.getElementById("scanResultNL");
-    box.innerHTML = result;
-    box.style.display = "block";
-});
-</script>
 
 </body>
 </html>
