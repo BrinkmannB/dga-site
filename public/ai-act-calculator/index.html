@@ -3,229 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Act Compliance Calculator</title>
-
-  <!-- jsPDF voor PDF-generatie -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #F8FAFC;
-      margin: 0;
-      padding: 0;
-    }
-
-    .calculator-container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 40px;
-      background: #FFFFFF;
-      border-radius: 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-    }
-
-    h1, h2 {
-      color: #1B4E8C;
-      text-align: center;
-    }
-
-    .question {
-      margin-bottom: 30px;
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    select {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #1B4E8C;
-      border-radius: 6px;
-    }
-
-    #resultBox {
-      background: #E7F1FB;
-      border-left: 6px solid #1B4E8C;
-      padding: 20px;
-      margin-top: 30px;
-      display: none;
-      border-radius: 8px;
-    }
-
-    .cta-btn {
-      background: #1B4E8C;
-      color: white;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .download-btn {
-      background: #2E8C6A;
-      color: white;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
-      display: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-  </style>
+  <title>AI Act Compliance Calculator – Dutch Governance Advisory</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
 
-<div class="calculator-container">
+<nav>
+  <div class="logo">Bas Brinkmann</div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/diensten">Diensten</a></li>
+    <li><a href="/ai-act">AI Act</a></li>
+    <li><a href="/over-bas">Over Bas</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/en">EN</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
   <h1>AI Act Compliance Calculator</h1>
-  <p style="text-align:center;">Ontdek binnen 1 minuut onder welke risicoklasse jouw AI-systeem valt.</p>
+  <p>
+    Ontdek binnen één minuut onder welke AI Act-risicoklasse jouw AI-systeem valt — 
+    en welke verplichtingen daarbij horen. Volledig privacyvriendelijk, zonder opslag.
+  </p>
+  <a href="#calculator" class="cta-button">Start je scan</a>
+</section>
 
-  <h2>Beantwoord de 6 vragen</h2>
+<section style="padding:60px 40px; max-width:900px; margin:auto;">
+  <h2>Waarom deze tool?</h2>
+  <p>
+    Veel organisaties weten niet zeker of hun AI-toepassing onder de AI Act valt — 
+    laat staan welke verplichtingen gelden. Deze tool geeft je binnen één minuut:  
+  </p>
+  <ul>
+    <li>een voorlopige risicoclassificatie (minimaal / beperkt / hoog risico)</li>
+    <li>direct inzicht in jouw verplichtingen</li>
+    <li>een downloadbaar PDF-rapport</li>
+  </ul>
 
-  <div class="question">
-    <label>1. Neemt of beïnvloedt het systeem beslissingen over personen?</label>
-    <select id="q1">
-      <option value="0">Nee</option>
-      <option value="2">Ja, autonoom</option>
-      <option value="1">Ja, met menselijk toezicht</option>
-    </select>
-  </div>
+  <h2>Hoe werkt het?</h2>
+  <ol>
+    <li>Beantwoord 6 korte vragen</li>
+    <li>Bekijk je voorlopige classificatie</li>
+    <li>Download je rapport (PDF)</li>
+    <li>Plan indien gewenst een vervolggesprek</li>
+  </ol>
 
-  <div class="question">
-    <label>2. Wordt het systeem gebruikt in een risicovol domein (werk, zorg, overheid etc.)?</label>
-    <select id="q2">
-      <option value="0">Nee</option>
-      <option value="2">Ja</option>
-    </select>
-  </div>
+  <a href="#calculator" class="cta-button">Begin nu</a>
+</section>
 
-  <div class="question">
-    <label>3. Gebruikt het systeem biometrische identificatie?</label>
-    <select id="q3">
-      <option value="0">Nee</option>
-      <option value="3">Ja, realtime</option>
-      <option value="2">Ja, niet-realtime</option>
-    </select>
-  </div>
-
-  <div class="question">
-    <label>4. Is het model generatief AI?</label>
-    <select id="q4">
-      <option value="0">Nee</option>
-      <option value="1">Ja, intern gebruik</option>
-      <option value="2">Ja, extern gebruik</option>
-    </select>
-  </div>
-
-  <div class="question">
-    <label>5. Is de output bepalend voor rechten of kansen?</label>
-    <select id="q5">
-      <option value="0">Nee</option>
-      <option value="2">Ja</option>
-    </select>
-  </div>
-
-  <div class="question">
-    <label>6. Is er menselijk toezicht (HITL)?</label>
-    <select id="q6">
-      <option value="0">Ja</option>
-      <option value="2">Nee</option>
-    </select>
-  </div>
-
-  <button class="cta-btn" onclick="calculate()">Bereken risicoklasse</button>
-
-  <div id="resultBox">
-    <h3>Resultaat</h3>
-    <p id="resultText"></p>
-  </div>
-
-  <button class="download-btn" id="downloadBtn" onclick="generatePDF()">Download jouw rapport</button>
+<!-- HIER komt de calculator die je al hebt -->
+<div id="calculator">
+  <!-- volledige calculator HTML plaats je hier -->
 </div>
-
-
-<script>
-function calculate() {
-  let score =
-    parseInt(q1.value) +
-    parseInt(q2.value) +
-    parseInt(q3.value) +
-    parseInt(q4.value) +
-    parseInt(q5.value) +
-    parseInt(q6.value);
-
-  let riskClass = "";
-  let explanation = "";
-
-  if (score >= 7) {
-    riskClass = "HOOG RISICO AI";
-    explanation = "Verplichtingen: risk assessment, datasetkwaliteit, logfile, transparantie, menselijk toezicht.";
-  } else if (score >= 3) {
-    riskClass = "BEPERKT RISICO AI";
-    explanation = "Verplichtingen: transparantie en gebruikersinformatie.";
-  } else {
-    riskClass = "MINIMAAL RISICO AI";
-    explanation = "Geen wettelijke verplichtingen — wel periodieke governance-review aanbevolen.";
-  }
-
-  document.getElementById("resultText").innerHTML =
-    "<strong>Waarschijnlijke classificatie: " + riskClass + "</strong><br><br>" + explanation;
-
-  document.getElementById("resultBox").style.display = "block";
-  document.getElementById("downloadBtn").style.display = "block";
-
-  window.calculatedRisk = riskClass;
-}
-
-async function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  doc.setFontSize(20);
-  doc.setTextColor(30, 70, 140);
-  doc.text("AI Act Compliance Report", 14, 20);
-
-  doc.setFontSize(12);
-  doc.setTextColor(0,0,0);
-  doc.text("Gegenereerd door Dutch Governance Advisory", 14, 30);
-
-  doc.setFontSize(14);
-  doc.setTextColor(30,70,140);
-  doc.text("Risicoklasse:", 14, 45);
-
-  doc.setFontSize(12);
-  doc.text(window.calculatedRisk, 14, 53);
-
-  doc.setFontSize(14);
-  doc.text("Antwoorden:", 14, 70);
-
-  doc.setFontSize(12);
-  doc.text("Q1: " + q1.options[q1.selectedIndex].text, 14, 80);
-  doc.text("Q2: " + q2.options[q2.selectedIndex].text, 14, 88);
-  doc.text("Q3: " + q3.options[q3.selectedIndex].text, 14, 96);
-  doc.text("Q4: " + q4.options[q4.selectedIndex].text, 14, 104);
-  doc.text("Q5: " + q5.options[q5.selectedIndex].text, 14, 112);
-  doc.text("Q6: " + q6.options[q6.selectedIndex].text, 14, 120);
-
-  const date = new Date().toLocaleDateString("nl-NL");
-  doc.setFontSize(10);
-  doc.text("Datum: " + date, 14, 140);
-  doc.text("Contact: bas@dutchgovernanceadvisory.nl", 14, 148);
-
-  doc.save("AI_Act_Compliance_Report.pdf");
-}
-</script>
 
 </body>
 </html>
