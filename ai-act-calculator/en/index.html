@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Act Compliance Calculator – Bas Brinkmann</title>
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f9ff; padding: 20px; }
+    h1 { color: #012A4A; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+    label { font-weight: bold; display: block; margin-top: 20px; }
+    select, input { width: 100%; padding: 10px; margin-top: 6px; border-radius: 6px; border: 1px solid #ccc; }
+    button { margin-top: 20px; padding: 14px; background: #003d73; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #012A4A; }
+    .result { margin-top: 30px; padding: 20px; background: #e7f2ff; border-radius: 10px; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>Bas Brinkmann</strong>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/diensten/index.html">Services</a>
+    <a href="/quickscan/index.html">Quick Scan</a>
+    <a href="/kennisbank/index.html">Knowledge</a>
+    <a href="/over-bas/index.html">About Bas</a>
+    <a href="/contact/index.html">Contact</a>
+    <a href="/ai-act-calculator/en/index.html"><strong>EN</strong></a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>AI Act Compliance Calculator</h1>
+  <p>Answer a few questions and instantly see which obligations under the EU AI Act apply to your AI system.</p>
+
+  <label>1. What type of AI system is it?</label>
+  <select id="systemType">
+    <option value="">Select...</option>
+    <option value="limited">Limited-risk AI</option>
+    <option value="high">High-risk AI</option>
+    <option value="prohibited">Prohibited practices</option>
+  </select>
+
+  <label>2. Does the system affect decisions with significant impact on individuals?</label>
+  <select id="impactLevel">
+    <option value="">Select...</option>
+    <option value="low">No, minimal impact</option>
+    <option value="medium">Yes, moderate impact</option>
+    <option value="high">Yes, significant impact</option>
+  </select>
+
+  <button onclick="calculate()">Calculate obligations</button>
+
+  <div id="result" class="result" style="display:none;"></div>
+</div>
+
+<script>
+function calculate() {
+  const type = document.getElementById("systemType").value;
+  const impact = document.getElementById("impactLevel").value;
+  const result = document.getElementById("result");
+
+  if (!type || !impact) {
+    result.style.display = "block";
+    result.innerHTML = "⚠️ Please fill in all fields.";
+    return;
+  }
+
+  let message = "";
+
+  if (type === "prohibited") {
+    message = "❌ This system is considered a prohibited AI practice under the EU AI Act.";
+  } else if (type === "high") {
+    message = "⚠️ High-risk AI: extensive documentation, risk management, data governance, human oversight, and incident reporting are required.";
+  } else {
+    message = "✔️ Limited-risk AI: transparency obligations apply. Provide clear information to users.";
+  }
+
+  if (impact === "high") {
+    message += "<br><br>🔎 Additional note: high-impact systems require extra governance measures and heightened accountability.";
+  }
+
+  result.style.display = "block";
+  result.innerHTML = message;
+}
+</script>
+
+</body>
+</html>
 
