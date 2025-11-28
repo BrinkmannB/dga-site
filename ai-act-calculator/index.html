@@ -4,67 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Act Compliance Calculator – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css">
 
   <style>
-    .page-header {
+    .calculator-container {
+      max-width: 900px;
+      margin: 40px auto;
       background: #e7f2ff;
       padding: 40px;
       border-radius: 12px;
-      margin: 40px auto;
-      max-width: 1100px;
     }
 
-    .page-header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
+    h1, h2 {
+      color: #012a4a;
     }
 
-    .calculator-section {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-    }
-
-    .input-block {
-      margin-bottom: 30px;
+    .question {
+      margin-bottom: 28px;
     }
 
     label {
-      font-weight: bold;
+      font-weight: 600;
     }
 
     select, input {
-      margin-top: 8px;
-      padding: 10px;
       width: 100%;
+      padding: 12px;
+      margin-top: 8px;
       border-radius: 6px;
-      border: 1px solid #ddd;
-      font-size: 1rem;
+      border: 1px solid #aac4da;
+      font-size: 16px;
     }
 
-    .btn-primary {
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 14px 22px;
       background: #003d73;
       color: white;
-      padding: 12px 24px;
-      display: inline-block;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
       text-decoration: none;
-      border: none;
-      margin-top: 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .result-box {
-      background: #e7f2ff;
-      padding: 24px;
-      border-radius: 8px;
-      margin-top: 30px;
-      font-size: 1.1rem;
+      margin-top: 40px;
+      padding: 20px;
+      background: #d8ecff;
+      border-left: 5px solid #003d73;
+      border-radius: 6px;
       display: none;
     }
   </style>
@@ -73,7 +62,7 @@
 <body>
 
 <header>
-  <strong>Bas Brinkmann</strong>
+  <div><strong>Bas Brinkmann</strong></div>
   <nav>
     <a href="/">Home</a>
     <a href="/diensten/index.html">Diensten</a>
@@ -85,62 +74,77 @@
   </nav>
 </header>
 
-<section class="page-header">
+<div class="calculator-container">
   <h1>AI Act Compliance Calculator</h1>
-  <p>Ontdek binnen één minuut welk AI Act risicoprofiel jouw systeem heeft, inclusief verplichtingen en governance-acties.</p>
-</section>
+  <p>
+    Direct inzicht in risico’s, classificatie en verplichtingen volgens de EU AI Act.
+  </p>
 
-<section class="calculator-section">
-  <div class="input-block">
-    <label>Wat is de primaire functie van het AI-systeem?</label>
-    <select id="func">
-      <option value="">Kies…</option>
+  <!-- Q1 -->
+  <div class="question">
+    <label>1. Waarvoor wordt het AI-systeem gebruikt?</label>
+    <select id="usage">
+      <option value="">Selecteer...</option>
       <option value="biometrie">Biometrische identificatie</option>
-      <option value="toezicht">Toezicht / risicobeoordeling</option>
-      <option value="advies">Advies / ondersteuning bij besluitvorming</option>
-      <option value="volledig-automatisch">Volledig geautomatiseerde beslissingen</option>
-      <option value="laag">Laag risico (chatbot, analyse, interne tooling)</option>
+      <option value="toezicht">Publiek toezicht</option>
+      <option value="besluitvorming">Automatische besluitvorming over personen</option>
+      <option value="advies">Advies/ondersteuning zonder directe gevolgen</option>
     </select>
   </div>
 
-  <button class="btn-primary" onclick="bereken()">Bereken risicocategorie</button>
+  <!-- Q2 -->
+  <div class="question">
+    <label>2. Wat is het mogelijke effect op burgers?</label>
+    <select id="impact">
+      <option value="">Selecteer...</option>
+      <option value="hoog">Hoog risico</option>
+      <option value="medium">Middel risico</option>
+      <option value="laag">Laag risico</option>
+    </select>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question">
+    <label>3. Wie is verantwoordelijk voor het systeem?</label>
+    <select id="role">
+      <option value="">Selecteer...</option>
+      <option value="aanbieder">Aanbieder (provider)</option>
+      <option value="gebruiker">Gebruiker (deployeer)</option>
+      <option value="beide">Beide rollen</option>
+    </select>
+  </div>
+
+  <button class="btn" onclick="calculate()">Bereken verplichtingen</button>
 
   <div id="result" class="result-box"></div>
-</section>
+</div>
 
 <script>
-function bereken() {
-  const val = document.getElementById("func").value;
+function calculate() {
+  const usage = document.getElementById('usage').value;
+  const impact = document.getElementById('impact').value;
+  const role = document.getElementById('role').value;
+
+  let result = "";
+
+  if (!usage || !impact || !role) {
+    result = "<strong>Vul alle vragen in.</strong>";
+  } else {
+    result = "<strong>Resultaat:</strong><br><br>";
+
+    if (impact === "hoog" || usage === "biometrie" || usage === "toezicht") {
+      result += "Dit systeem valt waarschijnlijk onder <strong>hoog-risico AI</strong> volgens de AI Act.<br>";
+      result += "Verplichtingen: risicomanagement, data governance, logging, menselijke controle, documentatie, conformiteitstoetsing.";
+    } else if (impact === "medium") {
+      result += "Dit systeem kan <strong>beperkte risico</strong> AI zijn. Transparantieverplichtingen zijn van toepassing.";
+    } else {
+      result += "Dit systeem lijkt <strong>laag risico</strong>. Algemene beginselen en vrijwillige codes zijn relevant.";
+    }
+  }
+
   const box = document.getElementById("result");
-
-  if (!val) {
-    box.style.display = "block";
-    box.innerHTML = "⚠️ Selecteer eerst een functie.";
-    return;
-  }
-
-  let output = "";
-
-  switch(val) {
-    case "biometrie":
-      output = "<strong>Hoog risico (High-Risk)</strong><br>Strikte verplichtingen: risicomanagement, datakwaliteit, logging, menselijke controle, conformiteitstoets.";
-      break;
-    case "toezicht":
-      output = "<strong>Hoog risico</strong><br>Extra verplichtingen rondom transparantie en toezicht.";
-      break;
-    case "advies":
-      output = "<strong>Midden risico</strong><br>Transparantie, proportionaliteit en menselijke review verplicht.";
-      break;
-    case "volledig-automatisch":
-      output = "<strong>Hoog risico</strong> – afhankelijk van domein mogelijk verboden.";
-      break;
-    case "laag":
-      output = "<strong>Laag risico</strong><br>Beperkte verplichtingen. Transparantie en eerlijk gebruik aanbevolen.";
-      break;
-  }
-
   box.style.display = "block";
-  box.innerHTML = output;
+  box.innerHTML = result;
 }
 </script>
 
