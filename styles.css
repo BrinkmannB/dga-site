@@ -1,16 +1,41 @@
-/* ---- Global Styles ---- */
+/* --------------------------------------------------
+   GLOBAL BASE STYLES
+-------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: Arial, sans-serif;
   background: #f5f9ff;
   color: #012a4a;
+  line-height: 1.6;
 }
+
+h1, h2, h3 {
+  color: #012a4a;
+  margin-top: 0;
+}
+
+a {
+  color: #003d73;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------
+   HEADER + NAVIGATION
+-------------------------------------------------- */
 
 header {
   background: white;
   padding: 16px 32px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,16 +43,37 @@ header {
 
 header nav a {
   margin-left: 24px;
-  color: #012a4a;
-  text-decoration: none;
   font-weight: 600;
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
-/* ---- Hero Section ---- */
+/* --------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
+
+.btn, button.btn {
+  background: #003d73;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover, button.btn:hover {
+  background: #002b52;
+}
+
+/* --------------------------------------------------
+   HERO SECTIONS
+-------------------------------------------------- */
 
 .hero {
   max-width: 1200px;
@@ -40,42 +86,109 @@ header nav a:hover {
   align-items: center;
 }
 
-.hero img.hero-img {
+.hero-img {
   width: 280px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-/* ---- Buttons ---- */
+/* --------------------------------------------------
+   LAYOUT CONTAINERS
+-------------------------------------------------- */
 
-.btn {
-  background: #003d73;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background: #012a4a;
-}
-
-/* ---- Page Layout ---- */
-
-.page-container {
+.section-container,
+.calculator-container,
+.tools-container {
   max-width: 1100px;
   margin: 40px auto;
-  padding: 0 24px;
+  padding: 20px;
 }
 
-h1, h2, h3 {
-  color: #012a4a;
+.page-header {
+  background: #e7f2ff;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 12px;
+  max-width: 1100px;
 }
 
-p {
-  line-height: 1.6;
+/* --------------------------------------------------
+   FORMS + INPUTS (GLOBAL)
+-------------------------------------------------- */
+
+select, input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #aac4da;
+  font-size: 1rem;
+  margin-top: 8px;
 }
 
+/* --------------------------------------------------
+   CALCULATOR STYLES
+-------------------------------------------------- */
+
+.calculator-container {
+  background: #e7f2ff;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.question {
+  margin-bottom: 28px;
+}
+
+.result-box {
+  margin-top: 40px;
+  padding: 20px;
+  background: #d8ecff;
+  border-left: 5px solid #003d73;
+  border-radius: 6px;
+  display: none;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------
+   TOOLS PAGE
+-------------------------------------------------- */
+
+.tool-box {
+  background: #e7f2ff;
+  padding: 28px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tool-box h3 {
+  margin-top: 0;
+  color: #003d73;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE (MOBILE)
+-------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav a {
+    margin: 10px;
+    display: inline-block;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 20px;
+    width: 200px;
+  }
+}
