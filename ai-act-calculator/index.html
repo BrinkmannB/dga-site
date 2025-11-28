@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Act Compliance Calculator – Bas Brinkmann</title>
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Act Compliance Calculator – Dutch Governance Advisory</title>
+  <link rel="stylesheet" href="/styles.css" />
 
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f9ff; padding: 20px; }
-    h1 { color: #012A4A; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-    label { font-weight: bold; display: block; margin-top: 20px; }
-    select, input { width: 100%; padding: 10px; margin-top: 6px; border-radius: 6px; border: 1px solid #ccc; }
-    button { margin-top: 20px; padding: 14px; background: #003d73; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
-    button:hover { background: #012A4A; }
-    .result { margin-top: 30px; padding: 20px; background: #e7f2ff; border-radius: 10px; font-size: 18px; }
+    .page-header {
+      background: #e7f2ff;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .calculator-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .input-block {
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select, input {
+      margin-top: 8px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: #003d73;
+      color: white;
+      padding: 12px 24px;
+      display: inline-block;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .result-box {
+      background: #e7f2ff;
+      padding: 24px;
+      border-radius: 8px;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      display: none;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -28,67 +81,68 @@
     <a href="/kennisbank/index.html">Kennisbank</a>
     <a href="/over-bas/index.html">Over Bas</a>
     <a href="/contact/index.html">Contact</a>
-    <a href="/en/index.html">EN</a>
+    <a href="/ai-act-calculator/en/index.html">EN</a>
   </nav>
 </header>
 
-<div class="container">
+<section class="page-header">
   <h1>AI Act Compliance Calculator</h1>
-  <p>Beantwoord een paar vragen en zie direct welke verplichtingen uit de AI Act gelden voor jouw AI-systeem.</p>
+  <p>Ontdek binnen één minuut welk AI Act risicoprofiel jouw systeem heeft, inclusief verplichtingen en governance-acties.</p>
+</section>
 
-  <label>1. Wat is het type AI-systeem?</label>
-  <select id="systemType">
-    <option value="">Selecteer...</option>
-    <option value="limited">Limited-risk AI</option>
-    <option value="high">High-risk AI</option>
-    <option value="prohibited">Verboden AI-praktijken</option>
-  </select>
+<section class="calculator-section">
+  <div class="input-block">
+    <label>Wat is de primaire functie van het AI-systeem?</label>
+    <select id="func">
+      <option value="">Kies…</option>
+      <option value="biometrie">Biometrische identificatie</option>
+      <option value="toezicht">Toezicht / risicobeoordeling</option>
+      <option value="advies">Advies / ondersteuning bij besluitvorming</option>
+      <option value="volledig-automatisch">Volledig geautomatiseerde beslissingen</option>
+      <option value="laag">Laag risico (chatbot, analyse, interne tooling)</option>
+    </select>
+  </div>
 
-  <label>2. Wordt het systeem gebruikt voor beslissingen met significante impact op burgers?</label>
-  <select id="impactLevel">
-    <option value="">Selecteer...</option>
-    <option value="low">Nee, geen significante impact</option>
-    <option value="medium">Ja, matige impact</option>
-    <option value="high">Ja, duidelijke impact op rechten / kansen</option>
-  </select>
+  <button class="btn-primary" onclick="bereken()">Bereken risicocategorie</button>
 
-  <button onclick="calculate()">Bereken verplichtingen</button>
-
-  <div id="result" class="result" style="display:none;"></div>
-</div>
+  <div id="result" class="result-box"></div>
+</section>
 
 <script>
-function calculate() {
-  const type = document.getElementById("systemType").value;
-  const impact = document.getElementById("impactLevel").value;
-  const result = document.getElementById("result");
+function bereken() {
+  const val = document.getElementById("func").value;
+  const box = document.getElementById("result");
 
-  if (!type || !impact) {
-    result.style.display = "block";
-    result.innerHTML = "⚠️ Vul alle vragen in om de berekening te maken.";
+  if (!val) {
+    box.style.display = "block";
+    box.innerHTML = "⚠️ Selecteer eerst een functie.";
     return;
   }
 
-  // Basic logic
-  let message = "";
+  let output = "";
 
-  if (type === "prohibited") {
-    message = "❌ Dit AI-systeem valt onder verboden AI-praktijken volgens de AI Act.";
-  } else if (type === "high") {
-    message = "⚠️ High-risk AI: uitgebreide documentatie, risicobeheer, data governance, menselijke controle en incidentmelding verplicht.";
-  } else {
-    message = "✔️ Limited-risk AI: transparantie-eisen zijn van toepassing. Documenteer de werking voor gebruikers.";
+  switch(val) {
+    case "biometrie":
+      output = "<strong>Hoog risico (High-Risk)</strong><br>Strikte verplichtingen: risicomanagement, datakwaliteit, logging, menselijke controle, conformiteitstoets.";
+      break;
+    case "toezicht":
+      output = "<strong>Hoog risico</strong><br>Extra verplichtingen rondom transparantie en toezicht.";
+      break;
+    case "advies":
+      output = "<strong>Midden risico</strong><br>Transparantie, proportionaliteit en menselijke review verplicht.";
+      break;
+    case "volledig-automatisch":
+      output = "<strong>Hoog risico</strong> – afhankelijk van domein mogelijk verboden.";
+      break;
+    case "laag":
+      output = "<strong>Laag risico</strong><br>Beperkte verplichtingen. Transparantie en eerlijk gebruik aanbevolen.";
+      break;
   }
 
-  if (impact === "high") {
-    message += "<br><br>🔎 Extra aandacht: hoge impact → verhoogde zorgplicht & extra governance-maatregelen aanbevolen.";
-  }
-
-  result.style.display = "block";
-  result.innerHTML = message;
+  box.style.display = "block";
+  box.innerHTML = output;
 }
 </script>
 
 </body>
 </html>
-
