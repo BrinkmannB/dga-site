@@ -1,93 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Act Compliance Calculator – Bas Brinkmann</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Act Compliance Calculator – Dutch Governance Advisory</title>
   <link rel="stylesheet" href="/styles.css">
 
-  <style>
-    body { font-family: Arial, sans-serif; background: #f5f9ff; padding: 20px; }
-    h1 { color: #012A4A; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-    label { font-weight: bold; display: block; margin-top: 20px; }
-    select, input { width: 100%; padding: 10px; margin-top: 6px; border-radius: 6px; border: 1px solid #ccc; }
-    button { margin-top: 20px; padding: 14px; background: #003d73; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
-    button:hover { background: #012A4A; }
-    .result { margin-top: 30px; padding: 20px; background: #e7f2ff; border-radius: 10px; font-size: 18px; }
-  </style>
+  <!-- AUTO REDIRECT TO NL IF BROWSER LANGUAGE = DUTCH -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith("nl")) {
+        window.location.href = "/ai-act-calculator/index.html";
+      }
+    });
+  </script>
+
 </head>
+
 <body>
 
 <header>
-  <strong>Bas Brinkmann</strong>
+  <div><strong>Bas Brinkmann</strong></div>
   <nav>
-    <a href="/">Home</a>
-    <a href="/diensten/index.html">Services</a>
-    <a href="/quickscan/index.html">Quick Scan</a>
-    <a href="/kennisbank/index.html">Knowledge</a>
-    <a href="/over-bas/index.html">About Bas</a>
+    <a href="/en/index.html">Home</a>
+    <a href="/diensten/index.html">Services (NL)</a>
+    <a href="/quickscan/index.html">Quick Scan (NL)</a>
+    <a href="/kennisbank/index.html">Knowledge Base (NL)</a>
+    <a href="/over-bas/index.html">About Bas (NL)</a>
     <a href="/contact/index.html">Contact</a>
-    <a href="/ai-act-calculator/en/index.html"><strong>EN</strong></a>
+    <a href="/ai-act-calculator/index.html">NL</a>
   </nav>
 </header>
 
-<div class="container">
+<div class="calculator-container">
   <h1>AI Act Compliance Calculator</h1>
-  <p>Answer a few questions and instantly see which obligations under the EU AI Act apply to your AI system.</p>
+  <p>
+    Get instant clarity on the risk category, transparency requirements and legal obligations under the EU AI Act.
+  </p>
 
-  <label>1. What type of AI system is it?</label>
-  <select id="systemType">
-    <option value="">Select...</option>
-    <option value="limited">Limited-risk AI</option>
-    <option value="high">High-risk AI</option>
-    <option value="prohibited">Prohibited practices</option>
-  </select>
+  <!-- Q1 -->
+  <div class="question">
+    <label>1. What is the primary function of the AI system?</label>
+    <select id="usage">
+      <option value="">Select...</option>
+      <option value="biometrics">Biometric identification</option>
+      <option value="surveillance">Public surveillance / risk assessment</option>
+      <option value="decision">Automated decision-making about individuals</option>
+      <option value="advice">Advisory / decision-support</option>
+    </select>
+  </div>
 
-  <label>2. Does the system affect decisions with significant impact on individuals?</label>
-  <select id="impactLevel">
-    <option value="">Select...</option>
-    <option value="low">No, minimal impact</option>
-    <option value="medium">Yes, moderate impact</option>
-    <option value="high">Yes, significant impact</option>
-  </select>
+  <!-- Q2 -->
+  <div class="question">
+    <label>2. What is the potential impact on individuals?</label>
+    <select id="impact">
+      <option value="">Select...</option>
+      <option value="high">High risk</option>
+      <option value="medium">Medium risk</option>
+      <option value="low">Low risk</option>
+    </select>
+  </div>
 
-  <button onclick="calculate()">Calculate obligations</button>
+  <!-- Q3 -->
+  <div class="question">
+    <label>3. What is your role regarding this AI system?</label>
+    <select id="role">
+      <option value="">Select...</option>
+      <option value="provider">Provider</option>
+      <option value="user">Deployer (user)</option>
+      <option value="both">Both roles</option>
+    </select>
+  </div>
 
-  <div id="result" class="result" style="display:none;"></div>
+  <button class="btn" onclick="calculate()">Calculate AI Act obligations</button>
+
+  <div id="result" class="result-box"></div>
 </div>
 
 <script>
 function calculate() {
-  const type = document.getElementById("systemType").value;
-  const impact = document.getElementById("impactLevel").value;
-  const result = document.getElementById("result");
+  const usage = document.getElementById('usage').value;
+  const impact = document.getElementById('impact').value;
+  const role = document.getElementById('role').value;
 
-  if (!type || !impact) {
-    result.style.display = "block";
-    result.innerHTML = "⚠️ Please fill in all fields.";
-    return;
-  }
+  let result = "";
 
-  let message = "";
-
-  if (type === "prohibited") {
-    message = "❌ This system is considered a prohibited AI practice under the EU AI Act.";
-  } else if (type === "high") {
-    message = "⚠️ High-risk AI: extensive documentation, risk management, data governance, human oversight, and incident reporting are required.";
+  if (!usage || !impact || !role) {
+    result = "<strong>Please fill in all fields.</strong>";
   } else {
-    message = "✔️ Limited-risk AI: transparency obligations apply. Provide clear information to users.";
+    result = "<strong>Result:</strong><br><br>";
+
+    if (impact === "high" || usage === "biometrics" || usage === "surveillance") {
+      result += "This system is likely classified as <strong>high-risk AI</strong> under the AI Act.<br>";
+      result += "Required: risk management, data governance, logging, human oversight, documentation, conformity assessment.";
+    } else if (impact === "medium") {
+      result += "This system appears to be <strong>limited-risk AI</strong>. Transparency duties apply.";
+    } else {
+      result += "This system appears to be <strong>low-risk AI</strong>. Voluntary codes and transparency recommended.";
+    }
   }
 
-  if (impact === "high") {
-    message += "<br><br>🔎 Additional note: high-impact systems require extra governance measures and heightened accountability.";
-  }
-
-  result.style.display = "block";
-  result.innerHTML = message;
+  const box = document.getElementById("result");
+  box.style.display = "block";
+  box.innerHTML = result;
 }
 </script>
 
 </body>
 </html>
-
