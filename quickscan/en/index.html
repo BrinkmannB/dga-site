@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial=1.0" />
+  <title>AI Governance Quick Scan – Dutch Governance Advisory</title>
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- AUTO REDIRECT IF BROWSER LANGUAGE = NL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith("nl")) {
+        window.location.href = "/quickscan/index.html";
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div><strong>Bas Brinkmann</strong></div>
+  <nav>
+    <a href="/en/index.html">Home</a>
+    <a href="/quickscan/en/index.html">Quick Scan</a>
+    <a href="/ai-act-calculator/en/index.html">AI Act Calculator</a>
+    <a href="/tools/en/index.html">Tools</a>
+    <a href="/contact/index.html">Contact</a>
+    <a href="/quickscan/index.html">NL</a>
+  </nav>
+</header>
+
+<div class="calculator-container">
+  <h1>AI Governance Quick Scan</h1>
+  <p>
+    Assess the maturity, transparency and risks of your AI system or project.
+    This Quick Scan offers a first indication aligned with EU AI Act criteria.
+  </p>
+
+  <div class="question">
+    <label>1. Does your organisation have a formal AI governance process?</label>
+    <select id="q1">
+      <option value="">Select...</option>
+      <option value="high">Fully established</option>
+      <option value="medium">Partially</option>
+      <option value="low">Not yet</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>2. Is there insight into datasets, provenance and data quality?</label>
+    <select id="q2">
+      <option value="">Select...</option>
+      <option value="high">Extensive</option>
+      <option value="medium">Partial</option>
+      <option value="low">Limited or none</option>
+    </select>
+  </div>
+
+  <div class="question">
+    <label>3. Is there human oversight over AI-driven decisions?</label>
+    <select id="q3">
+      <option value="">Select...</option>
+      <option value="high">Always</option>
+      <option value="medium">Sometimes</option>
+      <option value="low">Rarely or never</option>
+    </select>
+  </div>
+
+  <button class="btn" onclick="scan()">View results</button>
+
+  <div id="result" class="result-box"></div>
+</div>
+
+<script>
+function scan() {
+  const q1 = document.getElementById("q1").value;
+  const q2 = document.getElementById("q2").value;
+  const q3 = document.getElementById("q3").value;
+
+  const box = document.getElementById("result");
+
+  if (!q1 || !q2 || !q3) {
+    box.style.display = "block";
+    box.innerHTML = "<strong>Please answer all questions.</strong>";
+    return;
+  }
+
+  let score = 0;
+  [q1, q2, q3].forEach(q => {
+    if (q === "high") score += 2;
+    if (q === "medium") score += 1;
+  });
+
+  let message = "<strong>Quick Scan Result:</strong><br><br>";
+
+  if (score >= 5) {
+    message += "🔵 <strong>Strong foundations</strong><br>Your governance approach is solid. Recommended: AI Act readiness review.";
+  } else if (score >= 3) {
+    message += "🟡 <strong>Moderate</strong><br>Some foundations are present; strengthening needed for AI Act compliance.";
+  } else {
+    message += "🔴 <strong>Vulnerable</strong><br>There are significant weaknesses. Recommended: governance assessment.";
+  }
+
+  box.style.display = "block";
+  box.innerHTML = message;
+}
+</script>
+
+</body>
+</html>
 
