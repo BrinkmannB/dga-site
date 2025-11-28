@@ -1,1 +1,81 @@
+/* ---- Global Styles ---- */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f9ff;
+  color: #012a4a;
+}
+
+header {
+  background: white;
+  padding: 16px 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 24px;
+  color: #012a4a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Hero Section ---- */
+
+.hero {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #e7f2ff;
+  padding: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero img.hero-img {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Buttons ---- */
+
+.btn {
+  background: #003d73;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #012a4a;
+}
+
+/* ---- Page Layout ---- */
+
+.page-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  color: #012a4a;
+}
+
+p {
+  line-height: 1.6;
+}
 
