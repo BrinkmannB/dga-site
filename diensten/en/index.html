@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – Dutch Governance Advisory</title>
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- AUTO REDIRECT TO NL VERSION IF BROWSER LANGUAGE IS DUTCH -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = navigator.language || navigator.userLanguage;
+      if (lang.startsWith("nl")) {
+        window.location.href = "/diensten/index.html";
+      }
+    });
+  </script>
+
+  <style>
+    .service-box {
+      background: #e7f2ff;
+      padding: 28px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    }
+    .service-box h3 {
+      margin-top: 0;
+      color: #003d73;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div><strong>Bas Brinkmann</strong></div>
+  <nav>
+    <a href="/en/index.html">Home</a>
+    <a href="/diensten/en/index.html">Services</a>
+    <a href="/quickscan/en/index.html">Quick Scan</a>
+    <a href="/ai-act-calculator/en/index.html">AI Act Calculator</a>
+    <a href="/tools/en/index.html">Tools</a>
+    <a href="/contact/index.html">Contact</a>
+    <a href="/diensten/index.html">NL</a>
+  </nav>
+</header>
+
+<section class="section-container">
+  <h1>Services</h1>
+  <p>
+    I help organisations develop AI systems that are responsible, transparent and legally sound —
+    fully aligned with the EU AI Act, public values, and fundamental rights.
+  </p>
+
+  <div class="service-box">
+    <h3>⚖️ AI Act Readiness & Compliance Support</h3>
+    <p>
+      Assessment of your AI systems under the EU AI Act, including risk classification, 
+      obligations, documentation and governance recommendations.
+    </p>
+  </div>
+
+  <div class="service-box">
+    <h3>🔍 AI Governance Quick Scan (1 minute)</h3>
+    <p>
+      A fast initial assessment of your organisation’s AI risks, transparency and governance maturity.
+    </p>
+    <a class="btn" href="/quickscan/en/index.html">Start Quick Scan</a>
+  </div>
+
+  <div class="service-box">
+    <h3>📘 AI Policy & Governance Framework Development</h3>
+    <p>
+      Support in drafting AI governance frameworks, roles, responsibilities, oversight,
+      human control and accountability structures.
+    </p>
+  </div>
+
+  <div class="service-box">
+    <h3>📊 AI Act Compliance Calculator</h3>
+    <p>
+      Determine the risk category of your system under the AI Act within one minute.
+    </p>
+    <a class="btn" href="/ai-act-calculator/en/index.html">Open the Calculator</a>
+  </div>
+</section>
+
+</body>
+</html>
 
