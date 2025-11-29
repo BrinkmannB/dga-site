@@ -1,118 +1,53 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Governance Quick Scan – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css">
-
-  <!-- AUTO REDIRECT TO EN IF BROWSER LANGUAGE = EN -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("en")) {
-        window.location.href = "/quickscan/en/index.html";
-      }
-    });
-  </script>
+  <!-- COMPLETE HEAD -->
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/diensten/index.html">Diensten</a>
-    <a href="/quickscan/index.html">Quick Scan</a>
-    <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
-    <a href="/tools/index.html">Tools</a>
-    <a href="/kennisbank/index.html">Kennisbank</a>
-    <a href="/over-bas/index.html">Over Bas</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/quickscan/en/index.html">EN</a>
-  </nav>
+<header class="navbar">
+  <div class="container">
+    <div class="logo">Bas Brinkmann</div>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/ai-act-calculator.html">AI Act Calculator</a>
+      <a href="/kennisbank.html">Kennisbank</a>
+      <a href="/over-bas.html">Over Bas</a>
+      <a href="/contact.html" class="btn-primary">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="calculator-container">
+<section class="page-header">
   <h1>AI Governance Quick Scan</h1>
-  <p>
-    Beoordeel binnen één minuut de volwassenheid, transparantie en risico’s van jouw AI-systeem
-    of AI-project. Deze Quick Scan geeft een eerste indicatie volgens de EU AI Act criteria.
-  </p>
+  <p>Snelle beoordeling van risico’s, compliance, documentatie en governance t.o.v. de EU AI Act.</p>
+</section>
 
-  <!-- VRAAG 1 -->
-  <div class="question">
-    <label>1. Heeft jullie organisatie een formeel AI-governanceproces?</label>
-    <select id="q1">
-      <option value="">Selecteer...</option>
-      <option value="hoog">Ja, volledig ingericht</option>
-      <option value="medium">Gedeeltelijk</option>
-      <option value="laag">Nee</option>
-    </select>
-  </div>
+<section class="container">
+  <h2>Wat krijg je?</h2>
+  <ul>
+    <li>Beoordeling van AI-risico’s op 7 governance-domeinen</li>
+    <li>Inzicht in verplichtingen onder de EU AI Act</li>
+    <li>Advies over noodzakelijke documentatie & processen</li>
+    <li>Concrete vervolgstappen per risicogebied</li>
+  </ul>
 
-  <!-- VRAAG 2 -->
-  <div class="question">
-    <label>2. Is er inzicht in gebruikte datasets, herkomst en datakwaliteit?</label>
-    <select id="q2">
-      <option value="">Selecteer...</option>
-      <option value="hoog">Uitgebreid inzicht</option>
-      <option value="medium">Gedeeltelijk</option>
-      <option value="laag">Beperkt of geen inzicht</option>
-    </select>
-  </div>
+  <h2>Start de Quick Scan</h2>
+  <p>Laat hieronder uw gegevens achter. U ontvangt binnen 48 uur een persoonlijke analyse.</p>
 
-  <!-- VRAAG 3 -->
-  <div class="question">
-    <label>3. Is er menselijke controle op AI-besluitvorming?</label>
-    <select id="q3">
-      <option value="">Selecteer...</option>
-      <option value="hoog">Altijd</option>
-      <option value="medium">Soms</option>
-      <option value="laag">Niet of nauwelijks</option>
-    </select>
-  </div>
+  <form action="https://formspree.io/f/mzzpnwnk" method="POST">
+    <input type="text" name="naam" placeholder="Uw naam" required>
+    <input type="email" name="email" placeholder="Uw e-mail" required>
+    <textarea name="bericht" placeholder="Beschrijf uw AI-systeem of vraagstuk" rows="5"></textarea>
+    <button type="submit" class="btn-primary">Verstuur Quick Scan aanvraag</button>
+  </form>
+</section>
 
-  <button class="btn" onclick="scan()">Bekijk resultaat</button>
-
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function scan() {
-  const q1 = document.getElementById("q1").value;
-  const q2 = document.getElementById("q2").value;
-  const q3 = document.getElementById("q3").value;
-
-  const box = document.getElementById("result");
-
-  if (!q1 || !q2 || !q3) {
-    box.style.display = "block";
-    box.innerHTML = "<strong>Beantwoord alle vragen.</strong>";
-    return;
-  }
-
-  let score = 0;
-  [q1, q2, q3].forEach(q => {
-    if (q === "hoog") score += 2;
-    if (q === "medium") score += 1;
-  });
-
-  let message = "<strong>Resultaat Quick Scan:</strong><br><br>";
-
-  if (score >= 5) {
-    message += "🔵 <strong>Goed op weg</strong><br>Jullie governance staat sterk. Aanbevolen: AI Act readiness check.";
-  } else if (score >= 3) {
-    message += "🟡 <strong>Middelmatig</strong><br>Er is basis, maar versterking is nodig voor AI Act compliance.";
-  } else {
-    message += "🔴 <strong>Kwetsbaar</strong><br>Risico's zijn hoog. Aanbevolen: AI governance assessment.";
-  }
-
-  box.style.display = "block";
-  box.innerHTML = message;
-}
-</script>
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
 
 </body>
 </html>
