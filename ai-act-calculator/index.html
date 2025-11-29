@@ -1,152 +1,45 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Act Compliance Calculator – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css">
-
-  <style>
-    .calculator-container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #e7f2ff;
-      padding: 40px;
-      border-radius: 12px;
-    }
-
-    h1, h2 {
-      color: #012a4a;
-    }
-
-    .question {
-      margin-bottom: 28px;
-    }
-
-    label {
-      font-weight: 600;
-    }
-
-    select, input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border-radius: 6px;
-      border: 1px solid #aac4da;
-      font-size: 16px;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 14px 22px;
-      background: #003d73;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .result-box {
-      margin-top: 40px;
-      padding: 20px;
-      background: #d8ecff;
-      border-left: 5px solid #003d73;
-      border-radius: 6px;
-      display: none;
-    }
-  </style>
+  <!-- COMPLETE HEAD -->
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/diensten/index.html">Diensten</a>
-    <a href="/quickscan/index.html">Quick Scan</a>
-    <a href="/kennisbank/index.html">Kennisbank</a>
-    <a href="/over-bas/index.html">Over Bas</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/ai-act-calculator/en/index.html">EN</a>
-  </nav>
+<header class="navbar">
+  <div class="container">
+    <div class="logo">Bas Brinkmann</div>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/quickscan.html">Quick Scan</a>
+      <a href="/kennisbank.html">Kennisbank</a>
+      <a href="/over-bas.html">Over Bas</a>
+      <a href="/contact.html" class="btn-primary">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="calculator-container">
-  <h1>AI Act Compliance Calculator</h1>
-  <p>
-    Direct inzicht in risico’s, classificatie en verplichtingen volgens de EU AI Act.
-  </p>
+<section class="page-header">
+  <h1>AI Act Calculator</h1>
+  <p>Bepaal binnen enkele minuten welke verplichtingen op uw AI-systeem van toepassing zijn.</p>
+</section>
 
-  <!-- Q1 -->
-  <div class="question">
-    <label>1. Waarvoor wordt het AI-systeem gebruikt?</label>
-    <select id="usage">
-      <option value="">Selecteer...</option>
-      <option value="biometrie">Biometrische identificatie</option>
-      <option value="toezicht">Publiek toezicht</option>
-      <option value="besluitvorming">Automatische besluitvorming over personen</option>
-      <option value="advies">Advies/ondersteuning zonder directe gevolgen</option>
-    </select>
+<section class="container">
+
+  <h2>Hoe werkt het?</h2>
+  <p>Beantwoord een aantal korte vragen en ontvang een direct overzicht van relevante verplichtingen, documentatie-eisen en risicoklassen onder de EU AI Act.</p>
+
+  <div class="service">
+    <h3>AI Act Calculator placeholder</h3>
+    <p>Hier komt jouw interactieve tool. Ik kan hem voor je bouwen zodra je het format aangeeft (dropdowns, checkboxes, stappenflow, etc.).</p>
   </div>
 
-  <!-- Q2 -->
-  <div class="question">
-    <label>2. Wat is het mogelijke effect op burgers?</label>
-    <select id="impact">
-      <option value="">Selecteer...</option>
-      <option value="hoog">Hoog risico</option>
-      <option value="medium">Middel risico</option>
-      <option value="laag">Laag risico</option>
-    </select>
-  </div>
+</section>
 
-  <!-- Q3 -->
-  <div class="question">
-    <label>3. Wie is verantwoordelijk voor het systeem?</label>
-    <select id="role">
-      <option value="">Selecteer...</option>
-      <option value="aanbieder">Aanbieder (provider)</option>
-      <option value="gebruiker">Gebruiker (deployeer)</option>
-      <option value="beide">Beide rollen</option>
-    </select>
-  </div>
-
-  <button class="btn" onclick="calculate()">Bereken verplichtingen</button>
-
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function calculate() {
-  const usage = document.getElementById('usage').value;
-  const impact = document.getElementById('impact').value;
-  const role = document.getElementById('role').value;
-
-  let result = "";
-
-  if (!usage || !impact || !role) {
-    result = "<strong>Vul alle vragen in.</strong>";
-  } else {
-    result = "<strong>Resultaat:</strong><br><br>";
-
-    if (impact === "hoog" || usage === "biometrie" || usage === "toezicht") {
-      result += "Dit systeem valt waarschijnlijk onder <strong>hoog-risico AI</strong> volgens de AI Act.<br>";
-      result += "Verplichtingen: risicomanagement, data governance, logging, menselijke controle, documentatie, conformiteitstoetsing.";
-    } else if (impact === "medium") {
-      result += "Dit systeem kan <strong>beperkte risico</strong> AI zijn. Transparantieverplichtingen zijn van toepassing.";
-    } else {
-      result += "Dit systeem lijkt <strong>laag risico</strong>. Algemene beginselen en vrijwillige codes zijn relevant.";
-    }
-  }
-
-  const box = document.getElementById("result");
-  box.style.display = "block";
-  box.innerHTML = result;
-}
-</script>
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
 
 </body>
 </html>
