@@ -1,95 +1,56 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Over Bas – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css">
-
-  <!-- AUTO REDIRECT TO EN IF BROWSER LANGUAGE IS EN -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("en")) {
-        window.location.href = "/over-bas/en/index.html";
-      }
-    });
-  </script>
-
-  <style>
-    .about-section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 30px;
-      background: #e7f2ff;
-      border-radius: 12px;
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .about-section img {
-      width: 280px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .about-text {
-      flex: 1;
-    }
-    .about-text p {
-      margin-bottom: 16px;
-    }
-  </style>
+  <!-- COMPLETE HEAD -->
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/diensten/index.html">Diensten</a>
-    <a href="/quickscan/index.html">Quick Scan</a>
-    <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
-    <a href="/tools/index.html">Tools</a>
-    <a href="/kennisbank/index.html">Kennisbank</a>
-    <a href="/over-bas/index.html">Over Bas</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/over-bas/en/index.html">EN</a>
-  </nav>
+<header class="navbar">
+  <div class="container">
+    <div .class="logo">Bas Brinkmann</div>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/kennisbank.html">Kennisbank</a>
+      <a href="/contact.html" class="btn-primary">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section class="about-section">
-  <div class="about-text">
-    <h1>Over Bas Brinkmann</h1>
-    <p>
-      Ik ben AI Governance Consultant met een focus op overheid, publieke instellingen 
-      en maatschappelijke organisaties. Ik help bij het verantwoord, transparant en juridisch 
-      onderbouwd toepassen van AI, volledig in lijn met de EU AI Act.
-    </p>
-
-    <p>
-      Mijn werk draait om helderheid: welke risico’s zijn er, welke verplichtingen gelden, 
-      en wat betekent de AI Act concreet voor jouw organisatie en governance-structuren?
-    </p>
-
-    <p>
-      Ik combineer analytisch vermogen met een praktische, mensgerichte aanpak. 
-      Voor mij draait AI-governance niet alleen om compliance, maar om vertrouwen: 
-      burgers moeten erop kunnen rekenen dat technologie eerlijk, uitlegbaar en veilig is.
-    </p>
-
-    <p>
-      Ik denk graag mee over strategie, beleid, implementatie, risico-classificatie en 
-      governance-frameworks. Van first scan tot volledige AI Act readiness.
-    </p>
-
-    <a class="btn" href="/diensten/index.html">Bekijk diensten</a>
-    <a class="btn" style="margin-left: 10px;" href="/tools/index.html">AI Governance Tools</a>
-  </div>
-
-  <img src="/assets/images/basbrinkmannwebsitedga.jpg" alt="Foto van Bas Brinkmann">
+<section class="page-header">
+  <h1>Over Bas Brinkmann</h1>
+  <p>AI Governance Consultant voor overheid, publieke sector en maatschappelijke organisaties.</p>
 </section>
+
+<section class="container">
+  <img src="/assets/bas-hero.jpg" class="hero-image" alt="Portret Bas Brinkmann">
+
+  <h2>Mijn missie</h2>
+  <p>
+    Ik help organisaties om AI verantwoord, uitlegbaar en juridisch correct in te zetten.  
+    Daarbij combineer ik beleid, ethiek en juridische kaders — altijd in lijn met de EU AI Act, publieke waarden en grondrechten.
+  </p>
+
+  <h2>Achtergrond</h2>
+  <p>
+    Ik werk op het snijvlak van AI, governance en publieke besluitvorming.  
+    Mijn expertise komt voort uit praktijkcases, academische opleiding en ervaring in het begeleiden van organisaties bij digitale transformatie.
+  </p>
+
+  <h2>Waar ik het verschil maak</h2>
+  <ul>
+    <li>Uitlegbaarheid en ethiek altijd centraal</li>
+    <li>Juridisch correct werken zonder “papierwerk-coma”</li>
+    <li>Heldere governance, duidelijke verantwoordelijkheid</li>
+    <li>Praktisch advies — geen consultancy-jargon</li>
+  </ul>
+
+</section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
 
 </body>
 </html>
-
