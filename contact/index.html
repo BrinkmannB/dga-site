@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Dutch Governance Advisory</title>
-    <link rel="stylesheet" href="../styles.css" />
+  <!-- COMPLETE HEAD -->
 </head>
+
 <body>
 
-<header class="topnav">
+<header class="navbar">
+  <div class="container">
     <div class="logo">Bas Brinkmann</div>
     <nav>
-        <a href="/">Home</a>
-        <a href="/diensten/">Diensten</a>
-        <a href="/quickscan/">Quick Scan</a>
-        <a href="/kennisbank/">Kennisbank</a>
-        <a href="/over-bas/">Over Bas</a>
-        <a class="active" href="/contact/">Contact</a>
-        <a href="/contact/en/">EN</a>
+      <a href="/index.html">Home</a>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/kennisbank.html">Kennisbank</a>
+      <a href="/over-bas.html">Over Bas</a>
     </nav>
+  </div>
 </header>
 
-<main class="page-container">
+<section class="page-header">
+  <h1>Contact</h1>
+  <p>Plan een kennismaking of stel uw vraag. Ik reageer meestal dezelfde dag.</p>
+</section>
 
-    <h1>Contact</h1>
-    <p class="intro-text">Plan een kennismaking of stel direct je vraag.</p>
+<section class="container">
 
-    <!-- Sectie: E-mail -->
-    <section class="contact-card">
-        <h2>E-mail</h2>
-        <p>Heb je een vraag over AI governance, de AI Act of ethische toetsing? Je kunt me altijd mailen.</p>
-        <a href="mailto:bas@dutchgovernanceadvisory.nl" class="button-primary">Stuur een e-mail</a>
-    </section>
+  <form action="https://formspree.io/f/mzzpnwnk" method="POST">
+    <input type="text" name="naam" placeholder="Uw naam" required>
+    <input type="email" name="email" placeholder="Uw e-mail" required>
+    <textarea name="bericht" placeholder="Uw bericht" rows="6" required></textarea>
+    <button type="submit" class="btn-primary">Verstuur bericht</button>
+  </form>
 
-    <!-- Sectie: Gratis kennismaking -->
-    <section class="contact-card">
-        <h2>Gratis kennismaking (20 min)</h2>
-        <p>Wil je sparren over AI governance of de AI Act? Boek een gratis intake van 20 minuten.</p>
+</section>
 
-        <div class="calendar-placeholder">
-            <p>De afsprakenmodule verschijnt hier zodra je Calendly koppelt.</p>
-        </div>
-    </section>
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
 
-    <!-- Sectie: Waar ik organisaties bij help -->
-    <section class="contact-card">
-        <h2>Waar ik organisaties bij help</h2>
-        <ul>
-            <li>Implementatie van de AI Act</li>
-            <li>Governanc
+</body>
+</html>
