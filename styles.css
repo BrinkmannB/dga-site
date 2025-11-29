@@ -192,3 +192,72 @@ select, input, textarea {
     width: 200px;
   }
 }
+/* CONTACTPAGINA STYLING */
+
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #1d3b5f;
+}
+
+.contact-block {
+    background: #f6f9fc;
+    border: 1px solid #e1e8f0;
+    border-radius: 8px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.contact-block h2 {
+    margin-top: 0;
+    color: #0f2748;
+}
+
+.button-primary {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    background: #0f427e;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+}
+
+.button-primary:hover {
+    background: #003b6a;
+}
+
+.calendar-placeholder {
+    background: #ffffff;
+    border: 1px dashed #b7c3d1;
+    padding: 1.2rem;
+    border-radius: 6px;
+    color: #5c6b7a;
+    font-style: italic;
+    text-align: center;
+}
+
+.service-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.3rem;
+    position: relative;
+}
+
+.service-list li::before {
+    content: "•";
+    color: #0f427e;
+    position: absolute;
+    left: 0;
+}
