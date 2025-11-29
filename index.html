@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bas Brinkmann – AI Governance Consultant</title>
-  <link rel="stylesheet" href="/styles.css">
-
-  <!-- AUTO REDIRECT TO EN IF BROWSER HAS ENGLISH LANGUAGE -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("en")) {
-        window.location.href = "/en/index.html";
-      }
-    });
-  </script>
+  <!-- COMPLETE HEAD (die ik eerder gaf) -->
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/diensten/index.html">Diensten</a>
-    <a href="/quickscan/index.html">Quick Scan</a>
-    <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
-    <a href="/tools/index.html">Tools</a>
-    <a href="/kennisbank/index.html">Kennisbank</a>
-    <a href="/over-bas/index.html">Over Bas</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/en/">EN</a>
-  </nav>
+<header class="navbar">
+  <div class="container">
+    <div class="logo">Bas Brinkmann</div>
+    <nav>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/quickscan.html">Quick Scan</a>
+      <a href="/ai-act-calculator.html">AI Act Calculator</a>
+      <a href="/kennisbank.html">Kennisbank</a>
+      <a href="/over-bas.html">Over Bas</a>
+      <a href="/contact.html" class="btn-primary">Contact</a>
+      <a href="/en/index.html">EN</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <div>
+  <div class="container">
     <h1>AI Governance met richting & helderheid</h1>
-    <p>
-      Ik help overheden, publieke instellingen en maatschappelijke organisaties
-      om AI verantwoord, uitlegbaar en juridisch correct toe te passen — volledig
-      in lijn met de EU AI Act, publieke waarden en grondrechten.
-    </p>
-
-    <a class="btn" href="/quickscan/index.html">Doe de AI Governance Quick Scan</a>
+    <p>Ik help overheden en publieke instellingen om AI verantwoord, uitlegbaar en juridisch correct toe te passen — volledig in lijn met de EU AI Act, publieke waarden en grondrechten.</p>
+    <a href="/quickscan.html" class="btn-primary">Doe de AI Governance Quick Scan</a>
+    <img src="/assets/bas-hero.jpg" class="hero-image" alt="Bas Brinkmann portret">
   </div>
-
-  <img class="hero-img" src="/assets/images/basbrinkmannwebsitedga.jpg" alt="Foto van Bas Brinkmann">
 </section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
 
 </body>
 </html>
