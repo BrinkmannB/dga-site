@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bas Brinkmann – AI Governance Consultant</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Governance with Clarity & Direction – Dutch Governance Advisory</title>
+    <link rel="stylesheet" href="../styles.css" />
 
-  <!-- AUTO REDIRECT TO NL IF BROWSER LANGUAGE IS DUTCH -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("nl")) {
-        window.location.href = "/index.html";
-      }
-    });
-  </script>
+    <script>
+        // Option A: Only redirect Dutch browser users if they did NOT click “EN”
+        const fromClick = window.location.search.includes("lang=en");
+
+        window.onload = function () {
+            var userLang = navigator.language || navigator.userLanguage;
+
+            // Auto-redirect Dutch browsers, unless user explicitly clicked EN
+            if (!fromClick && userLang.startsWith('nl')) {
+                window.location.href = "/";
+            }
+        };
+    </script>
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/en/index.html">Home</a>
-    <a href="/diensten/index.html">Services (NL)</a>
-    <a href="/quickscan/index.html">Quick Scan (NL)</a>
-    <a href="/ai-act-calculator/en/index.html">AI Act Calculator</a>
-    <a href="/tools/en/index.html">Tools</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/index.html">NL</a>
-  </nav>
+<header class="topnav">
+    <div class="logo">Bas Brinkmann</div>
+    <nav>
+        <a href="/en/">Home</a>
+        <a href="/en/diensten/">Services</a>
+        <a href="/en/quickscan/">Quick Scan</a>
+        <a href="/en/ai-act-calculator/">AI Act Calculator</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/knowledge/">Knowledge Base</a>
+        <a href="/en/over-bas/">About Bas</a>
+        <a href="/contact/en/?lang=en">Contact</a>
+        <a href="/?lang=nl">NL</a>
+    </nav>
 </header>
 
+<main>
+
 <section class="hero">
-  <div>
-    <h1>AI Governance with Clarity & Direction</h1>
-    <p>
-      I support governments, public organisations and NGOs in developing 
-      responsible, transparent and legally sound AI — fully aligned with 
-      the EU AI Act, public values and fundamental rights.
-    </p>
+    <div>
+        <h1>AI Governance with Clarity & Direction</h1>
+        <p>
+            I support governments, public institutions and civil society organisations 
+            in applying AI responsibly, transparently and lawfully — fully aligned with the EU AI Act, 
+            public values and fundamental rights.
+        </p>
 
-    <p>
-      Clear governance. Reduced risks. More trust. 
-      Practical guidance you can apply immediately.
-    </p>
+        <a href="/en/quickscan/?lang=en" class="button-primary">
+            Start the AI Governance Quick Scan
+        </a>
+    </div>
 
-    <a class="btn" href="/ai-act-calculator/en/index.html">Start AI Act Calculator</a>
-  </div>
-
-  <img class="hero-img" src="/assets/images/basbrinkmannwebsitedga.jpg" alt="Photo of Bas Brinkmann">
+    <img src="/assets/bas-hero.jpg" alt="Bas Brinkmann" class="hero-image" />
 </section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Dutch Governance Advisory – Bas Brinkmann</p>
+</footer>
 
 </body>
 </html>
-
