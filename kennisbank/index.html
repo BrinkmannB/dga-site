@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <!-- COMPLETE HEAD -->
-  <title>Kennisbank – Dutch Governance Advisory</title>
-  <meta name="description" content="Kennisbank met artikelen over AI Governance, de EU AI Act, uitlegbaarheid, risicobeheer en publieke waarden.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kennisbank AI Governance – EU AI Act, Ethiek & Uitlegbaarheid</title>
+  <meta name="description" content="Verdiep u in AI governance, EU AI Act verplichtingen, ethiek, uitlegbaarheid en risicobeoordeling. Artikelen voor overheden en publieke organisaties.">
+  <meta name="keywords" content="AI governance kennisbank, EU AI Act uitleg, algoritmes overheid, ethiek, uitlegbaarheid, risicobeoordeling">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kennisbank AI Governance">
+  <meta property="og:description" content="Artikelen over AI governance, ethiek, EU AI Act en uitlegbaarheid voor de publieke sector.">
+  <meta property="og:image" content="/assets/bas-hero.jpg">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/kennisbank/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Structured Data: Knowledge Base -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Kennisbank AI Governance",
+    "url": "https://dutchgovernanceadvisory.nl/kennisbank/",
+    "about": "AI Governance, EU AI Act, Ethiek, Uitlegbaarheid, Publieke sector algoritmes"
+  }
+  </script>
 </head>
 
 <body>
@@ -13,26 +41,44 @@
     <div class="logo">Bas Brinkmann</div>
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/diensten.html">Diensten</a>
-      <a href="/quickscan.html">Quick Scan</a>
-      <a href="/ai-act-calculator.html">AI Act Calculator</a>
-      <a href="/over-bas.html">Over Bas</a>
-      <a href="/contact.html" class="btn-primary">Contact</a>
+      <a href="/diensten/index.html">Diensten</a>
+      <a href="/quickscan/index.html">Quick Scan</a>
+      <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
+      <a href="/kennisbank/index.html">Kennisbank</a>
+      <a href="/over-bas/index.html">Over Bas</a>
+      <a href="/contact/index.html" class="btn-primary">Contact</a>
+      <a href="/en/index.html">EN</a>
     </nav>
   </div>
 </header>
 
 <section class="page-header">
-  <h1>Kennisbank</h1>
-  <p>Artikelen over AI Governance, publieke waarden en de EU AI Act – volledig automatisch geladen.</p>
+  <h1>Kennisbank AI Governance</h1>
+  <p>Artikelen over governance, publieke waarden, uitlegbaarheid, ethiek en de EU AI Act.</p>
 </section>
 
 <section class="container">
 
-  <!-- Zoekveld -->
-  <input id="searchInput" placeholder="Zoek in artikelen..." style="width:100%;margin-bottom:20px;padding:10px;border-radius:8px;border:1px solid #ccc;">
+  <!-- FEATURED -->
+  <h2>Aanbevolen artikel</h2>
+  <div id="featuredArticles"></div>
 
-  <!-- Artikellijst (wordt gevuld via JS) -->
+  <!-- Search -->
+  <input id="searchInput"
+         placeholder="Zoek in artikelen…"
+         style="width:100%;padding:12px;margin:20px 0;border-radius:8px;border:1px solid #ccc;">
+
+  <!-- Category Filters -->
+  <div id="categoryFilters" style="margin-bottom:20px;">
+    <button class="filter-btn" data-category="all">Alles</button>
+    <button class="filter-btn" data-category="ai-act">AI Act</button>
+    <button class="filter-btn" data-category="governance">Governance</button>
+    <button class="filter-btn" data-category="ethics">Ethiek</button>
+    <button class="filter-btn" data-category="explainability">Uitlegbaarheid</button>
+    <button class="filter-btn" data-category="risk">Risico</button>
+  </div>
+
+  <!-- Articles -->
   <div id="articleList"></div>
 
 </section>
@@ -41,65 +87,95 @@
   <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
 </footer>
 
-<!-- Loader script -->
+<!-- Dynamic Article Loader -->
 <script>
 async function loadArticles() {
   const response = await fetch('/data/articles.json');
   const articles = await response.json();
+  return articles;
+}
 
-  const list = document.getElementById('articleList');
-  list.innerHTML = ''; // Clean slate
+function categorize(article) {
+  const text = (article.title + " " + article.description).toLowerCase();
 
-  articles.forEach(article => {
-    const card = document.createElement('div');
-    card.className = 'article-card';
+  if (text.includes("act")) return "ai-act";
+  if (text.includes("governance")) return "governance";
+  if (text.includes("ethiek") || text.includes("ethic")) return "ethics";
+  if (text.includes("uitleg") || text.includes("explain")) return "explainability";
+  if (text.includes("risico") || text.includes("risk")) return "risk";
+
+  return "algemeen";
+}
+
+function renderArticles(articles) {
+  const list = document.getElementById("articleList");
+  list.innerHTML = "";
+
+  articles.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "article-card";
+    card.setAttribute("data-category", a.category);
 
     card.innerHTML = `
-      <a href="${article.file}">
-        <h2>${article.title}</h2>
+      <a href="${a.file}">
+        <h3>${a.title}</h3>
       </a>
-      <p>${article.description}</p>
+      <p>${a.description}</p>
+      <small class="tag">${a.category}</small>
     `;
 
     list.appendChild(card);
   });
-
-  return articles;
 }
 
-// Zoekfunctie toevoegen
-function enableSearch(articles) {
-  const input = document.getElementById('searchInput');
+function renderFeatured(articles) {
+  const container = document.getElementById("featuredArticles");
+  container.innerHTML = "";
 
-  input.addEventListener('input', (e) => {
-    const value = e.target.value.toLowerCase();
-    const list = document.getElementById('articleList');
-    list.innerHTML = '';
+  const featured = articles.slice(0, 1); // enkel eerste artikel
 
-    const filtered = articles.filter(a =>
-      a.title.toLowerCase().includes(value) ||
-      a.description.toLowerCase().includes(value) ||
-      a.slug.toLowerCase().includes(value)
-    );
-
-    filtered.forEach(article => {
-      const card = document.createElement('div');
-      card.className = 'article-card';
-
-      card.innerHTML = `
-        <a href="${article.file}">
-          <h2>${article.title}</h2>
+  featured.forEach(a => {
+    container.innerHTML += `
+      <div class="featured-card">
+        <a href="${a.file}">
+          <h2>${a.title}</h2>
         </a>
-        <p>${article.description}</p>
-      `;
-
-      list.appendChild(card);
-    });
+        <p>${a.description}</p>
+      </div>
+    `;
   });
 }
 
-// Initialiseren
-loadArticles().then(enableSearch);
+loadArticles().then(articles => {
+  // categories bepalen
+  articles.forEach(a => a.category = categorize(a));
+
+  // initial rendering
+  renderFeatured(articles);
+  renderArticles(articles);
+
+  // search
+  document.getElementById("searchInput").addEventListener("input", e => {
+    const query = e.target.value.toLowerCase();
+    const filtered = articles.filter(a =>
+      a.title.toLowerCase().includes(query) ||
+      a.description.toLowerCase().includes(query)
+    );
+    renderArticles(filtered);
+  });
+
+  // filters
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.category;
+      const filtered = cat === "all"
+        ? articles
+        : articles.filter(a => a.category === cat);
+
+      renderArticles(filtered);
+    });
+  });
+});
 </script>
 
 </body>
