@@ -1,21 +1,20 @@
 [
   {
-    "slug": "ai-act-voor-publieke-instellingen",
-    "title": "Wat betekent de EU AI Act voor publieke instellingen?",
-    "description": "Heldere uitleg voor gemeenten, ministeries en uitvoeringsorganisaties.",
-    "file": "/ai-act-voor-publieke-instellingen.html"
+    "title": "AI Act voor publieke instellingen",
+    "description": "Een overzicht van verplichtingen, risicoclassificatie en governance-vereisten voor overheden onder de EU AI Act.",
+    "file": "/kennisbank/ai-act-voor-publieke-instellingen.html",
+    "category": "ai-act"
   },
   {
-    "slug": "ai-governance-framework-opzetten",
-    "title": "Hoe richt je een AI Governance Framework in?",
-    "description": "Praktisch stappenplan voor AI governance in de publieke sector.",
-    "file": "/ai-governance-framework-opzetten.html"
+    "title": "AI Governance Framework opzetten",
+    "description": "Hoe publieke organisaties een solide governance-structuur bouwen rondom AI, algoritmes en automatisering.",
+    "file": "/kennisbank/ai-governance-framework-opzetten.html",
+    "category": "governance"
   },
   {
-    "slug": "uitlegbaarheid-bij-algoritmes",
-    "title": "Uitlegbaarheid bij algoritmes: wat moet er echt?",
-    "description": "Praktische handleiding voor publieke sector uitlegbaarheid.",
-    "file": "/uitlegbaarheid-bij-algoritmes.html"
+    "title": "Uitlegbaarheid bij algoritmes",
+    "description": "Waarom explainability essentieel is voor overheden en hoe je het praktisch toepast.",
+    "file": "/kennisbank/uitlegbaarheid-bij-algoritmes.html",
+    "category": "explainability"
   }
 ]
-
