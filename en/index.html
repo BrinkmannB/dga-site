@@ -1,66 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Governance with Clarity & Direction – Dutch Governance Advisory</title>
-    <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        // Option A: Only redirect Dutch browser users if they did NOT click “EN”
-        const fromClick = window.location.search.includes("lang=en");
+  <title>AI Governance with Clarity & Direction – Bas Brinkmann</title>
+  <meta name="description" content="Independent AI Governance Consultant supporting governments and public-sector organisations with EU AI Act compliance, ethical AI and responsible algorithmic decision-making.">
+  <meta name="keywords" content="AI Governance, EU AI Act, AI consultant, public sector, algorithm accountability, explainability, AI ethics, risk assessments">
 
-        window.onload = function () {
-            var userLang = navigator.language || navigator.userLanguage;
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Governance with Clarity & Direction – Bas Brinkmann">
+  <meta property="og:description" content="Helping organisations navigate the EU AI Act, implement governance frameworks and ensure transparent, ethical AI.">
+  <meta property="og:image" content="/assets/bas-hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/">
 
-            // Auto-redirect Dutch browsers, unless user explicitly clicked EN
-            if (!fromClick && userLang.startsWith('nl')) {
-                window.location.href = "/";
-            }
-        };
-    </script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bas Brinkmann",
+    "jobTitle": "AI Governance Consultant",
+    "url": "https://dutchgovernanceadvisory.nl/en/",
+    "image": "https://dutchgovernanceadvisory.nl/assets/bas-hero.jpg",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Dutch Governance Advisory"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/basbrinkmann"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dutch Governance Advisory",
+    "url": "https://dutchgovernanceadvisory.nl/en/"
+  }
+  </script>
 </head>
 
 <body>
 
-<header class="topnav">
+<header class="navbar">
+  <div class="container">
     <div class="logo">Bas Brinkmann</div>
     <nav>
-        <a href="/en/">Home</a>
-        <a href="/en/diensten/">Services</a>
-        <a href="/en/quickscan/">Quick Scan</a>
-        <a href="/en/ai-act-calculator/">AI Act Calculator</a>
-        <a href="/en/tools/">Tools</a>
-        <a href="/en/knowledge/">Knowledge Base</a>
-        <a href="/en/over-bas/">About Bas</a>
-        <a href="/contact/en/?lang=en">Contact</a>
-        <a href="/?lang=nl">NL</a>
+      <a href="/en/index.html">Home</a>
+      <a href="/en/services/index.html">Services</a>
+      <a href="/en/quickscan/index.html">Quick Scan</a>
+      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
+      <a href="/en/knowledge/index.html">Knowledge</a>
+      <a href="/en/about/index.html">About Bas</a>
+      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
+      <a href="/index.html">NL</a>
     </nav>
+  </div>
 </header>
 
-<main>
-
 <section class="hero">
-    <div>
-        <h1>AI Governance with Clarity & Direction</h1>
-        <p>
-            I support governments, public institutions and civil society organisations 
-            in applying AI responsibly, transparently and lawfully — fully aligned with the EU AI Act, 
-            public values and fundamental rights.
-        </p>
+  <div class="container">
+    <h1>AI Governance with Clarity & Direction</h1>
+    <p>I help governmental and public-sector organisations implement responsible, transparent and legally compliant AI — fully aligned with the EU AI Act, public values and fundamental rights.</p>
 
-        <a href="/en/quickscan/?lang=en" class="button-primary">
-            Start the AI Governance Quick Scan
-        </a>
-    </div>
+    <a href="/en/quickscan/index.html" class="btn-primary">Start the AI Governance Quick Scan</a>
 
-    <img src="/assets/bas-hero.jpg" alt="Bas Brinkmann" class="hero-image" />
+    <img src="/assets/bas-hero.jpg"
+         alt="Bas Brinkmann – AI Governance Consultant"
+         class="hero-image"
+         loading="lazy">
+  </div>
 </section>
 
-</main>
+<section class="container">
+  <h2>Supporting the Public Sector in Responsible AI</h2>
+  <p>AI is transforming how decisions are made. My mission is to ensure that this transformation strengthens public trust and democratic legitimacy.</p>
 
-<footer class="footer">
-    <p>© 2025 Dutch Governance Advisory – Bas Brinkmann</p>
+  <p>I work at the intersection of governance, ethics, law and digital innovation — helping organisations create structures for accountability, transparency and safe deployment of AI systems.</p>
+</section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
 </footer>
 
 </body>
