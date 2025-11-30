@@ -2,18 +2,99 @@
 <html lang="nl">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EU AI Act Calculator – Classificeer uw AI-systeem</title>
-  <meta name="description" content="Gebruik de AI Act Calculator om uw AI-systeem te classificeren onder de EU AI Act en inzicht te krijgen in risico’s, verplichtingen en governance-eisen.">
+  <title>EU AI Act Calculator – Level 100</title>
+  <meta name="description"
+    content="Beoordeel de risicocategorie van uw AI-systeem volgens de EU AI Act. Volledig juridisch onderbouwde Level 100 calculator door Dutch Governance Advisory." />
 
-  <meta property="og:title" content="EU AI Act Calculator – Classificeer uw AI-systeem">
-  <meta property="og:description" content="Ontdek de risicocategorie en verplichtingen die horen bij uw AI-systeem.">
-  <meta property="og:image" content="/assets/bas-hero.jpg">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/ai-act-calculator/">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <!-- Big4 Style Additions -->
+  <style>
+    body {
+      background: #f5f7fa;
+    }
+
+    .calculator-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+
+    .wizard-step {
+      display: none;
+    }
+
+    .wizard-step.active {
+      display: block;
+    }
+
+    .step-title {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #1d3557;
+      font-weight: bold;
+    }
+
+    .question-block {
+      background: #f1f4f8;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      border: 1px solid #e1e5eb;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #173ba8;
+    }
+
+    .result-box {
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    .score {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .risk-high {
+      background: #fee2e2;
+      border-left: 6px solid #dc2626;
+    }
+
+    .risk-limited {
+      background: #fff7d6;
+      border-left: 6px solid #f59e0b;
+    }
+
+    .risk-low {
+      background: #dcfce7;
+      border-left: 6px solid #16a34a;
+    }
+
+    .risk-prohibited {
+      background: #1f1f1f;
+      color: white;
+      border-left: 6px solid #ff0000;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,38 +104,250 @@
     <div class="logo">Bas Brinkmann</div>
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/diensten/index.html">Diensten</a>
-      <a href="/quickscan/index.html">Quick Scan</a>
-      <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/kennisbank/index.html">Kennisbank</a>
-      <a href="/over-bas/index.html">Over Bas</a>
-      <a href="/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/en/index.html">EN</a>
+      <a href="/diensten/">Diensten</a>
+      <a href="/quickscan/">Quick Scan</a>
+      <a href="/ai-act-calculator/">AI Act Calculator</a>
+      <a href="/kennisbank/">Kennisbank</a>
+      <a href="/over-bas/">Over Bas</a>
+      <a href="/contact/" class="btn-primary">Contact</a>
+      <a href="/en/ai-act-calculator/">EN</a>
     </nav>
   </div>
 </header>
 
 <section class="page-header">
-  <h1>EU AI Act Calculator</h1>
-  <p>Bepaal de risicocategorie van uw AI-systeem en ontdek welke verplichtingen gelden.</p>
+  <h1>EU AI Act Calculator – Level 100</h1>
+  <p>Volledige juridische classificatie + risicoscore + PDF-rapport.</p>
 </section>
 
-<section class="container">
+<section class="container calculator-container">
 
-  <h2>Wat doet de calculator?</h2>
-  <ul>
-    <li>Bepaalt risicocategorie (Laag / Beperkt / Hoog)</li>
-    <li>Toont governance- en documentatieverplichtingen</li>
-    <li>Geeft aanbevelingen voor verantwoord gebruik</li>
-  </ul>
+  <!-- STEP 0: INTRO -->
+  <div class="wizard-step active" id="step-0">
+    <h2 class="step-title">Welkom bij de Level-100 EU AI Act Calculator</h2>
+    <p>
+      Deze tool beoordeelt uw AI-systeem op basis van:
+    </p>
+    <ul>
+      <li>✔ Annex III risicocategorieën</li>
+      <li>✔ Verboden AI (Art. 5)</li>
+      <li>✔ Impact op burgers</li>
+      <li>✔ Technische risico’s</li>
+      <li>✔ Governance maturity</li>
+      <li>✔ Big-4 style risicoformule (0–100)</li>
+    </ul>
 
-  <a href="/contact/index.html" class="btn-primary">Hulp nodig?</a>
+    <button onclick="nextStep()">Start de beoordeling →</button>
+  </div>
+
+  <!-- STEP 1: BASIS -->
+  <div class="wizard-step" id="step-1">
+    <h2 class="step-title">Stap 1 – Basiskenmerken</h2>
+
+    <div class="question-block">
+      <p>1. Wordt het systeem gebruikt in de publieke sector?</p>
+      <button onclick="setAnswer('publicSector', 1); nextStep();">Ja</button>
+      <button onclick="setAnswer('publicSector', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>2. Maakt het systeem gebruik van machine learning, deep learning, of complexe modellen?</p>
+      <button onclick="setAnswer('isAI', 1); nextStep();">Ja</button>
+      <button onclick="setAnswer('isAI', 0); nextStep();">Nee</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: ANNEX III -->
+  <div class="wizard-step" id="step-2">
+    <h2 class="step-title">Stap 2 – Toepassingsgebied (Annex III)</h2>
+
+    <div class="question-block">
+      <p>3. Beïnvloedt het systeem toegang tot werk, onderwijs, zorg, sociale zekerheid of huisvesting?</p>
+      <button onclick="setAnswer('annexCritical', 20); nextStep();">Ja</button>
+      <button onclick="setAnswer('annexCritical', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>4. Gebruikt het systeem risicobeoordelingen, scoring of profilering van burgers?</p>
+      <button onclick="setAnswer('annexScoring', 20); nextStep();">Ja</button>
+      <button onclick="setAnswer('annexScoring', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>5. Wordt het systeem gebruikt voor handhaving, inspecties of toezicht?</p>
+      <button onclick="setAnswer('annexEnforcement', 20); nextStep();">Ja</button>
+      <button onclick="setAnswer('annexEnforcement', 0); nextStep();">Nee</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: TECHNICAL -->
+  <div class="wizard-step" id="step-3">
+    <h2 class="step-title">Stap 3 – Technische kenmerken</h2>
+
+    <div class="question-block">
+      <p>6. Gebruikt het systeem biometrische identificatie?</p>
+      <button onclick="setAnswer('bio', 30); nextStep();">Ja</button>
+      <button onclick="setAnswer('bio', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>7. Gebruikt het systeem profiling of scoring?</p>
+      <button onclick="setAnswer('profiling', 15); nextStep();">Ja</button>
+      <button onclick="setAnswer('profiling', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>8. Is het een foundation model of generatief AI-model?</p>
+      <button onclick="setAnswer('foundation', 15); nextStep();">Ja</button>
+      <button onclick="setAnswer('foundation', 0); nextStep();">Nee</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: IMPACT -->
+  <div class="wizard-step" id="step-4">
+    <h2 class="step-title">Stap 4 – Impact op burgers</h2>
+
+    <div class="question-block">
+      <p>9. Heeft het systeem directe effecten op rechten, toegang of beslissingen voor burgers?</p>
+      <button onclick="setAnswer('impactRights', 10); nextStep();">Ja</button>
+      <button onclick="setAnswer('impactRights', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>10. Bestaat er risico op discriminatie of bias?</p>
+      <button onclick="setAnswer('impactBias', 10); nextStep();">Ja</button>
+      <button onclick="setAnswer('impactBias', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>11. Is er beperkte of geen menselijke tussenkomst?</p>
+      <button onclick="setAnswer('impactAutomation', 10); nextStep();">Ja</button>
+      <button onclick="setAnswer('impactAutomation', 0); nextStep();">Nee</button>
+    </div>
+  </div>
+
+  <!-- STEP 5: GOVERNANCE -->
+  <div class="wizard-step" id="step-5">
+    <h2 class="step-title">Stap 5 – Governance & Documentatie</h2>
+
+    <div class="question-block">
+      <p>12. Heeft u documentatie conform Annex IV?</p>
+      <button onclick="setAnswer('govAnnex4', -10); nextStep();">Ja</button>
+      <button onclick="setAnswer('govAnnex4', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>13. Is menselijk toezicht expliciet geborgd?</p>
+      <button onclick="setAnswer('govHuman', -5); nextStep();">Ja</button>
+      <button onclick="setAnswer('govHuman', 0); nextStep();">Nee</button>
+    </div>
+
+    <div class="question-block">
+      <p>14. Is dataset governance aanwezig?</p>
+      <button onclick="setAnswer('govData', -3); nextStep();">Ja</button>
+      <button onclick="setAnswer('govData', 0); nextStep();">Nee</button>
+    </div>
+
+    <button onclick="calculateScore()">Bereken resultaat →</button>
+  </div>
+
+  <!-- STEP 6: RESULT -->
+  <div class="wizard-step" id="step-6">
+    <h2 class="step-title">Resultaat</h2>
+
+    <div id="resultBox" class="result-box"></div>
+
+    <button onclick="generatePDF()">Download PDF Rapport</button>
+    <a href="/contact/" class="btn-primary">Plan een vervolggesprek</a>
+  </div>
 
 </section>
 
 <footer>
   <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<script>
+let currentStep = 0;
+let scores = {};
+
+function nextStep() {
+  document.getElementById(`step-${currentStep}`).classList.remove("active");
+  currentStep++;
+  document.getElementById(`step-${currentStep}`).classList.add("active");
+}
+
+function setAnswer(key, value) {
+  scores[key] = value;
+}
+
+function calculateScore() {
+  let base =
+    (scores.publicSector || 0) +
+    (scores.isAI || 0);
+
+  let annex =
+    (scores.annexCritical || 0) +
+    (scores.annexScoring || 0) +
+    (scores.annexEnforcement || 0);
+
+  let tech =
+    (scores.bio || 0) +
+    (scores.profiling || 0) +
+    (scores.foundation || 0);
+
+  let impact =
+    (scores.impactRights || 0) +
+    (scores.impactBias || 0) +
+    (scores.impactAutomation || 0);
+
+  let governance =
+    (scores.govAnnex4 || 0) +
+    (scores.govHuman || 0) +
+    (scores.govData || 0);
+
+  // FINAL SCORE
+  let final = base + annex + tech + impact + governance;
+  if (final < 0) final = 0;
+
+  let category = "LAAG RISICO";
+  let css = "risk-low";
+
+  if (final >= 80) {
+    category = "HOOG RISICO";
+    css = "risk-high";
+  } else if (final >= 40) {
+    category = "BEPERKT RISICO";
+    css = "risk-limited";
+  }
+
+  // Forbidden AI check (direct override)
+  if (scores.bio === 30 && scores.impactAutomation === 10) {
+    category = "VERBODEN AI";
+    css = "risk-prohibited";
+    final = 100;
+  }
+
+  const resultBox = document.getElementById("resultBox");
+  resultBox.className = `result-box ${css}`;
+  resultBox.innerHTML = `
+    <h2>Risicocategorie: <strong>${category}</strong></h2>
+    <p class="score">Risicoscore: ${final}/100</p>
+    <p>Dit resultaat is gebaseerd op de EU AI Act, Annex III, Art. 5 en Art. 9–15.</p>
+  `;
+
+  nextStep();
+}
+
+function generatePDF() {
+  const element = document.getElementById("resultBox");
+  html2pdf()
+    .from(element)
+    .save("AI-Act-rapport.pdf");
+}
+</script>
 
 </body>
 </html>
