@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Governance Tools – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- AUTO REDIRECT TO NL IF BROWSER IS DUTCH -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("nl")) {
-        window.location.href = "/tools/index.html";
+  <title>AI Governance Tools – Dutch Governance Advisory</title>
+
+  <meta name="description" content="Free AI governance tools: EU AI Act Calculator, transparency statements, impact prompts, risk assessments and organisational templates.">
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Governance Tools",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "EU AI Act Calculator",
+        "url": "https://dutchgovernanceadvisory.nl/en/ai-act-calculator/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Governance Templates",
+        "url": "https://dutchgovernanceadvisory.nl/en/tools/templates.html"
       }
-    });
+    ]
+  }
   </script>
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/en/index.html">Home</a>
-    <a href="/quickscan/index.html">Quick Scan (NL)</a>
-    <a href="/ai-act-calculator/en/index.html">AI Act Calculator</a>
-    <a href="/tools/en/index.html">Tools</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/index.html">NL</a>
-  </nav>
+<header class="navbar">
+  <div class="nav-container">
+    <a href="/en/" class="nav-logo">Bas Brinkmann</a>
+    <nav class="nav-links">
+      <a href="/en/">Home</a>
+      <a href="/en/services/">Services</a>
+      <a href="/en/quickscan/">Quick Scan</a>
+      <a href="/en/ai-act-calculator/">AI Act Calculator</a>
+      <a href="/en/tools/" class="active">Tools</a>
+      <a href="/en/knowledge/">Knowledge Base</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section class="tools-container">
+<section class="page-hero">
   <h1>AI Governance Tools</h1>
-  <p>Select a tool to gain direct insights into AI Act obligations, governance maturity, and risks.</p>
+  <p>Free tools for public-sector AI governance, compliance and responsible implementation.</p>
+</section>
 
-  <div class="tool-box">
-    <h3>🔍 AI Governance Quick Scan</h3>
-    <p>Instant insight into your organisation’s AI risks and readiness.</p>
-    <a class="btn" href="/quickscan/index.html">Open Quick Scan (NL)</a>
+<section class="tool-grid">
+  <div class="tool-card">
+    <h2>EU AI Act Calculator</h2>
+    <p>Determine your AI system’s legal risk category and required obligations.</p>
+    <a href="/en/ai-act-calculator/" class="button-primary">Open Calculator</a>
   </div>
 
-  <div class="tool-box">
-    <h3>⚖️ AI Act Compliance Calculator</h3>
-    <p>Determine the AI Act risk category of your system.</p>
-    <a class="btn" href="/ai-act-calculator/en/index.html">Open Calculator</a>
+  <div class="tool-card">
+    <h2>Governance Templates</h2>
+    <p>Transparency templates, policy outlines, documentation formats and ethical guidance.</p>
+    <a href="/en/tools/templates.html" class="button-secondary">View Templates</a>
   </div>
 </section>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
+</footer>
 
 </body>
 </html>
