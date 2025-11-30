@@ -1,88 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Knowledge Base – AI Governance Insights</title>
-  <meta name="description" content="Explore articles on AI governance, EU AI Act compliance, ethics and explainability.">
+  <title>AI Governance Knowledge Base – Articles & Insights</title>
+
+  <meta name="description" content="Articles, insights and explanations on AI governance, EU AI Act compliance, public values and responsible technology.">
 
   <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Governance Knowledge Base",
+    "about": "AI Governance, EU AI Act, Public Values, Responsible AI"
+  }
+  </script>
 </head>
 
 <body>
 
 <header class="navbar">
-  <div class="container">
-    <nav>
-      <a href="/en/index.html">Home</a>
-      <a href="/en/services/index.html">Services</a>
-      <a href="/en/quickscan/index.html">Quick Scan</a>
-      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/en/knowledge/index.html">Knowledge</a>
-      <a href="/en/about/index.html">About</a>
-      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/index.html">NL</a>
+  <div class="nav-container">
+    <a href="/en/" class="nav-logo">Bas Brinkmann</a>
+    <nav class="nav-links">
+      <a href="/en/">Home</a>
+      <a href="/en/services/">Services</a>
+      <a href="/en/quickscan/">Quick Scan</a>
+      <a href="/en/ai-act-calculator/">AI Act Calculator</a>
+      <a href="/en/tools/">Tools</a>
+      <a href="/en/knowledge/" class="active">Knowledge Base</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="page-header">
+<section class="page-hero">
   <h1>Knowledge Base</h1>
-  <p>Articles & insights on AI governance.</p>
+  <p>Clear explanations on AI governance, public-sector AI and the EU AI Act.</p>
 </section>
 
-<section class="container">
-
-  <input id="searchInput"
-         placeholder="Search articles…"
-         style="width:100%;padding:12px;border-radius:8px;margin:20px 0;">
-
-  <div id="articleList"></div>
-
+<section class="article-list">
+  <ul id="articles"></ul>
 </section>
-
-<footer>
-  <p>© 2025 Bas Brinkmann</p>
-</footer>
 
 <script>
-async function loadArticles() {
-  const res = await fetch('/data/articles-en.json');
-  return await res.json();
-}
-
-function renderArticles(list) {
-  const container = document.getElementById('articleList');
-  container.innerHTML = "";
-
-  list.forEach(a => {
-    const el = document.createElement('div');
-    el.className = 'article-card';
-    el.innerHTML = `
-      <a href="${a.file}">
-        <h3>${a.title}</h3>
-      </a>
-      <p>${a.description}</p>
-    `;
-    container.appendChild(el);
+fetch('/data/articles.json')
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById('articles');
+    list.innerHTML = data
+      .filter(a => a.language === "en")
+      .map(article => `
+        <li class="article-item">
+          <a href="/en/knowledge/${article.slug}.html">
+            <h2>${article.title}</h2>
+            <p>${article.excerpt}</p>
+          </a>
+        </li>
+      `).join('')
   });
-}
-
-loadArticles().then(articles => {
-  renderArticles(articles);
-
-  document.getElementById('searchInput').addEventListener('input', e => {
-    const q = e.target.value.toLowerCase();
-    const filtered = articles.filter(a =>
-      a.title.toLowerCase().includes(q) ||
-      a.description.toLowerCase().includes(q)
-    );
-    renderArticles(filtered);
-  });
-});
 </script>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
+</footer>
 
 </body>
 </html>
