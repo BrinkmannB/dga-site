@@ -1,1 +1,15 @@
+[
+  {
+    "version": "v1.0.0",
+    "date": "2025-11-30",
+    "changes": [
+      "Launched Level-1000 AI Act Calculator (NL & EN).",
+      "Added premium PDF export with legal analysis.",
+      "Integrated governance maturity scoring.",
+      "Built Annex III mapping engine.",
+      "Added email-based premium lock.",
+      "Published AI Act Platform landing page."
+    ]
+  }
+]
 
