@@ -1,70 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bas Brinkmann – AI Governance Advisor for Public Sector & Society</title>
 
-  <title>Services – AI Governance & EU AI Act Advisory</title>
-  <meta name="description" content="AI Governance advisory for governments and public-sector organisations. EU AI Act compliance, explainability, ethics and governance frameworks.">
+  <meta name="description" content="Independent AI Governance Advisor helping governments and public institutions navigate the EU AI Act, ethical AI, transparency, and public-sector accountability. Based in the Netherlands.">
 
   <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Authority Badge styling -->
+  <style>
+    .authority-badge {
+      display: inline-block;
+      background: #0A2463;
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- Structured Data (Homepage + Organization + Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dutch Governance Advisory",
+    "url": "https://dutchgovernanceadvisory.nl/en/",
+    "logo": "https://dutchgovernanceadvisory.nl/assets/images/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Bas Brinkmann",
+      "jobTitle": "AI Governance Advisor",
+      "url": "https://dutchgovernanceadvisory.nl/en/",
+      "sameAs": [
+        "https://www.linkedin.com/in/basbrinkmann/"
+      ]
+    },
+    "description": "Independent AI Governance consultancy focused on public values, risk management and the EU AI Act.",
+    "areaServed": "Europe"
+  }
+  </script>
+
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <div class="logo">Bas Brinkmann</div>
-    <nav>
-      <a href="/en/index.html">Home</a>
-      <a href="/en/services/index.html">Services</a>
-      <a href="/en/quickscan/index.html">Quick Scan</a>
-      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/en/knowledge/index.html">Knowledge</a>
-      <a href="/en/about/index.html">About</a>
-      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/index.html">NL</a>
-    </nav>
-  </div>
-</header>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/en/" class="nav-logo">Bas Brinkmann</a>
+      <nav class="nav-links">
+        <a href="/en/">Home</a>
+        <a href="/en/services/">Services</a>
+        <a href="/en/quickscan/">Quick Scan</a>
+        <a href="/en/ai-act-calculator/">AI Act Calculator</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/knowledge/">Knowledge Base</a>
+        <a href="/en/about/">About Bas</a>
+        <a href="/en/contact/">Contact</a>
+        <a href="/en/" class="active-lang">EN</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="page-header">
-  <h1>Services</h1>
-  <p>AI governance support for public-sector organisations.</p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AI Governance with clarity & direction</h1>
 
-<section class="container services">
+      <span class="authority-badge">Authority on Public-Sector AI Governance</span>
 
-  <div class="service">
-    <h2>AI Governance Quick Scan</h2>
-    <p>A structured assessment of risks and governance gaps under the EU AI Act.</p>
-    <a href="/en/quickscan/index.html">Learn more →</a>
-  </div>
+      <p>
+        I help governments, public institutions and civil-society organisations to apply AI responsibly, transparently and in full compliance with the EU AI Act — while protecting public values and fundamental rights.
+      </p>
 
-  <div class="service">
-    <h2>EU AI Act Compliance</h2>
-    <p>Risk classification, documentation, transparency and legal obligations for AI systems.</p>
-    <a href="/en/ai-act-calculator/index.html">Check obligations →</a>
-  </div>
+      <a href="/en/quickscan/" class="button-primary">Start the AI Governance Quick Scan</a>
+    </div>
 
-  <div class="service">
-    <h2>Explainability & Ethics</h2>
-    <p>Independent assessments of model behaviour, fairness and citizen impact.</p>
-    <a href="/en/knowledge/index.html">Read insights →</a>
-  </div>
+    <div class="hero-image">
+      <img src="/assets/images/bas-hero.jpg" alt="Photo of Bas Brinkmann, AI Governance Consultant">
+    </div>
+  </section>
 
-  <div class="service">
-    <h2>Governance Frameworks</h2>
-    <p>Clear governance structures for AI decision-making and accountability.</p>
-    <a href="/en/about/index.html">About Bas →</a>
-  </div>
+  <!-- VALUE SECTION -->
+  <section class="value">
+    <h2>What I help organisations achieve</h2>
+    <ul>
+      <li>✔ Clear interpretation of the EU AI Act for your context</li>
+      <li>✔ Practical steps to meet transparency and accountability requirements</li>
+      <li>✔ Human-centric AI design and public-value alignment</li>
+      <li>✔ Executive guidance for responsible AI strategy</li>
+      <li>✔ Governance frameworks that actually work in practice</li>
+    </ul>
+  </section>
 
-</section>
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Want clarity on your AI obligations?</h2>
+    <p>The Quick Scan gives your organisation a concrete governance baseline in under 10 minutes.</p>
+    <a href="/en/quickscan/" class="button-primary">Start Quick Scan</a>
+  </section>
 
-<footer>
-  <p>© 2025 Bas Brinkmann</p>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
+  </footer>
 
 </body>
 </html>
