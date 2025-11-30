@@ -1,74 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AI Governance Knowledge Base – Articles & Insights</title>
-
-  <meta name="description" content="Articles, insights and explanations on AI governance, EU AI Act compliance, public values and responsible technology.">
-
-  <link rel="stylesheet" href="/assets/css/styles.css">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "AI Governance Knowledge Base",
-    "about": "AI Governance, EU AI Act, Public Values, Responsible AI"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base — Dutch Governance Advisory</title>
+    <meta name="description" content="Articles and insights on AI governance, transparency, ethics and the AI Act.">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-
-<header class="navbar">
-  <div class="nav-container">
-    <a href="/en/" class="nav-logo">Bas Brinkmann</a>
-    <nav class="nav-links">
-      <a href="/en/">Home</a>
-      <a href="/en/services/">Services</a>
-      <a href="/en/quickscan/">Quick Scan</a>
-      <a href="/en/ai-act-calculator/">AI Act Calculator</a>
-      <a href="/en/tools/">Tools</a>
-      <a href="/en/knowledge/" class="active">Knowledge Base</a>
-      <a href="/en/about/">About</a>
-      <a href="/en/contact/">Contact</a>
+<header class="site-header">
+    <nav class="nav">
+        <a href="/en/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/tools/">Tools</a></li>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+            <li><a href="/">NL</a></li>
+        </ul>
     </nav>
-  </div>
 </header>
 
-<section class="page-hero">
-  <h1>Knowledge Base</h1>
-  <p>Clear explanations on AI governance, public-sector AI and the EU AI Act.</p>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Knowledge Base</h1>
+        <p>Insights on AI governance and the AI Act.</p>
+    </div>
 </section>
 
-<section class="article-list">
-  <ul id="articles"></ul>
-</section>
-
-<script>
-fetch('/data/articles.json')
-  .then(response => response.json())
-  .then(data => {
-    const list = document.getElementById('articles');
-    list.innerHTML = data
-      .filter(a => a.language === "en")
-      .map(article => `
-        <li class="article-item">
-          <a href="/en/knowledge/${article.slug}.html">
-            <h2>${article.title}</h2>
-            <p>${article.excerpt}</p>
-          </a>
-        </li>
-      `).join('')
-  });
-</script>
+<main class="content">
+    <h2>Articles</h2>
+    <p>Articles are loaded automatically from your JSON database.</p>
+</main>
 
 <footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
+    <p>&copy; 2025 Dutch Governance Advisory</p>
 </footer>
-
 </body>
 </html>
