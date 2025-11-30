@@ -7,31 +7,13 @@
 
   <title>Kennisbank AI Governance – EU AI Act, Ethiek & Uitlegbaarheid</title>
   <meta name="description" content="Verdiep u in AI governance, EU AI Act verplichtingen, ethiek, uitlegbaarheid en risicobeoordeling. Artikelen voor overheden en publieke organisaties.">
-  <meta name="keywords" content="AI governance kennisbank, EU AI Act uitleg, algoritmes overheid, ethiek, uitlegbaarheid, risicobeoordeling">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Kennisbank AI Governance">
-  <meta property="og:description" content="Artikelen over AI governance, ethiek, EU AI Act en uitlegbaarheid voor de publieke sector.">
+  <meta property="og:description" content="Artikelen over AI governance, ethiek, EU AI Act en uitlegbaarheid.">
   <meta property="og:image" content="/assets/bas-hero.jpg">
   <meta property="og:url" content="https://dutchgovernanceadvisory.nl/kennisbank/">
-  <meta property="og:type" content="website">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/styles.css">
-
-  <!-- Structured Data: Knowledge Base -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Kennisbank AI Governance",
-    "url": "https://dutchgovernanceadvisory.nl/kennisbank/",
-    "about": "AI Governance, EU AI Act, Ethiek, Uitlegbaarheid, Publieke sector algoritmes"
-  }
-  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
@@ -53,32 +35,27 @@
 </header>
 
 <section class="page-header">
-  <h1>Kennisbank AI Governance</h1>
-  <p>Artikelen over governance, publieke waarden, uitlegbaarheid, ethiek en de EU AI Act.</p>
+  <h1>Kennisbank</h1>
+  <p>Artikelen & inzichten over AI Governance, EU AI Act, ethiek en uitlegbaarheid.</p>
 </section>
 
 <section class="container">
 
-  <!-- FEATURED -->
-  <h2>Aanbevolen artikel</h2>
   <div id="featuredArticles"></div>
 
-  <!-- Search -->
   <input id="searchInput"
          placeholder="Zoek in artikelen…"
-         style="width:100%;padding:12px;margin:20px 0;border-radius:8px;border:1px solid #ccc;">
+         style="width:100%;padding:12px;border-radius:8px;margin:20px 0;">
 
-  <!-- Category Filters -->
   <div id="categoryFilters" style="margin-bottom:20px;">
     <button class="filter-btn" data-category="all">Alles</button>
     <button class="filter-btn" data-category="ai-act">AI Act</button>
     <button class="filter-btn" data-category="governance">Governance</button>
-    <button class="filter-btn" data-category="ethics">Ethiek</button>
     <button class="filter-btn" data-category="explainability">Uitlegbaarheid</button>
+    <button class="filter-btn" data-category="ethics">Ethiek</button>
     <button class="filter-btn" data-category="risk">Risico</button>
   </div>
 
-  <!-- Articles -->
   <div id="articleList"></div>
 
 </section>
@@ -87,93 +64,40 @@
   <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
 </footer>
 
-<!-- Dynamic Article Loader -->
 <script>
 async function loadArticles() {
-  const response = await fetch('/data/articles.json');
-  const articles = await response.json();
-  return articles;
+  const res = await fetch('/data/articles-nl.json');
+  return await res.json();
 }
 
-function categorize(article) {
-  const text = (article.title + " " + article.description).toLowerCase();
+function renderArticles(list) {
+  const container = document.getElementById('articleList');
+  container.innerHTML = "";
 
-  if (text.includes("act")) return "ai-act";
-  if (text.includes("governance")) return "governance";
-  if (text.includes("ethiek") || text.includes("ethic")) return "ethics";
-  if (text.includes("uitleg") || text.includes("explain")) return "explainability";
-  if (text.includes("risico") || text.includes("risk")) return "risk";
-
-  return "algemeen";
-}
-
-function renderArticles(articles) {
-  const list = document.getElementById("articleList");
-  list.innerHTML = "";
-
-  articles.forEach(a => {
-    const card = document.createElement("div");
-    card.className = "article-card";
-    card.setAttribute("data-category", a.category);
-
-    card.innerHTML = `
+  list.forEach(a => {
+    const el = document.createElement('div');
+    el.className = 'article-card';
+    el.innerHTML = `
       <a href="${a.file}">
         <h3>${a.title}</h3>
       </a>
       <p>${a.description}</p>
-      <small class="tag">${a.category}</small>
+      <small>${a.category}</small>
     `;
-
-    list.appendChild(card);
-  });
-}
-
-function renderFeatured(articles) {
-  const container = document.getElementById("featuredArticles");
-  container.innerHTML = "";
-
-  const featured = articles.slice(0, 1); // enkel eerste artikel
-
-  featured.forEach(a => {
-    container.innerHTML += `
-      <div class="featured-card">
-        <a href="${a.file}">
-          <h2>${a.title}</h2>
-        </a>
-        <p>${a.description}</p>
-      </div>
-    `;
+    container.appendChild(el);
   });
 }
 
 loadArticles().then(articles => {
-  // categories bepalen
-  articles.forEach(a => a.category = categorize(a));
-
-  // initial rendering
-  renderFeatured(articles);
   renderArticles(articles);
 
-  // search
-  document.getElementById("searchInput").addEventListener("input", e => {
-    const query = e.target.value.toLowerCase();
+  document.getElementById('searchInput').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
     const filtered = articles.filter(a =>
-      a.title.toLowerCase().includes(query) ||
-      a.description.toLowerCase().includes(query)
+      a.title.toLowerCase().includes(q) ||
+      a.description.toLowerCase().includes(q)
     );
     renderArticles(filtered);
-  });
-
-  // filters
-  document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const cat = btn.dataset.category;
-      const filtered = cat === "all"
-        ? articles
-        : articles.filter(a => a.category === cat);
-
-      renderArticles(filtered);
-    });
   });
 });
 </script>
