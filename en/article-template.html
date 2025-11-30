@@ -4,143 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CHANGE THIS -->
-  <title>{ARTICLE TITLE} – AI Governance Insight</title>
-  <meta name="description" content="{Short description of the article topic.}">
-  <meta name="keywords" content="AI Governance, EU AI Act, public sector algorithms, explainability, ethical AI, risk management">
+  <title>{{TITLE}} – AI Governance Article</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="{ARTICLE TITLE} – AI Governance Insight">
-  <meta property="og:description" content="{Short description for social media}">
-  <meta property="og:image" content="/assets/bas-hero.jpg">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/{URL-SLUG}">
-  <meta property="og:type" content="article">
+  <meta name="description" content="{{META_DESCRIPTION}}">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/styles.css">
-
-  <!-- Structured Data: Article -->
+  <!-- Structured Data for Articles -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{ARTICLE TITLE}",
-    "description": "{Short description}",
+    "headline": "{{TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
     "author": {
       "@type": "Person",
       "name": "Bas Brinkmann"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Dutch Governance Advisory",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dutchgovernanceadvisory.nl/assets/bas-hero.jpg"
-      }
+      "name": "Dutch Governance Advisory"
     },
-    "datePublished": "{YYYY-MM-DD}",
-    "image": "https://dutchgovernanceadvisory.nl/assets/bas-hero.jpg",
-    "mainEntityOfPage": "https://dutchgovernanceadvisory.nl/en/{URL-SLUG}"
+    "url": "https://dutchgovernanceadvisory.nl/en/knowledge/{{SLUG}}.html",
+    "datePublished": "{{DATE}}"
   }
   </script>
-
-  <!-- Structured Data: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://dutchgovernanceadvisory.nl/en/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Knowledge",
-        "item": "https://dutchgovernanceadvisory.nl/en/knowledge/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "{ARTICLE TITLE}",
-        "item": "https://dutchgovernanceadvisory.nl/en/{URL-SLUG}"
-      }
-    ]
-  }
-  </script>
-
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <header class="navbar">
-  <div class="container">
-    <div class="logo">Bas Brinkmann</div>
-    <nav>
-      <a href="/en/index.html">Home</a>
-      <a href="/en/services/index.html">Services</a>
-      <a href="/en/quickscan/index.html">Quick Scan</a>
-      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/en/knowledge/index.html">Knowledge</a>
-      <a href="/en/about/index.html">About Bas</a>
-      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/index.html">NL</a>
+  <div class="nav-container">
+    <a href="/en/" class="nav-logo">Bas Brinkmann</a>
+    <nav class="nav-links">
+      <a href="/en/">Home</a>
+      <a href="/en/services/">Services</a>
+      <a href="/en/quickscan/">Quick Scan</a>
+      <a href="/en/ai-act-calculator/">AI Act Calculator</a>
+      <a href="/en/tools/">Tools</a>
+      <a href="/en/knowledge/" class="active">Knowledge Base</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- HEADER -->
-<section class="page-header">
-  <h1>{ARTICLE TITLE}</h1>
-  <p>Last updated: {Month Year}</p>
+<section class="page-hero">
+  <h1>{{TITLE}}</h1>
+  <p class="meta">Published: {{DATE}}</p>
 </section>
 
-<section class="container article-body">
-
-  <!-- START WRITING ARTICLE HERE -->
-  <h2>Overview</h2>
-  <p>
-    {Explain what this article is about and why it matters for public-sector AI governance.}
-  </p>
-
-  <h2>Key Insights</h2>
-  <ul>
-    <li>{Insight 1}</li>
-    <li>{Insight 2}</li>
-    <li>{Insight 3}</li>
-  </ul>
-
-  <h2>Implications for Public Institutions</h2>
-  <p>
-    {Explain how ministries, municipalities, agencies or NGOs should interpret these insights.}
-  </p>
-
-  <h2>Recommendations</h2>
-  <ul>
-    <li>{Actionable recommendation 1}</li>
-    <li>{Actionable recommendation 2}</li>
-    <li>{Actionable recommendation 3}</li>
-  </ul>
-
-  <!-- Related Articles (optional) -->
-  <h2>Related Articles</h2>
-  <ul>
-    <li><a href="/en/knowledge/index.html">View more articles in the Knowledge Base</a></li>
-  </ul>
-
+<section class="article-content">
+  {{CONTENT}}
 </section>
 
-<footer>
-  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+<section class="article-cta">
+  <h2>Looking for guidance on the EU AI Act?</h2>
+  <a href="/en/services/" class="button-primary">View Services</a>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
 </footer>
 
 </body>
 </html>
-
