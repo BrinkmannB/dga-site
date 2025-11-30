@@ -1,106 +1,42 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Kennisbank AI Governance – EU AI Act, Ethiek & Uitlegbaarheid</title>
-  <meta name="description" content="Verdiep u in AI governance, EU AI Act verplichtingen, ethiek, uitlegbaarheid en risicobeoordeling. Artikelen voor overheden en publieke organisaties.">
-
-  <meta property="og:title" content="Kennisbank AI Governance">
-  <meta property="og:description" content="Artikelen over AI governance, ethiek, EU AI Act en uitlegbaarheid.">
-  <meta property="og:image" content="/assets/bas-hero.jpg">
-  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/kennisbank/">
-
-  <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennisbank — Dutch Governance Advisory</title>
+    <meta name="description" content="Artikelen en uitleg over AI governance, transparantie, ethiek en de AI Act.">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-
-<header class="navbar">
-  <div class="container">
-    <div class="logo">Bas Brinkmann</div>
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/diensten/index.html">Diensten</a>
-      <a href="/quickscan/index.html">Quick Scan</a>
-      <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/kennisbank/index.html">Kennisbank</a>
-      <a href="/over-bas/index.html">Over Bas</a>
-      <a href="/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/en/index.html">EN</a>
+<header class="site-header">
+    <nav class="nav">
+        <a href="/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/diensten/">Diensten</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/over-bas/">Over Bas</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/en/">EN</a></li>
+        </ul>
     </nav>
-  </div>
 </header>
 
-<section class="page-header">
-  <h1>Kennisbank</h1>
-  <p>Artikelen & inzichten over AI Governance, EU AI Act, ethiek en uitlegbaarheid.</p>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Kennisbank</h1>
+        <p>Inzichten en uitleg over AI governance en de AI Act.</p>
+    </div>
 </section>
 
-<section class="container">
+<main class="content">
+    <h2>Artikelen</h2>
+    <p>Alle artikelen worden automatisch geladen via je JSON-database.</p>
+</main>
 
-  <div id="featuredArticles"></div>
-
-  <input id="searchInput"
-         placeholder="Zoek in artikelen…"
-         style="width:100%;padding:12px;border-radius:8px;margin:20px 0;">
-
-  <div id="categoryFilters" style="margin-bottom:20px;">
-    <button class="filter-btn" data-category="all">Alles</button>
-    <button class="filter-btn" data-category="ai-act">AI Act</button>
-    <button class="filter-btn" data-category="governance">Governance</button>
-    <button class="filter-btn" data-category="explainability">Uitlegbaarheid</button>
-    <button class="filter-btn" data-category="ethics">Ethiek</button>
-    <button class="filter-btn" data-category="risk">Risico</button>
-  </div>
-
-  <div id="articleList"></div>
-
-</section>
-
-<footer>
-  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+<footer class="footer">
+    <p>&copy; 2025 Dutch Governance Advisory</p>
 </footer>
-
-<script>
-async function loadArticles() {
-  const res = await fetch('/data/articles-nl.json');
-  return await res.json();
-}
-
-function renderArticles(list) {
-  const container = document.getElementById('articleList');
-  container.innerHTML = "";
-
-  list.forEach(a => {
-    const el = document.createElement('div');
-    el.className = 'article-card';
-    el.innerHTML = `
-      <a href="${a.file}">
-        <h3>${a.title}</h3>
-      </a>
-      <p>${a.description}</p>
-      <small>${a.category}</small>
-    `;
-    container.appendChild(el);
-  });
-}
-
-loadArticles().then(articles => {
-  renderArticles(articles);
-
-  document.getElementById('searchInput').addEventListener('input', e => {
-    const q = e.target.value.toLowerCase();
-    const filtered = articles.filter(a =>
-      a.title.toLowerCase().includes(q) ||
-      a.description.toLowerCase().includes(q)
-    );
-    renderArticles(filtered);
-  });
-});
-</script>
-
 </body>
 </html>
