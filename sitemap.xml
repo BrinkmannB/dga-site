@@ -1,1 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ROOT -->
+  <url><loc>https://dutchgovernanceadvisory.nl/</loc></url>
+
+  <!-- NL PAGINA'S -->
+  <url><loc>https://dutchgovernanceadvisory.nl/diensten/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/quickscan/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/ai-act-calculator/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/kennisbank/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/over-bas/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/contact/</loc></url>
+
+  <!-- NL ARTIKELEN -->
+  <url><loc>https://dutchgovernanceadvisory.nl/kennisbank/ai-act-voor-publieke-instellingen.html</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/kennisbank/ai-governance-framework-opzetten.html</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/kennisbank/uitlegbaarheid-bij-algoritmes.html</loc></url>
+
+  <!-- EN PAGINA'S -->
+  <url><loc>https://dutchgovernanceadvisory.nl/en/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/services/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/quickscan/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/ai-act-calculator/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/knowledge/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/about/</loc></url>
+  <url><loc>https://dutchgovernanceadvisory.nl/en/contact/</loc></url>
+
+</urlset>
 
