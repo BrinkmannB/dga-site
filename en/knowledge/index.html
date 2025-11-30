@@ -3,59 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knowledge Base – AI Governance & AI Act</title>
-  <link rel="stylesheet" href="/styles.css">
+
+  <title>AI Governance Knowledge Base – Insights, EU AI Act Guidance & Ethics</title>
+  <meta name="description" content="Explore articles on AI governance, EU AI Act requirements, explainability, ethical AI, risk assessment and public-sector best practices. Updated regularly.">
+  <meta name="keywords" content="AI governance articles, EU AI Act insights, public sector algorithms, ethical AI guidance, explainability, accountability, algorithmic risk">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Governance Knowledge Base">
+  <meta property="og:description" content="Articles on AI governance, ethics, explainability and the EU AI Act for public-sector professionals.">
+  <meta property="og:image" content="/assets/bas-hero.jpg">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/en/knowledge/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Structured Data: Knowledge Base as ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Governance Knowledge Base",
+    "url": "https://dutchgovernanceadvisory.nl/en/knowledge/",
+    "about": "AI Governance, EU AI Act, Explainability, Ethics, Public-Sector Algorithms"
+  }
+  </script>
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/en/index.html">Home</a>
-    <a href="/en/services/index.html">Services</a>
-    <a href="/en/quickscan/index.html">Quick Scan</a>
-    <a href="/en/knowledge/index.html" class="active">Knowledge</a>
-    <a href="/en/about/index.html">About</a>
-    <a href="/en/contact/index.html">Contact</a>
-    <a href="/">NL</a>
-  </nav>
+<header class="navbar">
+  <div class="container">
+    <div class="logo">Bas Brinkmann</div>
+    <nav>
+      <a href="/en/index.html">Home</a>
+      <a href="/en/services/index.html">Services</a>
+      <a href="/en/quickscan/index.html">Quick Scan</a>
+      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
+      <a href="/en/knowledge/index.html">Knowledge</a>
+      <a href="/en/about/index.html">About Bas</a>
+      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
+      <a href="/index.html">NL</a>
+    </nav>
+  </div>
 </header>
 
-<section class="page-hero">
-  <h1>Knowledge Base</h1>
-  <p>Articles on AI governance, risk, transparency, fairness, oversight and the EU AI Act.</p>
+<section class="page-header">
+  <h1>AI Governance Knowledge Base</h1>
+  <p>Articles on governance, public values, explainability, ethics and the EU AI Act — curated for public-sector professionals.</p>
 </section>
 
-<section class="card-grid">
+<section class="container">
 
-  <a class="card" href="/en/knowledge/ai-act.html">
-    <h3>EU AI Act – Key obligations</h3>
-    <p>Risk categories, governance requirements and documentation duties.</p>
-  </a>
+  <!-- Featured Article Section -->
+  <h2>Featured Articles</h2>
+  <div id="featuredArticles"></div>
 
-  <a class="card" href="/en/knowledge/transparency.html">
-    <h3>Transparency</h3>
-    <p>Model documentation, explainability and public accountability.</p>
-  </a>
+  <!-- Search -->
+  <input id="searchInput"
+         placeholder="Search articles…"
+         style="width:100%;padding:12px;margin:20px 0;border-radius:8px;border:1px solid #ccc;">
 
-  <a class="card" href="/en/knowledge/fairness.html">
-    <h3>Fairness & Non-discrimination</h3>
-    <p>Bias mitigation, governance frameworks and oversight structures.</p>
-  </a>
+  <!-- Category Filters -->
+  <div id="categoryFilters" style="margin-bottom:20px;">
+    <button class="filter-btn" data-category="all">All</button>
+    <button class="filter-btn" data-category="ai-act">AI Act</button>
+    <button class="filter-btn" data-category="governance">Governance</button>
+    <button class="filter-btn" data-category="ethics">Ethics</button>
+    <button class="filter-btn" data-category="explainability">Explainability</button>
+    <button class="filter-btn" data-category="risk">Risk</button>
+  </div>
 
-  <a class="card" href="/en/knowledge/risk-analysis.html">
-    <h3>Risk Analysis</h3>
-    <p>Assessing AI impacts on citizens, public values and organisational risk.</p>
-  </a>
-
-  <a class="card" href="/en/knowledge/governance.html">
-    <h3>AI Governance</h3>
-    <p>Practical frameworks, roles, processes and organisational maturity.</p>
-  </a>
+  <!-- Articles List -->
+  <div id="articleList"></div>
 
 </section>
+
+<footer>
+  <p>© 2025 Bas Brinkmann – Dutch Governance Advisory</p>
+</footer>
+
+<!-- Dynamic Loader Script -->
+<script>
+async function loadArticles() {
+  const response = await fetch('/data/articles.json');
+  const articles = await response.json();
+  return articles;
+}
+
+// Basic keyword-based category assignment
+function categorize(article) {
+  const text = (article.title + " " + article.description).toLowerCase();
+
+  if (text.includes("act")) return "ai-act";
+  if (text.includes("governance")) return "governance";
+  if (text.includes("ethic")) return "ethics";
+  if (text.includes("explain")) return "explainability";
+  if (text.includes("risk")) return "risk";
+
+  return "general";
+}
+
+function renderArticles(articles) {
+  const list = document.getElementById("articleList");
+  list.innerHTML = "";
+
+  articles.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "article-card";
+    card.setAttribute("data-category", a.category);
+
+    card.innerHTML = `
+      <a href="${a.file}">
+        <h3>${a.title}</h3>
+      </a>
+      <p>${a.description}</p>
+      <small class="tag">${a.category}</small>
+    `;
+
+    list.appendChild(card);
+  });
+}
+
+function renderFeatured(articles) {
+  const container = document.getElementById("featuredArticles");
+  container.innerHTML = "";
+
+  const featured = articles.slice(0, 1); // first article featured
+
+  featured.forEach(a => {
+    container.innerHTML += `
+      <div class="featured-card">
+        <a href="${a.file}">
+          <h2>${a.title}</h2>
+        </a>
+        <p>${a.description}</p>
+      </div>
+    `;
+  });
+}
+
+loadArticles().then(articles => {
+  // assign categories dynamically
+  articles.forEach(a => a.category = categorize(a));
+
+  // initial renders
+  renderFeatured(articles);
+  renderArticles(articles);
+
+  // search function
+  const input = document.getElementById("searchInput");
+  input.addEventListener("input", e => {
+    const query = e.target.value.toLowerCase();
+    const filtered = articles.filter(a =>
+      a.title.toLowerCase().includes(query) ||
+      a.description.toLowerCase().includes(query)
+    );
+    renderArticles(filtered);
+  });
+
+  // category filter buttons
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.category;
+      const filtered =
+        cat === "all"
+        ? articles
+        : articles.filter(a => a.category === cat);
+      renderArticles(filtered);
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>
-
