@@ -1,7 +1,53 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <!-- COMPLETE HEAD -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact – Bas Brinkmann, AI Governance Consultant</title>
+  <meta name="description" content="Neem contact op met Bas Brinkmann voor ondersteuning bij AI Governance, EU AI Act naleving, ethiek, uitlegbaarheid en risicobeoordeling. Snelle reactie.">
+  <meta name="keywords" content="AI Governance contact, AI Act advies, publieke sector algoritmes, ethiek AI, uitlegbaarheid, Bas Brinkmann contact">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact – Bas Brinkmann">
+  <meta property="og:description" content="Hulp nodig bij AI Governance, EU AI Act of ethische AI? Neem contact op.">
+  <meta property="og:image" content="/assets/bas-hero.jpg">
+  <meta property="og:url" content="https://dutchgovernanceadvisory.nl/contact/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Structured Data: ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact – Bas Brinkmann",
+    "url": "https://dutchgovernanceadvisory.nl/contact/",
+    "description": "Contactpagina voor AI Governance en EU AI Act advies."
+  }
+  </script>
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bas Brinkmann",
+    "jobTitle": "AI Governance Consultant",
+    "url": "https://dutchgovernanceadvisory.nl/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Dutch Governance Advisory"
+    }
+  }
+  </script>
+
 </head>
 
 <body>
@@ -11,26 +57,54 @@
     <div class="logo">Bas Brinkmann</div>
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/diensten.html">Diensten</a>
-      <a href="/kennisbank.html">Kennisbank</a>
-      <a href="/over-bas.html">Over Bas</a>
+      <a href="/diensten/index.html">Diensten</a>
+      <a href="/quickscan/index.html">Quick Scan</a>
+      <a href="/ai-act-calculator/index.html">AI Act Calculator</a>
+      <a href="/kennisbank/index.html">Kennisbank</a>
+      <a href="/over-bas/index.html">Over Bas</a>
+      <a href="/contact/index.html" class="btn-primary">Contact</a>
+      <a href="/en/index.html">EN</a>
     </nav>
   </div>
 </header>
 
 <section class="page-header">
   <h1>Contact</h1>
-  <p>Plan een kennismaking of stel uw vraag. Ik reageer meestal dezelfde dag.</p>
+  <p>Heeft u een vraag over AI Governance of de EU AI Act? Ik help u graag verder.</p>
 </section>
 
 <section class="container">
 
-  <form action="https://formspree.io/f/mzzpnwnk" method="POST">
-    <input type="text" name="naam" placeholder="Uw naam" required>
-    <input type="email" name="email" placeholder="Uw e-mail" required>
-    <textarea name="bericht" placeholder="Uw bericht" rows="6" required></textarea>
-    <button type="submit" class="btn-primary">Verstuur bericht</button>
+  <h2>Waarmee kan ik u helpen?</h2>
+  <p>
+    Of het nu gaat om risicobeoordeling, governance, ethiek, naleving van de EU AI Act of het beoordelen van een 
+    bestaand algoritme — ik denk graag mee.
+  </p>
+
+  <ul>
+    <li>AI Governance & verantwoord gebruik van AI</li>
+    <li>EU AI Act risico's & verplichtingen</li>
+    <li>Uitlegbaarheid & ethiek</li>
+    <li>Publieke sector algoritme-audits</li>
+  </ul>
+
+  <h2>Neem contact op</h2>
+  <p>Gebruik het formulier hieronder. Ik reageer doorgaans dezelfde dag.</p>
+
+  <form name="contact" method="POST" data-netlify="true" style="max-width: 500px;">
+    <input type="hidden" name="form-name" value="contact">
+    <p><input type="text" name="name" placeholder="Uw naam" required></p>
+    <p><input type="email" name="email" placeholder="Uw e-mailadres" required></p>
+    <p><textarea name="message" placeholder="Uw bericht" required></textarea></p>
+    <p><button type="submit" class="btn-primary">Verstuur bericht</button></p>
   </form>
+
+  <h2>Gerelateerde pagina’s</h2>
+  <ul>
+    <li><a href="/diensten/index.html">Alle diensten</a></li>
+    <li><a href="/quickscan/index.html">AI Governance Quick Scan</a></li>
+    <li><a href="/kennisbank/index.html">Kennisbank</a></li>
+  </ul>
 
 </section>
 
