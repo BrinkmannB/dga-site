@@ -149,3 +149,41 @@ h1, h2, h3 {
 .about-list li {
     margin-bottom: 8px;
 }
+/* — CONTACT FORM — */
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 500px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #0b2d4a;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #d4dce3;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+.contact-form button {
+    margin-top: 5px;
+    background: #003e6b;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #005a9c;
+}
