@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Act Calculator — DGA</title>
-    <meta name="description" content="Bereken welke AI Act verplichtingen gelden voor jouw systeem.">
-    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Act Calculator – Dutch Governance Advisory</title>
+    <meta name="description" content="Bepaal het risiconiveau van jouw AI-systeem volgens de AI Act. Snelle, heldere en juridisch juiste classificatie voor overheden.">
+    <link rel="stylesheet" href="/styles.css?v=1012" />
 </head>
 
 <body>
@@ -14,9 +14,102 @@
     <nav class="nav">
         <a href="/" class="logo">DGA</a>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
             <li><a href="/diensten/">Diensten</a></li>
             <li><a href="/kennisbank/">Kennisbank</a></li>
             <li><a href="/quickscan/">Quickscan</a></li>
+            <li><a href="/ai-act-calculator/">AI Act Calculator</a></li>
             <li><a href="/tools/">Tools</a></li>
-            <li><a href="/over-bas/">Over Bas</a
+            <li><a href="/over-bas/">Over Bas</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/en/">EN</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero-premium small-hero">
+    <div class="hero-content">
+        <h1>AI Act Calculator</h1>
+        <p class="hero-sub">Krijg direct een eerste risicoclassificatie van jouw AI-systeem.</p>
+    </div>
+</section>
+
+<main class="content">
+
+    <h2>Classificeer jouw AI-systeem</h2>
+    <p>
+        Vul de vragen hieronder in en ontvang automatisch een eerste indicatie van het risiconiveau onder de AI Act:
+        <strong>onaanvaardbaar risico, hoog risico, beperkt risico of minimaal risico.</strong>
+    </p>
+
+    <div class="calc-box">
+        <form class="calc-form">
+
+            <label>1. Wat is het hoofddoel van het AI-systeem?</label>
+            <select name="doel" required>
+                <option value="">Selecteer…</option>
+                <option>Beleidsondersteuning</option>
+                <option>Burgerinteractie / dienstverlening</option>
+                <option>Handhaving of toezicht</option>
+                <option>Risicoprofilering</option>
+                <option>Biometrische identificatie</option>
+                <option>Krediet- of kansinschatting</option>
+            </select>
+
+            <label>2. Heeft het systeem impact op burgers?</label>
+            <select name="impact" required>
+                <option value="">Selecteer…</option>
+                <option>Direct</option>
+                <option>Indirect</option>
+                <option>Geen</option>
+            </select>
+
+            <label>3. Wordt er gebruikgemaakt van biometrische data?</label>
+            <select name="bio" required>
+                <option value="">Selecteer…</option>
+                <option>Ja</option>
+                <option>Nee</option>
+            </select>
+
+            <label>4. Korte beschrijving van het systeem</label>
+            <textarea name="omschrijving" rows="4"></textarea>
+
+            <button type="button" onclick="calcRisk()">Bepaal risiconiveau</button>
+        </form>
+    </div>
+
+    <div id="calc-result" class="calc-result hidden">
+        <h3>Resultaat</h3>
+        <p id="calc-output"></p>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Dutch Governance Advisory</p>
+</footer>
+
+<script>
+function calcRisk() {
+    const doel = document.querySelector("[name='doel']").value;
+    const impact = document.querySelector("[name='impact']").value;
+    const bio = document.querySelector("[name='bio']").value;
+
+    let result = "";
+
+    if (bio === "Ja") {
+        result = "Hoog risico – biometrische identificatie valt direct onder de AI Act.";
+    } else if (doel === "Handhaving of toezicht" || doel === "Risicoprofilering") {
+        result = "Hoog risico – toezicht, handhaving en risicoprofilering zijn gereguleerde AI-systemen.";
+    } else if (impact === "Direct") {
+        result = "Beperkt risico – transparantieverplichtingen zijn waarschijnlijk van toepassing.";
+    } else {
+        result = "Minimaal risico – documentatie blijft aanbevolen.";
+    }
+
+    document.getElementById("calc-output").textContent = result;
+    document.getElementById("calc-result").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
