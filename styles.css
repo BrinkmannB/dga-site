@@ -213,5 +213,51 @@ h1, h2, h3 {
     background: #f9fbfc !important; /* lichte tint voorkomt 'fel wit' */
     color: #666 !important;
 }
+/* Services sectie */
+.services-preview {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.services-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #123b53;
+}
+
+.services-intro {
+    text-align: center;
+    color: #444;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+/* Grid */
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Cards */
+.service-card {
+    flex: 1;
+    background: #f7fbfc;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.07);
+    text-align: left;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #0f3347;
+}
+
+.service-card p {
+    color: #444;
+    line-height: 1.5;
+}
 
 
