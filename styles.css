@@ -177,6 +177,39 @@ h1, h2, h3 {
     background: #003e6b;
     color: white;
     padding: 12px 22px;
+    /* — Kennisbank / Knowledge Base Grid — */
+.kb-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.kb-item {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1d334a;
+    border: 1px solid #e5eaf0;
+    transition: all 0.2s ease;
+}
+
+.kb-item:hover {
+    border-color: #b4c7d9;
+    transform: translateY(-3px);
+}
+
+.kb-item h3 {
+    margin-bottom: 10px;
+    color: #003e6b;
+}
+
+.kb-item p {
+    margin: 0;
+    opacity: 0.9;
+}
+
     border: none;
     border-radius: 8px;
     font-size: 16px;
