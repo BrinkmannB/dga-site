@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EU AI Act Calculator – Dutch Governance Advisory</title>
 
-  <title>EU AI Act Risk Classification Tool – AI Act Calculator</title>
-
-  <meta name="description" content="Determine your AI system’s risk level under the EU AI Act. Fast, clear and aligned with the official categories: Minimal risk, Transparency obligations, High-risk AI, and Prohibited AI.">
-
-  <link rel="stylesheet" href="/assets/css/styles.css">
-
-  <!-- Structured Data: Tool -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AI Act Calculator",
-    "operatingSystem": "All",
-    "applicationCategory": "BusinessApplication",
-    "description": "EU AI Act classification and governance tool.",
-    "url": "https://dutchgovernanceadvisory.nl/en/ai-act-calculator/"
-  }
-  </script>
+    <meta name="description" content="Determine the EU AI Act risk category of your AI system. Clear, accurate and accessible for public-sector organisations.">
+    <link rel="stylesheet" href="/styles.css?v=1014" />
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="nav-container">
-    <a href="/en/" class="nav-logo">Bas Brinkmann</a>
-    <nav class="nav-links">
-      <a href="/en/">Home</a>
-      <a href="/en/services/">Services</a>
-      <a href="/en/quickscan/">Quick Scan</a>
-      <a href="/en/ai-act-calculator/" class="active">AI Act Calculator</a>
-      <a href="/en/tools/">Tools</a>
-      <a href="/en/knowledge/">Knowledge Base</a>
-      <a href="/en/about/">About</a>
-      <a href="/en/contact/">Contact</a>
+<header class="site-header">
+    <nav class="nav">
+        <a href="/en/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/knowledge/">Knowledge Base</a></li>
+            <li><a href="/en/quickscan/">Quickscan</a></li>
+            <li><a href="/en/ai-act-calculator/" class="active">AI Act Calculator</a></li>
+            <li><a href="/en/tools/">Tools</a></li>
+            <li><a href="/en/about/">About Bas</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+            <li><a href="/">NL</a></li>
+        </ul>
     </nav>
-  </div>
 </header>
 
-<section class="page-hero">
-  <h1>EU AI Act Calculator</h1>
-  <p>Determine the legal risk category of your AI system according to the EU AI Act — fast, accurate and accessible.</p>
+<!-- HERO -->
+<section class="hero-premium small-hero">
+    <div class="hero-content">
+        <h1>EU AI Act Calculator</h1>
+        <p class="hero-sub">
+            Determine the legal risk category of your AI system — fast, accurate and accessible.
+        </p>
+    </div>
 </section>
 
-<section class="tool-info">
-  <h2>What this tool gives you</h2>
-  <ul>
-    <li>✔ Official EU AI Act risk category</li>
-    <li>✔ Explanation of your obligations</li>
-    <li>✔ Links to governance templates</li>
-    <li>✔ Next steps for high-risk AI</li>
-  </ul>
+<main class="content">
 
-  <a href="/en/ai-act-calculator/tool.html" class="button-primary">Start Classification</a>
-</section>
+    <h2>What this tool gives you</h2>
 
-<section class="info-box">
-  <h2>EU AI Act Categories Covered</h2>
-  <ul>
-    <li>Minimal Risk – free use</li>
-    <li>Limited Risk – transparency obligations</li>
-    <li>High-Risk AI – full compliance requirements</li>
-    <li>Prohibited AI – not allowed in the EU</li>
-  </ul>
-</section>
+    <ul class="feature-list">
+        <li>✔ Official EU AI Act risk category</li>
+        <li>✔ Clear explanation of your obligations</li>
+        <li>✔ Links to governance templates</li>
+        <li>✔ Next steps for high-risk AI</li>
+    </ul>
+
+    <a href="/en/ai-act-calculator/start/" class="primary-btn">Start Classification</a>
+
+    <h2>EU AI Act Categories Covered</h2>
+
+    <div class="diensten-grid">
+        <div class="dienst-blok">
+            <h3>Minimal-Risk AI</h3>
+            <p>Free use under the EU AI Act.</p>
+        </div>
+
+        <div class="dienst-blok">
+            <h3>Limited-Risk AI</h3>
+            <p>Transparency obligations apply, depending on context.</p>
+        </div>
+
+        <div class="dienst-blok">
+            <h3>High-Risk AI</h3>
+            <p>Full compliance requirements including risk management, documentation, logging and human oversight.</p>
+        </div>
+
+        <div class="dienst-blok">
+            <h3>Prohibited AI</h3>
+            <p>Not allowed to be placed on the EU market or used by public entities.</p>
+        </div>
+    </div>
+
+</main>
 
 <footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
+    <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
 </footer>
 
 </body>
