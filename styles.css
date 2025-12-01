@@ -124,3 +124,15 @@ h1, h2, h3 {
     width: auto !important;
     height: auto !important;
 }
+/* Premium hero background */
+.hero-premium {
+    background: linear-gradient(135deg, #e8f6f4, #f3fbff);
+    padding: 90px 20px;
+}
+
+/* Subtekst wat zachter */
+.hero-sub {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #2d4658;
+}
