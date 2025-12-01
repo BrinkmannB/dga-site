@@ -1,52 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AI Governance Quick Scan – EU AI Act Risk & Obligations</title>
-  <meta name="description" content="Assess your organisation’s AI risks, governance gaps and EU AI Act obligations.">
-
-  <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickscan – Dutch Governance Advisory</title>
+    <meta name="description" content="A compact AI Act and AI governance quickscan for public-sector organisations. A fast initial assessment of risks and transparency obligations.">
+    <link rel="stylesheet" href="/styles.css?v=1010" />
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="container">
-    <div class="logo">Bas Brinkmann</div>
-    <nav>
-      <a href="/en/index.html">Home</a>
-      <a href="/en/services/index.html">Services</a>
-      <a href="/en/quickscan/index.html">Quick Scan</a>
-      <a href="/en/ai-act-calculator/index.html">AI Act Calculator</a>
-      <a href="/en/knowledge/index.html">Knowledge</a>
-      <a href="/en/about/index.html">About</a>
-      <a href="/en/contact/index.html" class="btn-primary">Contact</a>
-      <a href="/index.html">NL</a>
+<header class="site-header">
+    <nav class="nav">
+        <a href="/en/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/knowledge/">Knowledge Base</a></li>
+            <li><a href="/en/quickscan/">Quickscan</a></li>
+            <li><a href="/en/ai-act-calculator/">AI Act Calculator</a></li>
+            <li><a href="/en/tools/">Tools</a></li>
+            <li><a href="/en/about/">About Bas</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+            <li><a href="/">NL</a></li>
+        </ul>
     </nav>
-  </div>
 </header>
 
-<section class="page-header">
-  <h1>AI Governance Quick Scan</h1>
-  <p>Identify risks, obligations and governance needs under the EU AI Act.</p>
+<section class="hero-premium small-hero">
+    <div class="hero-content">
+        <h1>AI Governance Quickscan</h1>
+        <p class="hero-sub">A fast and clear first assessment of your AI system.</p>
+    </div>
 </section>
 
-<section class="container">
-  <h2>What the Quick Scan provides</h2>
-  <ul>
-    <li>AI Act risk classification</li>
-    <li>Documentation & transparency obligations</li>
-    <li>Governance recommendations</li>
-  </ul>
+<main class="content">
 
-  <a href="/en/contact/index.html" class="btn-primary">Request the Quick Scan</a>
-</section>
+    <h2>What the quickscan assesses</h2>
+    <p>
+        The Quickscan gives an initial assessment of:
+    </p>
 
-<footer>
-  <p>© 2025 Bas Brinkmann</p>
+    <ul class="qs-list">
+        <li>Your AI Act risk category</li>
+        <li>Whether transparency obligations apply</li>
+        <li>Which governance measures are required</li>
+        <li>Which documentation and controls are mandatory or recommended</li>
+    </ul>
+
+    <h2>Start the Quickscan</h2>
+
+    <form class="qs-form" action="mailto:info@dutchgovernanceadvisory.nl" method="POST" enctype="text/plain">
+
+        <label>1. What is the AI system used for?</label>
+        <select name="Use" required>
+            <option value="">Select…</option>
+            <option>Policy support</option>
+            <option>Supervision / enforcement</option>
+            <option>Selection or risk scoring</option>
+            <option>Process optimisation</option>
+            <option>Other</option>
+        </select>
+
+        <label>2. Are citizens directly affected by the output?</label>
+        <select name="Impact" required>
+            <option value="">Select…</option>
+            <option>Yes, directly</option>
+            <option>Indirectly</option>
+            <option>No</option>
+        </select>
+
+        <label>3. Describe the system</label>
+        <textarea name="Description" rows="5"></textarea>
+
+        <button type="submit">Submit and receive analysis</button>
+    </form>
+
+    <h2>What happens after submission?</h2>
+    <p>
+        You will receive a short analysis within one working day, outlining key risks
+        and obligations based on your input.
+    </p>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Dutch Governance Advisory</p>
 </footer>
 
 </body>
