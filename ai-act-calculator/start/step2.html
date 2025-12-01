@@ -5,22 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stap 2 — AI Act Wizard</title>
     <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
 
+    <script>
+    function forwardParams() {
+        const params = new URLSearchParams(window.location.search);
+        const form = document.querySelector("form");
+        const doel = params.get("doel");
+        if (doel) {
+            const hidden = document.createElement("input");
+            hidden.type = "hidden";
+            hidden.name = "doel";
+            hidden.value = doel;
+            form.appendChild(hidden);
+        }
+    }
+    window.onload = forwardParams;
+    </script>
+</head>
+
+<body>
 <section class="wizard-container">
     <h2>Stap 2 van 6</h2>
     <h3>Worden burgers direct geraakt door uitkomsten?</h3>
 
     <form action="step3.html" method="get" class="wizard-form">
-        <label><input type="radio" name="impact" required> Ja, direct</label>
-        <label><input type="radio" name="impact"> Indirect</label>
-        <label><input type="radio" name="impact"> Nee</label>
+        <label><input type="radio" name="impact" value="direct" required> Ja, direct</label>
+        <label><input type="radio" name="impact" value="indirect"> Indirect</label>
+        <label><input type="radio" name="impact" value="geen"> Nee</label>
 
         <button class="button">Volgende</button>
     </form>
 </section>
-
 </body>
 </html>
-
