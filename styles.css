@@ -1,27 +1,24 @@
-n/* —— Basis —— */
-
+/* --- Basis --- */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif;
     color: #1d334a;
-    background: #f6f9fa !important;
+    background: #f7f9fa;
 }
-
 
 h1, h2, h3 {
     margin-top: 0;
 }
 
-/* —— Navigatie —— */
-
+/* --- Navigatie --- */
 .site-header {
     background: white;
-    padding: 20px 0;
+    padding: 18px 0;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .nav {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -31,14 +28,14 @@ h1, h2, h3 {
 .logo {
     font-size: 22px;
     font-weight: bold;
-    color: #1d334a;
     text-decoration: none;
+    color: #0b2d4a;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 22px;
     margin: 0;
     padding: 0;
 }
@@ -49,473 +46,95 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* —— Hero —— */
-
+/* --- Hero --- */
 .hero {
-    background: #f5fafc;
-    padding: 60px 20px;
-    border-bottom: 1px solid #e5e5e5;
+    background: linear-gradient(135deg, #04325f, #005b82, #0a7894);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.hero-content {
+.hero-inner {
     max-width: 900px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 44px;
+    font-weight: 800;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero-sub {
+    font-size: 20px;
+    margin: 20px auto 30px;
+    max-width: 720px;
 }
 
+/* CTA */
 .cta {
     display: inline-block;
-    background: #1d334a;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
+    background: #ffffff;
+    color: #0a3d5c;
+    padding: 14px 26px;
     font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 22px;
 }
 
-.cta:hover {
-    opacity: 0.85;
+/* --- Tagkaart --- */
+.tagcard {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 10px 18px;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
-/* —— Content —— */
+.tag-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.4);
+}
 
+.tagcard span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* --- Content --- */
 .content {
     max-width: 900px;
-    margin-top: 25px !important;
-
-    padding: 0 20px;
-    line-height: 1.6;
-}
-
-/* —— Footer —— */
-
-.footer {
-    text-align: center;
-    padding: 40px 0;
-    background: #fafafa;
-    color: #777;
-    border-top: 1px solid #eee;
-}
-.hero-photo {
-    width: 130px !important;
-    height: 130px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-    float: right !important;
-    margin-left: 25px !important;
-    margin-bottom: 20px !important;
-    border: 3px solid #ffffff !important;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15) !important;
-}
-
-.hero img:not(.hero-photo) {
-    width: auto !important;
-    height: auto !important;
-}
-/* Premium hero background */
-.hero-premium {
-    background: linear-gradient(135deg, #e8f6f4, #f3fbff);
-    padding: 90px 20px;
-}
-
-/* Subtekst wat zachter */
-.hero-sub {
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: #2d4658;
-}
-/* Hero foto fix */
-.hero-photo {
-    width: 110px !important;
-    height: 110px !important;
-    margin-left: 35px !important;
-    margin-top: 10px !important;
-    object-fit: cover !important;
-}
-
-/* Titel iets meer spacing onder */
-.hero-content h1 {
-    margin-bottom: 15px;
-}
-
-/* Subtekst breed en rustiger */
-.hero-sub {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    line-height: 1.55;
-}
-
-/* Zachtere premium background */
-.hero-premium {
-    background: linear-gradient(135deg, #eef7f6, #f5fbfe);
-}
-
-/* Meer lucht boven contentblok */
-.content {
-    margin-top: 60px;
-    /* Intro closer to hero */
-.content {
-    margin-top: 40px !important;
-}
-
-}
-/* Hero compacter – minder witruimte */
-.hero {
-    padding: 40px 20px !important;
-}
-/* Minder wit, iets meer tint */
-.hero-premium {
-    background: linear-gradient(135deg, #e6eff3 0%, #dfe8ec 100%) !important;
-}
-/* --- HERO DENSITY OPTIMALISATIE --- */
-
-.hero {
-    padding: 35px 20px !important;
-}
-
-/* Hero tot iets verder naar beneden om 'wit' te breken */
-.hero + .content {
-    padding-top: 0 !important;
-    margin-top: 20px !important;
-}
-
-/* Donkerdere premium achtergrond */
-.hero-premium {
-    background: linear-gradient(135deg, #d9e5ea 0%, #e3edf1 100%) !important;
-}
-
-/* Subheadline dichter bij de button */
-.hero-sub {
-    margin-bottom: 20px !important;
-}
-
-/* Foto iets dichter naar titel toe → minder leeg rechts */
-.hero-photo {
-    margin-left: 25px !important;
-}
-/* Footer compacter – geen onnodige witte vlakte */
-.footer {
-    padding: 15px 0 !important;
-    background: #f9fbfc !important; /* lichte tint voorkomt 'fel wit' */
-    color: #666 !important;
-}
-/* Services sectie */
-.services-preview {
-    max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
-.services-title {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #123b53;
-}
-
-.services-intro {
-    text-align: center;
-    color: #444;
-    margin-bottom: 40px;
-    font-size: 17px;
-}
-
-/* Grid */
-.services-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* Cards */
-.service-card {
-    flex: 1;
-    background: #f7fbfc;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.07);
-    text-align: left;
-}
-
-.service-card h3 {
-    margin-bottom: 10px;
-    color: #0f3347;
-}
-
-.service-card p {
-    color: #444;
-    line-height: 1.5;
-}
-/* Diensten sectie */
-.services-section {
-    max-width: 1100px;
-    margin: 80px auto 100px;
-    padding: 0 20px;
-}
-
-.services-section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #123b53;
-}
-
-.services-sub {
-    color: #444;
-    margin-bottom: 40px;
-    font-size: 17px;
-}
-
-/* Grid layout */
-.services-grid {
-    display: flex;
-    gap: 25px;
-}
-
-/* Cards */
-.service-card {
-    flex: 1;
-    background: #f2f7fa;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
-    transition: transform 0.15s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-}
-
-.service-card h3 {
-    margin-bottom: 10px;
-    color: #0f3347;
-}
-
-.service-card p {
-    color: #444;
-    line-height: 1.5;
-}
-/* Diensten sectie */
-.services-section {
-    max-width: 1100px;
-    margin: 80px auto 100px;
-    padding: 0 20px;
-}
-
-.services-section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #123b53;
-}
-
-.services-sub {
-    color: #444;
-    margin-bottom: 40px;
-    font-size: 17px;
-}
-
-/* Grid layout */
-.services-grid {
-    display: flex;
-    gap: 25px;
-}
-
-/* Cards */
-.service-card {
-    flex: 1;
-    background: #f2f7fa;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
-    transition: transform 0.15s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-4px);
-}
-
-.service-card h3 {
-    margin-bottom: 10px;
-    color: #0f3347;
-}
-
-.service-card p {
-    color: #444;
-    line-height: 1.5;
-}
-/* =============================
-   BOLD ADVISORY STYLE — DGA
-   ============================= */
-
-/* Global */
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, sans-serif;
-    background: #ffffff;
-    color: #1a1a1a;
-}
-
-/* Headings */
-h1 {
-    font-size: 52px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #0c1c3c;
-}
-
-h2 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #0c1c3c;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #0c1c3c;
-}
-
-/* Navigation */
-.site-header {
-    background: #ffffff;
-    padding: 15px 0;
-    border-bottom: 1px solid #dfe3e8;
-}
-
-.nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #0c1c3c;
-    text-decoration: none;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #0c1c3c;
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #0f5c7e;
-}
-
-/* HERO SECTION */
-.hero {
-    background: linear-gradient(135deg, #0c1c3c 0%, #0f5c7e 100%);
-    color: white;
-    padding: 80px 0;
-}
-
-.hero-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-text {
-    width: 65%;
-}
-
-.hero-text h1,
-.hero-text p {
-    color: white;
-}
-
-.hero-text p {
-    font-size: 20px;
-    max-width: 600px;
-}
-
-.hero-button {
-    background: #ffffff;
-    color: #0c1c3c;
-    padding: 14px 26px;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
-.hero-button:hover {
-    background: #dbe2ea;
-}
-
-/* Hero image */
-.hero-image img {
-    width: 160px;
-    height: 160px;
-    border-radius: 100px;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-}
-
-/* CONTENT SECTIONS */
-.content {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+p {
     line-height: 1.6;
 }
 
-.section {
-    margin-bottom: 40px;
-}
-
-/* Services / Diensten */
-.services {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+/* --- Diensten --- */
+.diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
     margin-top: 30px;
 }
 
-.service-box {
-    width: 33%;
-}
-
-.service-box h3 {
+.dienst h3 {
     margin-bottom: 10px;
+    color: #0b2d4a;
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer {
-    background: #0c1c3c;
-    padding: 30px 0;
-    color: white;
     text-align: center;
-    margin-top: 40px;
+    padding: 40px 0;
+    color: #7e8a97;
+    border-top: 1px solid #e5e5e5;
 }
-
-
