@@ -259,5 +259,53 @@ h1, h2, h3 {
     color: #444;
     line-height: 1.5;
 }
+/* Diensten sectie */
+.services-section {
+    max-width: 1100px;
+    margin: 80px auto 100px;
+    padding: 0 20px;
+}
+
+.services-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #123b53;
+}
+
+.services-sub {
+    color: #444;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+/* Grid layout */
+.services-grid {
+    display: flex;
+    gap: 25px;
+}
+
+/* Cards */
+.service-card {
+    flex: 1;
+    background: #f2f7fa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #0f3347;
+}
+
+.service-card p {
+    color: #444;
+    line-height: 1.5;
+}
 
 
