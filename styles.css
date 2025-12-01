@@ -220,3 +220,49 @@ h1, h2, h3 {
 .contact-form button:hover {
     background: #005a9c;
 }
+/* — QUICKSCAN — */
+.qs-list {
+    margin: 20px 0 30px;
+    padding-left: 20px;
+}
+
+.qs-list li {
+    margin-bottom: 8px;
+}
+
+.qs-form {
+    margin-top: 25px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.qs-form label {
+    font-weight: 600;
+    color: #0b2d4a;
+}
+
+.qs-form select,
+.qs-form textarea {
+    padding: 12px;
+    border: 1px solid #d4dce3;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+.qs-form button {
+    background: #003e6b;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qs-form button:hover {
+    background: #005a9c;
+}
