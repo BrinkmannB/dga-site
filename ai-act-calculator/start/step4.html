@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stap 4 — AI Act Wizard</title>
     <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
 
+    <script>
+    function forwardParams() {
+        const params = new URLSearchParams(window.location.search);
+        const form = document.querySelector("form");
+
+        ["doel","impact","pers"].forEach(p => {
+            if (params.get(p)) {
+                const hidden = document.createElement("input");
+                hidden.type = "hidden";
+                hidden.name = p;
+                hidden.value = params.get(p);
+                form.appendChild(hidden);
+            }
+        });
+    }
+    window.onload = forwardParams;
+    </script>
+</head>
+
+<body>
 <section class="wizard-container">
     <h2>Stap 4 van 6</h2>
     <h3>Wordt het systeem gebruikt voor scoring, beoordeling of classificatie?</h3>
 
     <form action="step5.html" method="get" class="wizard-form">
-        <label><input type="radio" name="scoring" required> Ja</label>
-        <label><input type="radio" name="scoring"> Nee</label>
+
+        <label><input type="radio" name="score" value="ja" required> Ja</label>
+        <label><input type="radio" name="score" value="nee"> Nee</label>
 
         <button class="button">Volgende</button>
+
     </form>
 </section>
-
 </body>
 </html>
-
