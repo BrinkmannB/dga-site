@@ -298,3 +298,62 @@ h1, h2, h3 {
     margin: 0;
     opacity: 0.9;
 }
+/* — AI ACT CALCULATOR — */
+.calc-box {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e5eaf0;
+    margin-top: 30px;
+}
+
+.calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.calc-form label {
+    font-weight: 600;
+    color: #0b2d4a;
+}
+
+.calc-form select,
+.calc-form textarea {
+    padding: 12px;
+    border: 1px solid #d4dce3;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.calc-form button {
+    background: #003e6b;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calc-form button:hover {
+    background: #005a9c;
+}
+
+.calc-result {
+    background: #e8f3ff;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 25px;
+    border: 1px solid #c5d9f2;
+}
+
+.calc-result.hidden {
+    display: none;
+}
+
+.calc-result h3 {
+    margin-top: 0;
+}
+
