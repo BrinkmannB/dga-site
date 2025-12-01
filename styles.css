@@ -175,5 +175,9 @@ h1, h2, h3 {
 .hero {
     padding: 40px 20px !important;
 }
+/* Minder wit, iets meer tint */
+.hero-premium {
+    background: linear-gradient(135deg, #e6eff3 0%, #dfe8ec 100%) !important;
+}
 
 
