@@ -5,6 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Act Result | Dutch Governance Advisory</title>
     <link rel="stylesheet" href="/styles.css">
+
+    <script>
+    function classifyEN() {
+        const p = new URLSearchParams(window.location.search);
+
+        const purpose = p.get("purpose");
+        const impact = p.get("impact");
+        const personal = p.get("personal");
+        const scoring = p.get("scoring");
+        const bio = p.get("bio");
+
+        let risk = "minimal";
+
+        // --- LOGIC (same as NL, but text is EN) ---
+        if (bio === "yes") risk = "high";
+        else if (purpose === "biometric") risk = "high";
+        else if (purpose === "profiling") risk = "high";
+        else if (impact === "direct" && (personal === "yes" || scoring === "yes")) risk = "high";
+        else if (impact === "direct") risk = "limited";
+        else if (impact === "indirect") risk = "limited";
+
+        // --- BADGES ---
+        const badges = {
+            minimal: `<div class="risk-pill risk-low">Minimal Risk</div>`,
+            limited: `<div class="risk-pill risk-medium">Limited Risk</div>`,
+            high: `<div class="risk-pill risk-high">High-Risk AI</div>`
+        };
+
+        // --- EXPLANATIONS ---
+        const explanations = {
+            minimal: "This AI system falls under the 'Minimal Risk' category according to the EU AI Act.",
+            limited: "This system may fall under 'Limited Risk'. Transparency obligations may apply depending on the context.",
+            high: "This system may qualify as 'High-Risk AI' under the EU AI Act. Formal compliance obligations apply."
+        };
+
+        // --- NEXT STEPS ---
+        const nextSteps = {
+            minimal: [
+                "No mandatory AI Act obligations.",
+                "Keeping internal documentation is recommended."
+            ],
+            limited: [
+                "Provide transparency to users.",
+                "Document model logic.",
+                "Ensure users understand system limitations."
+            ],
+            high: [
+                "Risk management system required.",
+                "Comprehensive technical documentation (Annex IV).",
+                "Logging & traceability.",
+                "Human oversight mechanisms."
+            ]
+        };
+
+        // Inject into page
+        document.getElementById("badge").innerHTML = badges[risk];
+        document.getElementById("explain").innerText = explanations[risk];
+        document.getElementById("steps").innerHTML = nextSteps[risk]
+            .map(s => `<li>${s}</li>`).join("");
+    }
+
+    window.onload = classifyEN;
+    </script>
+
 </head>
 
 <body>
@@ -26,58 +90,37 @@
 </header>
 
 <section class="hero small-hero">
-    <h1>Result: Preliminary AI Act Classification</h1>
-    <p>Based on your answers, your AI system has been assigned a provisional risk category.</p>
+    <h1>AI Act Risk Classification Result</h1>
+    <p>Your AI system has been assigned a provisional risk category.</p>
 </section>
 
 <section class="result-container">
 
-    <!-- VISUAL CLASSIFICATION BLOCK -->
+    <!-- Classification -->
     <div class="result-box">
         <h2 class="result-title">Your Classification</h2>
-
-        <!-- Placeholder — will later be dynamically replaced -->
-        <div class="risk-pill risk-medium">
-            High Risk (indicative)
-        </div>
-
-        <p class="result-summary">
-            This AI system <strong>may fall under the EU AI Act’s High-Risk category</strong>.
-            To confirm this classification and comply with legal obligations, a complete assessment
-            and documentation package is required.
-        </p>
+        <div id="badge"></div>
+        <p id="explain"></p>
     </div>
 
-    <!-- INFORMATION BLOCK -->
+    <!-- Next steps -->
     <div class="result-info">
         <h3>What does this mean?</h3>
-        <p>
-            High-risk AI systems are subject to <strong>strict obligations</strong> under the EU AI Act.
-            Depending on the context, you may need to implement the following requirements:
-        </p>
-
-        <ul>
-            <li>✔ Risk management & mitigation</li>
-            <li>✔ Comprehensive technical documentation (Annex IV)</li>
-            <li>✔ Logging & traceability</li>
-            <li>✔ Transparency & user information</li>
-            <li>✔ Human oversight mechanisms</li>
-        </ul>
+        <ul id="steps"></ul>
     </div>
 
-    <!-- PREMIUM SECTION -->
+    <!-- Premium upsell -->
     <div class="premium-box">
         <h2>Premium Report & Templates</h2>
         <p>
-            Want a full professional report, including obligations, risk analysis,
-            required documentation, and an exportable PDF?  
-            <strong>These features are part of the premium package</strong> and will be available as:
+            Access the complete report including risk obligations, governance requirements,
+            technical documentation, and an exportable PDF.
         </p>
 
         <ul class="premium-list">
-            <li>📄 <strong>AI Act QuickScan PDF</strong> — €29</li>
-            <li>📁 <strong>Template Packs</strong> — €19–€49</li>
-            <li>🎯 <strong>Starter Kits</strong> — €95</li>
+            <li>📄 AI Act QuickScan PDF — €29</li>
+            <li>📁 Template Packs — €19–€49</li>
+            <li>🎯 Starter Kits — €95</li>
         </ul>
 
         <div class="premium-buttons">
@@ -86,13 +129,13 @@
         </div>
     </div>
 
-    <!-- CTA -->
     <div class="cta-more">
-        <h3>Need further support?</h3>
+        <h3>Need additional support?</h3>
         <p>
-            I help public-sector organisations with full AI Act implementation,
-            governance frameworks, algorithm registers, and responsible AI deployment.
+            I help public organisations with AI Act implementation, governance frameworks,
+            algorithm registers and responsible AI adoption.
         </p>
+
         <a href="/en/contact/" class="button">Get in touch</a>
     </div>
 
@@ -104,4 +147,3 @@
 
 </body>
 </html>
-
