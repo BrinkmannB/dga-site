@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Governance Quickscan — DGA</title>
-    <meta name="description" content="Snel beoordelen of jouw AI-systeem valt onder de AI Act.">
-    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickscan – Dutch Governance Advisory</title>
+    <meta name="description" content="Een compacte AI Act en AI governance quickscan voor publieke organisaties. Snelle eerste beoordeling van risico’s, transparantie en governance.">
+    <link rel="stylesheet" href="/styles.css?v=1010" />
 </head>
 
 <body>
@@ -13,3 +13,79 @@
 <header class="site-header">
     <nav class="nav">
         <a href="/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/diensten/">Diensten</a></li>
+            <li><a href="/kennisbank/">Kennisbank</a></li>
+            <li><a href="/quickscan/">Quickscan</a></li>
+            <li><a href="/ai-act-calculator/">AI Act Calculator</a></li>
+            <li><a href="/tools/">Tools</a></li>
+            <li><a href="/over-bas/">Over Bas</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/en/">EN</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero-premium small-hero">
+    <div class="hero-content">
+        <h1>Quickscan AI Governance</h1>
+        <p class="hero-sub">Een snelle en heldere eerste beoordeling van jouw AI-systeem.</p>
+    </div>
+</section>
+
+<main class="content">
+
+    <h2>Wat houdt de quickscan in?</h2>
+    <p>
+        De Quickscan geeft binnen één minuut een eerste inschatting van:
+    </p>
+
+    <ul class="qs-list">
+        <li>Welk risiconiveau van toepassing is onder de AI Act</li>
+        <li>Of jouw systeem transparantieverplichtingen heeft</li>
+        <li>Welke governance-maatregelen noodzakelijk zijn</li>
+        <li>Welke documentatie en controles verplicht (of verstandig) zijn</li>
+    </ul>
+
+    <h2>Start de Quickscan</h2>
+
+    <form class="qs-form" action="mailto:info@dutchgovernanceadvisory.nl" method="POST" enctype="text/plain">
+
+        <label>1. Waarvoor wordt het AI-systeem gebruikt?</label>
+        <select name="Gebruik" required>
+            <option value="">Selecteer…</option>
+            <option>Beleidsondersteuning</option>
+            <option>Handhaving / toezicht</option>
+            <option>Selectie of risicoprofilering</option>
+            <option>Procesoptimalisatie</option>
+            <option>Overig</option>
+        </select>
+
+        <label>2. Worden burgers direct geraakt door de output?</label>
+        <select name="Impact" required>
+            <option value="">Selecteer…</option>
+            <option>Ja, direct</option>
+            <option>Indirect</option>
+            <option>Nee</option>
+        </select>
+
+        <label>3. Beschrijf kort het systeem</label>
+        <textarea name="Beschrijving" rows="5"></textarea>
+
+        <button type="submit">Verstuur en ontvang analyse</button>
+    </form>
+
+    <h2>Wat gebeurt er na verzending?</h2>
+    <p>
+        Je ontvangt binnen één werkdag een beknopte analyse met de belangrijkste risico’s
+        en verplichtingen op basis van de ingevulde informatie.
+    </p>
+
+</main>
+
+<footer class="footer">
+    <p>© 2025 Dutch Governance Advisory</p>
+</footer>
+
+</body>
+</html>
