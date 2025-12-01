@@ -205,5 +205,11 @@ h1, h2, h3 {
 .hero-photo {
     margin-left: 25px !important;
 }
+/* Footer compacter – geen onnodige witte vlakte */
+.footer {
+    padding: 15px 0 !important;
+    background: #f9fbfc !important; /* lichte tint voorkomt 'fel wit' */
+    color: #666 !important;
+}
 
 
