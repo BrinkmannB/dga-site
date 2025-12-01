@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step 2 — AI Act Wizard</title>
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script>
+    function keepParams() {
+        const params = new URLSearchParams(window.location.search);
+        const form = document.querySelector("form");
+
+        const purpose = params.get("purpose");
+        if (purpose) {
+            const hidden = document.createElement("input");
+            hidden.type = "hidden";
+            hidden.name = "purpose";
+            hidden.value = purpose;
+            form.appendChild(hidden);
+        }
+    }
+    window.onload = keepParams;
+    </script>
+</head>
+
+<body>
+<section class="wizard-container">
+    <h2>Step 2 of 6</h2>
+    <h3>Does the system directly affect individuals?</h3>
+
+    <form action="step3.html" method="get" class="wizard-form">
+        <label><input type="radio" name="impact" value="direct" required> Yes, directly</label>
+        <label><input type="radio" name="impact" value="indirect"> Indirectly</label>
+        <label><input type="radio" name="impact" value="none"> No</label>
+        <button class="button">Next</button>
+    </form>
+</section>
+</body>
+</html>
 
