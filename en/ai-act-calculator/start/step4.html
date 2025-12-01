@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step 4 — AI Act Wizard</title>
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script>
+    function keepParams() {
+        const params = new URLSearchParams(window.location.search);
+        const form = document.querySelector("form");
+
+        ["purpose","impact","personal"].forEach(key => {
+            if (params.get(key)) {
+                const hidden = document.createElement("input");
+                hidden.type = "hidden";
+                hidden.name = key;
+                hidden.value = params.get(key);
+                form.appendChild(hidden);
+            }
+        });
+    }
+    window.onload = keepParams;
+    </script>
+</head>
+
+<body>
+<section class="wizard-container">
+    <h2>Step 4 of 6</h2>
+    <h3>Is the system used for scoring, assessment or classification?</h3>
+
+    <form action="step5.html" method="get" class="wizard-form">
+        <label><input type="radio" name="scoring" value="yes" required> Yes</label>
+        <label><input type="radio" name="scoring" value="no"> No</label>
+
+        <button class="button">Next</button>
+    </form>
+</section>
+</body>
+</html>
 
