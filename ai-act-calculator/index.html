@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Act Calculator – Dutch Governance Advisory</title>
-    <meta name="description" content="Bepaal het risiconiveau van jouw AI-systeem volgens de AI Act. Snelle, heldere en juridisch juiste classificatie voor overheden.">
-    <link rel="stylesheet" href="/styles.css?v=1012" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Act Wizard – Dutch Governance Advisory</title>
+    <link rel="stylesheet" href="/styles.css?v=1020">
+    <style>
+        /* Wizard UI additions */
+        .wizard-container { max-width: 700px; margin: 40px auto; }
+        .wizard-step { display: none; }
+        .wizard-step.active { display: block; }
+        .wizard-progress { margin-bottom: 20px; color: #003e6b; font-weight: 600; }
+        .wizard-buttons { margin-top: 25px; display: flex; gap: 15px; }
+        .wizard-buttons button { padding: 12px 22px; border-radius: 8px; border: none; cursor: pointer; font-size: 16px; }
+        .btn-primary { background: #003e6b; color: white; }
+        .btn-secondary { background: #e6eef5; }
+        .risk-badge { padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 18px; display: inline-block; }
+        .risk-minimal { background: #d8f5e4; color: #0a5b2a; }
+        .risk-limited { background: #e3f0ff; color: #0a3a7a; }
+        .risk-high { background: #ffeccc; color: #8a4d00; }
+        .risk-prohibited { background: #ffd4d4; color: #7a0000; }
+        .premium-box { background: #f6f9fc; padding: 22px; border-radius: 12px; margin-top: 30px; border: 1px solid #dce6f2; }
+    </style>
 </head>
 
 <body>
@@ -26,88 +42,174 @@
     </nav>
 </header>
 
-<section class="hero-premium small-hero">
-    <div class="hero-content">
-        <h1>AI Act Calculator</h1>
-        <p class="hero-sub">Krijg direct een eerste risicoclassificatie van jouw AI-systeem.</p>
+<section class="content wizard-container">
+
+    <!-- STARTPAGINA -->
+    <div id="step-0" class="wizard-step active">
+        <h1>AI Act Risk Classification Wizard</h1>
+        <p>Beantwoord zes korte vragen en ontvang direct de AI Act-classificatie van jouw systeem.</p>
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Start classificatie</button>
+        </div>
     </div>
+
+    <!-- STAP 1 -->
+    <div id="step-1" class="wizard-step">
+        <p class="wizard-progress">Stap 1 van 6</p>
+        <h2>Wat is het primaire doel van het AI-systeem?</h2>
+
+        <label><input type="radio" name="doel" value="beleid"> Beleidsondersteuning</label><br>
+        <label><input type="radio" name="doel" value="besluit"> Besluitvorming / toekenning</label><br>
+        <label><input type="radio" name="doel" value="toezicht"> Handhaving / toezicht</label><br>
+        <label><input type="radio" name="doel" value="profilering"> Risicoprofilering</label><br>
+        <label><input type="radio" name="doel" value="biometrie"> Biometrische identificatie</label><br>
+        <label><input type="radio" name="doel" value="dienstverlening"> Burgerinteractie / dienstverlening</label><br>
+        <label><input type="radio" name="doel" value="anders"> Anders</label>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Volgende</button>
+        </div>
+    </div>
+
+    <!-- STAP 2 -->
+    <div id="step-2" class="wizard-step">
+        <p class="wizard-progress">Stap 2 van 6</p>
+        <h2>Worden burgers direct geraakt door uitkomsten?</h2>
+
+        <label><input type="radio" name="impact" value="direct"> Ja, direct</label><br>
+        <label><input type="radio" name="impact" value="indirect"> Indirect</label><br>
+        <label><input type="radio" name="impact" value="geen"> Nee</label>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Volgende</button>
+        </div>
+    </div>
+
+    <!-- STAP 3 -->
+    <div id="step-3" class="wizard-step">
+        <p class="wizard-progress">Stap 3 van 6</p>
+        <h2>Gebruikt het systeem persoonsgegevens of speciale categorieën?</h2>
+
+        <label><input type="radio" name="pers" value="ja"> Ja</label><br>
+        <label><input type="radio" name="pers" value="nee"> Nee</label>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Volgende</button>
+        </div>
+    </div>
+
+    <!-- STAP 4 -->
+    <div id="step-4" class="wizard-step">
+        <p class="wizard-progress">Stap 4 van 6</p>
+        <h2>Wordt het systeem gebruikt voor scoring, beoordeling of classificatie?</h2>
+
+        <label><input type="radio" name="score" value="ja"> Ja</label><br>
+        <label><input type="radio" name="score" value="nee"> Nee</label>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Volgende</button>
+        </div>
+    </div>
+
+    <!-- STAP 5 -->
+    <div id="step-5" class="wizard-step">
+        <p class="wizard-progress">Stap 5 van 6</p>
+        <h2>Wordt biometrische identificatie gebruikt?</h2>
+
+        <label><input type="radio" name="bio" value="ja"> Ja</label><br>
+        <label><input type="radio" name="bio" value="nee"> Nee</label>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="nextStep()">Volgende</button>
+        </div>
+    </div>
+
+    <!-- STAP 6 -->
+    <div id="step-6" class="wizard-step">
+        <p class="wizard-progress">Stap 6 van 6</p>
+        <h2>Korte omschrijving van het AI-systeem</h2>
+
+        <textarea id="omschrijving" rows="4"></textarea>
+
+        <div class="wizard-buttons">
+            <button class="btn-primary" onclick="calculateRisk()">Toon resultaat</button>
+        </div>
+    </div>
+
+    <!-- RESULTAAT -->
+    <div id="result-step" class="wizard-step">
+        <h2>Resultaat AI Act Classificatie</h2>
+        <p id="riskBadge"></p>
+        <p id="riskExplanation"></p>
+
+        <h3>Volgende stappen</h3>
+        <ul id="riskNext"></ul>
+
+        <div class="premium-box">
+            <h3>Volledig AI Act Rapport (Premium)</h3>
+            <p>Ontvang het volledige rapport inclusief verplichtingen, templates en governance-aanpak.</p>
+            <a href="/contact/" class="primary-btn">Ontvang volledig rapport (€29)</a>
+        </div>
+    </div>
+
 </section>
 
-<main class="content">
-
-    <h2>Classificeer jouw AI-systeem</h2>
-    <p>
-        Vul de vragen hieronder in en ontvang automatisch een eerste indicatie van het risiconiveau onder de AI Act:
-        <strong>onaanvaardbaar risico, hoog risico, beperkt risico of minimaal risico.</strong>
-    </p>
-
-    <div class="calc-box">
-        <form class="calc-form">
-
-            <label>1. Wat is het hoofddoel van het AI-systeem?</label>
-            <select name="doel" required>
-                <option value="">Selecteer…</option>
-                <option>Beleidsondersteuning</option>
-                <option>Burgerinteractie / dienstverlening</option>
-                <option>Handhaving of toezicht</option>
-                <option>Risicoprofilering</option>
-                <option>Biometrische identificatie</option>
-                <option>Krediet- of kansinschatting</option>
-            </select>
-
-            <label>2. Heeft het systeem impact op burgers?</label>
-            <select name="impact" required>
-                <option value="">Selecteer…</option>
-                <option>Direct</option>
-                <option>Indirect</option>
-                <option>Geen</option>
-            </select>
-
-            <label>3. Wordt er gebruikgemaakt van biometrische data?</label>
-            <select name="bio" required>
-                <option value="">Selecteer…</option>
-                <option>Ja</option>
-                <option>Nee</option>
-            </select>
-
-            <label>4. Korte beschrijving van het systeem</label>
-            <textarea name="omschrijving" rows="4"></textarea>
-
-            <button type="button" onclick="calcRisk()">Bepaal risiconiveau</button>
-        </form>
-    </div>
-
-    <div id="calc-result" class="calc-result hidden">
-        <h3>Resultaat</h3>
-        <p id="calc-output"></p>
-    </div>
-
-</main>
-
-<footer class="footer">
-    <p>© 2025 Dutch Governance Advisory</p>
-</footer>
-
 <script>
-function calcRisk() {
-    const doel = document.querySelector("[name='doel']").value;
-    const impact = document.querySelector("[name='impact']").value;
-    const bio = document.querySelector("[name='bio']").value;
+let currentStep = 0;
 
-    let result = "";
+function nextStep() {
+    document.getElementById("step-" + currentStep).classList.remove("active");
+    currentStep++;
+    document.getElementById("step-" + currentStep).classList.add("active");
+}
 
-    if (bio === "Ja") {
-        result = "Hoog risico – biometrische identificatie valt direct onder de AI Act.";
-    } else if (doel === "Handhaving of toezicht" || doel === "Risicoprofilering") {
-        result = "Hoog risico – toezicht, handhaving en risicoprofilering zijn gereguleerde AI-systemen.";
-    } else if (impact === "Direct") {
-        result = "Beperkt risico – transparantieverplichtingen zijn waarschijnlijk van toepassing.";
-    } else {
-        result = "Minimaal risico – documentatie blijft aanbevolen.";
-    }
+function calculateRisk() {
+    const doel = document.querySelector("input[name='doel']:checked")?.value;
+    const impact = document.querySelector("input[name='impact']:checked")?.value;
+    const pers = document.querySelector("input[name='pers']:checked")?.value;
+    const score = document.querySelector("input[name='score']:checked")?.value;
+    const bio = document.querySelector("input[name='bio']:checked")?.value;
 
-    document.getElementById("calc-output").textContent = result;
-    document.getElementById("calc-result").classList.remove("hidden");
+    let category = "minimal";
+    let explanation = "";
+
+    if (bio === "ja") category = "high";
+    else if (doel === "biometrie") category = "high";
+    else if (doel === "toezicht" || doel === "profilering") category = "high";
+    else if (impact === "direct" && (score === "ja" || pers === "ja")) category = "high";
+    else if (impact === "direct") category = "limited";
+    else if (impact === "indirect") category = "limited";
+
+    const badges = {
+        minimal: `<span class="risk-badge risk-minimal">Minimal Risk</span>`,
+        limited: `<span class="risk-badge risk-limited">Limited Risk</span>`,
+        high: `<span class="risk-badge risk-high">High-Risk AI</span>`,
+        prohibited: `<span class="risk-badge risk-prohibited">Prohibited AI</span>`
+    };
+
+    const texts = {
+        minimal: "Dit systeem valt onder minimaal risico.",
+        limited: "Beperkt risico — transparantieverplichtingen van toepassing.",
+        high: "Hoog-risico AI — valt onder gereguleerde verplichtingen van de AI Act.",
+        prohibited: "Deze toepassing is niet toegestaan onder EU-wetgeving."
+    };
+
+    const nexts = {
+        minimal: ["Geen verplichtingen", "Documentatie wordt aanbevolen"],
+        limited: ["Voorzie in transparantie", "Informeer gebruikers", "Documenteer modelgedrag"],
+        high: ["Risicobeheer verplicht", "Menselijk toezicht opzetten", "Logging vereist", "Technische documentatie verplicht"],
+        prohibited: ["Stopzetten toepassing", "Alternatieve aanpak vereist"]
+    };
+
+    document.getElementById("riskBadge").innerHTML = badges[category];
+    document.getElementById("riskExplanation").innerText = texts[category];
+
+    document.getElementById("riskNext").innerHTML = nexts[category]
+        .map(i => `<li>${i}</li>`)
+        .join("");
+
+    document.getElementById("step-" + currentStep).classList.remove("active");
+    document.getElementById("result-step").classList.add("active");
 }
 </script>
 
