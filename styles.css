@@ -356,4 +356,77 @@ h1, h2, h3 {
 .calc-result h3 {
     margin-top: 0;
 }
+/* RESULT PAGE -------------------------------------------------- */
+
+.result-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.result-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.result-title {
+    margin-top: 0;
+    font-size: 26px;
+    color: #113a5e;
+}
+
+.risk-pill {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 10px 0 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.risk-low { background: #2a8f4d; }
+.risk-medium { background: #e6a100; }
+.risk-high { background: #cf2a2a; }
+.risk-prohibited { background: #6a0a0a; }
+
+.premium-box {
+    background: #f3f9ff;
+    border: 2px solid #d3e7ff;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 50px 0;
+}
+
+.premium-box h2 {
+    margin-top: 0;
+    color: #113a5e;
+}
+
+.premium-list li {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.premium-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.button-secondary {
+    padding: 12px 18px;
+    border: 2px solid #113a5e;
+    border-radius: 6px;
+    color: #113a5e;
+    text-decoration: none;
+}
+
+.cta-more {
+    text-align: center;
+    margin-top: 60px;
+}
 
