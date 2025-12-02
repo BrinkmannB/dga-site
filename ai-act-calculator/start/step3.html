@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stap 3 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/styles.css" />
-
-    <script>
-    function forwardParams() {
-        const params = new URLSearchParams(window.location.search);
-        const form = document.querySelector("form");
-        ["doel","impact"].forEach(p=>{
-            if(params.get(p)){
-                const hidden=document.createElement("input");
-                hidden.type="hidden";
-                hidden.name=p;
-                hidden.value=params.get(p);
-                form.appendChild(hidden);
-            }
-        });
-    }
-    window.onload = forwardParams;
-    </script>
+<meta charset="UTF-8">
+<title>Stap 3 — Domein</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
 </head>
 
-<body>
-<section class="wizard-container">
-    <h2>Stap 3 van 6</h2>
-    <h3>Gebruikt het systeem persoonsgegevens of speciale categorieën?</h3>
+<body class="fade-in">
 
-    <form action="step4.html" method="get" class="wizard-form">
-        <label><input type="radio" name="pers" value="ja" required> Ja</label>
-        <label><input type="radio" name="pers" value="nee"> Nee</label>
-        <button class="button">Volgende</button>
-    </form>
-</section>
+<header>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo">DGA</a>
+            <ul>
+                <li><a href="/diensten/">Diensten</a></li>
+                <li><a href="/kennisbank/">Kennisbank</a></li>
+                <li><a href="/quickscan/">Quickscan</a></li>
+                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/over-bas/">Over Bas</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/en/ai-act-calculator/start/step3.html">EN</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="calc-wrapper">
+
+<div class="sidebar">
+    <h3>Vragen</h3>
+    <ul>
+        <li class="completed">1</li>
+        <li class="completed">2</li>
+        <li class="active">3. Domein</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
+
+<div class="calc-main fade-in">
+
+    <div class="question-block">
+        <h2>Valt jouw AI-systeem binnen een hoog-risico domein?</h2>
+        <p>Voorbeelden: onderwijs, werk, rechtshandhaving, gezondheidszorg, grenscontrole.</p>
+
+        <div class="options">
+            <div class="option" onclick="saveAnswer('step3','high'); go('step4.html')">
+                Ja — dit is een hoog-risico domein
+            </div>
+
+            <div class="option" onclick="saveAnswer('step3','low'); go('step4.html')">
+                Nee
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a class="button-secondary" href="step2.html">← Terug</a>
+        <a class="button-primary" onclick="go('step4.html')">Volgende →</a>
+    </div>
+
+</div>
+
+</div>
 </body>
 </html>
