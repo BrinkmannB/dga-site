@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Stap 9 — Menselijk toezicht</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
+</head>
+
+<body class="fade-in">
+
+<!-- HEADER -->
+
+<div class="calc-wrapper">
+
+<div class="sidebar">
+    <h3>Vragen</h3>
+    <ul>
+        <li class="completed">1</li>
+        <li class="completed">2</li>
+        <li class="completed">3</li>
+        <li class="completed">4</li>
+        <li class="completed">5</li>
+        <li class="completed">6</li>
+        <li class="completed">7</li>
+        <li class="completed">8</li>
+        <li class="active">9. Toezicht</li>
+        <li>10</li>
+    </ul>
+</div>
+
+<div class="calc-main fade-in">
+
+    <div class="question-block">
+        <h2>Is er effectief menselijk toezicht op het AI-systeem?</h2>
+        <p>Bijv.: menselijke override, beoordeling van outputs, verificatiemomenten.</p>
+
+        <div class="options">
+            <div class="option" onclick="saveAnswer('step9','strong'); go('step10.html')">
+                Ja — sterk menselijk toezicht
+            </div>
+
+            <div class="option" onclick="saveAnswer('step9','weak'); go('step10.html')">
+                Beperkt menselijk toezicht
+            </div>
+
+            <div class="option" onclick="saveAnswer('step9','none'); go('step10.html')">
+                Geen menselijk toezicht
+            </div>
+        </div>
+    </div>
+
+
+    <div class="nav-buttons">
+        <a class="button-secondary" href="step8.html">← Terug</a>
+        <a class="button-primary" onclick="go('step10.html')">Volgende →</a>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>
 
