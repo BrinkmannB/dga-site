@@ -1,122 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EU AI Act Calculator — Dutch Governance Advisory</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
-
-    <style>
-        /* ------------------------------
-           PREMIUM CONSULTANCY A++++
-           Page-Specific Enhancements
-        --------------------------------*/
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #003865 0%, #005B96 100%);
-            padding: 120px 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-gradient h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .hero-gradient p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.25rem;
-            opacity: 0.92;
-        }
-
-        .primary-btn {
-            display: inline-block;
-            margin-top: 24px;
-            background-color: #003865;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
-        }
-
-        .primary-btn:hover {
-            background-color: white;
-            color: #003865;
-            border-color: #003865;
-        }
-
-        .section {
-            padding: 70px 20px;
-        }
-
-        .section h2 {
-            font-size: 1.9rem;
-            color: #003865;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .benefits-list {
-            list-style: none;
-            padding-left: 0;
-            line-height: 1.8;
-        }
-
-        .benefits-list li {
-            font-size: 1.1rem;
-        }
-
-        .categories-grid {
-            display: grid;
-            gap: 32px;
-            margin-top: 32px;
-        }
-
-        @media (min-width: 800px) {
-            .categories-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .category-card {
-            background: #f8fbff;
-            border: 1px solid #e2ecf5;
-            padding: 24px;
-            border-radius: 10px;
-        }
-
-        .category-card h3 {
-            color: #003865;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .category-card p {
-            opacity: 0.85;
-            line-height: 1.5;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU AI Act Calculator</title>
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container header-inner">
-        <div class="logo">
-            <a href="/en/">DGA</a>
-        </div>
-
+<header>
+    <div class="container">
+        <h1 class="logo">DGA</h1>
         <nav>
             <ul>
                 <li><a href="/en/services/">Services</a></li>
-                <li><a href="/en/knowledge-base/">Knowledge Base</a></li>
+                <li><a href="/en/knowledge/">Knowledge Base</a></li>
                 <li><a href="/en/quickscan/">Quickscan</a></li>
                 <li><a href="/en/ai-act-calculator/" class="active">AI Act Calculator</a></li>
                 <li><a href="/en/tools/">Tools</a></li>
@@ -128,56 +27,24 @@
     </div>
 </header>
 
-<!-- HERO -->
-<section class="hero-gradient">
-    <h1>EU AI Act Calculator</h1>
-    <p>Determine the legal risk category of your AI system — fast, accurate and accessible.</p>
-
-    <a href="/en/ai-act-calculator/start/" class="primary-btn">Start Classification</a>
-</section>
-
-<!-- BENEFITS -->
-<section class="section container">
-    <h2>What this tool gives you</h2>
-
-    <ul class="benefits-list">
-        <li>✔ Official EU AI Act risk category</li>
-        <li>✔ Clear explanation of your obligations</li>
-        <li>✔ Links to governance templates</li>
-        <li>✔ Next steps for high-risk AI systems</li>
-    </ul>
-</section>
-
-<!-- CATEGORIES -->
-<section class="section container">
-    <h2>EU AI Act Categories Covered</h2>
-
-    <div class="categories-grid">
-
-        <div class="category-card">
-            <h3>Minimal-Risk AI</h3>
-            <p>Free use under the EU AI Act. Recommended to maintain basic documentation.</p>
-        </div>
-
-        <div class="category-card">
-            <h3>Limited-Risk AI</h3>
-            <p>Transparency obligations may apply depending on the use-case.</p>
-        </div>
-
-        <div class="category-card">
-            <h3>High-Risk AI</h3>
-            <p>Full compliance requirements including risk management, documentation, logging and human oversight.</p>
-        </div>
-
-        <div class="category-card">
-            <h3>Prohibited AI</h3>
-            <p>Not allowed to be placed on the EU market or used by public entities.</p>
-        </div>
-
+<section class="hero">
+    <div class="container">
+        <h1>EU AI Act Calculator</h1>
+        <p>Determine the legal risk category of your AI system — fast, accurate and accessible.</p>
+        <a href="/en/ai-act-calculator/start/" class="primary-btn">Start Classification</a>
     </div>
 </section>
 
-<!-- FOOTER -->
+<section class="container">
+    <h2>What this tool gives you</h2>
+    <ul>
+        <li>✔ Official EU AI Act risk category</li>
+        <li>✔ Clear explanation of your obligations</li>
+        <li>✔ Links to governance templates</li>
+        <li>✔ Next steps for high-risk AI</li>
+    </ul>
+</section>
+
 <footer class="footer">
     <div class="container">
         <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
