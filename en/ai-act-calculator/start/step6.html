@@ -3,38 +3,135 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step 6 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>Step 6 — Autonomy | AI Act Wizard</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
 
-    <script>
-    function keepParams() {
-        const params = new URLSearchParams(window.location.search);
-        const form = document.querySelector("form");
+    <style>
+        /* Premium Consultancy Wizard Styling */
 
-        ["purpose","impact","personal","scoring","bio"].forEach(key => {
-            if (params.get(key)) {
-                const hidden = document.createElement("input");
-                hidden.type = "hidden";
-                hidden.name = key;
-                hidden.value = params.get(key);
-                form.appendChild(hidden);
-            }
-        });
-    }
-    window.onload = keepParams;
-    </script>
+        .wizard-header {
+            padding: 40px 20px;
+            background: #002f52;
+            color: white;
+            text-align: center;
+        }
+
+        .wizard-header h1 {
+            font-size: 2rem;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .wizard-header p {
+            opacity: 0.88;
+        }
+
+        .wizard-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wizard-section h2 {
+            color: #003865;
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .wizard-options {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .wizard-options li {
+            margin-bottom: 18px;
+            padding: 16px;
+            border: 1px solid #d8e5f0;
+            border-radius: 8px;
+            background: #f8fbff;
+            transition: 0.2s ease;
+        }
+
+        .wizard-options li:hover {
+            background: #eef5fc;
+        }
+
+        .wizard-options input {
+            margin-right: 12px;
+        }
+
+        .primary-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 14px 32px;
+            background: #003865;
+            color: white;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            color: #003865;
+            border-color: #003865;
+        }
+
+        .step-indicator {
+            text-align: center;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #7a8ea6;
+        }
+    </style>
 </head>
 
 <body>
-<section class="wizard-container">
-    <h2>Step 6 of 6</h2>
-    <h3>Short description of the AI system</h3>
 
-    <form action="/en/ai-act-calculator/result.html" method="get" class="wizard-form">
-        <textarea name="description" rows="4" required></textarea>
-        <button class="button">Show result</button>
+<!-- HEADER -->
+<div class="wizard-header">
+    <h1>AI Act Classification Wizard</h1>
+    <p>Step 6 of 6 — Autonomy & Human Oversight</p>
+</div>
+
+<section class="wizard-section">
+    <h2>Does your AI system operate without human approval of key decisions?</h2>
+
+    <form action="/ai-act-calculator/en/result.html" method="GET">
+
+        <ul class="wizard-options">
+
+            <li>
+                <label>
+                    <input type="radio" name="autonomy" value="autonomous" required>
+                    Yes — the system makes decisions without human validation or approval
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="radio" name="autonomy" value="supervised">
+                    No — a human reviews or approves important outcomes
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="radio" name="autonomy" value="support">
+                    No — the system only provides recommendations or support, not decisions
+                </label>
+            </li>
+
+        </ul>
+
+        <button type="submit" class="primary-btn">Show Result</button>
+
     </form>
+
+    <p class="step-indicator">Step 6 of 6</p>
 </section>
+
 </body>
 </html>
-
