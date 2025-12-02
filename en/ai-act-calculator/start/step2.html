@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 2 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+<meta charset="UTF-8">
+<title>Step 2 — Biometric Systems</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>
+function saveAnswer(step,value){
+    localStorage.setItem(step,value);
+}
+</script>
 </head>
 
-<body>
-<section class="wizard container">
-    <h2>Step 2 of 6</h2>
-    <p>Are citizens directly affected by the system’s outcomes?</p>
+<body class="fade-in">
+<div class="wizard-container">
 
-    <form action="step3.html" method="get">
-        <label><input type="radio" name="impact" value="direct"> Yes, directly</label><br>
-        <label><input type="radio" name="impact" value="indirect"> Indirectly</label><br>
-        <label><input type="radio" name="impact" value="no"> No</label><br><br>
+    <div class="step-counter">Step 2 of 10</div>
 
-        <button class="primary-btn">Next</button>
-    </form>
-</section>
+    <h2>Does the system use biometric identification or categorisation?</h2>
+    <p>Face recognition, voice profiling, emotion inference, etc.</p>
+
+    <div class="option" onclick="saveAnswer('step2','yes'); window.location='step3.html';">
+        Yes — biometric features present
+    </div>
+
+    <div class="option" onclick="saveAnswer('step2','no'); window.location='step3.html';">
+        No
+    </div>
+
+    <div class="nav-row">
+        <a href="step1.html" class="button-secondary">← Back</a>
+        <a href="step3.html" class="button-primary">Next →</a>
+    </div>
+
+</div>
 </body>
 </html>
