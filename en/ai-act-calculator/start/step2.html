@@ -1,137 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step 2 — Impact | AI Act Wizard</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
-
-    <style>
-        /* Premium Consultancy Wizard Styling */
-
-        .wizard-header {
-            padding: 40px 20px;
-            background: #002f52;
-            color: white;
-            text-align: center;
-        }
-
-        .wizard-header h1 {
-            font-size: 2rem;
-            margin-bottom: 6px;
-            font-weight: 800;
-        }
-
-        .wizard-header p {
-            opacity: 0.88;
-        }
-
-        .wizard-section {
-            padding: 60px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .wizard-section h2 {
-            color: #003865;
-            font-weight: 800;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-
-        .wizard-options {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .wizard-options li {
-            margin-bottom: 18px;
-            padding: 16px;
-            border: 1px solid #d8e5f0;
-            border-radius: 8px;
-            background: #f8fbff;
-            transition: 0.2s ease;
-        }
-
-        .wizard-options li:hover {
-            background: #eef5fc;
-        }
-
-        .wizard-options input {
-            margin-right: 12px;
-        }
-
-        .primary-btn {
-            margin-top: 30px;
-            display: inline-block;
-            padding: 14px 32px;
-            background: #003865;
-            color: white;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: 0.2s;
-            border: 2px solid transparent;
-        }
-
-        .primary-btn:hover {
-            background: white;
-            color: #003865;
-            border-color: #003865;
-        }
-
-        .step-indicator {
-            text-align: center;
-            font-weight: 600;
-            margin-top: 20px;
-            color: #7a8ea6;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2 — AI Act Wizard</title>
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 
 <body>
+<section class="wizard container">
+    <h2>Step 2 of 6</h2>
+    <p>Are citizens directly affected by the system’s outcomes?</p>
 
-<!-- HEADER -->
-<div class="wizard-header">
-    <h1>AI Act Classification Wizard</h1>
-    <p>Step 2 of 6 — Impact on Individuals</p>
-</div>
+    <form action="step3.html" method="get">
+        <label><input type="radio" name="impact" value="direct"> Yes, directly</label><br>
+        <label><input type="radio" name="impact" value="indirect"> Indirectly</label><br>
+        <label><input type="radio" name="impact" value="no"> No</label><br><br>
 
-<section class="wizard-section">
-    <h2>How does your AI system impact individuals?</h2>
-
-    <form action="/ai-act-calculator/en/start/step3.html" method="GET">
-
-        <ul class="wizard-options">
-
-            <li>
-                <label>
-                    <input type="radio" name="impact" value="direct" required>
-                    It directly influences a person’s rights, access, benefits or obligations
-                </label>
-            </li>
-
-            <li>
-                <label>
-                    <input type="radio" name="impact" value="indirect">
-                    It influences outcomes indirectly but does not determine decisions
-                </label>
-            </li>
-
-            <li>
-                <label>
-                    <input type="radio" name="impact" value="none">
-                    It has no meaningful impact on individuals
-                </label>
-            </li>
-
-        </ul>
-
-        <button type="submit" class="primary-btn">Next</button>
-
+        <button class="primary-btn">Next</button>
     </form>
-
-    <p class="step-indicator">Step 2 of 6</p>
 </section>
-
 </body>
 </html>
