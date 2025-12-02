@@ -14,7 +14,7 @@ function calculateRisk() {
     let s7 = localStorage.getItem('step7');
     let s10 = localStorage.getItem('step10');
 
-    // Simple logic (kan later uitgebreid)
+    // Simpele classificatie (later uitbreidbaar)
     if (s1 === 'yes') return "Verboden AI";
     if (s2 === 'yes') return "Hoog risico";
     if (s5 === 'auto') return "Hoog risico";
@@ -43,11 +43,4 @@ window.onload = function() {
         <strong id="risk-output" style="font-size:1.4rem;"></strong>
     </div>
 
-    <div class="nav-row" style="margin-top:40px;">
-        <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-    </div>
-
-</div>
-
-</body>
-</html>
+    <div class="nav-row" sty
