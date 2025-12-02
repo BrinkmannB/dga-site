@@ -2,66 +2,37 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Stap 10 — Doel</title>
-<link rel="stylesheet" href="/assets/css/global.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-<link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/ai-act-calculator/style.css">
-<script src="/ai-act-calculator/app.js"></script>
+<title>Stap 10 — Type systeem</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
 </head>
 
 <body class="fade-in">
 
-<!-- HEADER -->
+<div class="wizard-container">
 
-<div class="calc-wrapper">
+    <div class="step-counter">Stap 10 van 10</div>
 
-<div class="sidebar">
-    <h3>Vragen</h3>
-    <ul>
-        <li class="completed">1</li>
-        <li class="completed">2</li>
-        <li class="completed">3</li>
-        <li class="completed">4</li>
-        <li class="completed">5</li>
-        <li class="completed">6</li>
-        <li class="completed">7</li>
-        <li class="completed">8</li>
-        <li class="completed">9</li>
-        <li class="active">10. Doel</li>
-    </ul>
-</div>
+    <h2>Welk type AI-systeem wordt ingezet?</h2>
 
-<div class="calc-main fade-in">
-
-    <div class="question-block">
-        <h2>Welk type AI-systeem wordt ingezet?</h2>
-        <p>Kies de optie die het best past.</p>
-
-        <div class="options">
-            <div class="option" onclick="saveAnswer('step10','gpa'); go('../resultaat.html')">
-                Foundation Model / Generatief model (GPAI)
-            </div>
-
-            <div class="option" onclick="saveAnswer('step10','application'); go('../resultaat.html')">
-                Toepassingsgericht AI-systeem (beslis/advies)
-            </div>
-
-            <div class="option" onclick="saveAnswer('step10','simple'); go('../resultaat.html')">
-                Eenvoudig, ondersteunend AI-systeem
-            </div>
-        </div>
+    <div class="option" onclick="saveAnswer('step10','gpa'); window.location='../result.html';">
+        Foundation Model / Generatief model (GPAI)
     </div>
 
+    <div class="option" onclick="saveAnswer('step10','application'); window.location='../result.html';">
+        Toepassingsgericht AI-systeem
+    </div>
 
-    <div class="nav-buttons">
+    <div class="option" onclick="saveAnswer('step10','simple'); window.location='../result.html';">
+        Eenvoudig / Low-risk systeem
+    </div>
+
+    <div class="nav-row">
         <a class="button-secondary" href="step9.html">← Terug</a>
-        <a class="button-primary" onclick="go('../resultaat.html')">Resultaat →</a>
+        <a class="button-primary" href="../result.html">Resultaat →</a>
     </div>
 
 </div>
 
-</div>
 </body>
 </html>
-
