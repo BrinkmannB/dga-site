@@ -3,77 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Stap 1 — Verboden AI</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/ai-act-calculator/style.css">
-<script src="/ai-act-calculator/app.js"></script>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>
+function saveAnswer(step, value) {
+    localStorage.setItem(step, value);
+}
+</script>
 </head>
 
 <body class="fade-in">
 
-<header>
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="logo">DGA</a>
-            <ul>
-                <li><a href="/diensten/">Diensten</a></li>
-                <li><a href="/kennisbank/">Kennisbank</a></li>
-                <li><a href="/quickscan/">Quickscan</a></li>
-                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
-                <li><a href="/tools/">Tools</a></li>
-                <li><a href="/over-bas/">Over Bas</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                <li><a href="/en/ai-act-calculator/start/step1.html">EN</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<div class="wizard-container">
 
-<div class="calc-wrapper">
+    <div class="step-counter">Stap 1 van 10</div>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <h3>Vragen</h3>
-    <ul>
-        <li class="active">1. Verboden AI</li>
-        <li>2. Biometrie</li>
-        <li>3. Domein</li>
-        <li>4. Impact</li>
-        <li>5. Besluitvorming</li>
-        <li>6. Data</li>
-        <li>7. Overheid</li>
-        <li>8. Kritiek</li>
-        <li>9. Toezicht</li>
-        <li>10. Doel</li>
-    </ul>
-</div>
+    <h2>Wordt het AI-systeem gebruikt voor sociale scoring?</h2>
+    <p>Bijvoorbeeld burgers rangschikken op gedrag of kenmerken, of emotieherkenning in publieke ruimtes.</p>
 
-<!-- MAIN -->
-<div class="calc-main fade-in">
-
-    <div class="question-block">
-        <h2>Wordt het systeem gebruikt voor sociale scoring?</h2>
-        <p>Bijvoorbeeld: burgers rangschikken op gedrag of kenmerken.</p>
-
-        <div class="options">
-            <div class="option" onclick="saveAnswer('step1','yes'); go('step2.html')">
-                Ja — dit valt onder verboden AI
-            </div>
-
-            <div class="option" onclick="saveAnswer('step1','no'); go('step2.html')">
-                Nee — dit is niet van toepassing
-            </div>
-        </div>
+    <div class="option" onclick="saveAnswer('step1','yes'); window.location='step2.html';">
+        Ja — dit valt onder verboden AI
     </div>
 
-    <div class="nav-buttons">
+    <div class="option" onclick="saveAnswer('step1','no'); window.location='step2.html';">
+        Nee — dit is niet van toepassing
+    </div>
+
+    <div class="nav-row">
         <a class="button-secondary" href="index.html">← Terug</a>
-        <a class="button-primary" onclick="go('step2.html')">Volgende →</a>
+        <a class="button-primary" href="step2.html">Volgende →</a>
     </div>
 
 </div>
 
-</div>
 </body>
 </html>
