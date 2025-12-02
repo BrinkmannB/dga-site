@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <title>Stap 10 — Type systeem</title>
 <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
+<script>
+function saveAnswer(step,value){
+    localStorage.setItem(step, value);
+    window.location = "/ai-act-calculator/resultaat.html";
+}
+</script>
 </head>
 
 <body class="fade-in">
@@ -15,21 +20,21 @@
 
     <h2>Welk type AI-systeem wordt ingezet?</h2>
 
-    <div class="option" onclick="saveAnswer('step10','gpa'); window.location='../result.html';">
+    <div class="option" onclick="saveAnswer('step10','gpa')">
         Foundation Model / Generatief model (GPAI)
     </div>
 
-    <div class="option" onclick="saveAnswer('step10','application'); window.location='../result.html';">
+    <div class="option" onclick="saveAnswer('step10','application')">
         Toepassingsgericht AI-systeem
     </div>
 
-    <div class="option" onclick="saveAnswer('step10','simple'); window.location='../result.html';">
+    <div class="option" onclick="saveAnswer('step10','simple')">
         Eenvoudig / Low-risk systeem
     </div>
 
     <div class="nav-row">
         <a class="button-secondary" href="step9.html">← Terug</a>
-        <a class="button-primary" href="../result.html">Resultaat →</a>
+        <a class="button-primary" href="/ai-act-calculator/resultaat.html">Resultaat →</a>
     </div>
 
 </div>
