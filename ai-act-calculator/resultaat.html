@@ -1,71 +1,49 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Act Resultaat</title>
-    <link rel="stylesheet" href="/styles.css">
-
-    <script>
-    function classify() {
-        const p = new URLSearchParams(window.location.search);
-        const doel = p.get("doel");
-        const impact = p.get("impact");
-        const pers = p.get("pers");
-        const score = p.get("score");
-        const bio = p.get("bio");
-
-        let risk = "low";
-
-        if (bio === "ja") risk = "high";
-        else if (doel === "biometrie") risk = "high";
-        else if (doel === "profilering") risk = "high";
-        else if (impact === "direct" && (pers === "ja" || score === "ja")) risk = "high";
-        else if (impact === "direct") risk = "limited";
-        else if (impact === "indirect") risk = "limited";
-
-        const badge = {
-            low: `<div class="risk-pill risk-low">Minimal Risk</div>`,
-            limited: `<div class="risk-pill risk-medium">Limited Risk</div>`,
-            high: `<div class="risk-pill risk-high">High-Risk AI</div>`
-        }[risk];
-
-        const text = {
-            low: "Deze toepassing valt onder minimaal risico.",
-            limited: "Beperkt risico — transparantieverplichtingen kunnen gelden.",
-            high: "Hoog risico — valt onder gereguleerde verplichtingen van de AI Act."
-        }[risk];
-
-        document.getElementById("badge").innerHTML = badge;
-        document.getElementById("explain").innerHTML = text;
-    }
-
-    window.onload = classify;
-    </script>
-
+<meta charset="UTF-8">
+<title>Resultaat — AI Act Calculator</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
 </head>
-<body>
 
-<section class="hero small-hero">
-    <h1>Resultaat: AI Act Classificatie</h1>
-    <p>Hier is jouw voorlopige risicocategorie.</p>
-</section>
+<body onload="showResult()" class="fade-in">
 
-<section class="result-container">
+<header>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo">DGA</a>
+            <ul>
+                <li><a href="/diensten/">Diensten</a></li>
+                <li><a href="/kennisbank/">Kennisbank</a></li>
+                <li><a href="/quickscan/">Quickscan</a></li>
+                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/over-bas/">Over Bas</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/en/ai-act-calculator/result.html">EN</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="calc-container">
+
+    <h1>Resultaat</h1>
 
     <div class="result-box">
-        <h2 class="result-title">Jouw classificatie</h2>
-        <div id="badge"></div>
-        <p id="explain"></p>
+        <h2>Risicocategorie:</h2>
+        <p id="risk-output" style="font-size:1.4rem;font-weight:600;"></p>
     </div>
 
-    <div class="premium-box">
-        <h2>Premium Rapport + PDF</h2>
-        <p>Ontvang alle verplichtingen, analyses en templates als volledig rapport.</p>
-        <a href="/quickscan/" class="button">Bestel QuickScan PDF (€29)</a>
+    <div class="nav-buttons" style="margin-top: 3rem;">
+        <a class="button-secondary" href="/ai-act-calculator/start/">Opnieuw beginnen</a>
+        <a class="button-primary" onclick="downloadPDF()">Download PDF</a>
     </div>
 
-</section>
+</div>
 
 </body>
 </html>
