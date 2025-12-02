@@ -1,12 +1,8 @@
 // riskModel.js — v1.0 (AI Act Quickscan DGA)
-// --------------------------------------------------
-// Deze module leest alle antwoorden uit localStorage
-// en geeft een object terug met:
-// { category: "...", title: "...", reason: "...", steps: [...] }
 
+// Haal alle antwoorden op en bepaal risico + uitleg
 export function calculateRisk() {
 
-    // 1. Alle antwoorden ophalen
     const a = {
         1: localStorage.getItem("step1"),
         2: localStorage.getItem("step2"),
@@ -20,88 +16,77 @@ export function calculateRisk() {
         10: localStorage.getItem("step10")
     };
 
-    // 2. Forbidden AI (Artikel 5)
-    const forbiddenTriggers = [
-        a[1] === "manipulatie",
-        a[2] === "scoring",
-        a[3] === "biometrisch",
-        a[4] === "context-overschrijding"
-    ];
-
-    if (forbiddenTriggers.includes(true)) {
+    // === 1. Forbidden AI (Art. 5) ===
+    if (a[1] === "yes") {
         return {
             category: "forbidden",
             title: "Verboden AI",
-            reason: "Het systeem bevat functionaliteiten die volgens artikel 5 van de EU AI Act niet zijn toegestaan.",
+            reason: "Het systeem valt onder artikel 5 van de EU AI Act omdat het kenmerken van verboden AI bevat.",
             steps: [
-                "Stop onmiddellijk de implementatie — verboden AI mag niet worden gebruikt in de EU.",
-                "Onderzoek alternatieve, wel toegestane technologische opties.",
-                "Laat een volledige AI-governance analyse uitvoeren om risico’s te begrijpen."
+                "Stop de implementatie van het systeem (verboden AI mag niet worden gebruikt in de EU).",
+                "Onderzoek alternatieven die wel binnen de wetgeving passen.",
+                "Laat een volledige AI-governance analyse uitvoeren voor risico’s en opties."
             ]
         };
     }
 
-    // 3. High Risk triggers (Annex III)
-    const highRiskTriggers = [
-        a[5] === "beslissingsondersteuning",
-        a[6] === "veiligheidskritiek",
-        a[7] === "biometrisch-vergelijk",
-        a[8] === "opleiding-werk",
-        a[9] === "publieke-taak"
-    ];
-
-    if (highRiskTriggers.includes(true)) {
+    // === 2. High Risk (Annex III triggers) ===
+    if (
+        a[2] === "yes" ||         // biometrie
+        a[4] === "high" ||        // grote impact
+        a[5] === "auto" ||        // automatische besluiten
+        a[7] === "yes"            // overheid
+    ) {
         return {
             category: "high",
-            title: "Hoog-risico AI",
-            reason: "Onder jouw antwoorden valt het systeem onder Annex III van de EU AI Act.",
+            title: "Hoog risico AI",
+            reason: "Het systeem bevat kenmerken uit Annex III van de EU AI Act, zoals biometrie, hoge impact of publieke inzet.",
             steps: [
-                "Start direct met risicobeoordeling + datakwaliteitseisen.",
-                "Stel documentatie & technische logs op volgens Annex IV.",
-                "Voer conformiteitsbeoordeling uit voor gebruik."
-            ],
-            gpa: a[10] === "gpa" ? true : false
+                "Start een verplichte AI Risk Assessment (risicobeheerproces).",
+                "Documenteer technische documentatie conform Annex IV.",
+                "Zorg voor menselijk toezicht en datakwaliteit.",
+                "Bereid een conformiteitsbeoordeling voor."
+            ]
         };
     }
 
-    // 4. GPAI / Foundation Model zonder HR triggers
+    // === 3. GPAI/Foundation Model ===
     if (a[10] === "gpa") {
         return {
             category: "gpa",
-            title: "GPAI / Foundation Model",
-            reason: "Het systeem valt onder de verplichtingen voor Foundation Models volgens de AI Act.",
+            title: "Generatief / Foundation Model",
+            reason: "Het systeem valt onder de verplichtingen voor GPAI volgens de AI Act.",
             steps: [
-                "Documenteer trainingsdata & beperkingen.",
-                "Voer model-evaluaties en cybersecurity-tests uit.",
-                "Beschrijf duidelijke instructies voor downstream gebruik."
+                "Documenteer trainingsdata, beperkingen en risico’s.",
+                "Voer technische evaluaties en benchmarks uit.",
+                "Zorg voor duidelijke downstream-instructies voor gebruikers."
             ]
         };
     }
 
-    // 5. Limited Risk
+    // === 4. Limited / Transparantie ===
     if (a[10] === "application") {
         return {
             category: "limited",
-            title: "Beperkt risico",
-            reason: "Het systeem valt onder de transparantievereisten van de EU AI Act.",
+            title: "Beperkt risico AI",
+            reason: "Dit systeem valt onder transparantievereisten van de AI Act.",
             steps: [
-                "Informeer gebruikers over AI-gebruik.",
-                "Zorg voor menselijke supervisie.",
-                "Documenteer doel, context en beperkingen van het systeem."
+                "Informeer gebruikers dat AI wordt toegepast.",
+                "Zorg voor menselijk toezicht (‘human-in-the-loop’).",
+                "Documenteer doel, context en beperkingen."
             ]
         };
     }
 
-    // 6. Low Risk
+    // === 5. Low Risk ===
     return {
         category: "low",
-        title: "Laag risico",
-        reason: "Dit AI-systeem valt buiten gereguleerde categorieën volgens de EU AI Act.",
+        title: "Laag risico AI",
+        reason: "Het systeem valt buiten gereguleerde categorieën van de EU AI Act.",
         steps: [
-            "Houd basisdocumentatie bij.",
-            "Controleer of toekomstige updates niet tot hogere risico’s leiden.",
-            "Overweeg vrijwillige governance voor kwaliteit & betrouwbaarheid."
+            "Houd basisdocumentatie en beslisregels bij.",
+            "Herzie bij updates of er nieuwe risico’s ontstaan.",
+            "Overweeg vrijwillige governance voor betrouwbaarheid."
         ]
     };
 }
-
