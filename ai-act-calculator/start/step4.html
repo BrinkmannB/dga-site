@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stap 4 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/styles.css" />
-
-    <script>
-    function forwardParams() {
-        const params = new URLSearchParams(window.location.search);
-        const form = document.querySelector("form");
-
-        ["doel","impact","pers"].forEach(p => {
-            if (params.get(p)) {
-                const hidden = document.createElement("input");
-                hidden.type = "hidden";
-                hidden.name = p;
-                hidden.value = params.get(p);
-                form.appendChild(hidden);
-            }
-        });
-    }
-    window.onload = forwardParams;
-    </script>
+<meta charset="UTF-8">
+<title>Stap 4 — Impact</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
 </head>
+<body class="fade-in">
 
-<body>
-<section class="wizard-container">
-    <h2>Stap 4 van 6</h2>
-    <h3>Wordt het systeem gebruikt voor scoring, beoordeling of classificatie?</h3>
+<header>…</header>
 
-    <form action="step5.html" method="get" class="wizard-form">
+<div class="calc-wrapper">
 
-        <label><input type="radio" name="score" value="ja" required> Ja</label>
-        <label><input type="radio" name="score" value="nee"> Nee</label>
+<div class="sidebar">
+    <h3>Vragen</h3>
+    <ul>
+        <li class="completed">1</li>
+        <li class="completed">2</li>
+        <li class="completed">3</li>
+        <li class="active">4. Impact</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
 
-        <button class="button">Volgende</button>
+<div class="calc-main fade-in">
 
-    </form>
-</section>
+    <div class="question-block">
+        <h2>Heeft het systeem significante impact op rechten van burgers?</h2>
+        <p>Bijv. gevolgen voor toegang tot onderwijs, zorg, werk of uitkeringen.</p>
+
+        <div class="options">
+            <div class="option" onclick="saveAnswer('step4','strong'); go('step5.html')">
+                Ja — grote impact
+            </div>
+            <div class="option" onclick="saveAnswer('step4','medium'); go('step5.html')">
+                Beperkte impact
+            </div>
+            <div class="option" onclick="saveAnswer('step4','low'); go('step5.html')">
+                Nauwelijks impact
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a class="button-secondary" href="step3.html">← Terug</a>
+        <a class="button-primary" onclick="go('step5.html')">Volgende →</a>
+    </div>
+
+</div>
+
+</div>
 </body>
 </html>
