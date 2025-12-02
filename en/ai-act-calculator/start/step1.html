@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 1 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+<meta charset="UTF-8">
+<title>Step 1 — Prohibited AI</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>
+function saveAnswer(step, value) {
+    localStorage.setItem(step, value);
+}
+</script>
 </head>
 
-<body>
-<section class="wizard container">
-    <h2>Step 1 of 6</h2>
-    <p>What is the primary purpose of the AI system?</p>
+<body class="fade-in">
+<div class="wizard-container">
 
-    <form action="step2.html" method="get">
-        <label><input type="radio" name="purpose" value="policy"> Policy support</label><br>
-        <label><input type="radio" name="purpose" value="decision"> Decision-making / allocation</label><br>
-        <label><input type="radio" name="purpose" value="supervision"> Enforcement / supervision</label><br>
-        <label><input type="radio" name="purpose" value="profiling"> Risk profiling</label><br>
-        <label><input type="radio" name="purpose" value="biometric"> Biometric identification</label><br>
-        <label><input type="radio" name="purpose" value="service"> Citizen interaction / services</label><br>
-        <label><input type="radio" name="purpose" value="other"> Other</label><br><br>
+    <div class="step-counter">Step 1 of 10</div>
 
-        <button class="primary-btn">Next</button>
-    </form>
-</section>
+    <h2>Does your AI system involve social scoring or manipulation?</h2>
+    <p>For example: ranking individuals by behaviour or characteristics.</p>
+
+    <div class="option" onclick="saveAnswer('step1','yes'); window.location='step2.html';">
+        Yes — this indicates prohibited AI
+    </div>
+
+    <div class="option" onclick="saveAnswer('step1','no'); window.location='step2.html';">
+        No
+    </div>
+
+    <div class="nav-row">
+        <a href="../index.html" class="button-secondary">← Back</a>
+        <a href="step2.html" class="button-primary">Next →</a>
+    </div>
+
+</div>
 </body>
 </html>
