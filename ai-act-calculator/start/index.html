@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Act Risk Classification Wizard</title>
-    <link rel="stylesheet" href="/styles.css" />
+<meta charset="UTF-8">
+<title>Start — AI Act Calculator</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
 </head>
-<body>
 
-<header class="site-header">
+<body class="fade-in">
+
+<header>
     <nav class="nav">
-        <a href="/" class="logo">DGA</a>
-        <ul class="nav-links">
-            <li><a href="/diensten/">Diensten</a></li>
-            <li><a href="/kennisbank/">Kennisbank</a></li>
-            <li><a href="/quickscan/">Quickscan</a></li>
-            <li><a href="/ai-act-calculator/">AI Act Calculator</a></li>
-            <li><a href="/tools/">Tools</a></li>
-            <li><a href="/over-bas/">Over Bas</a></li>
-            <li><a href="/contact/">Contact</a></li>
-            <li><a href="/en/">EN</a></li>
-        </ul>
+        <div class="nav-inner">
+            <a href="/" class="logo">DGA</a>
+            <ul>
+                <li><a href="/diensten/">Diensten</a></li>
+                <li><a href="/kennisbank/">Kennisbank</a></li>
+                <li><a href="/quickscan/">Quickscan</a></li>
+                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/over-bas/">Over Bas</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/en/ai-act-calculator/start/">EN</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
-<section class="hero small-hero">
-    <h1>AI Act Risk Classification Wizard</h1>
-    <p>Beantwoord zes korte vragen en ontvang direct de AI Act-classificatie van jouw systeem.</p>
-    <a class="button" href="/ai-act-calculator/start/step1.html">Start classificatie</a>
-</section>
+<div class="calc-wrapper">
+
+    <div class="sidebar">
+        <h3>Vragen</h3>
+        <ul>
+            <li>1. Verboden AI</li>
+            <li>2. Biometrie</li>
+            <li>3. Domein</li>
+            <li>4. Impact</li>
+            <li>5. Besluitvorming</li>
+            <li>6. Data</li>
+            <li>7. Overheid</li>
+            <li>8. Kritieke processen</li>
+            <li>9. Toezicht</li>
+            <li>10. Doel</li>
+        </ul>
+    </div>
+
+    <div class="calc-main fade-in">
+        <h2>Klaar om te beginnen?</h2>
+        <p>De classificatie bestaat uit 10 korte vragen.</p>
+
+        <div class="nav-buttons">
+            <a class="button-primary" href="step1.html">Start →</a>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
