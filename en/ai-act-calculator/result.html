@@ -3,147 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Act Result | Dutch Governance Advisory</title>
-    <link rel="stylesheet" href="/styles.css">
-
-    <script>
-    function classifyEN() {
-        const p = new URLSearchParams(window.location.search);
-
-        const purpose = p.get("purpose");
-        const impact = p.get("impact");
-        const personal = p.get("personal");
-        const scoring = p.get("scoring");
-        const bio = p.get("bio");
-
-        let risk = "minimal";
-
-        // --- LOGIC (same as NL, but text is EN) ---
-        if (bio === "yes") risk = "high";
-        else if (purpose === "biometric") risk = "high";
-        else if (purpose === "profiling") risk = "high";
-        else if (impact === "direct" && (personal === "yes" || scoring === "yes")) risk = "high";
-        else if (impact === "direct") risk = "limited";
-        else if (impact === "indirect") risk = "limited";
-
-        // --- BADGES ---
-        const badges = {
-            minimal: `<div class="risk-pill risk-low">Minimal Risk</div>`,
-            limited: `<div class="risk-pill risk-medium">Limited Risk</div>`,
-            high: `<div class="risk-pill risk-high">High-Risk AI</div>`
-        };
-
-        // --- EXPLANATIONS ---
-        const explanations = {
-            minimal: "This AI system falls under the 'Minimal Risk' category according to the EU AI Act.",
-            limited: "This system may fall under 'Limited Risk'. Transparency obligations may apply depending on the context.",
-            high: "This system may qualify as 'High-Risk AI' under the EU AI Act. Formal compliance obligations apply."
-        };
-
-        // --- NEXT STEPS ---
-        const nextSteps = {
-            minimal: [
-                "No mandatory AI Act obligations.",
-                "Keeping internal documentation is recommended."
-            ],
-            limited: [
-                "Provide transparency to users.",
-                "Document model logic.",
-                "Ensure users understand system limitations."
-            ],
-            high: [
-                "Risk management system required.",
-                "Comprehensive technical documentation (Annex IV).",
-                "Logging & traceability.",
-                "Human oversight mechanisms."
-            ]
-        };
-
-        // Inject into page
-        document.getElementById("badge").innerHTML = badges[risk];
-        document.getElementById("explain").innerText = explanations[risk];
-        document.getElementById("steps").innerHTML = nextSteps[risk]
-            .map(s => `<li>${s}</li>`).join("");
-    }
-
-    window.onload = classifyEN;
-    </script>
-
+    <title>AI Act – Result</title>
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 
 <body>
 
-<header class="site-header">
-    <nav class="nav">
-        <a href="/en/" class="logo">DGA</a>
-        <ul class="nav-links">
-            <li><a href="/en/services/">Services</a></li>
-            <li><a href="/en/knowledge-base/">Knowledge Base</a></li>
-            <li><a href="/en/quickscan/">Quickscan</a></li>
-            <li><a href="/en/ai-act-calculator/">AI Act Calculator</a></li>
-            <li><a href="/en/tools/">Tools</a></li>
-            <li><a href="/en/about/">About Bas</a></li>
-            <li><a href="/en/contact/">Contact</a></li>
-            <li><a href="/">NL</a></li>
-        </ul>
-    </nav>
-</header>
+<section class="result container">
+    <h1>Your AI Act Risk Category</h1>
 
-<section class="hero small-hero">
-    <h1>AI Act Risk Classification Result</h1>
-    <p>Your AI system has been assigned a provisional risk category.</p>
+    <p id="result-text">Your AI system falls under: <strong>loading…</strong></p>
+
+    <h2>Next steps</h2>
+    <ul>
+        <li>Detailed explanation of your obligations</li>
+        <li>Links to templates and governance tools</li>
+        <li>Compliance roadmap</li>
+    </ul>
 </section>
 
-<section class="result-container">
-
-    <!-- Classification -->
-    <div class="result-box">
-        <h2 class="result-title">Your Classification</h2>
-        <div id="badge"></div>
-        <p id="explain"></p>
-    </div>
-
-    <!-- Next steps -->
-    <div class="result-info">
-        <h3>What does this mean?</h3>
-        <ul id="steps"></ul>
-    </div>
-
-    <!-- Premium upsell -->
-    <div class="premium-box">
-        <h2>Premium Report & Templates</h2>
-        <p>
-            Access the complete report including risk obligations, governance requirements,
-            technical documentation, and an exportable PDF.
-        </p>
-
-        <ul class="premium-list">
-            <li>📄 AI Act QuickScan PDF — €29</li>
-            <li>📁 Template Packs — €19–€49</li>
-            <li>🎯 Starter Kits — €95</li>
-        </ul>
-
-        <div class="premium-buttons">
-            <a href="/en/quickscan/" class="button">Order QuickScan PDF</a>
-            <a href="/en/contact/" class="button-secondary">Book a consultation</a>
-        </div>
-    </div>
-
-    <div class="cta-more">
-        <h3>Need additional support?</h3>
-        <p>
-            I help public organisations with AI Act implementation, governance frameworks,
-            algorithm registers and responsible AI adoption.
-        </p>
-
-        <a href="/en/contact/" class="button">Get in touch</a>
-    </div>
-
-</section>
-
-<footer class="footer">
-    <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
-</footer>
+<script src="/ai-act-calculator/wizard.js"></script>
 
 </body>
 </html>
