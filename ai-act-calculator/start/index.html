@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Start — AI Act Calculator</title>
+<meta charset="UTF-8" />
+<title>AI Act Calculator — Start</title>
+
+<!-- Laad jouw bestaande site CSS -->
 <link rel="stylesheet" href="/css/global.css">
 <link rel="stylesheet" href="/css/layout.css">
+
+<!-- Wizard-specific -->
 <link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
+
 </head>
 
 <body class="fade-in">
 
+<!-- NAV -->
 <header>
     <nav class="nav">
         <div class="nav-inner">
@@ -28,34 +35,53 @@
     </nav>
 </header>
 
-<div class="calc-wrapper">
 
-    <div class="sidebar">
-        <h3>Vragen</h3>
-        <ul>
-            <li>1. Verboden AI</li>
-            <li>2. Biometrie</li>
-            <li>3. Domein</li>
-            <li>4. Impact</li>
-            <li>5. Besluitvorming</li>
-            <li>6. Data</li>
-            <li>7. Overheid</li>
-            <li>8. Kritieke processen</li>
-            <li>9. Toezicht</li>
-            <li>10. Doel</li>
-        </ul>
+<!-- HERO -->
+<section class="hero-small" style="padding: 60px 0; background: #0f1f3d; color: white;">
+    <div class="container">
+        <h1 style="font-size: 2.4rem; margin-bottom: 10px;">EU AI Act Calculator</h1>
+        <p style="opacity: .9;">Bepaal de wettelijke risicocategorie van je AI-systeem in 2 minuten.</p>
     </div>
+</section>
 
-    <div class="calc-main fade-in">
-        <h2>Klaar om te beginnen?</h2>
-        <p>De classificatie bestaat uit 10 korte vragen.</p>
 
-        <div class="nav-buttons">
-            <a class="button-primary" href="step1.html">Start →</a>
+<!-- MAIN LAYOUT -->
+<section class="section">
+<div class="container">
+
+    <div class="calc-wrapper" style="padding-top:40px;">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Vragen</h3>
+            <ul>
+                <li>1. Verboden AI</li>
+                <li>2. Biometrie</li>
+                <li>3. Domein</li>
+                <li>4. Impact</li>
+                <li>5. Besluitvorming</li>
+                <li>6. Data</li>
+                <li>7. Overheid</li>
+                <li>8. Kritiek</li>
+                <li>9. Toezicht</li>
+                <li>10. Doel</li>
+            </ul>
         </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="calc-main fade-in" style="padding-left:20px;">
+            <h2>Klaar om te beginnen?</h2>
+            <p>De classificatie bestaat uit 10 korte vragen.</p>
+
+            <div style="margin-top:30px;">
+                <a class="button-primary" href="step1.html">Start →</a>
+            </div>
+        </div>
+
     </div>
 
 </div>
+</section>
 
 </body>
 </html>
