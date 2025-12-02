@@ -3,51 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Act Risk Classification Wizard – Start</title>
+    <title>AI Act Risk Classification Wizard — Start</title>
     <link rel="stylesheet" href="/assets/styles.css">
+
+    <style>
+        /* Premium Consultancy Wizard Start */
+        .wizard-start-hero {
+            background: linear-gradient(145deg, #002f52 0%, #004b85 100%);
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .wizard-start-hero h1 {
+            font-size: 2.6rem;
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .wizard-start-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.92;
+            line-height: 1.5;
+        }
+
+        .primary-btn {
+            margin-top: 28px;
+            display: inline-block;
+            padding: 14px 32px;
+            background: #003865;
+            color: white;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            color: #003865;
+            border-color: #003865;
+        }
+
+        .wizard-desc-section {
+            padding: 60px 20px;
+        }
+
+        .wizard-desc-section h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #003865;
+            margin-bottom: 20px;
+        }
+
+        .wizard-desc-section p {
+            max-width: 700px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-    <div class="container">
-        <a href="/" class="logo">DGA</a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/en/services/">Services</a></li>
-                <li><a href="/en/knowledge/">Knowledge Base</a></li>
-                <li><a href="/en/quickscan/">Quickscan</a></li>
-                <li><a href="/en/ai-act-calculator/" class="active">AI Act Calculator</a></li>
-                <li><a href="/en/tools/">Tools</a></li>
-                <li><a href="/en/about/">About Bas</a></li>
-                <li><a href="/en/contact/">Contact</a></li>
-                <li><a href="/ai-act-calculator/">NL</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
 <!-- HERO -->
-<section class="hero hero-small">
-    <div class="container">
-        <h1>AI Act Risk Classification Wizard</h1>
-        <p>Determine the EU AI Act risk category of your AI system in a few simple steps.</p>
-    </div>
-</section>
-
-<!-- CONTENT -->
-<section class="wizard-start container">
-    <h2>Start the Classification</h2>
-    <p>Answer six short questions and receive an instant preliminary risk category and guidance.</p>
+<section class="wizard-start-hero">
+    <h1>AI Act Risk Classification Wizard</h1>
+    <p>Answer six short questions and instantly receive a preliminary risk category under the EU AI Act.</p>
 
     <a href="/ai-act-calculator/en/start/step1.html" class="primary-btn">
-
         Start Classification
     </a>
 </section>
 
-<!-- FOOTER -->
+<!-- DESCRIPTION -->
+<section class="wizard-desc-section container">
+    <h2>How it works</h2>
+    <p>
+        This wizard guides you through the core criteria of the EU Artificial Intelligence Act.
+        Each step focuses on one specific factor that determines whether your system qualifies
+        as Minimal-Risk, Limited-Risk or High-Risk AI.
+        At the end, you will receive a clear classification and your first compliance steps.
+    </p>
+</section>
+
 <footer class="footer">
     <div class="container">
         <p>© 2025 Dutch Governance Advisory — Bas Brinkmann</p>
