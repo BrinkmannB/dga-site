@@ -3,65 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Stap 6 — Data</title>
-<link rel="stylesheet" href="/assets/css/global.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/ai-act-calculator/style.css">
-<script src="/ai-act-calculator/app.js"></script>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
 </head>
 
 <body class="fade-in">
 
-<!-- HEADER (idem) -->
+<div class="wizard-container">
 
-<div class="calc-wrapper">
+    <div class="step-counter">Stap 6 van 10</div>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <h3>Vragen</h3>
-    <ul>
-        <li class="completed">1</li>
-        <li class="completed">2</li>
-        <li class="completed">3</li>
-        <li class="completed">4</li>
-        <li class="completed">5</li>
-        <li class="active">6. Data</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-    </ul>
-</div>
+    <h2>Is de gebruikte data gevoelig of risicovol?</h2>
+    <p>Bijvoorbeeld biasgevoelige datasets of gevoelige persoonsgegevens.</p>
 
-<div class="calc-main fade-in">
-
-    <div class="question-block">
-        <h2>Is de trainingdata van het AI-systeem mogelijk risicovol?</h2>
-        <p>Denk aan gevoelige persoonsgegevens, onevenwichtige datasets, historische bias, of externe modellen zonder datasettransparantie.</p>
-
-        <div class="options">
-            <div class="option" onclick="saveAnswer('step6','high'); go('step7.html')">
-                Ja — potentieel risicovolle of gevoelige data
-            </div>
-
-            <div class="option" onclick="saveAnswer('step6','medium'); go('step7.html')">
-                Beperkt risico
-            </div>
-
-            <div class="option" onclick="saveAnswer('step6','low'); go('step7.html')">
-                Lage risico’s
-            </div>
-        </div>
+    <div class="option" onclick="saveAnswer('step6','high'); window.location='step7.html';">
+        Ja — risicovol
     </div>
 
+    <div class="option" onclick="saveAnswer('step6','medium'); window.location='step7.html';">
+        Enig risico
+    </div>
 
-    <div class="nav-buttons">
+    <div class="option" onclick="saveAnswer('step6','low'); window.location='step7.html';">
+        Lage risico's
+    </div>
+
+    <div class="nav-row">
         <a class="button-secondary" href="step5.html">← Terug</a>
-        <a class="button-primary" onclick="go('step7.html')">Volgende →</a>
+        <a class="button-primary" href="step7.html">Volgende →</a>
     </div>
 
 </div>
 
-</div>
 </body>
 </html>
