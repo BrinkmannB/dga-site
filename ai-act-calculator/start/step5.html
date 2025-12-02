@@ -2,84 +2,38 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Stap 5 — Automatische besluitvorming</title>
-<link rel="stylesheet" href="/assets/css/global.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/ai-act-calculator/style.css">
-<script src="/ai-act-calculator/app.js"></script>
+<title>Stap 5 — Besluitvorming</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>function saveAnswer(s,v){localStorage.setItem(s,v);}</script>
 </head>
 
 <body class="fade-in">
 
-<!-- HEADER -->
-<header>
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="logo">DGA</a>
-            <ul>
-                <li><a href="/diensten/">Diensten</a></li>
-                <li><a href="/kennisbank/">Kennisbank</a></li>
-                <li><a href="/quickscan/">Quickscan</a></li>
-                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
-                <li><a href="/tools/">Tools</a></li>
-                <li><a href="/over-bas/">Over Bas</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                <li><a href="/en/ai-act-calculator/start/step5.html">EN</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<div class="wizard-container">
 
+    <div class="step-counter">Stap 5 van 10</div>
 
-<div class="calc-wrapper">
+    <h2>Neemt het AI-systeem beslissingen met directe gevolgen?</h2>
+    <p>Bijvoorbeeld toekenning van uitkeringen, selectie, scores of toegang.</p>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <h3>Vragen</h3>
-    <ul>
-        <li class="completed">1</li>
-        <li class="completed">2</li>
-        <li class="completed">3</li>
-        <li class="completed">4</li>
-        <li class="active">5. Besluitvorming</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-    </ul>
-</div>
-
-<!-- MAIN -->
-<div class="calc-main fade-in">
-
-    <div class="question-block">
-        <h2>Neemt het AI-systeem beslissingen met directe gevolgen voor burgers?</h2>
-        <p>Bijvoorbeeld: toekenning van toeslagen, uitkeringen, selectie voor interviews, toegang tot diensten.</p>
-
-        <div class="options">
-            <div class="option" onclick="saveAnswer('step5','yes'); go('step6.html')">
-                Ja — automatische besluitvorming
-            </div>
-
-            <div class="option" onclick="saveAnswer('step5','assisted'); go('step6.html')">
-                Gedeeltelijk — mens in the loop
-            </div>
-
-            <div class="option" onclick="saveAnswer('step5','no'); go('step6.html')">
-                Nee
-            </div>
-        </div>
+    <div class="option" onclick="saveAnswer('step5','auto'); window.location='step6.html';">
+        Ja — automatische besluitvorming
     </div>
 
-    <div class="nav-buttons">
+    <div class="option" onclick="saveAnswer('step5','assisted'); window.location='step6.html';">
+        Gedeeltelijk — mens in de loop
+    </div>
+
+    <div class="option" onclick="saveAnswer('step5','none'); window.location='step6.html';">
+        Nee
+    </div>
+
+    <div class="nav-row">
         <a class="button-secondary" href="step4.html">← Terug</a>
-        <a class="button-primary" onclick="go('step6.html')">Volgende →</a>
+        <a class="button-primary" href="step6.html">Volgende →</a>
     </div>
 
 </div>
 
-</div>
 </body>
 </html>
