@@ -2,222 +2,88 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Resultaat — AI Act Quickscan</title>
+<title>Resultaat — EU AI Act Quickscan</title>
+
 <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
-<script>
-// === BEREKENING VAN RISICO ===
-// Eenvoudige basislogica (later uitbreidbaar)
-function calculateRisk() {
+<script type="module">
+    import { calculateRisk } from './riskModel.js';
 
-    let s1 = localStorage.getItem('step1');
-    let s2 = localStorage.getItem('step2');
-    let s5 = localStorage.getItem('step5');
-    let s7 = localStorage.getItem('step7');
-    let s10 = localStorage.getItem('step10');
+    window.onload = () => {
+        const r = calculateRisk();
 
-    if (s1 === 'yes') return "verboden";
-    if (s2 === 'yes') return "hoog";
-    if (s5 === 'auto') return "hoog";
-    if (s7 === 'yes') return "hoog";
-    if (s10 === 'gpa') return "gpa";
-    return "laag";
-}
+        document.getElementById("result-title").innerText = r.title;
+        document.getElementById("result-reason").innerText = r.reason;
 
-// === TOON RESULTAATCARD ===
-function showResult() {
-    const risk = calculateRisk();
-    let html = "";
+        const steps = document.getElementById("steps");
+        r.steps.forEach(step => {
+            const div = document.createElement("div");
+            div.className = "step-box";
+            div.innerText = step;
+            steps.appendChild(div);
+        });
 
-    // VERBODEN AI
-    if (risk === "verboden") {
-        html = `
-        <h1>Verboden AI</h1>
-        <p>Op basis van jouw antwoorden lijkt het systeem onder de categorie <strong>Verboden AI</strong> te vallen volgens artikel 5 van de EU AI Act.</p>
-
-        <div class="option" style="border-color:#d92d20;">
-            <strong>Waarom is dit verboden?</strong><br>
-            Systemen die leiden tot manipulatie, sociale scoring of onrechtmatige biometrische identificatie zijn volgens de wet niet toegestaan, ongeacht de context.
-        </div>
-
-        <h2>Aanbevolen vervolgstappen</h2>
-
-        <div class="option">
-            <strong>1. Stop onmiddellijke implementatie</strong><br>
-            Verboden AI mag niet worden gebruikt binnen de EU.
-        </div>
-
-        <div class="option">
-            <strong>2. Onderzoek alternatieve, toegestane technologische routes</strong><br>
-            Denk aan modellen met menselijk toezicht of niet-risicovolle classificatie.
-        </div>
-
-        <div class="option">
-            <strong>3. Laat een volledige AI-governance analyse uitvoeren</strong><br>
-            Om risico’s, afhankelijkheden en alternatieven helder te maken.
-        </div>
-
-        <div class="nav-row" style="margin-top:40px;">
-            <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-primary">Plan een strategiegesprek →</a>
-            <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-        </div>
-        `;
-    }
-
-    // HOOG RISICO AI
-    else if (risk === "hoog") {
-        html = `
-        <h1>Hoog risico AI</h1>
-        <p>Op basis van jouw antwoorden valt het systeem waarschijnlijk onder <strong>Hoog risico AI</strong> (EU AI Act Annex III).</p>
-
-        <div class="option" style="border-color:#e88f10;">
-            <strong>Wat betekent dit?</strong><br>
-            Hoog risico systemen moeten voldoen aan strikte eisen zoals risicobeheer, data governance, technische documentatie en menselijk toezicht.
-        </div>
-
-        <h2>Aanbevolen vervolgstappen</h2>
-
-        <div class="option">
-            <strong>1. Voer een formele AI Risk Assessment uit</strong><br>
-            Dit omvat datakwaliteit, biasanalyse, uitlegbaarheid, en impact op grondrechten.
-        </div>
-
-        <div class="option">
-            <strong>2. Documenteer technische en organisatorische maatregelen</strong><br>
-            De EU AI Act vereist een volledig technisch dossier.
-        </div>
-
-        <div class="option">
-            <strong>3. Stel een governance framework in</strong><br>
-            Richtinggevende principes, toezichtstructuur en verantwoordingslijnen.
-        </div>
-
-        <h2>Handige tools & templates</h2>
-
-        <div class="nav-row" style="margin-top:20px;">
-            <a href="https://dutchgovernanceadvisory.nl/quickscan/" class="button-primary">Start High-Risk QuickScan →</a>
-            <a href="https://dutchgovernanceadvisory.nl/templatepacks/" class="button-secondary">Download template pack</a>
-        </div>
-
-        <div class="nav-row" style="margin-top:20px;">
-            <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-secondary">Plan een governance consult</a>
-        </div>
-
-        <div class="nav-row" style="margin-top:40px;">
-            <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-        </div>
-        `;
-    }
-
-    // FOUNDATION MODEL (GPAI)
-    else if (risk === "gpa") {
-        html = `
-        <h1>Foundation Model / GPAI</h1>
-        <p>Op basis van jouw antwoorden gebruik je een <strong>Generatief of Foundation Model</strong> zoals bedoeld in Artikel 53-54 van de EU AI Act.</p>
-
-        <div class="option" style="border-color:#3d7eea;">
-            <strong>Wat betekent dit?</strong><br>
-            Foundation models moeten voldoen aan transparantie-eisen, documentatieplichten, risicomitigatie en modellabeling.
-        </div>
-
-        <h2>Aanbevolen vervolgstappen</h2>
-
-        <div class="option">
-            <strong>1. Leg alle modelbronnen en beperkingen vast</strong><br>
-            Dit is wettelijk verplicht voor GPAI-systemen.
-        </div>
-
-        <div class="option">
-            <strong>2. Voer een model risk assessment uit</strong><br>
-            Inclusief hallucinatierisico’s, bias en veiligheid.
-        </div>
-
-        <div class="option">
-            <strong>3. Documenteer gebruiksvoorwaarden & transparantie</strong><br>
-            Vereist voor toepassingen in zowel publieke als private domeinen.
-        </div>
-
-        <h2>Handige tools & templates</h2>
-
-        <div class="nav-row" style="margin-top:20px;">
-            <a href="https://dutchgovernanceadvisory.nl/templatepacks/" class="button-primary">Download GPAI Templates</a>
-            <a href="https://dutchgovernanceadvisory.nl/kennisbank/" class="button-secondary">Bekijk kennisbank</a>
-        </div>
-
-        <div class="nav-row" style="margin-top:20px;">
-            <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-secondary">Plan GPAI consult</a>
-        </div>
-
-        <div class="nav-row" style="margin-top:40px;">
-            <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-        </div>
-        `;
-    }
-
-    // LAAG RISICO
-    else {
-        html = `
-        <h1>Laag risico AI</h1>
-        <p>Op basis van jouw antwoorden lijkt het systeem onder <strong>Laag risico</strong> te vallen.</p>
-
-        <div class="option" style="border-color:#22c55e;">
-            <strong>Wat betekent dit?</strong><br>
-            Je hoeft niet te voldoen aan de zware verplichtingen van de AI Act, maar transparantie en ethiek blijven belangrijk.
-        </div>
-
-        <h2>Aanbevelingen</h2>
-
-        <div class="option">
-            <strong>1. Voeg een transparantieverklaring toe</strong><br>
-            Dit versterkt vertrouwen en duidelijkheid bij gebruikers.
-        </div>
-
-        <div class="option">
-            <strong>2. Zorg voor minimaal menselijk toezicht</strong><br>
-            Zeker wanneer beslissingen gevoelig kunnen zijn.
-        </div>
-
-        <div class="option">
-            <strong>3. Houd documentatie bij</strong><br>
-            Voor toekomstige audits of herclassificaties.
-        </div>
-
-        <div class="nav-row" style="margin-top:20px;">
-            <a href="https://dutchgovernanceadvisory.nl/templatepacks/" class="button-primary">Download transparantie template</a>
-            <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-secondary">Plan adviesgesprek</a>
-        </div>
-
-        <div class="nav-row" style="margin-top:40px;">
-            <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-        </div>
-        `;
-    }
-
-    // Inject content in DOM
-    document.getElementById("result-block").innerHTML = html;
-}
-
-window.onload = showResult;
+        if (r.category === "gpa") {
+            document.getElementById("gpa-extra").style.display = "block";
+        }
+    };
 </script>
+
+<style>
+.step-box {
+    background: #fff;
+    padding: 16px 20px;
+    border: 1px solid #d0d7e2;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+.callouts {
+    margin-top: 30px;
+}
+.callouts a {
+    margin-right: 10px;
+}
+.highlight {
+    border: 2px solid #0e6cff;
+    background: #f0f6ff;
+    padding: 16px;
+    border-radius: 12px;
+}
+</style>
 
 </head>
 
 <body class="fade-in">
-
 <div class="wizard-container">
 
-    <div id="result-block"></div>
+    <h1 id="result-title">Resultaat</h1>
 
-    <p style="margin-top:40px; opacity:.7; font-size:.9rem;">
-        Versie 1.0 — bijgewerkt t/m februari 2026.
-    </p>
+    <div class="highlight">
+        <strong>Waarom deze uitkomst?</strong>
+        <p id="result-reason"></p>
+    </div>
 
-    <p style="margin-top:10px; opacity:.6; font-size:.75rem;">
-        Deze quickscan is een indicatieve inschatting op basis van jouw antwoorden en vormt geen juridisch advies.<br>
-        Voor formele interpretatie van de EU AI Act is een volledige beoordeling door een deskundige vereist.
+    <h2 style="margin-top:30px;">Aanbevolen vervolgstappen</h2>
+    <div id="steps"></div>
+
+    <div id="gpa-extra" style="display:none; margin-top:40px;">
+        <h3>Extra verplichtingen voor GPAI / Foundation Models</h3>
+        <p>
+            Voor GPAI-systemen gelden aanvullende eisen zoals documentatie over trainingsdata, modelbeperkingen en risico’s.
+        </p>
+    </div>
+
+    <div class="callouts">
+        <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-primary">Plan een consult →</a>
+        <a href="https://dutchgovernanceadvisory.nl/templatepacks/" class="button-secondary">Download templates</a>
+        <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
+    </div>
+
+    <p style="margin-top:40px; font-size:13px; opacity:.6;">
+        Versie 1.0 — bijgewerkt t/m februari 2026.<br>
+        Deze quickscan is indicatief en vormt geen juridisch advies.
     </p>
 
 </div>
-
 </body>
 </html>
