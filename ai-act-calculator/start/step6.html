@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stap 6 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/styles.css" />
-
-    <script>
-    function forwardParams() {
-        const params = new URLSearchParams(window.location.search);
-        const form = document.querySelector("form");
-
-        ["doel","impact","pers","score","bio"].forEach(p=>{
-            if(params.get(p)){
-                const hidden=document.createElement("input");
-                hidden.type="hidden";
-                hidden.name=p;
-                hidden.value=params.get(p);
-                form.appendChild(hidden);
-            }
-        });
-    }
-    window.onload = forwardParams;
-    </script>
-
+<meta charset="UTF-8">
+<title>Stap 6 — Data</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/ai-act-calculator/style.css">
+<script src="/ai-act-calculator/app.js"></script>
 </head>
 
-<body>
-<section class="wizard-container">
-    <h2>Stap 6 van 6</h2>
-    <h3>Korte omschrijving van het AI-systeem</h3>
+<body class="fade-in">
 
-    <form action="/ai-act-calculator/resultaat.html" method="get" class="wizard-form">
+<!-- HEADER (idem) -->
 
-        <textarea name="omschrijving" rows="4" required></textarea>
+<div class="calc-wrapper">
 
-        <button class="button">Toon resultaat</button>
-    </form>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h3>Vragen</h3>
+    <ul>
+        <li class="completed">1</li>
+        <li class="completed">2</li>
+        <li class="completed">3</li>
+        <li class="completed">4</li>
+        <li class="completed">5</li>
+        <li class="active">6. Data</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
 
-</section>
+<div class="calc-main fade-in">
+
+    <div class="question-block">
+        <h2>Is de trainingdata van het AI-systeem mogelijk risicovol?</h2>
+        <p>Denk aan gevoelige persoonsgegevens, onevenwichtige datasets, historische bias, of externe modellen zonder datasettransparantie.</p>
+
+        <div class="options">
+            <div class="option" onclick="saveAnswer('step6','high'); go('step7.html')">
+                Ja — potentieel risicovolle of gevoelige data
+            </div>
+
+            <div class="option" onclick="saveAnswer('step6','medium'); go('step7.html')">
+                Beperkt risico
+            </div>
+
+            <div class="option" onclick="saveAnswer('step6','low'); go('step7.html')">
+                Lage risico’s
+            </div>
+        </div>
+    </div>
+
+
+    <div class="nav-buttons">
+        <a class="button-secondary" href="step5.html">← Terug</a>
+        <a class="button-primary" onclick="go('step7.html')">Volgende →</a>
+    </div>
+
+</div>
+
+</div>
 </body>
 </html>
