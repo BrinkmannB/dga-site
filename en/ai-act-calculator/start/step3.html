@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 3 — AI Act Wizard</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+<meta charset="UTF-8">
+<title>Step 3 — Sector</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>
+function saveAnswer(step,val){
+    localStorage.setItem(step,val);
+}
+</script>
 </head>
 
-<body>
+<body class="fade-in">
+<div class="wizard-container">
 
-<section class="wizard container">
-    <h2>Step 3 of 6</h2>
-    <p>Does the system use personal data or special categories of data?</p>
+    <div class="step-counter">Step 3 of 10</div>
 
-    <form action="step4.html" method="get">
-        <label><input type="radio" name="data" value="yes"> Yes</label><br>
-        <label><input type="radio" name="data" value="no"> No</label><br><br>
+    <h2>In which sector is the AI system deployed?</h2>
 
-        <button class="primary-btn">Next</button>
-    </form>
-</section>
+    <div class="option" onclick="saveAnswer('step3','public'); window.location='step4.html';">
+        Public sector
+    </div>
 
+    <div class="option" onclick="saveAnswer('step3','private'); window.location='step4.html';">
+        Private sector
+    </div>
+
+    <div class="option" onclick="saveAnswer('step3','mixed'); window.location='step4.html';">
+        Mixed / not sure
+    </div>
+
+    <div class="nav-row">
+        <a href="step2.html" class="button-secondary">← Back</a>
+        <a href="step4.html" class="button-primary">Next →</a>
+    </div>
+
+</div>
 </body>
 </html>
