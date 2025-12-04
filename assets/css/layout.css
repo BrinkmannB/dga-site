@@ -442,5 +442,39 @@ body {
     border: 3px solid rgba(255,255,255,0.35); /* subtiele premium ring */
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);  /* diepte */
 }
+/* --- Premium refined profile card --- */
+
+.hero-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 14px 22px;
+    width: fit-content;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.hero-profile img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.55);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.hero-profile-text {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.hero-profile-text strong {
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+}
 
 
