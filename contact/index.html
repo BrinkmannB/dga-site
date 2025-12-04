@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Dutch Governance Advisory</title>
-    <meta name="description" content="Neem contact op met Bas Brinkmann voor AI governance advies, AI Act implementatie en algoritmeregisters.">
-    <link rel="stylesheet" href="/styles.css?v=1008" />
+  <meta charset="UTF-8">
+  <title>Contact – Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/layout.css">
 </head>
 
 <body>
 
 <header class="site-header">
-    <nav class="nav">
-        <a href="/" class="logo">DGA</a>
-        <ul class="nav-links">
-            <li><a href="/diensten/">Diensten</a></li>
-            <li><a href="/kennisbank/">Kennisbank</a></li>
-            <li><a href="/quickscan/">Quickscan</a></li>
-            <li><a href="/ai-act-calculator/">AI Act Calculator</a></li>
-            <li><a href="/tools/">Tools</a></li>
-            <li><a href="/over-bas/">Over Bas</a></li>
-            <li><a href="/contact/">Contact</a></li>
-            <li><a href="/en/">EN</a></li>
-        </ul>
-    </nav>
+  <nav class="nav">
+    <a href="/" class="logo">DGA</a>
+    <ul class="nav-links">
+      <li><a href="/diensten">Diensten</a></li>
+      <li><a href="/kennisbank">Kennisbank</a></li>
+      <li><a href="/quickscan">Quickscan</a></li>
+      <li><a class="active" href="/contact">Contact</a></li>
+      <li><a href="/over-bas">Over Bas</a></li>
+      <li><a href="/en">EN</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="hero-premium small-hero">
-    <div class="hero-content">
-        <h1>Contact</h1>
-        <p class="hero-sub">Neem vrijblijvend contact op voor samenwerking of advies.</p>
-    </div>
+<section class="page-header">
+  <div class="container">
+    <h1>Contact</h1>
+    <p>Plan een gesprek of stel een vraag.</p>
+  </div>
 </section>
 
-<main class="content">
+<section class="container contact-section">
 
-    <h2>Stel je vraag</h2>
-    <p>
-        Wil je sparren over de AI Act, een algoritmeregister, of governancevraagstuk?
-        Stuur gerust een bericht — ik reageer doorgaans binnen één werkdag.
-    </p>
+  <h2>Plan direct een gesprek</h2>
 
-    <!-- CONTACT FORM -->
-    <form class="contact-form" action="mailto:info@dutchgovernanceadvisory.nl" method="POST" enctype="text/plain">
-        <label>Naam</label>
-        <input type="text" name="naam" required>
+  <p>
+    Je kunt direct een afspraak inplannen via het contactformulier of per mail.
+  </p>
 
-        <label>E-mail</label>
-        <input type="email" name="email" required>
+  <h3>E-mail</h3>
+  <p><a href="mailto:info@dutchgovernanceadvisory.nl">info@dutchgovernanceadvisory.nl</a></p>
 
-        <label>Bericht</label>
-        <textarea name="bericht" rows="6" required></textarea>
+  <h3>Formulier</h3>
+  
+  <!-- MAILCHIMP FORM -->
+  <form action="https://luisterendoor.us5.list-manage.com/subscribe/post?u=213eb41b03dbb11068c6385d7&amp;id=f7e1eab632&amp;f_id=005542edf0"
+        method="post" target="_blank">
 
-        <button type="submit">Verstuur bericht</button>
-    </form>
+    <input type="text" name="NAME" placeholder="Naam" required>
+    <input type="email" name="EMAIL" placeholder="E-mailadres" required>
+    <textarea name="MESSAGE" placeholder="Bericht" required></textarea>
 
-    <h2>Direct contact</h2>
-    <p>
-        <strong>E-mail:</strong> info@dutchgovernanceadvisory.nl<br>
-        <strong>Locatie:</strong> Nederland (remote & op locatie)
-    </p>
+    <button type="submit" class="cta-primary">Verstuur</button>
 
-</main>
+  </form>
+</section>
 
 <footer class="footer">
-    <p>© 2025 Dutch Governance Advisory</p>
+  <div class="container footer-flex">
+    <strong>DGA</strong>
+    <div class="footer-links">
+      <a href="/diensten">Diensten</a>
+    </div>
+  </div>
 </footer>
 
 </body>
