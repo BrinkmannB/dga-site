@@ -1,89 +1,67 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Resultaat — EU AI Act Quickscan</title>
-
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-
-<script type="module">
-    import { calculateRisk } from './riskModel.js';
-
-    window.onload = () => {
-        const r = calculateRisk();
-
-        document.getElementById("result-title").innerText = r.title;
-        document.getElementById("result-reason").innerText = r.reason;
-
-        const steps = document.getElementById("steps");
-        r.steps.forEach(step => {
-            const div = document.createElement("div");
-            div.className = "step-box";
-            div.innerText = step;
-            steps.appendChild(div);
-        });
-
-        if (r.category === "gpa") {
-            document.getElementById("gpa-extra").style.display = "block";
-        }
-    };
-</script>
-
-<style>
-.step-box {
-    background: #fff;
-    padding: 16px 20px;
-    border: 1px solid #d0d7e2;
-    border-radius: 10px;
-    margin-bottom: 14px;
-}
-.callouts {
-    margin-top: 30px;
-}
-.callouts a {
-    margin-right: 10px;
-}
-.highlight {
-    border: 2px solid #0e6cff;
-    background: #f0f6ff;
-    padding: 16px;
-    border-radius: 12px;
-}
-</style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Act Risicoklasse – Resultaat</title>
+    <link rel="stylesheet" href="/ai-act-calculator/style.css" />
 </head>
 
-<body class="fade-in">
-<div class="wizard-container">
+<body>
 
-    <h1 id="result-title">Resultaat</h1>
+<header class="site-header">
+    <nav class="nav">
+        <a href="/" class="logo">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/diensten/">Diensten</a></li>
+            <li><a href="/kennisbank/">Kennisbank</a></li>
+            <li><a href="/quickscan/">QuickScan</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="highlight">
-        <strong>Waarom deze uitkomst?</strong>
-        <p id="result-reason"></p>
-    </div>
+<section class="result-wrapper">
 
-    <h2 style="margin-top:30px;">Aanbevolen vervolgstappen</h2>
-    <div id="steps"></div>
+    <h1 class="result-title">AI Act Risicoklasse: 
+        <span id="riskLevel"></span>
+    </h1>
 
-    <div id="gpa-extra" style="display:none; margin-top:40px;">
-        <h3>Extra verplichtingen voor GPAI / Foundation Models</h3>
-        <p>
-            Voor GPAI-systemen gelden aanvullende eisen zoals documentatie over trainingsdata, modelbeperkingen en risico’s.
-        </p>
-    </div>
-
-    <div class="callouts">
-        <a href="https://dutchgovernanceadvisory.nl/contact/" class="button-primary">Plan een consult →</a>
-        <a href="https://dutchgovernanceadvisory.nl/templatepacks/" class="button-secondary">Download templates</a>
-        <a href="/ai-act-calculator/index.html" class="button-secondary">Opnieuw starten</a>
-    </div>
-
-    <p style="margin-top:40px; font-size:13px; opacity:.6;">
-        Versie 1.0 — bijgewerkt t/m februari 2026.<br>
-        Deze quickscan is indicatief en vormt geen juridisch advies.
+    <p class="result-sub">
+        Dit resultaat is gebaseerd op uw antwoorden. Hieronder vindt u een 
+        beknopt, praktisch en actiegericht overzicht van uw verplichtingen 
+        onder de EU AI Act.
     </p>
 
-</div>
+    <!-- Dynamische tekst per risiconiveau -->
+    <div id="riskContent" class="result-content"></div>
+
+</section>
+
+<!-- CTA QuickScan -->
+<section class="cta-premium">
+    <h2>Behoefte aan volledige naleving?</h2>
+    <p>
+        Met de <strong>DGA AI Act QuickScan</strong> ontvangt u binnen 48 uur een 
+        helder compliance-overzicht, concrete risico’s en aanbevelingen – klaar om 
+        intern of richting bestuur te presenteren.
+    </p>
+
+    <button class="cta-button" onclick="startCheckout()">
+        Bestel de QuickScan – €29
+    </button>
+
+    <p class="cta-small">
+        Veilig betalen via Stripe / Rabby Wallet.  
+        Factuur automatisch gegenereerd.
+    </p>
+</section>
+
+<footer class="footer">
+    <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein.</p>
+</footer>
+
+<script src="/ai-act-calculator/resultaat.js"></script>
+
 </body>
 </html>
