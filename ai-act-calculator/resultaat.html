@@ -2,134 +2,53 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Act QuickScan – Resultaat</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Resultaat — AI-Act QuickScan</title>
+    <link rel="stylesheet" href="/assets/layout.css">
+    <style>
+        body { font-family: Inter, sans-serif; padding: 40px; }
+        .hidden { display: none; }
+        .premium-box {
+            background: #e8f4ff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            max-width: 600px;
+        }
+        .btn {
+            display: inline-block;
+            background: #0058c7;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
-<header class="site-header">
-    <nav class="nav">
-        <a href="/" class="logo">DGA</a>
-        <ul class="nav-links">
-            <li><a href="/diensten">Diensten</a></li>
-            <li><a href="/kennisbank">Kennisbank</a></li>
-            <li><a href="/quickscan">Quickscan</a></li>
-            <li><a href="/ai-act-calculator">AI Act Calculator</a></li>
-            <li><a href="/tools">Tools</a></li>
-            <li><a href="/over-bas">Over Bas</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/en/">EN</a></li>
-        </ul>
-    </nav>
-</header>
+<h1>AI-Act QuickScan — Resultaat</h1>
+<p>Bekijk hieronder uw basisresultaten.</p>
 
-<main class="container">
-    <h1>Resultaat van de AI Act QuickScan</h1>
-    <p>Hieronder vind je een samenvatting van jouw ingevoerde gegevens en het beoordeelde risiconiveau.</p>
+<div id="premium" class="premium-box hidden">
+    <h2>Uw Premium Rapport</h2>
+    <p>Bedankt voor uw betaling. U kunt uw premium rapport hieronder openen:</p>
 
-    <section id="scan-resultaten">
-        <!-- Deze wordt gevuld door riskModel.js -->
-    </section>
+    <a href="/ai-act-calculator/premium-rapport.html" class="btn">Open Premium Rapport</a>
+</div>
 
-    <hr style="margin: 3rem 0; opacity: 0.2;">
+<script>
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get("token");
 
+    // Tijdelijke vaste token voor live testen
+    const VALID_TOKEN = "29AIPREMIUM";
 
-    <!-- ⭐ PREMIUM DOWNLOAD SECTIE ⭐ -->
-    <section class="premium-section">
-        <div class="premium-box">
-            <h2 class="premium-title">Download de Premium AI-Act QuickScan (PDF)</h2>
-
-            <p class="premium-text">
-                Ontvang direct een <strong>professioneel PDF-rapport</strong> met:
-            </p>
-
-            <ul class="premium-features">
-                <li>✔ Volledige AI-risicoclassificatie</li>
-                <li>✔ Juridische duiding per verplichting</li>
-                <li>✔ Concreet advies voor publieke organisaties</li>
-                <li>✔ Transparantie- en documentatie-eisen overzicht</li>
-            </ul>
-
-            <a 
-                class="premium-button" 
-                href="https://buy.stripe.com/test_7sY4gAgmG1yH4chakR9El00" 
-                target="_blank">
-                Download Premium PDF – €29
-            </a>
-
-            <p class="premium-note">
-                Je wordt omgeleid naar een beveiligde Stripe-betaalpagina.
-            </p>
-        </div>
-    </section>
-
-    <!-- ⭐ EINDE PREMIUM SECTIE ⭐ -->
-
-
-    <hr style="margin: 3rem 0; opacity: 0.2;">
-
-    <a href="/ai-act-calculator" class="cta-secondary">Nieuwe QuickScan uitvoeren</a>
-</main>
-
-<script src="riskModel.js"></script>
-
-<style>
-/* PREMIUM SECTION */
-.premium-section {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-}
-.premium-box {
-    background: linear-gradient(135deg, #0057b8, #0074d9);
-    padding: 2rem 2.5rem;
-    border-radius: 16px;
-    color: #fff;
-    max-width: 650px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-}
-.premium-title {
-    margin: 0 0 0.8rem;
-    font-size: 1.9rem;
-    font-weight: 700;
-}
-.premium-text {
-    margin: 0 0 0.6rem;
-    line-height: 1.6;
-    font-size: 1.05rem;
-}
-.premium-features {
-    margin: 0.8rem 0 1.2rem 1rem;
-    padding: 0;
-    list-style: none;
-}
-.premium-features li {
-    margin-bottom: 0.4rem;
-    font-size: 1rem;
-}
-.premium-button {
-    display: inline-block;
-    background: #ffffff;
-    color: #0057b8;
-    padding: 0.9rem 1.6rem;
-    border-radius: 10px;
-    font-size: 1.15rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-.premium-button:hover {
-    background: #e6f0ff;
-    transform: translateY(-2px);
-}
-.premium-note {
-    margin-top: 0.8rem;
-    font-size: 0.85rem;
-    opacity: 0.85;
-    text-align: center;
-}
-</style>
+    if (token === VALID_TOKEN) {
+        document.getElementById("premium").classList.remove("hidden");
+    }
+</script>
 
 </body>
 </html>
