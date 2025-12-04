@@ -365,3 +365,72 @@ body {
     flex-direction: column;
   }
 }
+/* Premium Hero Fix */
+.hero-premium {
+    background: linear-gradient(135deg, #004aad, #0077cc);
+    padding: 80px 20px;
+    color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.hero-inner {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    max-width: 550px;
+}
+
+.cta-primary {
+    background: white;
+    color: #004aad;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.cta-primary:hover {
+    background: #e5e5e5;
+}
+
+.hero-profile {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+
+.hero-profile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-profile-text {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+
