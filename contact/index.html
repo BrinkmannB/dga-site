@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact – Dutch Governance Advisory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Dutch Governance Advisory</title>
+
+    <link rel="stylesheet" href="/assets/css/contact.css">
 </head>
 
 <body>
 
 <header class="site-header">
-  <nav class="nav">
-    <a href="/" class="logo">DGA</a>
-    <ul class="nav-links">
-      <li><a href="/diensten">Diensten</a></li>
-      <li><a href="/kennisbank">Kennisbank</a></li>
-      <li><a href="/quickscan">Quickscan</a></li>
-      <li><a class="active" href="/contact">Contact</a></li>
-      <li><a href="/over-bas">Over Bas</a></li>
-      <li><a href="/en">EN</a></li>
-    </ul>
-  </nav>
+    <nav class="nav">
+        <a class="logo" href="/">DGA</a>
+        <ul class="nav-links">
+            <li><a href="/diensten.html">Diensten</a></li>
+            <li><a href="/kennisbank.html">Kennisbank</a></li>
+            <li><a href="/over-bas.html">Over Bas</a></li>
+            <li><a class="active" href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section class="page-header">
-  <div class="container">
-    <h1>Contact</h1>
-    <p>Plan een gesprek of stel een vraag.</p>
-  </div>
+
+<section class="hero-contact">
+    <div class="hero-content">
+        <h1>Plan direct een gesprek</h1>
+        <p>
+            Maak AI governance uitvoerbaar, verantwoord en in lijn met de AI Act. 
+            Bel direct of plan een afspraak — geheel vertrouwelijk.
+        </p>
+
+        <div class="cta-buttons">
+            <a href="tel:+31658946641" class="btn-primary">📞 Bel direct: 06 5894 6641</a>
+            <a href="mailto:info@dutchgovernanceadvisory.nl" class="btn-secondary">✉️ Mail nu</a>
+        </div>
+    </div>
 </section>
 
-<section class="container contact-section">
 
-  <h2>Plan direct een gesprek</h2>
+<section class="contact-section">
+    <h2>Stel je vraag</h2>
+    <form class="contact-form">
+        <label>Naam</label>
+        <input type="text" placeholder="Jouw naam" required>
 
-  <p>
-    Je kunt direct een afspraak inplannen via het contactformulier of per mail.
-  </p>
+        <label>E-mailadres</label>
+        <input type="email" placeholder="Jouw e-mail" required>
 
-  <h3>E-mail</h3>
-  <p><a href="mailto:info@dutchgovernanceadvisory.nl">info@dutchgovernanceadvisory.nl</a></p>
+        <label>Waarmee kan ik helpen?</label>
+        <textarea placeholder="Vertel kort over je vraag..." rows="6" required></textarea>
 
-  <h3>Formulier</h3>
-  
-  <!-- MAILCHIMP FORM -->
-  <form action="https://luisterendoor.us5.list-manage.com/subscribe/post?u=213eb41b03dbb11068c6385d7&amp;id=f7e1eab632&amp;f_id=005542edf0"
-        method="post" target="_blank">
-
-    <input type="text" name="NAME" placeholder="Naam" required>
-    <input type="email" name="EMAIL" placeholder="E-mailadres" required>
-    <textarea name="MESSAGE" placeholder="Bericht" required></textarea>
-
-    <button type="submit" class="cta-primary">Verstuur</button>
-
-  </form>
+        <button type="submit" class="btn-primary">Verstuur bericht</button>
+    </form>
 </section>
+
+
+<section class="privacy-note">
+    <p>
+        <strong>Vertrouwelijkheid gewaarborgd:</strong><br>
+        Alle gesprekken worden strikt vertrouwelijk behandeld.  
+        Je gegevens worden nooit gedeeld met derden of verwerkt met AI-systemen zonder expliciete toestemming.
+    </p>
+</section>
+
 
 <footer class="footer">
-  <div class="container footer-flex">
-    <strong>DGA</strong>
-    <div class="footer-links">
-      <a href="/diensten">Diensten</a>
+    <div class="container">
+        <p>© 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het publieke domein</p>
     </div>
-  </div>
 </footer>
 
 </body>
