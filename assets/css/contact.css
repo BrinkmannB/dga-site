@@ -1,1 +1,98 @@
+:root {
+    --navy: #002046;
+    --green: #0DA67B;
+    --text: #1b1b1b;
+    --bg: #ffffff;
+    --light: #f4f8f9;
+    --radius: 8px;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* NAV */
+.site-header {
+    background: var(--navy);
+    padding: 16px 0;
+}
+.logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero-contact {
+    background: linear-gradient(135deg, var(--navy), var(--green));
+    color: #fff;
+    padding: 90px 24px;
+    text-align: center;
+}
+
+/* CTA buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 6px;
+}
+.btn-primary {
+    background: var(--green);
+    color: #fff;
+}
+.btn-secondary {
+    background: #fff;
+    color: var(--navy);
+}
+
+/* CONTACT FORM */
+.contact-section {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.contact-form label {
+    font-weight: 600;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    border: 1px solid #cdd5da;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+/* PRIVACY TEXT */
+.privacy-note {
+    max-width: 700px;
+    background: var(--light);
+    padding: 24px;
+    border-radius: var(--radius);
+    margin: 40px auto 80px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--navy);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 24px 0;
+}
 
