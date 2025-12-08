@@ -99,3 +99,24 @@ body {
   margin-top:80px;
 }
 
+.site-header {
+    background:#0a2540;
+    padding:18px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav {
+    max-width:1200px;
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-links a {
+    margin-left:28px;
+    font-weight:600;
+}
