@@ -1,394 +1,94 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>AI Act QuickScan — Risicoclassificatie | Dutch Governance Advisory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Korte QuickScan om een eerste inschatting te maken van de AI Act-risicocategorie van uw AI-systeem. Specifiek voor overheden en publieke instellingen.">
-
-  <link rel="stylesheet" href="/assets/css/global.css?v=1017">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=1017">
-  <link rel="stylesheet" href="/assets/css/ai-act-calculator.css?v=1001">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dutch Governance Advisory — AI Governance voor het Publieke Domein</title>
+    <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a class="logo" href="/nl/">DGA</a>
-    <ul class="nav-links">
-      <li><a href="/nl/diensten/">Diensten</a></li>
-      <li><a href="/nl/kennisbank/">Kennisbank</a></li>
-      <li><a href="/nl/quickscan/">QuickScan</a></li>
-      <li><a href="/nl/ai-act-calculator/" class="active">AI Act Calculator</a></li>
-      <li><a href="/nl/contact/">Contact</a></li>
-      <li><a href="/en/">EN</a></li>
-    </ul>
-  </nav>
+<header class="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">DGA</a>
+        <nav>
+            <a href="/diensten/">Diensten</a>
+            <a href="/kennisbank/">Kennisbank</a>
+            <a href="/quickscan/">QuickScan</a>
+            <a href="/ai-act-calculator/">AI Act Calculator</a>
+            <a href="/contact/">Contact</a>
+            <a href="/over-bas/">Over Bas</a>
+            <a href="/en/" class="lang">EN</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-
-  <!-- HERO -->
-  <section class="hero-calculator">
+<!-- HERO -->
+<section class="hero">
     <div class="hero-inner">
-      <h1>AI Act QuickScan — eerste risicoclassificatie</h1>
-      <p>
-        Beantwoord 10 korte vragen en ontvang direct een eerste indicatie van de mogelijke risicocategorie van uw AI-systeem onder de EU AI Act.
-        Specifiek ontwikkeld voor overheden en publieke instellingen.
-      </p>
-
-      <div class="hero-badges">
-        <span>⚖️ EU AI Act</span>
-        <span>🏛 Publieke sector</span>
-        <span>⏱ ± 3 minuten</span>
-      </div>
-
-      <div class="disclaimer-start">
-        <p>
-          <strong>Let op:</strong> deze QuickScan geeft een eerste indicatie van de mogelijke risicocategorie onder de EU AI Act.
-          De uitkomst is geen juridisch advies en vormt geen formele classificatie. Voor besluiten en implementatie wordt professioneel advies aanbevolen.
+        <h1>AI Governance voor het Publieke Domein</h1>
+        <p class="subtitle">
+            Onafhankelijk advies over AI Act implementatie, algoritmeregisters en verantwoord gebruik van AI binnen overheden en publieke instellingen.
         </p>
-      </div>
 
-      <button id="startBtn" class="btn-primary">Start de QuickScan</button>
-    </div>
-  </section>
-
-  <!-- QUIZ WRAPPER -->
-  <section id="quizSection" class="quiz-section hidden">
-    <div class="quiz-container">
-      <div class="quiz-header">
-        <div class="progress-label">
-          Vraag <span id="currentQuestion">1</span> van <span id="totalQuestions">10</span>
+        <div class="author-card">
+            <img src="/assets/bas-hero.jpg" alt="Bas Brinkmann" />
+            <div>
+                <strong>Bas Brinkmann</strong><br />
+                AI Governance Consultant
+            </div>
         </div>
-        <div class="progress-bar">
-          <div id="progressFill" class="progress-fill"></div>
-        </div>
-      </div>
 
-      <div id="questionText" class="question-text">
-        <!-- vraagtekst komt hier via JS -->
-      </div>
-
-      <div id="optionsContainer" class="options-container">
-        <!-- opties komen hier via JS -->
-      </div>
-
-      <div class="quiz-nav">
-        <button id="prevBtn" class="btn-secondary" disabled>Vorige</button>
-        <button id="nextBtn" class="btn-primary">Volgende</button>
-      </div>
+        <a href="/contact/" class="cta">Plan een gesprek</a>
     </div>
-  </section>
+</section>
 
-  <!-- RESULT SECTION -->
-  <section id="resultSection" class="result-section hidden">
-    <div class="result-container">
-      <h2>Voorlopige AI Act-risico-indicatie</h2>
-      <p class="result-intro">
-        Op basis van uw antwoorden geeft deze QuickScan een eerste inschatting van de mogelijke risicocategorie.
-      </p>
+<!-- DIENSTEN -->
+<section class="diensten-home">
+    <h2>Diensten</h2>
+    <p class="intro">Praktisch, juridisch en uitvoerbaar advies voor publieke organisaties.</p>
 
-      <div id="resultBadge" class="result-badge">
-        <!-- categorie label -->
-      </div>
+    <div class="card-grid">
 
-      <div id="resultDetails" class="result-details">
-        <!-- uitleg tekst -->
-      </div>
-
-      <div class="result-actions">
-        <h3>Volledig QuickScan Rapport</h3>
-        <p>
-          Wilt u een uitgewerkt rapport met onderbouwing, verplichtingen en concrete aanbevelingen
-          (inclusief prioriteiten en governance-adviezen)?
-        </p>
-        <a href="https://buy.stripe.com/fZu4gBacW4wC53s5jvaAw00" class="btn-primary">
-          Download QuickScan Rapport (€29)
+        <a href="/diensten/#ai-act" class="card">
+            <h3>AI Act Implementatie</h3>
+            <p>Risicoclassificatie, governance, documentatie en zorgplichten.</p>
+            <span class="more">Meer over AI Act →</span>
         </a>
-        <p class="small-note">
-          Binnen 48 uur ontvangt u een persoonlijk rapport opgesteld door Bas Brinkmann, AI Act Compliance Specialist.
-        </p>
-      </div>
 
-      <div class="legal-disclaimer">
-        <h3>Aansprakelijkheidsuitsluiting</h3>
-        <p>
-          De DGA QuickScan biedt een eerste indicatie van mogelijke risicocategorieën onder de EU AI Act.
-          De resultaten vormen <strong>geen juridisch advies</strong> en kunnen niet worden beschouwd als een formele classificatie.
-        </p>
-        <p>
-          Gebruik van deze tool is volledig voor eigen verantwoordelijkheid van de gebruiker.
-          Dutch Governance Advisory (DGA) en Bas Brinkmann aanvaarden geen aansprakelijkheid voor beslissingen, acties of gevolgen
-          die voortkomen uit het gebruik van deze QuickScan.
-          Voor een volledige beoordeling wordt professioneel advies aanbevolen.
-        </p>
-      </div>
+        <a href="/diensten/#registers" class="card">
+            <h3>Algoritmeregisters</h3>
+            <p>Transparantieprofielen, publicatie-eisen en kwaliteitscriteria.</p>
+            <span class="more">Meer over registers →</span>
+        </a>
+
+        <a href="/diensten/#frameworks" class="card">
+            <h3>Governance Frameworks</h3>
+            <p>Toezicht, rollen, datakwaliteit en publieke waarden.</p>
+            <span class="more">Meer over governance →</span>
+        </a>
+
     </div>
-  </section>
+</section>
 
-</main>
+<!-- UITGELICHT -->
+<section class="highlight">
+    <p class="small-title">Gratis intake binnen 48 uur</p>
+    <h2>Inzicht in verplichtingen, risico’s & governance-behoefte</h2>
+    <a href="/contact/" class="cta secondary">Plan intake</a>
+</section>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <p>© 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein</p>
-  </div>
+    <div class="footer-inner">
+        <div>DGA<br>AI Governance Consultancy</div>
+        <nav>
+            <a href="/kennisbank/">Kennisbank</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+    <p class="copy">© 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein</p>
 </footer>
-
-<script>
-  // 10 vragen in DGA-tone-of-voice
-  const questions = [
-    {
-      id: 1,
-      text: "Wordt dit systeem ingezet om besluiten te nemen of te ondersteunen die gevolgen hebben voor burgers (bijv. toekenning, selectie, beoordeling)?",
-      options: [
-        { label: "Ja, rechtstreeks voor besluiten over burgers", value: "high" },
-        { label: "Ja, als ondersteuning voor professionals", value: "medium" },
-        { label: "Nee, geen directe impact op burgers", value: "low" }
-      ]
-    },
-    {
-      id: 2,
-      text: "Valt de toepassing binnen een AI Act-hoogrisicodomein (arbeid, onderwijs, essentiële diensten, rechtshandhaving, migratie, justitie)?",
-      options: [
-        { label: "Ja, duidelijk wel", value: "high" },
-        { label: "Mogelijk, nog onduidelijk", value: "medium" },
-        { label: "Nee, niet in deze domeinen", value: "low" }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kan het systeem grondrechten of veiligheid van burgers aantasten, direct of indirect?",
-      options: [
-        { label: "Ja, potentieel ernstig", value: "high" },
-        { label: "Ja, maar beperkt", value: "medium" },
-        { label: "Nee, nauwelijks of niet", value: "low" }
-      ]
-    },
-    {
-      id: 4,
-      text: "Hoe autonoom is het AI-systeem in de praktijk?",
-      options: [
-        { label: "Beslist grotendeels autonoom", value: "high" },
-        { label: "Beslissingen worden altijd door mensen gevalideerd", value: "medium" },
-        { label: "Wordt alleen gebruikt als analyse- of hulphulpmiddel", value: "low" }
-      ]
-    },
-    {
-      id: 5,
-      text: "Gebruikt het systeem biometrische gegevens (bijv. gezichtsherkenning, stemherkenning) of andere gevoelige persoonsgegevens?",
-      options: [
-        { label: "Ja, biometrie of zeer gevoelige data", value: "forbidden" },
-        { label: "Ja, maar beperkt en onder strikte voorwaarden", value: "high" },
-        { label: "Nee, geen biometrie of gevoelige data", value: "low" }
-      ]
-    },
-    {
-      id: 6,
-      text: "Wordt het systeem ingezet door een overheid, toezichthouder of andere publieke instelling?",
-      options: [
-        { label: "Ja, primair door een publieke organisatie", value: "high" },
-        { label: "Deels, in samenwerking met publieke partijen", value: "medium" },
-        { label: "Nee, uitsluitend privaat", value: "low" }
-      ]
-    },
-    {
-      id: 7,
-      text: "Is er inzicht in datakwaliteit, bias en de beperkingen van het model?",
-      options: [
-        { label: "Nee, dat is onvoldoende in beeld", value: "high" },
-        { label: "Gedeeltelijk, maar nog niet volledig", value: "medium" },
-        { label: "Ja, goed in kaart gebracht", value: "low" }
-      ]
-    },
-    {
-      id: 8,
-      text: "Zijn risicobeheersing en documentatie (bijv. beleid, registers, procedures) expliciet vastgelegd?",
-      options: [
-        { label: "Nauwelijks of niet vastgelegd", value: "high" },
-        { label: "Gedeeltelijk vastgelegd", value: "medium" },
-        { label: "Ja, duidelijk vastgelegd", value: "low" }
-      ]
-    },
-    {
-      id: 9,
-      text: "Zijn beslissingen en uitkomsten van het systeem uitlegbaar voor burgers, medewerkers en bestuurders?",
-      options: [
-        { label: "Nee, moeilijk uitlegbaar", value: "high" },
-        { label: "Gedeeltelijk uitlegbaar", value: "medium" },
-        { label: "Ja, goed uitlegbaar", value: "low" }
-      ]
-    },
-    {
-      id: 10,
-      text: "Is er intern eigenaarschap ingericht (rollen, verantwoordelijkheden en toezicht voor AI)?",
-      options: [
-        { label: "Nog niet of nauwelijks", value: "high" },
-        { label: "Deels, maar nog niet compleet", value: "medium" },
-        { label: "Ja, duidelijk ingericht", value: "low" }
-      ]
-    }
-  ];
-
-  const startBtn = document.getElementById('startBtn');
-  const quizSection = document.getElementById('quizSection');
-  const resultSection = document.getElementById('resultSection');
-  const currentQuestionEl = document.getElementById('currentQuestion');
-  const totalQuestionsEl = document.getElementById('totalQuestions');
-  const progressFill = document.getElementById('progressFill');
-  const questionTextEl = document.getElementById('questionText');
-  const optionsContainer = document.getElementById('optionsContainer');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const resultBadge = document.getElementById('resultBadge');
-  const resultDetails = document.getElementById('resultDetails');
-
-  let currentIndex = 0;
-  let answers = new Array(questions.length).fill(null);
-
-  totalQuestionsEl.textContent = questions.length.toString();
-
-  function renderQuestion() {
-    const q = questions[currentIndex];
-    currentQuestionEl.textContent = (currentIndex + 1).toString();
-    const progress = ((currentIndex) / questions.length) * 100;
-    progressFill.style.width = progress + '%';
-
-    questionTextEl.textContent = q.text;
-    optionsContainer.innerHTML = '';
-
-    q.options.forEach((opt, idx) => {
-      const label = document.createElement('label');
-      label.className = 'option-label';
-
-      const input = document.createElement('input');
-      input.type = 'radio';
-      input.name = 'question-' + q.id;
-      input.value = opt.value;
-
-      if (answers[currentIndex] === opt.value) {
-        input.checked = true;
-      }
-
-      const span = document.createElement('span');
-      span.textContent = opt.label;
-
-      label.appendChild(input);
-      label.appendChild(span);
-      optionsContainer.appendChild(label);
-    });
-
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.textContent = currentIndex === questions.length - 1 ? 'Toon resultaat' : 'Volgende';
-  }
-
-  function calculateResult() {
-    // simpele scoringmatrix
-    let scoreHigh = 0;
-    let scoreMedium = 0;
-    let scoreLow = 0;
-    let hasForbidden = false;
-
-    answers.forEach(v => {
-      if (v === 'forbidden') hasForbidden = true;
-      if (v === 'high') scoreHigh++;
-      if (v === 'medium') scoreMedium++;
-      if (v === 'low') scoreLow++;
-    });
-
-    if (hasForbidden) {
-      return 'forbidden';
-    }
-    if (scoreHigh >= 3) {
-      return 'high';
-    }
-    if (scoreMedium >= 3 || scoreHigh >= 1) {
-      return 'medium';
-    }
-    return 'low';
-  }
-
-  function showResult() {
-    const category = calculateResult();
-
-    quizSection.classList.add('hidden');
-    resultSection.classList.remove('hidden');
-
-    let title = '';
-    let explanation = '';
-
-    if (category === 'forbidden') {
-      title = 'Verboden AI-praktijk (AI Act, artikel 5)';
-      explanation = `
-        Op basis van de antwoorden lijkt het systeem kenmerken te bevatten die onder de <strong>verboden AI-praktijken</strong> van de EU AI Act kunnen vallen.
-        Denk aan manipulatieve technieken, social scoring of bepaalde vormen van biometrische identificatie in de publieke ruimte.
-        <br><br>
-        Dit vraagt om onmiddellijke juridische toetsing en heroverweging van de toepassing. 
-        In veel gevallen geldt dat deze systemen <strong>niet zijn toegestaan binnen de EU</strong>.
-      `;
-    } else if (category === 'high') {
-      title = 'Waarschijnlijk hoog risico onder de AI Act';
-      explanation = `
-        Op basis van de antwoorden lijkt het systeem <strong>hoog risico</strong> in de zin van de EU AI Act.
-        Dit betekent dat uitgebreide verplichtingen gelden, waaronder documentatie, datakwaliteit, risicobeheersing, transparantie, menselijk toezicht en mogelijke auditverplichtingen.
-        <br><br>
-        Een gestructureerd implementatietraject is nodig om aan de AI Act te voldoen en verantwoording af te kunnen leggen aan bestuurders, toezichthouders en burgers.
-      `;
-    } else if (category === 'medium') {
-      title = 'Verhoogd risico, aanvullende maatregelen wenselijk';
-      explanation = `
-        De QuickScan wijst op een <strong>verhoogd risicoprofiel</strong>.
-        Mogelijk valt het systeem (op onderdelen) onder de AI Act of raakt het aan grondrechten, publieke waarden of kritieke dienstverlening.
-        <br><br>
-        Aanvullende governance-maatregelen, documentatie en transparantie zijn verstandig om toekomstige verplichtingen en toezicht voor te zijn.
-      `;
-    } else {
-      title = 'Laag risico binnen de huidige kaders';
-      explanation = `
-        Op basis van de antwoorden lijkt het systeem <strong>laag risico</strong> te hebben onder de huidige AI Act-kaders.
-        Er gelden waarschijnlijk geen specifieke hoogrisicoverplichtingen, maar een basisniveau van zorgplicht, datakwaliteit en transparantie blijft noodzakelijk.
-        <br><br>
-        Het is raadzaam ontwikkelingen in wetgeving, beleid en jurisprudentie te blijven volgen.
-      `;
-    }
-
-    resultBadge.innerHTML = '<span>' + title + '</span>';
-    resultDetails.innerHTML = '<p>' + explanation + '</p>';
-  }
-
-  startBtn.addEventListener('click', () => {
-    startBtn.classList.add('hidden');
-    document.querySelector('.disclaimer-start').classList.add('hidden');
-    quizSection.classList.remove('hidden');
-    renderQuestion();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    const selected = optionsContainer.querySelector('input[type="radio"]:checked');
-    if (!selected) {
-      alert('Maak een keuze voordat u verder gaat.');
-      return;
-    }
-
-    answers[currentIndex] = selected.value;
-
-    if (currentIndex === questions.length - 1) {
-      // klaar -> resultaat tonen
-      showResult();
-      return;
-    }
-
-    currentIndex++;
-    renderQuestion();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex === 0) return;
-    currentIndex--;
-    renderQuestion();
-  });
-</script>
 
 </body>
 </html>
