@@ -1,3 +1,10 @@
+/* TEMP FIX – zichtbaar maken */
+section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
 /* =========================
    RESET & BASIS
 ========================= */
