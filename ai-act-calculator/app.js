@@ -1,67 +1,119 @@
-function saveAnswer(step, value) {
-    localStorage.setItem(step, value);
+function calculateImpact() {
+  const orgType = document.getElementById("orgType").value;
+  const aiCount = parseInt(document.getElementById("aiCount").value) || 0;
+  const highRisk = document.getElementById("highRisk").value;
+  const governanceLevel = document.getElementById("governanceLevel").value;
+
+  // Basisvalidatie
+  if (!orgType || !highRisk || !governanceLevel) {
+    alert("Vul alle verplichte velden in om de berekening uit te voeren.");
+    return;
+  }
+
+  let score = 0;
+
+  /* =========================
+     1. Type organisatie
+  ========================= */
+
+  switch (orgType) {
+    case "municipality":
+      score += 20;
+      break;
+    case "zbo":
+      score += 25;
+      break;
+    case "ministry":
+      score += 30;
+      break;
+    case "ngo":
+      score += 15;
+      break;
+  }
+
+  /* =========================
+     2. Aantal AI-systemen
+  ========================= */
+
+  if (aiCount === 0) {
+    score += 0;
+  } else if (aiCount <= 3) {
+    score += 10;
+  } else if (aiCount <= 10) {
+    score += 20;
+  } else {
+    score += 30;
+  }
+
+  /* =========================
+     3. Hoog-risico AI
+  ========================= */
+
+  if (highRisk === "yes") score += 40;
+  if (highRisk === "unknown") score += 25;
+
+  /* =========================
+     4. Governance volwassenheid
+  ========================= */
+
+  if (governanceLevel === "low") score += 30;
+  if (governanceLevel === "medium") score += 15;
+  if (governanceLevel === "high") score += 0;
+
+  /* =========================
+     5. Interpretatie
+  ========================= */
+
+  let riskLevel = "";
+  let message = "";
+
+  if (score < 40) {
+    riskLevel = "Laag";
+    message = `
+      De huidige indicatie wijst op een beperkte AI Act-impact.
+      Dit betekent niet dat er geen verplichtingen zijn, maar dat
+      de risico’s op dit moment beheersbaar lijken.
+    `;
+  } else if (score < 80) {
+    riskLevel = "Middel";
+    message = `
+      De AI Act kan voor jouw organisatie tot aanvullende verplichtingen
+      leiden, met name op het gebied van governance, documentatie en toezicht.
+      Verdere verdieping is aan te raden.
+    `;
+  } else {
+    riskLevel = "Hoog";
+    message = `
+      Op basis van deze invoer is de AI Act-impact waarschijnlijk aanzienlijk.
+      Er is een verhoogde kans op hoog-risico AI, aanvullende zorgplichten
+      en toezichtvereisten.
+    `;
+  }
+
+  /* =========================
+     6. Resultaat tonen
+  ========================= */
+
+  const resultEl = document.getElementById("result");
+  resultEl.innerHTML = `
+    <h2>Indicatieve AI Act-risicoscore</h2>
+
+    <p class="score">
+      <strong>${riskLevel} risico</strong> (score: ${score})
+    </p>
+
+    <p>${message}</p>
+
+    <p>
+      Deze inschatting is indicatief en gebaseerd op beperkte invoer.
+      Voor concrete verplichtingen, verantwoordelijkheden en governance-maatregelen
+      is nadere analyse noodzakelijk.
+    </p>
+
+    <a href="resultaat.html" class="cta secondary">
+      Bekijk nadere toelichting
+    </a>
+  `;
+
+  resultEl.classList.remove("hidden");
 }
-
-function get(step) {
-    return localStorage.getItem(step);
-}
-
-function go(page) {
-    window.location = page;
-}
-
-function calculateRisk() {
-    const a1 = get("step1");
-    const a2 = get("step2");
-    const a3 = get("step3");
-    const a4 = get("step4");
-    const a5 = get("step5");
-    const a6 = get("step6");
-    const a7 = get("step7");
-    const a8 = get("step8");
-    const a9 = get("step9");
-    const a10 = get("step10");
-
-    if (a1 === "yes") return "Verboden AI";
-    if (a2 === "yes") return "Hoog risico AI";
-    if (a3 === "high") return "Hoog risico AI";
-    if (a4 === "strong") return "Hoog risico AI";
-    if (a10 === "gpa") return "Foundation Model / GPAI — aparte verplichtingen";
-
-    return "Laag risico / Niet-hoog risico AI";
-}
-
-function showResult() {
-    document.getElementById("risk-output").innerText = calculateRisk();
-}
-
-function downloadPDF() {
-    const result = calculateRisk();
-
-    const txt = `
-EU AI Act — Resultaat
----------------------
-
-Risicocategorie:
-${result}
-
-Verstrekte antwoorden:
-1: ${get("step1")}
-2: ${get("step2")}
-3: ${get("step3")}
-4: ${get("step4")}
-5: ${get("step5")}
-6: ${get("step6")}
-7: ${get("step7")}
-8: ${get("step8")}
-9: ${get("step9")}
-10: ${get("step10")}
-`;
-
-    const blob = new Blob([txt], { type: "text/plain" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "ai-act-resultaat.txt";
-    a.click();
-}
-
