@@ -1,50 +1,32 @@
-/* =========================================================
-   DGA – Layout.css
-   Clean, calm, public-sector grade
-   ========================================================= */
+/* =====================================================
+   DGA – layout.css (stabiel & voorspelbaar)
+   ===================================================== */
 
-/* -------------------------
-   CSS RESET & BASIS
--------------------------- */
-
-*,
-*::before,
-*::after {
+/* RESET */
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #0f172a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: #f8fafc;
+  color: #0f172a;
   line-height: 1.6;
 }
 
-/* -------------------------
-   KLEUREN & VARIABELEN
--------------------------- */
-
+/* KLEUREN */
 :root {
-  --brand-primary: #1e40af;     /* DGA blauw */
-  --brand-soft: #eef4ff;
-  --text-main: #0f172a;
+  --blue: #1e40af;
+  --blue-soft: #eef4ff;
   --text-muted: #475569;
-  --border-light: #e2e8f0;
-  --bg-white: #ffffff;
+  --border: #e2e8f0;
 }
 
-/* -------------------------
-   LINKS
--------------------------- */
-
+/* LINKS */
 a {
-  color: var(--brand-primary);
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -52,205 +34,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* -------------------------
+/* =========================
    HEADER / NAVIGATIE
--------------------------- */
+========================= */
 
 .navbar {
-  background: var(--bg-white);
-  border-bottom: 1px solid var(--border-light);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text-main);
-}
-
-.nav-container nav {
-  display: flex;
-  gap: 1.25rem;
-}
-
-.nav-container nav a {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  padding-bottom: 0.25rem;
-}
-
-.nav-container nav a.active {
-  color: var(--text-main);
-  border-bottom: 2px solid var(--brand-primary);
-}
-
-/* -------------------------
-   MAIN LAYOUT
--------------------------- */
-
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-}
-
-/* -------------------------
-   HERO / INTRO
--------------------------- */
-
-.quickscan-hero {
-  background: linear-gradient(
-    180deg,
-    var(--brand-soft),
-    #ffffff
-  );
-  border-radius: 12px;
-  padding: 3.5rem 2rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.quickscan-hero h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.quickscan-hero p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-/* -------------------------
-   SECTIES
--------------------------- */
-
-section {
-  margin-bottom: 3.5rem;
-}
-
-section h2 {
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
-}
-
-section p {
-  color: var(--text-muted);
-  max-width: 720px;
-}
-
-/* -------------------------
-   START QUICKSCAN BLOK
--------------------------- */
-
-.quickscan-start ul {
-  margin: 1.25rem 0 1.5rem 1.25rem;
-}
-
-.quickscan-start li {
-  margin-bottom: 0.5rem;
-}
-
-/* -------------------------
-   CTA KNOP
--------------------------- */
-
-.cta {
-  display: inline-block;
-  background: var(--brand-primary);
-  color: #ffffff;
-  padding: 0.7rem 1.4rem;
-  border-radius: 6px;
-  font-weight: 600;
-  margin: 1rem 0;
-}
-
-.cta:hover {
-  background: #1d4ed8;
-  text-decoration: none;
-}
-
-/* -------------------------
-   PRIVACY / DISCLAIMER
--------------------------- */
-
-.privacy-note {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin-top: 0.75rem;
-}
-
-/* -------------------------
-   CONTEXT / TOELICHTING
--------------------------- */
-
-.quickscan-context {
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-  padding: 2rem;
-}
-
-.quickscan-context p + p {
-  margin-top: 0.75rem;
-}
-
-/* -------------------------
-   NA DE QUICKSCAN
--------------------------- */
-
-.quickscan-anchor {
-  background: #f1f5f9;
-  border-radius: 10px;
-  padding: 2rem;
-}
-
-.quickscan-anchor h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* -------------------------
-   FOOTER
--------------------------- */
-
-.footer {
-  border-top: 1px solid var(--border-light);
-  background: #ffffff;
-  padding: 2.5rem 1.5rem 1.5rem;
-}
-
-.footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.footer nav a {
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 0.9rem;
-}
-
-.copy {
-  max-width: 960px;
-  margin: 1.5rem auto 0;
-  font-size: 0.8rem;
-  color: #64748b;
-}
