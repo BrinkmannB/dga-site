@@ -2,50 +2,116 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>AI Act Quick Scan – Dutch Governance Advisory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/layout.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Act Quick Scan | Dutch Governance Advisory</title>
+  <meta name="description"
+        content="Snel inzicht in AI Act-risico’s, verplichtingen en prioriteiten voor publieke organisaties.">
+
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="nav">
+<header class="navbar">
+  <div class="nav-container">
     <a href="/" class="logo">DGA</a>
-    <ul class="nav-links">
-      <li><a href="/diensten">Diensten</a></li>
-      <li><a href="/kennisbank">Kennisbank</a></li>
-      <li><a class="active" href="/quickscan">Quickscan</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/over-bas">Over Bas</a></li>
-      <li><a href="/en">EN</a></li>
-    </ul>
-  </nav>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="/diensten/">Diensten</a>
+      <a href="/kennisbank/">Kennisbank</a>
+      <a href="/quickscan/" class="active">QuickScan</a>
+      <a href="/contact/">Contact</a>
+      <a href="/over-bas/">Over Bas</a>
+      <a href="/en/" class="lang">EN</a>
+    </nav>
+  </div>
 </header>
 
-<section class="page-header">
-  <div class="container">
-    <h1>AI Act Quick Scan</h1>
-    <p>Snel inzicht in risico’s, verplichtingen en prioriteiten.</p>
-  </div>
-</section>
+<main>
 
-<section class="container">
-  <h2>Start de Quick Scan</h2>
-  <p>
-    Beantwoord een aantal korte vragen en ontvang direct een overzicht van de meest relevante
-    onderdelen van de AI Act voor jouw organisatie.
-  </p>
+  <!-- HERO -->
+  <section class="quickscan-hero">
+    <div class="hero-inner">
+      <h1>AI Act Quick Scan</h1>
+      <p class="subtitle">
+        Snel inzicht in risico’s, verplichtingen en prioriteiten onder de Europese AI Act
+        — specifiek voor publieke organisaties.
+      </p>
+    </div>
+  </section>
 
-  <a href="/ai-act-calculator" class="cta-primary">Start nu</a>
+  <!-- START KAART -->
+  <section class="quickscan-start">
+    <h2>Start de Quick Scan</h2>
 
-</section>
+    <p>
+      Beantwoord een beperkt aantal vragen en ontvang direct een overzicht
+      van de meest relevante onderdelen van de AI Act voor uw organisatie.
+    </p>
+
+    <ul class="checklist">
+      <li>Indicatieve risicoclassificatie</li>
+      <li>Relevante verplichtingen en zorgplichten</li>
+      <li>Aandachtspunten voor governance en toezicht</li>
+    </ul>
+
+    <a href="/ai-act-calculator/" class="cta">
+      Start nu
+    </a>
+
+    <p class="privacy-note">
+      Er worden geen persoonsgegevens opgeslagen. Alle berekeningen vinden lokaal
+      in de browser plaats.
+    </p>
+  </section>
+
+  <!-- VERDUIDELIJKING -->
+  <section class="quickscan-context">
+    <div class="context-inner">
+      <h2>Wat is de Quick Scan (en wat niet)?</h2>
+
+      <p>
+        De AI Act Quick Scan is bedoeld als laagdrempelig hulpmiddel om
+        eerste richting te geven. De uitkomst is indicatief en vervangt
+        geen juridische analyse of formele compliance-beoordeling.
+      </p>
+
+      <p>
+        In de praktijk wordt de Quick Scan vaak gebruikt als startpunt
+        voor verdere verdieping of als voorbereiding op een gesprek
+        over AI-governance en implementatie.
+      </p>
+    </div>
+  </section>
+
+  <!-- ANKER NAAR VERVOLG -->
+  <section class="quickscan-anchor">
+    <h3>Na de Quick Scan</h3>
+
+    <p>
+      Wilt u op basis van de uitkomst sparren over vervolgstappen,
+      prioriteiten of governance-inrichting?
+    </p>
+
+    <a href="/contact/" class="cta secondary">
+      Plan een gesprek
+    </a>
+  </section>
+
+</main>
 
 <footer class="footer">
-  <div class="container footer-flex">
-    <strong>DGA</strong>
-    <div class="footer-links"><a href="/contact">Contact</a></div>
+  <div class="footer-inner">
+    <div>DGA<br>AI Governance Consultancy</div>
+    <nav>
+      <a href="/diensten/">Diensten</a>
+      <a href="/kennisbank/">Kennisbank</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </div>
+  <p class="copy">
+    © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
+  </p>
 </footer>
 
 </body>
