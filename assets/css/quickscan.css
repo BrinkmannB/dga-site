@@ -1,38 +1,43 @@
-/* ================================
-   QuickScan Layout – DGA
-   ================================ */
+/* =========================================================
+   DGA – AI Act QuickScan
+   Clean, government-grade, calm authority
+   ========================================================= */
 
-:root {
-  --blue: #0b5ed7;
-  --blue-soft: #eaf1fb;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --bg: #f7f9fc;
-  --white: #ffffff;
-  --border: #e5e7eb;
-}
-
-/* Reset */
+/* ---------- RESET & BASIS ---------- */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
-  background: var(--bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;                 /* diep blauw-zwart */
+  background: #f8fafc;            /* zacht lichtgrijs */
   line-height: 1.6;
 }
 
-/* Header */
-.navbar {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+/* ---------- LINKS ---------- */
+a {
+  color: #0b5fff;
+  text-decoration: none;
 }
 
-.nav-container {
-  max-width: 1100px;
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HEADER / NAV ---------- */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
@@ -40,119 +45,124 @@ body {
   align-items: center;
 }
 
-.nav-container .logo {
+.logo {
   font-weight: 700;
   font-size: 20px;
-  color: var(--blue);
-  text-decoration: none;
+  color: #0b5fff;
 }
 
-.nav-container nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 15px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
 }
 
-.nav-container nav a.active {
-  color: var(--blue);
+.nav-links a {
+  font-size: 14px;
+  color: #334155;
+}
+
+.nav-links a.active {
   font-weight: 600;
+  color: #0b5fff;
+  border-bottom: 2px solid #0b5fff;
+  padding-bottom: 2px;
 }
 
-/* Hero */
-.quickscan-hero {
-  background: linear-gradient(180deg, var(--blue-soft), #ffffff);
-  padding: 80px 24px 64px;
-}
-
-.hero-inner {
-  max-width: 700px;
+/* ---------- MAIN CONTAINER ---------- */
+main {
+  max-width: 900px;
   margin: 0 auto;
-  text-align: center;
+  padding: 64px 24px 96px;
 }
 
-.hero-inner h1 {
-  font-size: 42px;
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 64px 24px;
+  background: linear-gradient(
+    180deg,
+    #eef4ff 0%,
+    #f8fafc 100%
+  );
+  border-radius: 16px;
+  margin-bottom: 64px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
   margin-bottom: 16px;
 }
 
-.hero-inner .subtitle {
-  font-size: 18px;
-  color: var(--muted);
-}
-
-/* Sections */
-section {
-  padding: 64px 24px;
-}
-
-.quickscan-start,
-.quickscan-context,
-.quickscan-anchor {
-  max-width: 700px;
+.hero p {
+  font-size: 17px;
+  color: #334155;
+  max-width: 720px;
   margin: 0 auto;
+}
+
+/* ---------- SECTIES ---------- */
+section {
+  margin-bottom: 72px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   margin-bottom: 16px;
 }
 
-h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
+p {
+  margin-bottom: 16px;
+  color: #334155;
 }
 
+/* ---------- LIJST ---------- */
 ul {
-  padding-left: 20px;
+  margin: 16px 0 24px 20px;
 }
 
-li {
+ul li {
   margin-bottom: 8px;
 }
 
-/* CTA */
+/* ---------- CTA ---------- */
 .cta {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 16px;
   padding: 12px 24px;
-  background: var(--blue);
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
+  background: #0b5fff;
+  color: #ffffff;
   font-weight: 600;
+  border-radius: 8px;
 }
 
-.cta.secondary {
-  background: #fff;
-  color: var(--blue);
-  border: 1px solid var(--blue);
-}
-
-/* Footer */
-.footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 48px 24px;
-  margin-top: 80px;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer a {
-  color: #cbd5e1;
+.cta:hover {
+  background: #0848c7;
   text-decoration: none;
-  margin-left: 16px;
 }
 
-.copy {
+/* ---------- KLEINE TEKST ---------- */
+small,
+.privacy-note {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ---------- CONTEXT BLOK ---------- */
+.context {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 32px 24px;
   text-align: center;
-  margin-top: 32px;
-  font-size: 14px;
+  font-size: 13px;
+  color: #64748b;
+  background: #ffffff;
 }
-
