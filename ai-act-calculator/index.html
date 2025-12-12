@@ -38,4 +38,74 @@
     </p>
 
     <p class="disclaimer">
-      De uitkomst is indicatief en vormt geen juridisch advies of formele beoord
+      De uitkomst is indicatief en vormt geen juridisch advies of formele beoordeling.
+    </p>
+
+    <p class="privacy-note">
+      Er worden geen persoonsgegevens opgeslagen of gedeeld.
+      Alle berekeningen vinden lokaal in uw browser plaats.
+    </p>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calculator">
+    <form id="aiActForm">
+
+      <label for="orgType">
+        Type organisatie
+        <select id="orgType" required>
+          <option value="">— selecteer —</option>
+          <option value="municipality">Gemeente</option>
+          <option value="zbo">ZBO / uitvoeringsorganisatie</option>
+          <option value="ministry">Ministerie</option>
+          <option value="ngo">NGO / publieke instelling</option>
+        </select>
+      </label>
+
+      <label for="aiCount">
+        Aantal AI-toepassingen in gebruik
+        <input type="number" id="aiCount" min="0" placeholder="Bij benadering">
+      </label>
+
+      <label for="highRisk">
+        Wordt (mogelijk) hoog-risico AI gebruikt?
+        <select id="highRisk" required>
+          <option value="">— selecteer —</option>
+          <option value="yes">Ja</option>
+          <option value="no">Nee</option>
+          <option value="unknown">Onzeker</option>
+        </select>
+      </label>
+
+      <label for="governanceLevel">
+        Huidige mate van AI-governance
+        <select id="governanceLevel" required>
+          <option value="">— selecteer —</option>
+          <option value="low">Beperkt / ad hoc</option>
+          <option value="medium">Gedeeltelijk ingericht</option>
+          <option value="high">Structureel ingericht</option>
+        </select>
+      </label>
+
+      <button type="button" class="cta" onclick="calculateImpact()">
+        Bereken impact
+      </button>
+
+    </form>
+  </section>
+
+  <!-- RESULTAAT -->
+  <section id="result" class="result hidden"></section>
+
+</main>
+
+<footer class="footer">
+  <p class="copy">
+    © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
+  </p>
+</footer>
+
+<script src="./app.js"></script>
+
+</body>
+</html>
