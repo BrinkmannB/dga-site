@@ -1,94 +1,51 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dutch Governance Advisory — AI Governance voor het Publieke Domein</title>
-    <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Act Impact Calculator | Dutch Governance Advisory</title>
+  <meta name="description"
+        content="Bereken in 2 minuten de impact van de AI Act op jouw organisatie. Indicatief inzicht in risico’s, verplichtingen en governance-behoefte.">
+
+  <!-- Local calculator styling -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-    <div class="nav-container">
-        <a href="/" class="logo">DGA</a>
-        <nav>
-            <a href="/diensten/">Diensten</a>
-            <a href="/kennisbank/">Kennisbank</a>
-            <a href="/quickscan/">QuickScan</a>
-            <a href="/ai-act-calculator/">AI Act Calculator</a>
-            <a href="/contact/">Contact</a>
-            <a href="/over-bas/">Over Bas</a>
-            <a href="/en/" class="lang">EN</a>
-        </nav>
-    </div>
+  <div class="nav-container">
+    <a href="/" class="logo">DGA</a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="/diensten/">Diensten</a>
+      <a href="/kennisbank/">Kennisbank</a>
+      <a href="/quickscan/">QuickScan</a>
+      <a href="/ai-act-calculator/" class="active">AI Act Calculator</a>
+      <a href="/contact/">Contact</a>
+      <a href="/en/" class="lang">EN</a>
+    </nav>
+  </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-inner">
-        <h1>AI Governance voor het Publieke Domein</h1>
-        <p class="subtitle">
-            Onafhankelijk advies over AI Act implementatie, algoritmeregisters en verantwoord gebruik van AI binnen overheden en publieke instellingen.
-        </p>
+<main>
 
-        <div class="author-card">
-            <img src="/assets/bas-hero.jpg" alt="Bas Brinkmann" />
-            <div>
-                <strong>Bas Brinkmann</strong><br />
-                AI Governance Consultant
-            </div>
-        </div>
+  <!-- INTRO -->
+  <section class="calculator-hero">
+    <h1>AI Act Impact Calculator</h1>
 
-        <a href="/contact/" class="cta">Plan een gesprek</a>
-    </div>
-</section>
+    <p class="lead">
+      Krijg binnen enkele minuten indicatief inzicht in welke verplichtingen,
+      risico’s en governance-maatregelen de AI Act voor jouw organisatie kan meebrengen.
+    </p>
 
-<!-- DIENSTEN -->
-<section class="diensten-home">
-    <h2>Diensten</h2>
-    <p class="intro">Praktisch, juridisch en uitvoerbaar advies voor publieke organisaties.</p>
+    <p class="disclaimer">
+      Deze calculator geeft een indicatieve inschatting en vormt geen juridisch advies.
+    </p>
+  </section>
 
-    <div class="card-grid">
+  <!-- CALCULATOR FORM -->
+  <section class="calculator">
+    <form id="aiActForm">
 
-        <a href="/diensten/#ai-act" class="card">
-            <h3>AI Act Implementatie</h3>
-            <p>Risicoclassificatie, governance, documentatie en zorgplichten.</p>
-            <span class="more">Meer over AI Act →</span>
-        </a>
-
-        <a href="/diensten/#registers" class="card">
-            <h3>Algoritmeregisters</h3>
-            <p>Transparantieprofielen, publicatie-eisen en kwaliteitscriteria.</p>
-            <span class="more">Meer over registers →</span>
-        </a>
-
-        <a href="/diensten/#frameworks" class="card">
-            <h3>Governance Frameworks</h3>
-            <p>Toezicht, rollen, datakwaliteit en publieke waarden.</p>
-            <span class="more">Meer over governance →</span>
-        </a>
-
-    </div>
-</section>
-
-<!-- UITGELICHT -->
-<section class="highlight">
-    <p class="small-title">Gratis intake binnen 48 uur</p>
-    <h2>Inzicht in verplichtingen, risico’s & governance-behoefte</h2>
-    <a href="/contact/" class="cta secondary">Plan intake</a>
-</section>
-
-<footer class="footer">
-    <div class="footer-inner">
-        <div>DGA<br>AI Governance Consultancy</div>
-        <nav>
-            <a href="/kennisbank/">Kennisbank</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </div>
-    <p class="copy">© 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein</p>
-</footer>
-
-</body>
-</html>
+      <label for="orgType">
