@@ -334,4 +334,29 @@ nav li {
   margin: 0;
   padding: 0;
 }
+/* =========================
+   KLEURACCENTEN
+========================= */
+
+.quickscan-hero {
+  background: linear-gradient(
+    180deg,
+    #eef4ff 0%,
+    #f8fafc 100%
+  );
+}
+
+.quickscan-start {
+  border-left: 4px solid #1e40af;
+}
+
+.quickscan-anchor {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+.quickscan-anchor .cta.secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+}
 
