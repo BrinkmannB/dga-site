@@ -286,3 +286,52 @@ nav a:hover {
     padding: 2rem;
   }
 }
+/* =========================
+   NAVBAR FIX + STYLING
+========================= */
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-container nav a {
+  font-size: 0.95rem;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-container nav a:hover {
+  color: #1e40af;
+}
+
+.nav-container nav a.active {
+  color: #1e40af;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Verwijder bullets als ze er zijn */
+nav ul,
+nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
