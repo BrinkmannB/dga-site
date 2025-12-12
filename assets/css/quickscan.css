@@ -1,1 +1,158 @@
+/* ================================
+   QuickScan Layout – DGA
+   ================================ */
+
+:root {
+  --blue: #0b5ed7;
+  --blue-soft: #eaf1fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --bg: #f7f9fc;
+  --white: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Header */
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container .logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.nav-container nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.nav-container nav a.active {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Hero */
+.quickscan-hero {
+  background: linear-gradient(180deg, var(--blue-soft), #ffffff);
+  padding: 80px 24px 64px;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-inner h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.hero-inner .subtitle {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* Sections */
+section {
+  padding: 64px 24px;
+}
+
+.quickscan-start,
+.quickscan-context,
+.quickscan-anchor {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* CTA */
+.cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 24px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta.secondary {
+  background: #fff;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+/* Footer */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 48px 24px;
+  margin-top: 80px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+}
 
