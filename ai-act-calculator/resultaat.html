@@ -1,54 +1,112 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Resultaat — AI-Act QuickScan</title>
-    <link rel="stylesheet" href="/assets/layout.css">
-    <style>
-        body { font-family: Inter, sans-serif; padding: 40px; }
-        .hidden { display: none; }
-        .premium-box {
-            background: #e8f4ff;
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 30px;
-            max-width: 600px;
-        }
-        .btn {
-            display: inline-block;
-            background: #0058c7;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Toelichting AI Act-risico | Dutch Governance Advisory</title>
+
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
-<h1>AI-Act QuickScan — Resultaat</h1>
-<p>Bekijk hieronder uw basisresultaten.</p>
+<header class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">DGA</a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="/ai-act-calculator/">AI Act Calculator</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<div id="premium" class="premium-box hidden">
-    <h2>Uw Premium Rapport</h2>
-    <p>Bedankt voor uw betaling. U kunt uw premium rapport hieronder openen:</p>
+<main>
 
-    <a href="/ai-act-calculator/premium-rapport.html" class="btn">Open Premium Rapport</a>
-</div>
+  <section class="result-explanation">
+    <h1>Toelichting op de indicatieve AI Act-risicoscore</h1>
 
-<script>
-    const url = new URL(window.location.href);
-    const token = url.searchParams.get("token");
+    <p>
+      De AI Act Impact Calculator geeft een eerste indicatie van mogelijke
+      verplichtingen en aandachtspunten voor uw organisatie op basis van
+      beperkte invoer.
+    </p>
 
-    // Tijdelijke vaste token voor live testen
-    const VALID_TOKEN = "29AIPREMIUM";
+    <h2>Wat betekent deze score?</h2>
 
-    if (token === VALID_TOKEN) {
-        document.getElementById("premium").classList.remove("hidden");
-    }
-</script>
+    <p>
+      De score is opgebouwd uit factoren zoals het type organisatie,
+      het aantal AI-toepassingen, het mogelijke gebruik van hoog-risico AI
+      en de mate waarin AI-governance is ingericht.
+    </p>
+
+    <p>
+      Een hogere score duidt niet automatisch op non-compliance,
+      maar wijst op een grotere kans dat aanvullende maatregelen nodig zijn,
+      zoals documentatie, risicobeoordelingen, toezicht en transparantie.
+    </p>
+
+    <h2>Waarom verdere verdieping relevant is</h2>
+
+    <p>
+      De AI Act vereist dat organisaties aantoonbaar zorgvuldig omgaan met
+      AI-systemen, met bijzondere aandacht voor publieke waarden,
+      grondrechten en governance.
+    </p>
+
+    <p>
+      In de praktijk betekent dit vaak dat bestaande processen,
+      verantwoordelijkheden en documentatie tegen het licht moeten worden gehouden.
+    </p>
+  </section>
+
+  <!-- UPSELL / VERDIEPING -->
+  <section class="premium-callout">
+    <h2>Verdiepende AI Act QuickScan</h2>
+
+    <p>
+      Wilt u beter begrijpen wat deze uitkomst concreet betekent
+      voor uw organisatie?
+    </p>
+
+    <p>
+      In de verdiepende AI Act QuickScan ontvangt u een beknopt rapport met:
+    </p>
+
+    <ul>
+      <li>duiding van uw risicoprofiel</li>
+      <li>overzicht van relevante AI Act-verplichtingen</li>
+      <li>aandachtspunten voor governance en toezicht</li>
+      <li>concrete vervolgstappen</li>
+    </ul>
+
+    <a href="premium-rapport.html" class="cta">
+      Ontvang verdiepende QuickScan (€29)
+    </a>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer-block">
+    <h3>Disclaimer & privacy</h3>
+
+    <p>
+      Deze toelichting is informatief van aard en vormt geen juridisch advies.
+      Aan de uitkomsten kunnen geen rechten worden ontleend.
+    </p>
+
+    <p>
+      De ingevoerde gegevens worden niet opgeslagen of gedeeld.
+      Alle berekeningen vinden lokaal plaats in de browser van de gebruiker.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="copy">
+    © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
+  </p>
+</footer>
 
 </body>
 </html>
