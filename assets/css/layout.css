@@ -1,9 +1,11 @@
-/* ======================================================
-   Dutch Governance Advisory — Core Layout
-   Clean, modern design for public sector, minimalistic yet functional
-====================================================== */
+/* =========================================================
+   DGA – Layout.css
+   Clean, calm, public-sector grade
+   ========================================================= */
 
-/* ---------- RESET & BASIS ---------- */
+/* -------------------------
+   CSS RESET & BASIS
+-------------------------- */
 
 *,
 *::before,
@@ -13,65 +15,53 @@
   padding: 0;
 }
 
-:root {
-  --blue: #1e40af;
-  --blue-dark: #1e3a8a;
-  --text-main: #1f2933;
-  --text-muted: #475569;
-  --bg-main: #f8fafc;
-  --bg-soft: #ffffff;
-  --border-soft: #e5e7eb;
-  --cta-background: #1e40af;
-  --cta-hover: #1e3a8a;
-  --cta-text: #ffffff;
+html {
+  font-size: 16px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
   line-height: 1.6;
-  margin-bottom: 2rem;
 }
 
+/* -------------------------
+   KLEUREN & VARIABELEN
+-------------------------- */
+
+:root {
+  --brand-primary: #1e40af;     /* DGA blauw */
+  --brand-soft: #eef4ff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-light: #e2e8f0;
+  --bg-white: #ffffff;
+}
+
+/* -------------------------
+   LINKS
+-------------------------- */
+
 a {
-  color: inherit;
+  color: var(--brand-primary);
   text-decoration: none;
 }
 
-ul {
-  padding-left: 1.2rem;
+a:hover {
+  text-decoration: underline;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ---------- LAYOUT CONTAINERS ---------- */
-
-main {
-  padding: 4rem 1.5rem;
-}
-
-section {
-  margin-bottom: 4rem;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ---------- NAVBAR ---------- */
+/* -------------------------
+   HEADER / NAVIGATIE
+-------------------------- */
 
 .navbar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: #ffffff;
-  border-bottom: 1px solid var(--border-soft);
+  z-index: 100;
 }
 
 .nav-container {
@@ -85,160 +75,166 @@ section {
 
 .logo {
   font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.05em;
-  color: var(--blue);
+  font-size: 1.1rem;
+  color: var(--text-main);
 }
 
-nav a {
-  margin-left: 1.5rem;
-  font-size: 1rem;
+.nav-container nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-container nav a {
+  font-size: 0.95rem;
   color: var(--text-muted);
+  padding-bottom: 0.25rem;
 }
 
-nav a.active,
-nav a:hover {
-  color: var(--blue);
-  text-decoration: underline;
+.nav-container nav a.active {
+  color: var(--text-main);
+  border-bottom: 2px solid var(--brand-primary);
 }
 
-/* ---------- HERO SECTION ---------- */
+/* -------------------------
+   MAIN LAYOUT
+-------------------------- */
 
-.hero {
-  background: linear-gradient(180deg, #eef2f7 0%, #f8fafc 100%);
-  padding: 4rem 1.5rem;
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
 }
 
-.hero-inner {
-  max-width: 800px;
+/* -------------------------
+   HERO / INTRO
+-------------------------- */
+
+.quickscan-hero {
+  background: linear-gradient(
+    180deg,
+    var(--brand-soft),
+    #ffffff
+  );
+  border-radius: 12px;
+  padding: 3.5rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.quickscan-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.quickscan-hero p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 640px;
   margin: 0 auto;
 }
 
-.hero h1 {
-  font-size: 2.4rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+/* -------------------------
+   SECTIES
+-------------------------- */
+
+section {
+  margin-bottom: 3.5rem;
 }
 
-.subtitle {
-  font-size: 1.1rem;
+section h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+section p {
   color: var(--text-muted);
+  max-width: 720px;
 }
 
-/* ---------- QUICKSCAN START KAART ---------- */
-
-.quickscan-start {
-  background: var(--bg-soft);
-  border-radius: 12px;
-  padding: 2.5rem;
-  max-width: 900px;
-  margin: -2rem auto 4rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-.quickscan-start h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.quickscan-start p {
-  color: var(--text-muted);
-  margin-bottom: 1.2rem;
-}
+/* -------------------------
+   START QUICKSCAN BLOK
+-------------------------- */
 
 .quickscan-start ul {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0 1.5rem 1.25rem;
 }
 
-.quickscan-start ul li {
-  margin-bottom: 0.6rem;
+.quickscan-start li {
+  margin-bottom: 0.5rem;
 }
 
-.quickscan-start ul li::marker {
-  color: var(--blue);
-}
-
-/* ---------- CTA BUTTON ---------- */
+/* -------------------------
+   CTA KNOP
+-------------------------- */
 
 .cta {
   display: inline-block;
-  background: var(--cta-background);
-  color: var(--cta-text);
-  padding: 0.75rem 1.6rem;
+  background: var(--brand-primary);
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
   border-radius: 6px;
   font-weight: 600;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .cta:hover {
-  background: var(--cta-hover);
+  background: #1d4ed8;
+  text-decoration: none;
 }
 
-.cta.secondary {
-  background: transparent;
-  color: var(--blue);
-  border: 1px solid var(--blue);
-}
-
-/* ---------- PRIVACY NOTE ---------- */
+/* -------------------------
+   PRIVACY / DISCLAIMER
+-------------------------- */
 
 .privacy-note {
   font-size: 0.85rem;
   color: #64748b;
-  margin-top: 1.2rem;
+  margin-top: 0.75rem;
 }
 
-/* ---------- CONTEXT / UITLEG ---------- */
+/* -------------------------
+   CONTEXT / TOELICHTING
+-------------------------- */
 
 .quickscan-context {
-  max-width: 800px;
-  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 2rem;
 }
 
-.quickscan-context h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+.quickscan-context p + p {
+  margin-top: 0.75rem;
 }
 
-.quickscan-context p {
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-/* ---------- ANKER NAAR CONTACT ---------- */
+/* -------------------------
+   NA DE QUICKSCAN
+-------------------------- */
 
 .quickscan-anchor {
-  background: var(--blue);
-  color: var(--cta-text);
-  text-align: center;
-  padding: 3.5rem 1.5rem;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 2rem;
 }
 
 .quickscan-anchor h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.quickscan-anchor p {
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-}
-
-.quickscan-anchor .cta.secondary {
-  color: var(--cta-text);
-  border-color: var(--cta-text);
-}
-
-/* ---------- FOOTER ---------- */
+/* -------------------------
+   FOOTER
+-------------------------- */
 
 .footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 3rem 1.5rem 2rem;
+  border-top: 1px solid var(--border-light);
+  background: #ffffff;
+  padding: 2.5rem 1.5rem 1.5rem;
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -247,116 +243,14 @@ nav a:hover {
 }
 
 .footer nav a {
-  margin-right: 1.5rem;
+  display: inline-block;
+  margin-right: 1rem;
   font-size: 0.9rem;
-  color: #cbd5e1;
-}
-
-.footer nav a:hover {
-  text-decoration: underline;
 }
 
 .copy {
-  margin-top: 2rem;
-  text-align: center;
+  max-width: 960px;
+  margin: 1.5rem auto 0;
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: #64748b;
 }
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 768px) {
-  .quickscan-hero h1 {
-    font-size: 2rem;
-  }
-
-  nav a {
-    margin-left: 0.8rem;
-  }
-
-  .hero-inner {
-    max-width: 95%;
-  }
-
-  .cta {
-    padding: 0.75rem 1.2rem;
-  }
-
-  .quickscan-start {
-    padding: 2rem;
-  }
-}
-/* =========================
-   NAVBAR FIX + STYLING
-========================= */
-
-.navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-container nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-container nav a {
-  font-size: 0.95rem;
-  color: #334155;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-container nav a:hover {
-  color: #1e40af;
-}
-
-.nav-container nav a.active {
-  color: #1e40af;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-/* Verwijder bullets als ze er zijn */
-nav ul,
-nav li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/* =========================
-   KLEURACCENTEN
-========================= */
-
-.quickscan-hero {
-  background: linear-gradient(
-    180deg,
-    #eef4ff 0%,
-    #f8fafc 100%
-  );
-}
-
-.quickscan-start {
-  border-left: 4px solid #1e40af;
-}
-
-.quickscan-anchor {
-  background: #1e40af;
-  color: #ffffff;
-}
-
-.quickscan-anchor .cta.secondary {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
