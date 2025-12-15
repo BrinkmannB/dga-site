@@ -248,5 +248,14 @@ footer {
 .quickscan-start .cta-primary {
   margin-top: 16px;
 }
+.quickscan-context {
+  background: #ffffff;
+  padding: 96px 0;
+  margin-top: 96px;
+}
+
+.quickscan-context .container {
+  max-width: 760px;
+}
 
 
