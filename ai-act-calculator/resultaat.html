@@ -2,101 +2,108 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultaat AI Act QuickScan | Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Toelichting AI Act-risico | Dutch Governance Advisory</title>
-
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/quickscan.css">
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="nav-container">
+<header class="site-header">
+  <nav class="nav">
     <a href="/" class="logo">DGA</a>
-    <nav aria-label="Hoofdnavigatie">
-      <a href="/ai-act-calculator/">AI Act Calculator</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
+    <ul class="nav-links">
+      <li><a href="/ai-act-calculator">QuickScan</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main>
+<main class="container" style="padding: 80px 24px; max-width: 900px;">
 
-  <section class="result-explanation">
-    <h1>Toelichting op de indicatieve AI Act-risicoscore</h1>
+  <!-- RESULTAAT -->
+  <section class="result">
+    <h1>Uw indicatieve AI Act-profiel</h1>
 
-    <p>
-      De AI Act Impact Calculator geeft een eerste indicatie van mogelijke
-      verplichtingen en aandachtspunten voor uw organisatie op basis van
-      beperkte invoer.
+    <p class="lead">
+      Op basis van uw antwoorden geeft de QuickScan een eerste,
+      indicatieve inschatting van mogelijke verplichtingen en
+      aandachtspunten onder de Europese AI Act.
     </p>
 
-    <h2>Wat betekent deze score?</h2>
+    <!-- SCORE (placeholder) -->
+    <div class="score-box">
+      <strong>Indicatief risiconiveau:</strong>
+      <span class="score">Middelmatig</span>
+    </div>
+  </section>
+
+  <!-- TOELICHTING -->
+  <section class="explanation">
+    <h2>Wat betekent dit?</h2>
 
     <p>
-      De score is opgebouwd uit factoren zoals het type organisatie,
-      het aantal AI-toepassingen, het mogelijke gebruik van hoog-risico AI
-      en de mate waarin AI-governance is ingericht.
-    </p>
-
-    <p>
-      Een hogere score duidt niet automatisch op non-compliance,
-      maar wijst op een grotere kans dat aanvullende maatregelen nodig zijn,
-      zoals documentatie, risicobeoordelingen, toezicht en transparantie.
-    </p>
-
-    <h2>Waarom verdere verdieping relevant is</h2>
-
-    <p>
-      De AI Act vereist dat organisaties aantoonbaar zorgvuldig omgaan met
-      AI-systemen, met bijzondere aandacht voor publieke waarden,
-      grondrechten en governance.
+      Een middelmatig risiconiveau betekent niet dat uw organisatie
+      niet voldoet aan de AI Act. Het wijst erop dat één of meerdere
+      AI-toepassingen mogelijk onder aanvullende verplichtingen vallen,
+      bijvoorbeeld op het gebied van documentatie, governance of toezicht.
     </p>
 
     <p>
-      In de praktijk betekent dit vaak dat bestaande processen,
-      verantwoordelijkheden en documentatie tegen het licht moeten worden gehouden.
+      In de praktijk vraagt dit vaak om nadere duiding:
+      welke systemen zijn relevant, welke rollen zijn belegd
+      en waar liggen concrete risico’s of verantwoordelijkheden.
     </p>
   </section>
 
-  <!-- UPSELL / VERDIEPING -->
-  <section class="premium-callout">
+  <!-- VERDIEPING / PRODUCT -->
+  <section class="checkout">
     <h2>Verdiepende AI Act QuickScan</h2>
 
-    <p>
-      Wilt u beter begrijpen wat deze uitkomst concreet betekent
-      voor uw organisatie?
-    </p>
-
-    <p>
-      In de verdiepende AI Act QuickScan ontvangt u een beknopt rapport met:
+    <p class="checkout-intro">
+      Ontvang een compact rapport met:
     </p>
 
     <ul>
-      <li>duiding van uw risicoprofiel</li>
-      <li>overzicht van relevante AI Act-verplichtingen</li>
+      <li>duiding van uw AI Act-risicoprofiel</li>
+      <li>overzicht van relevante verplichtingen</li>
       <li>aandachtspunten voor governance en toezicht</li>
-      <li>concrete vervolgstappen</li>
+      <li>suggesties voor vervolgstappen</li>
     </ul>
 
-    <a href="premium-rapport.html" class="cta">
-      Ontvang verdiepende QuickScan (€29)
-    </a>
+    <div class="checkout-box">
+      <p class="price">€29 incl. btw</p>
+
+      <label class="terms-checkbox">
+        <input type="checkbox" id="accept-terms">
+        <span>
+          Ik ga akkoord met de
+          <a href="/algemene-voorwaarden" target="_blank">Algemene voorwaarden</a>
+          en heb kennisgenomen van de
+          <a href="/disclaimer" target="_blank">Disclaimer</a>.
+        </span>
+      </label>
+
+      <button class="cta-primary" id="pay-button" disabled>
+        Betaal en ontvang rapport
+      </button>
+
+      <p class="fine-print">
+        Geen account nodig • Geen persoonsgegevens opgeslagen
+      </p>
+    </div>
   </section>
 
   <!-- DISCLAIMER -->
-  <section class="disclaimer-block">
-    <h3>Disclaimer & privacy</h3>
+  <section class="disclaimer">
+    <h3>Belangrijk om te weten</h3>
 
     <p>
-      Deze toelichting is informatief van aard en vormt geen juridisch advies.
-      Aan de uitkomsten kunnen geen rechten worden ontleend.
-    </p>
-
-    <p>
-      De ingevoerde gegevens worden niet opgeslagen of gedeeld.
-      Alle berekeningen vinden lokaal plaats in de browser van de gebruiker.
+      De QuickScan is een indicatief hulpmiddel en vormt geen juridisch advies
+      of formele compliance-beoordeling. Aan de uitkomsten kunnen geen rechten
+      worden ontleend.
     </p>
   </section>
 
@@ -107,6 +114,18 @@
     © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
   </p>
 </footer>
+
+<!-- LOGICA CHECKBOX -->
+<script>
+  const checkbox = document.getElementById('accept-terms');
+  const button = document.getElementById('pay-button');
+
+  if (checkbox && button) {
+    checkbox.addEventListener('change', () => {
+      button.disabled = !checkbox.checked;
+    });
+  }
+</script>
 
 </body>
 </html>
