@@ -194,3 +194,38 @@ footer {
   font-size: 13px;
   color: #6b7280;
 }
+/* =========================
+   QUICKSCAN – VISUAL UPGRADE
+   ========================= */
+
+/* Hero */
+.hero-quickscan {
+  background: linear-gradient(
+    135deg,
+    #062b4c 0%,
+    #0f766e 100%
+  );
+  color: #ffffff;
+  padding: 96px 24px 120px;
+}
+
+.hero-quickscan .hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-quickscan h1 {
+  font-size: 42px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-quickscan .hero-sub {
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #e2e8f0;
+}
+
+
