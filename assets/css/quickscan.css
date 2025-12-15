@@ -227,5 +227,26 @@ footer {
   margin: 0 auto;
   color: #e2e8f0;
 }
+.quickscan-start {
+  background: #ffffff;
+  max-width: 900px;
+  margin: -80px auto 0;
+  padding: 48px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+.quickscan-start h2 {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.quickscan-start ul {
+  margin: 24px 0 32px 20px;
+}
+
+.quickscan-start .cta-primary {
+  margin-top: 16px;
+}
 
 
