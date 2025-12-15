@@ -257,5 +257,22 @@ footer {
 .quickscan-context .container {
   max-width: 760px;
 }
+.hero-premium {
+  background: linear-gradient(
+    135deg,
+    #0b2a4a 0%,
+    #0f3a63 100%
+  );
+  color: #ffffff;
+}
+
+.hero-premium h2 {
+  font-size: 32px;
+}
+
+.hero-premium .hero-sub {
+  max-width: 680px;
+  margin: 0 auto 24px;
+}
 
 
