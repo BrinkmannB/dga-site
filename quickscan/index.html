@@ -8,12 +8,15 @@
   <meta name="description"
         content="AI Act Quick Scan voor publieke organisaties. Snel inzicht in risico’s, verplichtingen en governance-prioriteiten onder de Europese AI Act.">
 
+  <!-- BASIS STYLES (ALTIJD EERST) -->
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <!-- PAGINA-SPECIFIEK -->
   <link rel="stylesheet" href="/assets/css/quickscan.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- GLOBAL HEADER -->
 <header class="site-header">
   <nav class="nav">
     <a href="/" class="logo">DGA</a>
@@ -21,7 +24,7 @@
     <ul class="nav-links">
       <li><a href="/diensten/">Diensten</a></li>
       <li><a href="/kennisbank/">Kennisbank</a></li>
-      <li><a href="/quickscan/">QuickScan</a></li>
+      <li><a href="/quickscan/" class="active">QuickScan</a></li>
       <li><a href="/contact/">Contact</a></li>
       <li><a href="/over-bas/">Over Bas</a></li>
       <li><a href="/en/">EN</a></li>
@@ -29,11 +32,10 @@
   </nav>
 </header>
 
-
 <main>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero-quickscan">
     <div class="hero-inner">
       <div class="hero-content">
         <h1>AI Act Quick Scan</h1>
@@ -45,16 +47,16 @@
     </div>
   </section>
 
-  <!-- INTRO / START -->
-  <section class="container" style="padding: 4rem 0;">
+  <!-- START -->
+  <section class="container quickscan-start">
     <h2>Start de Quick Scan</h2>
 
-    <p style="max-width: 720px;">
+    <p>
       Beantwoord een beperkt aantal vragen en ontvang direct een overzicht
       van de meest relevante onderdelen van de AI Act voor uw organisatie.
     </p>
 
-    <ul style="margin: 1.5rem 0 2rem 1.2rem; line-height: 1.7;">
+    <ul>
       <li>Indicatieve risicoclassificatie</li>
       <li>Relevante verplichtingen en zorgplichten</li>
       <li>Aandachtspunten voor governance en toezicht</li>
@@ -64,24 +66,24 @@
       Start nu
     </a>
 
-    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #475569;">
+    <p class="privacy-note">
       Er worden geen persoonsgegevens opgeslagen.
       Alle berekeningen vinden lokaal in de browser plaats.
     </p>
   </section>
 
   <!-- CONTEXT -->
-  <section style="background:#ffffff; padding:4rem 0;">
+  <section class="quickscan-context">
     <div class="container">
       <h2>Wat is de Quick Scan (en wat niet)?</h2>
 
-      <p style="max-width: 760px;">
+      <p>
         De AI Act Quick Scan is bedoeld als laagdrempelig hulpmiddel om
         eerste richting te geven. De uitkomst is indicatief en vervangt
         geen juridische analyse of formele compliance-beoordeling.
       </p>
 
-      <p style="max-width: 760px;">
+      <p>
         In de praktijk wordt de Quick Scan vaak gebruikt als startpunt
         voor verdere verdieping of als voorbereiding op een gesprek
         over AI-governance en implementatie.
