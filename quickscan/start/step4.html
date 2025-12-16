@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Stap 4 — Impact</title>
+<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
+</head>
+
+<body class="fade-in">
+
+<div class="wizard-container">
+
+    <div class="step-counter">Stap 4 van 10</div>
+
+    <h2>Kan het AI-systeem een grote impact hebben op burgers?</h2>
+    <p>Bijvoorbeeld invloed op rechten, toegang tot diensten, of belangrijke beslissingen.</p>
+
+    <div class="option" onclick="saveAnswer('step4','high'); window.location='step5.html';">
+        Ja — grote impact
+    </div>
+
+    <div class="option" onclick="saveAnswer('step4','medium'); window.location='step5.html';">
+        Enige impact
+    </div>
+
+    <div class="option" onclick="saveAnswer('step4','low'); window.location='step5.html';">
+        Lage impact
+    </div>
+
+    <div class="nav-row">
+        <a class="button-secondary" href="step3.html">← Terug</a>
+        <a class="button-primary" href="step5.html">Volgende →</a>
+    </div>
+
+</div>
+
+</body>
+</html>
