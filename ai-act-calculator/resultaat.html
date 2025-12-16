@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Toelichting op de indicatieve AI Act-risico-inschatting en vervolgstappen voor publieke organisaties.">
+        content="Indicatieve AI Act-risico-inschatting met toelichting en vervolgstappen voor publieke organisaties.">
 
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="stylesheet" href="/assets/css/quickscan.css">
@@ -14,6 +14,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <nav class="nav">
     <a href="/" class="logo">DGA</a>
@@ -29,75 +30,118 @@
 
 <main>
 
-  <!-- HERO RESULTAAT -->
+  <!-- HERO -->
   <section class="hero hero-quickscan">
     <div class="hero-inner">
       <div class="hero-content">
         <h1>Indicatieve AI Act-risico-inschatting</h1>
         <p class="hero-sub">
-          Op basis van uw antwoorden geeft de QuickScan een eerste beeld van
-          mogelijke verplichtingen en aandachtspunten onder de Europese AI Act.
+          Op basis van uw antwoorden geeft de QuickScan een eerste,
+          indicatieve inschatting van mogelijke verplichtingen en
+          aandachtspunten onder de Europese AI Act.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- RESULTAAT UITLEG -->
+  <!-- UITLEG SCORE -->
   <section class="container quickscan-start">
     <h2>Wat betekent deze uitkomst?</h2>
 
     <p>
-      De QuickScan combineert factoren zoals het type organisatie,
-      het aantal AI-toepassingen en de mogelijke inzet van hoog-risico AI-systemen.
+      De AI Act QuickScan combineert meerdere factoren, waaronder het type
+      organisatie, het aantal AI-toepassingen, het mogelijke gebruik van
+      hoog-risico AI en de huidige inrichting van AI-governance.
     </p>
 
     <p>
-      Een hogere indicatieve score betekent niet automatisch dat uw organisatie
-      niet voldoet aan de AI Act, maar dat aanvullende verplichtingen,
-      documentatie en governance-maatregelen relevant kunnen zijn.
+      Een hogere indicatieve score betekent <strong>niet automatisch
+      non-compliance</strong>, maar wijst erop dat aanvullende verplichtingen,
+      zorgplichten en toezichtseisen waarschijnlijk relevant zijn.
+    </p>
+
+    <p>
+      Voor concrete verplichtingen, verantwoordelijkheden en maatregelen
+      is altijd nadere analyse nodig.
     </p>
   </section>
 
-  <!-- CONTEXT -->
+  <!-- BETEKENIS VOOR ORGANISATIE -->
   <section class="quickscan-context">
     <div class="container">
       <h2>Wat betekent dit voor uw organisatie?</h2>
 
       <p>
-        Voor publieke organisaties vraagt de AI Act om aantoonbare zorgvuldigheid
-        bij het gebruik van AI-systemen, met aandacht voor transparantie,
-        toezicht, grondrechten en publieke waarden.
+        Voor publieke organisaties vraagt de AI Act om aantoonbare
+        zorgvuldigheid bij het gebruik van AI-systemen. Denk aan:
       </p>
 
+      <ul>
+        <li>heldere verantwoordelijkheden en governance-structuur</li>
+        <li>documentatie en risicobeoordelingen</li>
+        <li>toezicht, transparantie en bescherming van grondrechten</li>
+      </ul>
+
       <p>
-        In de praktijk betekent dit vaak dat bestaande processen,
-        verantwoordelijkheden en documentatie nader moeten worden uitgewerkt
-        of aangescherpt.
+        In de praktijk blijkt dit vaak complexer dan verwacht,
+        zeker wanneer AI-toepassingen verspreid zijn over meerdere
+        afdelingen of leveranciers.
       </p>
     </div>
   </section>
 
-  <!-- VERDIEPING / STRIPE CHECKOUT -->
+  <!-- UPSELL / BETAALBLOK -->
   <section class="hero hero-premium">
     <div class="hero-inner">
       <div class="hero-content">
         <h2>Verdiepende AI Act QuickScan</h2>
 
         <p class="hero-sub">
-          Ontvang een beknopt rapport met duiding van uw risicoprofiel,
-          relevante AI Act-verplichtingen en concrete vervolgstappen.
-        </p>
-
-        <a href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
-           class="cta-primary"
-           target="_blank" rel="noopener">
-          Ontvang verdiepende QuickScan (€29)
-        </a>
-
-        <p class="fine-print">
-          Afhandeling via Stripe • inclusief algemene voorwaarden • geen account nodig
+          Wilt u weten wat deze uitkomst concreet betekent voor
+          <em>uw</em> organisatie — inclusief relevante AI Act-verplichtingen
+          en logische vervolgstappen?
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="checkout-box">
+      <h3>Ontvang het volledige QuickScan-rapport</h3>
+
+      <p>
+        U ontvangt een beknopt, helder rapport met:
+      </p>
+
+      <ul>
+        <li>duiding van uw AI Act-risicoprofiel</li>
+        <li>overzicht van relevante verplichtingen</li>
+        <li>aandachtspunten voor governance en toezicht</li>
+        <li>concrete vervolgstappen</li>
+      </ul>
+
+      <p class="price">€29 incl. btw</p>
+
+      <label class="terms-checkbox">
+        <input type="checkbox" id="accept-terms">
+        Ik ga akkoord met de
+        <a href="/algemene-voorwaarden/" target="_blank">Algemene voorwaarden</a>
+        en heb kennisgenomen van de
+        <a href="/disclaimer/" target="_blank">Disclaimer</a>.
+      </label>
+
+      <a
+        id="pay-button"
+        href="#"
+        class="cta-primary"
+        style="opacity:0.5; pointer-events:none;"
+      >
+        Betaal en ontvang rapport
+      </a>
+
+      <p class="fine-print">
+        Geen account nodig • Direct beschikbaar na betaling
+      </p>
     </div>
   </section>
 
@@ -123,6 +167,23 @@
     © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
   </p>
 </footer>
+
+<script>
+  const checkbox = document.getElementById('accept-terms');
+  const payButton = document.getElementById('pay-button');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      payButton.style.opacity = '1';
+      payButton.style.pointerEvents = 'auto';
+      payButton.href = 'https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01';
+    } else {
+      payButton.style.opacity = '0.5';
+      payButton.style.pointerEvents = 'none';
+      payButton.href = '#';
+    }
+  });
+</script>
 
 </body>
 </html>
