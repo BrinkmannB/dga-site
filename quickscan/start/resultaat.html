@@ -125,11 +125,19 @@
   </p>
 </footer>
 <script>
-  const riskLevel = localStorage.getItem("ai_act_risk_level");
+  const riskLevel = (localStorage.getItem("ai_act_risk_level") || "").toLowerCase();
 
   const intro = document.getElementById("risk-intro");
   const upsell = document.getElementById("risk-upsell");
 
+  // Safety: als elementen ontbreken, niets doen
+  if (!intro || !upsell) return;
+
+  // Fallback (als iemand direct op deze pagina komt)
+  intro.textContent =
+    "Dit resultaat is indicatief. Voor concrete verplichtingen en vervolgstappen is nadere analyse nodig.";
+
+  // Default upsell tekst laten staan, tenzij we een match hebben
   if (riskLevel === "laag") {
     intro.innerHTML = `
       Uw antwoorden wijzen op een relatief beperkte AI Act-impact.
@@ -139,9 +147,7 @@
       Wilt u bevestigen of deze inschatting klopt en waar mogelijke
       blinde vlekken zitten? Dan biedt de verdiepende QuickScan extra zekerheid.
     `;
-  }
-
-  if (riskLevel === "middel") {
+  } else if (riskLevel === "middel") {
     intro.innerHTML = `
       De AI Act kan voor uw organisatie tot aanvullende verplichtingen leiden,
       met name rond governance, toezicht en documentatie.
@@ -150,9 +156,7 @@
       Juist bij dit profiel ontstaat vaak onzekerheid over proportionaliteit.
       De verdiepende QuickScan helpt prioriteren.
     `;
-  }
-
-  if (riskLevel === "hoog") {
+  } else if (riskLevel === "hoog") {
     intro.innerHTML = `
       Op basis van uw antwoorden is de kans groot dat de AI Act
       aanzienlijke impact heeft op uw organisatie.
@@ -163,6 +167,8 @@
     `;
   }
 </script>
+
+
 
 </body>
 </html>
