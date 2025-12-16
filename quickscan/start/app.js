@@ -117,3 +117,5 @@ function calculateImpact() {
 
   resultEl.classList.remove("hidden");
 }
+localStorage.setItem("ai_act_risk_level", "hoog");
+window.location.href = "resultaat.html";
