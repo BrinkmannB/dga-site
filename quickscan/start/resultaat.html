@@ -122,6 +122,45 @@
     © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
   </p>
 </footer>
+<script>
+  const riskLevel = localStorage.getItem("ai_act_risk_level");
+
+  const intro = document.getElementById("risk-intro");
+  const upsell = document.getElementById("risk-upsell");
+
+  if (riskLevel === "laag") {
+    intro.innerHTML = `
+      Uw antwoorden wijzen op een relatief beperkte AI Act-impact.
+      Dit betekent dat de basis op orde lijkt, maar waakzaamheid blijft nodig.
+    `;
+    upsell.innerHTML = `
+      Wilt u bevestigen of deze inschatting klopt en waar mogelijke
+      blinde vlekken zitten? Dan biedt de verdiepende QuickScan extra zekerheid.
+    `;
+  }
+
+  if (riskLevel === "middel") {
+    intro.innerHTML = `
+      De AI Act kan voor uw organisatie tot aanvullende verplichtingen leiden,
+      met name rond governance, toezicht en documentatie.
+    `;
+    upsell.innerHTML = `
+      Juist bij dit profiel ontstaat vaak onzekerheid over proportionaliteit.
+      De verdiepende QuickScan helpt prioriteren.
+    `;
+  }
+
+  if (riskLevel === "hoog") {
+    intro.innerHTML = `
+      Op basis van uw antwoorden is de kans groot dat de AI Act
+      aanzienlijke impact heeft op uw organisatie.
+    `;
+    upsell.innerHTML = `
+      In deze situatie is het belangrijk om snel inzicht te krijgen
+      in concrete verplichtingen en risico’s.
+    `;
+  }
+</script>
 
 </body>
 </html>
