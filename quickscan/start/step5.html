@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Stap 5 — Besluitvorming</title>
-
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-
-  <script>
-    function saveAnswer(step, value) {
-      localStorage.setItem(step, value);
-      window.location = 'step6.html';
-    }
-  </script>
+<meta charset="UTF-8">
+<title>Stap 5 — Besluitvorming</title>
+<link rel="stylesheet" href="/quickscan/start/wizard.css">
+<script>
+function saveAnswer(step, value) {
+  localStorage.setItem(step, value);
+}
+</script>
 </head>
 
 <body class="fade-in">
@@ -20,40 +17,27 @@
 
   <div class="step-counter">Stap 5 van 10</div>
 
-  <h2>
-    Neemt het AI-systeem beslissingen met directe gevolgen?
-  </h2>
-
+  <h2>Neemt het AI-systeem besluiten met directe gevolgen voor mensen?</h2>
   <p>
-    Denk aan besluiten over rechten, plichten, toegang tot diensten,
-    toekenning van middelen of andere rechtspositionele gevolgen.
+    Denk aan beslissingen over rechten, plichten, toegang tot voorzieningen,
+    selectie of uitsluiting.
   </p>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step5','auto_decision')"
-  >
-    Ja — volledig geautomatiseerde besluitvorming
+  <div class="option" onclick="saveAnswer('step5','auto'); window.location='step6.html';">
+    Ja — volledig geautomatiseerd
   </div>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step5','human_in_loop')"
-  >
-    Gedeeltelijk — mens beslist mee (human-in-the-loop)
+  <div class="option" onclick="saveAnswer('step5','assisted'); window.location='step6.html';">
+    Gedeeltelijk — mens in de besluitvorming
   </div>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step5','no_decision')"
-  >
-    Nee — het systeem ondersteunt alleen
+  <div class="option" onclick="saveAnswer('step5','none'); window.location='step6.html';">
+    Nee — alleen ondersteunend
   </div>
 
   <div class="nav-row">
-    <a class="button-secondary" href="step4.html">
-      ← Terug
-    </a>
+    <a class="button-secondary" href="step4.html">← Terug</a>
+    <a class="button-primary" href="step6.html">Volgende →</a>
   </div>
 
 </div>
