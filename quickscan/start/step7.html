@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 7 — Overheid</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
+  <meta charset="UTF-8">
+  <title>Stap 7 — Overheid & publieke taken</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step8.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 7 van 10</div>
+  <div class="step-counter">Stap 7 van 10</div>
 
-    <h2>Wordt het AI-systeem door of voor de overheid gebruikt?</h2>
+  <h2>
+    Wordt het AI-systeem gebruikt door of namens een overheid?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step7','yes'); window.location='step8.html';">
-        Ja — overheid
-    </div>
+  <p>
+    Bijvoorbeeld door een ministerie, gemeente, uitvoeringsorganisatie
+    of een private partij die een publieke taak uitvoert.
+  </p>
 
-    <div class="option" onclick="saveAnswer('step7','no'); window.location='step8.html';">
-        Nee — private sector
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step7','public_authority')"
+  >
+    Ja — door of namens een overheidsorganisatie
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step6.html">← Terug</a>
-        <a class="button-primary" href="step8.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step7','private_context')"
+  >
+    Nee — uitsluitend in een private context
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step6.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
