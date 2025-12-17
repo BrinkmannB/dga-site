@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 2 — Biometrie</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>
-function saveAnswer(step, value){ localStorage.setItem(step,value); }
-</script>
+  <meta charset="UTF-8">
+  <title>Stap 2 — Biometrische systemen</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step3.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 2 van 10</div>
+  <div class="step-counter">Stap 2 van 10</div>
 
-    <h2>Wordt biometrische identificatie of categorisatie gebruikt?</h2>
-    <p>Bijvoorbeeld gezichtsherkenning, stemherkenning of emotiedetectie.</p>
+  <h2>
+    Wordt gebruikgemaakt van biometrische identificatie of categorisatie?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step2','yes'); window.location='step3.html';">
-        Ja — biometrie wordt gebruikt
-    </div>
+  <p>
+    Denk aan gezichts- of stemherkenning, of het automatisch indelen
+    van personen op basis van biometrische kenmerken
+    (zoals emotie- of gedragskenmerken).
+  </p>
 
-    <div class="option" onclick="saveAnswer('step2','no'); window.location='step3.html';">
-        Nee — geen biometrie
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step2','biometric_used')"
+  >
+    Ja — biometrische systemen worden gebruikt
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step1.html">← Terug</a>
-        <a class="button-primary" href="step3.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step2','no_biometrics')"
+  >
+    Nee — biometrische systemen worden niet gebruikt
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step1.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
