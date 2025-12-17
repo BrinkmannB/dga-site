@@ -2,177 +2,55 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>AI Act QuickScan – Resultaat</title>
+  <title>Stap 10 — Type AI-systeem</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
-  <meta name="description"
-        content="Indicatieve AI Act-duiding en vervolgstappen op basis van uw antwoorden.">
-
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="./wizard.css">
+  <script>
+    function saveAnswer(step, value, category) {
+      localStorage.setItem(step, value);
+      localStorage.setItem("ai_act_category", category);
+      window.location.href = "resultaat.html";
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo">DGA</a>
+  <div class="wizard-container">
+
+    <div class="step-counter">Stap 10 van 10</div>
+
+    <h2>Welk type AI-systeem wordt ingezet?</h2>
+
+    <p>
+      Kies de categorie die het beste past bij het AI-systeem zoals het
+      in de praktijk wordt gebruikt.
+    </p>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10','gpai','hoog_risico')">
+      Foundation model / generatief AI-systeem (GPAI)
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10','application_specific_ai','hoog_risico')">
+      Toepassingsgericht AI-systeem met impact op besluiten of rechten
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10','low_risk_ai','laag_risico')">
+      Eenvoudig of laag-risico AI-systeem
+    </div>
+
+    <div class="nav-row">
+      <a class="button-secondary" href="step9.html">← Terug</a>
+    </div>
+
   </div>
-</header>
-
-<main class="container narrow">
-
-  <h1>Indicatieve AI Act-uitkomst</h1>
-
-  <p class="intro" id="risk-intro">
-    Dit resultaat is indicatief en gebaseerd op uw antwoorden.
-  </p>
-
-  <!-- RESULTAAT -->
-  <section class="result-box">
-    <h2>Wat betekent deze uitkomst?</h2>
-
-    <p>
-      De AI Act maakt onderscheid tussen verschillende categorieën AI-systemen,
-      variërend van verboden toepassingen tot laag-risico gebruik.
-    </p>
-
-    <ul>
-      <li>aard en context van het AI-systeem</li>
-      <li>impact op burgers en grondrechten</li>
-      <li>mate van automatisering en toezicht</li>
-      <li>rol van de overheid</li>
-    </ul>
-
-    <p>
-      Deze QuickScan geeft richting, maar vervangt geen juridische beoordeling.
-    </p>
-  </section>
-
-  <!-- CONTEXT -->
-  <section class="context-box">
-    <h2>Wat vraagt de AI Act van organisaties?</h2>
-
-    <p>
-      De AI Act vraagt om aantoonbare zorgvuldigheid:
-      inzicht in risico’s, duidelijke verantwoordelijkheden
-      en passende governance-maatregelen.
-    </p>
-
-    <p>
-      Hoe hoger het risico, hoe zwaarder de verplichtingen
-      op het gebied van documentatie, toezicht en transparantie.
-    </p>
-  </section>
-
-  <!-- UPSELL -->
-  <section class="upsell-box">
-    <h2>Verdiepende AI Act QuickScan</h2>
-
-    <p id="risk-upsell">
-      Op basis van deze indicatieve uitkomst kan nadere analyse
-      helpen om onzekerheden weg te nemen en vervolgstappen te bepalen.
-    </p>
-
-    <ul>
-      <li>concrete AI Act-verplichtingen voor uw situatie</li>
-      <li>duiding van (potentieel) hoog-risico AI</li>
-      <li>governance- en documentatie-aandachtspunten</li>
-      <li>praktische vervolgstappen</li>
-    </ul>
-
-    <p class="price">
-      <strong>€29 incl. btw</strong> — direct beschikbaar na betaling
-    </p>
-
-    <a
-      href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
-      class="cta-primary"
-      target="_blank"
-      rel="noopener"
-    >
-      Ontvang verdiepende QuickScan
-    </a>
-
-    <p class="fine-print">
-      Geen account nodig • Indicatief • Geen juridisch advies
-    </p>
-  </section>
-
-  <!-- DISCLAIMER -->
-  <section class="disclaimer">
-    <h3>Disclaimer</h3>
-
-    <p>
-      Deze QuickScan is informatief van aard.
-      Aan de uitkomsten kunnen geen rechten worden ontleend.
-    </p>
-
-    <p>
-      Er worden geen persoonsgegevens opgeslagen.
-      Alle antwoorden blijven lokaal in uw browser.
-    </p>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <p>
-    © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
-  </p>
-</footer>
-
-<script>
-  /*
-    Verwachte opslag door wizard:
-    localStorage.setItem("ai_act_category", "verboden" | "hoog_risico" | "laag_risico");
-  */
-
-  const category = localStorage.getItem("ai_act_category");
-
-  const intro = document.getElementById("risk-intro");
-  const upsell = document.getElementById("risk-upsell");
-
-  if (!category) {
-    intro.textContent =
-      "Deze uitkomst is indicatief. Voor concrete verplichtingen is nadere analyse nodig.";
-  }
-
-  if (category === "verboden") {
-    intro.innerHTML = `
-      Op basis van uw antwoorden lijkt sprake van een toepassing
-      die onder de AI Act als <strong>verboden AI</strong> wordt aangemerkt.
-    `;
-    upsell.innerHTML = `
-      Bij (mogelijk) verboden AI is snelle herbeoordeling essentieel.
-      De verdiepende QuickScan helpt bepalen welke aanpassingen nodig zijn.
-    `;
-  }
-
-  if (category === "hoog_risico") {
-    intro.innerHTML = `
-      Uw antwoorden wijzen op een <strong>hoog-risico AI-toepassing</strong>
-      onder de AI Act.
-    `;
-    upsell.innerHTML = `
-      Hoog-risico AI brengt uitgebreide verplichtingen met zich mee.
-      De verdiepende QuickScan maakt deze concreet en hanteerbaar.
-    `;
-  }
-
-  if (category === "laag_risico") {
-    intro.innerHTML = `
-      Op basis van uw antwoorden lijkt sprake van een
-      <strong>laag of beperkt risico</strong> onder de AI Act.
-    `;
-    upsell.innerHTML = `
-      Ook bij laag risico gelden transparantie- en zorgvuldigheidseisen.
-      De verdiepende QuickScan helpt dit proportioneel in te richten.
-    `;
-  }
-</script>
 
 </body>
 </html>
