@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <title>Stap 10 — Type AI-systeem</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
   <script>
-    function saveAnswer(step, value, category) {
-      localStorage.setItem(step, value);
-      localStorage.setItem("ai_act_category", category);
+    function saveAnswer(step, systemType, indicativeCategory) {
+      // Type AI-systeem (technisch / functioneel)
+      localStorage.setItem(step, systemType);
+
+      // Indicatieve juridische duiding (geen definitieve classificatie)
+      localStorage.setItem("ai_act_category", indicativeCategory);
+
+      // Door naar resultaatpagina
       window.location.href = "resultaat.html";
     }
   </script>
@@ -24,26 +31,52 @@
     <h2>Welk type AI-systeem wordt ingezet?</h2>
 
     <p>
-      Kies de categorie die het beste past bij het AI-systeem zoals het
-      in de praktijk wordt gebruikt.
+      Kies de optie die het beste aansluit bij het AI-systeem
+      <strong>zoals het in de praktijk wordt gebruikt</strong>.
+      De indeling hieronder geeft een eerste indicatie van de
+      relevante AI Act-verplichtingen.
     </p>
 
     <div
       class="option"
-      onclick="saveAnswer('step10','gpai','verhoogde verplichtingen')">
-      Foundation model / generatief AI-systeem (GPAI)
+      onclick="saveAnswer(
+        'step10',
+        'gpai',
+        'verhoogde_verplichtingen'
+      )"
+    >
+      <strong>Foundation model / generatief AI-systeem (GPAI)</strong><br>
+      <span class="option-sub">
+        Algemeen AI-model dat (ook) als basis kan dienen voor andere toepassingen
+      </span>
     </div>
 
     <div
       class="option"
-      onclick="saveAnswer('step10','application_specific_ai','hoog_risico')">
-      Toepassingsgericht AI-systeem met impact op besluiten of rechten
+      onclick="saveAnswer(
+        'step10',
+        'application_specific_ai',
+        'hoog_risico'
+      )"
+    >
+      <strong>Toepassingsgericht AI-systeem</strong><br>
+      <span class="option-sub">
+        AI met directe impact op besluiten, rechten of toegang tot diensten
+      </span>
     </div>
 
     <div
       class="option"
-      onclick="saveAnswer('step10','low_risk_ai','laag_risico')">
-      Eenvoudig of laag-risico AI-systeem
+      onclick="saveAnswer(
+        'step10',
+        'low_risk_ai',
+        'laag_risico'
+      )"
+    >
+      <strong>Eenvoudig of laag-risico AI-systeem</strong><br>
+      <span class="option-sub">
+        Beperkte impact, ondersteunend of informatief gebruik
+      </span>
     </div>
 
     <div class="nav-row">
