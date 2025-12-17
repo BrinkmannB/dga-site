@@ -1,10 +1,12 @@
 function calculateImpact() {
-  const orgType = document.getElementById("orgType").value;
-  const aiCount = parseInt(document.getElementById("aiCount").value) || 0;
-  const highRisk = document.getElementById("highRisk").value;
-  const governanceLevel = document.getElementById("governanceLevel").value;
+  const orgType = (document.getElementById("orgType")?.value || "").trim();
+  const aiCountRaw = document.getElementById("aiCount")?.value;
+  const aiCount = Number.isFinite(parseInt(aiCountRaw, 10)) ? parseInt(aiCountRaw, 10) : 0;
 
-  // Basisvalidatie
+  const highRisk = (document.getElementById("highRisk")?.value || "").trim();
+  const governanceLevel = (document.getElementById("governanceLevel")?.value || "").trim();
+
+  // Validatie (verplichte velden)
   if (!orgType || !highRisk || !governanceLevel) {
     alert("Vul alle verplichte velden in om de berekening uit te voeren.");
     return;
@@ -12,10 +14,7 @@ function calculateImpact() {
 
   let score = 0;
 
-  /* =========================
-     1. Type organisatie
-  ========================= */
-
+  // 1) Type organisatie (context weegt mee)
   switch (orgType) {
     case "municipality":
       score += 20;
@@ -29,12 +28,13 @@ function calculateImpact() {
     case "ngo":
       score += 15;
       break;
+    default:
+      // Onbekend type: geen extra punten, maar blijft indicatief
+      score += 0;
+      break;
   }
 
-  /* =========================
-     2. Aantal AI-systemen
-  ========================= */
-
+  // 2) Aantal AI-systemen (0 = 0 punten)
   if (aiCount === 0) {
     score += 0;
   } else if (aiCount <= 3) {
@@ -45,75 +45,37 @@ function calculateImpact() {
     score += 30;
   }
 
-  /* =========================
-     3. Hoog-risico AI
-  ========================= */
-
-  if (highRisk === "yes") score += 40;
-  if (highRisk === "unknown") score += 25;
-
-  /* =========================
-     4. Governance volwassenheid
-  ========================= */
-
-  if (governanceLevel === "low") score += 30;
-  if (governanceLevel === "medium") score += 15;
-  if (governanceLevel === "high") score += 0;
-
-  /* =========================
-     5. Interpretatie
-  ========================= */
-
-  let riskLevel = "";
-  let message = "";
-
-  if (score < 40) {
-    riskLevel = "Laag";
-    message = `
-      De huidige indicatie wijst op een beperkte AI Act-impact.
-      Dit betekent niet dat er geen verplichtingen zijn, maar dat
-      de risico’s op dit moment beheersbaar lijken.
-    `;
-  } else if (score < 80) {
-    riskLevel = "Middel";
-    message = `
-      De AI Act kan voor jouw organisatie tot aanvullende verplichtingen
-      leiden, met name op het gebied van governance, documentatie en toezicht.
-      Verdere verdieping is aan te raden.
-    `;
+  // 3) (Potentieel) hoog-risico AI
+  if (highRisk === "yes") {
+    score += 40;
+  } else if (highRisk === "unknown") {
+    score += 25;
   } else {
-    riskLevel = "Hoog";
-    message = `
-      Op basis van deze invoer is de AI Act-impact waarschijnlijk aanzienlijk.
-      Er is een verhoogde kans op hoog-risico AI, aanvullende zorgplichten
-      en toezichtvereisten.
-    `;
+    score += 0; // "no"
   }
 
-  /* =========================
-     6. Resultaat tonen
-  ========================= */
+  // 4) Governance volwassenheid (hoe lager, hoe meer risico)
+  if (governanceLevel === "low") {
+    score += 30;
+  } else if (governanceLevel === "medium") {
+    score += 15;
+  } else {
+    score += 0; // "high"
+  }
 
-  const resultEl = document.getElementById("result");
-  resultEl.innerHTML = `
-    <h2>Indicatieve AI Act-risicoscore</h2>
+  // 5) Interpretatie (conservatief: geen paniek, wel richting)
+  let riskLevel = "laag";
+  if (score >= 80) {
+    riskLevel = "hoog";
+  } else if (score >= 40) {
+    riskLevel = "middel";
+  }
 
-    <p class="score">
-      <strong>${riskLevel} risico</strong> (score: ${score})
-    </p>
+  // 6) Opslaan voor resultaatpagina
+  localStorage.setItem("ai_act_score", String(score));
+  localStorage.setItem("ai_act_risk_level", riskLevel);
 
-    <p>${message}</p>
-
-    <p>
-      Deze inschatting is indicatief en gebaseerd op beperkte invoer.
-      Voor concrete verplichtingen, verantwoordelijkheden en governance-maatregelen
-      is nadere analyse noodzakelijk.
-    </p>
-
-    <a href="resultaat.html" class="cta secondary">
-      Bekijk nadere toelichting
-    </a>
-  `;
-
-  resultEl.classList.remove("hidden");
+  // 7) Doorsturen naar resultaatpagina
+  // Let op: dit pad moet kloppen met waar resultaat.html staat.
+  window.location.href = "resultaat.html";
 }
