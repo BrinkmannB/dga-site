@@ -7,54 +7,50 @@
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, category) {
       localStorage.setItem(step, value);
-      window.location = "/ai-act-calculator/resultaat.html";
+      localStorage.setItem("ai_act_category", category);
+      window.location.href = "resultaat.html";
     }
   </script>
 </head>
 
 <body class="fade-in">
 
-<div class="wizard-container">
+  <div class="wizard-container">
 
-  <div class="step-counter">Stap 10 van 10</div>
+    <div class="step-counter">Stap 10 van 10</div>
 
-  <h2>Welk type AI-systeem wordt ingezet?</h2>
+    <h2>Welk type AI-systeem wordt ingezet?</h2>
 
-  <p>
-    Kies de categorie die het beste past bij het AI-systeem
-    zoals het in de praktijk wordt gebruikt.
-  </p>
+    <p>
+      Kies de categorie die het beste past bij het AI-systeem zoals het
+      in de praktijk wordt gebruikt.
+    </p>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step10','gpai')"
-  >
-    Foundation model / generatief AI-systeem (GPAI)
+    <div
+      class="option"
+      onclick="saveAnswer('step10','gpai','hoog_risico')">
+      Foundation model / generatief AI-systeem (GPAI)
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10','application_specific_ai','hoog_risico')">
+      Toepassingsgericht AI-systeem met impact op besluiten of rechten
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10','low_risk_ai','laag_risico')">
+      Eenvoudig of laag-risico AI-systeem
+    </div>
+
+    <div class="nav-row">
+      <a class="button-secondary" href="step9.html">← Terug</a>
+    </div>
+
   </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step10','application_specific_ai')"
-  >
-    Toepassingsgericht AI-systeem
-  </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step10','low_risk_ai')"
-  >
-    Eenvoudig of laag-risico AI-systeem
-  </div>
-
-  <div class="nav-row">
-    <a class="button-secondary" href="step9.html">
-      ← Terug
-    </a>
-  </div>
-
-</div>
 
 </body>
 </html>
