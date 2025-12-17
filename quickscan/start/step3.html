@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 3 — Domein</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>
-function saveAnswer(step,val){ localStorage.setItem(step,val); }
-</script>
+  <meta charset="UTF-8">
+  <title>Stap 3 — Toepassingsdomein</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step4.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 3 van 10</div>
+  <div class="step-counter">Stap 3 van 10</div>
 
-    <h2>In welk domein wordt het AI-systeem ingezet?</h2>
-    <p>Kies het toepassingsgebied dat het meest van toepassing is.</p>
+  <h2>
+    In welk toepassingsdomein wordt het AI-systeem ingezet?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step3','public'); window.location='step4.html';">
-        Publieke sector
-    </div>
+  <p>
+    Het toepassingsdomein is relevant voor de beoordeling onder de AI Act,
+    met name waar het gaat om publieke taken en mogelijke impact op grondrechten.
+  </p>
 
-    <div class="option" onclick="saveAnswer('step3','private'); window.location='step4.html';">
-        Private sector
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step3','public_domain')"
+  >
+    Publiek domein (bijv. overheid, uitvoeringsorganisatie)
+  </div>
 
-    <div class="option" onclick="saveAnswer('step3','unknown'); window.location='step4.html';">
-        Onbekend / meerdere domeinen
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step3','private_domain')"
+  >
+    Privaat domein (bijv. bedrijf of commerciële toepassing)
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step2.html">← Terug</a>
-        <a class="button-primary" href="step4.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step3','mixed_domain')"
+  >
+    Gemengd of ketengebruik (publiek en privaat)
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step2.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
