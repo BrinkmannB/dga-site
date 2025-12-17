@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 5 — Besluitvorming</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>function saveAnswer(s,v){localStorage.setItem(s,v);}</script>
+  <meta charset="UTF-8">
+  <title>Stap 5 — Besluitvorming</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step6.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 5 van 10</div>
+  <div class="step-counter">Stap 5 van 10</div>
 
-    <h2>Neemt het AI-systeem beslissingen met directe gevolgen?</h2>
-    <p>Bijvoorbeeld toekenning van uitkeringen, selectie, scores of toegang.</p>
+  <h2>
+    Neemt het AI-systeem beslissingen met directe gevolgen?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step5','auto'); window.location='step6.html';">
-        Ja — automatische besluitvorming
-    </div>
+  <p>
+    Denk aan besluiten over rechten, plichten, toegang tot diensten,
+    toekenning van middelen of andere rechtspositionele gevolgen.
+  </p>
 
-    <div class="option" onclick="saveAnswer('step5','assisted'); window.location='step6.html';">
-        Gedeeltelijk — mens in de loop
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step5','auto_decision')"
+  >
+    Ja — volledig geautomatiseerde besluitvorming
+  </div>
 
-    <div class="option" onclick="saveAnswer('step5','none'); window.location='step6.html';">
-        Nee
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step5','human_in_loop')"
+  >
+    Gedeeltelijk — mens beslist mee (human-in-the-loop)
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step4.html">← Terug</a>
-        <a class="button-primary" href="step6.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step5','no_decision')"
+  >
+    Nee — het systeem ondersteunt alleen
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step4.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
