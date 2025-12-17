@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Toelichting op de indicatieve AI Act-risico-inschatting en vervolgstappen voor publieke organisaties.">
+        content="Indicatieve AI Act-duiding en vervolgstappen op basis van uw antwoorden.">
 
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -24,90 +24,89 @@
 
 <main class="container narrow">
 
-  <h1>Indicatieve AI Act-risico-inschatting</h1>
+  <h1>Indicatieve AI Act-uitkomst</h1>
 
- <p class="intro" id="risk-intro"></p>
+  <p class="intro" id="risk-intro">
+    Dit resultaat is indicatief en gebaseerd op uw antwoorden.
+  </p>
 
-
+  <!-- RESULTAAT -->
   <section class="result-box">
     <h2>Wat betekent deze uitkomst?</h2>
 
     <p>
-      De QuickScan combineert factoren zoals:
+      De AI Act maakt onderscheid tussen verschillende categorieën AI-systemen,
+      variërend van verboden toepassingen tot laag-risico gebruik.
     </p>
 
     <ul>
-      <li>het type organisatie</li>
-      <li>de inzet en aard van AI-systemen</li>
-      <li>mogelijke aanwezigheid van hoog-risico AI</li>
-      <li>de mate van AI-governance en toezicht</li>
+      <li>aard en context van het AI-systeem</li>
+      <li>impact op burgers en grondrechten</li>
+      <li>mate van automatisering en toezicht</li>
+      <li>rol van de overheid</li>
     </ul>
 
     <p>
-      Een hogere indicatie betekent <strong>niet automatisch non-compliance</strong>,
-      maar wijst erop dat aanvullende verplichtingen, documentatie en
-      governance-maatregelen relevant kunnen zijn.
+      Deze QuickScan geeft richting, maar vervangt geen juridische beoordeling.
     </p>
   </section>
 
+  <!-- CONTEXT -->
   <section class="context-box">
-    <h2>Wat vraagt de AI Act van publieke organisaties?</h2>
+    <h2>Wat vraagt de AI Act van organisaties?</h2>
 
     <p>
-      Voor publieke organisaties draait de AI Act niet alleen om techniek,
-      maar vooral om <strong>aantoonbare zorgvuldigheid</strong>.
+      De AI Act vraagt om aantoonbare zorgvuldigheid:
+      inzicht in risico’s, duidelijke verantwoordelijkheden
+      en passende governance-maatregelen.
     </p>
 
     <p>
-      Denk aan transparantie, risicobeheersing, toezicht,
-      grondrechtenbescherming en duidelijke verantwoordelijkheden.
+      Hoe hoger het risico, hoe zwaarder de verplichtingen
+      op het gebied van documentatie, toezicht en transparantie.
     </p>
   </section>
 
- <section class="upsell-box">
-  <h2>Verdiepende AI Act QuickScan</h2>
+  <!-- UPSELL -->
+  <section class="upsell-box">
+    <h2>Verdiepende AI Act QuickScan</h2>
 
-  <!-- Dynamische risicoduiding -->
-  <p id="risk-upsell">
-    Op basis van deze indicatieve uitkomst kan aanvullende analyse relevant zijn
-    om te bepalen welke verplichtingen en risico’s voor uw organisatie gelden.
-  </p>
+    <p id="risk-upsell">
+      Op basis van deze indicatieve uitkomst kan nadere analyse
+      helpen om onzekerheden weg te nemen en vervolgstappen te bepalen.
+    </p>
 
-  <p>
-    Met de verdiepende AI Act QuickScan krijgt u concreet inzicht in:
-  </p>
+    <ul>
+      <li>concrete AI Act-verplichtingen voor uw situatie</li>
+      <li>duiding van (potentieel) hoog-risico AI</li>
+      <li>governance- en documentatie-aandachtspunten</li>
+      <li>praktische vervolgstappen</li>
+    </ul>
 
-  <ul>
-    <li>welke AI Act-verplichtingen op uw organisatie van toepassing zijn</li>
-    <li>of sprake is van (potentieel) hoog-risico AI</li>
-    <li>waar governance-, documentatie- of toezichtslacunes zitten</li>
-    <li>welke vervolgstappen logisch en proportioneel zijn</li>
-  </ul>
+    <p class="price">
+      <strong>€29 incl. btw</strong> — direct beschikbaar na betaling
+    </p>
 
-  <p class="price">
-    <strong>€29 incl. btw</strong> — direct beschikbaar na betaling
-  </p>
+    <a
+      href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
+      class="cta-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      Ontvang verdiepende QuickScan
+    </a>
 
-  <a
-    href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
-    class="cta-primary"
-    target="_blank"
-    rel="noopener"
-  >
-    Ontvang verdiepende QuickScan
-  </a>
+    <p class="fine-print">
+      Geen account nodig • Indicatief • Geen juridisch advies
+    </p>
+  </section>
 
-  <p class="fine-print">
-    Geen account nodig • Indicatief, geen juridisch advies
-  </p>
-</section>
-
-
+  <!-- DISCLAIMER -->
   <section class="disclaimer">
     <h3>Disclaimer</h3>
 
     <p>
-      Deze QuickScan is informatief van aard en vormt geen juridisch advies.
+      Deze QuickScan is informatief van aard.
       Aan de uitkomsten kunnen geen rechten worden ontleend.
     </p>
 
@@ -124,52 +123,56 @@
     © 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het Publieke Domein
   </p>
 </footer>
+
 <script>
-  const riskLevel = (localStorage.getItem("ai_act_risk_level") || "").toLowerCase();
+  /*
+    Verwachte opslag door wizard:
+    localStorage.setItem("ai_act_category", "verboden" | "hoog_risico" | "laag_risico");
+  */
+
+  const category = localStorage.getItem("ai_act_category");
 
   const intro = document.getElementById("risk-intro");
   const upsell = document.getElementById("risk-upsell");
 
-  // Safety: als elementen ontbreken, niets doen
-  if (!intro || !upsell) return;
+  if (!category) {
+    intro.textContent =
+      "Deze uitkomst is indicatief. Voor concrete verplichtingen is nadere analyse nodig.";
+  }
 
-  // Fallback (als iemand direct op deze pagina komt)
-  intro.textContent =
-    "Dit resultaat is indicatief. Voor concrete verplichtingen en vervolgstappen is nadere analyse nodig.";
+  if (category === "verboden") {
+    intro.innerHTML = `
+      Op basis van uw antwoorden lijkt sprake van een toepassing
+      die onder de AI Act als <strong>verboden AI</strong> wordt aangemerkt.
+    `;
+    upsell.innerHTML = `
+      Bij (mogelijk) verboden AI is snelle herbeoordeling essentieel.
+      De verdiepende QuickScan helpt bepalen welke aanpassingen nodig zijn.
+    `;
+  }
 
-  // Default upsell tekst laten staan, tenzij we een match hebben
-  if (riskLevel === "laag") {
+  if (category === "hoog_risico") {
     intro.innerHTML = `
-      Uw antwoorden wijzen op een relatief beperkte AI Act-impact.
-      Dit betekent dat de basis op orde lijkt, maar waakzaamheid blijft nodig.
+      Uw antwoorden wijzen op een <strong>hoog-risico AI-toepassing</strong>
+      onder de AI Act.
     `;
     upsell.innerHTML = `
-      Wilt u bevestigen of deze inschatting klopt en waar mogelijke
-      blinde vlekken zitten? Dan biedt de verdiepende QuickScan extra zekerheid.
+      Hoog-risico AI brengt uitgebreide verplichtingen met zich mee.
+      De verdiepende QuickScan maakt deze concreet en hanteerbaar.
     `;
-  } else if (riskLevel === "middel") {
+  }
+
+  if (category === "laag_risico") {
     intro.innerHTML = `
-      De AI Act kan voor uw organisatie tot aanvullende verplichtingen leiden,
-      met name rond governance, toezicht en documentatie.
+      Op basis van uw antwoorden lijkt sprake van een
+      <strong>laag of beperkt risico</strong> onder de AI Act.
     `;
     upsell.innerHTML = `
-      Juist bij dit profiel ontstaat vaak onzekerheid over proportionaliteit.
-      De verdiepende QuickScan helpt prioriteren.
-    `;
-  } else if (riskLevel === "hoog") {
-    intro.innerHTML = `
-      Op basis van uw antwoorden is de kans groot dat de AI Act
-      aanzienlijke impact heeft op uw organisatie.
-    `;
-    upsell.innerHTML = `
-      In deze situatie is het belangrijk om snel inzicht te krijgen
-      in concrete verplichtingen en risico’s.
+      Ook bij laag risico gelden transparantie- en zorgvuldigheidseisen.
+      De verdiepende QuickScan helpt dit proportioneel in te richten.
     `;
   }
 </script>
 
-
-
 </body>
 </html>
-
