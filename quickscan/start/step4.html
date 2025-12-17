@@ -2,61 +2,43 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Stap 4 — Impact op personen</title>
-
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stap 4 — Impact</title>
+  <link rel="stylesheet" href="./wizard.css">
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step5.html';
+      window.location.href = next;
     }
   </script>
 </head>
 
 <body class="fade-in">
+  <div class="wizard-container">
+    <div class="step-counter">Stap 4 van 10</div>
 
-<div class="wizard-container">
+    <h2>Kan het AI-systeem merkbare impact hebben op mensen?</h2>
+    <p>
+      Denk aan invloed op rechten, toegang tot diensten, kansen, of belangrijke beslissingen.
+      (Indicatief: impact hangt ook af van schaal, doelgroep en context.)
+    </p>
 
-  <div class="step-counter">Stap 4 van 10</div>
+    <div class="option" onclick="saveAnswer('step4','high','step5.html')">
+      Ja — grote impact (rechten/toegang/kansen)
+    </div>
 
-  <h2>
-    Kan het AI-systeem aanzienlijke impact hebben op personen?
-  </h2>
+    <div class="option" onclick="saveAnswer('step4','medium','step5.html')">
+      Enige impact (ondersteunend, beperkt effect)
+    </div>
 
-  <p>
-    Denk aan invloed op rechten, rechtspositie, toegang tot diensten
-    of andere beslissingen met merkbare gevolgen.
-  </p>
+    <div class="option" onclick="saveAnswer('step4','low','step5.html')">
+      Lage impact (klein, vooral intern)
+    </div>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step4','high_impact')"
-  >
-    Ja — aanzienlijke impact op personen
+    <div class="nav-row">
+      <a class="button-secondary" href="step3.html">← Terug</a>
+      <span class="helper-text">Kies een optie om verder te gaan.</span>
+    </div>
   </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step4','medium_impact')"
-  >
-    Beperkte tot merkbare impact
-  </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step4','low_impact')"
-  >
-    Nauwelijks of geen impact
-  </div>
-
-  <div class="nav-row">
-    <a class="button-secondary" href="step3.html">
-      ← Terug
-    </a>
-  </div>
-
-</div>
-
 </body>
 </html>
