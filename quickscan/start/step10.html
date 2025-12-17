@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 10 — Type systeem</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>
-function saveAnswer(step,value){
-    localStorage.setItem(step, value);
-    window.location = "/ai-act-calculator/resultaat.html";
-}
-</script>
+  <meta charset="UTF-8">
+  <title>Stap 10 — Type AI-systeem</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = "/ai-act-calculator/resultaat.html";
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 10 van 10</div>
+  <div class="step-counter">Stap 10 van 10</div>
 
-    <h2>Welk type AI-systeem wordt ingezet?</h2>
+  <h2>Welk type AI-systeem wordt ingezet?</h2>
 
-    <div class="option" onclick="saveAnswer('step10','gpa')">
-        Foundation Model / Generatief model (GPAI)
-    </div>
+  <p>
+    Kies de categorie die het beste past bij het AI-systeem
+    zoals het in de praktijk wordt gebruikt.
+  </p>
 
-    <div class="option" onclick="saveAnswer('step10','application')">
-        Toepassingsgericht AI-systeem
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step10','gpai')"
+  >
+    Foundation model / generatief AI-systeem (GPAI)
+  </div>
 
-    <div class="option" onclick="saveAnswer('step10','simple')">
-        Eenvoudig / Low-risk systeem
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step10','application_specific_ai')"
+  >
+    Toepassingsgericht AI-systeem
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step9.html">← Terug</a>
-        <a class="button-primary" href="/ai-act-calculator/resultaat.html">Resultaat →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step10','low_risk_ai')"
+  >
+    Eenvoudig of laag-risico AI-systeem
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step9.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
