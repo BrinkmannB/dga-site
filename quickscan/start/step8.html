@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 8 — Kritieke processen</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
+  <meta charset="UTF-8">
+  <title>Stap 8 — Kritieke processen</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step9.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 8 van 10</div>
+  <div class="step-counter">Stap 8 van 10</div>
 
-    <h2>Wordt het AI-systeem ingezet in kritieke processen?</h2>
-    <p>Bijvoorbeeld energie, waterbeheer, zorg, verkeer, infrastructuur.</p>
+  <h2>
+    Wordt het AI-systeem ingezet in kritieke processen?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step8','yes'); window.location='step9.html';">
-        Ja — kritieke processen
-    </div>
+  <p>
+    Denk aan processen waarvan verstoring of fouten
+    grote gevolgen kunnen hebben voor veiligheid,
+    gezondheid of maatschappelijke continuïteit
+    (zoals energie, zorg, water, verkeer of infrastructuur).
+  </p>
 
-    <div class="option" onclick="saveAnswer('step8','no'); window.location='step9.html';">
-        Nee
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step8','critical_infrastructure')"
+  >
+    Ja — onderdeel van kritieke processen
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step7.html">← Terug</a>
-        <a class="button-primary" href="step9.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step8','non_critical')"
+  >
+    Nee — geen kritieke processen
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step7.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
