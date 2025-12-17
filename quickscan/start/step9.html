@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 9 — Menselijk toezicht</title>
-<link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-<script>function saveAnswer(s,v){localStorage.setItem(s,v);} </script>
+  <meta charset="UTF-8">
+  <title>Stap 9 — Menselijk toezicht</title>
+
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+
+  <script>
+    function saveAnswer(step, value) {
+      localStorage.setItem(step, value);
+      window.location = 'step10.html';
+    }
+  </script>
 </head>
 
 <body class="fade-in">
 
 <div class="wizard-container">
 
-    <div class="step-counter">Stap 9 van 10</div>
+  <div class="step-counter">Stap 9 van 10</div>
 
-    <h2>Is er effectief menselijk toezicht?</h2>
+  <h2>
+    Is er effectief menselijk toezicht op het AI-systeem?
+  </h2>
 
-    <div class="option" onclick="saveAnswer('step9','strong'); window.location='step10.html';">
-        Ja — sterk toezicht
-    </div>
+  <p>
+    Denk aan de mogelijkheid om besluiten te begrijpen,
+    te corrigeren of in te grijpen voordat er gevolgen
+    voor burgers of gebruikers ontstaan.
+  </p>
 
-    <div class="option" onclick="saveAnswer('step9','weak'); window.location='step10.html';">
-        Beperkt toezicht
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step9','strong_human_oversight')"
+  >
+    Ja — structureel en effectief toezicht
+  </div>
 
-    <div class="option" onclick="saveAnswer('step9','none'); window.location='step10.html';">
-        Geen toezicht
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step9','limited_human_oversight')"
+  >
+    Beperkt — toezicht is aanwezig maar niet structureel
+  </div>
 
-    <div class="nav-row">
-        <a class="button-secondary" href="step8.html">← Terug</a>
-        <a class="button-primary" href="step10.html">Volgende →</a>
-    </div>
+  <div
+    class="option"
+    onclick="saveAnswer('step9','no_human_oversight')"
+  >
+    Nee — geen menselijk toezicht
+  </div>
+
+  <div class="nav-row">
+    <a class="button-secondary" href="step8.html">
+      ← Terug
+    </a>
+  </div>
 
 </div>
 
