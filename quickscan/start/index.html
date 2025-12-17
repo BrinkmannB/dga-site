@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<title>AI Act Calculator — Start</title>
+  <meta charset="UTF-8" />
+  <title>AI Act Calculator — Start | Dutch Governance Advisory</title>
 
-<!-- Laad jouw bestaande site CSS -->
-<link rel="stylesheet" href="/assets/css/global.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-<link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Wizard-specific -->
-<link rel="stylesheet" href="/ai-act-calculator/style.css">
-<script src="/ai-act-calculator/app.js"></script>
+  <!-- Site-brede CSS -->
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 
+  <!-- Calculator-specific -->
+  <link rel="stylesheet" href="/ai-act-calculator/style.css">
+
+  <!-- JS (defer = veilig laden) -->
+  <script src="/ai-act-calculator/app.js" defer></script>
 </head>
 
 <body class="fade-in">
 
 <!-- NAV -->
 <header>
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="logo">DGA</a>
-            <ul>
-                <li><a href="/diensten/">Diensten</a></li>
-                <li><a href="/kennisbank/">Kennisbank</a></li>
-                <li><a href="/quickscan/">Quickscan</a></li>
-                <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
-                <li><a href="/tools/">Tools</a></li>
-                <li><a href="/over-bas/">Over Bas</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                <li><a href="/en/ai-act-calculator/start/">EN</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">DGA</a>
+      <ul>
+        <li><a href="/diensten/">Diensten</a></li>
+        <li><a href="/kennisbank/">Kennisbank</a></li>
+        <li><a href="/quickscan/">QuickScan</a></li>
+        <li><a class="active" href="/ai-act-calculator/">AI Act Calculator</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/over-bas/">Over Bas</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/en/ai-act-calculator/start/">EN</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
-
 <!-- HERO -->
-<section class="hero-small" style="padding: 60px 0; background: #0f1f3d; color: white;">
-    <div class="container">
-        <h1 style="font-size: 2.4rem; margin-bottom: 10px;">EU AI Act Calculator</h1>
-        <p style="opacity: .9;">Bepaal de wettelijke risicocategorie van je AI-systeem in 2 minuten.</p>
-    </div>
+<section class="hero-small" style="padding: 60px 0; background:#0f1f3d; color:#ffffff;">
+  <div class="container">
+    <h1 style="font-size:2.4rem; margin-bottom:10px;">
+      EU AI Act Calculator
+    </h1>
+    <p style="opacity:0.9;">
+      Bepaal in enkele minuten de wettelijke risicocategorie van uw AI-systeem.
+    </p>
+  </div>
 </section>
 
-
-<!-- MAIN LAYOUT -->
+<!-- MAIN -->
 <section class="section">
-<div class="container">
+  <div class="container">
 
-    <div class="calc-wrapper" style="padding-top:40px;">
+    <div class="calc-wrapper" style="padding-top:40px; display:flex; gap:40px;">
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-            <h3>Vragen</h3>
-            <ul>
-                <li>1. Verboden AI</li>
-                <li>2. Biometrie</li>
-                <li>3. Domein</li>
-                <li>4. Impact</li>
-                <li>5. Besluitvorming</li>
-                <li>6. Data</li>
-                <li>7. Overheid</li>
-                <li>8. Kritiek</li>
-                <li>9. Toezicht</li>
-                <li>10. Doel</li>
-            </ul>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3>Vragen</h3>
+        <ul>
+          <li>1. Verboden AI</li>
+          <li>2. Biometrie</li>
+          <li>3. Domein</li>
+          <li>4. Impact</li>
+          <li>5. Besluitvorming</li>
+          <li>6. Data</li>
+          <li>7. Overheid</li>
+          <li>8. Kritieke rechten</li>
+          <li>9. Toezicht</li>
+          <li>10. Doel</li>
+        </ul>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="calc-main fade-in" style="padding-left:20px;">
+        <h2>Klaar om te beginnen?</h2>
+
+        <p>
+          Deze AI Act Calculator bestaat uit 10 korte vragen en geeft een
+          <strong>indicatieve juridische classificatie</strong>
+          onder de Europese AI Act.
+        </p>
+
+        <div style="margin-top:30px;">
+          <a class="button-primary" href="step1.html">
+            Start →
+          </a>
         </div>
-
-        <!-- MAIN CONTENT -->
-        <div class="calc-main fade-in" style="padding-left:20px;">
-            <h2>Klaar om te beginnen?</h2>
-            <p>De classificatie bestaat uit 10 korte vragen.</p>
-
-            <div style="margin-top:30px;">
-                <a class="button-primary" href="step1.html">Start →</a>
-            </div>
-        </div>
+      </main>
 
     </div>
 
-</div>
+  </div>
 </section>
 
 </body>
