@@ -2,56 +2,40 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 1 — Verboden AI</title>
-
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-
+  <link rel="stylesheet" href="./wizard.css">
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step2.html';
+      window.location.href = next;
     }
   </script>
 </head>
 
 <body class="fade-in">
+  <div class="wizard-container">
+    <div class="step-counter">Stap 1 van 10</div>
 
-<div class="wizard-container">
+    <h2>Gaat het om sociale scoring of vergelijkbare verboden inzet?</h2>
+    <p>
+      Denk aan: burgers rangschikken op gedrag/kenmerken (sociale scoring) of
+      vergelijkbare toepassingen die onder de AI Act als <strong>verboden</strong> kunnen vallen.
+      (Dit is indicatief; context is bepalend.)
+    </p>
 
-  <div class="step-counter">Stap 1 van 10</div>
+    <div class="option" onclick="saveAnswer('step1','yes','step2.html')">
+      Ja — (mogelijk) verboden inzet
+    </div>
 
-  <h2>
-    Wordt AI ingezet om burgers te rangschikken of te beoordelen
-    (“sociale scoring”)?
-  </h2>
+    <div class="option" onclick="saveAnswer('step1','no','step2.html')">
+      Nee — niet van toepassing
+    </div>
 
-  <p>
-    Bijvoorbeeld: burgers worden geprofileerd of gescoord op basis van gedrag
-    of persoonlijke kenmerken, met gevolgen voor toegang tot diensten,
-    toezicht, of behandeling door de overheid.
-  </p>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step1','prohibited')"
-  >
-    Ja — dit valt onder verboden AI
+    <div class="nav-row">
+      <a class="button-secondary" href="../index.html">← Terug</a>
+      <span class="helper-text">Kies een optie om verder te gaan.</span>
+    </div>
   </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step1','not_applicable')"
-  >
-    Nee — dit is niet van toepassing
-  </div>
-
-  <div class="nav-row">
-    <a class="button-secondary" href="../index.html">
-      ← Terug
-    </a>
-  </div>
-
-</div>
-
 </body>
 </html>
