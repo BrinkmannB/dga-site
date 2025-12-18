@@ -2,14 +2,15 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 7 — Overheid & publieke taken</title>
 
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+  <link rel="stylesheet" href="./wizard.css">
 
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step8.html';
+      window.location.href = next;
     }
   </script>
 </head>
@@ -25,28 +26,31 @@
   </h2>
 
   <p>
-    Bijvoorbeeld door een ministerie, gemeente, uitvoeringsorganisatie
-    of een private partij die een publieke taak uitvoert.
+    Denk aan inzet door een ministerie, gemeente of uitvoeringsorganisatie,
+    of door een private partij die een <strong>publieke taak</strong> uitvoert
+    of beslissingen voorbereidt met gevolgen voor burgers.
+    Deze inschatting is indicatief.
   </p>
 
   <div
     class="option"
-    onclick="saveAnswer('step7','public_authority')"
+    onclick="saveAnswer('step7','public_authority','step8.html')"
   >
     Ja — door of namens een overheidsorganisatie
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step7','private_context')"
+    onclick="saveAnswer('step7','private_context','step8.html')"
   >
-    Nee — uitsluitend in een private context
+    Nee — uitsluitend in een private, niet-publieke context
   </div>
 
   <div class="nav-row">
-    <a class="button-secondary" href="step6.html">
-      ← Terug
-    </a>
+    <a class="button-secondary" href="step6.html">← Terug</a>
+    <span class="helper-text">
+      Ga uit van de feitelijke inzet en impact, niet alleen van de juridische vorm.
+    </span>
   </div>
 
 </div>
