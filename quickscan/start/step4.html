@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 4 — Impact</title>
+
   <link rel="stylesheet" href="./wizard.css">
+
   <script>
     function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
@@ -14,31 +16,50 @@
 </head>
 
 <body class="fade-in">
+
   <div class="wizard-container">
+
     <div class="step-counter">Stap 4 van 10</div>
 
-    <h2>Kan het AI-systeem merkbare impact hebben op mensen?</h2>
+    <h2>
+      Kan het AI-systeem aanzienlijke gevolgen hebben voor mensen?
+    </h2>
+
     <p>
-      Denk aan invloed op rechten, toegang tot diensten, kansen, of belangrijke beslissingen.
-      (Indicatief: impact hangt ook af van schaal, doelgroep en context.)
+      Denk aan impact op rechten, plichten, toegang tot diensten,
+      kansen of behandeling van burgers, cliënten of werknemers.
+      De inschatting is indicatief en gebaseerd op de verwachte inzet.
     </p>
 
-    <div class="option" onclick="saveAnswer('step4','high','step5.html')">
-      Ja — grote impact (rechten/toegang/kansen)
+    <div
+      class="option"
+      onclick="saveAnswer('step4','high','step5.html')"
+    >
+      Ja — mogelijke grote gevolgen voor individuen of groepen
     </div>
 
-    <div class="option" onclick="saveAnswer('step4','medium','step5.html')">
-      Enige impact (ondersteunend, beperkt effect)
+    <div
+      class="option"
+      onclick="saveAnswer('step4','medium','step5.html')"
+    >
+      Enige impact — gevolgen zijn beperkt of indirect
     </div>
 
-    <div class="option" onclick="saveAnswer('step4','low','step5.html')">
-      Lage impact (klein, vooral intern)
+    <div
+      class="option"
+      onclick="saveAnswer('step4','low','step5.html')"
+    >
+      Nee — nauwelijks merkbare gevolgen
     </div>
 
     <div class="nav-row">
       <a class="button-secondary" href="step3.html">← Terug</a>
-      <span class="helper-text">Kies een optie om verder te gaan.</span>
+      <span class="helper-text">
+        Ga uit van het meest ingrijpende realistische gebruiksscenario.
+      </span>
     </div>
+
   </div>
+
 </body>
 </html>
