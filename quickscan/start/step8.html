@@ -2,14 +2,15 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 8 — Kritieke processen</title>
 
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+  <link rel="stylesheet" href="./wizard.css">
 
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step9.html';
+      window.location.href = next;
     }
   </script>
 </head>
@@ -21,34 +22,37 @@
   <div class="step-counter">Stap 8 van 10</div>
 
   <h2>
-    Wordt het AI-systeem ingezet in kritieke processen?
+    Wordt het AI-systeem ingezet in kritieke of essentiële processen?
   </h2>
 
   <p>
-    Denk aan processen waarvan verstoring of fouten
-    grote gevolgen kunnen hebben voor veiligheid,
-    gezondheid of maatschappelijke continuïteit
-    (zoals energie, zorg, water, verkeer of infrastructuur).
+    Het gaat om processen waarvan verstoring, fouten of misbruik
+    <strong>ernstige gevolgen</strong> kunnen hebben voor veiligheid,
+    gezondheid, rechtsbescherming of maatschappelijke continuïteit.
+    Denk aan energie, zorg, water, mobiliteit, sociale zekerheid
+    of vergelijkbare essentiële diensten.
+    Deze inschatting is indicatief.
   </p>
 
   <div
     class="option"
-    onclick="saveAnswer('step8','critical_infrastructure')"
+    onclick="saveAnswer('step8','critical_process','step9.html')"
   >
-    Ja — onderdeel van kritieke processen
+    Ja — onderdeel van kritieke of essentiële processen
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step8','non_critical')"
+    onclick="saveAnswer('step8','non_critical','step9.html')"
   >
-    Nee — geen kritieke processen
+    Nee — geen kritieke of essentiële processen
   </div>
 
   <div class="nav-row">
-    <a class="button-secondary" href="step7.html">
-      ← Terug
-    </a>
+    <a class="button-secondary" href="step7.html">← Terug</a>
+    <span class="helper-text">
+      Ga uit van de gevolgen bij falen, niet alleen van het doel van het systeem.
+    </span>
   </div>
 
 </div>
