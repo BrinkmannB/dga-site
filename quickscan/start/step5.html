@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Stap 5 — Besluitvorming</title>
-<link rel="stylesheet" href="/quickscan/start/wizard.css">
-<script>
-function saveAnswer(step, value) {
-  localStorage.setItem(step, value);
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stap 5 — Besluitvorming</title>
+
+  <link rel="stylesheet" href="./wizard.css">
+
+  <script>
+    function saveAnswer(step, value, next) {
+      localStorage.setItem(step, value);
+      window.location.href = next;
+    }
+  </script>
 </head>
 
 <body class="fade-in">
@@ -17,27 +21,42 @@ function saveAnswer(step, value) {
 
   <div class="step-counter">Stap 5 van 10</div>
 
-  <h2>Neemt het AI-systeem besluiten met directe gevolgen voor mensen?</h2>
+  <h2>
+    Neemt het AI-systeem besluiten met directe gevolgen voor mensen?
+  </h2>
+
   <p>
-    Denk aan beslissingen over rechten, plichten, toegang tot voorzieningen,
-    selectie of uitsluiting.
+    Denk aan besluiten die invloed hebben op rechten, plichten,
+    toegang tot diensten, selectie, beoordeling of uitsluiting.
+    De vraag is of het AI-systeem (mede) doorslaggevend is.
   </p>
 
-  <div class="option" onclick="saveAnswer('step5','auto'); window.location='step6.html';">
-    Ja — volledig geautomatiseerd
+  <div
+    class="option"
+    onclick="saveAnswer('step5','auto','step6.html')"
+  >
+    Ja — volledig geautomatiseerde besluitvorming
   </div>
 
-  <div class="option" onclick="saveAnswer('step5','assisted'); window.location='step6.html';">
-    Gedeeltelijk — mens in de besluitvorming
+  <div
+    class="option"
+    onclick="saveAnswer('step5','assisted','step6.html')"
+  >
+    Gedeeltelijk — mens in de loop, AI-advies weegt zwaar mee
   </div>
 
-  <div class="option" onclick="saveAnswer('step5','none'); window.location='step6.html';">
-    Nee — alleen ondersteunend
+  <div
+    class="option"
+    onclick="saveAnswer('step5','none','step6.html')"
+  >
+    Nee — AI is uitsluitend ondersteunend
   </div>
 
   <div class="nav-row">
     <a class="button-secondary" href="step4.html">← Terug</a>
-    <a class="button-primary" href="step6.html">Volgende →</a>
+    <span class="helper-text">
+      Beoordeel dit op basis van de feitelijke praktijk, niet alleen beleid of ontwerp.
+    </span>
   </div>
 
 </div>
