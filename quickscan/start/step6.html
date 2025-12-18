@@ -2,14 +2,15 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 6 — Data & datasets</title>
 
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+  <link rel="stylesheet" href="./wizard.css">
 
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step7.html';
+      window.location.href = next;
     }
   </script>
 </head>
@@ -25,35 +26,37 @@
   </h2>
 
   <p>
-    Denk aan persoonsgegevens, bijzondere persoonsgegevens,
-    biasgevoelige trainingsdata of data met beperkte herkomst- of kwaliteitsborging.
+    Denk aan (bijzondere) persoonsgegevens, biasgevoelige trainingsdata,
+    of datasets waarvan herkomst, representativiteit of kwaliteit
+    niet goed kan worden onderbouwd. Deze inschatting is indicatief.
   </p>
 
   <div
     class="option"
-    onclick="saveAnswer('step6','high_risk_data')"
+    onclick="saveAnswer('step6','high_risk_data','step7.html')"
   >
-    Ja — gevoelige of biasgevoelige data
+    Ja — gevoelige, biasgevoelige of onvoldoende geborgde data
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step6','medium_risk_data')"
+    onclick="saveAnswer('step6','medium_risk_data','step7.html')"
   >
-    Enig risico — deels persoonsgegevens of beperkte kwaliteitscontrole
+    Enig risico — deels persoonsgegevens of beperkte datacontroles
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step6','low_risk_data')"
+    onclick="saveAnswer('step6','low_risk_data','step7.html')"
   >
-    Nee — voornamelijk niet-gevoelige, goed beheerde data
+    Nee — voornamelijk niet-gevoelige data met duidelijke kwaliteitsborging
   </div>
 
   <div class="nav-row">
-    <a class="button-secondary" href="step5.html">
-      ← Terug
-    </a>
+    <a class="button-secondary" href="step5.html">← Terug</a>
+    <span class="helper-text">
+      Ga uit van de data die feitelijk wordt gebruikt, niet alleen van beleid of intenties.
+    </span>
   </div>
 
 </div>
