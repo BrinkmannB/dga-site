@@ -66,47 +66,129 @@
   <p>© 2025 Dutch Governance Advisory</p>
 </footer>
 
-<!-- 🔽 HIER KOMT B2.2 -->
 <script>
-  const category = localStorage.getItem("ai_act_category");
+  // ============================
+  // B2.3 — RESULTAATLOGICA
+  // ============================
+
+  const answers = {
+    step1: localStorage.getItem("step1"), // verboden AI
+    step2: localStorage.getItem("step2"), // biometrie
+    step3: localStorage.getItem("step3"), // domein
+    step4: localStorage.getItem("step4"), // impact
+    step5: localStorage.getItem("step5"), // besluitvorming
+    step6: localStorage.getItem("step6"), // data
+    step7: localStorage.getItem("step7"), // overheid
+    step8: localStorage.getItem("step8"), // kritieke processen
+    step9: localStorage.getItem("step9"), // menselijk toezicht
+    step10: localStorage.getItem("step10"), // type systeem
+    category: localStorage.getItem("ai_act_category")
+  };
+
   const box = document.getElementById("result-box");
   const upsell = document.getElementById("upsell-box");
 
-  if (!category) {
+  // Safety check
+  if (!box) return;
+
+  let signals = [];
+
+  // ----------------------------
+  // 1. Verboden AI (hard stop)
+  // ----------------------------
+  if (answers.step1 === "yes") {
     box.innerHTML = `
+      <h2>Mogelijk verboden AI-toepassing</h2>
       <p>
-        Er is geen volledige beantwoording gedetecteerd.
-        Doorloop de QuickScan opnieuw.
+        Op basis van uw antwoorden lijkt sprake van een toepassing
+        die onder het verbod van de AI Act kan vallen
+        (zoals sociale scoring of vergelijkbare praktijken).
+      </p>
+      <p>
+        Gebruik of inzet hiervan is in beginsel niet toegestaan.
+        Juridische toetsing is dringend vereist.
       </p>
     `;
+    return; // geen upsell, geen verdere duiding
   }
 
-  if (category === "hoog_risico") {
+  // ----------------------------
+  // 2. Hoog-risico signalen
+  // ----------------------------
+  if (answers.step2 === "yes") signals.push("gebruik van biometrische technieken");
+  if (answers.step4 === "high") signals.push("grote impact op burgers");
+  if (answers.step5 === "auto") signals.push("automatische besluitvorming");
+  if (answers.step6 === "high_risk_data") signals.push("gebruik van gevoelige of biasgevoelige data");
+  if (answers.step7 === "public_authority") signals.push("inzet door of namens een overheid");
+  if (answers.step8 === "critical_infrastructure") signals.push("inzet in kritieke processen");
+  if (answers.step9 === "no_human_oversight") signals.push("ontbrekend menselijk toezicht");
+  if (answers.category === "hoog_risico") signals.push("type AI-systeem met verhoogde verplichtingen");
+
+  // ----------------------------
+  // 3. Resultaatduiding
+  // ----------------------------
+  if (signals.length >= 3) {
     box.innerHTML = `
       <h2>Waarschijnlijk hoog-risico AI-systeem</h2>
       <p>
-        Op basis van uw antwoorden valt het AI-systeem
-        waarschijnlijk onder de hoog-risico categorie
-        van de AI Act.
+        Op basis van uw antwoorden zijn meerdere signalen aanwezig
+        die wijzen op een verhoogde AI Act-impact.
       </p>
+
+      <ul>
+        ${signals.map(s => `<li>${s}</li>`).join("")}
+      </ul>
+
       <p>
-        Dit brengt aanvullende verplichtingen met zich mee,
-        waaronder risicobeheer, documentatie en toezicht.
+        Dit betekent niet automatisch non-compliance,
+        maar wel dat aanvullende verplichtingen waarschijnlijk van toepassing zijn,
+        zoals risicobeheer, documentatie, toezicht en governance.
       </p>
     `;
     upsell.style.display = "block";
+    return;
   }
 
-  if (category === "laag_risico") {
+  // ----------------------------
+  // 4. Middelmatig risico
+  // ----------------------------
+  if (signals.length > 0) {
     box.innerHTML = `
-      <h2>Laag-risico AI-systeem</h2>
+      <h2>Beperkte tot middelmatige AI Act-impact</h2>
       <p>
-        De AI Act lijkt in deze vorm beperkte verplichtingen
-        op te leggen, mits het gebruik en de context niet wijzigen.
+        Er zijn enkele aandachtspunten geïdentificeerd die relevant
+        kunnen zijn onder de AI Act.
+      </p>
+
+      <ul>
+        ${signals.map(s => `<li>${s}</li>`).join("")}
+      </ul>
+
+      <p>
+        Verdere duiding kan helpen om proportionaliteit
+        en verplichtingen beter te bepalen.
       </p>
     `;
+    upsell.style.display = "block";
+    return;
   }
+
+  // ----------------------------
+  // 5. Laag risico
+  // ----------------------------
+  box.innerHTML = `
+    <h2>Laag-risico AI-systeem</h2>
+    <p>
+      Op basis van uw antwoorden zijn geen duidelijke signalen
+      voor verhoogde AI Act-verplichtingen vastgesteld.
+    </p>
+    <p>
+      Dit neemt niet weg dat transparantie,
+      zorgvuldig gebruik en monitoring relevant blijven.
+    </p>
+  `;
 </script>
+
 
 </body>
 </html>
