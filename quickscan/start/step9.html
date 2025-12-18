@@ -2,14 +2,15 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stap 9 — Menselijk toezicht</title>
 
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+  <link rel="stylesheet" href="./wizard.css">
 
   <script>
-    function saveAnswer(step, value) {
+    function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
-      window.location = 'step10.html';
+      window.location.href = next;
     }
   </script>
 </head>
@@ -25,36 +26,39 @@
   </h2>
 
   <p>
-    Denk aan de mogelijkheid om besluiten te begrijpen,
-    te corrigeren of in te grijpen voordat er gevolgen
-    voor burgers of gebruikers ontstaan.
+    Het gaat om toezicht waarbij een mens het systeem
+    <strong>kan begrijpen, bijsturen of overrulen</strong>,
+    en dit ook tijdig kan doen voordat er gevolgen
+    ontstaan voor mensen of organisaties.
+    Deze inschatting is indicatief.
   </p>
 
   <div
     class="option"
-    onclick="saveAnswer('step9','strong_human_oversight')"
+    onclick="saveAnswer('step9','strong_human_oversight','step10.html')"
   >
-    Ja — structureel en effectief toezicht
+    Ja — structureel toezicht met bevoegdheid om in te grijpen
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step9','limited_human_oversight')"
+    onclick="saveAnswer('step9','limited_human_oversight','step10.html')"
   >
-    Beperkt — toezicht is aanwezig maar niet structureel
+    Beperkt — toezicht is mogelijk, maar niet structureel of niet tijdig
   </div>
 
   <div
     class="option"
-    onclick="saveAnswer('step9','no_human_oversight')"
+    onclick="saveAnswer('step9','no_human_oversight','step10.html')"
   >
-    Nee — geen menselijk toezicht
+    Nee — geen betekenisvol menselijk toezicht
   </div>
 
   <div class="nav-row">
-    <a class="button-secondary" href="step8.html">
-      ← Terug
-    </a>
+    <a class="button-secondary" href="step8.html">← Terug</a>
+    <span class="helper-text">
+      Toezicht moet méér zijn dan alleen monitoring achteraf.
+    </span>
   </div>
 
 </div>
