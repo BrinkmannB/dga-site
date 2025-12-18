@@ -65,6 +65,18 @@
 <footer class="footer">
   <p>© 2025 Dutch Governance Advisory</p>
 </footer>
+const incomplete = Object.values(answers).some(v => v === null);
+
+if (incomplete) {
+  box.innerHTML = `
+    <h2>Onvolledige QuickScan</h2>
+    <p>
+      Niet alle stappen zijn ingevuld.
+      Doorloop de QuickScan opnieuw om een geldige indicatie te krijgen.
+    </p>
+  `;
+  return;
+}
 
 <script>
   // ============================
