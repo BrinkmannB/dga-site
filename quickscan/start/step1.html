@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stap 1 — Verboden AI</title>
+  <title>Stap 1 — Verboden AI-toepassingen</title>
+
   <link rel="stylesheet" href="./wizard.css">
+
   <script>
     function saveAnswer(step, value, next) {
       localStorage.setItem(step, value);
@@ -14,28 +16,44 @@
 </head>
 
 <body class="fade-in">
+
   <div class="wizard-container">
+
     <div class="step-counter">Stap 1 van 10</div>
 
-    <h2>Gaat het om sociale scoring of vergelijkbare verboden inzet?</h2>
+    <h2>
+      Wordt het AI-systeem ingezet voor sociale scoring of vergelijkbare praktijken?
+    </h2>
+
     <p>
-      Denk aan: burgers rangschikken op gedrag/kenmerken (sociale scoring) of
-      vergelijkbare toepassingen die onder de AI Act als <strong>verboden</strong> kunnen vallen.
-      (Dit is indicatief; context is bepalend.)
+      Denk aan het rangschikken of beoordelen van personen op basis van gedrag,
+      persoonlijke kenmerken of veronderstelde eigenschappen, of andere vormen
+      van inzet die onder de AI Act als <strong>verboden</strong> kunnen worden aangemerkt.
+      Deze inschatting is indicatief; de concrete context is bepalend.
     </p>
 
-    <div class="option" onclick="saveAnswer('step1','yes','step2.html')">
-      Ja — (mogelijk) verboden inzet
+    <div
+      class="option"
+      onclick="saveAnswer('step1','yes','step2.html')"
+    >
+      Ja — dit kan onder het verbod van de AI Act vallen
     </div>
 
-    <div class="option" onclick="saveAnswer('step1','no','step2.html')">
-      Nee — niet van toepassing
+    <div
+      class="option"
+      onclick="saveAnswer('step1','no','step2.html')"
+    >
+      Nee — dit type inzet is niet aan de orde
     </div>
 
     <div class="nav-row">
       <a class="button-secondary" href="../index.html">← Terug</a>
-      <span class="helper-text">Kies een optie om verder te gaan.</span>
+      <span class="helper-text">
+        Selecteer de optie die het beste past bij de feitelijke inzet.
+      </span>
     </div>
+
   </div>
+
 </body>
 </html>
