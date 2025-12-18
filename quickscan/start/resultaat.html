@@ -2,55 +2,111 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Stap 10 — Type AI-systeem</title>
+  <title>AI Act QuickScan — Resultaat</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
-
-  <script>
-    function saveAnswer(step, value, category) {
-      localStorage.setItem(step, value);
-      localStorage.setItem("ai_act_category", category);
-      window.location.href = "resultaat.html";
-    }
-  </script>
 </head>
 
 <body class="fade-in">
 
-  <div class="wizard-container">
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">DGA</a>
+  </div>
+</header>
 
-    <div class="step-counter">Stap 10 van 10</div>
+<main class="container narrow">
 
-    <h2>Welk type AI-systeem wordt ingezet?</h2>
+  <h1>Indicatieve AI Act-inschatting</h1>
+
+  <p id="result-summary" class="intro">
+    Dit resultaat is gebaseerd op uw antwoorden en is indicatief van aard.
+  </p>
+
+  <section class="result-box" id="result-box">
+    <!-- Wordt gevuld via JS -->
+  </section>
+
+  <section class="upsell-box" id="upsell-box" style="display:none;">
+    <h2>Verdiepende AI Act QuickScan</h2>
 
     <p>
-      Kies de categorie die het beste past bij het AI-systeem zoals het
-      in de praktijk wordt gebruikt.
+      Op basis van deze uitkomst is nadere analyse aan te raden.
+      U ontvangt een beknopt rapport met concrete verplichtingen,
+      risico’s en vervolgstappen.
     </p>
 
-    <div
-      class="option"
-      onclick="saveAnswer('step10','gpai','hoog_risico')">
-      Foundation model / generatief AI-systeem (GPAI)
-    </div>
+    <p class="price"><strong>€29 incl. btw</strong></p>
 
-    <div
-      class="option"
-      onclick="saveAnswer('step10','application_specific_ai','hoog_risico')">
-      Toepassingsgericht AI-systeem met impact op besluiten of rechten
-    </div>
+    <a
+      href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
+      class="cta-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      Ontvang verdiepende QuickScan
+    </a>
+  </section>
 
-    <div
-      class="option"
-      onclick="saveAnswer('step10','low_risk_ai','laag_risico')">
-      Eenvoudig of laag-risico AI-systeem
-    </div>
+  <section class="disclaimer">
+    <h3>Disclaimer</h3>
+    <p>
+      Deze QuickScan is informatief en vormt geen juridisch advies.
+      Aan de uitkomsten kunnen geen rechten worden ontleend.
+    </p>
+  </section>
 
-    <div class="nav-row">
-      <a class="button-secondary" href="step9.html">← Terug</a>
-    </div>
+</main>
 
-  </div>
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory</p>
+</footer>
+
+<!-- 🔽 HIER KOMT B2.2 -->
+<script>
+  const category = localStorage.getItem("ai_act_category");
+  const box = document.getElementById("result-box");
+  const upsell = document.getElementById("upsell-box");
+
+  if (!category) {
+    box.innerHTML = `
+      <p>
+        Er is geen volledige beantwoording gedetecteerd.
+        Doorloop de QuickScan opnieuw.
+      </p>
+    `;
+  }
+
+  if (category === "hoog_risico") {
+    box.innerHTML = `
+      <h2>Waarschijnlijk hoog-risico AI-systeem</h2>
+      <p>
+        Op basis van uw antwoorden valt het AI-systeem
+        waarschijnlijk onder de hoog-risico categorie
+        van de AI Act.
+      </p>
+      <p>
+        Dit brengt aanvullende verplichtingen met zich mee,
+        waaronder risicobeheer, documentatie en toezicht.
+      </p>
+    `;
+    upsell.style.display = "block";
+  }
+
+  if (category === "laag_risico") {
+    box.innerHTML = `
+      <h2>Laag-risico AI-systeem</h2>
+      <p>
+        De AI Act lijkt in deze vorm beperkte verplichtingen
+        op te leggen, mits het gebruik en de context niet wijzigen.
+      </p>
+    `;
+  }
+</script>
 
 </body>
 </html>
