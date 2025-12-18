@@ -6,6 +6,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta name="description"
+        content="Indicatieve inschatting van AI Act-verplichtingen op basis van context, gebruik en governance.">
+
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
@@ -23,22 +26,31 @@
 
   <h1>Indicatieve AI Act-inschatting</h1>
 
-  <p id="result-summary" class="intro">
-    Dit resultaat is gebaseerd op uw antwoorden en is indicatief van aard.
+  <p class="intro" id="result-summary">
+    Deze inschatting is gebaseerd op uw antwoorden en dient uitsluitend
+    ter eerste oriëntatie.
   </p>
 
+  <!-- RESULTAAT -->
   <section class="result-box" id="result-box">
-    <!-- Wordt gevuld via JS -->
+    <!-- Wordt gevuld via JavaScript -->
   </section>
 
+  <!-- UPSell -->
   <section class="upsell-box" id="upsell-box" style="display:none;">
     <h2>Verdiepende AI Act QuickScan</h2>
 
     <p>
-      Op basis van deze uitkomst is nadere analyse aan te raden.
-      U ontvangt een beknopt rapport met concrete verplichtingen,
-      risico’s en vervolgstappen.
+      Op basis van deze uitkomst is een nadere analyse aan te raden.
+      U ontvangt een beknopt rapport met:
     </p>
+
+    <ul>
+      <li>relevante AI Act-verplichtingen</li>
+      <li>indicatie hoog-risico AI</li>
+      <li>aandachtspunten voor governance en toezicht</li>
+      <li>concrete vervolgstappen</li>
+    </ul>
 
     <p class="price"><strong>€29 incl. btw</strong></p>
 
@@ -50,64 +62,58 @@
     >
       Ontvang verdiepende QuickScan
     </a>
+
+    <p class="fine-print">
+      Indicatief • geen juridisch advies • direct beschikbaar
+    </p>
   </section>
 
+  <!-- DISCLAIMER -->
   <section class="disclaimer">
     <h3>Disclaimer</h3>
     <p>
-      Deze QuickScan is informatief en vormt geen juridisch advies.
+      Deze QuickScan is informatief van aard en vormt geen juridisch advies.
       Aan de uitkomsten kunnen geen rechten worden ontleend.
+      De uiteindelijke kwalificatie onder de AI Act is afhankelijk van
+      feitelijk gebruik, context en nadere juridische beoordeling.
     </p>
   </section>
 
 </main>
 
 <footer class="footer">
-  <p>© 2025 Dutch Governance Advisory</p>
+  <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein</p>
 </footer>
-const incomplete = Object.values(answers).some(v => v === null);
-
-if (incomplete) {
-  box.innerHTML = `
-    <h2>Onvolledige QuickScan</h2>
-    <p>
-      Niet alle stappen zijn ingevuld.
-      Doorloop de QuickScan opnieuw om een geldige indicatie te krijgen.
-    </p>
-  `;
-  return;
-}
 
 <script>
-  // ============================
-  // B2.3 — RESULTAATLOGICA
-  // ============================
+  /* =====================================================
+     RESULTAATLOGICA — TOEZICHTHOUDER-PROOF
+     ===================================================== */
 
   const answers = {
-    step1: localStorage.getItem("step1"), // verboden AI
-    step2: localStorage.getItem("step2"), // biometrie
-    step3: localStorage.getItem("step3"), // domein
-    step4: localStorage.getItem("step4"), // impact
-    step5: localStorage.getItem("step5"), // besluitvorming
-    step6: localStorage.getItem("step6"), // data
-    step7: localStorage.getItem("step7"), // overheid
-    step8: localStorage.getItem("step8"), // kritieke processen
-    step9: localStorage.getItem("step9"), // menselijk toezicht
-    step10: localStorage.getItem("step10"), // type systeem
+    step1: localStorage.getItem("step1"),
+    step2: localStorage.getItem("step2"),
+    step3: localStorage.getItem("step3"),
+    step4: localStorage.getItem("step4"),
+    step5: localStorage.getItem("step5"),
+    step6: localStorage.getItem("step6"),
+    step7: localStorage.getItem("step7"),
+    step8: localStorage.getItem("step8"),
+    step9: localStorage.getItem("step9"),
     category: localStorage.getItem("ai_act_category")
   };
 
   const box = document.getElementById("result-box");
   const upsell = document.getElementById("upsell-box");
 
-  // Safety check
-  if (!box) return;
+  if (!box) {
+    console.warn("Resultaatcontainer ontbreekt.");
+    return;
+  }
 
   let signals = [];
 
-  // ----------------------------
-  // 1. Verboden AI (hard stop)
-  // ----------------------------
+  /* 1. Verboden AI — harde stop */
   if (answers.step1 === "yes") {
     box.innerHTML = `
       <h2>Mogelijk verboden AI-toepassing</h2>
@@ -121,63 +127,48 @@ if (incomplete) {
         Juridische toetsing is dringend vereist.
       </p>
     `;
-    return; // geen upsell, geen verdere duiding
+    return;
   }
 
-  // ----------------------------
-  // 2. Hoog-risico signalen
-  // ----------------------------
+  /* 2. Signalering verhoogde impact */
   if (answers.step2 === "yes") signals.push("gebruik van biometrische technieken");
-  if (answers.step4 === "high") signals.push("grote impact op burgers");
-  if (answers.step5 === "auto") signals.push("automatische besluitvorming");
+  if (answers.step4 === "high") signals.push("grote impact op rechten of belangen");
+  if (answers.step5 === "auto") signals.push("volledig geautomatiseerde besluitvorming");
   if (answers.step6 === "high_risk_data") signals.push("gebruik van gevoelige of biasgevoelige data");
   if (answers.step7 === "public_authority") signals.push("inzet door of namens een overheid");
   if (answers.step8 === "critical_infrastructure") signals.push("inzet in kritieke processen");
   if (answers.step9 === "no_human_oversight") signals.push("ontbrekend menselijk toezicht");
-  if (answers.category === "hoog_risico") signals.push("type AI-systeem met verhoogde verplichtingen");
+  if (answers.category === "hoog_risico") signals.push("AI-systeem met verhoogde wettelijke verplichtingen");
 
-  // ----------------------------
-  // 3. Resultaatduiding
-  // ----------------------------
+  /* 3. Hoog risico */
   if (signals.length >= 3) {
     box.innerHTML = `
       <h2>Waarschijnlijk hoog-risico AI-systeem</h2>
       <p>
-        Op basis van uw antwoorden zijn meerdere signalen aanwezig
-        die wijzen op een verhoogde AI Act-impact.
+        Meerdere signalen wijzen op een verhoogde AI Act-impact:
       </p>
-
-      <ul>
-        ${signals.map(s => `<li>${s}</li>`).join("")}
-      </ul>
-
+      <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
       <p>
         Dit betekent niet automatisch non-compliance,
         maar wel dat aanvullende verplichtingen waarschijnlijk van toepassing zijn,
-        zoals risicobeheer, documentatie, toezicht en governance.
+        waaronder risicobeheer, documentatie, toezicht en governance.
       </p>
     `;
     upsell.style.display = "block";
     return;
   }
 
-  // ----------------------------
-  // 4. Middelmatig risico
-  // ----------------------------
+  /* 4. Middelmatig risico */
   if (signals.length > 0) {
     box.innerHTML = `
       <h2>Beperkte tot middelmatige AI Act-impact</h2>
       <p>
-        Er zijn enkele aandachtspunten geïdentificeerd die relevant
-        kunnen zijn onder de AI Act.
+        Er zijn aandachtspunten geïdentificeerd die relevant kunnen zijn
+        onder de AI Act:
       </p>
-
-      <ul>
-        ${signals.map(s => `<li>${s}</li>`).join("")}
-      </ul>
-
+      <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
       <p>
-        Verdere duiding kan helpen om proportionaliteit
+        Verdere analyse kan helpen om proportionaliteit
         en verplichtingen beter te bepalen.
       </p>
     `;
@@ -185,9 +176,7 @@ if (incomplete) {
     return;
   }
 
-  // ----------------------------
-  // 5. Laag risico
-  // ----------------------------
+  /* 5. Laag risico */
   box.innerHTML = `
     <h2>Laag-risico AI-systeem</h2>
     <p>
@@ -195,12 +184,11 @@ if (incomplete) {
       voor verhoogde AI Act-verplichtingen vastgesteld.
     </p>
     <p>
-      Dit neemt niet weg dat transparantie,
-      zorgvuldig gebruik en monitoring relevant blijven.
+      Transparantie, zorgvuldig gebruik en monitoring
+      blijven echter ook hier van belang.
     </p>
   `;
 </script>
-
 
 </body>
 </html>
