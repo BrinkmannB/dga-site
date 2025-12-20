@@ -147,9 +147,12 @@ if (answers.step4 === "high") signals.push("grote impact op rechten of belangen"
 if (answers.step5 === "auto") signals.push("volledig geautomatiseerde besluitvorming");
 if (answers.step6 === "high_risk_data") signals.push("gebruik van gevoelige of biasgevoelige data");
 if (answers.step7 === "public_authority") signals.push("inzet door of namens een overheid");
-if (answers.step8 === "critical_infrastructure") signals.push("inzet in kritieke processen");
+if (answers.step8 === "critical_process")
+  signals.push("inzet in kritieke of essentiële processen");
+
 if (answers.step9 === "no_human_oversight") signals.push("ontbrekend menselijk toezicht");
-if (answers.category === "hoog_risico") signals.push("AI-systeem met verhoogde wettelijke verplichtingen");
+if (answers.category === "verhoogde_verplichtingen")
+  signals.push("generatief of foundation model met aanvullende transparantieverplichtingen");
 
 /* 3. Hoog risico */
 if (signals.length >= 3) {
