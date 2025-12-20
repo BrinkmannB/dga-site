@@ -17,49 +17,50 @@
 
 <body class="fade-in">
 
-<div class="wizard-container">
+  <div class="wizard-container">
 
-  <div class="step-counter">Stap 6 van 10</div>
+    <div class="step-counter">Stap 6 van 10</div>
 
-  <h2>
-    Worden gevoelige of risicovolle datasets gebruikt?
-  </h2>
+    <h2>
+      Worden gevoelige of risicovolle datasets gebruikt?
+    </h2>
 
-  <p>
-    Denk aan (bijzondere) persoonsgegevens, biasgevoelige trainingsdata,
-    of datasets waarvan herkomst, representativiteit of kwaliteit
-    niet goed kan worden onderbouwd. Deze inschatting is indicatief.
-  </p>
+    <p>
+      Denk aan (bijzondere) persoonsgegevens, biasgevoelige trainingsdata,
+      of datasets waarvan herkomst, representativiteit of kwaliteit
+      niet goed kan worden onderbouwd.
+      Deze inschatting is indicatief.
+    </p>
 
-  <div
-    class="option"
-    onclick="saveAnswer('step6','high_risk_data','step7.html')"
-  >
-    Ja — gevoelige, biasgevoelige of onvoldoende geborgde data
+    <div
+      class="option"
+      onclick="saveAnswer('step6','high_risk_data','step7.html')"
+    >
+      Ja — gevoelige, biasgevoelige of onvoldoende geborgde data
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step6','medium_risk_data','step7.html')"
+    >
+      Enig risico — deels persoonsgegevens of beperkte datacontroles
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step6','low_risk_data','step7.html')"
+    >
+      Nee — voornamelijk niet-gevoelige data met duidelijke kwaliteitsborging
+    </div>
+
+    <div class="nav-row">
+      <a class="button-secondary" href="step5.html">← Terug</a>
+      <span class="helper-text">
+        Ga uit van de data die feitelijk wordt gebruikt, niet alleen van beleid of intenties.
+      </span>
+    </div>
+
   </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step6','medium_risk_data','step7.html')"
-  >
-    Enig risico — deels persoonsgegevens of beperkte datacontroles
-  </div>
-
-  <div
-    class="option"
-    onclick="saveAnswer('step6','low_risk_data','step7.html')"
-  >
-    Nee — voornamelijk niet-gevoelige data met duidelijke kwaliteitsborging
-  </div>
-
-  <div class="nav-row">
-    <a class="button-secondary" href="step5.html">← Terug</a>
-    <span class="helper-text">
-      Ga uit van de data die feitelijk wordt gebruikt, niet alleen van beleid of intenties.
-    </span>
-  </div>
-
-</div>
 
 </body>
 </html>
