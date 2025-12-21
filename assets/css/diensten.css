@@ -1,3 +1,8 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
 .diensten-page {
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -14,14 +19,12 @@
   z-index: 50;
 }
 
-.diensten-page .nav {
-  max-width: 1200px;
-  margin: auto;
+.diensten-page .site-header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 90%;
+  justify-content: space-between;
 }
+
 
 .diensten-page .nav a {
   color: white;
