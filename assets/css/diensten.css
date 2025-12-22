@@ -209,3 +209,29 @@
   font-size: 0.9rem;
   color: #0a2540;
 }
+/* QuickScan aanvullingen */
+
+.quickscan-page .hero--compact {
+  padding: 48px 5%;
+}
+
+.service-card--center {
+  text-align: center;
+}
+
+.service-card--muted {
+  background: #f0f3f7;
+}
+
+.service-card--subtle {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  color: #4a5d73;
+}
+
+.helper-text {
+  font-size: 0.9rem;
+  color: #5f6f86;
+  margin-top: 10px;
+}
