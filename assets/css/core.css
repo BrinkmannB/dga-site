@@ -1,33 +1,32 @@
-/* =========================================================
-   CORE.CSS — Canonieke styles DGA
-   Geldt voor: homepage, diensten, detailpagina’s, quickscan
-   ========================================================= */
+/* =====================================================
+   CORE STYLES — Dutch Governance Advisory
+   ===================================================== */
 
-/* ---------- Reset / basis ---------- */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   background: #f5f7fa;
   color: #0a2540;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* ---------- Layout ---------- */
+
 .container {
   max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
 }
 
-/* ---------- Header / Navigatie ---------- */
+.section-light {
+  padding: 64px 0;
+}
+
+/* ---------- Navigation ---------- */
+
 .nav {
   background: #ffffff;
   border-bottom: 1px solid #e6ebf0;
@@ -35,9 +34,9 @@ a {
 
 .nav-inner {
   max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
   padding: 16px 0;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,12 +46,14 @@ a {
   font-weight: 700;
   font-size: 1.2rem;
   color: #0a2540;
+  text-decoration: none;
 }
 
 .main-nav a {
   margin-left: 22px;
   font-weight: 600;
   color: #0a2540;
+  text-decoration: none;
 }
 
 .main-nav a:hover {
@@ -60,31 +61,30 @@ a {
 }
 
 /* ---------- Hero ---------- */
+
 .hero {
   background: linear-gradient(135deg, #0a2540, #0f5f63);
   color: #ffffff;
-  padding: 80px 0;
+  padding: 88px 0;
+}
+
+.hero--compact {
+  padding: 56px 0;
 }
 
 .hero-inner {
   max-width: 1100px;
-  width: 90%;
   margin: 0 auto;
-  display: flex;
-  gap: 60px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  width: 90%;
 }
 
 .hero-content {
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .hero h1 {
   font-size: 2.4rem;
-  line-height: 1.2;
-  margin: 0 0 16px;
+  margin-bottom: 14px;
 }
 
 .hero-subtitle {
@@ -93,25 +93,16 @@ a {
   opacity: 0.95;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.hero-note {
-  margin-top: 14px;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
 /* ---------- Buttons ---------- */
+
 .btn-primary {
   background: #36b37e;
   color: #ffffff;
-  padding: 14px 26px;
+  padding: 14px 28px;
   border-radius: 6px;
   font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-primary:hover {
@@ -121,115 +112,31 @@ a {
 .btn-secondary {
   border: 2px solid #ffffff;
   color: #ffffff;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 6px;
   font-weight: 600;
+  text-decoration: none;
 }
 
-.btn-secondary:hover {
-  background: #ffffff;
-  color: #0a2540;
-}
+/* ---------- Cards ---------- */
 
-/* ---------- Profiel (hero) ---------- */
-.hero-profile {
-  text-align: center;
-}
-
-.profile-img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 4px;
-}
-
-.profile-name {
-  margin-top: 10px;
-  font-weight: 700;
-}
-
-.profile-role {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* ---------- Services / Cards ---------- */
-.services {
-  padding: 80px 0;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-}
-
-.service-card {
+.card {
   background: #ffffff;
   border-radius: 14px;
-  padding: 30px;
+  padding: 32px;
+  margin-bottom: 28px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+.card h2 {
+  margin-top: 0;
 }
 
-.service-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-}
+/* ---------- CTA ---------- */
 
-.service-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.service-link {
-  display: inline-block;
-  margin-top: 14px;
-  font-weight: 600;
-  color: #1f5fa3;
-}
-
-/* ---------- CTA strook ---------- */
-.cta-strook {
-  background: #0a2540;
-  color: #ffffff;
+.cta-block {
   text-align: center;
-  padding: 70px 20px;
-}
-
-.cta-strook a {
-  color: #36b37e;
-  font-weight: 600;
-}
-
-/* ---------- Footer ---------- */
-.footer {
-  padding: 28px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  background: #ffffff;
-  border-top: 1px solid #e6ebf0;
-  color: #0a2540;
-}
-
-/* =========================================================
-   PAGINA-SPECIFIEK
-   ========================================================= */
-
-/* Diensten */
-.diensten-page .services {
-  padding-top: 100px;
-}
-
-/* QuickScan */
-.quickscan-page .hero {
-  padding: 48px 0;
+  margin: 56px 0;
 }
 
 .helper-text {
@@ -238,3 +145,21 @@ a {
   margin-top: 10px;
 }
 
+/* ---------- Subtle ---------- */
+
+.service-card--subtle {
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+  color: #4a5d73;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.9rem;
+  color: #0a2540;
+  background: #f5f7fa;
+}
