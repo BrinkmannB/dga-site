@@ -1,278 +1,95 @@
 /* =========================================================
-   DGA – AI Act QuickScan
-   Clean, government-grade, calm authority
+   QuickScan CSS
+   Afhankelijk van core.css (fonts, colors, reset)
+   Geen algemene selectors, alles scoped
    ========================================================= */
 
-/* ---------- RESET & BASIS ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.qs {
+  background-color: var(--color-bg, #ffffff);
+  color: var(--color-text, #1a1a1a);
 }
 
-body {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #0f172a;                 /* diep blauw-zwart */
-  background: #f8fafc;            /* zacht lichtgrijs */
-  line-height: 1.6;
-}
-
-/* ---------- LINKS ---------- */
-a {
-  color: #0b5fff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- HEADER / NAV ---------- */
-.site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav {
-  max-width: 1200px;
+/* Containers */
+.qs-container {
+  max-width: 860px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+}
+
+/* Hero */
+.qs-hero {
+  min-height: calc(100vh - 80px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 20px;
-  color: #0b5fff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-}
-
-.nav-links a {
-  font-size: 14px;
-  color: #334155;
-}
-
-.nav-links a.active {
-  font-weight: 600;
-  color: #0b5fff;
-  border-bottom: 2px solid #0b5fff;
-  padding-bottom: 2px;
-}
-
-/* ---------- MAIN CONTAINER ---------- */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 64px 24px 96px;
-}
-
-/* ---------- HERO ---------- */
-.hero {
-  text-align: center;
-  padding: 64px 24px;
-  background: linear-gradient(
-    180deg,
-    #eef4ff 0%,
-    #f8fafc 100%
-  );
-  border-radius: 16px;
-  margin-bottom: 64px;
-}
-
-.hero h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.hero p {
-  font-size: 17px;
-  color: #334155;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-/* ---------- SECTIES ---------- */
-section {
-  margin-bottom: 72px;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-p {
-  margin-bottom: 16px;
-  color: #334155;
-}
-
-/* ---------- LIJST ---------- */
-ul {
-  margin: 16px 0 24px 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-/* ---------- CTA ---------- */
-.cta {
+/* Eyebrow */
+.qs-eyebrow {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 24px;
-  background: #0b5fff;
-  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted, #5f6b7a);
 }
 
-.cta:hover {
-  background: #0848c7;
+/* Titel */
+.qs-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+/* Intro */
+.qs-intro {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 46rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-soft, #2e2e2e);
+}
+
+/* Checklist */
+.qs-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+
+.qs-checklist li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-soft, #2e2e2e);
+}
+
+/* CTA blok */
+.qs-cta {
+  margin-top: 1rem;
+}
+
+/* Button */
+.qs-button {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
   text-decoration: none;
-}
-
-/* ---------- KLEINE TEKST ---------- */
-small,
-.privacy-note {
-  font-size: 13px;
-  color: #64748b;
-}
-
-/* ---------- CONTEXT BLOK ---------- */
-.context {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 32px;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  border-top: 1px solid #e5e7eb;
-  padding: 32px 24px;
-  text-align: center;
-  font-size: 13px;
-  color: #64748b;
-  background: #ffffff;
-}
-/* quickscan.css */
-
-.checkout-box {
-  background: #ffffff;
-  border: 1px solid #e5eaf1;
-  border-radius: 16px;
-  padding: 32px;
-  max-width: 520px;
-  margin-top: 32px;
-}
-
-.price {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.terms-checkbox {
-  margin: 20px 0;
-  font-size: 14px;
-  color: #374151;
-}
-
-.fine-print {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #6b7280;
-}
-/* =========================
-   QUICKSCAN – VISUAL UPGRADE
-   ========================= */
-
-/* Hero */
-.hero-quickscan {
-  background: linear-gradient(
-    135deg,
-    #062b4c 0%,
-    #0f766e 100%
-  );
+  background-color: var(--color-primary, #0b5fff);
   color: #ffffff;
-  padding: 96px 24px 120px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.hero-quickscan .hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+.qs-button:hover {
+  background-color: var(--color-primary-dark, #0848c4);
+  transform: translateY(-1px);
 }
 
-.hero-quickscan h1 {
-  font-size: 42px;
-  line-height: 1.15;
-  margin-bottom: 20px;
+/* Disclaimer */
+.qs-disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-muted, #6f7a86);
+  max-width: 30rem;
 }
-
-.hero-quickscan .hero-sub {
-  font-size: 18px;
-  max-width: 720px;
-  margin: 0 auto;
-  color: #e2e8f0;
-}
-.quickscan-start {
-  background: #ffffff;
-  max-width: 900px;
-  margin: -80px auto 0;
-  padding: 48px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
-}
-
-.quickscan-start h2 {
-  font-size: 26px;
-  margin-bottom: 16px;
-}
-
-.quickscan-start ul {
-  margin: 24px 0 32px 20px;
-}
-
-.quickscan-start .cta-primary {
-  margin-top: 16px;
-}
-.quickscan-context {
-  background: #ffffff;
-  padding: 96px 0;
-  margin-top: 96px;
-}
-
-.quickscan-context .container {
-  max-width: 760px;
-}
-.hero-premium {
-  background: linear-gradient(
-    135deg,
-    #0b2a4a 0%,
-    #0f3a63 100%
-  );
-  color: #ffffff;
-}
-
-.hero-premium h2 {
-  font-size: 32px;
-}
-
-.hero-premium .hero-sub {
-  max-width: 680px;
-  margin: 0 auto 24px;
-}
-
-
