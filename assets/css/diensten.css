@@ -1,69 +1,16 @@
 /* =========================================================
-   DIENSTEN – PAGINA SPECIFIEKE STYLES
+   DIENSTEN — PAGINA SPECIFIEKE STYLES
    Scope: .diensten-page
    ========================================================= */
 
-/* ---------- Basis ---------- */
 .diensten-page {
-  font-family: "Inter", sans-serif;
   background: #f5f7fa;
   color: #0a2540;
 }
 
-.diensten-page a {
-  text-decoration: none;
-}
-
-/* Container (consistent met homepage) */
-.diensten-page .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 90%;
-}
-
-/* ---------- Header ---------- */
-.diensten-page .nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e6ebf0;
-}
-
-.diensten-page .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 0;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.diensten-page .logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #0a2540;
-}
-
-.diensten-page .main-nav a {
-  margin-left: 22px;
-  font-weight: 600;
-  color: #0a2540;
-}
-
-.diensten-page .main-nav a:hover {
-  color: #1f5fa3;
-}
-
-/* ---------- Hero ---------- */
-.diensten-page .hero {
-  background: linear-gradient(135deg, #0a2540, #0f5f63);
-  color: #ffffff;
-  padding: 80px 0;
-}
+/* ---------- Hero aanvullingen ---------- */
 
 .diensten-page .hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 90%;
   display: flex;
   gap: 60px;
   align-items: center;
@@ -75,57 +22,14 @@
   max-width: 560px;
 }
 
-.diensten-page .hero h1 {
-  font-size: 2.4rem;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.diensten-page .hero-subtitle {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.diensten-page .hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 28px;
-}
-
 .diensten-page .hero-note {
   margin-top: 14px;
   font-size: 0.9rem;
   opacity: 0.85;
 }
 
-/* Buttons */
-.diensten-page .btn-primary {
-  background: #36b37e;
-  color: #ffffff;
-  padding: 14px 26px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.diensten-page .btn-primary:hover {
-  opacity: 0.9;
-}
-
-.diensten-page .btn-secondary {
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.diensten-page .btn-secondary:hover {
-  background: #ffffff;
-  color: #0a2540;
-}
-
 /* ---------- Profiel ---------- */
+
 .diensten-page .hero-profile {
   text-align: center;
 }
@@ -149,6 +53,7 @@
 }
 
 /* ---------- Diensten ---------- */
+
 .diensten-page .services {
   padding: 80px 0;
 }
@@ -190,6 +95,7 @@
 }
 
 /* ---------- CTA strook ---------- */
+
 .diensten-page .cta-strook {
   background: #0a2540;
   color: #ffffff;
@@ -200,38 +106,4 @@
 .diensten-page .cta-strook a {
   color: #36b37e;
   font-weight: 600;
-}
-
-/* ---------- Footer ---------- */
-.diensten-page .footer {
-  padding: 28px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #0a2540;
-}
-/* QuickScan aanvullingen */
-
-.quickscan-page .hero--compact {
-  padding: 48px 5%;
-}
-
-.service-card--center {
-  text-align: center;
-}
-
-.service-card--muted {
-  background: #f0f3f7;
-}
-
-.service-card--subtle {
-  background: transparent;
-  box-shadow: none;
-  text-align: center;
-  color: #4a5d73;
-}
-
-.helper-text {
-  font-size: 0.9rem;
-  color: #5f6f86;
-  margin-top: 10px;
 }
