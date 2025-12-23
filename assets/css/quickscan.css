@@ -93,3 +93,69 @@
   color: var(--color-muted, #6f7a86);
   max-width: 30rem;
 }
+/* =========================================================
+   QuickScan — Progress & Navigation
+   ========================================================= */
+
+/* Nav wrapper */
+.qs-progress {
+  border-bottom: 1px solid var(--color-border, #e6e8eb);
+  background-color: var(--color-bg, #ffffff);
+}
+
+/* Inner */
+.qs-progress-inner {
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
+}
+
+/* Steps list */
+.qs-steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Step item */
+.qs-step {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-muted, #7a8594);
+  white-space: nowrap;
+}
+
+/* States */
+.qs-step.is-active {
+  color: var(--color-text, #1a1a1a);
+  font-weight: 600;
+}
+
+.qs-step.is-done {
+  color: var(--color-primary, #0b5fff);
+}
+
+/* Progress bar */
+.qs-progressbar {
+  position: relative;
+  height: 4px;
+  background-color: var(--color-border, #e6e8eb);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Progress fill */
+.qs-progressbar-fill {
+  display: block;
+  height: 100%;
+  background-color: var(--color-primary, #0b5fff);
+  width: 0;
+  transition: width 0.2s ease;
+}
+
+/* Content spacing */
+.qs-step-content {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
