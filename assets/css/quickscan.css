@@ -159,3 +159,57 @@
   padding-top: clamp(2rem, 5vw, 4rem);
   padding-bottom: clamp(2rem, 5vw, 4rem);
 }
+/* =========================================================
+   QuickScan — Step content
+   ========================================================= */
+
+.qs-step-header {
+  margin-bottom: 2.5rem;
+}
+
+.qs-step-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.qs-step-intro {
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-soft, #2e2e2e);
+}
+
+/* Form */
+.qs-form {
+  max-width: 42rem;
+}
+
+/* Fieldset */
+.qs-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+
+.qs-legend {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Options */
+.qs-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+}
+
+.qs-option input {
+  margin-top: 0.2rem;
+}
+
+/* Actions */
+.qs-form-actions {
+  margin-top: 2rem;
+}
