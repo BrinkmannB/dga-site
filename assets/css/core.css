@@ -128,10 +128,6 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-.card h2 {
-  margin-top: 0;
-}
-
 /* ---------- CTA ---------- */
 
 .cta-block {
@@ -143,15 +139,6 @@ body {
   font-size: 0.9rem;
   color: #5f6f86;
   margin-top: 10px;
-}
-
-/* ---------- Subtle ---------- */
-
-.service-card--subtle {
-  background: transparent;
-  box-shadow: none;
-  text-align: center;
-  color: #4a5d73;
 }
 
 /* ---------- Footer ---------- */
