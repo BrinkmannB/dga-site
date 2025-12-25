@@ -1,78 +1,122 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Dutch Governance Advisory</title>
+  <meta charset="UTF-8">
+  <title>Contact — Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/assets/css/contact.css">
+  <meta name="description"
+        content="Neem contact op met Bas Brinkmann voor een vertrouwelijk en verkennend gesprek over AI governance, AI Act implementatie en publieke waarden.">
+
+  <link rel="stylesheet" href="/assets/css/core.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="nav">
+<header class="nav">
+  <div class="nav-inner">
     <a href="/" class="logo">DGA</a>
-
-    <ul class="nav-links">
-      <li><a href="/diensten/">Diensten</a></li>
-      <li><a href="/kennisbank/">Kennisbank</a></li>
-      <li><a href="/quickscan/">QuickScan</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/over-bas/">Over Bas</a></li>
-      <li><a href="/en/">EN</a></li>
-    </ul>
-  </nav>
+    <nav class="main-nav">
+      <a href="/diensten/">Diensten</a>
+      <a href="/kennisbank/">Kennisbank</a>
+      <a href="/quickscan/">QuickScan</a>
+      <a href="/contact/" class="active">Contact</a>
+      <a href="/over-bas/">Over Bas</a>
+      <a href="/en/">EN</a>
+    </nav>
+  </div>
 </header>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
 
-
-<section class="hero-contact">
     <div class="hero-content">
-        <h1>Plan direct een gesprek</h1>
-        <p>
-            Maak AI governance uitvoerbaar, verantwoord en in lijn met de AI Act. 
-            Bel direct of plan een afspraak — geheel vertrouwelijk.
-        </p>
+      <h1>Contact</h1>
 
-        <div class="cta-buttons">
-            <a href="tel:+31658946641" class="btn-primary">📞 Bel direct: 06 5894 6641</a>
-            <a href="mailto:info@dutchgovernanceadvisory.nl" class="btn-secondary">✉️ Mail nu</a>
-        </div>
+      <p class="hero-subtitle">
+        Twijfelt u hoe de AI Act uw organisatie raakt,
+        of wilt u verkennen wat verantwoorde AI-inzet in uw context betekent?
+      </p>
+
+      <p class="hero-note">
+        Een eerste gesprek is altijd verkennend,
+        inhoudelijk en geheel vertrouwelijk.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact-form" class="btn-primary">
+          Plan een verkennend gesprek
+        </a>
+      </div>
     </div>
+
+    <div class="hero-profile">
+      <img src="/assets/images/bas.jpg" class="profile-img" alt="Bas Brinkmann">
+      <p class="profile-name">Bas Brinkmann</p>
+      <p class="profile-role">AI Governance Consultant</p>
+    </div>
+
+  </div>
 </section>
 
+<!-- INHOUD -->
+<section class="content">
+  <div class="container" style="max-width: 760px;">
 
-<section class="contact-section">
-    <h2>Stel je vraag</h2>
-    <form class="contact-form">
-        <label>Naam</label>
-        <input type="text" placeholder="Jouw naam" required>
+    <h2>Wat u kunt verwachten</h2>
 
-        <label>E-mailadres</label>
-        <input type="email" placeholder="Jouw e-mail" required>
-
-        <label>Waarmee kan ik helpen?</label>
-        <textarea placeholder="Vertel kort over je vraag..." rows="6" required></textarea>
-
-        <button type="submit" class="btn-primary">Verstuur bericht</button>
-    </form>
-</section>
-
-
-<section class="privacy-note">
     <p>
-        <strong>Vertrouwelijkheid gewaarborgd:</strong><br>
-        Alle gesprekken worden strikt vertrouwelijk behandeld.  
-        Je gegevens worden nooit gedeeld met derden of verwerkt met AI-systemen zonder expliciete toestemming.
+      In een eerste gesprek brengen we samen scherp waar u staat,
+      welke vragen spelen en welke bestuurlijke of juridische aandachtspunten
+      relevant zijn.
     </p>
-</section>
 
+    <p>
+      Er is geen verplichting en geen verkooppraatje.
+      Wel ruimte om zorgvuldig te verkennen wat nodig is
+      — en wat niet.
+    </p>
+
+    <h2>Neem contact op</h2>
+
+    <form id="contact-form" class="contact-form">
+      <label for="name">Naam</label>
+      <input id="name" type="text" placeholder="Uw naam" required>
+
+      <label for="email">E-mailadres</label>
+      <input id="email" type="email" placeholder="Uw e-mailadres" required>
+
+      <label for="message">Waarmee kan ik helpen?</label>
+      <textarea id="message" rows="6"
+                placeholder="Beschrijf kort uw vraag of situatie..."
+                required></textarea>
+
+      <button type="submit" class="btn-primary">
+        Verstuur bericht
+      </button>
+    </form>
+
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #6b7280;">
+      Liever direct contact?
+      U kunt mij ook bereiken via
+      <a href="tel:+31658946641">06 5894 6641</a>
+      of
+      <a href="mailto:info@dutchgovernanceadvisory.nl">info@dutchgovernanceadvisory.nl</a>.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #6b7280;">
+      <strong>Vertrouwelijkheid:</strong>
+      Alle gesprekken worden strikt vertrouwelijk behandeld.
+      Uw gegevens worden nooit gedeeld met derden
+      en niet gebruikt voor geautomatiseerde analyses.
+    </p>
+
+  </div>
+</section>
 
 <footer class="footer">
-    <div class="container">
-        <p>© 2025 Dutch Governance Advisory — Onafhankelijke AI Governance voor het publieke domein</p>
-    </div>
+  <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein</p>
 </footer>
 
 </body>
