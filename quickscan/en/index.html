@@ -1,112 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial=1.0" />
-  <title>AI Governance Quick Scan – Dutch Governance Advisory</title>
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <title>AI Act QuickScan — Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- AUTO REDIRECT IF BROWSER LANGUAGE = NL -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = navigator.language || navigator.userLanguage;
-      if (lang.startsWith("nl")) {
-        window.location.href = "/quickscan/index.html";
-      }
-    });
-  </script>
+  <meta name="description"
+        content="An indicative AI Act QuickScan to explore how EU AI Act obligations may apply to your organisation or AI system.">
+
+  <link rel="stylesheet" href="/assets/css/core.css">
 </head>
 
 <body>
 
-<header>
-  <div><strong>Bas Brinkmann</strong></div>
-  <nav>
-    <a href="/en/index.html">Home</a>
-    <a href="/quickscan/en/index.html">Quick Scan</a>
-    <a href="/ai-act-calculator/en/index.html">AI Act Calculator</a>
-    <a href="/tools/en/index.html">Tools</a>
-    <a href="/contact/index.html">Contact</a>
-    <a href="/quickscan/index.html">NL</a>
-  </nav>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="logo">DGA</a>
+    <nav class="main-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/knowledge/">Knowledge</a>
+      <a href="/en/quickscan/" class="active">QuickScan</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/en/about/">About</a>
+      <a href="/">NL</a>
+    </nav>
+  </div>
 </header>
 
-<div class="calculator-container">
-  <h1>AI Governance Quick Scan</h1>
-  <p>
-    Assess the maturity, transparency and risks of your AI system or project.
-    This Quick Scan offers a first indication aligned with EU AI Act criteria.
-  </p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
 
-  <div class="question">
-    <label>1. Does your organisation have a formal AI governance process?</label>
-    <select id="q1">
-      <option value="">Select...</option>
-      <option value="high">Fully established</option>
-      <option value="medium">Partially</option>
-      <option value="low">Not yet</option>
-    </select>
+    <div class="hero-content">
+      <h1>AI Act QuickScan</h1>
+
+      <p class="hero-subtitle">
+        A short, structured exploration of how the EU AI Act
+        may affect your organisation or AI use case.
+      </p>
+
+      <p class="hero-note">
+        Indicative only — no registration, no automated scoring,
+        no legal advice.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="/quickscan/start/step1.html" class="btn-primary">
+          Start the QuickScan
+        </a>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="question">
-    <label>2. Is there insight into datasets, provenance and data quality?</label>
-    <select id="q2">
-      <option value="">Select...</option>
-      <option value="high">Extensive</option>
-      <option value="medium">Partial</option>
-      <option value="low">Limited or none</option>
-    </select>
+<!-- CONTENT -->
+<section class="content">
+  <div class="container" style="max-width: 760px;">
+
+    <h2>What this QuickScan does</h2>
+
+    <p>
+      The AI Act introduces different obligations depending on
+      the purpose, context and risk profile of AI systems.
+      This QuickScan helps you reflect on those aspects in a
+      structured way.
+    </p>
+
+    <p>
+      The scan consists of a limited number of steps that follow
+      the logic of the AI Act itself — from prohibited practices
+      and high-risk classification to governance and oversight.
+    </p>
+
+    <h2>What to expect</h2>
+
+    <ul>
+      <li>Approximately 3 minutes</li>
+      <li>No technical expertise required</li>
+      <li>Aligned with the structure of the EU AI Act</li>
+      <li>Indicative outcome, not legal advice</li>
+    </ul>
+
+    <p>
+      The QuickScan is currently available in Dutch.
+      The structure and outcomes are equally applicable
+      in an international public-sector context.
+    </p>
+
+    <p>
+      <a href="/quickscan/start/step1.html">
+        Proceed to the AI Act QuickScan →
+      </a>
+    </p>
+
   </div>
+</section>
 
-  <div class="question">
-    <label>3. Is there human oversight over AI-driven decisions?</label>
-    <select id="q3">
-      <option value="">Select...</option>
-      <option value="high">Always</option>
-      <option value="medium">Sometimes</option>
-      <option value="low">Rarely or never</option>
-    </select>
-  </div>
-
-  <button class="btn" onclick="scan()">View results</button>
-
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function scan() {
-  const q1 = document.getElementById("q1").value;
-  const q2 = document.getElementById("q2").value;
-  const q3 = document.getElementById("q3").value;
-
-  const box = document.getElementById("result");
-
-  if (!q1 || !q2 || !q3) {
-    box.style.display = "block";
-    box.innerHTML = "<strong>Please answer all questions.</strong>";
-    return;
-  }
-
-  let score = 0;
-  [q1, q2, q3].forEach(q => {
-    if (q === "high") score += 2;
-    if (q === "medium") score += 1;
-  });
-
-  let message = "<strong>Quick Scan Result:</strong><br><br>";
-
-  if (score >= 5) {
-    message += "🔵 <strong>Strong foundations</strong><br>Your governance approach is solid. Recommended: AI Act readiness review.";
-  } else if (score >= 3) {
-    message += "🟡 <strong>Moderate</strong><br>Some foundations are present; strengthening needed for AI Act compliance.";
-  } else {
-    message += "🔴 <strong>Vulnerable</strong><br>There are significant weaknesses. Recommended: governance assessment.";
-  }
-
-  box.style.display = "block";
-  box.innerHTML = message;
-}
-</script>
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Independent AI Governance for the Public Domain</p>
+</footer>
 
 </body>
 </html>
