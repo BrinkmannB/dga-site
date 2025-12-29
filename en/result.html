@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Act QuickScan — Result</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Indicative AI Act assessment based on use, context and governance.">
+
+  <!-- Existing DGA styles -->
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+</head>
+
+<body class="fade-in">
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="logo">DGA</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero hero--compact">
+  <div class="container hero-inner">
+
+    <div class="hero-content">
+      <h1>Indicative AI Act assessment</h1>
+
+      <p class="hero-subtitle">
+        Based on your answers, an initial indication of
+        potential AI Act impact has been identified.
+      </p>
+
+      <p class="hero-meta">
+        Initial orientation • no legal determination
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="container narrow section-light">
+
+  <!-- RESULT -->
+  <section class="card result-card" id="result-box">
+    <!-- Filled via JS -->
+  </section>
+
+  <!-- UPSELL / CTA -->
+  <section class="card cta-card" id="upsell-box" style="display:none;">
+    <h2>Logical next step</h2>
+
+    <p>
+      Based on this outcome, a more in-depth analysis is recommended.
+      You will receive a concise written report covering:
+    </p>
+
+    <ul>
+      <li>relevant AI Act obligations</li>
+      <li>indicative (high-risk) AI qualification</li>
+      <li>governance and oversight attention points</li>
+      <li>proportionate next steps</li>
+    </ul>
+
+    <div class="cta-row">
+      <div class="price">€29 incl. VAT</div>
+
+      <a
+        href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
+        class="button button-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Request in-depth QuickScan report
+      </a>
+    </div>
+
+    <p class="fine-print">
+      Indicative • no legal advice • delivered after payment
+    </p>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="card disclaimer-card">
+    <h3>Legal context</h3>
+    <p>
+      This QuickScan does not constitute a decision,
+      classification or assessment within the meaning of the EU AI Act
+      and is not binding for supervisory authorities.
+      Final qualification depends on actual use,
+      context, scale and governance arrangements.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Independent AI Governance for the Public Sector</p>
+</footer>
+
+<script>
+/* =====================================================
+   RESULT LOGIC — SUPERVISORY-ROBUST
+   ===================================================== */
+
+const answers = {
+  step1: localStorage.getItem("step1"),
+  step2: localStorage.getItem("step2"),
+  step4: localStorage.getItem("step4"),
+  step5: localStorage.getItem("step5"),
+  step6: localStorage.getItem("step6"),
+  step7: localStorage.getItem("step7"),
+  step8: localStorage.getItem("step8"),
+  step9: localStorage.getItem("step9"),
+  category: localStorage.getItem("ai_act_category")
+};
+
+const box = document.getElementById("result-box");
+const upsell = document.getElementById("upsell-box");
+
+let signals = [];
+
+/* 1. Prohibited AI — hard stop */
+if (answers.step1 === "yes") {
+  box.innerHTML = `
+    <h2>Potentially prohibited AI use</h2>
+    <p>
+      Based on your answers, the application may fall under
+      prohibited AI practices under the EU AI Act
+      (such as social scoring or comparable use cases).
+    </p>
+    <p>
+      Deployment or use is generally not permitted.
+      Immediate legal assessment is strongly advised.
+    </p>
+  `;
+  return;
+}
+
+/* 2. Signals */
+if (answers.step2 === "yes") signals.push("use of biometric techniques");
+if (answers.step4 === "high") signals.push("significant impact on rights or interests");
+if (answers.step5 === "auto") signals.push("fully automated decision-making");
+if (answers.step6 === "high_risk_data") signals.push("use of sensitive or bias-prone data");
+if (answers.step7 === "public_authority") signals.push("use by or on behalf of a public authority");
+if (answers.step8 === "critical_process")
+  signals.push("use in critical or essential processes");
+
+if (answers.step9 === "no_human_oversight") signals.push("lack of effective human oversight");
+if (answers.category === "verhoogde_verplichtingen")
+  signals.push("general-purpose or foundation model with additional transparency obligations");
+
+/* 3. High impact */
+if (signals.length >= 3) {
+  box.innerHTML = `
+    <h2>Likely increased AI Act impact</h2>
+    <p>
+      Multiple signals indicate a higher level of obligations
+      under the EU AI Act:
+    </p>
+    <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
+    <p>
+      This does not imply a finding of non-compliance,
+      but suggests an increased likelihood that
+      additional AI Act obligations apply.
+    </p>
+  `;
+  upsell.style.display = "block";
+  return;
+}
+
+/* 4. Medium impact */
+if (signals.length > 0) {
+  box.innerHTML = `
+    <h2>Limited to moderate AI Act impact</h2>
+    <p>
+      Several attention points have been identified
+      that may be relevant under the EU AI Act:
+    </p>
+    <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
+    <p>
+      Further clarification helps determine
+      proportionality and applicable obligations.
+    </p>
+  `;
+  upsell.style.display = "block";
+  return;
+}
+
+/* 5. Low risk */
+box.innerHTML = `
+  <h2>Low-risk AI system</h2>
+  <p>
+    Based on your answers, no clear indicators
+    of increased AI Act obligations were identified.
+  </p>
+  <p>
+    Transparency, careful use and monitoring
+    remain relevant in all cases.
+  </p>
+`;
+</script>
+
+</body>
+</html>
 
