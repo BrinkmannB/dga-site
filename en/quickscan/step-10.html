@@ -10,15 +10,14 @@
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
-      // Functional classification of AI system
+      // Functional type of AI system
       localStorage.setItem(step, systemType);
 
-      // Indicative AI Act category (non-binding)
+      // Indicative legal category (non-binding)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      // Proceed to results page (EN)
+      // Redirect to EN result page
       window.location.href = "/en/result.html";
-
     }
   </script>
 </head>
@@ -39,53 +38,49 @@
       a formal legal qualification.
     </p>
 
-    <!-- OPTION 1 -->
     <div
       class="option"
       onclick="saveAnswer(
         'step10',
         'gpai',
-        'enhanced_obligations'
+        'verhoogde_verplichtingen'
       )"
     >
       <strong>Foundation model / generative AI system (GPAI)</strong><br>
       <span class="option-sub">
-        General-purpose AI that can be deployed or adapted across
-        multiple use cases, subject to additional transparency
-        and governance obligations under the AI Act
+        General-purpose AI that can be deployed or adapted across multiple
+        use cases, subject to additional transparency and governance
+        obligations under the AI Act.
       </span>
     </div>
 
-    <!-- OPTION 2 -->
     <div
       class="option"
       onclick="saveAnswer(
         'step10',
         'application_specific_ai',
-        'high_risk'
+        'hoog_risico'
       )"
     >
       <strong>Application-specific AI system</strong><br>
       <span class="option-sub">
-        AI with a direct impact on decisions, rights or access
-        to services, potentially subject to high-risk obligations
-        under the AI Act
+        AI with direct impact on decisions, rights or access to services,
+        potentially subject to high-risk obligations under the AI Act.
       </span>
     </div>
 
-    <!-- OPTION 3 -->
     <div
       class="option"
       onclick="saveAnswer(
         'step10',
         'low_risk_ai',
-        'low_risk'
+        'laag_risico'
       )"
     >
       <strong>Simple or low-risk AI system</strong><br>
       <span class="option-sub">
-        Limited impact, supportive or informational use,
-        with no clear indication of increased AI Act obligations
+        Limited impact, supportive or informational use, with no clear
+        indication of increased AI Act obligations.
       </span>
     </div>
 
