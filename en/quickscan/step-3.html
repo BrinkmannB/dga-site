@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Governance Quick Scan — Step 3 of 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="AI Governance Quick Scan – Step 3: initial risk orientation and potential AI Act relevance based on impact and use context.">
+
+  <link rel="stylesheet" href="/assets/css/core.css">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="logo">DGA</a>
+    <nav class="main-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/knowledge/">Knowledge</a>
+      <a href="/en/quickscan/" class="active">QuickScan</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/quickscan/">NL</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Quick Scan — Step 3 of 10</h1>
+
+      <p class="hero-subtitle">
+        Risk orientation and potential impact
+      </p>
+
+      <p class="hero-note">
+        The AI Act applies obligations based on <strong>risk and impact</strong>.
+        This step helps identify whether your use case is likely to fall into a higher-risk area.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content">
+  <div class="container" style="max-width: 780px;">
+
+    <h2>3. Impact and risk signals</h2>
+
+    <p>
+      This is not a formal classification. The goal is to surface the main risk signals:
+      effects on individuals, public services, and sensitive domains.
+    </p>
+
+    <form class="quickscan-form">
+
+      <label for="domain">
+        1. Which domain best matches the AI use case?
+      </label>
+      <select id="domain" required>
+        <option value="">Select an option</option>
+        <option>Public services / administrative decision-making</option>
+        <option>Law enforcement / public safety</option>
+        <option>Migration / border management</option>
+        <option>Social benefits / welfare / eligibility assessment</option>
+        <option>Healthcare</option>
+        <option>Education</option>
+        <option>Employment / HR</option>
+        <option>Critical infrastructure</option>
+        <option>Other</option>
+      </select>
+
+      <label for="rights">
+        2. Could the AI system affect an individual’s rights, access, or legal position?
+      </label>
+      <select id="rights" required>
+        <option value="">Select an option</option>
+        <option>Yes, directly</option>
+        <option>Indirectly (advice/recommendations used by staff)</option>
+        <option>Unlikely / no</option>
+        <option>Not sure</option>
+      </select>
+
+      <label for="vulnerable">
+        3. Are vulnerable groups likely to be affected?
+        <span style="font-weight: normal;">
+          (e.g. minors, people in dependency relationships, benefit recipients)
+        </span>
+      </label>
+      <select id="vulnerable" required>
+        <option value="">Select an option</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Not sure</option>
+      </select>
+
+      <label for="automation">
+        4. How is the AI output used in practice?
+      </label>
+      <select id="automation" required>
+        <option value="">Select an option</option>
+        <option>Automated decisions (output is directly acted upon)</option>
+        <option>Decision support (humans decide, AI informs)</option>
+        <option>Purely internal analysis / monitoring</option>
+        <option>Unknown / mixed</option>
+      </select>
+
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="/en/quickscan/step-2.html" class="btn-secondary">
+          ← Back to Step 2
+        </a>
+        <a href="/en/quickscan/step-4.html" class="btn-primary">
+          Continue to Step 4 →
+        </a>
+      </div>
+
+    </form>
+
+    <p style="margin-top: 2rem; font-size: 0.9rem; color: #6b7280;">
+      <strong>Tip:</strong>
+      If the system influences access to public services, eligibility, safety, or legal position,
+      it often triggers stronger governance expectations — even when final decisions remain human-led.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #6b7280;">
+      This Quick Scan provides an indicative orientation only.
+      It does not constitute legal advice.
+    </p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — Independent AI Governance for the Public Sector</p>
+</footer>
+
+</body>
+</html>
 
