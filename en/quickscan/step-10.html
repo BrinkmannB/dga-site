@@ -6,17 +6,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Wizard styling (same as NL) -->
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
-      // Type of AI system (functional qualification)
+      // Functional type of AI system
       localStorage.setItem(step, systemType);
 
-      // Indicative legal category (not a definitive classification)
+      // Indicative legal category (non-binding)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      // Proceed to result page
+      // Redirect to EN result page
       window.location.href = "result.html";
     }
   </script>
@@ -34,8 +35,8 @@
       Select the option that best reflects the AI system
       <strong>as it is actually used in practice</strong>.
       The classification below provides a <strong>first indication</strong>
-      of potential obligations under the EU AI Act
-      and does not replace a legal qualification.
+      of potential obligations under the EU AI Act and does not
+      replace a formal legal qualification.
     </p>
 
     <div
@@ -43,7 +44,7 @@
       onclick="saveAnswer(
         'step10',
         'gpai',
-        'increased_obligations'
+        'enhanced_obligations'
       )"
     >
       <strong>Foundation model / generative AI system (GPAI)</strong><br>
@@ -64,8 +65,9 @@
     >
       <strong>Application-specific AI system</strong><br>
       <span class="option-sub">
-        AI with direct impact on decisions, rights or access to services,
-        potentially subject to high-risk obligations under the AI Act
+        AI with a direct impact on decisions, rights or access
+        to services, potentially subject to high-risk obligations
+        under the AI Act
       </span>
     </div>
 
@@ -85,11 +87,10 @@
     </div>
 
     <div class="nav-row">
-      <a class="button-secondary" href="step9.html">← Back</a>
+      <a class="button-secondary" href="step-9.html">← Back</a>
     </div>
 
   </div>
 
 </body>
 </html>
-
