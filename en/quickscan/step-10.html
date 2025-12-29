@@ -6,18 +6,17 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Wizard styling (same as NL) -->
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
-      // Functional type of AI system
+      // Functional classification of AI system
       localStorage.setItem(step, systemType);
 
-      // Indicative legal category (non-binding)
+      // Indicative AI Act category (non-binding)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      // Redirect to EN result page
+      // Proceed to results page (EN)
       window.location.href = "result.html";
     }
   </script>
@@ -34,11 +33,12 @@
     <p>
       Select the option that best reflects the AI system
       <strong>as it is actually used in practice</strong>.
-      The classification below provides a <strong>first indication</strong>
-      of potential obligations under the EU AI Act and does not
-      replace a formal legal qualification.
+      The classification below provides a <strong>first, indicative view</strong>
+      of potential obligations under the EU AI Act and does not replace
+      a formal legal qualification.
     </p>
 
+    <!-- OPTION 1 -->
     <div
       class="option"
       onclick="saveAnswer(
@@ -49,12 +49,13 @@
     >
       <strong>Foundation model / generative AI system (GPAI)</strong><br>
       <span class="option-sub">
-        A general-purpose AI model that can be deployed or adapted
-        for a wide range of use cases, subject to additional
-        transparency and governance obligations under the AI Act
+        General-purpose AI that can be deployed or adapted across
+        multiple use cases, subject to additional transparency
+        and governance obligations under the AI Act
       </span>
     </div>
 
+    <!-- OPTION 2 -->
     <div
       class="option"
       onclick="saveAnswer(
@@ -71,6 +72,7 @@
       </span>
     </div>
 
+    <!-- OPTION 3 -->
     <div
       class="option"
       onclick="saveAnswer(
