@@ -6,17 +6,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Wizard styling -->
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
-      // Type AI-systeem (functionele duiding)
+      // Sla functioneel type AI-systeem op
       localStorage.setItem(step, systemType);
 
-      // Indicatieve juridische categorie (geen definitieve classificatie)
+      // Sla indicatieve AI Act-categorie op (niet juridisch bindend)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      // Door naar resultaatpagina
+      // Ga naar resultaatpagina
       window.location.href = "resultaat.html";
     }
   </script>
@@ -33,9 +34,9 @@
     <p>
       Kies de optie die het beste aansluit bij het AI-systeem
       <strong>zoals het feitelijk wordt gebruikt</strong>.
-      De indeling hieronder geeft een <strong>eerste indicatie</strong>
-      van mogelijke AI Act-verplichtingen en vervangt geen
-      juridische kwalificatie.
+      Deze indeling geeft een <strong>eerste indicatie</strong>
+      van mogelijke verplichtingen onder de EU AI Act en
+      vervangt geen juridische kwalificatie.
     </p>
 
     <div
@@ -48,9 +49,9 @@
     >
       <strong>Foundation model / generatief AI-systeem (GPAI)</strong><br>
       <span class="option-sub">
-        Algemeen AI-model dat kan worden ingezet of doorontwikkeld
-        voor uiteenlopende toepassingen, met aanvullende transparantie-
-        en governanceverplichtingen onder de AI Act
+        Algemeen AI-model dat voor meerdere doeleinden kan worden ingezet
+        of doorontwikkeld, waarvoor aanvullende transparantie- en
+        governanceverplichtingen kunnen gelden onder de AI Act.
       </span>
     </div>
 
@@ -64,9 +65,10 @@
     >
       <strong>Toepassingsgericht AI-systeem</strong><br>
       <span class="option-sub">
-        AI met directe impact op besluiten, rechten of toegang
-        tot diensten, waarbij hoog-risico verplichtingen
-        van toepassing kunnen zijn
+        AI die binnen een specifieke context wordt ingezet en
+        directe invloed kan hebben op besluiten, rechten of
+        toegang tot diensten, waarbij hoog-risico verplichtingen
+        van toepassing kunnen zijn.
       </span>
     </div>
 
@@ -80,8 +82,9 @@
     >
       <strong>Eenvoudig of laag-risico AI-systeem</strong><br>
       <span class="option-sub">
-        Beperkte impact, ondersteunend of informatief gebruik,
-        zonder aanwijzingen voor verhoogde AI Act-verplichtingen
+        Ondersteunend of informatief gebruik van AI met beperkte
+        impact, zonder duidelijke aanwijzingen voor verhoogde
+        AI Act-verplichtingen.
       </span>
     </div>
 
