@@ -9,11 +9,12 @@
 
 
   <script>
-    function saveAnswer(step, value, next) {
-      localStorage.setItem(step, value);
-      window.location.href = next;
-    }
-  </script>
+  function saveAnswer(step, value, next) {
+    localStorage.setItem(step, value);
+    window.location.href = "/quickscan/start/" + next;
+  }
+</script>
+
 </head>
 
 <body class="fade-in">
