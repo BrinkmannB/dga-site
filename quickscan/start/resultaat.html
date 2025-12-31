@@ -6,205 +6,143 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Indicatieve AI Act-inschatting op basis van gebruik, context en governance.">
+        content="Indicatieve AI Act-inschatting op basis van uw QuickScan-antwoorden.">
 
-  <!-- Bestaande DGA styles -->
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Wizard styling -->
   <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
 </head>
 
 <body class="fade-in">
 
-<!-- NAV -->
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo">DGA</a>
-  </div>
-</header>
+  <div class="wizard-container">
 
-<!-- HERO -->
-<section class="hero hero--compact">
-  <div class="container hero-inner">
+    <h1>Indicatieve AI Act-inschatting</h1>
 
-    <div class="hero-content">
-      <h1>Indicatieve AI Act-inschatting</h1>
+    <p class="intro">
+      Op basis van uw antwoorden is een <strong>eerste, niet-bindende inschatting</strong>
+      gemaakt van de mogelijke impact van de EU AI Act op het AI-systeem zoals beschreven.
+    </p>
 
-      <p class="hero-subtitle">
-        Op basis van uw antwoorden is een eerste inschatting gemaakt van de
-        mogelijke AI Act-impact.
-      </p>
+    <!-- RESULTAAT -->
+    <div class="result-box" id="resultBox">
+      <!-- Wordt gevuld via JS -->
+    </div>
 
-      <p class="hero-meta">
-        Eerste oriëntatie • geen juridisch besluit
+    <!-- VERDIEPING -->
+    <div class="result-box subtle">
+      <h3>Wat betekent dit in de praktijk?</h3>
+      <ul id="implications">
+        <!-- Dynamisch gevuld -->
+      </ul>
+      <p class="fine-print">
+        Deze duiding is indicatief en vervangt geen juridische beoordeling
+        of formele classificatie onder de AI Act.
       </p>
     </div>
 
-  </div>
-</section>
+    <!-- PDF + STRIPE -->
+    <div class="result-box highlight">
+      <h3>Maak dit resultaat overdraagbaar</h3>
 
-<!-- CONTENT -->
-<main class="container narrow section-light">
+      <p>
+        Wilt u deze uitkomst delen binnen uw organisatie of vastleggen
+        in een dossier? Ontvang een beknopt, professioneel
+        <strong>PDF-rapport</strong> met:
+      </p>
 
-  <!-- RESULTAAT -->
-  <section class="card result-card" id="result-box">
-    <!-- Gevuld via JS -->
-  </section>
+      <ul>
+        <li>samenvatting van de QuickScan</li>
+        <li>indicatieve AI Act-categorie</li>
+        <li>bestuurlijke en governance-aandachtspunten</li>
+        <li>suggesties voor vervolgstappen</li>
+      </ul>
 
-  <!-- UPSell / CTA -->
-  <section class="card cta-card" id="upsell-box" style="display:none;">
-    <h2>Logische vervolgstap</h2>
+      <div class="cta-row">
+        <span class="price">€29 incl. btw</span>
 
-    <p>
-      Op basis van deze uitkomst is een verdiepende analyse aan te raden.
-      U ontvangt een beknopt, concreet rapport met:
-    </p>
+        <a
+          href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
+          class="button-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Download PDF-rapport
+        </a>
+      </div>
 
-    <ul>
-      <li>toepasselijke AI Act-verplichtingen</li>
-      <li>indicatie (hoog-risico) AI</li>
-      <li>governance- en toezichtsaandachtspunten</li>
-      <li>proportionele vervolgstappen</li>
-    </ul>
-
-    <div class="cta-row">
-      <div class="price">€29 incl. btw</div>
-
-      <a
-        href="https://buy.stripe.com/aFa9AVgBkbZ4cvU7rDaAw01"
-        class="button button-primary"
-        target="_blank"
-        rel="noopener"
-      >
-        Ontvang verdiepende QuickScan
-      </a>
+      <p class="fine-print">
+        Direct beschikbaar • geen account • geen verplichtingen
+      </p>
     </div>
 
-    <p class="fine-print">
-      Indicatief • geen juridisch advies • direct beschikbaar
-    </p>
-  </section>
+    <div class="nav-row">
+      <a class="button-secondary" href="/quickscan/">← Terug naar uitleg</a>
+    </div>
 
-  <!-- DISCLAIMER -->
-  <section class="card disclaimer-card">
-    <h3>Juridische duiding</h3>
-    <p>
-      Deze QuickScan vormt geen besluit, classificatie of oordeel
-      in de zin van de AI Act en is niet bindend voor toezichthouders.
-      De uiteindelijke kwalificatie is afhankelijk van feitelijk gebruik,
-      context, schaal en governance-inrichting.
-    </p>
-  </section>
+  </div>
 
-</main>
+  <script>
+    const category = localStorage.getItem("ai_act_category");
 
-<footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein</p>
-</footer>
+    const resultBox = document.getElementById("resultBox");
+    const implications = document.getElementById("implications");
 
-<script>
-/* =====================================================
-   RESULTAATLOGICA — TOEZICHTHOUDER-PROOF
-   ===================================================== */
+    let title = "";
+    let summary = "";
+    let points = [];
 
-const answers = {
-  step1: localStorage.getItem("step1"),
-  step2: localStorage.getItem("step2"),
-  step4: localStorage.getItem("step4"),
-  step5: localStorage.getItem("step5"),
-  step6: localStorage.getItem("step6"),
-  step7: localStorage.getItem("step7"),
-  step8: localStorage.getItem("step8"),
-  step9: localStorage.getItem("step9"),
-  category: localStorage.getItem("ai_act_category")
-};
+    switch (category) {
+      case "verhoogde_verplichtingen":
+        title = "Waarschijnlijk verhoogde AI Act-verplichtingen";
+        summary = `
+          Het AI-systeem vertoont kenmerken die kunnen wijzen op
+          aanvullende transparantie- en governanceverplichtingen
+          onder de AI Act, zoals bij generatieve of foundation models.
+        `;
+        points = [
+          "verhoogde transparantie-eisen",
+          "documentatie van model en gebruik",
+          "governance rond doorontwikkeling en inzet",
+          "toezicht op risico’s en misbruik"
+        ];
+        break;
 
-const box = document.getElementById("result-box");
-const upsell = document.getElementById("upsell-box");
+      case "hoog_risico":
+        title = "Mogelijk hoog-risico AI-systeem";
+        summary = `
+          Op basis van uw antwoorden lijkt het AI-systeem
+          binnen een context te worden ingezet waarin
+          verhoogde AI Act-verplichtingen van toepassing kunnen zijn.
+        `;
+        points = [
+          "risicomanagement en documentatie",
+          "menselijk toezicht en interventiemogelijkheden",
+          "datakwaliteit en biasbeheersing",
+          "verantwoordelijkheden binnen de organisatie"
+        ];
+        break;
 
-let signals = [];
+      default:
+        title = "Waarschijnlijk laag-risico AI-systeem";
+        summary = `
+          Er zijn op basis van uw antwoorden geen duidelijke
+          aanwijzingen voor verhoogde AI Act-verplichtingen.
+        `;
+        points = [
+          "zorgvuldig en transparant gebruik",
+          "monitoring van wijzigingen in inzet",
+          "periodieke herbeoordeling",
+          "duidelijke interne afspraken"
+        ];
+    }
 
-/* 1. Verboden AI — harde stop */
-if (answers.step1 === "yes") {
-  box.innerHTML = `
-    <h2>Mogelijk verboden AI-toepassing</h2>
-    <p>
-      Op basis van uw antwoorden lijkt sprake van een toepassing
-      die onder het verbod van de AI Act kan vallen
-      (zoals sociale scoring of vergelijkbare praktijken).
-    </p>
-    <p>
-      Gebruik of inzet hiervan is in beginsel niet toegestaan.
-      Juridische toetsing is dringend vereist.
-    </p>
-  `;
-  return;
-}
+    resultBox.innerHTML = `
+      <h2>${title}</h2>
+      <p>${summary}</p>
+    `;
 
-/* 2. Signalen */
-if (answers.step2 === "yes") signals.push("gebruik van biometrische technieken");
-if (answers.step4 === "high") signals.push("grote impact op rechten of belangen");
-if (answers.step5 === "auto") signals.push("volledig geautomatiseerde besluitvorming");
-if (answers.step6 === "high_risk_data") signals.push("gebruik van gevoelige of biasgevoelige data");
-if (answers.step7 === "public_authority") signals.push("inzet door of namens een overheid");
-if (answers.step8 === "critical_process")
-  signals.push("inzet in kritieke of essentiële processen");
-
-if (answers.step9 === "no_human_oversight") signals.push("ontbrekend menselijk toezicht");
-if (answers.category === "verhoogde_verplichtingen")
-  signals.push("generatief of foundation model met aanvullende transparantieverplichtingen");
-
-/* 3. Hoog risico */
-if (signals.length >= 3) {
-  box.innerHTML = `
-    <h2>Waarschijnlijk verhoogde AI Act-impact</h2>
-    <p>
-      Meerdere signalen wijzen op een verhoogd verplichtingenniveau
-      onder de AI Act:
-    </p>
-    <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
-    <p>
-  Dit impliceert geen vaststelling van non-compliance,
-  maar wijst op een verhoogde kans dat aanvullende
-  AI Act-verplichtingen van toepassing zijn.
-</p>
-
-  `;
-  upsell.style.display = "block";
-  return;
-}
-
-/* 4. Middelmatig risico */
-if (signals.length > 0) {
-  box.innerHTML = `
-    <h2>Beperkte tot middelmatige AI Act-impact</h2>
-    <p>
-      Er zijn aandachtspunten geïdentificeerd die relevant
-      kunnen zijn onder de AI Act:
-    </p>
-    <ul>${signals.map(s => `<li>${s}</li>`).join("")}</ul>
-    <p>
-      Verdere duiding helpt om proportionaliteit
-      en verplichtingen scherp te krijgen.
-    </p>
-  `;
-  upsell.style.display = "block";
-  return;
-}
-
-/* 5. Laag risico */
-box.innerHTML = `
-  <h2>Laag-risico AI-systeem</h2>
-  <p>
-    Op basis van uw antwoorden zijn geen duidelijke signalen
-    voor verhoogde AI Act-verplichtingen vastgesteld.
-  </p>
-  <p>
-    Transparantie, zorgvuldig gebruik en monitoring
-    blijven ook hier relevant.
-  </p>
-`;
-</script>
+    implications.innerHTML = points.map(p => `<li>${p}</li>`).join("");
+  </script>
 
 </body>
 </html>
