@@ -2,12 +2,12 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Stap 10 — Type AI-systeem</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Wizard styling -->
-  <link rel="stylesheet" href="/ai-act-calculator/wizard.css">
+  <title>Stap 10 — Type AI-systeem</title>
+
+  <!-- Wizard styling (consistent met step 1–9) -->
+  <link rel="stylesheet" href="/quickscan/start/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
@@ -17,9 +17,8 @@
       // Sla indicatieve AI Act-categorie op (niet juridisch bindend)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      // Ga naar resultaatpagina
-   window.location.href = "/quickscan/start/resultaat.html";
-
+      // Ga naar resultaatpagina (absoluut pad)
+      window.location.href = "/quickscan/start/resultaat.html";
     }
   </script>
 </head>
@@ -36,8 +35,8 @@
       Kies de optie die het beste aansluit bij het AI-systeem
       <strong>zoals het feitelijk wordt gebruikt</strong>.
       Deze indeling geeft een <strong>eerste indicatie</strong>
-      van mogelijke verplichtingen onder de EU AI Act en
-      vervangt geen juridische kwalificatie.
+      van mogelijke verplichtingen onder de EU AI Act
+      en vervangt geen juridische kwalificatie.
     </p>
 
     <div
