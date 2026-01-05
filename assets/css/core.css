@@ -2,6 +2,8 @@
    CORE STYLES — Dutch Governance Advisory
    ===================================================== */
 
+/* ---------- Reset ---------- */
+
 * {
   box-sizing: border-box;
 }
@@ -11,49 +13,89 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   background: #f5f7fa;
   color: #0a2540;
+  line-height: 1.6;
 }
 
 /* ---------- Layout ---------- */
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
   width: 90%;
+  margin: 0 auto;
 }
 
-.section-light {
-  padding: 64px 0;
+.section {
+  padding: 72px 0;
 }
 
-/* ---------- Navigation ---------- */
+.section-intro {
+  max-width: 720px;
+  margin-bottom: 40px;
+  color: #3c4f65;
+}
 
-.nav {
+/* ---------- Typography ---------- */
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 16px 0;
+}
+
+.microcopy {
+  font-size: 0.9rem;
+  color: #5f6f86;
+}
+
+/* ---------- Header / Navigation ---------- */
+
+.site-header {
   background: #ffffff;
   border-bottom: 1px solid #e6ebf0;
 }
 
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 0;
-  width: 90%;
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 0;
 }
 
-.logo {
+.logo a {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #0a2540;
   text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
 }
 
 .main-nav a {
-  margin-left: 22px;
+  text-decoration: none;
   font-weight: 600;
   color: #0a2540;
-  text-decoration: none;
 }
 
 .main-nav a:hover {
@@ -65,44 +107,46 @@ body {
 .hero {
   background: linear-gradient(135deg, #0a2540, #0f5f63);
   color: #ffffff;
-  padding: 88px 0;
-}
-
-.hero--compact {
-  padding: 56px 0;
+  padding: 96px 0;
 }
 
 .hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 90%;
-}
-
-.hero-content {
-  max-width: 620px;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 14px;
+  max-width: 900px;
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
   opacity: 0.95;
+  max-width: 720px;
+}
+
+.hero-cta {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-microcopy {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
 /* ---------- Buttons ---------- */
 
-.btn-primary {
-  background: #36b37e;
-  color: #ffffff;
+.btn {
+  display: inline-block;
   padding: 14px 28px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
-  display: inline-block;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary {
+  background: #36b37e;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -112,41 +156,95 @@ body {
 .btn-secondary {
   border: 2px solid #ffffff;
   color: #ffffff;
-  padding: 12px 26px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
 }
 
-/* ---------- Cards ---------- */
+.btn-secondary:hover {
+  opacity: 0.9;
+}
 
-.card {
+/* ---------- Services ---------- */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.service-card {
   background: #ffffff;
   border-radius: 14px;
   padding: 32px;
-  margin-bottom: 28px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-/* ---------- CTA ---------- */
-
-.cta-block {
-  text-align: center;
-  margin: 56px 0;
+.service-card a {
+  font-weight: 600;
+  color: #1f5fa3;
+  text-decoration: none;
 }
 
-.helper-text {
-  font-size: 0.9rem;
-  color: #5f6f86;
-  margin-top: 10px;
+.service-card a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Approach ---------- */
+
+.approach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.approach-list li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.approach-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #36b37e;
+}
+
+/* ---------- Final CTA ---------- */
+
+.section-final-cta {
+  background: #ffffff;
+  text-align: center;
 }
 
 /* ---------- Footer ---------- */
 
-.footer {
-  text-align: center;
-  padding: 32px 0;
-  font-size: 0.9rem;
-  color: #0a2540;
+.site-footer {
   background: #f5f7fa;
+  border-top: 1px solid #e6ebf0;
+  padding: 32px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 18px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #0a2540;
+  font-weight: 500;
+}
+
+.footer-meta {
+  font-size: 0.9rem;
+  color: #5f6f86;
 }
