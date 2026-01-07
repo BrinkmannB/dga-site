@@ -1,6 +1,6 @@
 /* =====================================================
    CORE STYLES — Dutch Governance Advisory
-   Focus: authority, hierarchy, calm
+   Definitief layout- en hiërarchiebesluit
    ===================================================== */
 
 /* ---------- Reset ---------- */
@@ -25,14 +25,19 @@ body {
   margin: 0 auto;
 }
 
+/* Basissectie */
 .section {
-  padding: 84px 0;
+  padding: 80px 0;
 }
 
-.section-intro {
-  max-width: 760px;
-  margin-bottom: 44px;
-  color: #3c4f65;
+/* PROBLEEM → OPLOSSING: expliciet gekoppeld */
+.section-problem {
+  padding-top: 64px;
+  padding-bottom: 12px;
+}
+
+.section-services {
+  padding-top: 28px;
 }
 
 /* ---------- Typography ---------- */
@@ -44,8 +49,8 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3.1rem;
-  letter-spacing: -0.01em;
+  font-size: 3.2rem;
+  letter-spacing: -0.015em;
 }
 
 h2 {
@@ -66,7 +71,7 @@ p {
   color: #5f6f86;
 }
 
-/* ---------- Header / Navigation ---------- */
+/* ---------- Header ---------- */
 
 .site-header {
   background: #ffffff;
@@ -77,7 +82,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 18px 0;
 }
 
 .logo a {
@@ -92,7 +97,7 @@ p {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 26px;
+  gap: 24px;
 }
 
 .main-nav a {
@@ -101,16 +106,12 @@ p {
   color: #0a2540;
 }
 
-.main-nav a:hover {
-  color: #1f5fa3;
-}
-
 /* ---------- Hero ---------- */
 
 .hero {
   background: linear-gradient(135deg, #0a2540, #0f5f63);
   color: #ffffff;
-  padding: 120px 0 110px;
+  padding: 108px 0 96px;
 }
 
 .hero-inner {
@@ -118,14 +119,13 @@ p {
 }
 
 .hero h1 {
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 760px;
-  margin-bottom: 42px;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 40px;
 }
 
 .hero-cta {
@@ -149,7 +149,6 @@ p {
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
-  transition: opacity 0.15s ease;
 }
 
 .btn-primary {
@@ -157,17 +156,9 @@ p {
   color: #ffffff;
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
 .btn-secondary {
   border: 2px solid rgba(255, 255, 255, 0.7);
   color: rgba(255, 255, 255, 0.95);
-}
-
-.btn-secondary:hover {
-  opacity: 0.9;
 }
 
 /* ---------- Services ---------- */
@@ -181,12 +172,12 @@ p {
 .service-card {
   background: #ffffff;
   border-radius: 14px;
-  padding: 36px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 34px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .service-card p {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .service-card a {
@@ -195,22 +186,17 @@ p {
   text-decoration: none;
 }
 
-.service-card a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- Approach ---------- */
+/* ---------- Lists ---------- */
 
 .approach-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-width: 720px;
 }
 
 .approach-list li {
-  margin-bottom: 14px;
-  padding hookup: 20px;
+  margin-bottom: 12px;
+  padding-left: 18px;
   position: relative;
 }
 
@@ -221,22 +207,9 @@ p {
   color: #36b37e;
 }
 
-/* ---------- Final CTA ---------- */
-
-.section-final-cta {
-  background: #ffffff;
-  text-align: center;
-}
-
-.section-final-cta p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: #f5f7fa;
   border-top: 1px solid #e6ebf0;
   padding: 36px 0;
 }
@@ -266,21 +239,244 @@ p {
   font-size: 0.9rem;
   color: #5f6f86;
 }
-/* ---------- Section spacing fine-tuning ---------- */
+/* =====================================================
+   CORE STYLES — Dutch Governance Advisory
+   Definitief layout- en hiërarchiebesluit
+   ===================================================== */
 
+/* ---------- Reset ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #f5f7fa;
+  color: #0a2540;
+  line-height: 1.65;
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Basissectie */
+.section {
+  padding: 80px 0;
+}
+
+/* PROBLEEM → OPLOSSING: expliciet gekoppeld */
 .section-problem {
-  padding-bottom: 40px; /* was effectief 84px */
+  padding-top: 64px;
+  padding-bottom: 12px;
 }
 
-.section-problem + .section {
-  padding-top: 48px; /* trekt 'Waarmee ik help' omhoog */
-}
-/* ---------- Section spacing fine-tuning ---------- */
-
-.section-problem {
-  padding-bottom: 40px; /* was effectief 84px */
+.section-services {
+  padding-top: 28px;
 }
 
-.section-problem + .section {
-  padding-top: 48px; /* trekt 'Waarmee ik help' omhoog */
+/* ---------- Typography ---------- */
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 18px 0;
+}
+
+h1 {
+  font-size: 3.2rem;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: 1.9rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 18px 0;
+  max-width: 760px;
+}
+
+.microcopy {
+  font-size: 0.95rem;
+  color: #5f6f86;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6ebf0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo a {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0a2540;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0a2540;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: linear-gradient(135deg, #0a2540, #0f5f63);
+  color: #ffffff;
+  padding: 108px 0 96px;
+}
+
+.hero-inner {
+  max-width: 920px;
+}
+
+.hero h1 {
+  margin-bottom: 28px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 40px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hero-microcopy {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #36b37e;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* ---------- Services ---------- */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 34px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.service-card p {
+  margin-bottom: 16px;
+}
+
+.service-card a {
+  font-weight: 600;
+  color: #1f5fa3;
+  text-decoration: none;
+}
+
+/* ---------- Lists ---------- */
+
+.approach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.approach-list li {
+  margin-bottom: 12px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.approach-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #36b37e;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid #e6ebf0;
+  padding: 36px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #0a2540;
+  font-weight: 500;
+}
+
+.footer-meta {
+  font-size: 0.9rem;
+  color: #5f6f86;
 }
