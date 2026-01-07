@@ -275,3 +275,12 @@ p {
 .section-problem + .section {
   padding-top: 48px; /* trekt 'Waarmee ik help' omhoog */
 }
+/* ---------- Section spacing fine-tuning ---------- */
+
+.section-problem {
+  padding-bottom: 40px; /* was effectief 84px */
+}
+
+.section-problem + .section {
+  padding-top: 48px; /* trekt 'Waarmee ik help' omhoog */
+}
