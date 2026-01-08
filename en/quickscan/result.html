@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Result — AI Act Governance QuickScan</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
@@ -39,7 +40,7 @@
 
       <p class="hero-subtitle">
         This outcome provides a first indication of how responsibility,
-        oversight and decision-making around AI are structured in practice.
+        oversight and decision-making around AI are organised in practice.
       </p>
     </div>
   </div>
@@ -47,7 +48,17 @@
 
 <section class="section-light">
   <div class="container" style="max-width:760px;">
-    <div id="signal" class="signal-box"></div>
+
+    <!-- SIGNAL -->
+    <div id="signal"
+         style="
+           padding:1.5rem;
+           border-left:4px solid #9ca3af;
+           background:#f9fafb;
+           font-weight:500;
+         ">
+    </div>
+
   </div>
 </section>
 
@@ -57,14 +68,14 @@
     <h2>What this outcome does indicate</h2>
 
     <p>
-      This QuickScan highlights how AI governance currently functions
-      within your organisation based on your responses.
-      It points out where governance appears deliberate
+      This QuickScan makes visible how AI governance currently functions
+      within your organisation, based on your responses.
+      It highlights where governance appears deliberate
       and where potential vulnerabilities or ambiguities may exist.
     </p>
 
     <p>
-      The outcome is intended as a professional orientation point —
+      The outcome is intended as a professional orientation point:
       a way to surface governance questions, not to resolve them.
     </p>
 
@@ -80,7 +91,7 @@
     <h2>Governance reflection</h2>
 
     <p>
-      If this QuickScan raises questions, that is not a weakness
+      If this QuickScan raises questions, that is not a shortcoming
       but the core purpose of the instrument.
       AI governance requires explicit choices,
       clear accountability and insight into actual practice —
@@ -101,12 +112,34 @@
       as a tool for governance reflection.
     </div>
 
+    <div style="margin-top:2.5rem;">
+      <a href="/en/quickscan/"
+         class="btn-primary"
+         onclick="resetQuickScan()">
+        Start a new QuickScan
+      </a>
+
+      <p style="font-size:0.8rem; color:#6b7280; margin-top:0.5rem;">
+        Previous answers will be cleared.
+      </p>
+    </div>
+
   </div>
 </section>
 
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — AI governance for the public sector</p>
+</footer>
+
 <script>
 (function () {
-  const answers = Object.values(localStorage);
+  const answers = [];
+
+  for (let i = 1; i <= 10; i++) {
+    const value = localStorage.getItem("step" + i);
+    if (value) answers.push(value);
+  }
+
   const noCount = answers.filter(a => a === "no").length;
 
   let signalText;
@@ -114,8 +147,8 @@
   if (noCount >= 4) {
     signalText = `
       <strong>Governance signal</strong><br>
-      The responses suggest potential vulnerabilities
-      in oversight, escalation and decision-making around AI.
+      The responses suggest potential weaknesses in oversight,
+      escalation and decision-making around AI.
     `;
   } else if (noCount >= 2) {
     signalText = `
@@ -133,12 +166,14 @@
 
   document.getElementById("signal").innerHTML = signalText;
 })();
-</script>
 
-<footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — AI governance for the public sector</p>
-</footer>
+function resetQuickScan() {
+  for (let i = 1; i <= 10; i++) {
+    localStorage.removeItem("step" + i);
+  }
+  localStorage.removeItem("ai_act_category");
+}
+</script>
 
 </body>
 </html>
-
