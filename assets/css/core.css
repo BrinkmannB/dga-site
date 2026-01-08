@@ -1,9 +1,6 @@
 /* =====================================================
-   CORE STYLES — Dutch Governance Advisory
-   Definitief layout- en hiërarchiebesluit
+   Core styles — Dutch Governance Advisory
    ===================================================== */
-
-/* ---------- Reset ---------- */
 
 * {
   box-sizing: border-box;
@@ -14,96 +11,55 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   background: #f5f7fa;
   color: #0a2540;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* ---------- Layout ---------- */
 
 .container {
   max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
 }
 
-/* Basissectie */
-.section {
-  padding: 80px 0;
+.section-light {
+  padding: 56px 0;
 }
 
-/* PROBLEEM → OPLOSSING: expliciet gekoppeld */
-.section-problem {
-  padding-top: 64px;
-  padding-bottom: 12px;
-}
+/* ---------- Navigation ---------- */
 
-.section-services {
-  padding-top: 28px;
-}
-
-/* ---------- Typography ---------- */
-
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 18px 0;
-}
-
-h1 {
-  font-size: 3.2rem;
-  letter-spacing: -0.015em;
-}
-
-h2 {
-  font-size: 1.9rem;
-}
-
-h3 {
-  font-size: 1.15rem;
-}
-
-p {
-  margin: 0 0 18px 0;
-  max-width: 760px;
-}
-
-.microcopy {
-  font-size: 0.95rem;
-  color: #5f6f86;
-}
-
-/* ---------- Header ---------- */
-
-.site-header {
+.nav {
   background: #ffffff;
   border-bottom: 1px solid #e6ebf0;
 }
 
-.header-inner {
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
 }
 
-.logo a {
+.logo {
   font-weight: 700;
   font-size: 1.1rem;
   color: #0a2540;
   text-decoration: none;
 }
 
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 24px;
-}
-
 .main-nav a {
-  text-decoration: none;
+  margin-left: 22px;
   font-weight: 600;
   color: #0a2540;
+  text-decoration: none;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #1f5fa3;
 }
 
 /* ---------- Hero ---------- */
@@ -111,372 +67,100 @@ p {
 .hero {
   background: linear-gradient(135deg, #0a2540, #0f5f63);
   color: #ffffff;
-  padding: 108px 0 96px;
+  padding: 88px 0;
+}
+
+.hero--compact {
+  padding: 64px 0;
 }
 
 .hero-inner {
-  max-width: 920px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.hero-content {
+  max-width: 720px;
 }
 
 .hero h1 {
-  margin-bottom: 28px;
+  font-size: 2.6rem;
+  margin-bottom: 16px;
 }
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 40px;
+  opacity: 0.95;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.hero-microcopy {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
+.hero-buttons {
+  margin-top: 28px;
 }
 
 /* ---------- Buttons ---------- */
 
-.btn {
-  display: inline-block;
-  padding: 16px 32px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
 .btn-primary {
   background: #36b37e;
   color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.btn-secondary {
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  color: rgba(255, 255, 255, 0.95);
+.btn-primary:hover {
+  opacity: 0.9;
 }
 
-/* ---------- Services ---------- */
+/* ---------- Cards / Services ---------- */
 
-.service-grid {
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
+  gap: 28px;
 }
 
-.service-card {
+.card {
   background: #ffffff;
   border-radius: 14px;
-  padding: 34px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: 32px;
+  border: 1px solid #e6ebf0;
 }
 
-.service-card p {
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.card p {
   margin-bottom: 16px;
 }
 
-.service-card a {
+.text-link {
   font-weight: 600;
   color: #1f5fa3;
   text-decoration: none;
 }
 
-/* ---------- Lists ---------- */
-
-.approach-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.text-link:hover {
+  text-decoration: underline;
 }
 
-.approach-list li {
-  margin-bottom: 12px;
-  padding-left: 18px;
-  position: relative;
-}
+/* ---------- CTA ---------- */
 
-.approach-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #36b37e;
+.cta-block {
+  text-align: center;
+  max-width: 640px;
 }
 
 /* ---------- Footer ---------- */
 
-.site-footer {
-  border-top: 1px solid #e6ebf0;
-  padding: 36px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.footer-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.footer-nav a {
-  text-decoration: none;
-  color: #0a2540;
-  font-weight: 500;
-}
-
-.footer-meta {
+.footer {
+  text-align: center;
+  padding: 32px 0;
   font-size: 0.9rem;
-  color: #5f6f86;
-}
-/* =====================================================
-   CORE STYLES — Dutch Governance Advisory
-   Definitief layout- en hiërarchiebesluit
-   ===================================================== */
-
-/* ---------- Reset ---------- */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #0a2540;
   background: #f5f7fa;
-  color: #0a2540;
-  line-height: 1.65;
-}
-
-/* ---------- Layout ---------- */
-
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-/* Basissectie */
-.section {
-  padding: 80px 0;
-}
-
-/* PROBLEEM → OPLOSSING: expliciet gekoppeld */
-.section-problem {
-  padding-top: 64px;
-  padding-bottom: 12px;
-}
-
-.section-services {
-  padding-top: 28px;
-}
-
-/* ---------- Typography ---------- */
-
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 18px 0;
-}
-
-h1 {
-  font-size: 3.2rem;
-  letter-spacing: -0.015em;
-}
-
-h2 {
-  font-size: 1.9rem;
-}
-
-h3 {
-  font-size: 1.15rem;
-}
-
-p {
-  margin: 0 0 18px 0;
-  max-width: 760px;
-}
-
-.microcopy {
-  font-size: 0.95rem;
-  color: #5f6f86;
-}
-
-/* ---------- Header ---------- */
-
-.site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e6ebf0;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-}
-
-.logo a {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #0a2540;
-  text-decoration: none;
-}
-
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 24px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #0a2540;
-}
-
-/* ---------- Hero ---------- */
-
-.hero {
-  background: linear-gradient(135deg, #0a2540, #0f5f63);
-  color: #ffffff;
-  padding: 108px 0 96px;
-}
-
-.hero-inner {
-  max-width: 920px;
-}
-
-.hero h1 {
-  margin-bottom: 28px;
-}
-
-.hero-subtitle {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 40px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.hero-microcopy {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-/* ---------- Buttons ---------- */
-
-.btn {
-  display: inline-block;
-  padding: 16px 32px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background: #36b37e;
-  color: #ffffff;
-}
-
-.btn-secondary {
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-/* ---------- Services ---------- */
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-}
-
-.service-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 34px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.service-card p {
-  margin-bottom: 16px;
-}
-
-.service-card a {
-  font-weight: 600;
-  color: #1f5fa3;
-  text-decoration: none;
-}
-
-/* ---------- Lists ---------- */
-
-.approach-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.approach-list li {
-  margin-bottom: 12px;
-  padding-left: 18px;
-  position: relative;
-}
-
-.approach-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #36b37e;
-}
-
-/* ---------- Footer ---------- */
-
-.site-footer {
-  border-top: 1px solid #e6ebf0;
-  padding: 36px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.footer-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.footer-nav a {
-  text-decoration: none;
-  color: #0a2540;
-  font-weight: 500;
-}
-
-.footer-meta {
-  font-size: 0.9rem;
-  color: #5f6f86;
 }
