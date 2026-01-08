@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result — AI Act Governance QuickScan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Indicative governance signal based on the AI Act Governance QuickScan. No legal judgment or formal classification.">
+
+  <link rel="stylesheet" href="/assets/css/core.css">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/en/" class="logo">DGA</a>
+    <nav class="main-nav">
+      <a href="/en/services/">Services</a>
+      <a href="/en/knowledge/">Knowledge</a>
+      <a href="/en/quickscan/" class="active">QuickScan</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/en/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero hero--compact">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span style="font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85;">
+        AI Act • Governance QuickScan
+      </span>
+
+      <h1 style="margin-top:1rem;">
+        Indicative governance signal
+      </h1>
+
+      <p class="hero-subtitle">
+        This outcome provides a first indication of how responsibility,
+        oversight and decision-making around AI are structured in practice.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container" style="max-width:760px;">
+    <div id="signal" class="signal-box"></div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container" style="max-width:760px;">
+
+    <h2>What this outcome does indicate</h2>
+
+    <p>
+      This QuickScan highlights how AI governance currently functions
+      within your organisation based on your responses.
+      It points out where governance appears deliberate
+      and where potential vulnerabilities or ambiguities may exist.
+    </p>
+
+    <p>
+      The outcome is intended as a professional orientation point —
+      a way to surface governance questions, not to resolve them.
+    </p>
+
+    <h2>What this outcome does not indicate</h2>
+
+    <ul>
+      <li>✕ No legal judgment or binding qualification</li>
+      <li>✕ No formal AI Act risk classification</li>
+      <li>✕ No compliance audit or assessment</li>
+      <li>✕ No substitute for legal or technical analysis</li>
+    </ul>
+
+    <h2>Governance reflection</h2>
+
+    <p>
+      If this QuickScan raises questions, that is not a weakness
+      but the core purpose of the instrument.
+      AI governance requires explicit choices,
+      clear accountability and insight into actual practice —
+      not merely policies on paper.
+    </p>
+
+    <p>
+      The relevant follow-up question is therefore not:
+      <em>“Is this right or wrong?”</em>,
+      but:
+      <em>“Is this governable, explainable and sustainable?”</em>
+    </p>
+
+    <div class="contact-disclaimer" style="margin-top:2rem;">
+      <strong>Important:</strong>
+      No rights can be derived from this outcome.
+      The QuickScan is indicative and intended
+      as a tool for governance reflection.
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  const answers = Object.values(localStorage);
+  const noCount = answers.filter(a => a === "no").length;
+
+  let signalText;
+
+  if (noCount >= 4) {
+    signalText = `
+      <strong>Governance signal</strong><br>
+      The responses suggest potential vulnerabilities
+      in oversight, escalation and decision-making around AI.
+    `;
+  } else if (noCount >= 2) {
+    signalText = `
+      <strong>Governance signal</strong><br>
+      AI governance appears partially structured,
+      but not consistently anchored at governance level.
+    `;
+  } else {
+    signalText = `
+      <strong>Governance signal</strong><br>
+      The responses indicate a relatively conscious approach
+      to AI governance, with attention points in execution and oversight.
+    `;
+  }
+
+  document.getElementById("signal").innerHTML = signalText;
+})();
+</script>
+
+<footer class="footer">
+  <p>© 2025 Dutch Governance Advisory — AI governance for the public sector</p>
+</footer>
+
+</body>
+</html>
 
