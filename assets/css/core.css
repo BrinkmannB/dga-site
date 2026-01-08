@@ -164,3 +164,75 @@ body {
   color: #0a2540;
   background: #f5f7fa;
 }
+/* =====================================================
+   Contact page layout & form
+   ===================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1000px;
+}
+
+.contact-intro p {
+  margin-bottom: 1rem;
+}
+
+.contact-meta {
+  font-size: 0.9rem;
+  color: #5f6f86;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #e6ebf0;
+}
+
+.contact-card h2 {
+  margin-top: 0;
+}
+
+.contact-form .form-field {
+  margin-bottom: 18px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid #d8e0e8;
+  background: #f9fbfd;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #36b37e;
+  background: #ffffff;
+}
+
+.contact-disclaimer {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
