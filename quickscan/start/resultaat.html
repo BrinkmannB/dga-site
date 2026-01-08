@@ -2,11 +2,11 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Resultaat — AI Act QuickScan | Dutch Governance Advisory</title>
-
+  <title>Resultaat — AI Act Bestuurlijke QuickScan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="description"
-        content="Indicatieve uitkomst van de AI Act QuickScan. Gericht op bestuurlijke volwassenheid, niet op juridische classificatie.">
+        content="Indicatieve bestuurlijke duiding op basis van de AI Act QuickScan. Geen juridisch oordeel of formele classificatie.">
 
   <link rel="stylesheet" href="/assets/css/core.css">
 </head>
@@ -27,26 +27,38 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero hero--compact">
   <div class="hero-inner">
     <div class="hero-content">
-      <span style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8;">
+      <span style="font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85;">
         AI Act • Bestuurlijke QuickScan
       </span>
 
-      <h1 style="margin-top: 1rem;">
+      <h1 style="margin-top:1rem;">
         Indicatieve bestuurlijke duiding
       </h1>
 
       <p class="hero-subtitle">
-        De onderstaande uitkomst geeft een eerste beeld van hoe
-        bestuurlijke verantwoordelijkheid, toezicht en handelingsruimte
-        rond AI in de praktijk zijn ingericht.
+        Deze uitkomst geeft een eerste beeld van hoe bestuurlijke verantwoordelijkheid,
+        toezicht en handelingsruimte rond AI in de praktijk zijn ingericht.
       </p>
     </div>
   </div>
 </section>
 
+<!-- SIGNAAL -->
+<section class="section-light">
+  <div class="container" style="max-width: 760px;">
+
+    <div id="signal" class="signal-box">
+      <!-- Signaaltekst wordt hier geplaatst -->
+    </div>
+
+  </div>
+</section>
+
+<!-- TOELICHTING -->
 <section class="section-light">
   <div class="container" style="max-width: 760px;">
 
@@ -54,14 +66,14 @@
 
     <p>
       Deze QuickScan maakt zichtbaar hoe AI-governance binnen uw organisatie
-      functioneert op basis van uw antwoorden. Het resultaat laat zien
+      functioneert op basis van uw antwoorden. De uitkomst laat zien
       <strong>waar bestuurlijke scherpte aanwezig is</strong> en
       <strong>waar mogelijke kwetsbaarheden of onduidelijkheden zitten</strong>.
     </p>
 
     <p>
       De uitkomst is bedoeld als professioneel oriëntatiepunt:
-      een hulpmiddel om bestuurlijke vragen expliciet te maken,
+      een hulpmiddel om bestuurlijke vragen expliciet te maken —
       niet om ze direct te beantwoorden.
     </p>
 
@@ -70,17 +82,18 @@
     <ul>
       <li>✕ Geen juridisch oordeel of bindende kwalificatie</li>
       <li>✕ Geen formele AI Act-risicoclassificatie</li>
-      <li>✕ Geen compliance-check of toetsing</li>
+      <li>✕ Geen compliance-check of audit</li>
       <li>✕ Geen vervanging van juridisch of technisch onderzoek</li>
     </ul>
 
-    <h2>Bestuurlijke duiding</h2>
+    <h2>Bestuurlijke reflectie</h2>
 
     <p>
       Wanneer deze QuickScan vragen oproept, is dat geen tekortkoming
-      maar juist de kern van het instrument. AI-governance vraagt
-      om expliciete keuzes, duidelijke verantwoordelijkheden en
-      zicht op feitelijke werking — niet alleen om beleid op papier.
+      maar juist de kern van het instrument.
+      AI-governance vraagt om expliciete keuzes,
+      duidelijke verantwoordelijkheden en zicht op feitelijke werking —
+      niet alleen om beleid op papier.
     </p>
 
     <p>
@@ -90,32 +103,49 @@
       <em>“Is dit bestuurlijk doordacht, uitlegbaar en houdbaar?”</em>
     </p>
 
-    <div style="
-      margin-top: 2.5rem;
-      padding: 1.5rem;
-      border-left: 4px solid #9ca3af;
-      background-color: #f9fafb;
-    ">
-      <p style="margin: 0; font-size: 0.95rem;">
-        <strong>Belangrijk:</strong>
-        Aan deze uitkomst kunnen geen rechten worden ontleend.
-        De QuickScan is indicatief en bedoeld als hulpmiddel
-        voor bestuurlijke reflectie.
-      </p>
+    <div class="contact-disclaimer" style="margin-top:2rem;">
+      <strong>Belangrijk:</strong>
+      Aan deze uitkomst kunnen geen rechten worden ontleend.
+      De QuickScan is indicatief en bedoeld als hulpmiddel
+      voor bestuurlijke reflectie.
     </div>
-
-    <div style="margin-top: 2.5rem;">
-      <a href="/contact/" class="btn-primary">
-        Verkennend gesprek plannen
-      </a>
-    </div>
-
-    <p style="margin-top: 1rem; font-size: 0.85rem; color: #6b7280;">
-      Verkennend, inhoudelijk en zonder verplicht vervolg.
-    </p>
 
   </div>
 </section>
+
+<script>
+(function () {
+  const answers = Object.values(localStorage);
+  const noCount = answers.filter(a => a === "no").length;
+
+  let signalText;
+
+  if (noCount >= 4) {
+    signalText = `
+      <strong>Bestuurlijk signaal</strong>
+      De antwoorden wijzen op mogelijke kwetsbaarheden in toezicht,
+      escalatie en bestuurlijke handelingsruimte rond AI in de praktijk.
+    `;
+  } else if (noCount >= 2) {
+    signalText = `
+      <strong>Bestuurlijk signaal</strong>
+      Er zijn aanwijzingen dat AI-governance deels is ingericht,
+      maar niet overal consistent bestuurlijk is geborgd.
+    `;
+  } else {
+    signalText = `
+      <strong>Bestuurlijk signaal</strong>
+      De antwoorden duiden op een relatief bewuste inrichting van
+      AI-governance, met aandachtspunten in uitvoerbaarheid en toezicht.
+    `;
+  }
+
+  const signalEl = document.getElementById("signal");
+  if (signalEl) {
+    signalEl.innerHTML = signalText;
+  }
+})();
+</script>
 
 <footer class="footer">
   <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein</p>
