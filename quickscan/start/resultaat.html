@@ -26,9 +26,9 @@
 
     <h2>Wat deze uitkomst wél betekent</h2>
     <p>
-      De QuickScan maakt zichtbaar waar bestuurlijke scherpte aanwezig is
+      Deze QuickScan maakt zichtbaar waar bestuurlijke scherpte aanwezig is
       en waar mogelijke kwetsbaarheden of onduidelijkheden zitten.
-      Het is een hulpmiddel voor reflectie — geen eindconclusie.
+      Het resultaat is bedoeld als professioneel reflectiepunt — niet als eindconclusie.
     </p>
 
     <h2>Wat deze uitkomst níet betekent</h2>
@@ -42,10 +42,9 @@
     <hr style="margin:2.5rem 0;">
 
     <h2>Verdiepende QuickScan (optioneel)</h2>
-
     <p>
-      Wilt u deze indicatie laten uitwerken in een beknopte,
-      schriftelijke rapportage met aandachtspunten en vervolgstappen?
+      Wilt u deze indicatie laten uitwerken in een korte,
+      schriftelijke rapportage met aandachtspunten en mogelijke vervolgstappen?
     </p>
 
     <div class="cta-row">
@@ -64,15 +63,17 @@
       Indicatief • geen juridisch advies • levering na betaling
     </p>
 
-    <a href="/quickscan/" class="text-link">↺ QuickScan opnieuw starten</a>
+    <a href="/quickscan/" class="text-link">
+      ↺ QuickScan opnieuw starten
+    </a>
 
   </div>
 </section>
 
 <script>
 (function () {
-  const answers = Object.values(localStorage);
-  const noCount = answers.filter(v => v === "no").length;
+  const values = Object.values(localStorage);
+  const noCount = values.filter(v => v === "no").length;
 
   let text;
   if (noCount >= 4) {
