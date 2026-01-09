@@ -26,9 +26,9 @@
 
     <h2>What this outcome does indicate</h2>
     <p>
-      This QuickScan highlights where governance clarity is present
-      and where potential vulnerabilities or ambiguities exist.
-      It is a tool for reflection — not a final conclusion.
+      This QuickScan highlights where governance appears deliberate
+      and where potential vulnerabilities or ambiguities may exist.
+      It is intended as a professional reflection point — not a final conclusion.
     </p>
 
     <h2>What this outcome does not indicate</h2>
@@ -42,10 +42,9 @@
     <hr style="margin:2.5rem 0;">
 
     <h2>In-depth QuickScan (optional)</h2>
-
     <p>
-      Would you like this indicative outcome to be developed into a concise,
-      written report outlining governance attention points and next steps?
+      Would you like this indicative outcome translated into a short,
+      written report with governance attention points and possible next steps?
     </p>
 
     <div class="cta-row">
@@ -64,23 +63,25 @@
       Indicative • no legal advice • delivered after payment
     </p>
 
-    <a href="/en/quickscan/" class="text-link">↺ Restart the QuickScan</a>
+    <a href="/en/quickscan/" class="text-link">
+      ↺ Restart the QuickScan
+    </a>
 
   </div>
 </section>
 
 <script>
 (function () {
-  const answers = Object.values(localStorage);
-  const noCount = answers.filter(v => v === "no").length;
+  const values = Object.values(localStorage);
+  const noCount = values.filter(v => v === "no").length;
 
   let text;
   if (noCount >= 4) {
-    text = "<strong>Signal</strong><br>There are clear attention points regarding oversight, escalation and governance anchoring.";
+    text = "<strong>Signal</strong><br>There are clear attention points in oversight, escalation and governance anchoring.";
   } else if (noCount >= 2) {
     text = "<strong>Signal</strong><br>AI governance appears partially structured, but not yet consistently anchored at governance level.";
   } else {
-    text = "<strong>Signal</strong><br>The responses indicate a relatively conscious approach to AI governance.";
+    text = "<strong>Signal</strong><br>The responses suggest a relatively conscious approach to AI governance.";
   }
 
   document.getElementById("signal").innerHTML = text;
