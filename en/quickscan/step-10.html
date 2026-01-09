@@ -6,15 +6,19 @@
 
   <title>Step 10 — Type of AI system</title>
 
-  <!-- Wizard styling -->
-  <link rel="stylesheet" href="/en/quickscan/start/wizard.css">
+  <!-- Wizard styling (consistent with steps 1–9) -->
+  <link rel="stylesheet" href="/quickscan/start/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
+      // Store functional type of AI system
       localStorage.setItem(step, systemType);
+
+      // Store indicative AI Act category (non-binding)
       localStorage.setItem("ai_act_category", indicativeCategory);
 
-      window.location.href = "/en/quickscan/result.html";
+      // Proceed to final result page (EN)
+      window.location.href = "/en/quickscan/start/result.html";
     }
   </script>
 </head>
@@ -30,53 +34,69 @@
     <p>
       Select the option that best reflects the AI system
       <strong>as it is actually used in practice</strong>.
-      This step provides a <strong>final, indicative governance signal</strong>
-      and does not replace a formal legal qualification.
+      <br><br>
+      This final step provides an <strong>indicative governance signal</strong>
+      regarding potential obligations under the EU AI Act.
+      It does <strong>not</strong> constitute a legal qualification.
     </p>
 
     <div
       class="option"
-      onclick="saveAnswer('step10', 'gpai', 'enhanced_obligations')"
+      onclick="saveAnswer(
+        'step10',
+        'gpai',
+        'increased_obligations'
+      )"
     >
       <strong>Foundation model / generative AI system (GPAI)</strong><br>
       <span class="option-sub">
-        General-purpose AI that can be deployed or adapted across
-        multiple use cases and may be subject to additional
-        transparency and governance obligations under the AI Act.
+        General-purpose AI that can be deployed or adapted across multiple use cases.
+        Such systems may be subject to additional transparency and governance
+        obligations under the AI Act.
       </span>
     </div>
 
     <div
       class="option"
-      onclick="saveAnswer('step10', 'application_specific_ai', 'high_risk')"
+      onclick="saveAnswer(
+        'step10',
+        'application_specific_ai',
+        'high_risk'
+      )"
     >
       <strong>Application-specific AI system</strong><br>
       <span class="option-sub">
-        AI used in a specific context with potential direct impact
-        on decisions, rights or access to services, possibly subject
-        to high-risk obligations under the AI Act.
+        AI used within a specific context that may directly affect decisions,
+        rights or access to services, and may therefore fall within
+        high-risk AI Act obligations.
       </span>
     </div>
 
     <div
       class="option"
-      onclick="saveAnswer('step10', 'low_risk_ai', 'low_risk')"
+      onclick="saveAnswer(
+        'step10',
+        'low_risk_ai',
+        'low_risk'
+      )"
     >
       <strong>Simple or low-risk AI system</strong><br>
       <span class="option-sub">
-        Supportive or informational use of AI with limited impact
+        Supportive or informational use of AI with limited impact,
         and no clear indication of increased AI Act obligations.
       </span>
     </div>
 
-    <p class="fine-print">
-      This selection affects only the indicative governance signal
-      and does not constitute a legal or binding classification.
-    </p>
-
     <div class="nav-row">
-      <a class="button-secondary" href="step-9.html">← Back</a>
+      <a class="button-secondary" href="step-9.html">
+        ← Back to previous step
+      </a>
     </div>
+
+    <p class="fine-print">
+      This classification is indicative only and does not replace
+      legal interpretation or formal AI Act assessment.
+    </p>
 
   </div>
 
