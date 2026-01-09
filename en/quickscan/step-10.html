@@ -2,96 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QuickScan — Step 10 of 10 | Dutch Governance Advisory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/assets/css/core.css">
+  <title>Step 10 — Type of AI system</title>
+
+  <!-- Wizard styling -->
+  <link rel="stylesheet" href="/en/quickscan/start/wizard.css">
 
   <script>
     function saveAnswer(step, systemType, indicativeCategory) {
       localStorage.setItem(step, systemType);
       localStorage.setItem("ai_act_category", indicativeCategory);
+
       window.location.href = "/en/quickscan/result.html";
     }
   </script>
 </head>
 
-<body>
+<body class="fade-in">
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/en/" class="logo">DGA</a>
-    <nav class="main-nav">
-      <a href="/en/services/">Services</a>
-      <a href="/en/knowledge/">Knowledge</a>
-      <a href="/en/quickscan/" class="active">QuickScan</a>
-      <a href="/en/contact/">Contact</a>
-      <a href="/">NL</a>
-    </nav>
-  </div>
-</header>
+  <div class="wizard-container">
 
-<section class="hero hero--compact">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <span style="font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85;">
-        AI Act • Governance QuickScan
-      </span>
+    <div class="step-counter">Step 10 of 10</div>
 
-      <h1 style="margin-top:1rem;">
-        Step 10 of 10 — Type of AI system
-      </h1>
+    <h2>What type of AI system is being used?</h2>
 
-      <p class="hero-subtitle">
-        Select the option that best reflects the AI system
-        <strong>as it is actually used in practice</strong>.
-        This provides a final, indicative governance signal.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section-light">
-  <div class="container" style="max-width:760px;">
-
-    <div class="card option" onclick="saveAnswer('step10','gpai','enhanced_obligations')">
-      <h3>Foundation model / generative AI system (GPAI)</h3>
-      <p>
-        General-purpose AI that can be deployed or adapted across multiple use cases,
-        subject to additional transparency and governance obligations.
-      </p>
-    </div>
-
-    <div class="card option" onclick="saveAnswer('step10','application_specific_ai','high_risk')">
-      <h3>Application-specific AI system</h3>
-      <p>
-        AI with direct impact on decisions, rights or access to services,
-        potentially subject to high-risk obligations under the AI Act.
-      </p>
-    </div>
-
-    <div class="card option" onclick="saveAnswer('step10','low_risk_ai','low_risk')">
-      <h3>Simple or low-risk AI system</h3>
-      <p>
-        Supportive or informational use with limited impact
-        and no clear indication of increased obligations.
-      </p>
-    </div>
-
-    <p style="margin-top:1.5rem; font-size:0.8rem; color:#6b7280;">
-      This selection is indicative and does not constitute a legal qualification.
+    <p>
+      Select the option that best reflects the AI system
+      <strong>as it is actually used in practice</strong>.
+      This step provides a <strong>final, indicative governance signal</strong>
+      and does not replace a formal legal qualification.
     </p>
 
-    <div style="margin-top:2rem;">
-      <a href="/en/quickscan/step-9.html" class="text-link">← Back to Step 9</a>
+    <div
+      class="option"
+      onclick="saveAnswer('step10', 'gpai', 'enhanced_obligations')"
+    >
+      <strong>Foundation model / generative AI system (GPAI)</strong><br>
+      <span class="option-sub">
+        General-purpose AI that can be deployed or adapted across
+        multiple use cases and may be subject to additional
+        transparency and governance obligations under the AI Act.
+      </span>
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10', 'application_specific_ai', 'high_risk')"
+    >
+      <strong>Application-specific AI system</strong><br>
+      <span class="option-sub">
+        AI used in a specific context with potential direct impact
+        on decisions, rights or access to services, possibly subject
+        to high-risk obligations under the AI Act.
+      </span>
+    </div>
+
+    <div
+      class="option"
+      onclick="saveAnswer('step10', 'low_risk_ai', 'low_risk')"
+    >
+      <strong>Simple or low-risk AI system</strong><br>
+      <span class="option-sub">
+        Supportive or informational use of AI with limited impact
+        and no clear indication of increased AI Act obligations.
+      </span>
+    </div>
+
+    <p class="fine-print">
+      This selection affects only the indicative governance signal
+      and does not constitute a legal or binding classification.
+    </p>
+
+    <div class="nav-row">
+      <a class="button-secondary" href="step-9.html">← Back</a>
     </div>
 
   </div>
-</section>
-
-<footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — Independent AI Governance for the Public Sector</p>
-</footer>
 
 </body>
 </html>
