@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <title>Result — AI Act Governance QuickScan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description"
-        content="Indicative governance outcome based on the AI Act Governance QuickScan. No legal advice.">
-
   <link rel="stylesheet" href="/assets/css/core.css">
 </head>
 
@@ -18,7 +14,7 @@
     <h1>Indicative governance signal</h1>
     <p class="hero-subtitle">
       This outcome provides a first indication of how AI governance
-      is structured in practice.
+      is organised in practice.
     </p>
   </div>
 </section>
@@ -26,46 +22,70 @@
 <section class="section-light">
   <div class="container" style="max-width:760px;">
 
-    <!-- SIGNAL -->
     <div id="signal" class="card"></div>
 
     <h2>What this outcome does indicate</h2>
     <p>
-      This QuickScan highlights where governance sharpness is present
-      and where potential vulnerabilities or ambiguities may exist.
-      It is intended as a professional reflection tool — not a final conclusion.
+      This QuickScan highlights where governance clarity is present
+      and where potential vulnerabilities or ambiguities exist.
+      It is a tool for reflection — not a final conclusion.
     </p>
 
     <h2>What this outcome does not indicate</h2>
     <ul>
-      <li>✕ No legal judgment or binding qualification</li>
-      <li>✕ No formal AI Act risk classification</li>
-      <li>✕ No compliance audit or assessment</li>
+      <li>✕ No legal judgment</li>
+      <li>✕ No formal AI Act classification</li>
+      <li>✕ No compliance audit</li>
       <li>✕ No substitute for legal or technical analysis</li>
     </ul>
 
-    <!-- CTA -->
-    <div class="cta-row" style="margin-top:2rem;">
-      <div class="price">€29 incl. VAT</div>
+    <hr style="margin:2.5rem 0;">
 
+    <h2>In-depth QuickScan (optional)</h2>
+
+    <p>
+      Would you like this indicative outcome to be developed into a concise,
+      written report outlining governance attention points and next steps?
+    </p>
+
+    <div class="cta-row">
+      <div><strong>€29 incl. VAT</strong></div>
       <a
-        href="https://buy.stripe.com/aFa9AVgBkbZ4cVU7rDa0w1"
+        href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01"
         class="btn-primary"
         target="_blank"
         rel="noopener"
       >
-        Request in-depth QuickScan report
+        Request in-depth QuickScan
       </a>
     </div>
 
-    <p class="fine-print">
+    <p class="contact-disclaimer">
       Indicative • no legal advice • delivered after payment
     </p>
 
-    <!-- RESET -->
-    <p style="margin-top:2rem;">
-      <a href="#" onclick="resetScan()">↺ Restart the QuickScan</a>
-    </p>
+    <a href="/en/quickscan/" class="text-link">↺ Restart the QuickScan</a>
 
   </div>
-</secti
+</section>
+
+<script>
+(function () {
+  const answers = Object.values(localStorage);
+  const noCount = answers.filter(v => v === "no").length;
+
+  let text;
+  if (noCount >= 4) {
+    text = "<strong>Signal</strong><br>There are clear attention points regarding oversight, escalation and governance anchoring.";
+  } else if (noCount >= 2) {
+    text = "<strong>Signal</strong><br>AI governance appears partially structured, but not yet consistently anchored at governance level.";
+  } else {
+    text = "<strong>Signal</strong><br>The responses indicate a relatively conscious approach to AI governance.";
+  }
+
+  document.getElementById("signal").innerHTML = text;
+})();
+</script>
+
+</body>
+</html>
