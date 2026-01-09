@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-governance verkenning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+  =====================================================
+  AI-GOVERNANCE INTAKE — INTERNE LOGICA (NIET ZICHTBAAR)
+  -----------------------------------------------------
+  Score-indicatie:
+  - 0–4   = Groen  (oriënterend)
+  - 5–7   = Oranje (relevant, verkennend)
+  - 8+    = Rood   (hoog relevant)
+
+  focus_thema mapping (vraag 6):
+  - Inzicht in governance-risico’s → "governance-risico’s"
+  - Bestuurlijk gesprek            → "het bestuurlijk gesprek"
+  - Voorbereiding op toezicht      → "toezicht en regelgeving"
+  - Interne afstemming             → "afstemming tussen bestuur, beleid en IT"
+  - Oriëntatie                     → "" (leeg → fallback-mail)
+  =====================================================
+  -->
+
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; line-height: 1.6; }
+    h1 { font-size: 1.8rem; }
+    fieldset { border: none; margin-bottom: 24px; }
+    label { display: block; margin: 6px 0; }
+    input, textarea, select, button {
+      width: 100%; padding: 8px; margin-top: 6px; font-size: 1rem;
+    }
+    button { margin-top: 20px; }
+    .hint { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+
+<body>
+
+<h1>Bekijk of dit relevant is voor uw organisatie</h1>
+<p class="hint">
+Deze korte verkenning helpt bepalen of een AI-governance simulatie waardevol kan zijn.
+Invullen duurt ±2 minuten.
+</p>
+
+<form name="ai-governance-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="ai-governance-intake">
+
+  <!-- honeypot -->
+  <p style="display:none;">
+    <label>Niet invullen: <input name="bot-field"></label>
+  </p>
+
+  <fieldset>
+    <legend>1. In welke context werkt u?</legend>
+    <label><input type="checkbox" name="context[]" value="Bestuur"> Bestuur / directie</label>
+    <label><input type="checkbox" name="context[]" value="Beleid"> Beleid / strategie</label>
+    <label><input type="checkbox" name="context[]" value="Operatie"> Uitvoering / operatie</label>
+    <label><input type="checkbox" name="context[]" value="IT"> IT / data</label>
+    <label><input type="checkbox" name="context[]" value="Juridisch"> Juridisch / compliance</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>2. Wordt AI gebruikt in besluitvorming of uitvoering?</legend>
+    <select name="ai_gebruik">
+      <option value="">— kies —</option>
+      <option value="operationeel">Ja, operationeel</option>
+      <option value="pilot">Ja, pilots / experimenten</option>
+      <option value="gepland">Gepland</option>
+      <option value="onzeker">Onzeker / uitbesteed</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>3. Hoe duidelijk is het eigenaarschap?</legend>
+    <select name="eigenaarschap">
+      <option value="">— kies —</option>
+      <option value="onvoldoende">Onvoldoende duidelijk</option>
+      <option value="gedeeltelijk">Gedeeltelijk duidelijk</option>
+      <option value="onbekend">Dat weet ik niet</option>
+      <option value="duidelijk">Volledig belegd</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>4. Wat gebeurt er bij een betwist AI-besluit?</legend>
+    <select name="betwisting">
+      <option value="">— kies —</option>
+      <option value="niet_scherp">Nog niet scherp geregeld</option>
+      <option value="adhoc">Ad hoc opgelost</option>
+      <option value="geen_idee">Geen idee</option>
+      <option value="proces">Vast proces</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>5. Welke spanningen herkent u? (max. 2)</legend>
+    <label><input type="checkbox" name="spanningen[]" value="innovatie"> Innovatie vs. rechtmatigheid</label>
+    <label><input type="checkbox" name="spanningen[]" value="efficiëntie"> Efficiëntie vs. uitlegbaarheid</label>
+    <label><input type="checkbox" name="spanningen[]" value="mens"> Automatisering vs. menselijke controle</label>
+    <label><input type="checkbox" name="spanningen[]" value="beleid-uitvoering"> Beleid vs. uitvoering</label>
+    <label><input type="checkbox" name="spanningen[]" value="it-bestuur"> IT vs. bestuur</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>6. Wat wilt u met deze verkenning bereiken?</legend>
+    <select name="doel" id="doel">
+      <option value="">— kies —</option>
+      <option value="risico">Inzicht in governance-risico’s</option>
+      <option value="bestuur">Bestuurlijk gesprek op gang brengen</option>
+      <option value="toezicht">Voorbereiding op toezicht / regelgeving</option>
+      <option value="afstemming">Interne afstemming verbeteren</option>
+      <option value="orientatie">Oriëntatie</option>
+    </select>
+  </fieldset>
+
+  <!-- Verborgen veld voor e-mail-personalisatie -->
+  <input type="hidden" name="focus_thema" id="focus_thema">
+
+  <fieldset>
+    <legend>7. Praktisch</legend>
+    <label>Organisatie <input type="text" name="organisatie"></label>
+    <label>Rol / functie <input type="text" name="rol"></label>
+    <label>E-mail <input type="email" name="email" required></label>
+    <label>Toelichting (optioneel)
+      <textarea name="toelichting" rows="4"></textarea>
+    </label>
+  </fieldset>
+
+  <button type="submit">Verken de relevantie</button>
+</form>
+
+<script>
+  // focus_thema mapping voor bevestigingsmail
+  const doelMap = {
+    risico: "governance-risico’s",
+    bestuur: "het bestuurlijk gesprek",
+    toezicht: "toezicht en regelgeving",
+    afstemming: "afstemming tussen bestuur, beleid en IT",
+    orientatie: ""
+  };
+
+  document.getElementById("doel").addEventListener("change", function () {
+    document.getElementById("focus_thema").value = doelMap[this.value] || "";
+  });
+</script>
+
+</body>
+</html>
 
