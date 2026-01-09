@@ -6,127 +6,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Indicative governance signal based on the AI Act QuickScan. No legal judgment or formal classification.">
+        content="Indicative governance outcome based on the AI Act Governance QuickScan. No legal advice.">
 
   <link rel="stylesheet" href="/assets/css/core.css">
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/en/" class="logo">DGA</a>
-    <nav class="main-nav">
-      <a href="/en/services/">Services</a>
-      <a href="/en/knowledge/">Knowledge</a>
-      <a href="/en/quickscan/" class="active">QuickScan</a>
-      <a href="/en/contact/">Contact</a>
-      <a href="/">NL</a>
-    </nav>
-  </div>
-</header>
-
 <section class="hero hero--compact">
   <div class="hero-inner">
-    <div class="hero-content">
-      <span class="hero-label">AI ACT • GOVERNANCE QUICKSCAN</span>
-
-      <h1>Indicative governance signal</h1>
-
-      <p class="hero-subtitle">
-        This outcome provides a first indication of how responsibility,
-        oversight and decision-making around AI are structured in practice.
-      </p>
-    </div>
+    <h1>Indicative governance signal</h1>
+    <p class="hero-subtitle">
+      This outcome provides a first indication of how AI governance
+      is structured in practice.
+    </p>
   </div>
 </section>
 
 <section class="section-light">
   <div class="container" style="max-width:760px;">
+
+    <!-- SIGNAL -->
     <div id="signal" class="card"></div>
-  </div>
-</section>
-
-<section class="section-light">
-  <div class="container" style="max-width:760px;">
 
     <h2>What this outcome does indicate</h2>
-
     <p>
-      This QuickScan highlights how AI governance currently functions
-      within your organisation based on your responses.
-      It shows where governance appears deliberate
+      This QuickScan highlights where governance sharpness is present
       and where potential vulnerabilities or ambiguities may exist.
+      It is intended as a professional reflection tool — not a final conclusion.
     </p>
 
     <h2>What this outcome does not indicate</h2>
-
     <ul>
       <li>✕ No legal judgment or binding qualification</li>
       <li>✕ No formal AI Act risk classification</li>
       <li>✕ No compliance audit or assessment</li>
       <li>✕ No substitute for legal or technical analysis</li>
     </ul>
-<div class="cta-row">
-  <div class="price">€29 incl. VAT</div>
 
-  <a
-    href="https://buy.stripe.com/aFa9AvgBkbZ4cUV7rDaAw01"
-    class="button button-primary"
-    target="_blank"
-    rel="noopener"
-  >
-    Request in-depth QuickScan report
-  </a>
-</div>
+    <!-- CTA -->
+    <div class="cta-row" style="margin-top:2rem;">
+      <div class="price">€29 incl. VAT</div>
 
-<p class="fine-print">
-  Indicative • no legal advice • delivered after payment
-</p>
-
+      <a
+        href="https://buy.stripe.com/aFa9AVgBkbZ4cVU7rDa0w1"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Request in-depth QuickScan report
+      </a>
     </div>
 
-    <div style="margin-top:2rem;">
-      <a href="/en/quickscan/" class="text-link">↺ Restart the QuickScan</a>
-    </div>
+    <p class="fine-print">
+      Indicative • no legal advice • delivered after payment
+    </p>
+
+    <!-- RESET -->
+    <p style="margin-top:2rem;">
+      <a href="#" onclick="resetScan()">↺ Restart the QuickScan</a>
+    </p>
 
   </div>
-</section>
-
-<script>
-(function () {
-  const answers = Object.values(localStorage);
-  const noCount = answers.filter(v => v === "no").length;
-
-  let signal;
-
-  if (noCount >= 4) {
-    signal = `
-      <strong>Governance signal</strong><br>
-      The responses suggest potential vulnerabilities
-      in oversight, escalation or governance anchoring around AI.
-    `;
-  } else if (noCount >= 2) {
-    signal = `
-      <strong>Governance signal</strong><br>
-      AI governance appears partially structured,
-      but not yet consistently anchored at governance level.
-    `;
-  } else {
-    signal = `
-      <strong>Governance signal</strong><br>
-      The responses indicate a relatively conscious approach
-      to AI governance, with attention points in execution and oversight.
-    `;
-  }
-
-  document.getElementById("signal").innerHTML = signal;
-})();
-</script>
-
-<footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — Independent AI governance for the public sector</p>
-</footer>
-
-</body>
-</html>
+</secti
