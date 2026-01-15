@@ -36,68 +36,44 @@
     <hr style="margin:2.5rem 0;">
 
     <form
-  action="https://usebasin.com/f/4faef56fbb69"
-  method="post"
-  class="card"
-  style="padding:1.75rem;"
->
-
+      action="https://usebasin.com/f/4faef56fbb69"
+      method="post"
+      class="card"
+      style="padding:1.75rem;"
+    >
+      <!-- Basin helpers -->
+      <input type="hidden" name="_redirect" value="https://jouwdomein.nl/quickscan/bedankt.html">
+      <input type="hidden" name="_subject" value="Aanvraag Verdiepende QuickScan (factuur)">
 
       <h2 style="margin-top:0;">Aanvraaggegevens</h2>
 
       <label>
         Organisatienaam<br>
-        <input type="text" name="Organisatie" required>
+        <input type="text" name="organisatie" required>
       </label>
 
       <label>
         Afdeling (optioneel)<br>
-        <input type="text" name="Afdeling">
+        <input type="text" name="afdeling">
       </label>
 
       <label>
         Contactpersoon<br>
-        <input type="text" name="Contactpersoon" required>
+        <input type="text" name="contactpersoon" required>
       </label>
 
       <label>
         E-mailadres<br>
-        <input type="email" name="E-mail" required>
+        <input type="email" name="email" required>
       </label>
 
       <label>
         PO-nummer / inkoopreferentie<br>
-        <input type="text" name="PO-nummer">
+        <input type="text" name="po_nummer">
       </label>
 
       <label>
         E-factuur via Peppol gewenst?<br>
-        <select name="E-factuur">
+        <select name="e_factuur">
           <option value="Nee">Nee</option>
           <option value="Ja">Ja</option>
-        </select>
-      </label>
-
-      <div style="margin-top:1.5rem;">
-        <button type="submit" class="btn-primary">
-          Factuur aanvragen
-        </button>
-      </div>
-
-    </form>
-
-    <p class="contact-disclaimer" style="margin-top:1.5rem;">
-      De verdiepende QuickScan wordt geleverd na verwerking van deze aanvraag
-      en volgens de gebruikelijke betaaltermijnen binnen de publieke sector.
-    </p>
-
-    <a href="/quickscan/" class="text-link">
-      ↺ Terug naar de QuickScan
-    </a>
-
-  </div>
-</section>
-
-</body>
-</html>
-
