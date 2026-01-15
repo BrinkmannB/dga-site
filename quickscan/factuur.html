@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Verdiepende QuickScan – aanvraag op factuur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/core.css">
+</head>
+
+<body>
+
+<section class="hero hero--compact">
+  <div class="hero-inner">
+    <h1>Verdiepende QuickScan</h1>
+    <p class="hero-subtitle">
+      Aanvraag op factuur voor overheden en semipublieke organisaties
+    </p>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container" style="max-width:760px;">
+
+    <p>
+      Voor overheden en semipublieke organisaties is directe online betaling
+      vaak niet mogelijk. Via deze route kunt u de verdiepende QuickScan
+      eenvoudig op factuur aanvragen.
+    </p>
+
+    <ul>
+      <li><strong>Prijs:</strong> €29 incl. btw</li>
+      <li><strong>Levering:</strong> PDF per e-mail</li>
+      <li><strong>Factuur:</strong> per e-mail of als e-factuur (Peppol)</li>
+    </ul>
+
+    <hr style="margin:2.5rem 0;">
+
+    <form
+      action="mailto:info@jouwdomein.nl?subject=Aanvraag%20Verdiepende%20QuickScan%20(op%20factuur)"
+      method="post"
+      enctype="text/plain"
+      class="card"
+      style="padding:1.75rem;"
+    >
+
+      <h2 style="margin-top:0;">Aanvraaggegevens</h2>
+
+      <label>
+        Organisatienaam<br>
+        <input type="text" name="Organisatie" required>
+      </label>
+
+      <label>
+        Afdeling (optioneel)<br>
+        <input type="text" name="Afdeling">
+      </label>
+
+      <label>
+        Contactpersoon<br>
+        <input type="text" name="Contactpersoon" required>
+      </label>
+
+      <label>
+        E-mailadres<br>
+        <input type="email" name="E-mail" required>
+      </label>
+
+      <label>
+        PO-nummer / inkoopreferentie<br>
+        <input type="text" name="PO-nummer">
+      </label>
+
+      <label>
+        E-factuur via Peppol gewenst?<br>
+        <select name="E-factuur">
+          <option value="Nee">Nee</option>
+          <option value="Ja">Ja</option>
+        </select>
+      </label>
+
+      <div style="margin-top:1.5rem;">
+        <button type="submit" class="btn-primary">
+          Factuur aanvragen
+        </button>
+      </div>
+
+    </form>
+
+    <p class="contact-disclaimer" style="margin-top:1.5rem;">
+      De verdiepende QuickScan wordt geleverd na verwerking van deze aanvraag
+      en volgens de gebruikelijke betaaltermijnen binnen de publieke sector.
+    </p>
+
+    <a href="/quickscan/" class="text-link">
+      ↺ Terug naar de QuickScan
+    </a>
+
+  </div>
+</section>
+
+</body>
+</html>
 
