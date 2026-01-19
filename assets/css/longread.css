@@ -1,1 +1,110 @@
+/* =========================================================
+   Longread — Dutch Governance Advisory
+   Doel: leesbaarheid, rust, bestuurlijke toon
+   ========================================================= */
+
+/* Artikelcontainer */
+.longread {
+  padding: 4rem 0;
+}
+
+.longread .container {
+  max-width: 760px;
+}
+
+/* Titel & intro */
+.longread h1 {
+  margin-bottom: 1rem;
+}
+
+.longread .intro {
+  font-size: 1.15rem;
+  color: #425466;
+  margin-bottom: 2.5rem;
+}
+
+/* Paragrafen */
+.longread p {
+  margin-bottom: 1.25rem;
+}
+
+/* Subkoppen */
+.longread h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.longread h3 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Lijsten */
+.longread ul,
+.longread ol {
+  margin-bottom: 1.5rem;
+}
+
+.longread li {
+  margin-bottom: 0.4rem;
+}
+
+/* Quotes / kadertekst */
+.longread blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid #0e5f6f;
+  color: #425466;
+  font-style: italic;
+}
+
+/* Infoblok / kader */
+.longread .infobox {
+  margin: 2.5rem 0;
+  padding: 1.75rem;
+  background: #eef6f6;
+  border-radius: 12px;
+}
+
+.longread .infobox h3 {
+  margin-top: 0;
+}
+
+/* Afbeeldingen (optioneel) */
+.longread img {
+  max-width: 100%;
+  margin: 2.5rem 0;
+  border-radius: 8px;
+}
+
+/* Afsluitende reflectie / conclusie */
+.longread .conclusion {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5ebf0;
+}
+
+/* CTA onder artikel */
+.longread .article-cta {
+  margin-top: 3rem;
+  padding: 2.25rem;
+  background: #eef6f6;
+  border-radius: 14px;
+}
+
+.longread .article-cta p {
+  margin-bottom: 1.25rem;
+}
+
+/* Mobiel */
+@media (max-width: 768px) {
+  .longread {
+    padding: 3rem 0;
+  }
+
+  .longread .intro {
+    font-size: 1.05rem;
+  }
+}
 
