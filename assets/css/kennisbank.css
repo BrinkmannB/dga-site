@@ -1,43 +1,64 @@
-body {margin:0;font-family:"Inter",sans-serif;background:#f5f7fa;color:#0a2540;}
-.site-header {background:#0a2540;padding:16px 0;position:sticky;top:0;z-index:50;}
-.nav {max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;width:90%;}
-.nav a {color:white;text-decoration:none;font-weight:600;margin-left:22px;}
-.logo {font-size:1.2rem;font-weight:700;}
+/* =========================================================
+   Kennisbank — Dutch Governance Advisory
+   Focus: leesbaarheid, overzicht, inhoud
+   ========================================================= */
 
-.hero {
-  background:linear-gradient(135deg,#0a2540,#144a7e);
-  color:white;
-  text-align:center;
-  padding:80px 20px 60px;
-}
-.hero h1 {margin:0 0 12px;font-size:2.2rem;}
-.hero p {max-width:650px;margin:0 auto;font-size:1.1rem;}
-
-.kb-grid {
-  max-width:1100px;margin:60px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
-}
-.kb-card {
-  background:white;border-radius:12px;padding:28px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06);
-  text-decoration:none;color:#0a2540;
-  transition:0.2s;
-}
-.kb-card:hover {transform:translateY(-4px);box-shadow:0 6px 22px rgba(0,0,0,0.1);}
-.icon {font-size:2rem;margin-bottom:10px;}
-.kb-link {display:inline-block;margin-top:12px;font-weight:600;color:#0a4c8b;}
-
-.cta-strook {
-  background:#0a2540;color:white;text-align:center;
-  padding:60px 20px;margin-top:40px;
-}
-.btn-cta-blue {
-  background:#1f5fa3;color:white;padding:14px 28px;
-  border-radius:6px;text-decoration:none;font-weight:600;
+/* Header / intro */
+.kennisbank-hero {
+  padding: 3.5rem 0 2.5rem;
 }
 
-.footer {background:#0a2540;color:white;text-align:center;padding:28px;}
+.kennisbank-hero h1 {
+  max-width: 22ch;
+}
 
+.kennisbank-hero p {
+  font-size: 1.05rem;
+  max-width: 72ch;
+}
+
+/* Onderwerpenlijst */
+.kennisbank-lijst {
+  margin-top: 2.5rem;
+}
+
+/* Individueel onderwerp */
+.kennisbank-item {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #e5ebf0;
+}
+
+.kennisbank-item:last-child {
+  border-bottom: none;
+}
+
+.kennisbank-item h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.kennisbank-item p {
+  margin-bottom: 0.6rem;
+}
+
+/* Lees-verder link */
+.kennisbank-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #0e5f6f;
+}
+
+/* Highlight-blok (bijv. AI Act essentials) */
+.kennisbank-highlight {
+  margin-top: 3rem;
+  padding: 2.25rem;
+  background: #eef6f6;
+  border-radius: 12px;
+}
+
+.kennisbank-highlight h2 {
+  margin-bottom: 0.6rem;
+}
+
+.kennisbank-highlight p {
+  margin-bottom: 1.25re
