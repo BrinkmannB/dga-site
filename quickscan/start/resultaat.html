@@ -2,109 +2,82 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Resultaat — AI Act Bestuurlijke QuickScan</title>
+  <title>Resultaatpagina — AI Act QuickScan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/css/core.css">
 </head>
 
 <body>
-
-<section class="hero hero--compact">
-  <div class="hero-inner">
-    <h1>Indicatieve bestuurlijke duiding</h1>
-    <p class="hero-subtitle">
-      Deze uitkomst geeft een eerste beeld van de bestuurlijke
-      volwassenheid rond AI-gebruik binnen uw organisatie.
-    </p>
-  </div>
-</section>
-
-<section class="section-light">
-  <div class="container" style="max-width:760px;">
-
-    <div id="signal" class="card"></div>
-
-    <h2>Wat deze uitkomst wél betekent</h2>
-    <p>
-      Deze QuickScan maakt zichtbaar waar bestuurlijke scherpte aanwezig is
-      en waar mogelijke kwetsbaarheden of onduidelijkheden zitten.
-      Het resultaat is bedoeld als professioneel reflectiepunt —
-      niet als eindconclusie.
-    </p>
-
-    <h2>Wat deze uitkomst níet betekent</h2>
-    <ul>
-      <li>✕ Geen juridisch oordeel</li>
-      <li>✕ Geen formele AI Act-classificatie</li>
-      <li>✕ Geen compliance-audit</li>
-      <li>✕ Geen vervanging van juridisch of technisch onderzoek</li>
-    </ul>
-
-    <hr style="margin:2.5rem 0;">
-
-    <h2>Verdiepende QuickScan (optioneel)</h2>
-    <p>
-      Wilt u deze indicatie laten uitwerken in een korte,
-      schriftelijke rapportage met bestuurlijke aandachtspunten
-      en mogelijke vervolgstappen?
-    </p>
-
-    <div class="cta-row" style="align-items:flex-start; gap:1.5rem;">
-      <div>
-        <strong>€29 incl. btw</strong><br>
-        <span style="font-size:0.9rem; color:#666;">Levering als PDF per e-mail</span>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:0.75rem;">
-        <!-- Niet-overheid -->
-        <a
-          href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener"
-        >
-          Direct betalen
-        </a>
-
-        <!-- Overheid -->
-        <a
-          href="/quickscan/factuur.html"
-          class="btn-secondary"
-        >
-          Overheid? Aanvragen op factuur
-        </a>
-      </div>
+  <section class="hero hero--compact">
+    <div class="hero-inner">
+      <h1>Uw AI QuickScan-resultaat</h1>
+      <p class="hero-subtitle">
+        Deze pagina toont het resultaat van uw QuickScan of biedt een voorbeeldrapport ter illustratie.
+      </p>
     </div>
+  </section>
 
-    <p class="contact-disclaimer">
-      Indicatief • geen juridisch advies • levering na betaling of na factuurafhandeling<br>
-      Voor overheden is betaling via factuur of e-factuur (Peppol) mogelijk.
-    </p>
+  <section class="section-light">
+    <div class="container" style="max-width:760px;">
 
-    <a href="/quickscan/" class="text-link">
-      ↺ QuickScan opnieuw starten
-    </a>
+      <div id="signal" class="card">
+        <p><strong>Geen ingevulde scan gevonden.</strong><br>
+        Heeft u de scan net ingevuld op dit apparaat? Dan is het resultaat hieronder zichtbaar. Anders kunt u een voorbeeldrapport bekijken.</p>
+      </div>
 
-  </div>
-</section>
+      <hr style="margin:2.5rem 0;">
 
-<script>
-(function () {
-  const values = Object.values(localStorage);
-  const noCount = values.filter(v => v === "no").length;
+      <h2>Voorbeeldrapport bekijken</h2>
+      <p>Wilt u zien hoe een indicatief rapport eruitziet? Download een voorbeeld in PDF-formaat.</p>
+      <a href="/quickscan/voorbeeldrapport.pdf" class="btn-secondary" download>📄 Voorbeeldrapport downloaden</a>
 
-  let text;
-  if (noCount >= 4) {
-    text = "<strong>Signaal</strong><br>Er zijn duidelijke aandachtspunten in toezicht, escalatie en bestuurlijke verankering.";
-  } else if (noCount >= 2) {
-    text = "<strong>Signaal</strong><br>AI-governance is deels ingericht, maar nog niet consistent bestuurlijk geborgd.";
-  } else {
-    text = "<strong>Signaal</strong><br>De antwoorden wijzen op een relatief bewuste omgang met AI-governance.";
-  }
+      <hr style="margin:2.5rem 0;">
 
-  document.getElementById("signal").innerHTML = text;
-})();
-</script>
+      <h2>Persoonlijk PDF-rapport ontvangen</h2>
+      <p>
+        Laat dit resultaat samenvatten in een persoonlijk PDF-rapport met bestuurlijke inzichten en reflectiepunten.
+      </p>
 
+      <div class="cta-row" style="align-items:flex-start; gap:1.5rem;">
+        <div>
+          <strong>€29 incl. btw</strong><br>
+          <span style="font-size:0.9rem; color:#666;">Levering als PDF per e-mail</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <a href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01" class="btn-primary" target="_blank" rel="noopener">
+            Bestel en betaal met Stripe
+          </a>
+        </div>
+      </div>
+
+      <p class="contact-disclaimer">
+        Na betaling ontvangt u binnen enkele uren uw gepersonaliseerd PDF-rapport per e-mail. Dit is een indicatief reflectiedocument, geen juridisch oordeel.
+      </p>
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const values = Object.values(localStorage);
+      const noCount = values.filter(v => v === "no").length;
+
+      let text;
+      if (noCount >= 4) {
+        text = "<strong>Signaal</strong><br>Er zijn duidelijke aandachtspunten in toezicht, escalatie en bestuurlijke verankering.";
+      } else if (noCount >= 2) {
+        text = "<strong>Signaal</strong><br>AI-governance is deels ingericht, maar nog niet consistent bestuurlijk geborgd.";
+      } else if (noCount > 0) {
+        text = "<strong>Signaal</strong><br>De antwoorden wijzen op een relatief bewuste omgang met AI-governance.";
+      } else {
+        text = "<em>Vul de QuickScan in om hier uw persoonlijke signaal te zien.</em>";
+      }
+
+      if (values.length > 0) {
+        document.getElementById("signal").innerHTML = text;
+      }
+    })();
+  </script>
 </body>
 </html>
