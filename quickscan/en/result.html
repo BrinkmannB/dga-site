@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Result — AI Act QuickScan | Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/css/core.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/en/" class="logo">DGA</a>
+      <nav class="main-nav">
+        <a href="/en/services/">Services</a>
+        <a href="/en/cases/">Cases</a>
+        <a href="/en/knowledge/">Knowledge</a>
+        <a href="/quickscan/en/">AI Act QuickScan</a>
+        <a href="/en/about/">About</a>
+        <a href="/en/contact/">Contact</a>
+        <a href="/">NL</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero hero--compact">
+    <div class="hero-inner">
+      <h1>Your QuickScan Result</h1>
+      <p class="hero-subtitle">
+        This page shows your indicative AI Act QuickScan outcome. No result visible? View a sample report below.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-light">
+    <div class="container" style="max-width:760px;">
+
+      <div id="signal" class="card">
+        <p><strong>No scan data found.</strong><br>
+        If you recently completed the QuickScan on this device, your result will appear below. Otherwise, view the example report below.</p>
+      </div>
+
+      <hr style="margin:2.5rem 0;">
+
+      <h2>Example report</h2>
+      <p>Download a sample PDF report with governance reflections and key AI compliance insights.</p>
+      <a href="/quickscan/voorbeeldrapport.pdf" class="btn-secondary" download>📄 Download sample report (PDF)</a>
+
+      <hr style="margin:2.5rem 0;">
+
+      <h2>Get a personalized reflection report</h2>
+      <p>
+        Receive a personal PDF summary based on your scan answers, including key reflection points and suggestions.
+      </p>
+
+      <div class="cta-row" style="align-items:flex-start; gap:1.5rem;">
+        <div>
+          <strong>€29 incl. VAT</strong><br>
+          <span style="font-size:0.9rem; color:#666;">Delivered via email within a few hours</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <a href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01" class="btn-primary" target="_blank" rel="noopener">
+            Order reflection report
+          </a>
+        </div>
+      </div>
+
+      <p class="contact-disclaimer" style="margin-top: 1.25rem; font-size: 0.85rem; color: #6b7280;">
+        You’ll receive a non-binding governance reflection report by email. Your answers are not stored.
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Dutch Governance Advisory — AI governance & EU AI Act expertise for the public sector</p>
+  </footer>
+
+  <script>
+    (function () {
+      const values = Object.values(localStorage);
+      const noCount = values.filter(v => v === "no").length;
+
+      let text;
+      if (noCount >= 4) {
+        text = "<strong>Signal:</strong><br>Major governance issues around oversight, escalation and accountability need attention.";
+      } else if (noCount >= 2) {
+        text = "<strong>Signal:</strong><br>Some governance is in place, but not yet fully embedded in decision-making.";
+      } else if (noCount > 0) {
+        text = "<strong>Signal:</strong><br>Your answers show a relatively conscious approach to AI governance.";
+      } else {
+        text = "<em>Complete the QuickScan to view your personalized result here.</em>";
+      }
+
+      if (values.length > 0) {
+        document.getElementById("signal").innerHTML = "<p>" + text + "</p>";
+      }
+    })();
+  </script>
+</body>
+</html>
 
