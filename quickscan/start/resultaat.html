@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Resultaatpagina — AI Act QuickScan</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/core.css">
+  <meta charset="UTF-8" />
+  <title>Resultaat — AI Act QuickScan | Dutch Governance Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/css/core.css" />
 </head>
 
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">DGA</a>
+      <nav class="main-nav">
+        <a href="/diensten/">Diensten</a>
+        <a href="/cases/">Praktijk</a>
+        <a href="/kennisbank/">Kennisbank</a>
+        <a href="/quickscan/">AI Act QuickScan</a>
+        <a href="/over-bas/">Over Bas</a>
+        <a href="/contact/">Contact</a>
+        <a href="/en/">EN</a>
+      </nav>
+    </div>
+  </header>
+
   <section class="hero hero--compact">
     <div class="hero-inner">
-      <h1>Uw AI QuickScan-resultaat</h1>
+      <h1>Uw QuickScan-resultaat</h1>
       <p class="hero-subtitle">
-        Deze pagina toont het resultaat van uw QuickScan of biedt een voorbeeldrapport ter illustratie.
+        Dit is het indicatieve resultaat van uw AI Act QuickScan. Geen ingevulde scan? Bekijk dan het voorbeeldrapport hieronder.
       </p>
     </div>
   </section>
@@ -22,41 +37,45 @@
 
       <div id="signal" class="card">
         <p><strong>Geen ingevulde scan gevonden.</strong><br>
-        Heeft u de scan net ingevuld op dit apparaat? Dan is het resultaat hieronder zichtbaar. Anders kunt u een voorbeeldrapport bekijken.</p>
+        Heeft u de scan zojuist ingevuld op dit apparaat? Dan verschijnt het resultaat hieronder. Zo niet, bekijk dan een voorbeeldrapport.</p>
       </div>
 
       <hr style="margin:2.5rem 0;">
 
-      <h2>Voorbeeldrapport bekijken</h2>
-      <p>Wilt u zien hoe een indicatief rapport eruitziet? Download een voorbeeld in PDF-formaat.</p>
-      <a href="/quickscan/voorbeeldrapport.pdf" class="btn-secondary" download>📄 Voorbeeldrapport downloaden</a>
+      <h2>Voorbeeldrapport</h2>
+      <p>Bekijk een voorbeeld van een indicatief rapport met reflecties en governance-aandachtspunten.</p>
+      <a href="/quickscan/voorbeeldrapport.pdf" class="btn-secondary" download>📄 Download voorbeeldrapport (PDF)</a>
 
       <hr style="margin:2.5rem 0;">
 
-      <h2>Persoonlijk PDF-rapport ontvangen</h2>
+      <h2>Persoonlijk reflectierapport ontvangen</h2>
       <p>
-        Laat dit resultaat samenvatten in een persoonlijk PDF-rapport met bestuurlijke inzichten en reflectiepunten.
+        Laat dit resultaat samenvatten in een persoonlijk rapport (PDF) met reflectiepunten en suggesties.
       </p>
 
       <div class="cta-row" style="align-items:flex-start; gap:1.5rem;">
         <div>
           <strong>€29 incl. btw</strong><br>
-          <span style="font-size:0.9rem; color:#666;">Levering als PDF per e-mail</span>
+          <span style="font-size:0.9rem; color:#666;">Binnen enkele uren geleverd per e-mail</span>
         </div>
 
         <div style="display:flex; flex-direction:column; gap:0.75rem;">
           <a href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01" class="btn-primary" target="_blank" rel="noopener">
-            Bestel en betaal met Stripe
+            Bestel reflectierapport
           </a>
         </div>
       </div>
 
-      <p class="contact-disclaimer">
-        Na betaling ontvangt u binnen enkele uren uw gepersonaliseerd PDF-rapport per e-mail. Dit is een indicatief reflectiedocument, geen juridisch oordeel.
+      <p class="contact-disclaimer" style="margin-top: 1.25rem; font-size: 0.85rem; color: #6b7280;">
+        U ontvangt een reflectiedocument per e-mail, geen juridisch oordeel. Uw antwoorden worden niet opgeslagen.
       </p>
 
     </div>
   </section>
+
+  <footer class="footer">
+    <p>© 2025 Dutch Governance Advisory — AI governance & EU AI Act advies voor het publieke domein</p>
+  </footer>
 
   <script>
     (function () {
@@ -65,17 +84,17 @@
 
       let text;
       if (noCount >= 4) {
-        text = "<strong>Signaal</strong><br>Er zijn duidelijke aandachtspunten in toezicht, escalatie en bestuurlijke verankering.";
+        text = "<strong>Signaal:</strong><br>Er zijn duidelijke aandachtspunten in toezicht, escalatie en bestuurlijke verankering.";
       } else if (noCount >= 2) {
-        text = "<strong>Signaal</strong><br>AI-governance is deels ingericht, maar nog niet consistent bestuurlijk geborgd.";
+        text = "<strong>Signaal:</strong><br>AI-governance is deels ingericht, maar nog niet consistent bestuurlijk geborgd.";
       } else if (noCount > 0) {
-        text = "<strong>Signaal</strong><br>De antwoorden wijzen op een relatief bewuste omgang met AI-governance.";
+        text = "<strong>Signaal:</strong><br>De antwoorden wijzen op een relatief bewuste omgang met AI-governance.";
       } else {
         text = "<em>Vul de QuickScan in om hier uw persoonlijke signaal te zien.</em>";
       }
 
       if (values.length > 0) {
-        document.getElementById("signal").innerHTML = text;
+        document.getElementById("signal").innerHTML = "<p>" + text + "</p>";
       }
     })();
   </script>
