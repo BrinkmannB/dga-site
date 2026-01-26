@@ -25,9 +25,9 @@
 
   <section class="hero hero--compact">
     <div class="hero-inner">
-      <h1>Your QuickScan Result</h1>
+      <h1>Your AI Act QuickScan Result</h1>
       <p class="hero-subtitle">
-        This page shows your indicative AI Act QuickScan outcome. No result visible? View a sample report below.
+        Below you’ll find your indicative QuickScan outcome. Didn’t fill out the scan yet? You can still view a sample report.
       </p>
     </div>
   </section>
@@ -36,21 +36,21 @@
     <div class="container" style="max-width:760px;">
 
       <div id="signal" class="card">
-        <p><strong>No scan data found.</strong><br>
-        If you recently completed the QuickScan on this device, your result will appear below. Otherwise, view the example report below.</p>
+        <p><strong>No scan results found.</strong><br>
+        If you completed the scan on this device, your result will appear below. Otherwise, download the sample report.</p>
       </div>
 
       <hr style="margin:2.5rem 0;">
 
-      <h2>Example report</h2>
-      <p>Download a sample PDF report with governance reflections and key AI compliance insights.</p>
+      <h2>Sample report</h2>
+      <p>Get an impression of what the final reflection report includes. This PDF is based on a fictional use case.</p>
       <a href="/quickscan/voorbeeldrapport.pdf" class="btn-secondary" download>📄 Download sample report (PDF)</a>
 
       <hr style="margin:2.5rem 0;">
 
-      <h2>Get a personalized reflection report</h2>
+      <h2>Get your personalized reflection report</h2>
       <p>
-        Receive a personal PDF summary based on your scan answers, including key reflection points and suggestions.
+        Receive a custom PDF report based on your answers — with tailored governance insights and reflection points.
       </p>
 
       <div class="cta-row" style="align-items:flex-start; gap:1.5rem;">
@@ -61,13 +61,13 @@
 
         <div style="display:flex; flex-direction:column; gap:0.75rem;">
           <a href="https://buy.stripe.com/aFa9VqBbkZ4CVU7rDaAw01" class="btn-primary" target="_blank" rel="noopener">
-            Order reflection report
+            Order your report
           </a>
         </div>
       </div>
 
       <p class="contact-disclaimer" style="margin-top: 1.25rem; font-size: 0.85rem; color: #6b7280;">
-        You’ll receive a non-binding governance reflection report by email. Your answers are not stored.
+        This is a non-binding governance reflection report, not legal advice. No data is stored.
       </p>
 
     </div>
@@ -84,13 +84,13 @@
 
       let text;
       if (noCount >= 4) {
-        text = "<strong>Signal:</strong><br>Major governance issues around oversight, escalation and accountability need attention.";
+        text = "<strong>Signal:</strong><br>Major governance risks identified: oversight, escalation, and accountability need improvement.";
       } else if (noCount >= 2) {
-        text = "<strong>Signal:</strong><br>Some governance is in place, but not yet fully embedded in decision-making.";
+        text = "<strong>Signal:</strong><br>Some governance is in place, but not yet fully embedded in responsible decision-making.";
       } else if (noCount > 0) {
-        text = "<strong>Signal:</strong><br>Your answers show a relatively conscious approach to AI governance.";
+        text = "<strong>Signal:</strong><br>Your answers show a conscious and responsible approach to AI governance.";
       } else {
-        text = "<em>Complete the QuickScan to view your personalized result here.</em>";
+        text = "<em>Complete the QuickScan to see your personalized result here.</em>";
       }
 
       if (values.length > 0) {
@@ -100,4 +100,3 @@
   </script>
 </body>
 </html>
-
