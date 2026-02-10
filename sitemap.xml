@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.dutchgovernanceadvisory.nl/</loc>
-  </url>
+  <!-- NL hoofd -->
+  <url><loc>https://www.dutchgovernanceadvisory.nl/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/ai-act/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/diensten/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/kennisbank/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/cases/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/over-bas/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/contact/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/verkennend-gesprek</loc></url>
 
-  <url>
-    <loc>https://www.dutchgovernanceadvisory.nl/ai-act/</loc>
-  </url>
+  <!-- Tools / scans -->
+  <url><loc>https://www.dutchgovernanceadvisory.nl/quickscan/start/</loc></url>
 
-  <url>
-    <loc>https://www.dutchgovernanceadvisory.nl/diensten/</loc>
-  </url>
-
-  <url>
-    <loc>https://www.dutchgovernanceadvisory.nl/kennisbank/</loc>
-  </url>
-
-  <url>
-    <loc>https://www.dutchgovernanceadvisory.nl/contact/</loc>
-  </url>
+  <!-- EN -->
+  <url><loc>https://www.dutchgovernanceadvisory.nl/en/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/en/services/</loc></url>
+  <url><loc>https://www.dutchgovernanceadvisory.nl/en/knowledge/</loc></url>
 
 </urlset>
-
