@@ -1,128 +1,288 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact — Dutch Governance Advisory</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Verkennend en vertrouwelijk contact over AI governance, AI Act en publieke waarden.">
+<title>Dutch Governance Advisory</title>
+<meta name="description" content="Bestuurlijke architectuur in reactie op het verschijnsel AI. Strategische sparring op koers en inrichting.">
 
-  <link rel="stylesheet" href="/assets/css/core.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1320;
+  --navy-deep:#080f18;
+  --text:#eef2f6;
+  --muted:#93a0ad;
+  --light:#f5f6f7;
+  --gold:#b49a53;
+  --max-width:900px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(180,154,83,0.06), transparent 40%),
+    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 6%;
+}
+
+/* NAV */
+
+header{
+  position:fixed;
+  width:100%;
+  background:rgba(11,19,32,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  z-index:100;
+}
+
+.nav{
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:11px;
+  letter-spacing:2.2px;
+  font-weight:500;
+}
+
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  color:var(--muted);
+  transition:color 0.3s ease;
+}
+
+nav a:hover{color:var(--text);}
+
+/* HERO */
+
+.hero{
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-inner{
+  padding-top:150px;
+  padding-bottom:90px;
+  max-width:780px;
+}
+
+.hero h1{
+  font-family:'Libre Baskerville', serif;
+  font-size:68px;
+  line-height:1.08;
+  font-weight:400;
+  margin-bottom:30px;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto;
+}
+
+.cta{
+  margin-top:40px;
+}
+
+.cta a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:13px;
+  letter-spacing:1px;
+  border-bottom:1px solid rgba(180,154,83,0.5);
+  padding-bottom:3px;
+  transition:all 0.3s ease;
+}
+
+.cta a:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* SECTIONS */
+
+.section{
+  padding:95px 0;
+}
+
+.section-light{
+  background:var(--light);
+  color:#1a1a1a;
+}
+
+.section-light p,
+.section-light li{
+  color:#444;
+}
+
+h2{
+  font-family:'Libre Baskerville', serif;
+  font-size:34px;
+  font-weight:400;
+  margin-bottom:32px;
+}
+
+p{
+  margin-bottom:22px;
+  max-width:650px;
+}
+
+ul{
+  list-style:none;
+}
+
+ul li{
+  margin-bottom:12px;
+  font-size:16px;
+}
+
+.signature{
+  font-family:'Libre Baskerville', serif;
+  font-size:24px;
+  line-height:1.6;
+  margin:42px 0;
+  max-width:650px;
+}
+
+.closing{
+  font-family:'Libre Baskerville', serif;
+  font-size:20px;
+  line-height:1.6;
+  margin-top:48px;
+  max-width:650px;
+}
+
+footer{
+  padding:60px 0;
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:1.5px;
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:42px;}
+}
+</style>
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo">DGA</a>
-    <nav class="main-nav">
-      <a href="/diensten/">Diensten</a>
-      <a href="/kennisbank/">Kennisbank</a>
-      <a href="/quickscan/">QuickScan</a>
-      <a href="/contact/" class="active">Contact</a>
-      <a href="/over-bas/">Over Bas</a>
-      <a href="/en/">EN</a>
+<header>
+  <div class="container nav">
+    <div>DUTCH GOVERNANCE ADVISORY</div>
+    <nav>
+      <a href="#">Bestuurlijke AI-governance</a>
+      <a href="#">Reflecties</a>
+      <a href="#">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero hero--compact">
-  <div class="hero-inner">
-    <div class="hero-content">
-
-      <h1>Contact</h1>
-
-      <p class="hero-subtitle">
-        Wilt u verkennen wat de AI Act betekent voor uw organisatie,
-        of zoekt u scherpte in de bestuurlijke inrichting van AI?
-      </p>
-
-      <p class="hero-note">
-        Een eerste gesprek is verkennend, inhoudelijk en vertrouwelijk.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contact-form" class="btn-primary">
-          Plan een verkennend gesprek
-        </a>
-      </div>
-
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>AI vraagt bestuurlijke architectuur</h1>
+    <p>
+      AI-systemen brengen expliciete keuzes met zich mee over koers, afhankelijkheid en toezicht.
+      Dutch Governance Advisory ondersteunt bestuurders bij het doordenken en inrichten van die koers,
+      met aandacht voor strategische positionering en institutionele continuïteit.
+    </p>
+    <div class="cta">
+      <a href="#">Vertrouwelijk overleg over richting →</a>
     </div>
   </div>
 </section>
 
-<!-- INHOUD -->
-<section class="section-light">
-  <div class="container contact-layout">
-
-    <!-- Verwachting -->
-    <div class="contact-intro">
-      <h2>Wat u kunt verwachten</h2>
-
-      <p>
-        In een eerste gesprek brengen we samen scherp waar u staat,
-        welke vragen spelen en welke bestuurlijke, juridische of
-        organisatorische aandachtspunten relevant zijn.
-      </p>
-
-      <p>
-        Geen verplichtingen, geen trajecten —
-        wel ruimte om zorgvuldig te verkennen wat nodig is
-        en wat niet.
-      </p>
-
-      <p class="contact-meta">
-        Liever direct contact?<br>
-        Bel <a href="tel:+31658946641">06 5894 6641</a> of mail
-        <a href="mailto:info@dutchgovernanceadvisory.nl">
-          info@dutchgovernanceadvisory.nl
-        </a>.
-      </p>
-    </div>
-
-    <!-- Formulier -->
-    <div class="contact-card">
-      <h2>Neem contact op</h2>
-
-      <form id="contact-form" class="contact-form">
-        <div class="form-field">
-          <label for="name">Naam</label>
-          <input id="name" type="text" placeholder="Uw naam" required>
-        </div>
-
-        <div class="form-field">
-          <label for="email">E-mailadres</label>
-          <input id="email" type="email" placeholder="Uw e-mailadres" required>
-        </div>
-
-        <div class="form-field">
-          <label for="message">Vraag of context</label>
-          <textarea id="message"
-                    rows="5"
-                    placeholder="Beschrijf kort uw vraag of situatie..."
-                    required></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary">
-          Verstuur bericht
-        </button>
-      </form>
-
-      <p class="contact-disclaimer">
-        <strong>Vertrouwelijkheid:</strong>
-        Alle gesprekken worden strikt vertrouwelijk behandeld.
-        Uw gegevens worden niet gedeeld met derden en niet gebruikt
-        voor geautomatiseerde analyses.
-      </p>
-    </div>
-
+<section class="section">
+  <div class="container">
+    <h2>Waar het om gaat</h2>
+    <p>
+      AI beïnvloedt niet alleen uitvoering, maar ook de inrichting van besluitvorming en infrastructuur.
+      Cloudkeuzes, modelafhankelijkheid, datatoegang en externe expertise vormen gezamenlijk
+      een netwerk van afhankelijkheden dat zelden expliciet bestuurlijk wordt geduid.
+    </p>
+    <p>
+      De kernvraag is niet wat AI doet, maar waarvan een organisatie afhankelijk wordt —
+      en hoe deze afhankelijkheden de strategische positionering beïnvloeden.
+      Richting ontstaat wanneer impliciete aannames expliciet worden gemaakt
+      en in samenhang worden beschouwd.
+    </p>
   </div>
 </section>
 
-<footer class="footer">
-  <p>© 2025 Dutch Governance Advisory — AI Governance voor het publieke domein</p>
+<section class="section section-light">
+  <div class="container">
+    <h2>Bestuurlijke AI-governance</h2>
+    <ul>
+      <li>Welke rol vervult AI in de strategische positionering van de organisatie?</li>
+      <li>Hoe worden afhankelijkheden systematisch ingericht en bewaakt?</li>
+      <li>Op welke wijze worden risico’s en concentratie bestuurlijk belegd?</li>
+      <li>Hoe blijft besluitvorming uitlegbaar en toetsbaar binnen bestaande mandaten?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Strategische sparring</h2>
+    <p>
+      Complexe AI-vraagstukken vragen om onafhankelijke reflectie,
+      zorgvuldige afweging en bestuurlijke helderheid.
+    </p>
+
+    <p class="signature">
+      Ik help bestuurders hun architectuur te herijken wanneer AI het speelveld verandert.
+    </p>
+
+    <p>
+      Gesprekken richten zich op koers, positionering en structurele inrichting
+      van AI-governance, in vertrouwelijke setting en met ruimte voor nuance
+      en langetermijnperspectief.
+    </p>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <h2>Reflecties</h2>
+    <p>
+      Reflecties ter ondersteuning van bestuurlijke koers
+      en systematische besluitvorming.
+    </p>
+    <ul>
+      <li><strong>AI Governance in het Tijdperk van Strategische Afhankelijkheden</strong></li>
+      <li><strong>Toezicht als Architectuur</strong></li>
+      <li><strong>Vendorconcentratie als Bestuurlijk Vraagstuk</strong></li>
+    </ul>
+
+    <p class="closing">
+      Bestuurlijke architectuur bepaalt niet alleen hoe AI wordt ingezet,
+      maar ook hoe een organisatie zich positioneert in een veranderende digitale infrastructuur.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Dutch Governance Advisory
 </footer>
 
 </body>
