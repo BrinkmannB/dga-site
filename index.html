@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dutch Governance Advisory</title>
-<meta name="description" content="Bestuurlijke architectuur in reactie op het verschijnsel AI. Strategische sparring op koers en inrichting.">
+<meta name="description" content="Bestuurlijke architectuur in reactie op het verschijnsel AI.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-  --navy:#0c1420;
-  --navy-deep:#0a1018;
+  --navy:#0b1320;
+  --navy-deep:#080f18;
   --text:#eef2f6;
-  --muted:#8f9aa6;
+  --muted:#93a0ad;
   --light:#f5f6f7;
   --gold:#b49a53;
-  --max-width:960px;
+  --max-width:900px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -26,11 +25,10 @@
 body{
   font-family:'Inter', sans-serif;
   background:
-    radial-gradient(circle at 85% 15%, rgba(180,154,83,0.06), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(180,154,83,0.06), transparent 40%),
     linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
   color:var(--text);
   line-height:1.7;
-  -webkit-font-smoothing:antialiased;
 }
 
 .container{
@@ -39,30 +37,32 @@ body{
   padding:0 6%;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 header{
   position:fixed;
   width:100%;
-  background:rgba(12,20,32,0.88);
-  backdrop-filter:blur(12px);
+  background:rgba(11,19,32,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.04);
   z-index:100;
 }
 
 .nav{
-  height:78px;
+  height:80px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   font-size:11px;
   letter-spacing:2.2px;
+  font-weight:500;
 }
 
 nav a{
   margin-left:28px;
   text-decoration:none;
   color:var(--muted);
-  transition:all 0.3s ease;
+  transition:color 0.3s ease;
 }
 
 nav a:hover{
@@ -72,52 +72,57 @@ nav a:hover{
 /* HERO */
 
 .hero{
-  min-height:85vh;
+  min-height:92vh;
   display:flex;
   align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
 .hero-inner{
-  padding-top:130px;
+  padding-top:150px;
   padding-bottom:90px;
-  max-width:680px;
+  max-width:780px;
 }
 
 .hero h1{
   font-family:'Libre Baskerville', serif;
-  font-size:60px;
-  line-height:1.12;
+  font-size:64px;
+  line-height:1.1;
   font-weight:400;
-  margin-bottom:42px;
-  letter-spacing:0.3px;
+  margin-bottom:28px;
 }
 
 .hero p{
   font-size:18px;
   color:var(--muted);
-  max-width:640px;
+  max-width:650px;
+  margin:0 auto;
 }
 
 .cta{
-  margin-top:45px;
+  margin-top:40px;
 }
 
 .cta a{
   text-decoration:none;
-  color:var(--muted);
+  color:var(--text);
   font-size:13px;
   letter-spacing:1px;
+  border-bottom:1px solid rgba(180,154,83,0.5);
+  padding-bottom:3px;
   transition:all 0.3s ease;
 }
 
 .cta a:hover{
+  border-color:var(--gold);
   color:var(--gold);
 }
 
 /* SECTIONS */
 
 .section{
-  padding:100px 0;
+  padding:95px 0;
 }
 
 .section-light{
@@ -134,18 +139,16 @@ h2{
   font-family:'Libre Baskerville', serif;
   font-size:34px;
   font-weight:400;
-  margin-bottom:36px;
-  letter-spacing:0.4px;
+  margin-bottom:32px;
 }
 
 p{
   margin-bottom:22px;
-  max-width:640px;
+  max-width:650px;
 }
 
 ul{
   list-style:none;
-  margin-top:6px;
 }
 
 ul li{
@@ -153,28 +156,21 @@ ul li{
   font-size:16px;
 }
 
-/* SIGNATURE */
-
 .signature{
   font-family:'Libre Baskerville', serif;
-  font-size:23px;
-  line-height:1.65;
-  margin:45px 0;
-  max-width:640px;
+  font-size:24px;
+  line-height:1.6;
+  margin:42px 0;
+  max-width:650px;
 }
-
-/* CLOSING */
 
 .closing{
   font-family:'Libre Baskerville', serif;
   font-size:20px;
-  line-height:1.65;
-  margin-top:50px;
-  max-width:640px;
-  opacity:0.95;
+  line-height:1.6;
+  margin-top:48px;
+  max-width:650px;
 }
-
-/* FOOTER */
 
 footer{
   padding:60px 0;
@@ -184,12 +180,9 @@ footer{
   letter-spacing:1.5px;
 }
 
-/* RESPONSIVE */
-
 @media(max-width:900px){
-  .hero h1{font-size:40px;}
+  .hero h1{font-size:42px;}
 }
-
 </style>
 </head>
 
@@ -199,23 +192,22 @@ footer{
   <div class="container nav">
     <div>DUTCH GOVERNANCE ADVISORY</div>
     <nav>
-      <a href="#">Bestuurlijke AI-governance</a>
-      <a href="#">Reflecties</a>
-      <a href="#">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="container hero-inner">
-    <h1>AI vraagt bestuurlijke architectuur.</h1>
+    <h1>AI vraagt bestuurlijke architectuur</h1>
     <p>
       AI-systemen brengen expliciete keuzes met zich mee over koers, afhankelijkheid en toezicht.
       Dutch Governance Advisory ondersteunt bestuurders bij het doordenken en inrichten van die koers,
       met aandacht voor strategische positionering en institutionele continuïteit.
     </p>
     <div class="cta">
-      <a href="#">Vertrouwelijk overleg over richting →</a>
+      <a href="contact.html">Vertrouwelijk overleg →</a>
     </div>
   </div>
 </section>
@@ -225,66 +217,28 @@ footer{
     <h2>Waar het om gaat</h2>
     <p>
       AI beïnvloedt niet alleen uitvoering, maar ook de inrichting van besluitvorming en infrastructuur.
-      Cloudkeuzes, modelafhankelijkheid, datatoegang en externe expertise vormen gezamenlijk
-      een netwerk van afhankelijkheden dat zelden expliciet bestuurlijk wordt geduid.
+      Cloudkeuzes, modelafhankelijkheid en externe expertise vormen gezamenlijk
+      een netwerk van afhankelijkheden dat bestuurlijk expliciet moet worden geduid.
     </p>
     <p>
       De kernvraag is niet wat AI doet, maar waarvan een organisatie afhankelijk wordt —
       en hoe deze afhankelijkheden de strategische positionering beïnvloeden.
-      Richting ontstaat wanneer impliciete aannames expliciet worden gemaakt en in samenhang worden beschouwd.
     </p>
   </div>
 </section>
 
 <section class="section section-light">
   <div class="container">
-    <h2>Bestuurlijke AI-governance</h2>
-    <ul>
-      <li>Welke rol vervult AI in de strategische positionering van de organisatie?</li>
-      <li>Hoe worden afhankelijkheden systematisch ingericht en bewaakt?</li>
-      <li>Op welke wijze worden risico’s en concentratie bestuurlijk belegd?</li>
-      <li>Hoe blijft besluitvorming uitlegbaar en toetsbaar binnen bestaande mandaten?</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
     <h2>Strategische sparring</h2>
-    <p>
-      Complexe AI-vraagstukken vragen om onafhankelijke reflectie,
-      zorgvuldige afweging en bestuurlijke helderheid.
-    </p>
 
     <p class="signature">
       Ik help bestuurders hun architectuur te herijken wanneer AI het speelveld verandert.
     </p>
 
     <p>
-      Gesprekken richten zich op koers, positionering en structurele inrichting
-      van AI-governance, in vertrouwelijke setting en met ruimte voor nuance
-      en langetermijnperspectief.
+      Gesprekken richten zich op koers, positionering en structurele inrichting,
+      in vertrouwelijke setting en met ruimte voor nuance en langetermijnperspectief.
     </p>
-  </div>
-</section>
-
-<section class="section section-light">
-  <div class="container">
-    <h2>Reflecties</h2>
-    <p>
-      Reflecties ter ondersteuning van bestuurlijke koers en systematische besluitvorming.
-    </p>
-    <ul>
-      <li><strong>AI Governance in het Tijdperk van Strategische Afhankelijkheden</strong></li>
-      <li><strong>Toezicht als Architectuur</strong></li>
-      <li><strong>Vendorconcentratie als Bestuurlijk Vraagstuk</strong></li>
-    </ul>
-
-    <p class="closing">
-      Bestuurlijke architectuur bepaalt niet alleen hoe AI wordt ingezet,
-      maar ook hoe een organisatie zich positioneert in een veranderende digitale infrastructuur.
-    </p>
-
   </div>
 </section>
 
