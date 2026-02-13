@@ -1,1 +1,21 @@
+<section class="papers-hero">
+  <h1>DGA Papers</h1>
+  <p>Publicatiereeks over digitale afhankelijkheid en bestuurlijke autonomie.</p>
+</section>
+
+<section class="paper-item">
+  <div class="paper-cover">
+    <img src="/assets/img/dga-paper-01-cover.png" alt="DGA Paper Nr. 1">
+  </div>
+  <div class="paper-content">
+    <h2>DGA Paper Nr. 1</h2>
+    <h3>De AI Act reguleert risico’s — maar wie reguleert afhankelijkheid?</h3>
+    <p>
+      Deze eerste editie van DGA Papers onderzoekt de bestuurlijke implicaties van structurele digitale afhankelijkheid in het kader van de AI Act.
+    </p>
+    <a href="/downloads/DGA_Papers_Nr1_Digitale_Afhankelijkheid.pdf" class="paper-download">
+      Download paper →
+    </a>
+  </div>
+</section>
 
