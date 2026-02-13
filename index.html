@@ -1,252 +1,238 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Dutch Governance Advisory</title>
-<meta name="description" content="Bestuurlijke architectuur in reactie op het verschijnsel AI.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --navy:#0b1320;
-  --navy-deep:#080f18;
-  --text:#eef2f6;
-  --muted:#93a0ad;
-  --light:#f5f6f7;
-  --gold:#b49a53;
-  --max-width:900px;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Inter', sans-serif;
-  background:
-    radial-gradient(circle at 88% 12%, rgba(180,154,83,0.06), transparent 40%),
-    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
-  color:var(--text);
-  line-height:1.7;
-}
-
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:0 6%;
-}
-
-/* NAVIGATION */
-
-header{
-  position:fixed;
-  width:100%;
-  background:rgba(11,19,32,0.92);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  z-index:100;
-}
-
-.nav{
-  height:80px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:11px;
-  letter-spacing:2.2px;
-  font-weight:500;
-}
-
-nav a{
-  margin-left:28px;
-  text-decoration:none;
-  color:var(--muted);
-  transition:color 0.3s ease;
-}
-
-nav a:hover{
-  color:var(--text);
-}
-
-/* HERO */
-
-.hero{
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.hero-inner{
-  padding-top:150px;
-  padding-bottom:90px;
-  max-width:780px;
-}
-
-.hero h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:64px;
-  line-height:1.1;
-  font-weight:400;
-  margin-bottom:28px;
-}
-
-.hero p{
-  font-size:18px;
-  color:var(--muted);
-  max-width:650px;
-  margin:0 auto;
-}
-
-.cta{
-  margin-top:40px;
-}
-
-.cta a{
-  text-decoration:none;
-  color:var(--text);
-  font-size:13px;
-  letter-spacing:1px;
-  border-bottom:1px solid rgba(180,154,83,0.5);
-  padding-bottom:3px;
-  transition:all 0.3s ease;
-}
-
-.cta a:hover{
-  border-color:var(--gold);
-  color:var(--gold);
-}
-
-/* SECTIONS */
-
-.section{
-  padding:95px 0;
-}
-
-.section-light{
-  background:var(--light);
-  color:#1a1a1a;
-}
-
-.section-light p,
-.section-light li{
-  color:#444;
-}
-
-h2{
-  font-family:'Libre Baskerville', serif;
-  font-size:34px;
-  font-weight:400;
-  margin-bottom:32px;
-}
-
-p{
-  margin-bottom:22px;
-  max-width:650px;
-}
-
-ul{
-  list-style:none;
-}
-
-ul li{
-  margin-bottom:12px;
-  font-size:16px;
-}
-
-.signature{
-  font-family:'Libre Baskerville', serif;
-  font-size:24px;
-  line-height:1.6;
-  margin:42px 0;
-  max-width:650px;
-}
-
-.closing{
-  font-family:'Libre Baskerville', serif;
-  font-size:20px;
-  line-height:1.6;
-  margin-top:48px;
-  max-width:650px;
-}
-
-footer{
-  padding:60px 0;
-  text-align:center;
-  font-size:11px;
-  color:var(--muted);
-  letter-spacing:1.5px;
-}
-
-@media(max-width:900px){
-  .hero h1{font-size:42px;}
-}
-</style>
+  <title>AI Governance & Bestuurlijke Architectuur | Dutch Governance Advisory</title>
+  <meta name="description" content="Onafhankelijk advies over AI governance, digitale afhankelijkheid en bestuurlijke architectuur." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/" />
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <div>DUTCH GOVERNANCE ADVISORY</div>
+<header class="site-header">
+  <div class="container nav-bar">
+    <a href="/" class="brand">DUTCH GOVERNANCE ADVISORY</a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="contact/">Contact</a>
-
+      <a class="active" href="/">Home</a>
+      <a href="/papers/">Papers</a>
+      <a href="/diensten/">Diensten</a>
+      <a href="/contact/">Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-inner">
-    <h1>AI vraagt bestuurlijke architectuur</h1>
-    <p>
-      AI-systemen brengen expliciete keuzes met zich mee over koers, afhankelijkheid en toezicht.
-      Dutch Governance Advisory ondersteunt bestuurders bij het doordenken en inrichten van die koers,
-      met aandacht voor strategische positionering en institutionele continuïteit.
-    </p>
-    <div class="cta">
-      <a href="contact/">Vertrouwelijk overleg →</a>
 
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container narrow center">
+      <h1>AI vraagt bestuurlijke architectuur</h1>
+      <p class="lead">
+        Compliance is noodzakelijk.  
+        Autonomie is een bestuurlijke keuze.
+      </p>
+      <a class="btn primary" href="/contact/">Vertrouwelijk overleg</a>
+    </div>
+  </section>
+
+
+  <!-- POSITIONERING -->
+  <section class="section muted">
+    <div class="container narrow">
+      <h2>Bestuurlijke focus</h2>
+      <p>
+        AI-systemen verschuiven machtsverhoudingen.
+        Ze beïnvloeden afhankelijkheid, infrastructuur en institutionele continuïteit.
+        Dutch Governance Advisory ondersteunt bestuurders bij het expliciet maken van die keuzes.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- DGA PAPERS -->
+  <section class="section dark center">
+    <div class="container narrow">
+      <div class="label">DGA PAPERS</div>
+      <h2>Nr. 1 — Digitale afhankelijkheid</h2>
+      <p class="paper-title">
+        De AI Act reguleert risico’s —  
+        maar wie reguleert afhankelijkheid?
+      </p>
+
+      <a class="btn primary"
+         href="/downloads/DGA_Papers_Nr1_Official_Edition_2026_Perfect.pdf"
+         target="_blank">
+        Download officiële editie (PDF)
+      </a>
+
+      <div class="paper-meta">
+        2026 • Dutch Governance Advisory
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SLOT -->
+  <section class="section muted center">
+    <div class="container narrow">
+      <h2>Onafhankelijk. Constructief. Bestuurlijk georiënteerd.</h2>
+      <a class="btn outline" href="/contact/">Neem contact op</a>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 Dutch Governance Advisory</div>
+    <div class="footer-links">
+      <a href="/papers/">Papers</a>
+      <a href="/contact/">Contact</a>
+      <a href="/disclaimer/">Disclaimer</a>
     </div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Waar het om gaat</h2>
-    <p>
-      AI beïnvloedt niet alleen uitvoering, maar ook de inrichting van besluitvorming en infrastructuur.
-      Cloudkeuzes, modelafhankelijkheid en externe expertise vormen gezamenlijk
-      een netwerk van afhankelijkheden dat bestuurlijk expliciet moet worden geduid.
-    </p>
-    <p>
-      De kernvraag is niet wat AI doet, maar waarvan een organisatie afhankelijk wordt —
-      en hoe deze afhankelijkheden de strategische positionering beïnvloeden.
-    </p>
-  </div>
-</section>
-
-<section class="section section-light">
-  <div class="container">
-    <h2>Strategische sparring</h2>
-
-    <p class="signature">
-      Ik help bestuurders hun architectuur te herijken wanneer AI het speelveld verandert.
-    </p>
-
-    <p>
-      Gesprekken richten zich op koers, positionering en structurele inrichting,
-      in vertrouwelijke setting en met ruimte voor nuance en langetermijnperspectief.
-    </p>
-  </div>
-</section>
-
-<footer>
-  © 2026 Dutch Governance Advisory
 </footer>
+
+
+
+<style>
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0d1b2a;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.narrow { max-width: 720px; }
+.center { text-align: center; }
+
+.site-header {
+  padding: 32px 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #fff;
+  opacity: .75;
+}
+
+nav a:hover,
+nav a.active {
+  opacity: 1;
+}
+
+.hero {
+  padding: 140px 0 110px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 24px;
+}
+
+.lead {
+  font-size: 20px;
+  opacity: .85;
+  margin-bottom: 32px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.muted {
+  background: #13263f;
+}
+
+.dark {
+  background: #0b1625;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: .25em;
+  opacity: .6;
+  margin-bottom: 16px;
+}
+
+.paper-title {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.paper-meta {
+  margin-top: 20px;
+  font-size: 13px;
+  opacity: .6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.primary {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.outline {
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.footer {
+  padding: 50px 0;
+  background: #08111c;
+  font-size: 13px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  opacity: .7;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+</style>
 
 </body>
 </html>
