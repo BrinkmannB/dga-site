@@ -5,317 +5,283 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>DGA Papers | Dutch Governance Advisory</title>
-  <meta name="description" content="DGA Papers is een onafhankelijke publicatiereeks over AI governance, digitale afhankelijkheid en institutionele autonomie binnen de Europese context." />
+  <meta name="description" content="DGA Papers is een onafhankelijke reeks beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/" />
 
   <link rel="stylesheet" href="/assets/css/core.css" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #0b1e2d;
+      color: #e8edf2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header */
+    .site-header {
+      position: absolute;
+      width: 100%;
+      padding: 28px 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-decoration: none;
+      color: rgba(255,255,255,.75);
+    }
+
+    .nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 140px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #0b1e2d 0%, #102b41 100%);
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      margin: 0 0 18px;
+    }
+
+    .hero-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.75);
+    }
+
+    /* Sections */
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    /* Paper block */
+    .paper-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .paper-cover {
+      background: #0f2537;
+      border-radius: 16px;
+      padding: 36px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .paper-cover small {
+      font-size: 11px;
+      letter-spacing: .18em;
+      opacity: .6;
+    }
+
+    .paper-cover h3 {
+      font-size: 18px;
+      margin: 18px 0;
+    }
+
+    .paper-meta {
+      font-size: 13px;
+      opacity: .6;
+    }
+
+    .paper-content h2 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .paper-content p {
+      color: rgba(255,255,255,.75);
+      max-width: 620px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+    }
+
+    .btn-primary {
+      background: #1f4e73;
+      border-color: #1f4e73;
+    }
+
+    .btn-primary:hover {
+      background: #2c6a99;
+    }
+
+    .btn-subtle {
+      margin-left: 12px;
+      background: transparent;
+    }
+
+    /* Books section */
+    .books-section {
+      background: #10283c;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .book-card {
+      background: #0f2537;
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      max-width: 720px;
+    }
+
+    .book-price {
+      margin-top: 12px;
+      font-weight: 500;
+      opacity: .85;
+    }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      font-size: 13px;
+      opacity: .6;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    @media (max-width: 900px) {
+      .paper-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <div class="topbar">
-      <a class="brand" href="/">
-        <span class="brand-title">DUTCH GOVERNANCE ADVISORY</span>
-      </a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a class="active" href="/papers/">Papers</a>
-        <a href="/diensten/">Diensten</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
+  <div class="container topbar">
+    <a href="/" class="brand">DUTCH GOVERNANCE ADVISORY</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/papers/">Papers</a>
+      <a href="/diensten/">Diensten</a>
+      <a href="/contact/">Contact</a>
+    </nav>
   </div>
 </header>
 
-<main class="site-main">
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Publicatiereeks</div>
+    <h1 class="hero-title">DGA Papers</h1>
+    <p class="hero-subtitle">
+      Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie.
+      Gericht op bestuurders, toezichthouders en strategische besluitvormers.
+    </p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero-dark">
-    <div class="container hero-inner">
-      <div class="hero-eyebrow">Publicatiereeks</div>
-      <h1 class="hero-title">DGA Papers</h1>
-      <p class="hero-lead">
-        Een reeks beleidsmatige analyses over AI governance, digitale afhankelijkheid 
-        en institutionele autonomie binnen de Europese context.
+<section class="section">
+  <div class="container paper-grid">
+
+    <div class="paper-cover">
+      <small>DGA Papers — Nr. 1</small>
+      <h3>De AI Act reguleert risico’s — maar wie reguleert afhankelijkheid?</h3>
+      <div class="paper-meta">
+        Bas Brinkmann<br>
+        Strategisch Bestuursadviseur<br>
+        2026
+      </div>
+    </div>
+
+    <div class="paper-content">
+      <h2>Institutionele autonomie in Europese context</h2>
+      <p>
+        Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
+        infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
+        De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar
+        institutionele machtsverschuiving grotendeels ongemoeid.
       </p>
+
+      <a class="btn btn-primary"
+         href="/downloads/DGA_Papers_No1_Dense_Institutional_Edition_2026_v2.pdf"
+         target="_blank" rel="noopener">
+         Download officiële editie (PDF)
+      </a>
+
+      <a class="btn btn-subtle" href="/contact/">
+         Vertrouwelijk overleg
+      </a>
     </div>
-  </section>
 
-  <!-- PUBLICATIE -->
-  <section class="publication-section">
-    <div class="container publication-grid">
+  </div>
+</section>
 
-      <div class="publication-cover">
-        <div class="cover-inner">
-          <div class="cover-series">DGA Papers — Nr. 1</div>
-          <div class="cover-divider"></div>
-          <div class="cover-title">
-            De AI Act reguleert risico’s —<br>
-            maar wie reguleert afhankelijkheid?
-          </div>
-          <div class="cover-author">
-            Bas Brinkmann<br>
-            Strategisch Bestuursadviseur<br>
-            2026
-          </div>
-        </div>
-      </div>
+<section class="section books-section">
+  <div class="container">
+    <h2 class="section-title">Books</h2>
 
-      <div class="publication-content">
-        <div class="publication-meta">
-          Beleidsmatige analyse · 2026
-        </div>
+    <div class="book-card">
+      <h3>Praktische AI Governance</h3>
+      <p>
+        Een concrete gids voor bestuurders en organisaties die AI governance
+        willen vertalen naar bestuurlijke structuur, verantwoordelijkheden
+        en uitvoerbare stappen. Geen academisch traktaat. Geen technisch handboek.
+        Een brug tussen ethiek, recht en implementatie.
+      </p>
 
-        <h2 class="publication-title">
-          Institutionele autonomie in Europese context
-        </h2>
+      <div class="book-price">E-book — €12,95</div>
 
-        <p>
-          Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie, 
-          infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk. 
-          De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar 
-          institutionele machtsverschuiving grotendeels ongemoeid.
-        </p>
-
-        <p>
-          Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding 
-          van afhankelijkheidsstructuren, onderhandelingspositie en bestuurlijke 
-          handelingsruimte binnen Europese kaders.
-        </p>
-
-        <div class="publication-actions">
-          <a class="btn-primary"
-             href="/downloads/DGA_Papers_Nr1_Official_Edition_2026_Perfect.pdf"
-             target="_blank" rel="noopener">
-            Download officiële editie (PDF)
-          </a>
-
-          <a class="btn-secondary" href="/contact/">
-            Vertrouwelijk overleg
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer-dark">
-  <div class="container footer-inner">
-    <div>
-      <div class="footer-brand">Dutch Governance Advisory</div>
-      <div class="footer-small">
-        AI governance · bestuurlijke inrichting · institutionele duiding
-      </div>
-    </div>
-    <div>
-      <a href="/contact/">Contact</a>
-      <span class="dot">•</span>
-      <a href="/disclaimer/">Disclaimer</a>
+      <a class="btn btn-primary" href="/contact/">
+        Bestellen of informatie
+      </a>
     </div>
   </div>
+</section>
+
+<footer>
+  Dutch Governance Advisory — AI governance • institutionele duiding • strategisch bestuur
 </footer>
-
-<style>
-
-/* Basis */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #071a2c;
-  color: #e6edf3;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 28px;
-}
-
-/* Header */
-.site-header {
-  padding: 28px 0;
-  background: #071a2c;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand-title {
-  font-size: 12px;
-  letter-spacing: .14em;
-  color: #c9d4df;
-  text-decoration: none;
-}
-
-.nav a {
-  margin-left: 20px;
-  color: #c9d4df;
-  text-decoration: none;
-  opacity: .8;
-}
-
-.nav a.active,
-.nav a:hover {
-  opacity: 1;
-}
-
-/* Hero */
-.hero-dark {
-  padding: 120px 0 80px;
-  text-align: center;
-}
-
-.hero-eyebrow {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .18em;
-  opacity: .6;
-  margin-bottom: 16px;
-}
-
-.hero-title {
-  font-size: 52px;
-  margin: 0 0 20px;
-}
-
-.hero-lead {
-  max-width: 720px;
-  margin: 0 auto;
-  opacity: .85;
-}
-
-/* Publicatie */
-.publication-section {
-  padding: 80px 0 120px;
-  background: #0c243d;
-}
-
-.publication-grid {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-/* Cover */
-.publication-cover {
-  background: #071a2c;
-  padding: 40px;
-  border-radius: 12px;
-}
-
-.cover-series {
-  font-size: 12px;
-  letter-spacing: .12em;
-  opacity: .7;
-}
-
-.cover-divider {
-  height: 1px;
-  background: rgba(255,255,255,.2);
-  margin: 30px 0;
-}
-
-.cover-title {
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-.cover-author {
-  margin-top: 40px;
-  font-size: 13px;
-  opacity: .7;
-}
-
-/* Content */
-.publication-meta {
-  font-size: 12px;
-  letter-spacing: .1em;
-  opacity: .6;
-  margin-bottom: 14px;
-}
-
-.publication-title {
-  font-size: 30px;
-  margin: 0 0 20px;
-}
-
-.publication-content p {
-  line-height: 1.6;
-  opacity: .9;
-  margin-bottom: 18px;
-}
-
-.publication-actions {
-  margin-top: 30px;
-  display: flex;
-  gap: 16px;
-}
-
-.btn-primary {
-  padding: 12px 18px;
-  border-radius: 8px;
-  background: #134a7c;
-  color: white;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: #1b5e9b;
-}
-
-.btn-secondary {
-  padding: 12px 18px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,.2);
-  color: #e6edf3;
-  text-decoration: none;
-  opacity: .8;
-}
-
-.btn-secondary:hover {
-  opacity: 1;
-}
-
-/* Footer */
-.site-footer-dark {
-  padding: 50px 0;
-  background: #071a2c;
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-small {
-  font-size: 12px;
-  opacity: .6;
-}
-
-.dot {
-  margin: 0 10px;
-  opacity: .5;
-}
-
-@media (max-width: 900px) {
-  .publication-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-</style>
 
 </body>
 </html>
