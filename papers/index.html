@@ -1,355 +1,305 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>DGA Papers | Dutch Governance Advisory</title>
-  <meta name="description" content="DGA Papers is een onafhankelijke reeks beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie binnen Europese kaders." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/" />
-
-  <link rel="stylesheet" href="/assets/css/core.css" />
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container nav-container">
-    <div class="brand">DUTCH GOVERNANCE ADVISORY</div>
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a class="active" href="/papers/">Papers</a>
-      <a href="/diensten/">Diensten</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container center">
-      <div class="eyebrow">Publicatiereeks</div>
-      <h1>DGA Papers</h1>
-      <p class="hero-sub">
-        Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie binnen de Europese context.
-        Gericht op bestuurders, toezichthouders en strategische besluitvormers.
-      </p>
-    </div>
-  </section>
-
-  <!-- PAPER NR 1 -->
-  <section class="section">
-    <div class="container paper-grid">
-
-      <div class="paper-cover">
-        <div class="cover-inner">
-          <div class="cover-series">DGA Papers — Nr. 1</div>
-          <div class="cover-title">
-            De AI Act reguleert risico’s —  
-            maar wie reguleert afhankelijkheid?
-          </div>
-          <div class="cover-meta">
-            Bas Brinkmann<br>
-            Strategisch Bestuursadviseur<br>
-            2026
-          </div>
-        </div>
-      </div>
-
-      <div class="paper-content">
-        <div class="paper-label">Beleidsmatige analyse · 2026</div>
-        <h2>Institutionele autonomie in Europese context</h2>
-
-        <p>
-          Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
-          infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
-          De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar
-          institutionele machtsverschuiving grotendeels ongemoeid.
-        </p>
-
-        <p>
-          Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding van
-          afhankelijkheidsstructuren, onderhandelingspositie en bestuurlijke handelingsruimte
-          binnen Europese kaders.
-        </p>
-
-        <div class="actions">
-          <a class="btn-primary"
-             href="/downloads/DGA_Papers_Nr1_Official_Edition_2026.pdf"
-             target="_blank" rel="noopener">
-             Download officiële editie (PDF)
-          </a>
-
-          <a class="btn-secondary" href="/contact/">
-            Vertrouwelijk overleg
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- BOOKS -->
-  <section class="section section-dark">
-    <div class="container">
-
-      <h3 class="section-title">Books</h3>
-
-      <div class="book-card">
-        <div class="book-content">
-          <h4>Praktische AI Governance</h4>
-
-          <p>
-            Een concrete bestuurlijke gids die verantwoorde AI vertaalt naar werkbare
-            stappen voor organisaties. Geen academisch traktaat. Geen juridisch handboek.
-            Geen technische implementatiegids. Wel een brug tussen bestuur,
-            recht en praktijk.
-          </p>
-
-          <div class="book-meta">
-            E-book · €12,95
-          </div>
-
-          <div class="actions">
-            <a class="btn-primary" href="/contact/">
-              Bestel e-book
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <div class="footer-brand">Dutch Governance Advisory</div>
-      <div class="footer-small">
-        AI governance · bestuurlijke inrichting · institutionele duiding
-      </div>
-    </div>
-    <div>
-      <a href="/contact/">Contact</a>
-      <span class="dot">·</span>
-      <a href="/disclaimer/">Disclaimer</a>
-    </div>
-  </div>
-</footer>
-
+<title>DGA Papers | Dutch Governance Advisory</title>
+<meta name="description" content="DGA Papers is een onafhankelijke publicatiereeks over AI governance, digitale afhankelijkheid en institutionele autonomie." />
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/">
 
 <style>
 
-/* Basis */
+/* ========== BASIS ========== */
+
 body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: #0b1c2c;
   color: #e6edf3;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
+  line-height: 1.6;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 28px;
 }
 
-.center {
-  text-align: center;
-}
+/* ========== HEADER ========== */
 
-/* Header */
-.site-header {
+header {
   padding: 28px 0;
 }
 
-.nav-container {
+.topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .brand {
-  letter-spacing: .12em;
   font-size: 12px;
-  opacity: .85;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  text-decoration: none;
 }
 
 .nav a {
   margin-left: 24px;
   text-decoration: none;
   color: #cbd5e1;
-  opacity: .8;
+  font-weight: 500;
 }
 
-.nav a.active,
-.nav a:hover {
-  opacity: 1;
+.nav a.active {
+  color: #ffffff;
 }
 
-/* Hero */
+/* ========== HERO ========== */
+
 .hero {
-  padding: 100px 0 60px;
+  padding: 100px 0 70px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
+  font-size: 52px;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
 }
 
-.hero-sub {
+.hero p {
+  font-size: 18px;
   max-width: 760px;
-  margin: 0 auto;
-  opacity: .8;
+  color: #cbd5e1;
 }
 
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  opacity: .6;
-  margin-bottom: 12px;
+/* ========== PAPER SECTION ========== */
+
+.paper-section {
+  padding: 60px 0;
+  border-top: 1px solid #1f3446;
 }
 
-/* Section */
-.section {
-  padding: 80px 0;
-}
-
-.section-dark {
-  background: #0f2436;
-}
-
-/* Paper layout */
 .paper-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: 60px;
+  gap: 48px;
   align-items: start;
 }
 
 .paper-cover {
-  background: #0e2234;
+  background: #10283c;
+  padding: 32px;
   border-radius: 14px;
-  padding: 28px;
+  border: 1px solid #1f3446;
 }
 
-.cover-series {
+.paper-cover small {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.paper-cover h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.paper-content small {
+  color: #94a3b8;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   font-size: 12px;
-  opacity: .6;
-  margin-bottom: 24px;
-}
-
-.cover-title {
-  font-size: 18px;
-  line-height: 1.4;
-  margin-bottom: 40px;
-}
-
-.cover-meta {
-  font-size: 13px;
-  opacity: .7;
-}
-
-.paper-label {
-  font-size: 12px;
-  letter-spacing: .12em;
-  opacity: .5;
-  margin-bottom: 10px;
 }
 
 .paper-content h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
+  margin: 12px 0 18px;
+  font-size: 32px;
+  line-height: 1.25;
 }
 
 .paper-content p {
-  opacity: .85;
-  line-height: 1.6;
+  color: #d8e2ec;
+  margin-bottom: 18px;
 }
 
-/* Buttons */
-.actions {
+/* ========== BUTTONS ========== */
+
+.button-row {
   margin-top: 28px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
 .btn-primary {
-  background: #1f4b6e;
+  display: inline-block;
   padding: 12px 18px;
-  border-radius: 8px;
+  background: #1f4b6e;
+  color: #ffffff;
   text-decoration: none;
-  color: white;
+  border-radius: 8px;
+  margin-right: 14px;
+  font-weight: 500;
 }
 
 .btn-secondary {
-  border: 1px solid rgba(255,255,255,.2);
+  display: inline-block;
   padding: 12px 18px;
-  border-radius: 8px;
-  text-decoration: none;
+  border: 1px solid #3a5a74;
   color: #e6edf3;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
-/* Books */
-.section-title {
-  font-size: 22px;
-  margin-bottom: 40px;
+/* ========== BOOKS ========== */
+
+.books-section {
+  padding: 80px 0;
+  border-top: 1px solid #1f3446;
+}
+
+.books-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 .book-card {
-  background: #132c42;
-  border-radius: 14px;
+  background: #11283b;
   padding: 32px;
+  border-radius: 14px;
+  border: 1px solid #1f3446;
 }
 
-.book-card h4 {
+.book-card h3 {
   margin-top: 0;
   font-size: 22px;
 }
 
-.book-meta {
-  margin-top: 16px;
-  opacity: .8;
+.book-card p {
+  color: #d8e2ec;
 }
 
-/* Footer */
-.site-footer {
+.book-price {
+  margin-top: 18px;
+  font-weight: 600;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
   padding: 60px 0;
-  border-top: 1px solid rgba(255,255,255,.05);
+  border-top: 1px solid #1f3446;
+  font-size: 14px;
+  color: #94a3b8;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-small {
-  font-size: 12px;
-  opacity: .6;
-}
-
-.dot {
-  margin: 0 8px;
-  opacity: .5;
-}
-
-@media (max-width: 900px) {
-  .paper-grid {
-    grid-template-columns: 1fr;
-  }
+footer a {
+  color: #cbd5e1;
+  text-decoration: none;
 }
 
 </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container topbar">
+    <a href="/" class="brand">Dutch Governance Advisory</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/papers/" class="active">Papers</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>DGA Papers</h1>
+    <p>
+      Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie.
+      Gericht op bestuurders, toezichthouders en strategische besluitvormers.
+    </p>
+  </div>
+</section>
+
+<section class="paper-section">
+  <div class="container paper-grid">
+
+    <div class="paper-cover">
+      <small>DGA Papers — Nr. 1</small>
+      <h3>De AI Act reguleert risico’s —<br>maar wie reguleert afhankelijkheid?</h3>
+      <p style="margin-top:16px; font-size:14px; color:#94a3b8;">
+        Bas Brinkmann<br>
+        Strategisch Bestuursadviseur<br>
+        2026
+      </p>
+    </div>
+
+    <div class="paper-content">
+      <small>Beleidsmatige analyse • 2026</small>
+      <h2>Institutionele autonomie in Europese context</h2>
+
+      <p>
+        Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
+        infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
+        De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar
+        institutionele machtsverschuiving grotendeels onbesproken.
+      </p>
+
+      <p>
+        Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding
+        van afhankelijkheidsstructuren, onderhandelingspositie en bestuurlijke
+        handelingsruimte binnen Europese kaders.
+      </p>
+
+      <div class="button-row">
+        <a href="/downloads/DGA_Papers_Nr1_Official_Edition_2026.pdf"
+           target="_blank"
+           class="btn-primary">
+           Download officiële editie (PDF)
+        </a>
+
+        <a href="/contact/" class="btn-secondary">
+          Vertrouwelijk overleg
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="books-section">
+  <div class="container">
+
+    <h2>Books</h2>
+
+    <div class="book-card">
+      <h3>Praktische AI Governance</h3>
+
+      <p>
+        Een concrete gids die verantwoorde AI vertaalt naar werkbare stappen voor
+        organisaties. Geen academisch traktaat. Geen juridisch handboek.
+        Geen technische implementatiegids. Wel een brug tussen bestuur, recht en praktijk.
+      </p>
+
+      <div class="book-price">
+        E-book — €12,95
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Dutch Governance Advisory • AI governance • bestuurlijke inrichting • institutionele duiding
+  </div>
+</footer>
 
 </body>
 </html>
