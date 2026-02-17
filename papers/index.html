@@ -5,340 +5,578 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>DGA Papers | Dutch Governance Advisory</title>
-  <meta name="description" content="DGA Papers is een onafhankelijke publicatiereeks over AI governance, digitale afhankelijkheid en institutionele autonomie in Europese context." />
+  <meta name="description" content="DGA Papers is een publicatiereeks over AI governance, digitale afhankelijkheid en bestuurlijke autonomie. Lees en download officiële edities." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/" />
 
+  <!-- Open Graph (subtiel, professioneel) -->
+  <meta property="og:title" content="DGA Papers | Dutch Governance Advisory" />
+  <meta property="og:description" content="Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.dutchgovernanceadvisory.nl/papers/" />
+
   <link rel="stylesheet" href="/assets/css/core.css" />
+
+  <style>
+    :root{
+      --bg0:#071624;
+      --bg1:#0a1d2e;
+      --panel: rgba(255,255,255,.04);
+      --panel2: rgba(255,255,255,.06);
+      --line: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.58);
+
+      /* Boardroom-blauw (geen paars, geen hype) */
+      --accent:#2e5f8a;
+      --accent2:#376e9f;
+      --accentLine: rgba(63,111,157,.85);
+
+      --radius: 16px;
+      --shadow: 0 24px 60px rgba(0,0,0,.35);
+      --max: 1080px;
+    }
+
+    /* Baseline */
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 0%, rgba(46,95,138,.18), transparent 60%),
+        radial-gradient(900px 700px at 80% 10%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+
+    .container{
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7,22,36,.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand{
+      text-decoration:none;
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .brand-title{
+      letter-spacing: .14em;
+      font-size: 12px;
+      opacity: .9;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Nav — expliciet geen wit vlak */
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 18px;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .nav a{
+      text-decoration:none;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .nav a:hover{ color: var(--text); background: rgba(255,255,255,.05); }
+    .nav a.active{
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      outline: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 64px 0 34px;
+      text-align: center;
+    }
+    .kicker{
+      color: var(--muted2);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    h1{
+      margin: 0 0 14px;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      margin: 0 auto;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .divider{
+      margin: 34px 0 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+    }
+
+    /* Section */
+    .section{
+      padding: 34px 0 72px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    /* Cover card (visuele omslag) */
+    .cover{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .cover .cap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    .cover-box{
+      aspect-ratio: 3 / 4;
+      border-radius: 14px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(800px 600px at 40% 0%, rgba(46,95,138,.25), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      position: relative;
+    }
+
+    .cover-box .cover-brand{
+      position:absolute;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 12px;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+    }
+
+    .cover-box .cover-title{
+      position:absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 54px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: rgba(255,255,255,.90);
+      font-weight: 600;
+      max-width: 92%;
+    }
+
+    .cover-box .cover-author{
+      position:absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      color: rgba(255,255,255,.70);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Content card */
+    .card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .meta-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      color: var(--muted2);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .summary{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+      max-width: 900px;
+    }
+
+    .positioning{
+      margin: 0 0 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(46,95,138,.12);
+      border: 1px solid rgba(46,95,138,.25);
+      color: rgba(255,255,255,.86);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 14px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .btn:hover{ background: rgba(255,255,255,.06); }
+
+    .btn-primary{
+      background: var(--accent);
+      border-color: var(--accentLine);
+      color: #fff;
+      font-weight: 550;
+    }
+    .btn-primary:hover{ background: var(--accent2); }
+
+    .fineprint{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 16px;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .codepath{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: rgba(255,255,255,.82);
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* Books */
+    .section-title{
+      margin: 44px 0 16px;
+      font-size: 18px;
+      color: rgba(255,255,255,.88);
+      letter-spacing: -0.01em;
+    }
+
+    .books-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .book-card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .book-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .book-title{
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .book-price{
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.14);
+      white-space: nowrap;
+    }
+    .book-desc{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+      max-width: 980px;
+    }
+
+    .book-actions{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+    }
+
+    /* Footer */
+    .site-footer{
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 30px 0;
+      color: var(--muted2);
+    }
+    .footer-inner{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap:wrap;
+    }
+    .footer-brand{ color: rgba(255,255,255,.85); font-size: 13px; }
+    .footer-small{ margin-top: 6px; font-size: 12px; }
+    .footer-links a{
+      color: var(--muted2);
+      text-decoration:none;
+      margin-left: 14px;
+    }
+    .footer-links a:hover{ color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 36px; }
+      .cover{ padding: 18px; }
+      .card{ padding: 20px; }
+      .topbar{ padding: 14px 0; }
+    }
+    @media (max-width: 520px){
+      .nav{ gap: 8px; }
+      .nav a{ padding: 7px 8px; font-size: 13px; }
+      h1{ font-size: 32px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <a href="/">DUTCH GOVERNANCE ADVISORY</a>
-    </div>
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a class="active" href="/papers/">Papers</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
+  <!-- Header -->
+  <header class="site-header">
     <div class="container">
-      <div class="hero-inner">
-        <p class="eyebrow">Publicatiereeks</p>
+      <div class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-title">DUTCH GOVERNANCE ADVISORY</span>
+        </a>
+
+        <nav class="nav" aria-label="Hoofdnavigatie">
+          <a href="/">Home</a>
+          <a class="active" href="/papers/">Papers</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="kicker">Publicatiereeks</div>
         <h1>DGA Papers</h1>
-        <p class="hero-intro">
-          Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie binnen de Europese context.
+        <p class="lead">
+          Beleidsmatige analyses over AI governance, digitale afhankelijkheid en institutionele autonomie.
           Gericht op bestuurders, toezichthouders en strategische besluitvormers.
         </p>
+        <hr class="divider" />
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PAPER NR 1 -->
-  <section class="paper-section">
-    <div class="container paper-grid">
+    <!-- Paper #1 -->
+    <section class="section">
+      <div class="container">
 
-      <div class="paper-cover">
-        <p class="paper-series">DGA Papers — Nr. 1</p>
-        <h3>
-          De AI Act reguleert risico’s —<br>
-          maar wie reguleert afhankelijkheid?
-        </h3>
-        <p class="paper-author">
-          Bas Brinkmann<br>
-          Strategisch Bestuursadviseur<br>
-          2026
-        </p>
-      </div>
+        <div class="grid">
 
-      <div class="paper-content">
-        <p class="paper-type">Beleidsmatige analyse · 2026</p>
+          <!-- Visual cover -->
+          <aside class="cover" aria-label="Omslag DGA Papers Nr. 1">
+            <div class="cap">
+              <span>DGA Papers — Nr. 1</span>
+              <span>2026</span>
+            </div>
 
-        <h2>Institutionele autonomie in Europese context</h2>
+            <div class="cover-box" role="img" aria-label="Visuele omslag voor DGA Papers Nr. 1">
+              <div class="cover-brand">
+                <span>Dutch Governance Advisory</span>
+                <span>DGA Papers — Nr. 1</span>
+              </div>
 
-        <p>
-          Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie, infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk. 
-          De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar institutionele machtsverschuiving grotendeels onbeantwoord.
-        </p>
+              <div class="cover-title">
+                De AI Act reguleert risico’s — maar wie reguleert afhankelijkheid?
+              </div>
 
-        <p>
-          Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding van afhankelijkheidsstructuren, onderhandelingspositie en bestuurlijke handelingsruimte binnen Europese kaders.
-        </p>
+              <div class="cover-author">
+                Bas Brinkmann<br/>
+                Strategisch Bestuursadviseur<br/>
+                2026
+              </div>
+            </div>
+          </aside>
 
-        <div class="paper-actions">
-          <a class="btn btn-primary"
-         href="/downloads/DGA_Papers_Nr1_Official_Edition_2026.pdf"
+          <!-- Content -->
+          <article class="card">
+            <div class="meta-top">
+              <span>Beleidsmatige analyse</span>
+              <span>2026</span>
+            </div>
 
-             target="_blank" rel="noopener">
-             Download officiële editie (PDF)
-          </a>
+            <h2>Institutionele autonomie in Europese context</h2>
 
-          <a class="btn btn-secondary" href="/contact/">
-            Vertrouwelijk overleg
-          </a>
+            <p class="summary">
+              Deze editie onderzoekt de bestuurlijke implicaties van vendorconcentratie, infrastructuurmacht en strategische
+              afhankelijkheid in het AI-tijdperk. De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar
+              institutionele machtsverschuiving grotendeels onbesproken.
+            </p>
+
+            <div class="positioning">
+              Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding van afhankelijkheidsstructuren,
+              onderhandelingspositie en bestuurlijke handelingsruimte — binnen Europese kaders.
+            </div>
+
+            <div class="actions">
+              <a class="btn btn-primary"
+                 href="/downloads/DGA_Papers_Nr1_Official_Edition_2026.pdf"
+                 target="_blank" rel="noopener">
+                Download officiële beleidseditie (PDF)
+              </a>
+
+              <a class="btn"
+                 href="/contact/">
+                Vertrouwelijk overleg
+              </a>
+            </div>
+
+            <div class="fineprint">
+              <span>Officiële editie • 2026 • PDF</span>
+              <span>Bestand: <span class="codepath">/downloads/DGA_Papers_Nr1_Official_Edition_2026.pdf</span></span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Books -->
+        <h3 class="section-title">Books</h3>
+
+        <div class="books-grid">
+          <section class="book-card">
+            <div class="book-top">
+              <h4 class="book-title">Praktische AI Governance</h4>
+              <div class="book-price">E-book — €12,95</div>
+            </div>
+
+            <p class="book-desc">
+              Deze gids biedt wat ik destijds zocht en niet vond: een praktische, concrete aanpak die grote concepten
+              zoals verantwoorde AI vertaalt naar werkbare stappen. Geen academisch traktaat. Geen juridisch handboek.
+              Geen technische implementatiegids. Wél een brug tussen bestuur, recht en praktijk.
+            </p>
+
+            <div class="book-actions">
+              <a class="btn btn-primary" href="/contact/">
+                Bestellen / toegang aanvragen
+              </a>
+              <a class="btn" href="/contact/">
+                Vraag een factuur (organisatie)
+              </a>
+            </div>
+
+            <div class="fineprint">
+              <span>Levering via persoonlijke link na bevestiging</span>
+              <span>Voor bestuurders en organisaties</span>
+            </div>
+          </section>
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- BOOKS -->
-  <section class="books-section">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container">
-
-      <h2 class="section-title">Books</h2>
-
-      <div class="book-block">
-        <h3>Praktische AI Governance</h3>
-
-        <p>
-          Een concrete gids die verantwoorde AI vertaalt naar werkbare bestuurlijke stappen. 
-          Geen academisch traktaat. Geen juridisch handboek. Geen technische implementatiegids. 
-          Een brug tussen bestuur, recht en praktijk.
-        </p>
-
-        <p class="book-price">
-          E-book — €12,95
-        </p>
-
-        <a class="btn btn-secondary" href="/contact/">
-          Interesse of bestelling
-        </a>
-
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Dutch Governance Advisory</div>
+          <div class="footer-small">AI governance • bestuurlijke inrichting • publieke verantwoording</div>
+        </div>
+        <div class="footer-links">
+          <a href="/contact/">Contact</a>
+          <a href="/disclaimer/">Disclaimer</a>
+        </div>
       </div>
-
     </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>Dutch Governance Advisory</strong><br>
-      AI governance · bestuurlijke inrichting · institutionele duiding
-    </div>
-    <div>
-      <a href="/contact/">Contact</a> · 
-      <a href="/disclaimer/">Disclaimer</a>
-    </div>
-  </div>
-</footer>
-
-<style>
-
-/* STRUCTUUR */
-
-body {
-  margin: 0;
-  background: #0b1c2c;
-  color: #e6edf3;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.65;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-/* HEADER */
-
-.site-header {
-  padding: 28px 0;
-  border-bottom: 1px solid #1f3446;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand a {
-  text-decoration: none;
-  color: #c9d6e2;
-  letter-spacing: .12em;
-  font-size: 12px;
-}
-
-.nav a {
-  margin-left: 28px;
-  text-decoration: none;
-  color: #c9d6e2;
-  font-size: 15px;
-}
-
-.nav a.active {
-  color: #ffffff;
-}
-
-/* HERO */
-
-.hero {
-  padding: 110px 0 80px;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .18em;
-  color: #6f8aa1;
-}
-
-.hero h1 {
-  font-size: 56px;
-  margin: 14px 0 22px;
-}
-
-.hero-intro {
-  font-size: 19px;
-  max-width: 780px;
-  color: #c7d2da;
-}
-
-/* PAPER */
-
-.paper-section {
-  padding: 90px 0;
-  border-top: 1px solid #1f3446;
-}
-
-.paper-grid {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 70px;
-}
-
-.paper-cover {
-  background: #102739;
-  padding: 40px;
-  border-radius: 6px;
-  border: 1px solid #20384a;
-}
-
-.paper-series {
-  font-size: 12px;
-  letter-spacing: .12em;
-  color: #7e9ab0;
-}
-
-.paper-cover h3 {
-  margin-top: 22px;
-  font-size: 22px;
-  line-height: 1.4;
-}
-
-.paper-author {
-  margin-top: 32px;
-  font-size: 14px;
-  color: #9bb1c3;
-}
-
-.paper-type {
-  font-size: 13px;
-  letter-spacing: .08em;
-  color: #6f8aa1;
-}
-
-.paper-content h2 {
-  font-size: 34px;
-  margin: 16px 0 26px;
-}
-
-.paper-content p {
-  font-size: 17px;
-  color: #d3dde5;
-}
-
-.paper-actions {
-  margin-top: 32px;
-  display: flex;
-  gap: 18px;
-}
-
-/* BOOKS */
-
-.books-section {
-  padding: 110px 0;
-  border-top: 1px solid #1f3446;
-}
-
-.section-title {
-  font-size: 30px;
-  margin-bottom: 50px;
-}
-
-.book-block {
-  max-width: 820px;
-  background: #102739;
-  padding: 48px;
-  border-radius: 6px;
-  border: 1px solid #20384a;
-}
-
-.book-block h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
-}
-
-.book-block p {
-  font-size: 17px;
-  color: #d3dde5;
-}
-
-.book-price {
-  margin-top: 28px;
-  font-weight: 600;
-}
-
-/* BUTTONS */
-
-.btn {
-  padding: 13px 22px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-.btn-primary {
-  background: #214f73;
-  color: #ffffff;
-}
-
-.btn-secondary {
-  border: 1px solid #395a74;
-  color: #e6edf3;
-}
-
-/* FOOTER */
-
-.site-footer {
-  padding: 60px 0;
-  border-top: 1px solid #1f3446;
-  font-size: 14px;
-  color: #8aa1b5;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-</style>
+  </footer>
 
 </body>
 </html>
