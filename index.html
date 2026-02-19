@@ -10,219 +10,147 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --navy:#0b1320;
-  --navy-deep:#080f18;
-  --text:#eef2f6;
-  --muted:#93a0ad;
-  --gold:#b49a53;
-  --max-width:920px;
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg,#0b1320 0%,#080f18 100%);
+    color: #eef2f6;
+    line-height: 1.8;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Inter', sans-serif;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(180,154,83,0.07), transparent 40%),
-    linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
-  color:var(--text);
-  line-height:1.8;
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 6%;
 }
 
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:0 6%;
+header {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* NAV */
-
-header{
-  position:fixed;
-  width:100%;
-  background:rgba(11,19,32,0.92);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  z-index:100;
+nav a {
+    margin-left: 24px;
+    text-decoration: none;
+    color: #93a0ad;
 }
 
-.nav{
-  height:80px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:11px;
-  letter-spacing:2px;
+nav a:hover {
+    color: #ffffff;
 }
 
-nav a{
-  margin-left:28px;
-  text-decoration:none;
-  color:var(--muted);
-  transition:0.3s ease;
+.hero {
+    padding: 140px 0 100px 0;
 }
 
-nav a:hover{
-  color:var(--text);
+.hero h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 
-/* HERO */
-
-.hero{
-  padding:220px 0 140px 0;
+.hero p {
+    font-size: 20px;
+    color: #93a0ad;
+    max-width: 760px;
 }
 
-.hero h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:52px;
-  font-weight:400;
-  line-height:1.25;
-  margin-bottom:40px;
+.section {
+    padding: 100px 0;
 }
 
-.hero p{
-  font-size:20px;
-  color:var(--muted);
-  max-width:780px;
+.section h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    border-left: 2px solid rgba(180,154,83,0.6);
+    padding-left: 16px;
 }
 
-/* SECTIONS */
-
-.section{
-  padding:120px 0;
+.section p {
+    font-size: 18px;
+    color: #93a0ad;
+    margin-bottom: 24px;
 }
 
-.section h2{
-  font-family:'Libre Baskerville', serif;
-  font-size:26px;
-  font-weight:400;
-  margin-bottom:35px;
-  border-left:2px solid rgba(180,154,83,0.6);
-  padding-left:16px;
-}
-
-.section p{
-  color:var(--muted);
-  margin-bottom:26px;
-  font-size:18px;
-}
-
-.list{
-  margin-top:20px;
-  color:var(--muted);
-  line-height:1.9;
-}
-
-/* FOOTER */
-
-footer{
-  padding:120px 0 60px 0;
-  border-top:1px solid rgba(255,255,255,0.05);
-  font-size:12px;
-  letter-spacing:1.4px;
-  color:var(--muted);
-}
-
-@media(max-width:900px){
-  .hero h1{font-size:38px;}
-  .section{padding:90px 0;}
+footer {
+    padding: 80px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 12px;
+    color: #93a0ad;
+    letter-spacing: 1.5px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
-  <div class="container nav">
     <div>DUTCH GOVERNANCE ADVISORY</div>
     <nav>
-      <a href="papers.html">Papers</a>
-      <a href="ebook.html">E-book</a>
-      <a href="contact.html">Contact</a>
+        <a href="papers.html">Papers</a>
+        <a href="ebook.html">E-book</a>
+        <a href="contact.html">Contact</a>
     </nav>
-  </div>
 </header>
 
 <section class="hero">
-  <div class="container">
     <h1>Digitale afhankelijkheid vraagt bestuurlijke regie.</h1>
     <p>
-      Raden van Bestuur, directies en toezichthouders dragen verantwoordelijkheid
-      voor continuïteit, legitimiteit en institutionele handelingsruimte
-      in een tijd waarin AI-systemen diep ingrijpen in organisatie en besluitvorming.
+        Raden van Bestuur, directies en toezichthouders dragen verantwoordelijkheid
+        voor continuïteit, legitimiteit en institutionele handelingsruimte
+        in een tijd waarin AI-systemen diep ingrijpen in organisatie en besluitvorming.
     </p>
-  </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2>Bestuurlijke verantwoordelijkheid onder technologische druk</h2>
+    <h2>Bestuurlijke verantwoordelijkheid</h2>
     <p>
-      AI is geen neutraal hulpmiddel. Het beïnvloedt besluitvorming,
-      informatiepositie en afhankelijkheidsstructuren.
-      Compliance stelt kaders, maar verantwoordelijkheid blijft bestuurlijk.
+        AI beïnvloedt besluitvorming, informatiepositie en afhankelijkheidsstructuren.
+        Compliance stelt kaders, maar verantwoordelijkheid blijft bestuurlijk.
     </p>
     <p>
-      Dutch Governance Advisory ondersteunt bestuurders bij het expliciet maken
-      van digitale afhankelijkheden, risicoacceptatie en governance-structuren —
-      niet als IT-traject, maar als bestuurlijke opgave.
+        Dutch Governance Advisory ondersteunt bestuurders bij het expliciet maken
+        van digitale afhankelijkheden en governance-structuren —
+        niet als IT-traject, maar als bestuurlijke opgave.
     </p>
-  </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2>Een governance-architectuur in drie lagen</h2>
+    <h2>Governance-architectuur in drie lagen</h2>
     <p>
-      Bestuurlijke regie vereist samenhang tussen strategie,
-      uitvoering en technische borging.
+        Bestuurlijke kaders, operationele vertaling en technische borging
+        vormen samen een samenhangend model.
     </p>
-
-    <div class="list">
-      — Bestuurlijke kaders en expliciete risicoacceptatie<br>
-      — Operationele vertaling en menselijk toezicht<br>
-      — Technische borging, logging en aantoonbaarheid
-    </div>
-
     <p>
-      Wanneer één laag ontbreekt, verschuift verantwoordelijkheid impliciet.
-      Het model voorkomt versnippering en maakt governance traceerbaar.
+        Wanneer één laag ontbreekt, verschuift verantwoordelijkheid impliciet.
+        Het model maakt governance expliciet en traceerbaar.
     </p>
-  </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2>Analyse als fundament</h2>
-    <p>
-      De publieke papers analyseren institutionele afhankelijkheid,
-      platformconcentratie en bestuurlijke machtsverschuiving in het AI-tijdperk.
-      Deze analyses vormen het intellectuele fundament onder de governance-architectuur.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
     <h2>Bestuurlijke reflectie</h2>
     <p>
-      In situaties waarin digitale afhankelijkheid expliciete bestuurlijke afweging vereist —
-      bijvoorbeeld bij invoering van AI-systemen, herziening van governance-structuren
-      of verhoogde toezichtsdynamiek — kan een gericht gesprek helderheid bieden
-      over positie, risico en handelingsruimte.
+        In situaties waarin digitale afhankelijkheid expliciete bestuurlijke afweging vereist,
+        kan een gericht gesprek helderheid bieden over positie, risico en handelingsruimte.
     </p>
-  </div>
 </section>
 
 <footer>
-  <div class="container">
     Bas Brinkmann · Strategisch bestuursadviseur  
-    Governance · Digitale afhankelijkheid · Institutionele continuïteit  
     <br><br>
     Onafhankelijke publicatie · Geen sponsoring · Geen platformafhankelijkheid
-  </div>
 </footer>
+
+</div>
 
 </body>
 </html>
