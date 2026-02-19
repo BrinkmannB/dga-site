@@ -1,25 +1,150 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DGA Papers | Dutch Governance Advisory</title>
+<title>DGA Papers | Dutch Governance Advisory</title>
 
-  <meta name="description"
-        content="DGA Papers is een onafhankelijke publicatiereeks over AI governance, digitale afhankelijkheid en institutionele autonomie." />
+<meta name="description"
+      content="Onafhankelijke publicatiereeks over AI governance, digitale afhankelijkheid en institutionele autonomie.">
 
-  <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/" />
-  <meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/papers/">
+<meta name="robots" content="index,follow">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="DGA Papers | Dutch Governance Advisory">
-  <meta property="og:description" content="Onafhankelijke publicatiereeks over AI governance en institutionele autonomie.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dutchgovernanceadvisory.nl/papers/">
-  <meta property="og:image" content="https://www.dutchgovernanceadvisory.nl/assets/img/dga-papers-overview.png">
+<link rel="stylesheet" href="/assets/css/core.css">
 
-  <link rel="stylesheet" href="/assets/css/core.css" />
+<style>
+
+/* HERO */
+
+.papers-hero {
+  padding:120px 0 100px;
+  background:
+    linear-gradient(180deg,
+      #071a2a 0%,
+      #0c2438 100%);
+}
+
+.papers-hero h1 {
+  font-size:48px;
+  font-weight:500;
+  margin-bottom:24px;
+}
+
+.papers-hero p {
+  max-width:720px;
+  font-size:18px;
+  opacity:.75;
+}
+
+/* SECTION */
+
+.papers-section {
+  padding:100px 0;
+  background:#0c2438;
+}
+
+.papers-grid {
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:70px;
+  align-items:start;
+}
+
+/* COVER BLOCK */
+
+.paper-cover {
+  background:linear-gradient(180deg,#0f2d47,#0b2236);
+  border-radius:16px;
+  padding:40px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.45);
+}
+
+.cover-series {
+  font-size:13px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  opacity:.5;
+}
+
+.cover-title {
+  margin-top:50px;
+  font-size:20px;
+  line-height:1.4;
+  font-weight:400;
+}
+
+.cover-meta {
+  margin-top:60px;
+  font-size:13px;
+  opacity:.6;
+}
+
+/* CONTENT */
+
+.paper-meta {
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.5;
+  margin-bottom:20px;
+}
+
+.paper-title {
+  font-size:32px;
+  font-weight:500;
+  margin-bottom:24px;
+}
+
+.paper-title a {
+  text-decoration:none;
+  color:inherit;
+}
+
+.paper-text {
+  max-width:640px;
+  opacity:.8;
+  margin-bottom:20px;
+  line-height:1.7;
+}
+
+.paper-actions {
+  margin-top:30px;
+  display:flex;
+  gap:20px;
+}
+
+.btn-primary {
+  background:#1f4e73;
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+}
+
+.btn-primary:hover {
+  background:#27618f;
+}
+
+.btn-secondary {
+  border:1px solid rgba(255,255,255,0.2);
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+}
+
+.institutional-note {
+  margin-top:120px;
+  opacity:.45;
+  font-size:13px;
+  letter-spacing:.08em;
+}
+
+</style>
 </head>
 
 <body>
@@ -37,88 +162,74 @@
 
 <main>
 
-<section class="hero">
-  <div class="container hero-inner">
+<section class="papers-hero">
+  <div class="container">
     <div class="hero-label">Publicatiereeks</div>
     <h1>DGA Papers</h1>
-    <p class="hero-sub">
-      Onafhankelijke analyses over AI governance, digitale afhankelijkheid
+    <p>
+      Onafhankelijke publicaties over AI governance, digitale afhankelijkheid
       en institutionele autonomie binnen de Europese context.
     </p>
   </div>
 </section>
 
-<section class="paper-section">
-  <div class="container paper-grid">
+<section class="papers-section">
+  <div class="container papers-grid">
 
     <div class="paper-cover">
-      <div class="cover-inner">
-        <div class="cover-series">DGA Papers — Nr. 1</div>
-        <div class="cover-title">
-          De AI Act reguleert risico’s —
-          maar wie reguleert afhankelijkheid?
-        </div>
-        <div class="cover-author">
-          Bas Brinkmann<br>
-          Strategisch Bestuursadviseur<br>
-          2026
-        </div>
+      <div class="cover-series">DGA Papers — Nr. 1</div>
+      <div class="cover-title">
+        De AI Act reguleert risico’s —
+        maar wie reguleert afhankelijkheid?
+      </div>
+      <div class="cover-meta">
+        Bas Brinkmann<br>
+        Strategisch Bestuursadviseur<br>
+        Official Edition 2026
       </div>
     </div>
 
-    <div class="paper-content">
+    <div>
       <div class="paper-meta">Beleidsmatige analyse · 2026</div>
 
-      <h2>
-        <a href="/papers/nr-1-institutionele-autonomie/"
-           style="color:inherit; text-decoration:none;">
+      <div class="paper-title">
+        <a href="/papers/nr-1-institutionele-autonomie/">
           Institutionele autonomie in Europese context
         </a>
-      </h2>
+      </div>
 
-      <p>
-        Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
-        infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
-        De AI Act adresseert risico’s binnen systemen, maar laat de vraag naar
-        institutionele machtsverschuiving grotendeels onbesproken.
-      </p>
+      <div class="paper-text">
+        Deze editie analyseert de bestuurlijke implicaties van
+        vendorconcentratie, infrastructuurmacht en strategische afhankelijkheid
+        in het AI-tijdperk. De AI Act adresseert systeemrisico’s, maar laat de
+        vraag naar institutionele machtsverschuiving grotendeels onbesproken.
+      </div>
 
-      <p>
+      <div class="paper-text">
         Autonomie vereist meer dan compliance. Zij vraagt om expliciete duiding
         van afhankelijkheidsstructuren, onderhandelingspositie en bestuurlijke
-        handelingsruimte.
-      </p>
+        handelingsruimte binnen Europese kaders.
+      </div>
 
       <div class="paper-actions">
         <a class="btn-primary"
            href="/assets/pdf/DGA_Papers_Nr1_Official_Edition_2026.pdf"
            target="_blank">
-          Download officiële editie (PDF)
+           Download Official Edition (PDF)
         </a>
       </div>
 
-      <div class="paper-file">
-        Official Edition · 2026 · PDF
+      <div class="institutional-note">
+        DGA Papers is een onafhankelijke publicatiereeks.
+        Geen sponsoring. Geen platformafhankelijkheid.
       </div>
+
     </div>
 
   </div>
 </section>
 
 </main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>
-      Dutch Governance Advisory<br>
-      <span>AI governance · bestuurlijke inrichting · institutionele duiding</span>
-    </div>
-    <div>
-      <a href="/contact/">Contact</a> ·
-      <a href="/disclaimer/">Disclaimer</a>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
