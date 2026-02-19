@@ -16,116 +16,128 @@
 
 <style>
 
-/* ---------- BASIS ---------- */
+/* ===========================
+   BASIS
+=========================== */
 
 body {
   margin:0;
-  background:#071a2a;
-  color:#e9f0f6;
+  background:#061a29;
+  color:#f2f6fa;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 
 .container {
   max-width:1100px;
   margin:0 auto;
-  padding:0 28px;
+  padding:0 32px;
 }
 
-/* ---------- HERO ---------- */
+/* ===========================
+   HERO
+=========================== */
 
 .papers-hero {
-  padding:140px 0 120px;
-  background:linear-gradient(180deg,#061826 0%,#0b2438 100%);
+  padding:150px 0 130px;
+  background:linear-gradient(180deg,#061a29 0%,#0a2437 100%);
 }
 
 .papers-hero .label {
   font-size:13px;
-  letter-spacing:.18em;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  opacity:.5;
-  margin-bottom:18px;
+  color:#8ea6b8;
+  margin-bottom:24px;
 }
 
 .papers-hero h1 {
-  font-size:54px;
+  font-size:56px;
   font-weight:500;
   margin:0 0 30px;
   color:#ffffff;
 }
 
 .papers-hero p {
-  max-width:720px;
-  font-size:19px;
+  max-width:760px;
+  font-size:20px;
   line-height:1.7;
-  color:#c7d6e2;
+  color:#c8d6e2;
 }
 
-/* ---------- SECTION ---------- */
+/* ===========================
+   SECTION
+=========================== */
 
 .papers-section {
-  padding:120px 0 140px;
-  background:#0b2438;
+  padding:140px 0;
+  background:#0a2437;
 }
 
-/* ---------- GRID ---------- */
+/* ===========================
+   GRID
+=========================== */
 
 .paper-grid {
   display:grid;
   grid-template-columns:420px 1fr;
-  gap:80px;
+  gap:90px;
   align-items:start;
 }
 
-/* ---------- COVER ---------- */
+/* ===========================
+   COVER CARD
+=========================== */
 
-.paper-cover {
-  background:linear-gradient(180deg,#133955,#0f2e47);
-  border-radius:20px;
-  padding:48px;
-  box-shadow:0 30px 70px rgba(0,0,0,.55);
+.paper-card {
+  background:#0f314a;
+  border-radius:22px;
+  padding:50px;
+  box-shadow:0 35px 80px rgba(0,0,0,.55);
 }
 
-.cover-series {
+.paper-card .series {
   font-size:12px;
-  letter-spacing:.22em;
+  letter-spacing:.25em;
   text-transform:uppercase;
-  opacity:.45;
+  color:#7f97aa;
 }
 
-.cover-title {
-  margin-top:60px;
-  font-size:22px;
-  line-height:1.45;
-  color:#e3eef8;
-}
-
-.cover-meta {
+.paper-card .statement {
   margin-top:70px;
+  font-size:24px;
+  line-height:1.45;
+  color:#ffffff;
+}
+
+.paper-card .meta {
+  margin-top:80px;
   font-size:14px;
-  color:#9fb3c4;
+  color:#9fb4c5;
   line-height:1.6;
 }
 
-/* ---------- CONTENT ---------- */
+/* ===========================
+   CONTENT
+=========================== */
 
 .paper-meta {
   font-size:13px;
-  letter-spacing:.12em;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:#8fa6b8;
-  margin-bottom:22px;
+  color:#7f97aa;
+  margin-bottom:24px;
 }
 
 .paper-title {
-  font-size:36px;
+  font-size:38px;
   font-weight:500;
-  margin-bottom:26px;
+  margin-bottom:30px;
   color:#ffffff;
 }
 
 .paper-title a {
-  color:inherit;
   text-decoration:none;
+  color:inherit;
 }
 
 .paper-title a:hover {
@@ -133,40 +145,45 @@ body {
 }
 
 .paper-text {
-  max-width:680px;
-  font-size:18px;
+  font-size:19px;
   line-height:1.75;
-  color:#cbd9e4;
-  margin-bottom:24px;
+  color:#d2e0ea;
+  max-width:720px;
+  margin-bottom:28px;
 }
 
-.paper-actions {
-  margin-top:40px;
-}
+/* ===========================
+   BUTTON
+=========================== */
 
 .btn-download {
   display:inline-block;
-  padding:16px 26px;
-  background:#2e79b4;
-  border-radius:12px;
+  margin-top:20px;
+  padding:18px 28px;
+  background:#2f7fbf;
+  border-radius:14px;
+  font-size:17px;
+  color:#ffffff;
   text-decoration:none;
-  color:#fff;
-  font-size:16px;
-  transition:all .2s ease;
+  transition:.2s ease;
 }
 
 .btn-download:hover {
-  background:#3688c7;
+  background:#3b92d6;
 }
 
-/* ---------- FOOTNOTE ---------- */
+/* ===========================
+   INDEPENDENCE LINE
+=========================== */
 
-.papers-note {
+.independence {
   margin-top:120px;
-  font-size:13px;
-  letter-spacing:.12em;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:15px;
+  letter-spacing:.25em;
   text-transform:uppercase;
-  color:#6f8798;
+  color:#9fb4c5;
 }
 
 </style>
@@ -201,19 +218,23 @@ body {
 <section class="papers-section">
   <div class="container paper-grid">
 
-    <div class="paper-cover">
-      <div class="cover-series">DGA Papers — Nr. 1</div>
-      <div class="cover-title">
+    <!-- LINKERKAART -->
+    <div class="paper-card">
+      <div class="series">DGA Papers — Nr. 1</div>
+
+      <div class="statement">
         De AI Act reguleert risico’s —
         maar wie reguleert afhankelijkheid?
       </div>
-      <div class="cover-meta">
+
+      <div class="meta">
         Bas Brinkmann<br>
         Strategisch Bestuursadviseur<br>
         Official Edition 2026
       </div>
     </div>
 
+    <!-- RECHTERKANT -->
     <div>
       <div class="paper-meta">Beleidsmatige analyse · 2026</div>
 
@@ -224,10 +245,10 @@ body {
       </div>
 
       <div class="paper-text">
-        Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
-        infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
-        De AI Act adresseert systeemrisico’s, maar laat de vraag naar
-        institutionele machtsverschuiving grotendeels onbesproken.
+        Deze editie analyseert de bestuurlijke implicaties van
+        vendorconcentratie, infrastructuurmacht en strategische afhankelijkheid
+        in het AI-tijdperk. De AI Act adresseert systeemrisico’s, maar laat de
+        vraag naar institutionele machtsverschuiving grotendeels onbesproken.
       </div>
 
       <div class="paper-text">
@@ -236,15 +257,13 @@ body {
         handelingsruimte binnen Europese kaders.
       </div>
 
-      <div class="paper-actions">
-        <a class="btn-download"
-           href="/assets/pdf/DGA_Papers_Nr1_Official_Edition_2026.pdf"
-           target="_blank">
-           Download Official Edition (PDF)
-        </a>
-      </div>
+      <a class="btn-download"
+         href="/assets/pdf/DGA_Papers_Nr1_Official_Edition_2026.pdf"
+         target="_blank">
+         Download Official Edition (PDF)
+      </a>
 
-      <div class="papers-note">
+      <div class="independence">
         Onafhankelijke publicatie · Geen sponsoring · Geen platformafhankelijkheid
       </div>
 
