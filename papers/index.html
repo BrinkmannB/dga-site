@@ -16,132 +16,157 @@
 
 <style>
 
-/* HERO */
+/* ---------- BASIS ---------- */
+
+body {
+  margin:0;
+  background:#071a2a;
+  color:#e9f0f6;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+.container {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* ---------- HERO ---------- */
 
 .papers-hero {
-  padding:120px 0 100px;
-  background:
-    linear-gradient(180deg,
-      #071a2a 0%,
-      #0c2438 100%);
+  padding:140px 0 120px;
+  background:linear-gradient(180deg,#061826 0%,#0b2438 100%);
+}
+
+.papers-hero .label {
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.5;
+  margin-bottom:18px;
 }
 
 .papers-hero h1 {
-  font-size:48px;
+  font-size:54px;
   font-weight:500;
-  margin-bottom:24px;
+  margin:0 0 30px;
+  color:#ffffff;
 }
 
 .papers-hero p {
   max-width:720px;
-  font-size:18px;
-  opacity:.75;
+  font-size:19px;
+  line-height:1.7;
+  color:#c7d6e2;
 }
 
-/* SECTION */
+/* ---------- SECTION ---------- */
 
 .papers-section {
-  padding:100px 0;
-  background:#0c2438;
+  padding:120px 0 140px;
+  background:#0b2438;
 }
 
-.papers-grid {
+/* ---------- GRID ---------- */
+
+.paper-grid {
   display:grid;
-  grid-template-columns:380px 1fr;
-  gap:70px;
+  grid-template-columns:420px 1fr;
+  gap:80px;
   align-items:start;
 }
 
-/* COVER BLOCK */
+/* ---------- COVER ---------- */
 
 .paper-cover {
-  background:linear-gradient(180deg,#0f2d47,#0b2236);
-  border-radius:16px;
-  padding:40px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.45);
+  background:linear-gradient(180deg,#133955,#0f2e47);
+  border-radius:20px;
+  padding:48px;
+  box-shadow:0 30px 70px rgba(0,0,0,.55);
 }
 
 .cover-series {
-  font-size:13px;
-  letter-spacing:.15em;
+  font-size:12px;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  opacity:.5;
+  opacity:.45;
 }
 
 .cover-title {
-  margin-top:50px;
-  font-size:20px;
-  line-height:1.4;
-  font-weight:400;
+  margin-top:60px;
+  font-size:22px;
+  line-height:1.45;
+  color:#e3eef8;
 }
 
 .cover-meta {
-  margin-top:60px;
-  font-size:13px;
-  opacity:.6;
+  margin-top:70px;
+  font-size:14px;
+  color:#9fb3c4;
+  line-height:1.6;
 }
 
-/* CONTENT */
+/* ---------- CONTENT ---------- */
 
 .paper-meta {
-  font-size:14px;
-  letter-spacing:.08em;
+  font-size:13px;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  opacity:.5;
-  margin-bottom:20px;
+  color:#8fa6b8;
+  margin-bottom:22px;
 }
 
 .paper-title {
-  font-size:32px;
+  font-size:36px;
   font-weight:500;
-  margin-bottom:24px;
+  margin-bottom:26px;
+  color:#ffffff;
 }
 
 .paper-title a {
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
+}
+
+.paper-title a:hover {
+  opacity:.85;
 }
 
 .paper-text {
-  max-width:640px;
-  opacity:.8;
-  margin-bottom:20px;
-  line-height:1.7;
+  max-width:680px;
+  font-size:18px;
+  line-height:1.75;
+  color:#cbd9e4;
+  margin-bottom:24px;
 }
 
 .paper-actions {
-  margin-top:30px;
-  display:flex;
-  gap:20px;
+  margin-top:40px;
 }
 
-.btn-primary {
-  background:#1f4e73;
-  padding:14px 22px;
-  border-radius:10px;
+.btn-download {
+  display:inline-block;
+  padding:16px 26px;
+  background:#2e79b4;
+  border-radius:12px;
   text-decoration:none;
   color:#fff;
-  font-size:15px;
+  font-size:16px;
+  transition:all .2s ease;
 }
 
-.btn-primary:hover {
-  background:#27618f;
+.btn-download:hover {
+  background:#3688c7;
 }
 
-.btn-secondary {
-  border:1px solid rgba(255,255,255,0.2);
-  padding:14px 22px;
-  border-radius:10px;
-  text-decoration:none;
-  color:#fff;
-  font-size:15px;
-}
+/* ---------- FOOTNOTE ---------- */
 
-.institutional-note {
+.papers-note {
   margin-top:120px;
-  opacity:.45;
   font-size:13px;
-  letter-spacing:.08em;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#6f8798;
 }
 
 </style>
@@ -164,7 +189,7 @@
 
 <section class="papers-hero">
   <div class="container">
-    <div class="hero-label">Publicatiereeks</div>
+    <div class="label">Publicatiereeks</div>
     <h1>DGA Papers</h1>
     <p>
       Onafhankelijke publicaties over AI governance, digitale afhankelijkheid
@@ -174,7 +199,7 @@
 </section>
 
 <section class="papers-section">
-  <div class="container papers-grid">
+  <div class="container paper-grid">
 
     <div class="paper-cover">
       <div class="cover-series">DGA Papers — Nr. 1</div>
@@ -199,10 +224,10 @@
       </div>
 
       <div class="paper-text">
-        Deze editie analyseert de bestuurlijke implicaties van
-        vendorconcentratie, infrastructuurmacht en strategische afhankelijkheid
-        in het AI-tijdperk. De AI Act adresseert systeemrisico’s, maar laat de
-        vraag naar institutionele machtsverschuiving grotendeels onbesproken.
+        Deze editie analyseert de bestuurlijke implicaties van vendorconcentratie,
+        infrastructuurmacht en strategische afhankelijkheid in het AI-tijdperk.
+        De AI Act adresseert systeemrisico’s, maar laat de vraag naar
+        institutionele machtsverschuiving grotendeels onbesproken.
       </div>
 
       <div class="paper-text">
@@ -212,16 +237,15 @@
       </div>
 
       <div class="paper-actions">
-        <a class="btn-primary"
+        <a class="btn-download"
            href="/assets/pdf/DGA_Papers_Nr1_Official_Edition_2026.pdf"
            target="_blank">
            Download Official Edition (PDF)
         </a>
       </div>
 
-      <div class="institutional-note">
-        DGA Papers is een onafhankelijke publicatiereeks.
-        Geen sponsoring. Geen platformafhankelijkheid.
+      <div class="papers-note">
+        Onafhankelijke publicatie · Geen sponsoring · Geen platformafhankelijkheid
       </div>
 
     </div>
