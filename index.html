@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Bestuurlijke Regie in het AI-tijdperk | Dutch Governance Advisory</title>
-  <meta name="description" content="Reflectie op digitale afhankelijkheid, bestuurlijke regie en continuïteit in een AI-gedreven infrastructuur." />
+  <meta name="description" content="Reflectie op AI, digitale afhankelijkheid en bestuurlijke continuïteit." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.dutchgovernanceadvisory.nl/" />
 </head>
@@ -13,7 +12,7 @@
 <body>
 
 <header class="site-header">
-  <div class="container nav-bar">
+  <div class="container nav">
     <a href="/" class="brand">DUTCH GOVERNANCE ADVISORY</a>
     <nav>
       <a class="active" href="/">Home</a>
@@ -28,20 +27,19 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container narrow center">
+    <div class="container narrow">
       <h1>AI beïnvloedt bestuurlijke handelingsruimte</h1>
       <p class="lead">
-        Wetgeving adresseert risico’s.  
-        Afhankelijkheden en technologie bepalen de condities waaronder bestuur kan handelen.
+        Wetgeving adresseert risico’s. Afhankelijkheden en technologie bepalen
+        de condities waaronder bestuur kan handelen.
       </p>
     </div>
   </section>
 
-
   <!-- ANALYSE -->
-  <section class="section muted">
+  <section class="section alt">
     <div class="container narrow">
-      <h2>Bestuurlijke regie in veranderende condities</h2>
+      <h2>Bestuurlijke regie</h2>
       <p>
         Digitale infrastructuur is geen neutraal hulpmiddel.
         Zij beïnvloedt beleidsruimte, onderhandelingspositie en institutionele stabiliteit.
@@ -54,9 +52,8 @@
     </div>
   </section>
 
-
   <!-- ROL -->
-  <section class="section dark center">
+  <section class="section">
     <div class="container narrow">
       <h2>Rol</h2>
       <p>
@@ -67,35 +64,32 @@
     </div>
   </section>
 
-
   <!-- PAPERS -->
-  <section class="section muted center">
+  <section class="section alt">
     <div class="container narrow">
       <h2>Papers</h2>
       <p>
         Reflecties over institutionele autonomie, digitale afhankelijkheid
         en bestuurlijke verantwoordelijkheid.
       </p>
-      <a class="text-link" href="/papers/">Bekijk Papers →</a>
+      <a class="link" href="/papers/">Bekijk Papers →</a>
     </div>
   </section>
 
-
   <!-- EBOOK -->
-  <section class="section center">
+  <section class="section">
     <div class="container narrow">
       <h2>Instrumentarium</h2>
       <p>
         Praktische uitwerking van governance-structuren,
-        risicobeoordeling en documentatievereisten in het kader van de AI Act.
+        risicobeoordeling en documentatievereisten binnen het kader van de AI Act.
       </p>
-      <a class="text-link" href="/ebook/">Bekijk e-book →</a>
+      <a class="link" href="/ebook/">Bekijk e-book →</a>
     </div>
   </section>
 
-
-  <!-- SLOT -->
-  <section class="section final-reflection">
+  <!-- REFLECTIE -->
+  <section class="reflection-section">
     <div class="container narrow">
       <p class="reflection">
         Compliance stelt kaders. Afhankelijkheden en technologie veranderen de condities.
@@ -107,13 +101,9 @@
 
 </main>
 
-
 <footer class="footer">
-  <div class="container footer-inner">
-    <div>© 2026 Dutch Governance Advisory</div>
-  </div>
+  © 2026 Dutch Governance Advisory
 </footer>
-
 
 
 <style>
@@ -121,25 +111,24 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
-  background: #0d1b2a;
+  background: #0e1c2b;
   color: #ffffff;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .narrow { max-width: 720px; }
-.center { text-align: center; }
 
 .site-header {
-  padding: 32px 0;
+  padding: 28px 0;
 }
 
-.nav-bar {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,16 +138,16 @@ body {
   font-size: 12px;
   letter-spacing: .18em;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
 }
 
 nav a {
-  margin-left: 28px;
-  text-decoration: none;
-  color: #fff;
-  opacity: .7;
+  margin-left: 26px;
   font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: .7;
 }
 
 nav a:hover,
@@ -167,67 +156,68 @@ nav a.active {
 }
 
 .hero {
-  padding: 200px 0 160px;
+  padding: 120px 0 80px;
 }
 
 .hero h1 {
-  font-size: 58px;
+  font-size: 46px;
+  margin-bottom: 18px;
   font-weight: 600;
-  margin-bottom: 28px;
 }
 
 .lead {
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 18px;
   opacity: .85;
 }
 
 .section {
-  padding: 110px 0;
+  padding: 70px 0;
 }
 
-.muted {
-  background: #13263f;
+.section.alt {
+  background: #12283f;
 }
 
-.dark {
-  background: #0b1625;
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
-.text-link {
+.link {
+  display: inline-block;
+  margin-top: 16px;
   color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,.3);
-  padding-bottom: 4px;
-  font-size: 15px;
+  padding-bottom: 3px;
 }
 
-.text-link:hover {
+.link:hover {
   border-bottom: 1px solid rgba(255,255,255,.6);
 }
 
-.final-reflection {
-  padding: 170px 0;
+.reflection-section {
+  padding: 100px 0;
 }
 
 .reflection {
-  font-size: 22px;
-  line-height: 1.7;
-  opacity: 0.9;
+  font-size: 20px;
+  opacity: .9;
 }
 
 .signature {
-  margin-top: 48px;
-  letter-spacing: .25em;
+  margin-top: 32px;
   font-size: 12px;
-  opacity: 0.6;
+  letter-spacing: .2em;
+  opacity: .6;
 }
 
 .footer {
-  padding: 60px 0;
-  background: #08111c;
-  font-size: 13px;
+  padding: 50px 0;
   text-align: center;
+  background: #09121d;
+  font-size: 13px;
   opacity: .6;
 }
 
