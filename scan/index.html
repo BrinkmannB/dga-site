@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Boardroom Scan Digitale Afhankelijkheid | Dutch Governance Advisory</title>
+
+<link rel="stylesheet" href="/assets/css/core.css">
+
+<style>
+
+body {
+  background:#051622;
+  color:#f1f6fb;
+  font-family: "Libre Baskerville", serif;
+}
+
+.container {
+  max-width:800px;
+  margin:0 auto;
+  padding:60px 24px;
+}
+
+h1 {
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+p {
+  line-height:1.6;
+  color:#cbd5e1;
+}
+
+.question {
+  margin:40px 0;
+}
+
+select {
+  width:100%;
+  padding:12px;
+  background:#0b1e2d;
+  color:white;
+  border:1px solid #2a3f55;
+}
+
+button {
+  margin-top:40px;
+  padding:14px 20px;
+  background:#c6a662;
+  border:none;
+  color:#051622;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.result {
+  margin-top:60px;
+  padding:30px;
+  border:1px solid #2a3f55;
+  display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Boardroom Scan Digitale Afhankelijkheid</h1>
+
+<p>
+Digitale afhankelijkheid ontstaat zelden in één besluit.
+Ze groeit stap voor stap — tot bestuurlijke keuzes ongemerkt worden beperkt.
+</p>
+
+<p><strong>Invultijd: 3 minuten</strong></p>
+
+<form id="scanForm">
+
+<div class="question">
+<p>1. Wij hebben voldoende zicht op digitale afhankelijkheden</p>
+<select name="q1"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>2. Wij kunnen leveranciers daadwerkelijk sturen</p>
+<select name="q2"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>3. Er is een realistisch exit-scenario</p>
+<select name="q3"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>4. Digitale keuzes worden bestuurlijk gewogen</p>
+<select name="q4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>5. Wij begrijpen ketenafhankelijkheid</p>
+<select name="q5"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>6. Wij hebben interne kennis</p>
+<select name="q6"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>7. Data-autonomie is inzichtelijk</p>
+<select name="q7"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>8. Tijdelijke oplossingen zijn structureel geworden</p>
+<select name="q8"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>9. Continuïteit is geborgd</p>
+<select name="q9"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>10. Digitale keuzes worden getoetst aan strategie</p>
+<select name="q10"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>11. Eigenaarschap is helder</p>
+<select name="q11"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<div class="question">
+<p>12. Wij herkennen cumulatie</p>
+<select name="q12"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+</div>
+
+<button type="button" onclick="calculateScore()">Bekijk resultaat</button>
+
+</form>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+function calculateScore() {
+
+let total = 0;
+
+for (let i = 1; i <= 12; i++) {
+  let val = parseInt(document.querySelector(`[name=q${i}]`).value);
+
+  if (i === 8) {
+    val = 6 - val;
+  }
+
+  total += val;
+}
+
+let text = "";
+
+if (total <= 35) {
+  text = "<h2>🔴 Bestuurlijke kwetsbaarheid</h2><p>Digitale afhankelijkheid is een strategisch probleem geworden.</p>";
+} 
+else if (total <= 47) {
+  text = "<h2>🟠 Toenemende afhankelijkheid</h2><p>Afhankelijkheid groeit sneller dan bestuurlijke grip.</p>";
+} 
+else {
+  text = "<h2>🟢 Relatief bestuurbaar</h2><p>Afhankelijkheid lijkt onder controle, maar vraagt aandacht.</p>";
+}
+
+document.getElementById("result").innerHTML = text;
+document.getElementById("result").style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
