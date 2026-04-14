@@ -1,69 +1,550 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Dutch Governance Advisory</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespreek uw uitkomst | Dutch Governance Advisory</title>
+  <meta name="description" content="Bespreek de uitkomst van de Boardroom Scan Digitale Afhankelijkheid. Een eerste gesprek over bestuurlijke risico’s, afhankelijkheid en regie.">
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 
-<style>
-body{
-margin:0;
-background:
-radial-gradient(circle at 85% 15%, rgba(180,154,83,0.10), transparent 40%),
-linear-gradient(180deg,#0b1320 0%,#080f18 100%);
-color:#e6edf3;
-font-family:Georgia,serif;
-line-height:1.85;
-}
-.wrapper{max-width:900px;margin:0 auto;padding:90px 32px 110px 32px;}
-header{margin-bottom:110px;padding-bottom:20px;border-bottom:1px solid rgba(180,154,83,0.35);}
-nav{margin-top:12px;font-size:14px;}
-nav a{color:#9aa6b2;text-decoration:none;margin-right:22px;}
-nav a:hover{color:#b49a53;}
-h1{font-family:'Libre Baskerville',serif;font-size:44px;font-weight:400;margin-bottom:40px;}
-p{font-size:18px;color:#b8c4d1;margin-bottom:26px;}
-.contact-block{margin-top:40px;font-size:18px;line-height:2;}
-.contact-block a{color:#b49a53;text-decoration:none;}
-.contact-block a:hover{text-decoration:underline;}
-footer{margin-top:120px;padding-top:40px;border-top:1px solid rgba(180,154,83,0.35);font-size:14px;color:#8fa0b3;}
-</style>
+  <style>
+    :root{
+      --bg:#051622;
+      --bg-deep:#08111a;
+      --panel:#0b1e2d;
+      --panel-soft:#0f2435;
+      --text:#eef4f9;
+      --muted:#b9c6d3;
+      --muted-2:#8fa2b5;
+      --line:#294156;
+      --accent:#b49a53;
+      --accent-soft:rgba(180,154,83,.10);
+      --shadow:0 10px 30px rgba(0,0,0,.18);
+      --radius:22px;
+      --max:1140px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(180,154,83,0.10), transparent 40%),
+        linear-gradient(180deg,#0b1320 0%, #080f18 100%);
+      color:var(--text);
+      font-family:Georgia, serif;
+      line-height:1.85;
+    }
+
+    .wrapper{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:46px 26px 90px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:24px;
+      margin-bottom:58px;
+      padding-bottom:20px;
+      border-bottom:1px solid rgba(180,154,83,0.35);
+    }
+
+    .brand-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .brand{
+      color:var(--text);
+      text-decoration:none;
+      font-size:18px;
+      letter-spacing:.02em;
+      font-weight:700;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted-2);
+    }
+
+    nav{
+      margin-top:12px;
+      font-size:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    nav a{
+      color:#9aa6b2;
+      text-decoration:none;
+      transition:color .18s ease;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:var(--accent);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+      gap:28px;
+      align-items:start;
+      margin-bottom:26px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-family:'Libre Baskerville', serif;
+    }
+
+    h1{
+      font-family:'Libre Baskerville', serif;
+      font-size:clamp(42px, 6vw, 78px);
+      font-weight:400;
+      line-height:1.02;
+      letter-spacing:-.02em;
+      margin:0 0 22px;
+    }
+
+    .lead{
+      font-size:21px;
+      color:var(--muted);
+      max-width:760px;
+      margin:0 0 22px;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:24px;
+      padding:24px 22px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card h2{
+      font-family:'Libre Baskerville', serif;
+      font-size:28px;
+      font-weight:400;
+      line-height:1.1;
+      margin:0 0 12px;
+      color:var(--text);
+    }
+
+    .hero-card p{
+      margin:0 0 14px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .hero-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .hero-card li{
+      margin:8px 0;
+    }
+
+    .section-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(340px,.92fr);
+      gap:24px;
+      margin-top:26px;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:24px;
+      padding:28px 24px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h2{
+      font-family:'Libre Baskerville', serif;
+      font-size:30px;
+      font-weight:400;
+      line-height:1.1;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .panel h3{
+      font-family:'Libre Baskerville', serif;
+      font-size:22px;
+      font-weight:400;
+      line-height:1.15;
+      margin:26px 0 10px;
+      color:var(--text);
+    }
+
+    .panel p{
+      font-size:17px;
+      color:var(--muted);
+      margin:0 0 16px;
+    }
+
+    .panel ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .panel li{
+      margin:8px 0;
+    }
+
+    .divider{
+      margin:24px 0;
+      border-top:1px solid rgba(180,154,83,0.18);
+    }
+
+    .subtle{
+      color:var(--muted-2);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .form-intro{
+      margin-bottom:18px;
+    }
+
+    form{
+      display:grid;
+      gap:16px;
+      margin-top:8px;
+    }
+
+    .field{
+      display:grid;
+      gap:8px;
+    }
+
+    label{
+      color:var(--text);
+      font-size:15px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:var(--panel);
+      color:var(--text);
+      padding:15px 16px;
+      font:inherit;
+      font-size:15px;
+      outline:none;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:var(--muted-2);
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:rgba(180,154,83,.72);
+      box-shadow:0 0 0 3px rgba(180,154,83,.12);
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    .button-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .cta-button{
+      display:inline-block;
+      border:0;
+      border-radius:14px;
+      background:var(--accent);
+      color:#071521;
+      padding:15px 22px;
+      font:inherit;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      box-shadow:var(--shadow);
+      transition:transform .15s ease, opacity .2s ease;
+    }
+
+    .cta-button:hover{
+      opacity:.97;
+      transform:translateY(-1px);
+    }
+
+    .contact-direct{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid rgba(180,154,83,0.18);
+    }
+
+    .contact-direct a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    .contact-direct a:hover{
+      text-decoration:underline;
+    }
+
+    .microcopy{
+      color:var(--muted-2);
+      font-size:14px;
+      line-height:1.65;
+      margin-top:8px;
+    }
+
+    .footer{
+      margin-top:64px;
+      padding-top:26px;
+      border-top:1px solid rgba(180,154,83,0.20);
+      font-size:14px;
+      color:var(--muted-2);
+    }
+
+    @media (max-width: 980px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+      }
+
+      .hero,
+      .section-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .wrapper{
+        padding:30px 18px 70px;
+      }
+
+      .lead{
+        font-size:18px;
+      }
+
+      .panel,
+      .hero-card{
+        padding:22px 18px;
+      }
+
+      .panel h2{
+        font-size:26px;
+      }
+
+      .panel h3{
+        font-size:20px;
+      }
+
+      .hero p,
+      .panel p{
+        font-size:17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrapper">
+  <div class="wrapper">
 
-<header>
-<strong>DUTCH GOVERNANCE ADVISORY</strong>
-<nav>
-<a href="/index.html">Home</a>
-<a href="/papers/index.html">Papers</a>
-<a href="/contact/index.html">Contact</a>
-</nav>
-</header>
+    <header>
+      <div class="brand-wrap">
+        <a class="brand" href="/index.html">DUTCH GOVERNANCE ADVISORY</a>
+        <div class="brand-sub">Bestuurlijke regie in het digitale tijdperk</div>
+      </div>
 
-<h1>Bestuurlijk overleg</h1>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/executive-briefs/index.html">Executive Briefs</a>
+        <a href="/papers/index.html">Papers</a>
+        <a href="/scan/index.html">Scan</a>
+        <a class="active" href="/contact/index.html">Contact</a>
+      </nav>
+    </header>
 
-<p>
-Wanneer digitale afhankelijkheid expliciete bestuurlijke afweging vereist,
-kan een gerichte uitwisseling zinvol zijn.
-</p>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Vervolg op de scan</span>
+        <h1>Bespreek uw uitkomst</h1>
 
-<p>
-Het eerste contact is bedoeld om context te duiden
-en te bepalen of verdere begeleiding passend is.
-</p>
+        <p class="lead">
+          De uitkomst van de Boardroom Scan Digitale Afhankelijkheid is geen eindpunt, maar een begin.
+        </p>
 
-<div class="contact-block">
-E-mail: <a href="mailto:info@dutchgovernanceadvisory.nl">info@dutchgovernanceadvisory.nl</a><br>
-Telefoon: <a href="tel:+31658946641">06-58946641</a>
-</div>
+        <p>
+          Digitale afhankelijkheid wordt zelden zichtbaar in één incident. Meestal groeit zij geleidelijk —
+          via contracten, uitzonderingen, leveranciers, data en systemen — totdat bestuurlijke ruimte
+          ongemerkt kleiner wordt.
+        </p>
 
-<footer>
-Bas Brinkmann · Strategisch bestuursadviseur
-</footer>
+        <p>
+          Een eerste gesprek helpt om die uitkomst terug te brengen tot uw eigen context:
+          waar zit de werkelijke afhankelijkheid, wat is bestuurlijk relevant, en waar vraagt de situatie
+          om hernieuwde regie?
+        </p>
+      </div>
 
-</div>
+      <aside class="hero-card">
+        <h2>Wat u in dit gesprek kunt verwachten</h2>
+        <p>
+          Dit is geen vrijblijvende intake en ook geen verkooppraatje. Het is een serieuze eerste verkenning
+          van bestuurlijke afhankelijkheid, risico en manoeuvreerruimte.
+        </p>
+        <ul>
+          <li>duiding van uw uitkomst in bestuurlijke taal</li>
+          <li>aanscherping van waar afhankelijkheid strategisch relevant wordt</li>
+          <li>eerste ordening van risico, eigenaarschap en handelingsruimte</li>
+          <li>een eerlijk oordeel of verdere begeleiding passend is</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section-grid">
+      <div class="panel">
+        <h2>Voor wie dit gesprek bedoeld is</h2>
+
+        <p>
+          Dit gesprek is bedoeld voor bestuurders, directies, toezichthouders en organisaties
+          die digitale afhankelijkheid niet alleen technisch, maar bestuurlijk willen begrijpen.
+        </p>
+
+        <p>
+          Het is met name zinvol wanneer uw uitkomst vragen oproept als:
+        </p>
+
+        <ul>
+          <li>waar worden wij feitelijk afhankelijker dan wij denken?</li>
+          <li>welke afhankelijkheden zijn bestuurlijk relevant, en welke niet?</li>
+          <li>waar ontbreekt eigenaarschap?</li>
+          <li>welke tijdelijke keuzes zijn in stilte structureel geworden?</li>
+          <li>hoeveel strategische ruimte hebben wij nog werkelijk?</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Niet voor iedereen</h3>
+        <p>
+          Dit gesprek is niet bedoeld voor organisaties die alleen op zoek zijn naar een snelle technische oplossing
+          zonder bestuurlijke reflectie.
+        </p>
+
+        <p class="subtle">
+          De kern van dit gesprek is niet technische optimalisatie, maar bestuurlijke duiding, afhankelijkheid en regie.
+        </p>
+
+        <div class="contact-direct">
+          <h3>Direct contact</h3>
+          <p>
+            E-mail:
+            <a href="mailto:info@dutchgovernanceadvisory.nl">info@dutchgovernanceadvisory.nl</a><br>
+            Telefoon:
+            <a href="tel:+31658946641">06-58946641</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Plan een eerste gesprek</h2>
+
+        <p class="form-intro">
+          Laat hieronder uw gegevens achter. Ik neem vervolgens persoonlijk contact met u op
+          voor een eerste verkenning.
+        </p>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="name">Naam</label>
+            <input id="name" name="name" type="text" placeholder="Uw naam">
+          </div>
+
+          <div class="field">
+            <label for="organization">Organisatie</label>
+            <input id="organization" name="organization" type="text" placeholder="Naam van uw organisatie">
+          </div>
+
+          <div class="field">
+            <label for="role">Functie</label>
+            <input id="role" name="role" type="text" placeholder="Bijvoorbeeld bestuurder, directeur of toezichthouder">
+          </div>
+
+          <div class="field">
+            <label for="email">E-mailadres</label>
+            <input id="email" name="email" type="email" placeholder="uwnaam@organisatie.nl">
+          </div>
+
+          <div class="field">
+            <label for="phone">Telefoonnummer <span class="subtle">(optioneel)</span></label>
+            <input id="phone" name="phone" type="text" placeholder="Optioneel">
+          </div>
+
+          <div class="field">
+            <label for="message">Wat was voor u de belangrijkste observatie of frictie in de uitkomst?</label>
+            <textarea id="message" name="message" placeholder="Welke uitkomst of vraag viel voor u het meest op?"></textarea>
+          </div>
+
+          <div class="button-row">
+            <button class="cta-button" type="submit">Bespreek mijn uitkomst</button>
+          </div>
+
+          <p class="microcopy">
+            Geen mailinglijst. Geen geautomatiseerde opvolging. Wel een persoonlijk eerste contact.
+          </p>
+
+          <p class="microcopy">
+            Ik reageer persoonlijk op aanvragen die aansluiten op bestuurlijke vraagstukken rond
+            digitale afhankelijkheid, autonomie en regie.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <div class="footer">
+      Bas Brinkmann · Strategisch bestuursadviseur
+    </div>
+
+  </div>
 </body>
 </html>
