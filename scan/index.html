@@ -1,202 +1,998 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boardroom Scan Digitale Afhankelijkheid | Dutch Governance Advisory</title>
+  <meta
+    name="description"
+    content="Bestuurlijke scan om digitale afhankelijkheid zichtbaar te maken. Ontvang direct een eerste risicoanalyse en vertaal de uitkomst naar uw bestuurlijke context."
+  />
+  <link rel="stylesheet" href="/assets/css/core.css" />
 
-<title>Boardroom Scan Digitale Afhankelijkheid | Dutch Governance Advisory</title>
+  <style>
+    :root{
+      --bg:#051622;
+      --bg-deep:#04111a;
+      --panel:#0b1e2d;
+      --panel-soft:#0f2435;
+      --text:#eef4f9;
+      --muted:#b9c6d3;
+      --muted-2:#8fa2b5;
+      --line:#294156;
+      --accent:#c6a662;
+      --accent-dark:#071521;
+      --danger:#ff8b84;
+      --warn:#f2bf67;
+      --ok:#95d39a;
+      --max:1180px;
+      --content:860px;
+      --radius:20px;
+      --shadow:0 10px 30px rgba(0,0,0,.18);
+    }
 
-<link rel="stylesheet" href="/assets/css/core.css">
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:"Libre Baskerville", Georgia, serif;
+      line-height:1.7;
+      background:
+        radial-gradient(circle at 85% 12%, rgba(198,166,98,.08), transparent 0 25%),
+        radial-gradient(circle at 18% 78%, rgba(198,166,98,.05), transparent 0 20%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+    }
 
-<style>
+    a{color:inherit}
+    img{max-width:100%;display:block}
 
-body {
-  background:#051622;
-  color:#f1f6fb;
-  font-family: "Libre Baskerville", serif;
-}
+    .site{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:38px 26px 90px;
+      position:relative;
+    }
 
-.container {
-  max-width:800px;
-  margin:0 auto;
-  padding:60px 24px;
-}
+    header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      padding-bottom:18px;
+      border-bottom:1px solid rgba(198,166,98,.26);
+      margin-bottom:52px;
+    }
 
-h1 {
-  font-size:42px;
-  margin-bottom:20px;
-}
+    .brand-wrap{display:flex;flex-direction:column;gap:8px}
+    .brand{
+      text-decoration:none;
+      font-size:18px;
+      letter-spacing:.02em;
+      font-weight:700;
+      color:var(--text);
+    }
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted-2);
+    }
 
-p {
-  line-height:1.6;
-  color:#cbd5e1;
-}
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      justify-content:flex-end;
+      align-items:center;
+      font-size:14px;
+    }
+    nav a{
+      text-decoration:none;
+      color:#99a8b6;
+      transition:color .18s ease;
+    }
+    nav a:hover,
+    nav a.active{
+      color:var(--accent);
+    }
 
-.question {
-  margin:40px 0;
-}
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+      gap:44px;
+      align-items:start;
+      margin-bottom:38px;
+    }
 
-select {
-  width:100%;
-  padding:12px;
-  background:#0b1e2d;
-  color:white;
-  border:1px solid #2a3f55;
-}
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent);
+    }
 
-button {
-  margin-top:40px;
-  padding:14px 20px;
-  background:#c6a662;
-  border:none;
-  color:#051622;
-  font-weight:bold;
-  cursor:pointer;
-}
+    h1{
+      margin:0 0 22px;
+      font-weight:400;
+      letter-spacing:-.03em;
+      line-height:.98;
+      font-size:clamp(52px,7.2vw,96px);
+      max-width:760px;
+    }
 
-.result {
-  margin-top:60px;
-  padding:30px;
-  border:1px solid #2a3f55;
-  display:none;
-}
+    .hero-left .lead{
+      max-width:760px;
+      margin:0 0 26px;
+      font-size:22px;
+      color:var(--muted);
+    }
 
-</style>
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 14px;
+      margin:0 0 24px;
+    }
+    .meta-chip{
+      padding:10px 12px;
+      border:1px solid rgba(198,166,98,.22);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(255,255,255,.015);
+    }
+    .meta-chip strong{color:var(--text)}
 
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+      margin-top:24px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    button{
+      appearance:none;
+      border:0;
+      text-decoration:none;
+      border-radius:14px;
+      padding:15px 22px;
+      font:inherit;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .15s ease, opacity .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .btn-primary,
+    button{
+      background:var(--accent);
+      color:var(--accent-dark);
+      box-shadow:var(--shadow);
+    }
+    .btn-primary:hover,
+    button:hover{
+      transform:translateY(-1px);
+      opacity:.97;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(198,166,98,.42);
+    }
+    .btn-secondary:hover{
+      background:rgba(198,166,98,.08);
+    }
+
+    .hero-right{
+      position:relative;
+    }
+
+    .instrument-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:24px;
+      padding:26px 24px 22px;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:24px;
+    }
+    .instrument-card h2{
+      margin:0 0 10px;
+      font-size:30px;
+      font-weight:400;
+      line-height:1.1;
+    }
+    .instrument-card p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .card-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .card-list li{margin:8px 0}
+
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      margin:18px 0 54px;
+    }
+
+    .trust-box{
+      padding:20px 20px 18px;
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:18px;
+      background:rgba(255,255,255,.015);
+    }
+    .trust-box h3{
+      margin:0 0 8px;
+      font-size:18px;
+      font-weight:400;
+      color:var(--text);
+    }
+    .trust-box p{
+      margin:0;
+      font-size:15px;
+      color:var(--muted);
+    }
+
+    .section-intro{
+      max-width:var(--content);
+      margin:0 0 26px;
+    }
+    .section-intro h2{
+      margin:0 0 10px;
+      font-size:34px;
+      font-weight:400;
+      line-height:1.1;
+    }
+    .section-intro p{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .scale{
+      margin-bottom:28px;
+      padding:24px;
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:22px;
+      background:rgba(255,255,255,.015);
+    }
+
+    .scale-grid{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+    .scale-item{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 12px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      min-height:92px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .scale-item strong{
+      display:block;
+      margin-bottom:5px;
+      color:var(--text);
+      font-size:17px;
+    }
+
+    .form-shell{
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:20px;
+    }
+
+    form{
+      display:grid;
+      gap:18px;
+    }
+
+    .question{
+      padding:24px;
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:20px;
+      background:rgba(255,255,255,.015);
+    }
+
+    .question label{
+      display:block;
+      margin:0 0 10px;
+      font-size:23px;
+      line-height:1.35;
+      color:var(--text);
+    }
+    .question small{
+      display:block;
+      margin:0 0 14px;
+      color:var(--muted-2);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    select{
+      width:100%;
+      padding:16px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      color:var(--text);
+      font:inherit;
+      font-size:16px;
+      outline:none;
+    }
+    select:focus{
+      border-color:rgba(198,166,98,.72);
+      box-shadow:0 0 0 3px rgba(198,166,98,.12);
+    }
+
+    .button-row{
+      margin-top:10px;
+      padding:24px;
+      border:1px solid rgba(198,166,98,.25);
+      border-radius:22px;
+      background:rgba(198,166,98,.06);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+    }
+
+    .button-copy{
+      max-width:640px;
+    }
+    .button-copy strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:18px;
+      color:var(--text);
+      font-weight:400;
+    }
+    .button-copy span{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .results-wrap{
+      margin-top:36px;
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);
+      gap:22px;
+      align-items:start;
+    }
+
+    .results{
+      display:none;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:30px;
+      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+      box-shadow:var(--shadow);
+    }
+    .results.visible{display:block}
+
+    .result-badge{
+      display:inline-block;
+      margin-bottom:18px;
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      border:1px solid currentColor;
+    }
+    .badge-red{color:var(--danger);background:rgba(255,90,90,.08)}
+    .badge-orange{color:var(--warn);background:rgba(242,191,103,.08)}
+    .badge-green{color:var(--ok);background:rgba(105,204,117,.08)}
+
+    .score-line{
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .score-line strong{color:var(--text)}
+
+    .result-title{
+      margin:0 0 16px;
+      font-size:38px;
+      line-height:1.06;
+      letter-spacing:-.02em;
+      font-weight:400;
+    }
+
+    .result-copy p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .insight-box{
+      margin-top:20px;
+      border-left:3px solid var(--accent);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      padding:18px 18px 16px;
+    }
+    .insight-box p{
+      margin:0;
+      color:var(--muted);
+    }
+    .insight-box strong{color:var(--text)}
+
+    .cta-panel{
+      display:none;
+      border:1px solid rgba(198,166,98,.28);
+      border-radius:24px;
+      padding:28px 24px;
+      background:rgba(198,166,98,.06);
+      position:sticky;
+      top:24px;
+    }
+    .cta-panel.visible{display:block}
+
+    .cta-panel h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.08;
+      font-weight:400;
+    }
+    .cta-panel p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .cta-points{
+      margin:0 0 18px;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .cta-points li{margin:8px 0}
+
+    .cta-button{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--accent);
+      color:var(--accent-dark);
+      padding:15px 22px;
+      border-radius:14px;
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
+    .cta-secondary{
+      margin-top:12px;
+      color:var(--muted-2);
+      font-size:14px;
+    }
+
+    .method{
+      margin-top:56px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+    .method-box{
+      padding:22px;
+      border:1px solid rgba(42,63,85,.95);
+      border-radius:18px;
+      background:rgba(255,255,255,.015);
+    }
+    .method-box .nr{
+      display:inline-block;
+      margin-bottom:10px;
+      color:var(--accent);
+      font-size:13px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+    .method-box h4{
+      margin:0 0 8px;
+      font-size:20px;
+      font-weight:400;
+    }
+    .method-box p{
+      margin:0;
+      font-size:15px;
+      color:var(--muted);
+    }
+
+    .footer-note{
+      margin-top:62px;
+      padding-top:22px;
+      border-top:1px solid rgba(198,166,98,.16);
+      color:var(--muted-2);
+      font-size:14px;
+    }
+
+    @media (max-width: 1080px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+      .hero-right .instrument-card{
+        position:relative;
+        top:auto;
+      }
+      .results-wrap{
+        grid-template-columns:1fr;
+      }
+      .cta-panel{
+        position:relative;
+        top:auto;
+      }
+      .trust-row,
+      .method{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .site{
+        padding:28px 18px 70px;
+      }
+      header{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:14px;
+        margin-bottom:34px;
+      }
+      h1{
+        font-size:clamp(42px, 12vw, 64px);
+      }
+      .hero-left .lead{
+        font-size:18px;
+      }
+      .scale-grid{
+        grid-template-columns:1fr;
+      }
+      .question{
+        padding:18px;
+      }
+      .question label{
+        font-size:18px;
+      }
+      .button-row{
+        padding:18px;
+      }
+      .result-title{
+        font-size:30px;
+      }
+      .result-copy p{
+        font-size:17px;
+      }
+      .results,
+      .cta-panel{
+        padding:22px 18px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="site">
+    <header>
+      <div class="brand-wrap">
+        <a href="/" class="brand">DUTCH GOVERNANCE ADVISORY</a>
+        <div class="brand-sub">Bestuurlijke regie in het digitale tijdperk</div>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/executive-briefs/">Executive Briefs</a>
+        <a href="/papers/">Papers</a>
+        <a href="/scan/" class="active">Scan</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
 
-<div class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Boardroom instrument</span>
+        <h1>Boardroom Scan<br>Digitale Afhankelijkheid</h1>
 
-<h1>Boardroom Scan Digitale Afhankelijkheid</h1>
+        <p class="lead">
+          Digitale afhankelijkheid ontstaat zelden in één besluit. Ze groeit stap voor stap —
+          via leveranciers, uitzonderingen, cloudkeuzes, contractverlengingen en AI-toepassingen —
+          tot bestuurlijke ruimte ongemerkt wordt beperkt.
+        </p>
 
-<p>
-Digitale afhankelijkheid ontstaat zelden in één besluit.
-Ze groeit stap voor stap — tot bestuurlijke keuzes ongemerkt worden beperkt.
-</p>
+        <div class="hero-meta">
+          <div class="meta-chip"><strong>Invultijd:</strong> 3 minuten</div>
+          <div class="meta-chip"><strong>Uitkomst:</strong> directe bestuurlijke risicoanalyse</div>
+          <div class="meta-chip"><strong>Voor:</strong> bestuurders, directies, toezichthouders</div>
+        </div>
 
-<p><strong>Invultijd: 3 minuten</strong></p>
-<a href="/contact/" class="cta">Bespreek uw uitkomst</a>
-<form id="scanForm">
+        <div class="hero-actions">
+          <a href="#scan-form" class="btn-primary">Start de scan</a>
+          <a href="/contact/" class="btn-secondary">Bespreek uw context</a>
+        </div>
+      </div>
 
-<div class="question">
-<p>1. Wij hebben voldoende zicht op digitale afhankelijkheden</p>
-<select name="q1"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+      <div class="hero-right">
+        <div class="instrument-card">
+          <h2>Wat deze scan doet</h2>
+          <p>
+            Deze scan meet niet hoe digitaal uw organisatie is, maar in hoeverre digitale keuzes nog
+            <strong>bestuurbaar</strong> zijn — of zich hebben opgestapeld tot afhankelijkheid zonder
+            voldoende bestuurlijke regie.
+          </p>
+          <ul class="card-list">
+            <li>maakt impliciete afhankelijkheid bestuurlijk zichtbaar</li>
+            <li>legt spanning bloot tussen operatie en regie</li>
+            <li>geeft direct een eerste risicoanalyse</li>
+            <li>vormt een ingang voor een bestuurlijk gesprek</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<div class="question">
-<p>2. Wij kunnen leveranciers daadwerkelijk sturen</p>
-<select name="q2"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+    <section class="trust-row">
+      <div class="trust-box">
+        <h3>Niet technisch, maar bestuurlijk</h3>
+        <p>De kernvraag is niet of systemen werken, maar of uw organisatie haar digitale keuzes nog werkelijk bestuurt.</p>
+      </div>
+      <div class="trust-box">
+        <h3>Niet één risico, maar cumulatie</h3>
+        <p>Losse keuzes zijn zelden fataal. De optelsom ervan beperkt vaak ongemerkt de strategische ruimte.</p>
+      </div>
+      <div class="trust-box">
+        <h3>Niet alleen inzicht, maar richting</h3>
+        <p>De uitkomst is geen gadget. Zij helpt bepalen waar bestuurlijke regie moet worden hernomen.</p>
+      </div>
+    </section>
 
-<div class="question">
-<p>3. Er is een realistisch exit-scenario</p>
-<select name="q3"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+    <section class="section-intro">
+      <h2>Beantwoord 12 stellingen</h2>
+      <p>
+        Gebruik uw bestuurlijke inschatting. Er zijn geen perfecte antwoorden. De waarde van deze scan
+        zit niet in cosmetische precisie, maar in een eerlijke eerste duiding.
+      </p>
+    </section>
 
-<div class="question">
-<p>4. Digitale keuzes worden bestuurlijk gewogen</p>
-<select name="q4"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+    <section class="scale">
+      <div class="scale-grid">
+        <div class="scale-item"><strong>1</strong>Helemaal oneens</div>
+        <div class="scale-item"><strong>2</strong>Grotendeels oneens</div>
+        <div class="scale-item"><strong>3</strong>Deels / onduidelijk</div>
+        <div class="scale-item"><strong>4</strong>Grotendeels eens</div>
+        <div class="scale-item"><strong>5</strong>Helemaal eens</div>
+      </div>
+    </section>
 
-<div class="question">
-<p>5. Wij begrijpen ketenafhankelijkheid</p>
-<select name="q5"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+    <div class="form-shell">
+      <form id="scan-form">
+        <div class="question">
+          <label for="q1">1. Wij hebben als bestuur of directie voldoende zicht op de belangrijkste digitale afhankelijkheden van onze organisatie.</label>
+          <small>Zicht op leveranciers, systemen, data, koppelingen en kritieke afhankelijkheden.</small>
+          <select id="q1" name="q1">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>6. Wij hebben interne kennis</p>
-<select name="q6"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q2">2. Wij kunnen kritische digitale leveranciers inhoudelijk en contractueel daadwerkelijk sturen.</label>
+          <small>Niet alleen operationeel contact, maar echte bestuurlijke onderhandelingsruimte.</small>
+          <select id="q2" name="q2">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>7. Data-autonomie is inzichtelijk</p>
-<select name="q7"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q3">3. Voor onze meest kritische digitale systemen bestaat een realistisch alternatief of exit-scenario.</label>
+          <small>Dus niet theoretisch, maar bestuurlijk en operationeel uitvoerbaar.</small>
+          <select id="q3" name="q3">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>8. Tijdelijke oplossingen zijn structureel geworden</p>
-<select name="q8"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q4">4. Belangrijke digitale keuzes worden expliciet bestuurlijk gewogen, niet alleen operationeel afgehandeld.</label>
+          <small>Met aandacht voor strategie, continuïteit, afhankelijkheid en bestuurlijke ruimte.</small>
+          <select id="q4" name="q4">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>9. Continuïteit is geborgd</p>
-<select name="q9"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q5">5. Wij begrijpen voldoende hoe afhankelijkheden zich opstapelen over systemen, leveranciers, data en processen heen.</label>
+          <small>Niet losse risico’s, maar het cumulatieve effect van meerdere keuzes samen.</small>
+          <select id="q5" name="q5">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>10. Digitale keuzes worden getoetst aan strategie</p>
-<select name="q10"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q6">6. Onze organisatie beschikt intern over voldoende kennis om strategische digitale afhankelijkheid zelfstandig te beoordelen.</label>
+          <small>Dus zonder volledig afhankelijk te zijn van leveranciers of externe adviseurs.</small>
+          <select id="q6" name="q6">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>11. Eigenaarschap is helder</p>
-<select name="q11"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q7">7. Wij weten waar kritische data staan, onder welke voorwaarden die beschikbaar blijven en hoe overdraagbaar die zijn.</label>
+          <small>Data-autonomie is niet impliciet, maar expliciet inzichtelijk.</small>
+          <select id="q7" name="q7">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div class="question">
-<p>12. Wij herkennen cumulatie</p>
-<select name="q12"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-</div>
+        <div class="question">
+          <label for="q8">8. Tijdelijke digitale oplossingen of uitzonderingen zijn bij ons vaak structureel geworden zonder hernieuwde bestuurlijke afweging.</label>
+          <small>Deze vraag wordt omgekeerd gescoord.</small>
+          <select id="q8" name="q8">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<button type="button" onclick="calculateScore()">Bekijk bestuurlijke risicoanalyse</button>
+        <div class="question">
+          <label for="q9">9. Als een kritische leverancier of digitale dienst morgen wegvalt, hebben wij een bestuurbaar continuïteitsscenario.</label>
+          <small>Niet alleen een technisch plan, maar bestuurlijke handelingsruimte.</small>
+          <select id="q9" name="q9">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-</form>
+        <div class="question">
+          <label for="q10">10. Digitale keuzes worden bij ons getoetst aan autonomie, continuïteit en strategische ruimte.</label>
+          <small>Niet alleen aan functionaliteit, snelheid of prijs.</small>
+          <select id="q10" name="q10">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-<div id="result" class="result"></div>
-<div id="cta" style="display:none; margin-top:40px; padding:30px; border:1px solid #2a3f55;">
+        <div class="question">
+          <label for="q11">11. Het is binnen onze organisatie helder wie bestuurlijk eigenaar is van digitale afhankelijkheidsrisico’s.</label>
+          <small>Eigenaarschap is expliciet, niet diffuus of impliciet verdeeld.</small>
+          <select id="q11" name="q11">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-  <h2>Wilt u dit vertalen naar uw bestuurlijke context?</h2>
+        <div class="question">
+          <label for="q12">12. Wij herkennen tijdig wanneer losse digitale keuzes samen een structurele afhankelijkheid beginnen te vormen.</label>
+          <small>Met andere woorden: wij zien cumulatie voordat zij bestuurlijke ruimte opeet.</small>
+          <select id="q12" name="q12">
+            <option value="1">1 — Helemaal oneens</option>
+            <option value="2">2 — Grotendeels oneens</option>
+            <option value="3">3 — Deels / onduidelijk</option>
+            <option value="4">4 — Grotendeels eens</option>
+            <option value="5">5 — Helemaal eens</option>
+          </select>
+        </div>
 
-  <p style="margin-top:15px;">
-  Ik help bestuurders en directies om digitale afhankelijkheid expliciet en bestuurbaar te maken.
-  </p>
+        <div class="button-row">
+          <div class="button-copy">
+            <strong>Toon waar bestuurlijke ruimte al onder druk staat</strong>
+            <span>De meeste organisaties overschatten hun bestuurbaarheid — tot de optelsom zichtbaar wordt.</span>
+          </div>
+          <button type="button" onclick="calculateScore()">Toon mijn bestuurlijke risicoanalyse</button>
+        </div>
+      </form>
 
-  <div style="margin-top:25px;">
-    <a href="/contact/" style="background:#c6a662; color:#051622; padding:14px 20px; text-decoration:none; font-weight:bold;">
-      Plan een gesprek
-    </a>
+      <div class="results-wrap">
+        <section id="results" class="results" aria-live="polite">
+          <div id="resultContent"></div>
+        </section>
+
+        <aside id="ctaPanel" class="cta-panel">
+          <div id="ctaDynamic"></div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="method">
+      <div class="method-box">
+        <span class="nr">01 — Zicht</span>
+        <h4>Maak impliciete afhankelijkheid expliciet</h4>
+        <p>De eerste bestuurlijke winst ontstaat zelden door méér beleid, maar door scherper zicht op wat al is opgebouwd.</p>
+      </div>
+      <div class="method-box">
+        <span class="nr">02 — Duiding</span>
+        <h4>Breng losse keuzes terug tot één bestuursvraagstuk</h4>
+        <p>Waar afhankelijkheid verspreid is over leveranciers, data en processen, verdwijnt bestuurlijke samenhang vaak als eerste.</p>
+      </div>
+      <div class="method-box">
+        <span class="nr">03 — Regie</span>
+        <h4>Hernemen van bestuurlijke manoeuvreerruimte</h4>
+        <p>Het doel is niet abstracte controle, maar reële ruimte om opnieuw te kiezen, te sturen en scenario’s open te houden.</p>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Dutch Governance Advisory — bestuurlijke regie in het digitale tijdperk.
+    </div>
   </div>
 
-</div>
+  <script>
+    function calculateScore() {
+      let total = 0;
 
-</div>
+      for (let i = 1; i <= 12; i++) {
+        const field = document.getElementById(`q${i}`);
+        let value = parseInt(field.value, 10);
 
-<script>
+        if (Number.isNaN(value)) value = 3;
+        if (i === 8) value = 6 - value;
 
-function calculateScore() {
+        total += value;
+      }
 
-let total = 0;
+      let badgeClass = "";
+      let badgeText = "";
+      let title = "";
+      let paragraphs = [];
+      let insight = "";
+      let ctaTitle = "";
+      let ctaText = "";
+      let ctaPoints = [];
+      let ctaButton = "";
+      let ctaSub = "";
 
-for (let i = 1; i <= 12; i++) {
-  let val = parseInt(document.querySelector(`[name=q${i}]`).value);
+      if (total <= 35) {
+        badgeClass = "badge-red";
+        badgeText = "Rood — bestuurlijke kwetsbaarheid";
+        title = "Digitale afhankelijkheid is een strategisch bestuursvraagstuk geworden";
+        paragraphs = [
+          "Uw score suggereert dat digitale afhankelijkheid zich waarschijnlijk over langere tijd heeft opgebouwd zonder voldoende bestuurlijke regie. In zulke situaties beperken leveranciers, systemen, uitzonderingen en data-afhankelijkheden samen vaak meer bestuurlijke ruimte dan formeel zichtbaar is.",
+          "In deze zone gaat het niet meer alleen over IT, contracten of informatiebeveiliging. Het gaat over autonomie, continuïteit en de vraag hoeveel strategische manoeuvreerruimte uw organisatie feitelijk nog over heeft.",
+          "De passende reactie is hier geen cosmetische optimalisatie, maar bestuurlijke herordening: zicht, eigenaarschap, scenario’s en expliciete keuzes over wat structureel is geworden zonder dat het zo behandeld werd."
+        ];
+        insight = "Waar de score rood kleurt, is afhankelijkheid meestal al genormaliseerd. Juist daardoor wordt de bestuurlijke kwetsbaarheid structureel onderschat.";
+        ctaTitle = "Dit vraagt om bestuurlijke herordening";
+        ctaText = "Een rode score is zelden een technisch detail. Zij wijst meestal op opgebouwde afhankelijkheid die bestuurlijke ruimte al is gaan beperken.";
+        ctaPoints = [
+          "duiding van de grootste bestuurlijke kwetsbaarheid",
+          "eerste ordening van afhankelijkheden en eigenaarschap",
+          "gesprek over regie, scenario’s en interventies"
+        ];
+        ctaButton = "Bespreek bestuurlijke urgentie";
+        ctaSub = "Een kort gesprek helpt om bestuurlijke kwetsbaarheid terug te brengen tot concrete keuzes.";
+      } else if (total <= 47) {
+        badgeClass = "badge-orange";
+        badgeText = "Oranje — oplopende afhankelijkheid";
+        title = "Afhankelijkheid groeit sneller dan bestuurlijke grip";
+        paragraphs = [
+          "Uw score wijst op een tussenzone waarin de operatie waarschijnlijk nog functioneert, maar de samenhang tussen digitale keuzes, leveranciers, data en continuïteit niet volledig bestuurlijk wordt overzien.",
+          "Dit is vaak de fase waarin afhankelijkheid normaliseert: niet acuut ontregeld, wel strategisch kwetsbaar. Juist hier stapelen risico’s zich op zonder dat ze als één bestuursvraagstuk op tafel komen.",
+          "De opgave is hier niet paniek, maar explicitering: zichtbaar maken wat impliciet is geworden, prioriteren waar bestuurlijke regie ontbreekt en opnieuw afwegen waar tijdelijke oplossingen structureel zijn geworden."
+        ];
+        insight = "De oranje zone is verraderlijk: de organisatie functioneert nog net goed genoeg om de opbouw van afhankelijkheid te onderschatten.";
+        ctaTitle = "Maak afhankelijkheid expliciet voordat zij de ruimte verder beperkt";
+        ctaText = "Een oranje score is vaak het juiste moment om bestuurlijk orde aan te brengen voordat afhankelijkheid verder normaliseert.";
+        ctaPoints = [
+          "duiding van de belangrijkste opbouwende afhankelijkheden",
+          "scherper zicht op waar regie ontbreekt",
+          "eerste bestuurlijke prioritering"
+        ];
+        ctaButton = "Breng afhankelijkheid expliciet in kaart";
+        ctaSub = "Juist in deze zone is er nog ruimte om zonder crisis bestuurlijk te herordenen.";
+      } else {
+        badgeClass = "badge-green";
+        badgeText = "Groen — relatief bestuurbaar";
+        title = "Digitale afhankelijkheid lijkt relatief bestuurbaar";
+        paragraphs = [
+          "Uw score wijst op een organisatie waarin digitale afhankelijkheid waarschijnlijk niet wordt ontkend, maar in zekere mate bestuurlijk wordt gezien en gestuurd. Er lijkt sprake van overzicht, betrokkenheid en enig eigenaarschap.",
+          "Dat is gunstig, maar geen eindstation. Kwetsbaarheid ontstaat zelden door één groot besluit; meestal door het langzaam verdwijnen van aandacht, discipline en bestuurlijke herijking.",
+          "De opgave in deze zone is onderhoud: aannames blijven toetsen, exit-scenario’s beproeven en voorkomen dat vandaag bestuurbaar morgen vanzelfsprekend afhankelijk wordt."
+        ];
+        insight = "Groen betekent niet risicovrij. Het betekent vooral dat afhankelijkheid eerder zichtbaar en bestuurbaar lijkt dan blind gegroeid.";
+        ctaTitle = "Borg bestuurbaarheid voordat vanzelfsprekendheid terugkeert";
+        ctaText = "Een groene score is waardevol, mits zij periodiek wordt getoetst. Bestuurbaarheid vraagt onderhoud.";
+        ctaPoints = [
+          "toetsen van aannames en bestuurlijke discipline",
+          "scherper maken van exit- en continuïteitsscenario’s",
+          "voorkomen dat grip langzaam weer verdwijnt"
+        ];
+        ctaButton = "Toets bestuurbaarheid periodiek";
+        ctaSub = "Ook een relatief gunstige uitkomst verdient bestuurlijke onderhoudsruimte.";
+      }
 
-  if (i === 8) {
-    val = 6 - val;
-  }
+      const resultHtml = `
+        <div class="result-badge ${badgeClass}">${badgeText}</div>
+        <p class="score-line">Uw totaalscore: <strong>${total} van 60</strong></p>
+        <h2 class="result-title">${title}</h2>
+        <div class="result-copy">
+          <p>${paragraphs[0]}</p>
+          <p>${paragraphs[1]}</p>
+          <p>${paragraphs[2]}</p>
+        </div>
+        <div class="insight-box">
+          <p><strong>Bestuurlijke observatie:</strong> ${insight}</p>
+        </div>
+      `;
 
-  total += val;
-}
+      const ctaHtml = `
+        <h3>${ctaTitle}</h3>
+        <p>${ctaText}</p>
+        <ul class="cta-points">
+          <li>${ctaPoints[0]}</li>
+          <li>${ctaPoints[1]}</li>
+          <li>${ctaPoints[2]}</li>
+        </ul>
+        <a href="/contact/" class="cta-button">${ctaButton}</a>
+        <div class="cta-secondary">${ctaSub}</div>
+      `;
 
-let text = "";
+      const results = document.getElementById("results");
+      const resultContent = document.getElementById("resultContent");
+      const ctaPanel = document.getElementById("ctaPanel");
+      const ctaDynamic = document.getElementById("ctaDynamic");
 
-if (total <= 35) {
-  text = "<h2>🔴 Bestuurlijke kwetsbaarheid</h2><p>Digitale afhankelijkheid is een strategisch probleem geworden.</p>";
-} 
-else if (total <= 47) {
-  text = "<h2>🟠 Toenemende afhankelijkheid</h2><p>Afhankelijkheid groeit sneller dan bestuurlijke grip.</p>";
-} 
-else {
-  text = "<h2>🟢 Relatief bestuurbaar</h2><p>Afhankelijkheid lijkt onder controle, maar vraagt aandacht.</p>";
-}
+      resultContent.innerHTML = resultHtml;
+      ctaDynamic.innerHTML = ctaHtml;
 
-document.getElementById("result").innerHTML = text;
-document.getElementById("result").style.display = "block";
-document.getElementById("cta").style.display = "block";
-}
+      results.classList.add("visible");
+      ctaPanel.classList.add("visible");
 
-</script>
-
+      document.querySelector(".results-wrap").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  </script>
 </body>
 </html>
