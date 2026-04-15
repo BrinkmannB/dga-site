@@ -23,7 +23,7 @@ body{
   font-family:Georgia, serif;
   background:linear-gradient(180deg,#04101a 0%, #051622 100%);
   color:var(--text);
-  line-height:1.8;
+  line-height:1.85;
 }
 
 .wrapper{
@@ -37,13 +37,13 @@ h1{
   font-size:56px;
   font-weight:400;
   line-height:1.05;
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 
 .lead{
   font-size:22px;
   color:var(--muted);
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
 .grid{
@@ -62,6 +62,14 @@ h1{
 p{
   font-size:18px;
   color:var(--muted);
+}
+
+ul{
+  padding-left:18px;
+}
+
+li{
+  margin-bottom:8px;
 }
 
 .form{
@@ -94,18 +102,19 @@ button{
   cursor:pointer;
 }
 
-.cta{
-  margin-top:22px;
-  font-size:15px;
+.micro{
+  font-size:14px;
   color:#8fa2b5;
+  margin-top:10px;
 }
 
-ul{
-  padding-left:18px;
-}
-
-li{
-  margin-bottom:8px;
+.score-box{
+  margin-top:18px;
+  padding:14px;
+  border:1px solid rgba(198,166,98,.3);
+  border-radius:12px;
+  background:rgba(198,166,98,.05);
+  font-size:14px;
 }
 
 .footer{
@@ -127,34 +136,35 @@ li{
 <h1>Bespreek uw uitkomst</h1>
 
 <p class="lead">
-De meeste organisaties zien pas hoe afhankelijk zij zijn wanneer keuzes niet meer vrij zijn.
-Uw uitkomst is het moment vóórdat dat gebeurt.
+Wat u zojuist heeft gezien is geen score — maar een indicatie van bestuurlijke ruimte.
+De vraag is niet óf er afhankelijkheid is, maar waar zij u al beperkt.
 </p>
 
 <div class="grid">
 
 <div class="card">
 
-<h2>Wat dit gesprek is</h2>
+<h2>Wat u kunt verwachten</h2>
 
 <p>
-Geen intake. Geen verkooppraatje.
+Dit gesprek is geen intake en geen pitch.
 </p>
 
 <p>
-Dit is een eerste bestuurlijke verkenning van wat uw uitkomst daadwerkelijk betekent.
+We brengen uw uitkomst terug tot één vraag:
+<strong>waar wordt uw organisatie feitelijk minder vrij om te kiezen?</strong>
 </p>
 
 <ul>
-<li>waar afhankelijkheid echt zit</li>
-<li>waar regie ontbreekt</li>
-<li>welke keuzes impliciet zijn geworden</li>
-<li>wat bestuurlijk relevant is — en wat niet</li>
+<li>waar afhankelijkheid echt zit (niet waar zij lijkt te zitten)</li>
+<li>waar eigenaarschap ontbreekt</li>
+<li>welke keuzes impliciet structureel zijn geworden</li>
+<li>wat bestuurlijk relevant is — en wat ruis is</li>
 </ul>
 
 <p>
-Soms leidt dit tot een vervolg. Soms niet.
-Maar u heeft in ieder geval scherpte.
+Soms is één gesprek genoeg.  
+Soms niet. Maar u heeft in ieder geval scherpte.
 </p>
 
 </div>
@@ -163,7 +173,7 @@ Maar u heeft in ieder geval scherpte.
 
 <h2>Plan een gesprek</h2>
 
-<form class="form" action="https://formspree.io/f/xykklkvq" method="POST">
+<form action="https://formspree.io/f/xykklkvq" method="POST" class="form">
 
 <input type="text" name="name" placeholder="Naam" required>
 <input type="text" name="organization" placeholder="Organisatie" required>
@@ -172,13 +182,19 @@ Maar u heeft in ieder geval scherpte.
 
 <textarea name="message" placeholder="Wat viel u op in uw uitkomst?"></textarea>
 
+<!-- 🔥 hidden velden -->
+<input type="hidden" name="score" id="scoreField">
+<input type="hidden" name="zone" id="zoneField">
+<input type="hidden" name="source" value="Boardroom Scan">
+
 <button type="submit">Bespreek mijn uitkomst</button>
 
 </form>
 
-<p class="cta">
-Geen mailinglijst. Geen opvolgspam.  
-Wel een persoonlijk antwoord.
+<div id="scoreDisplay" class="score-box" style="display:none;"></div>
+
+<p class="micro">
+Geen mailinglijst. Geen opvolgspam. Wel een persoonlijk antwoord.
 </p>
 
 </div>
@@ -190,6 +206,33 @@ Dutch Governance Advisory — bestuurlijke regie in het digitale tijdperk
 </div>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const score = localStorage.getItem("scanScore");
+  const zone = localStorage.getItem("scanZone");
+
+  if (score) {
+    document.getElementById("scoreField").value = score + " / 60";
+  }
+
+  if (zone) {
+    let label = "";
+    if (zone === "red") label = "Rood — bestuurlijke kwetsbaarheid";
+    if (zone === "orange") label = "Oranje — oplopende afhankelijkheid";
+    if (zone === "green") label = "Groen — relatief bestuurbaar";
+
+    document.getElementById("zoneField").value = label;
+
+    // 👇 optioneel zichtbaar maken voor gebruiker
+    const box = document.getElementById("scoreDisplay");
+    box.style.display = "block";
+    box.innerHTML = `<strong>Uw uitkomst:</strong><br>${score} / 60 — ${label}`;
+  }
+
+});
+</script>
 
 </body>
 </html>
