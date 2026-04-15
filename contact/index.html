@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bespreek uw uitkomst | Dutch Governance Advisory</title>
-  <meta name="description" content="Bespreek de uitkomst van de Boardroom Scan Digitale Afhankelijkheid. Een eerste gesprek over bestuurlijke risico’s, afhankelijkheid en regie.">
+  <meta
+    name="description"
+    content="Bespreek de uitkomst van de Boardroom Scan Digitale Afhankelijkheid. Een eerste gesprek over bestuurlijke risico’s, afhankelijkheid en regie."
+  />
 
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#051622;
-      --bg-deep:#08111a;
-      --panel:#0b1e2d;
-      --panel-soft:#0f2435;
-      --text:#eef4f9;
-      --muted:#b9c6d3;
-      --muted-2:#8fa2b5;
+      --bg:#07131d;
+      --bg-deep:#04101a;
+      --panel:#0b1d2b;
+      --panel-2:#102334;
+      --text:#eef4f8;
+      --muted:#b7c3cf;
+      --muted-2:#90a1b1;
       --line:#294156;
       --accent:#b49a53;
       --accent-soft:rgba(180,154,83,.10);
-      --shadow:0 10px 30px rgba(0,0,0,.18);
+      --shadow:0 14px 34px rgba(0,0,0,.20);
       --radius:22px;
-      --max:1140px;
+      --max:1180px;
+      --content:760px;
     }
 
     *{
@@ -35,18 +39,23 @@
 
     body{
       margin:0;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(180,154,83,0.10), transparent 40%),
-        linear-gradient(180deg,#0b1320 0%, #080f18 100%);
       color:var(--text);
       font-family:Georgia, serif;
       line-height:1.85;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(180,154,83,.10), transparent 0 34%),
+        radial-gradient(circle at 14% 78%, rgba(180,154,83,.05), transparent 0 24%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+    }
+
+    a{
+      color:inherit;
     }
 
     .wrapper{
       max-width:var(--max);
       margin:0 auto;
-      padding:46px 26px 90px;
+      padding:42px 26px 90px;
     }
 
     header{
@@ -54,9 +63,9 @@
       justify-content:space-between;
       align-items:flex-end;
       gap:24px;
-      margin-bottom:58px;
-      padding-bottom:20px;
-      border-bottom:1px solid rgba(180,154,83,0.35);
+      margin-bottom:62px;
+      padding-bottom:18px;
+      border-bottom:1px solid rgba(180,154,83,.32);
     }
 
     .brand-wrap{
@@ -68,6 +77,7 @@
     .brand{
       color:var(--text);
       text-decoration:none;
+      font-family:'Libre Baskerville', serif;
       font-size:18px;
       letter-spacing:.02em;
       font-weight:700;
@@ -81,11 +91,10 @@
     }
 
     nav{
-      margin-top:12px;
-      font-size:14px;
       display:flex;
       flex-wrap:wrap;
       gap:16px;
+      font-size:14px;
     }
 
     nav a{
@@ -101,10 +110,10 @@
 
     .hero{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+      grid-template-columns:minmax(0,1.15fr) minmax(310px,.85fr);
       gap:28px;
       align-items:start;
-      margin-bottom:26px;
+      margin-bottom:28px;
     }
 
     .eyebrow{
@@ -118,25 +127,26 @@
     }
 
     h1{
+      margin:0 0 24px;
       font-family:'Libre Baskerville', serif;
       font-size:clamp(42px, 6vw, 78px);
       font-weight:400;
       line-height:1.02;
       letter-spacing:-.02em;
-      margin:0 0 22px;
     }
 
     .lead{
+      max-width:var(--content);
+      margin:0 0 22px;
       font-size:21px;
       color:var(--muted);
-      max-width:760px;
-      margin:0 0 22px;
     }
 
     .hero p{
+      margin:0 0 18px;
       font-size:18px;
       color:var(--muted);
-      margin:0 0 18px;
+      max-width:var(--content);
     }
 
     .hero-card{
@@ -145,14 +155,16 @@
       border-radius:24px;
       padding:24px 22px;
       box-shadow:var(--shadow);
+      position:sticky;
+      top:24px;
     }
 
     .hero-card h2{
-      font-family:'Libre Baskerville', serif;
-      font-size:28px;
-      font-weight:400;
-      line-height:1.1;
       margin:0 0 12px;
+      font-family:'Libre Baskerville', serif;
+      font-size:29px;
+      font-weight:400;
+      line-height:1.08;
       color:var(--text);
     }
 
@@ -167,18 +179,38 @@
       padding-left:18px;
       color:var(--muted);
       font-size:15px;
-      line-height:1.7;
+      line-height:1.75;
     }
 
     .hero-card li{
       margin:8px 0;
     }
 
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 14px;
+      margin-top:22px;
+    }
+
+    .meta-chip{
+      padding:10px 12px;
+      border:1px solid rgba(180,154,83,.22);
+      border-radius:999px;
+      background:rgba(255,255,255,.015);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .meta-chip strong{
+      color:var(--text);
+    }
+
     .section-grid{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(340px,.92fr);
+      grid-template-columns:minmax(0,1fr) minmax(360px,.95fr);
       gap:24px;
-      margin-top:26px;
+      margin-top:30px;
     }
 
     .panel{
@@ -190,27 +222,27 @@
     }
 
     .panel h2{
-      font-family:'Libre Baskerville', serif;
-      font-size:30px;
-      font-weight:400;
-      line-height:1.1;
       margin:0 0 14px;
+      font-family:'Libre Baskerville', serif;
+      font-size:31px;
+      font-weight:400;
+      line-height:1.08;
       color:var(--text);
     }
 
     .panel h3{
+      margin:28px 0 10px;
       font-family:'Libre Baskerville', serif;
       font-size:22px;
       font-weight:400;
       line-height:1.15;
-      margin:26px 0 10px;
       color:var(--text);
     }
 
     .panel p{
+      margin:0 0 16px;
       font-size:17px;
       color:var(--muted);
-      margin:0 0 16px;
     }
 
     .panel ul{
@@ -218,7 +250,7 @@
       padding-left:18px;
       color:var(--muted);
       font-size:16px;
-      line-height:1.75;
+      line-height:1.78;
     }
 
     .panel li{
@@ -227,13 +259,42 @@
 
     .divider{
       margin:24px 0;
-      border-top:1px solid rgba(180,154,83,0.18);
+      border-top:1px solid rgba(180,154,83,.18);
     }
 
     .subtle{
       color:var(--muted-2);
       font-size:14px;
-      line-height:1.7;
+      line-height:1.65;
+    }
+
+    .quote-box{
+      margin-top:22px;
+      padding:18px 18px 16px;
+      border-left:3px solid var(--accent);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+    }
+
+    .quote-box p{
+      margin:0;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .contact-direct{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid rgba(180,154,83,.18);
+    }
+
+    .contact-direct a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    .contact-direct a:hover{
+      text-decoration:underline;
     }
 
     .form-intro{
@@ -267,6 +328,7 @@
       font:inherit;
       font-size:15px;
       outline:none;
+      transition:border-color .18s ease, box-shadow .18s ease;
     }
 
     input::placeholder,
@@ -281,7 +343,7 @@
     }
 
     textarea{
-      min-height:150px;
+      min-height:160px;
       resize:vertical;
     }
 
@@ -290,7 +352,7 @@
       flex-wrap:wrap;
       gap:14px;
       align-items:center;
-      margin-top:6px;
+      margin-top:8px;
     }
 
     .cta-button{
@@ -314,21 +376,6 @@
       transform:translateY(-1px);
     }
 
-    .contact-direct{
-      margin-top:22px;
-      padding-top:18px;
-      border-top:1px solid rgba(180,154,83,0.18);
-    }
-
-    .contact-direct a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-
-    .contact-direct a:hover{
-      text-decoration:underline;
-    }
-
     .microcopy{
       color:var(--muted-2);
       font-size:14px;
@@ -337,9 +384,9 @@
     }
 
     .footer{
-      margin-top:64px;
-      padding-top:26px;
-      border-top:1px solid rgba(180,154,83,0.20);
+      margin-top:66px;
+      padding-top:24px;
+      border-top:1px solid rgba(180,154,83,.20);
       font-size:14px;
       color:var(--muted-2);
     }
@@ -355,6 +402,11 @@
       .section-grid{
         grid-template-columns:1fr;
       }
+
+      .hero-card{
+        position:relative;
+        top:auto;
+      }
     }
 
     @media (max-width: 720px){
@@ -366,22 +418,22 @@
         font-size:18px;
       }
 
+      .hero p,
+      .panel p{
+        font-size:17px;
+      }
+
       .panel,
       .hero-card{
         padding:22px 18px;
       }
 
       .panel h2{
-        font-size:26px;
+        font-size:27px;
       }
 
       .panel h3{
         font-size:20px;
-      }
-
-      .hero p,
-      .panel p{
-        font-size:17px;
       }
     }
   </style>
@@ -392,16 +444,16 @@
 
     <header>
       <div class="brand-wrap">
-        <a class="brand" href="/index.html">DUTCH GOVERNANCE ADVISORY</a>
+        <a class="brand" href="/">DUTCH GOVERNANCE ADVISORY</a>
         <div class="brand-sub">Bestuurlijke regie in het digitale tijdperk</div>
       </div>
 
       <nav>
-        <a href="/index.html">Home</a>
-        <a href="/executive-briefs/index.html">Executive Briefs</a>
-        <a href="/papers/index.html">Papers</a>
-        <a href="/scan/index.html">Scan</a>
-        <a class="active" href="/contact/index.html">Contact</a>
+        <a href="/">Home</a>
+        <a href="/executive-briefs/">Executive Briefs</a>
+        <a href="/papers/">Papers</a>
+        <a href="/scan/">Scan</a>
+        <a class="active" href="/contact/">Contact</a>
       </nav>
     </header>
 
@@ -411,20 +463,24 @@
         <h1>Bespreek uw uitkomst</h1>
 
         <p class="lead">
-          De uitkomst van de Boardroom Scan Digitale Afhankelijkheid is geen eindpunt, maar een begin.
+          De uitkomst van de Boardroom Scan Digitale Afhankelijkheid is geen eindpunt, maar een ingang naar bestuurlijke duiding.
         </p>
 
         <p>
-          Digitale afhankelijkheid wordt zelden zichtbaar in één incident. Meestal groeit zij geleidelijk —
-          via contracten, uitzonderingen, leveranciers, data en systemen — totdat bestuurlijke ruimte
-          ongemerkt kleiner wordt.
+          Digitale afhankelijkheid wordt zelden zichtbaar in één incident. Meestal groeit zij geleidelijk — via contracten,
+          uitzonderingen, leveranciers, data en systemen — totdat bestuurlijke ruimte ongemerkt kleiner wordt.
         </p>
 
         <p>
           Een eerste gesprek helpt om die uitkomst terug te brengen tot uw eigen context:
-          waar zit de werkelijke afhankelijkheid, wat is bestuurlijk relevant, en waar vraagt de situatie
-          om hernieuwde regie?
+          waar zit de werkelijke afhankelijkheid, wat is bestuurlijk relevant, en waar vraagt de situatie om hernieuwde regie?
         </p>
+
+        <div class="meta-row">
+          <div class="meta-chip"><strong>Duur:</strong> eerste verkenning</div>
+          <div class="meta-chip"><strong>Focus:</strong> risico, afhankelijkheid, regie</div>
+          <div class="meta-chip"><strong>Voor:</strong> bestuur, directie, toezicht</div>
+        </div>
       </div>
 
       <aside class="hero-card">
@@ -463,6 +519,12 @@
           <li>hoeveel strategische ruimte hebben wij nog werkelijk?</li>
         </ul>
 
+        <div class="quote-box">
+          <p>
+            <strong>Bestuurlijke duiding begint zelden met meer informatie, maar met beter zicht op wat al impliciet aanwezig is.</strong>
+          </p>
+        </div>
+
         <div class="divider"></div>
 
         <h3>Niet voor iedereen</h3>
@@ -494,35 +556,38 @@
           voor een eerste verkenning.
         </p>
 
-        <form action="#" method="post">
+        <form action="https://formspree.io/f/xyklkkvq" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe aanvraag via contactpagina — Dutch Governance Advisory" />
+          <input type="hidden" name="_next" value="https://dutchgovernanceadvisory.nl/contact/bedankt/" />
+
           <div class="field">
             <label for="name">Naam</label>
-            <input id="name" name="name" type="text" placeholder="Uw naam">
+            <input id="name" name="name" type="text" placeholder="Uw naam" required />
           </div>
 
           <div class="field">
             <label for="organization">Organisatie</label>
-            <input id="organization" name="organization" type="text" placeholder="Naam van uw organisatie">
+            <input id="organization" name="organization" type="text" placeholder="Naam van uw organisatie" required />
           </div>
 
           <div class="field">
             <label for="role">Functie</label>
-            <input id="role" name="role" type="text" placeholder="Bijvoorbeeld bestuurder, directeur of toezichthouder">
+            <input id="role" name="role" type="text" placeholder="Bijvoorbeeld bestuurder, directeur of toezichthouder" />
           </div>
 
           <div class="field">
             <label for="email">E-mailadres</label>
-            <input id="email" name="email" type="email" placeholder="uwnaam@organisatie.nl">
+            <input id="email" name="email" type="email" placeholder="uwnaam@organisatie.nl" required />
           </div>
 
           <div class="field">
             <label for="phone">Telefoonnummer <span class="subtle">(optioneel)</span></label>
-            <input id="phone" name="phone" type="text" placeholder="Optioneel">
+            <input id="phone" name="phone" type="text" placeholder="Optioneel" />
           </div>
 
           <div class="field">
             <label for="message">Wat was voor u de belangrijkste observatie of frictie in de uitkomst?</label>
-            <textarea id="message" name="message" placeholder="Welke uitkomst of vraag viel voor u het meest op?"></textarea>
+            <textarea id="message" name="message" placeholder="Welke uitkomst of vraag viel voor u het meest op?" required></textarea>
           </div>
 
           <div class="button-row">
@@ -534,8 +599,8 @@
           </p>
 
           <p class="microcopy">
-            Ik reageer persoonlijk op aanvragen die aansluiten op bestuurlijke vraagstukken rond
-            digitale afhankelijkheid, autonomie en regie.
+            Ik reageer persoonlijk op aanvragen die aansluiten op bestuurlijke vraagstukken rond digitale afhankelijkheid,
+            autonomie en regie.
           </p>
         </form>
       </div>
