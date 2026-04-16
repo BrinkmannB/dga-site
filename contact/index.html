@@ -3,60 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Dutch Governance Advisory</title>
+<title>Plan een gesprek | Dutch Governance Advisory</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:Georgia, serif;
-  background:#051622;
-  color:#eef4f8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #061622;
+    color: #e4f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.wrapper{
-  max-width:720px;
-  padding:40px;
+.wrapper {
+    max-width: 720px;
+    width: 100%;
+    padding: 40px;
 }
 
-h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:42px;
-  font-weight:400;
-  margin-bottom:20px;
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
-p{
-  font-size:18px;
-  color:#b7c3cf;
-  margin-bottom:20px;
+p {
+    font-size: 18px;
+    color: #87a3b3;
+    margin-bottom: 30px;
 }
 
-input, textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  background:#0c2433;
-  border:none;
-  color:white;
+input, textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 15px;
+    background: #0c2433;
+    border: none;
+    color: white;
+    font-size: 16px;
 }
 
-button{
-  width:100%;
-  padding:16px;
-  background:#c6a662;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
+textarea {
+    min-height: 120px;
 }
 
-button:hover{
-  opacity:0.9;
+button {
+    width: 100%;
+    padding: 16px;
+    background: #c6a662;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -64,58 +66,57 @@ button:hover{
 <body>
 
 <div class="wrapper">
+    <h1>Plan een gesprek</h1>
+    <p>Als dit bestuurlijk relevant is, spreken we elkaar.</p>
 
-<h1>Plan een gesprek</h1>
+    <form id="contact-form" action="https://formspree.io/f/xyklkkvq" method="POST">
 
-<p>
-Als dit bestuurlijk relevant is, spreken we elkaar.
-</p>
+        <input type="text" name="name" placeholder="Naam" required>
+        <input type="text" name="organization" placeholder="Organisatie" required>
+        <input type="email" name="email" placeholder="E-mailadres" required>
 
-<form action="https://formspree.io/f/xyklkkvq" method="POST">
+        <textarea name="message" placeholder="Wat speelt er bij u?"></textarea>
 
-  <input type="text" name="name" placeholder="Naam" required>
-  <input type="text" name="organization" placeholder="Organisatie" required>
-  <input type="email" name="email" placeholder="E-mailadres" required>
+        <!-- hidden velden -->
+        <input type="hidden" name="score" id="scoreField">
+        <input type="hidden" name="zone" id="zoneField">
 
-  <textarea name="message" placeholder="Wat speelt er bij u?"></textarea>
-
-  <!-- 🔥 NIEUW -->
-  <input type="hidden" name="score" id="scoreField">
-  <input type="hidden" name="zone" id="zoneField">
-
-  <!-- redirect -->
-  <input type="hidden" name="_next" value="https://dutchgovernanceadvisory.nl/contact/bedankt/">
-
-  <button type="submit">Bespreek mijn situatie</button>
-
-</form>
-
+        <button type="submit">Bespreek mijn situatie</button>
+    </form>
 </div>
 
 <script>
-const form = document.querySelector("form");
+// Form submit (controle bij jou houden)
+const form = document.getElementById("contact-form");
 
-<script>
-const form = document.querySelector("form");
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-form.addEventListener("submit", function () {
-  setTimeout(function () {
+    const data = new FormData(form);
+
+    await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
     window.location.href = "/contact/bedankt/";
-  }, 300);
 });
 
-// 🔥 NIEUW: score ophalen
+// Score ophalen (als aanwezig)
 document.addEventListener("DOMContentLoaded", function () {
-  const score = localStorage.getItem("scanScore");
-  const zone = localStorage.getItem("scanZone");
+    const score = localStorage.getItem("scanScore");
+    const zone = localStorage.getItem("scanZone");
 
-  if (score) {
-    document.getElementById("scoreField").value = score + "/60";
-  }
+    if (score) {
+        document.getElementById("scoreField").value = score + "/60";
+    }
 
-  if (zone) {
-    document.getElementById("zoneField").value = zone;
-  }
+    if (zone) {
+        document.getElementById("zoneField").value = zone;
+    }
 });
 </script>
 
