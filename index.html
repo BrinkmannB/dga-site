@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dutch Governance Advisory | Bestuurlijke regie in het digitale tijdperk</title>
+<title>Dutch Governance Advisory</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -16,194 +16,133 @@
   --muted:#9aa6b2;
   --accent:#c9a96e;
   --card:#111a2b;
-  --border:rgba(255,255,255,0.08);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
 }
 
 body{
+  margin:0;
   font-family:'Inter', sans-serif;
   background:linear-gradient(180deg,#0b1320 0%,#0e1a2f 100%);
   color:var(--text);
 }
 
-/* CONTAINER */
+/* NAV */
 
-.container{
+.nav{
+  position:absolute;
+  top:0;
+  width:100%;
+  padding:24px 40px;
+}
+
+.nav-inner{
   max-width:1100px;
-  margin:0 auto;
-  padding:60px 24px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav a{
+  color:var(--muted);
+  margin-left:24px;
+  text-decoration:none;
+}
+
+.nav a:hover{
+  color:var(--text);
 }
 
 /* HERO */
 
-.hero{
-  padding:100px 0 60px 0;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:120px 24px;
 }
 
-.hero h1{
+h1{
   font-family:'Libre Baskerville', serif;
-  font-size:44px;
-  line-height:1.25;
-  font-weight:400;
-  max-width:820px;
-  margin-bottom:24px;
+  font-size:48px;
+  line-height:1.2;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeIn 1s ease forwards;
 }
 
-.hero p{
+.sub{
+  margin-top:20px;
   color:var(--muted);
-  max-width:640px;
-  font-size:18px;
-  margin-bottom:20px;
+  max-width:600px;
+  opacity:0;
+  animation:fadeIn 1s ease 0.3s forwards;
 }
-
-/* FRICTIE ZIN */
 
 .friction{
-  color:var(--text);
-  font-size:16px;
-  max-width:620px;
-  margin-bottom:40px;
+  margin-top:20px;
+  opacity:0;
+  animation:fadeIn 1s ease 0.6s forwards;
 }
 
-/* KAARTEN */
+/* CARDS */
 
-.solutions{
+.cards{
+  margin-top:60px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
   padding:28px;
+  background:var(--card);
   border-radius:12px;
+  transition:all 0.3s ease;
   cursor:pointer;
-  transition:all 0.25s ease;
-  position:relative;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  border-color:var(--accent);
-  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* DOMINANTE KAART */
-
 .card.highlight{
-  border-color:var(--accent);
+  border:1px solid var(--accent);
   background:linear-gradient(180deg,#111a2b,#14233d);
 }
 
-.card span{
-  color:var(--accent);
-  font-size:13px;
-  display:block;
-  margin-bottom:10px;
-}
-
 .card h3{
-  font-size:20px;
   margin-bottom:10px;
 }
 
 .card p{
   color:var(--muted);
-  font-size:15px;
-  margin-bottom:18px;
 }
-
-.card strong{
-  color:var(--text);
-}
-
-.card a{
-  color:var(--accent);
-  text-decoration:none;
-  font-size:14px;
-}
-
-/* TRIGGER ZIN */
 
 .trigger{
   margin-top:40px;
   font-size:18px;
-  max-width:600px;
 }
 
 /* SECTION */
 
 .section{
-  padding:80px 0;
+  margin-top:120px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
 }
 
-.section h2{
-  font-family:'Libre Baskerville', serif;
-  font-size:32px;
-  margin-bottom:20px;
+.section.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.section p{
-  max-width:700px;
-  color:var(--muted);
-  margin-bottom:16px;
-}
+/* ANIMATION */
 
-/* CTA */
-
-.cta{
-  margin-top:40px;
-}
-
-.cta a{
-  display:inline-block;
-  padding:12px 20px;
-  border:1px solid var(--accent);
-  color:var(--accent);
-  text-decoration:none;
-  margin-right:12px;
-  font-size:14px;
-  transition:all 0.2s ease;
-}
-
-.cta a:hover{
-  background:var(--accent);
-  color:#0b1320;
-}
-
-/* STICKY CTA (SCROLL TRIGGER) */
-
-.sticky-cta{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#0b1320;
-  border:1px solid var(--accent);
-  padding:14px 18px;
-  font-size:14px;
-  display:none;
-}
-
-.sticky-cta a{
-  color:var(--accent);
-  text-decoration:none;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-  .solutions{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:32px;
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
@@ -212,98 +151,82 @@ body{
 
 <body>
 
-<div class="container">
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <h1>
-      U denkt dat u eigenaar bent van uw digitale infrastructuur.<br>
-      Maar dat bent u niet.
-    </h1>
-
-    <p>
-      Besluiten over cloud, leveranciers en AI lijken logisch op zichzelf.
-      In samenhang beperken ze ongemerkt uw bestuurlijke speelruimte.
-    </p>
-
-    <p class="friction">
-      De meeste organisaties ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
-    </p>
-
-    <!-- KAARTEN -->
-    <div class="solutions">
-
-      <div class="card" onclick="location.href='#';">
-        <span>1</span>
-        <h3>Strategische sessie</h3>
-        <p>Het vraagstuk bestuurlijk scherp trekken en expliciet maken waar afhankelijkheid ontstaat.</p>
-        <a href="#">Verken het vraagstuk →</a>
-      </div>
-
-      <div class="card highlight" onclick="location.href='#';">
-        <span>2</span>
-        <h3>Afhankelijkheidsscan</h3>
-        <p><strong>Zichtbaar maken waar digitale afhankelijkheid zich heeft opgebouwd.</strong></p>
-        <a href="#">Start de scan →</a>
-      </div>
-
-      <div class="card" onclick="location.href='#';">
-        <span>3</span>
-        <h3>Advisering</h3>
-        <p>Regie terugbrengen in besluitvorming en afhankelijkheden bestuurbaar maken.</p>
-        <a href="#">Bespreek uw situatie →</a>
-      </div>
-
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <div>DGA</div>
+    <div>
+      <a href="/papers">Papers</a>
+      <a href="/executive-briefs">Executive Briefs</a>
+      <a href="/contact">Contact</a>
     </div>
-
-    <div class="trigger">
-      De vraag is niet óf dit speelt.<br>
-      De vraag is: waar.
-    </div>
-
-  </section>
-
+  </div>
 </div>
 
-<!-- TWEEDE BLOK -->
-<div class="container section">
+<!-- HERO -->
+<div class="container">
 
-  <h2>De verschuiving gebeurt geleidelijk</h2>
+  <h1>
+    U denkt dat u eigenaar bent van uw digitale infrastructuur.<br>
+    Maar dat bent u niet.
+  </h1>
 
-  <p>
-    Digitale afhankelijkheid ontstaat stap voor stap.
-    Via contracten, verlengingen, platformkeuzes en nieuwe toepassingen.
+  <p class="sub">
+    Besluiten over cloud, leveranciers en AI lijken logisch op zichzelf.
+    In samenhang beperken ze ongemerkt uw bestuurlijke speelruimte.
   </p>
 
-  <p>
-    Afzonderlijk logisch. In samenhang bepalend.
-    En juist die samenhang wordt zelden bestuurlijk besproken.
+  <p class="friction">
+    De meeste organisaties ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
   </p>
 
-  <div class="cta">
-    <a href="#">Start de scan</a>
-    <a href="#">Bespreek uw situatie</a>
+  <!-- CARDS -->
+  <div class="cards">
+
+    <div class="card" onclick="location.href='/gesprek'">
+      <h3>Strategische sessie</h3>
+      <p>Het vraagstuk bestuurlijk scherp trekken.</p>
+    </div>
+
+    <div class="card highlight" onclick="location.href='/scan'">
+      <h3>Afhankelijkheidsscan</h3>
+      <p>Zichtbaar maken waar afhankelijkheid zich heeft opgebouwd.</p>
+    </div>
+
+    <div class="card" onclick="location.href='/gesprek'">
+      <h3>Advisering</h3>
+      <p>Regie terugbrengen in besluitvorming.</p>
+    </div>
+
+  </div>
+
+  <div class="trigger">
+    De vraag is niet óf dit speelt.<br>
+    De vraag is: waar.
+  </div>
+
+  <!-- SECTION -->
+  <div class="section" id="section2">
+    <h2>De verschuiving gebeurt geleidelijk</h2>
+    <p class="sub">
+      Digitale afhankelijkheid ontstaat stap voor stap.
+      Afzonderlijk logisch. In samenhang bepalend.
+    </p>
   </div>
 
 </div>
 
-<!-- STICKY CTA -->
-<div class="sticky-cta" id="stickyCTA">
-  <a href="#">Start de scan →</a>
-</div>
-
 <script>
-window.addEventListener('scroll', function(){
-  const trigger = window.scrollY;
-  const cta = document.getElementById('stickyCTA');
 
-  if(trigger > 400){
-    cta.style.display = 'block';
-  } else {
-    cta.style.display = 'none';
+const section = document.getElementById('section2');
+
+window.addEventListener('scroll', () => {
+  const rect = section.getBoundingClientRect();
+  if(rect.top < window.innerHeight - 100){
+    section.classList.add('visible');
   }
 });
+
 </script>
 
 </body>
