@@ -1,153 +1,80 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ontvangen | Dutch Governance Advisory</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ontvangen | Dutch Governance Advisory</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#07131d;
-      --panel:#0b1d2b;
-      --text:#eef4f8;
-      --muted:#b7c3cf;
-      --muted-2:#90a1b1;
-      --line:#294156;
-      --accent:#b49a53;
-      --shadow:0 14px 34px rgba(0,0,0,.20);
-      --radius:22px;
-      --max:900px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background:#051622;
+  color:#eef4f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
 
-    *{box-sizing:border-box;}
+.wrapper{
+  max-width:720px;
+  padding:40px;
+}
 
-    body{
-      margin:0;
-      font-family:Georgia, serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 85% 15%, rgba(180,154,83,.10), transparent 40%),
-        linear-gradient(180deg,#04101a 0%, #07131d 100%);
-      line-height:1.8;
-    }
+h1{
+  font-family:'Libre Baskerville', serif;
+  font-size:48px;
+  font-weight:400;
+  margin-bottom:20px;
+}
 
-    .wrapper{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:80px 24px;
-      text-align:center;
-    }
+p{
+  font-size:20px;
+  color:#b7c3cf;
+  margin-bottom:18px;
+}
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(42,63,85,.95);
-      border-radius:24px;
-      padding:50px 36px;
-      box-shadow:var(--shadow);
-    }
+.note{
+  margin-top:30px;
+  font-size:16px;
+  color:#8fa2b5;
+}
 
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--accent);
-      margin-bottom:18px;
-      display:inline-block;
-      font-family:'Libre Baskerville', serif;
-    }
-
-    h1{
-      font-family:'Libre Baskerville', serif;
-      font-size:44px;
-      font-weight:400;
-      margin:0 0 20px;
-    }
-
-    p{
-      font-size:18px;
-      color:var(--muted);
-      margin:0 0 18px;
-    }
-
-    .strong{
-      color:var(--text);
-    }
-
-    .divider{
-      margin:30px auto;
-      width:80px;
-      border-top:1px solid rgba(180,154,83,.4);
-    }
-
-    .cta{
-      display:inline-block;
-      margin-top:18px;
-      padding:14px 20px;
-      background:var(--accent);
-      color:#071521;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:12px;
-      box-shadow:var(--shadow);
-    }
-
-    .cta:hover{
-      opacity:.95;
-    }
-
-    .sub{
-      margin-top:30px;
-      font-size:14px;
-      color:var(--muted-2);
-    }
-
-    .footer{
-      margin-top:50px;
-      font-size:14px;
-      color:var(--muted-2);
-    }
-  </style>
+a{
+  color:#c6a662;
+  text-decoration:none;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrapper">
 
-    <div class="card">
+<div class="wrapper">
 
-      <span class="eyebrow">Aanvraag ontvangen</span>
+<h1>Ontvangen.</h1>
 
-      <h1>Uw bericht is ontvangen</h1>
+<p>
+Uw aanvraag is binnen.
+</p>
 
-      <p class="strong">
-        Dank voor het delen van uw uitkomst en context.
-      </p>
+<p>
+Ik neem persoonlijk contact met u op.
+</p>
 
-      <p>
-        Ik neem uw aanvraag persoonlijk door. Wanneer deze aansluit op een bestuurlijk vraagstuk
-        rond digitale afhankelijkheid, autonomie en regie, neem ik contact met u op.
-      </p>
+<p>
+In de tussentijd:
+let op waar digitale afhankelijkheid zich in uw organisatie concreet laat zien.
+</p>
 
-      <div class="divider"></div>
+<p class="note">
+De meeste inzichten ontstaan niet tijdens een analyse —  
+maar in wat u vanaf nu anders begint te zien.
+</p>
 
-      <p>
-        Dit eerste contact is geen standaard opvolging, maar een gerichte afweging:
-        waar zit de werkelijke afhankelijkheid, en is dit het moment om daar bestuurlijk op te interveniëren.
-      </p>
+</div>
 
-      <a class="cta" href="/">Terug naar homepage</a>
-
-      <div class="sub">
-        Geen automatische opvolging · Geen generieke intake · Wel een inhoudelijke reactie
-      </div>
-
-    </div>
-
-    <div class="footer">
-      Bas Brinkmann · Strategisch bestuursadviseur
-    </div>
-
-  </div>
 </body>
 </html>
