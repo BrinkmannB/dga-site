@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Verken dit in uw context</title>
+<title>Verken dit in uw context | Dutch Governance Advisory</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -12,9 +12,9 @@
 
 body{
   margin:0;
+  background:linear-gradient(180deg,#0b1320 0%,#080f18 100%);
+  color:#e6edf3;
   font-family:'Inter', sans-serif;
-  background:#0b1320;
-  color:#e8edf5;
 }
 
 .container{
@@ -25,37 +25,42 @@ body{
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:36px;
+  font-size:40px;
+  font-weight:400;
   margin-bottom:24px;
 }
 
 p{
-  color:#9aa6b2;
-  font-size:17px;
+  font-size:18px;
+  color:#9fb0c2;
+  line-height:1.7;
   margin-bottom:16px;
 }
 
 .highlight{
-  color:#e8edf5;
+  color:#ffffff;
 }
 
 input, textarea{
   width:100%;
-  padding:14px;
-  margin-top:12px;
+  padding:16px;
+  margin-top:14px;
   background:#111a2b;
-  border:1px solid rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.08);
   color:#fff;
   border-radius:8px;
+  font-size:16px;
 }
 
 button{
-  margin-top:20px;
-  padding:14px 22px;
+  margin-top:24px;
+  padding:16px 26px;
   border:1px solid #c9a96e;
   background:none;
   color:#c9a96e;
   cursor:pointer;
+  font-size:15px;
+  transition:all .2s ease;
 }
 
 button:hover{
@@ -64,7 +69,7 @@ button:hover{
 }
 
 .small{
-  margin-top:10px;
+  margin-top:14px;
   font-size:14px;
   color:#6f7b88;
 }
@@ -76,36 +81,54 @@ button:hover{
 
 <div class="container">
 
-  <h1>Kort verkennen waar dit bij u speelt</h1>
+<h1>Kort verkennen waar dit bij u speelt</h1>
 
-  <p>Dit is geen intake. Geen adviesgesprek.</p>
+<p>Dit is geen intake. Geen adviesgesprek.</p>
 
-  <p class="highlight">
-    Alleen scherp krijgen of en waar dit vraagstuk bij u speelt.
-  </p>
+<p class="highlight">
+Alleen scherp krijgen of en waar dit vraagstuk bij u speelt.
+</p>
 
-  <form action="https://formspree.io/f/xyklkkvq" method="POST">
-
-  <input type="hidden" name="_next" value="https://dutchgovernanceadvisory.nl/contact/bedankt/">
+<form id="contact-form" action="https://formspree.io/f/xyklkkvq" method="POST">
 
   <input type="hidden" name="_subject" value="Nieuwe aanvraag DGA">
 
   <input type="text" name="name" placeholder="Naam" required>
   <input type="email" name="email" placeholder="E-mail" required>
-  <textarea name="message" rows="4" placeholder="Korte toelichting (optioneel)"></textarea>
+  <textarea name="message" rows="4" placeholder="Waar merkt u dat het begint te knellen?"></textarea>
 
   <button type="submit">
     Verken dit in uw context →
   </button>
 
+  <div class="small">
+    U ontvangt binnen korte tijd een reactie.
+  </div>
+
 </form>
-    <div class="small">
-      U ontvangt binnen korte tijd een reactie.
-    </div>
-
-
 
 </div>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    window.location.href = "/contact/bedankt/";
+  }).catch(error => {
+    alert("Er ging iets mis. Probeer het opnieuw.");
+  });
+});
+</script>
 
 </body>
 </html>
