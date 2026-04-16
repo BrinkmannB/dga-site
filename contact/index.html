@@ -3,128 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bespreek uw uitkomst | Dutch Governance Advisory</title>
+<title>Contact | Dutch Governance Advisory</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#051622;
-  --panel:#0b1e2d;
-  --text:#eef4f8;
-  --muted:#b7c3cf;
-  --line:#294156;
-  --accent:#c6a662;
-}
-
 body{
   margin:0;
   font-family:Georgia, serif;
-  background:linear-gradient(180deg,#04101a 0%, #051622 100%);
-  color:var(--text);
-  line-height:1.85;
+  background:#051622;
+  color:#eef4f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
 }
 
 .wrapper{
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 24px 100px;
+  max-width:720px;
+  padding:40px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:56px;
+  font-size:42px;
   font-weight:400;
-  line-height:1.05;
-  margin-bottom:16px;
-}
-
-.lead{
-  font-size:22px;
-  color:var(--muted);
-  margin-bottom:30px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:28px;
-}
-
-.card{
-  background:rgba(255,255,255,.02);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:28px;
+  margin-bottom:20px;
 }
 
 p{
   font-size:18px;
-  color:var(--muted);
-}
-
-ul{
-  padding-left:18px;
-}
-
-li{
-  margin-bottom:8px;
-}
-
-.form{
-  display:grid;
-  gap:14px;
-  margin-top:14px;
+  color:#b7c3cf;
+  margin-bottom:20px;
 }
 
 input, textarea{
   width:100%;
   padding:14px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  font-family:inherit;
-}
-
-textarea{
-  min-height:140px;
+  margin-bottom:15px;
+  background:#0c2433;
+  border:none;
+  color:white;
 }
 
 button{
-  background:var(--accent);
-  color:#071521;
-  border:0;
-  padding:14px 20px;
-  border-radius:12px;
-  font-weight:bold;
+  width:100%;
+  padding:16px;
+  background:#c6a662;
+  border:none;
+  font-size:16px;
   cursor:pointer;
 }
 
-.micro{
-  font-size:14px;
-  color:#8fa2b5;
-  margin-top:10px;
-}
-
-.score-box{
-  margin-top:18px;
-  padding:14px;
-  border:1px solid rgba(198,166,98,.3);
-  border-radius:12px;
-  background:rgba(198,166,98,.05);
-  font-size:14px;
-}
-
-.footer{
-  margin-top:60px;
-  font-size:14px;
-  color:#8fa2b5;
-}
-
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr;}
+button:hover{
+  opacity:0.9;
 }
 </style>
 </head>
@@ -133,105 +65,28 @@ button{
 
 <div class="wrapper">
 
-<h1>Bespreek uw uitkomst</h1>
-
-<p class="lead">
-Wat u zojuist heeft gezien is geen score — maar een indicatie van bestuurlijke ruimte.
-De vraag is niet óf er afhankelijkheid is, maar waar zij u al beperkt.
-</p>
-
-<div class="grid">
-
-<div class="card">
-
-<h2>Wat u kunt verwachten</h2>
+<h1>Plan een gesprek</h1>
 
 <p>
-Dit gesprek is geen intake en geen pitch.
+Als dit bestuurlijk relevant is, spreken we elkaar.
 </p>
 
-<p>
-We brengen uw uitkomst terug tot één vraag:
-<strong>waar wordt uw organisatie feitelijk minder vrij om te kiezen?</strong>
-</p>
+<form action="https://formspree.io/f/xykklkvq" method="POST">
 
-<ul>
-<li>waar afhankelijkheid echt zit (niet waar zij lijkt te zitten)</li>
-<li>waar eigenaarschap ontbreekt</li>
-<li>welke keuzes impliciet structureel zijn geworden</li>
-<li>wat bestuurlijk relevant is — en wat ruis is</li>
-</ul>
+  <input type="text" name="name" placeholder="Naam" required>
+  <input type="text" name="organization" placeholder="Organisatie" required>
+  <input type="email" name="email" placeholder="E-mailadres" required>
 
-<p>
-Soms is één gesprek genoeg.  
-Soms niet. Maar u heeft in ieder geval scherpte.
-</p>
+  <textarea name="message" placeholder="Wat speelt er bij u?"></textarea>
 
-</div>
+  <!-- 🔥 CRUCIAAL -->
+  <input type="hidden" name="_redirect" value="https://jouwdomein.nl/contact/bedankt/">
 
-<div class="card">
-
-<h2>Plan een gesprek</h2>
-<form action="https://formspree.io/f/xyklkkvq" method="POST" class="form">
-
-<input type="text" name="name" placeholder="Naam" required>
-<input type="text" name="organization" placeholder="Organisatie" required>
-<input type="email" name="email" placeholder="E-mailadres" required>
-<input type="text" name="role" placeholder="Functie">
-
-<textarea name="message" placeholder="Wat viel u op in uw uitkomst?"></textarea>
-
-<!-- 🔥 hidden velden -->
-<input type="hidden" name="score" id="scoreField">
-<input type="hidden" name="zone" id="zoneField">
-<input type="hidden" name="source" value="Boardroom Scan">
-
-<button type="submit">Bespreek mijn uitkomst</button>
+  <button type="submit">Bespreek mijn situatie</button>
 
 </form>
 
-<div id="scoreDisplay" class="score-box" style="display:none;"></div>
-
-<p class="micro">
-Geen mailinglijst. Geen opvolgspam. Wel een persoonlijk antwoord.
-</p>
-
 </div>
-
-</div>
-
-<div class="footer">
-Dutch Governance Advisory — bestuurlijke regie in het digitale tijdperk
-</div>
-
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const score = localStorage.getItem("scanScore");
-  const zone = localStorage.getItem("scanZone");
-
-  if (score) {
-    document.getElementById("scoreField").value = score + " / 60";
-  }
-
-  if (zone) {
-    let label = "";
-    if (zone === "red") label = "Rood — bestuurlijke kwetsbaarheid";
-    if (zone === "orange") label = "Oranje — oplopende afhankelijkheid";
-    if (zone === "green") label = "Groen — relatief bestuurbaar";
-
-    document.getElementById("zoneField").value = label;
-
-    // 👇 optioneel zichtbaar maken voor gebruiker
-    const box = document.getElementById("scoreDisplay");
-    box.style.display = "block";
-    box.innerHTML = `<strong>Uw uitkomst:</strong><br>${score} / 60 — ${label}`;
-  }
-
-});
-</script>
 
 </body>
 </html>
