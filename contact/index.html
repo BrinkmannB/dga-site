@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plan een gesprek | Dutch Governance Advisory</title>
+<title>Ontvangen | Dutch Governance Advisory</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: Georgia, serif;
     background: #061622;
     color: #e4f4f8;
+    font-family: Georgia, serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,44 +21,36 @@ body {
 
 .wrapper {
     max-width: 720px;
-    width: 100%;
-    padding: 40px;
+    padding: 60px 40px;
 }
 
 h1 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
 }
 
 p {
-    font-size: 18px;
-    color: #87a3b3;
-    margin-bottom: 30px;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #a7c0cf;
+    margin-bottom: 22px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 16px;
-    margin-bottom: 15px;
-    background: #0c2433;
-    border: none;
-    color: white;
+.note {
     font-size: 16px;
+    color: #6f8b9b;
+    margin-top: 30px;
 }
 
-textarea {
-    min-height: 120px;
-}
-
-button {
-    width: 100%;
-    padding: 16px;
+.divider {
+    width: 40px;
+    height: 1px;
     background: #c6a662;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+    margin: 40px 0;
+    opacity: 0.6;
 }
 </style>
 </head>
@@ -66,59 +58,71 @@ button {
 <body>
 
 <div class="wrapper">
-    <h1>Plan een gesprek</h1>
-    <p>Als dit bestuurlijk relevant is, spreken we elkaar.</p>
 
-    <form id="contact-form" action="https://formspree.io/f/xyklkkvq" method="POST">
+<h1>Ontvangen.</h1>
 
-        <input type="text" name="name" placeholder="Naam" required>
-        <input type="text" name="organization" placeholder="Organisatie" required>
-        <input type="email" name="email" placeholder="E-mailadres" required>
+<p>
+Uw aanvraag is binnen.  
+Ik neem persoonlijk contact met u op.
+</p>
 
-        <textarea name="message" placeholder="Wat speelt er bij u?"></textarea>
+<div class="divider"></div>
 
-        <!-- hidden velden -->
-        <input type="hidden" name="score" id="scoreField">
-        <input type="hidden" name="zone" id="zoneField">
+<p>
+Wat u beschrijft is zelden het probleem zelf.  
+Het is meestal het gevolg van een stapeling van beslissingen  
+die afzonderlijk verdedigbaar waren —  
+maar in samenhang bestuurlijk niet meer stuurbaar zijn.
+</p>
 
-        <button type="submit">Bespreek mijn situatie</button>
-    </form>
+<p>
+In het gesprek kijken we niet naar wat er formeel klopt.  
+Dat is vrijwel altijd op orde.
+</p>
+
+<p>
+De vraag is iets anders:  
+waar zitten de afhankelijkheden die feitelijk bepalen wat er gebeurt —  
+zonder dat daar nog op gestuurd wordt.
+</p>
+
+<p>
+Dat is het moment waarop het schuurt.  
+En meestal ook het moment waarop niemand meer echt eigenaar is.
+</p>
+
+<p>
+Daar kijken we naar.  
+Direct. Zonder omweg.
+</p>
+
+<div class="divider"></div>
+
+<p class="note">
+Dit is geen vrijblijvend gesprek.  
+Als er bestuurlijke ruimte nodig is om dit aan te pakken, wordt dat zichtbaar.  
+En als die ruimte er niet is, ook.
+</p>
+
+<p class="note">
+Ik werk met een beperkt aantal trajecten tegelijk.  
+Als dit daadwerkelijk speelt, maken we ruimte.  
+Als dat niet zo is, houden we het hier.
+</p>
+
+<p class="note">
+Kijk de komende dagen eens anders:  
+waar lijkt iets onder controle —  
+terwijl u voelt dat dat eigenlijk niet zo is.
+</p>
+
+<p class="note">
+In het gesprek wordt snel duidelijk  
+of u dit bestuurlijk wilt vastpakken —  
+of wacht tot het zich onder druk aandient.
+</p>
+
 </div>
-
-<script>
-// Form submit (controle bij jou houden)
-const form = document.getElementById("contact-form");
-
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
-
-    window.location.href = "/contact/bedankt/";
-});
-
-// Score ophalen (als aanwezig)
-document.addEventListener("DOMContentLoaded", function () {
-    const score = localStorage.getItem("scanScore");
-    const zone = localStorage.getItem("scanZone");
-
-    if (score) {
-        document.getElementById("scoreField").value = score + "/60";
-    }
-
-    if (zone) {
-        document.getElementById("zoneField").value = zone;
-    }
-});
-</script>
 
 </body>
 </html>
