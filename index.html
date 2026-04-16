@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Dutch Governance Advisory | Digitale afhankelijkheid als bestuursvraagstuk</title>
 
@@ -19,7 +19,7 @@
   --subtle:#8ea0b2;
   --accent:#c6a662;
   --line:rgba(198,166,98,0.22);
-  --soft:rgba(255,255,255,0.04);
+  --soft:rgba(255,255,255,0.03);
   --max:1100px;
   --content:720px;
 }
@@ -50,7 +50,7 @@ header{
   align-items:flex-end;
   border-bottom:1px solid var(--line);
   padding-bottom:16px;
-  margin-bottom:100px;
+  margin-bottom:90px;
 }
 
 .brand{
@@ -78,7 +78,7 @@ nav a:hover{
 
 .hero{
   display:grid;
-  grid-template-columns:1fr 340px;
+  grid-template-columns:1fr 320px;
   gap:60px;
 }
 
@@ -96,8 +96,8 @@ nav a:hover{
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:clamp(42px,6vw,64px);
-  line-height:1.18;
+  font-size:clamp(38px,4.8vw,56px);
+  line-height:1.22;
   font-weight:400;
   margin-bottom:48px;
 }
@@ -115,7 +115,7 @@ h1{
 }
 
 .actions{
-  margin-top:40px;
+  margin-top:36px;
 }
 
 .cta{
@@ -126,7 +126,7 @@ h1{
   text-decoration:none;
   font-size:14px;
   margin-right:12px;
-  transition:all .2s ease;
+  transition:.2s;
 }
 
 .cta:hover{
@@ -137,7 +137,7 @@ h1{
 .note{
   font-size:14px;
   color:var(--subtle);
-  margin-top:12px;
+  margin-top:10px;
 }
 
 /* SIDE */
@@ -160,10 +160,55 @@ h1{
   color:var(--muted);
 }
 
+/* SOLUTIONS */
+
+.solutions{
+  margin-top:100px;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+
+.solutions-intro{
+  max-width:var(--content);
+  font-size:18px;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+
+.solutions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.solution{
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.02);
+}
+
+.solution h3{
+  font-family:'Libre Baskerville', serif;
+  font-weight:400;
+  margin:10px 0;
+}
+
+.solution p{
+  font-size:15px;
+  color:var(--muted);
+}
+
+.step{
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:0.12em;
+}
+
 /* SECTION */
 
 .section{
-  margin-top:120px;
+  margin-top:110px;
   max-width:var(--content);
 }
 
@@ -178,28 +223,6 @@ h1{
   font-size:18px;
   color:var(--muted);
   margin-bottom:22px;
-}
-
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:16px;
-  margin-top:30px;
-}
-
-.card{
-  border:1px solid rgba(255,255,255,0.08);
-  padding:20px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.02);
-}
-
-.card h4{
-  font-family:'Libre Baskerville', serif;
-  font-weight:400;
-  margin-bottom:10px;
 }
 
 /* FOOTER */
@@ -218,7 +241,7 @@ footer{
   .hero{
     grid-template-columns:1fr;
   }
-  .grid{
+  .solutions-grid{
     grid-template-columns:1fr;
   }
 }
@@ -246,7 +269,7 @@ footer{
 <span class="kicker">Bestuurlijke duiding</span>
 
 <h1>
-Digitale afhankelijkheid ontstaat zelden in één besluit.
+Digitale afhankelijkheid ontstaat zelden in één besluit.<br><br>
 Maar wordt zichtbaar wanneer het begint te knellen.
 </h1>
 
@@ -275,10 +298,46 @@ De meeste organisaties herkennen dit pas wanneer bijsturen moeilijker wordt.
 <div class="side">
   <h3>Waar dit over gaat</h3>
   <p>
-  Niet over techniek. Niet over projecten.  
+  Niet over techniek. Niet over projecten.<br><br>
   Maar over waar bestuurlijke ruimte feitelijk wordt beperkt.
   </p>
 </div>
+
+</section>
+
+<!-- 🔥 SOLUTION STRIP -->
+
+<section class="solutions">
+
+<div class="solutions-intro">
+Dit is geen complex traject. Maar het vraagt wel bestuurlijke scherpte.
+</div>
+
+<div class="solutions-grid">
+
+<div class="solution">
+<div class="step">1</div>
+<h3>Strategische sessie</h3>
+<p>Het vraagstuk bestuurlijk scherp trekken.</p>
+</div>
+
+<div class="solution">
+<div class="step">2</div>
+<h3>Afhankelijkheidsscan</h3>
+<p>Zichtbaar maken waar afhankelijkheid zich heeft opgebouwd.</p>
+</div>
+
+<div class="solution">
+<div class="step">3</div>
+<h3>Advisering</h3>
+<p>Regie verankeren in besluitvorming.</p>
+</div>
+
+</div>
+
+<p class="note">
+Dit traject is niet voor elke organisatie relevant. Maar als het speelt, wordt dat snel duidelijk.
+</p>
 
 </section>
 
@@ -303,36 +362,6 @@ En juist die samenhang wordt zelden bestuurlijk besproken.
 
 <section class="section">
 
-<h2>Wat ik doe</h2>
-
-<p>
-Ik maak zichtbaar waar afhankelijkheid zich heeft opgebouwd —
-en wat dat betekent voor bestuurlijke ruimte en continuïteit.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h4>Strategische sessie</h4>
-<p>Het vraagstuk bestuurlijk scherp trekken.</p>
-</div>
-
-<div class="card">
-<h4>Afhankelijkheidsscan</h4>
-<p>Cumulatieve afhankelijkheden expliciet maken.</p>
-</div>
-
-<div class="card">
-<h4>Advisering</h4>
-<p>Regie verankeren in besluitvorming.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
 <h2>Waarom dit ertoe doet</h2>
 
 <p>
@@ -341,11 +370,7 @@ wordt strategische ruimte ongemerkt kleiner.
 </p>
 
 <p>
-Niet zichtbaar. Wel voelbaar.
-</p>
-
-<p>
-En uiteindelijk bepalend.
+Niet zichtbaar. Wel voelbaar. En uiteindelijk bepalend.
 </p>
 
 </section>
