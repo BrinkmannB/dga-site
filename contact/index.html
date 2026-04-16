@@ -18,55 +18,25 @@ body{
 }
 
 .container{
-  max-width:800px;
-  margin:0 auto;
-  padding:100px 24px;
+  max-width:720px;
+  margin:auto;
+  padding:120px 24px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
   font-size:36px;
-  line-height:1.3;
   margin-bottom:24px;
 }
 
 p{
   color:#9aa6b2;
   font-size:17px;
-  line-height:1.6;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
 .highlight{
   color:#e8edf5;
-}
-
-.block{
-  margin-top:40px;
-}
-
-.cta{
-  margin-top:50px;
-}
-
-.button{
-  display:inline-block;
-  padding:14px 22px;
-  border:1px solid #c9a96e;
-  color:#c9a96e;
-  text-decoration:none;
-  margin-right:16px;
-  margin-top:10px;
-  transition:all 0.2s ease;
-}
-
-.button:hover{
-  background:#c9a96e;
-  color:#0b1320;
-}
-
-.form{
-  margin-top:40px;
 }
 
 input, textarea{
@@ -77,13 +47,26 @@ input, textarea{
   border:1px solid rgba(255,255,255,0.1);
   color:#fff;
   border-radius:8px;
-  font-size:14px;
+}
+
+button{
+  margin-top:20px;
+  padding:14px 22px;
+  border:1px solid #c9a96e;
+  background:none;
+  color:#c9a96e;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#c9a96e;
+  color:#0b1320;
 }
 
 .small{
+  margin-top:10px;
   font-size:14px;
   color:#6f7b88;
-  margin-top:10px;
 }
 
 </style>
@@ -93,76 +76,36 @@ input, textarea{
 
 <div class="container">
 
-  <!-- HEADER -->
-  <h1>
-    Kort verkennen waar dit bij u speelt
-  </h1>
+  <h1>Kort verkennen waar dit bij u speelt</h1>
 
-  <p>
-    Wat u heeft gezien, vraagt zelden om een snelle oplossing.
-  </p>
-
-  <p>
-    Het gaat niet over systemen.  
-    Het gaat over waar controle feitelijk ligt — en waar niet.
-  </p>
-
-  <p>
-    Dit gesprek is bedoeld om scherp te krijgen:
-  </p>
-
-  <p>
-    – waar afhankelijkheid zich concentreert  
-    – waar bestuurlijke verantwoordelijkheid ontbreekt  
-    – en of dit op dit moment expliciet gemaakt moet worden  
-  </p>
+  <p>Dit is geen intake. Geen adviesgesprek.</p>
 
   <p class="highlight">
-    Geen intake. Geen adviesgesprek.  
-    Alleen helderheid.
+    Alleen scherp krijgen of en waar dit vraagstuk bij u speelt.
   </p>
 
-  <!-- CTA BLOK -->
-  <div class="block">
+  <!-- FORM -->
+  <form action="https://formspree.io/f/xyklkkvq" method="POST">
 
-    <p class="highlight">
-      Er zijn twee manieren om dit te doen:
-    </p>
+    <!-- Redirect naar jouw bedankpagina -->
+    <input type="hidden" name="_redirect" value="https://dutchgovernanceadvisory.nl/bedankt">
 
-    <div class="cta">
+    <!-- Onderwerp in je mail -->
+    <input type="hidden" name="_subject" value="Nieuwe aanvraag DGA">
 
-      <!-- DIRECT PLANNEN -->
-      <a href="#" class="button">
-        Plan direct een moment →
-      </a>
+    <input type="text" name="name" placeholder="Naam" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <textarea name="message" rows="4" placeholder="Korte toelichting (optioneel)"></textarea>
 
-      <!-- MAIL -->
-      <a href="mailto:jouw@email.nl" class="button">
-        Stuur kort een bericht →
-      </a>
-
-    </div>
+    <button type="submit">
+      Verken dit in uw context →
+    </button>
 
     <div class="small">
-      Kort gesprek. Geen voorbereiding nodig.
+      U ontvangt binnen korte tijd een reactie.
     </div>
 
-  </div>
-
-  <!-- FORMULIER -->
-  <div class="form">
-
-    <p class="highlight">
-      Of laat uw gegevens achter:
-    </p>
-
-    <input type="text" placeholder="Naam">
-    <input type="email" placeholder="E-mail">
-    <textarea rows="4" placeholder="Korte toelichting (optioneel)"></textarea>
-
-    <a href="#" class="button">Verstuur →</a>
-
-  </div>
+  </form>
 
 </div>
 
