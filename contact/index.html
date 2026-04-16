@@ -95,10 +95,27 @@ Als dit bestuurlijk relevant is, spreken we elkaar.
 <script>
 const form = document.querySelector("form");
 
+<script>
+const form = document.querySelector("form");
+
 form.addEventListener("submit", function () {
   setTimeout(function () {
     window.location.href = "/contact/bedankt/";
   }, 300);
+});
+
+// 🔥 NIEUW: score ophalen
+document.addEventListener("DOMContentLoaded", function () {
+  const score = localStorage.getItem("scanScore");
+  const zone = localStorage.getItem("scanZone");
+
+  if (score) {
+    document.getElementById("scoreField").value = score + "/60";
+  }
+
+  if (zone) {
+    document.getElementById("zoneField").value = zone;
+  }
 });
 </script>
 
