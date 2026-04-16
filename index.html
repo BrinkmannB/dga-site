@@ -5,58 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Dutch Governance Advisory | Digitale afhankelijkheid als bestuursvraagstuk</title>
-<meta name="description" content="Digitale afhankelijkheid is geen IT-vraagstuk, maar een bestuursvraagstuk. Dutch Governance Advisory maakt zichtbaar waar bestuurlijke ruimte onder druk staat." />
+
+<meta name="description" content="Digitale afhankelijkheid ontstaat vaak ongemerkt. Dutch Governance Advisory helpt besturen zichtbaar te maken waar strategische ruimte onder druk komt te staan." />
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg-top:#0b1320;
-  --bg-bottom:#08101a;
+  --bg1:#0b1320;
+  --bg2:#08101a;
   --text:#e8eef4;
   --muted:#b7c3cf;
-  --muted-2:#8ea0b2;
+  --subtle:#8ea0b2;
   --accent:#c6a662;
-  --accent-soft:rgba(198,166,98,0.12);
   --line:rgba(198,166,98,0.22);
-  --line-soft:rgba(255,255,255,0.08);
-  --panel:rgba(255,255,255,0.025);
-  --panel-strong:rgba(255,255,255,0.04);
-  --shadow:0 18px 50px rgba(0,0,0,0.22);
-  --max:1120px;
-  --content:760px;
-  --radius:20px;
+  --soft:rgba(255,255,255,0.04);
+  --max:1100px;
+  --content:720px;
 }
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box;}
 
 body{
   margin:0;
-  color:var(--text);
   font-family:Georgia, serif;
-  line-height:1.92;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  color:var(--text);
+  line-height:1.9;
   background:
-    radial-gradient(circle at 84% 14%, rgba(198,166,98,0.08), transparent 0 34%),
-    radial-gradient(circle at 18% 78%, rgba(198,166,98,0.045), transparent 0 24%),
-    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
-}
-
-a{
-  color:inherit;
+    radial-gradient(circle at 80% 10%, rgba(198,166,98,0.08), transparent 40%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
 }
 
 .site{
   max-width:var(--max);
   margin:0 auto;
-  padding:42px 28px 150px;
+  padding:40px 28px 120px;
 }
 
 /* HEADER */
@@ -65,58 +48,38 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  gap:24px;
-  padding-bottom:18px;
   border-bottom:1px solid var(--line);
-  margin-bottom:128px;
-}
-
-.brand-wrap{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+  padding-bottom:16px;
+  margin-bottom:100px;
 }
 
 .brand{
   font-family:'Libre Baskerville', serif;
   font-size:14px;
   letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--text);
-}
-
-.brand-sub{
-  font-size:12px;
-  letter-spacing:0.08em;
-  color:var(--muted-2);
-  text-transform:uppercase;
 }
 
 nav{
   display:flex;
-  flex-wrap:wrap;
   gap:18px;
   font-size:13px;
 }
 
 nav a{
-  color:var(--muted-2);
+  color:var(--subtle);
   text-decoration:none;
-  transition:color .2s ease, transform .2s ease;
 }
 
 nav a:hover{
   color:var(--accent);
-  transform:translateY(-1px);
 }
 
 /* HERO */
 
 .hero{
   display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(280px,0.62fr);
-  gap:44px;
-  align-items:start;
+  grid-template-columns:1fr 340px;
+  gap:60px;
 }
 
 .hero-main{
@@ -124,315 +87,139 @@ nav a:hover{
 }
 
 .kicker{
-  display:inline-block;
-  margin-bottom:18px;
   font-size:12px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
+  letter-spacing:0.12em;
   color:var(--accent);
-  font-family:'Libre Baskerville', serif;
+  margin-bottom:18px;
+  display:block;
 }
 
 h1{
-  margin:0 0 44px;
   font-family:'Libre Baskerville', serif;
-  font-size:clamp(44px, 6vw, 74px);
-  line-height:1.14;
+  font-size:clamp(42px,6vw,64px);
+  line-height:1.18;
   font-weight:400;
-  letter-spacing:-0.025em;
-  max-width:720px;
+  margin-bottom:48px;
 }
 
 .lead{
-  font-size:22px;
+  font-size:20px;
   color:var(--muted);
-  margin:0 0 28px;
-  max-width:700px;
+  margin-bottom:26px;
 }
 
 .hero p{
-  font-size:19px;
+  font-size:18px;
   color:var(--muted);
-  margin:0 0 26px;
-  max-width:700px;
+  margin-bottom:22px;
 }
 
-.hero-note{
-  margin-top:30px;
-  font-size:15px;
-  color:var(--muted-2);
-  max-width:560px;
+.actions{
+  margin-top:40px;
 }
 
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  align-items:flex-start;
-  margin-top:38px;
-}
-
-.cta-primary,
-.cta-secondary{
+.cta{
   display:inline-block;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:14px 22px;
   text-decoration:none;
   font-size:14px;
-  letter-spacing:0.05em;
-  transition:all .25s ease;
-  border-radius:14px;
-  padding:15px 22px;
+  margin-right:12px;
+  transition:all .2s ease;
 }
 
-.cta-primary{
-  background:transparent;
-  border:1px solid rgba(198,166,98,0.52);
-  color:var(--accent);
-}
-
-.cta-primary:hover{
+.cta:hover{
   background:var(--accent);
-  color:#07121a;
-  transform:translateY(-1px);
+  color:#08101a;
 }
 
-.cta-secondary{
-  border:1px solid rgba(255,255,255,0.08);
-  color:var(--muted);
-  background:rgba(255,255,255,0.02);
-}
-
-.cta-secondary:hover{
-  border-color:rgba(198,166,98,0.3);
-  color:var(--text);
-  transform:translateY(-1px);
-}
-
-.action-note{
-  width:100%;
+.note{
   font-size:14px;
-  color:var(--muted-2);
-  margin-top:2px;
+  color:var(--subtle);
+  margin-top:12px;
 }
 
-/* SIDE CARD */
+/* SIDE */
 
-.hero-side{
-  position:relative;
+.side{
+  background:var(--soft);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:22px;
+  border-radius:18px;
 }
 
-.signal-card{
-  position:sticky;
-  top:28px;
-  background:linear-gradient(180deg, var(--panel-strong), var(--panel));
-  border:1px solid var(--line-soft);
-  border-radius:24px;
-  padding:24px 22px 20px;
-  box-shadow:var(--shadow);
-}
-
-.signal-card h2{
-  margin:0 0 12px;
+.side h3{
   font-family:'Libre Baskerville', serif;
   font-weight:400;
-  font-size:28px;
-  line-height:1.16;
+  margin-bottom:12px;
 }
 
-.signal-card p{
-  margin:0 0 14px;
-  font-size:16px;
-  color:var(--muted);
-}
-
-.signal-card ul{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
+.side p{
   font-size:15px;
+  color:var(--muted);
 }
 
-.signal-card li{
-  margin:8px 0;
-}
-
-/* SECTIONS */
+/* SECTION */
 
 .section{
-  margin-top:148px;
-}
-
-.section-head{
+  margin-top:120px;
   max-width:var(--content);
-  margin-bottom:34px;
 }
 
-.section-kicker{
-  display:inline-block;
-  margin-bottom:14px;
-  font-size:11px;
-  letter-spacing:0.13em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
-
-h2.section-title{
-  margin:0 0 18px;
+.section h2{
   font-family:'Libre Baskerville', serif;
-  font-size:34px;
   font-weight:400;
-  line-height:1.16;
-  letter-spacing:-0.015em;
+  font-size:30px;
+  margin-bottom:20px;
 }
 
-.section-intro{
-  margin:0;
-  font-size:19px;
+.section p{
+  font-size:18px;
   color:var(--muted);
-  max-width:700px;
+  margin-bottom:22px;
 }
 
-.editorial{
-  max-width:var(--content);
-}
+/* CARDS */
 
-.editorial p{
-  font-size:19px;
-  color:var(--muted);
-  margin:0 0 26px;
-}
-
-.divider{
-  width:36px;
-  height:1px;
-  background:var(--accent);
-  opacity:0.7;
-  margin:44px 0 38px;
-}
-
-/* GRID CALLOUTS */
-
-.grid-3{
+.grid{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:18px;
-  margin-top:36px;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:16px;
+  margin-top:30px;
 }
 
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-  border:1px solid var(--line-soft);
-  border-radius:20px;
-  padding:22px 20px;
-}
-
-.card h3{
-  margin:0 0 10px;
-  font-family:'Libre Baskerville', serif;
-  font-size:21px;
-  font-weight:400;
-  line-height:1.2;
-}
-
-.card p{
-  margin:0;
-  font-size:16px;
-  color:var(--muted);
-}
-
-/* QUIET EMPHASIS */
-
-.pull-quote{
-  margin-top:34px;
-  max-width:680px;
-  padding:18px 18px 16px;
-  border-left:2px solid var(--accent);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:16px;
   background:rgba(255,255,255,0.02);
-  border-radius:14px;
 }
 
-.pull-quote p{
-  margin:0;
-  font-size:17px;
-  color:var(--text);
-}
-
-/* FINAL SECTION */
-
-.end-block{
-  max-width:700px;
-}
-
-.end-block p{
-  font-size:19px;
-  color:var(--muted);
-  margin:0 0 24px;
-}
-
-.end-note{
-  margin-top:26px;
-  font-size:15px;
-  color:var(--muted-2);
-  max-width:560px;
+.card h4{
+  font-family:'Libre Baskerville', serif;
+  font-weight:400;
+  margin-bottom:10px;
 }
 
 /* FOOTER */
 
 footer{
-  margin-top:170px;
-  padding-top:34px;
+  margin-top:140px;
   border-top:1px solid var(--line);
+  padding-top:30px;
   font-size:13px;
-  color:var(--muted-2);
-  letter-spacing:0.03em;
+  color:var(--subtle);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
-@media (max-width: 980px){
+@media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
   }
-
-  .signal-card{
-    position:relative;
-    top:auto;
-  }
-
-  .grid-3{
+  .grid{
     grid-template-columns:1fr;
-  }
-}
-
-@media (max-width: 760px){
-  .site{
-    padding:32px 20px 110px;
-  }
-
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-    margin-bottom:86px;
-  }
-
-  h1{
-    margin-bottom:32px;
-  }
-
-  .lead,
-  .hero p,
-  .editorial p,
-  .section-intro,
-  .end-block p{
-    font-size:17px;
-  }
-
-  .section{
-    margin-top:104px;
-  }
-
-  h2.section-title{
-    font-size:30px;
   }
 }
 </style>
@@ -442,188 +229,131 @@ footer{
 
 <div class="site">
 
-  <header>
-    <div class="brand-wrap">
-      <div class="brand">Dutch Governance Advisory</div>
-      <div class="brand-sub">Bestuurlijke regie in het digitale tijdperk</div>
-    </div>
+<header>
+  <div class="brand">Dutch Governance Advisory</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/scan/">Scan</a>
+    <a href="/papers/">Papers</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="/">Home</a>
-      <a href="/scan/">Scan</a>
-      <a href="/papers/">Papers</a>
-      <a href="/executive-briefs/">Executive Briefs</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </header>
+<section class="hero">
 
-  <section class="hero">
-    <div class="hero-main">
-      <span class="kicker">Bestuurlijke duiding</span>
+<div class="hero-main">
 
-      <h1>
-        Digitale afhankelijkheid is geen IT-vraagstuk.
-        Het is een bestuursvraagstuk.
-      </h1>
+<span class="kicker">Bestuurlijke duiding</span>
 
-      <p class="lead">
-        Zelden ontstaat het door één besluit. Vaker door een opeenstapeling van keuzes
-        die afzonderlijk logisch waren — maar samen de bestuurlijke ruimte beperken.
-      </p>
+<h1>
+Digitale afhankelijkheid ontstaat zelden in één besluit.
+Maar wordt zichtbaar wanneer het begint te knellen.
+</h1>
 
-      <p>
-        Wat op papier beheersbaar lijkt, blijkt in de praktijk vaak al verlegd te zijn
-        naar systemen, leveranciers en infrastructuren waar nauwelijks nog op gestuurd wordt.
-      </p>
+<p class="lead">
+Besluiten over cloud, leveranciers en AI worden vaak afzonderlijk genomen.
+Elk besluit is logisch. De samenhang zelden.
+</p>
 
-      <p>
-        Dat is het moment waarop bestuurlijke regie niet verdwijnt in theorie, maar in de praktijk.
-      </p>
+<p>
+In die samenhang kan de bestuurlijke ruimte ongemerkt kleiner worden.
+Niet omdat iets fout gaat — maar omdat keuzes zich opstapelen.
+</p>
 
-      <div class="divider"></div>
+<p>
+De meeste organisaties herkennen dit pas wanneer bijsturen moeilijker wordt.
+</p>
 
-      <p>
-        Daar begint het gesprek.
-      </p>
+<div class="actions">
+  <a class="cta" href="/contact/">Bespreek uw situatie</a>
+  <a class="cta" href="/scan/">Start de scan</a>
+  <div class="note">Niet elke situatie vraagt om dit gesprek.</div>
+</div>
 
-      <div class="hero-actions">
-        <a class="cta-primary" href="/contact/">Bespreek uw situatie</a>
-        <a class="cta-secondary" href="/scan/">Start de bestuurlijke scan</a>
-        <div class="action-note">Niet elke situatie vraagt om dit gesprek.</div>
-      </div>
+</div>
 
-      <p class="hero-note">
-        Ik werk met een beperkt aantal trajecten tegelijk. Als dit daadwerkelijk speelt, wordt dat snel duidelijk.
-      </p>
-    </div>
+<div class="side">
+  <h3>Waar dit over gaat</h3>
+  <p>
+  Niet over techniek. Niet over projecten.  
+  Maar over waar bestuurlijke ruimte feitelijk wordt beperkt.
+  </p>
+</div>
 
-    <aside class="hero-side">
-      <div class="signal-card">
-        <h2>Wat deze site niet doet</h2>
-        <p>
-          Dit is geen plek voor technische implementatie, projectsturing of digitale optimalisatie.
-        </p>
-        <ul>
-          <li>niet gericht op operationele begeleiding</li>
-          <li>niet gericht op leveranciersselectie</li>
-          <li>niet gericht op extra rapportage om de rapportage</li>
-        </ul>
-        <p style="margin-top:16px;">
-          De vraag is eenvoudiger en zwaarder: waar wordt bestuurlijke ruimte feitelijk kleiner?
-        </p>
-      </div>
-    </aside>
-  </section>
+</section>
 
-  <section class="section">
-    <div class="section-head">
-      <span class="section-kicker">Wat hier speelt</span>
-      <h2 class="section-title">Afhankelijkheid ontstaat in de optelsom</h2>
-      <p class="section-intro">
-        Digitale besluiten worden zelden als samenhang beoordeeld. Contracten, platforms, data,
-        cloudmigraties en AI-toepassingen worden afzonderlijk afgewogen. De afhankelijkheid ontstaat in de optelsom.
-      </p>
-    </div>
+<section class="section">
 
-    <div class="editorial">
-      <p>
-        En juist die optelsom wordt zelden bestuurlijk expliciet gemaakt.
-      </p>
+<h2>De verschuiving gebeurt geleidelijk</h2>
 
-      <p>
-        Risico’s worden per project besproken. Verantwoordelijkheden worden verdeeld. Externe partijen leveren.
-        Alles lijkt ingericht. Tot het moment waarop keuzes niet meer vrij zijn.
-      </p>
+<p>
+Digitale afhankelijkheid ontstaat stap voor stap.
+Via contracten, verlengingen, platformkeuzes en nieuwe toepassingen.
+</p>
 
-      <p>
-        Dan blijkt dat de vraag nooit technisch is geweest, maar bestuurlijk.
-      </p>
-    </div>
+<p>
+Afzonderlijk logisch. In samenhang bepalend.
+</p>
 
-    <div class="pull-quote">
-      <p>
-        De meeste organisaties herkennen digitale afhankelijkheid pas wanneer de ruimte al kleiner is geworden.
-      </p>
-    </div>
-  </section>
+<p>
+En juist die samenhang wordt zelden bestuurlijk besproken.
+</p>
 
-  <section class="section">
-    <div class="section-head">
-      <span class="section-kicker">Wat ik doe</span>
-      <h2 class="section-title">Ik maak zichtbaar waar de bestuurlijke ruimte onder druk staat</h2>
-      <p class="section-intro">
-        Niet door meer informatie toe te voegen, maar door samenhang expliciet te maken waar die impliciet is gebleven.
-      </p>
-    </div>
+</section>
 
-    <div class="grid-3">
-      <div class="card">
-        <h3>Strategische sessie</h3>
-        <p>
-          Het vraagstuk scherp trekken op bestuursniveau. Niet breed, wel precies.
-        </p>
-      </div>
+<section class="section">
 
-      <div class="card">
-        <h3>Bestuurlijke afhankelijkheidsscan</h3>
-        <p>
-          Zichtbaar maken hoe afhankelijkheid zich heeft opgebouwd en waar zij regie begint te beperken.
-        </p>
-      </div>
+<h2>Wat ik doe</h2>
 
-      <div class="card">
-        <h3>Structurele advisering</h3>
-        <p>
-          Regie verankeren in besluitvorming, voordat afhankelijkheid zich onder druk aandient.
-        </p>
-      </div>
-    </div>
+<p>
+Ik maak zichtbaar waar afhankelijkheid zich heeft opgebouwd —
+en wat dat betekent voor bestuurlijke ruimte en continuïteit.
+</p>
 
-    <div class="editorial" style="margin-top:34px;">
-      <p>
-        Dat gebeurt snel. En meestal confronterend helder.
-      </p>
-    </div>
-  </section>
+<div class="grid">
 
-  <section class="section">
-    <div class="section-head">
-      <span class="section-kicker">Voor wie</span>
-      <h2 class="section-title">Voor bestuurders en directies die voelen dat digitale keuzes niet langer operationeel zijn</h2>
-      <p class="section-intro">
-        Maar de strategische ruimte beginnen te bepalen.
-      </p>
-    </div>
+<div class="card">
+<h4>Strategische sessie</h4>
+<p>Het vraagstuk bestuurlijk scherp trekken.</p>
+</div>
 
-    <div class="end-block">
-      <p>
-        Deze benadering is relevant waar publieke verantwoordelijkheid, digitale kerninfrastructuur,
-        continuïteit en afhankelijkheid elkaar raken.
-      </p>
+<div class="card">
+<h4>Afhankelijkheidsscan</h4>
+<p>Cumulatieve afhankelijkheden expliciet maken.</p>
+</div>
 
-      <p>
-        Niet voor organisaties die vooral zoeken naar uitvoering, optimalisatie of technische verdieping.
-      </p>
+<div class="card">
+<h4>Advisering</h4>
+<p>Regie verankeren in besluitvorming.</p>
+</div>
 
-      <p>
-        Wel voor organisaties die willen weten waar bestuurlijke regie feitelijk is verschoven —
-        en wat dat vraagt.
-      </p>
+</div>
 
-      <div class="hero-actions" style="margin-top:34px;">
-        <a class="cta-primary" href="/contact/">Plan een eerste gesprek</a>
-        <a class="cta-secondary" href="/papers/">Lees de papers</a>
-      </div>
+</section>
 
-      <p class="end-note">
-        Als dit herkenbaar is, is het waarschijnlijk relevanter dan het op het eerste gezicht lijkt.
-      </p>
-    </div>
-  </section>
+<section class="section">
 
-  <footer>
-    Digitale afhankelijkheid wordt zelden bewust gekozen. Maar wel bestuurlijk gedragen.
-  </footer>
+<h2>Waarom dit ertoe doet</h2>
+
+<p>
+Wanneer samenhang niet expliciet wordt gemaakt,
+wordt strategische ruimte ongemerkt kleiner.
+</p>
+
+<p>
+Niet zichtbaar. Wel voelbaar.
+</p>
+
+<p>
+En uiteindelijk bepalend.
+</p>
+
+</section>
+
+<footer>
+Digitale afhankelijkheid wordt zelden bewust gekozen.  
+Maar wel bestuurlijk gedragen.
+</footer>
 
 </div>
 
