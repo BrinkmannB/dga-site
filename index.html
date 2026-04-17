@@ -65,9 +65,6 @@ h1{
   line-height:1.15;
   letter-spacing:-0.5px;
   max-width:900px;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeIn 1s ease forwards;
 }
 
 .sub{
@@ -75,29 +72,23 @@ h1{
   color:var(--muted);
   max-width:560px;
   line-height:1.6;
-  opacity:0;
-  animation:fadeIn 1s ease 0.3s forwards;
 }
 
 .friction{
-  margin-top:24px;
+  margin-top:20px;
   font-size:18px;
   max-width:560px;
-  opacity:0;
-  animation:fadeIn 1s ease 0.6s forwards;
 }
 
 /* CTA */
 
 .cta{
   margin-top:40px;
-  opacity:0;
-  animation:fadeIn 1s ease 0.9s forwards;
 }
 
 .cta a{
   display:inline-block;
-  padding:14px 22px;
+  padding:14px 24px;
   border:1px solid var(--accent);
   color:var(--text);
   text-decoration:none;
@@ -110,10 +101,16 @@ h1{
   color:#0b1320;
 }
 
+.cta-sub{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+}
+
 /* CARDS */
 
 .cards{
-  margin-top:80px;
+  margin-top:90px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
@@ -123,14 +120,7 @@ h1{
   padding:32px;
   background:var(--card);
   border-radius:12px;
-  transition:all 0.3s ease;
-  cursor:pointer;
   border:1px solid rgba(255,255,255,0.05);
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 25px 50px rgba(0,0,0,0.5);
 }
 
 .card.highlight{
@@ -147,44 +137,19 @@ h1{
   line-height:1.5;
 }
 
-/* TRIGGER */
+/* FLOW TRIGGER */
 
 .trigger{
-  margin-top:60px;
+  margin-top:70px;
   font-size:20px;
   line-height:1.5;
 }
 
-/* AUTHORITY */
-
 .authority{
-  margin-top:60px;
+  margin-top:40px;
   color:var(--muted);
   font-size:14px;
   max-width:600px;
-}
-
-/* SECTION */
-
-.section{
-  margin-top:140px;
-  opacity:0;
-  transform:translateY(20px);
-  transition:all 0.6s ease;
-}
-
-.section.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 </style>
@@ -213,38 +178,45 @@ h1{
   </h1>
 
   <p class="sub">
-    Afhankelijkheden ontstaan niet door slechte keuzes.  
-    Ze ontstaan door logische keuzes—die nooit samen worden bekeken.
+    Afhankelijkheden ontstaan niet door slechte keuzes.<br>
+    Ze ontstaan door logische keuzes — die nooit samen worden bekeken.
   </p>
 
   <p class="friction">
     De meeste bestuurders ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
   </p>
 
+  <!-- 🔥 PRIMARY FLOW CTA -->
   <div class="cta">
-    <a href="/scan">Start met de afhankelijkheidsscan</a>
+    <a href="/scan/index.html">
+      Maak uw afhankelijkheid zichtbaar
+    </a>
+    <div class="cta-sub">
+      Duur: 2 minuten
+    </div>
   </div>
 
-  <!-- CARDS -->
+  <!-- CARDS (context, niet primair) -->
   <div class="cards">
 
-    <div class="card" onclick="location.href='/gesprek'">
+    <div class="card">
       <h3>Strategische sessie</h3>
       <p>Het vraagstuk bestuurlijk scherp krijgen voordat het escaleert.</p>
     </div>
 
-    <div class="card highlight" onclick="location.href='/scan'">
+    <div class="card highlight">
       <h3>Afhankelijkheidsscan</h3>
       <p>Waar zit uw afhankelijkheid écht? Inzicht dat bestuurders zelden hebben.</p>
     </div>
 
-    <div class="card" onclick="location.href='/gesprek'">
+    <div class="card">
       <h3>Advisering</h3>
       <p>Van inzicht naar bestuurlijke regie en concrete keuzes.</p>
     </div>
 
   </div>
 
+  <!-- FLOW END -->
   <div class="trigger">
     De vraag is niet óf dit speelt.<br>
     De vraag is: waar.<br><br>
@@ -252,33 +224,11 @@ h1{
   </div>
 
   <div class="authority">
-    Ik werk met een beperkt aantal bestuurders per jaar.  
+    Ik werk met een beperkt aantal bestuurders per jaar.<br>
     Dit vraagstuk speelt in vrijwel elke organisatie met complexe digitale ketens.
   </div>
 
-  <!-- SECTION -->
-  <div class="section" id="section2">
-    <h2>De verschuiving gebeurt geleidelijk</h2>
-    <p class="sub">
-      Geen enkel besluit lijkt risicovol.  
-      Tot de samenhang dat wel wordt.
-    </p>
-  </div>
-
 </div>
-
-<script>
-
-const section = document.getElementById('section2');
-
-window.addEventListener('scroll', () => {
-  const rect = section.getBoundingClientRect();
-  if(rect.top < window.innerHeight - 100){
-    section.classList.add('visible');
-  }
-});
-
-</script>
 
 </body>
 </html>
