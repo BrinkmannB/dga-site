@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verken dit in uw context</title>
+
+<title>Gesprek aanvragen</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -14,59 +15,65 @@ body{
   font-family:'Inter', sans-serif;
   background:#0b1320;
   color:#e8edf5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
 .container{
-  max-width:800px;
-  margin:0 auto;
-  padding:100px 24px;
+  max-width:720px;
+  padding:40px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:36px;
-  line-height:1.3;
-  margin-bottom:24px;
+  font-size:38px;
+  margin-bottom:30px;
 }
 
-p{
-  color:#9aa6b2;
-  font-size:17px;
+.lead{
+  font-size:18px;
   line-height:1.6;
-  margin-bottom:18px;
+  color:#d0d7e2;
+  margin-bottom:30px;
 }
 
 .block{
-  margin-top:40px;
-}
-
-.highlight{
-  color:#e8edf5;
+  margin-top:20px;
+  color:#9aa6b2;
+  line-height:1.6;
 }
 
 .cta{
   margin-top:60px;
 }
 
-.cta a{
-  display:inline-block;
-  padding:14px 22px;
+button{
+  padding:14px 26px;
   border:1px solid #c9a96e;
-  color:#c9a96e;
-  text-decoration:none;
-  font-size:15px;
-  transition:all 0.2s ease;
+  background:none;
+  color:#e8edf5;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
 }
 
-.cta a:hover{
+button:hover{
   background:#c9a96e;
   color:#0b1320;
 }
 
-.small{
-  margin-top:16px;
+.push{
+  margin-top:18px;
   font-size:14px;
-  color:#6f7b88;
+  color:#c9a96e;
+}
+
+.warning{
+  margin-top:30px;
+  font-size:14px;
+  color:#c9a96e;
 }
 
 </style>
@@ -76,75 +83,39 @@ p{
 
 <div class="container">
 
-  <!-- HEADER -->
   <h1>
-    Dit is het moment waarop het bestuurlijk wordt
+    Dit is geen standaard gesprek.
   </h1>
 
-  <p>
-    Wat u zojuist heeft gezien, is zelden een technisch probleem.
-  </p>
-
-  <p>
-    Het gaat over waar controle feitelijk ligt — en waar niet.
-  </p>
-
-  <p>
-    In de meeste organisaties blijft dit impliciet.  
-    Tot het moment waarop sturen niet meer vanzelf gaat.
-  </p>
-
-  <!-- VERDIEPING -->
-  <div class="block">
-
-    <p class="highlight">
-      En precies daar ontstaat een keuze.
-    </p>
-
-    <p>
-      Laat u dit zoals het is — en accepteert u impliciet de afhankelijkheid.
-    </p>
-
-    <p>
-      Of maakt u expliciet waar deze ligt, en wat dit betekent voor bestuurlijke regie.
-    </p>
-
+  <div class="lead">
+    Uw uitkomst suggereert dat afhankelijkheden al invloed hebben op uw bestuurlijke speelruimte.
   </div>
 
-  <!-- POSITIONERING -->
   <div class="block">
-
-    <p class="highlight">
-      Dit is geen vraagstuk dat u oplost met losse maatregelen.
-    </p>
-
-    <p>
-      Het vraagt om samenhang.  
-      En om explicitering op bestuursniveau.
-    </p>
-
-    <p>
-      In een kort gesprek brengen we scherp:
-    </p>
-
-    <p>
-      – waar afhankelijkheid zich concentreert  
-      – waar besluitvorming ontbreekt  
-      – en waar regie feitelijk ligt  
-    </p>
-
+    In dit gesprek maken we dat concreet:<br>
+    waar u nog stuurt — en waar u al gestuurd wordt.
   </div>
 
-  <!-- CTA -->
+  <div class="block">
+    Dit is geen verkennend gesprek.<br>
+    Dit is een bestuurlijke reality check.
+  </div>
+
   <div class="cta">
-  <a href="/contact/" class="cta-button">
-    Verken dit in uw context →
-  </a>
+    <button onclick="location.href='mailto:info@dutchgovernanceadvisory.nl'">
+      Plan dit gesprek
+    </button>
 
-  <div class="small">
-    Kort gesprek. Geen voorbereiding nodig.
+    <div class="push">
+      De meeste bestuurders wachten tot dit zichtbaar wordt.<br>
+      Dan is de speelruimte al kleiner.
+    </div>
   </div>
-</div>
+
+  <div class="warning">
+    Ik werk met een beperkt aantal bestuurders per jaar.<br>
+    Niet elke aanvraag leidt tot een gesprek.
+  </div>
 
 </div>
 
