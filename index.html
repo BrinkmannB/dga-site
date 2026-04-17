@@ -53,47 +53,41 @@ body{
 
 /* HERO */
 
-.container{
-  max-width:1100px;
+.hero{
+  max-width:900px;
   margin:auto;
-  padding:140px 24px;
+  padding:200px 24px 160px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:52px;
-  line-height:1.15;
+  font-size:56px;
+  line-height:1.1;
   letter-spacing:-0.5px;
-  max-width:900px;
 }
 
 .sub{
-  margin-top:28px;
+  margin-top:32px;
   color:var(--muted);
-  max-width:560px;
+  max-width:460px;
   line-height:1.6;
 }
 
-.friction{
-  margin-top:20px;
-  font-size:18px;
-  max-width:560px;
-}
-
-/* CTA */
+/* CTA — EXTRA LUCHT */
 
 .cta{
-  margin-top:40px;
+  margin-top:80px;
 }
 
 .cta a{
   display:inline-block;
-  padding:14px 24px;
+  padding:16px 28px;
   border:1px solid var(--accent);
   color:var(--text);
   text-decoration:none;
   border-radius:8px;
   transition:all 0.3s ease;
+  font-size:16px;
 }
 
 .cta a:hover{
@@ -102,15 +96,20 @@ h1{
 }
 
 .cta-sub{
-  margin-top:10px;
+  margin-top:14px;
   font-size:13px;
   color:var(--muted);
 }
 
-/* CARDS */
+/* BELOW THE FOLD */
+
+.section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:120px 24px;
+}
 
 .cards{
-  margin-top:90px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
@@ -137,18 +136,16 @@ h1{
   line-height:1.5;
 }
 
-/* FLOW TRIGGER */
-
 .trigger{
-  margin-top:70px;
+  margin-top:80px;
   font-size:20px;
   line-height:1.5;
 }
 
 .authority{
   margin-top:40px;
-  color:var(--muted);
   font-size:14px;
+  color:var(--muted);
   max-width:600px;
 }
 
@@ -169,24 +166,18 @@ h1{
   </div>
 </div>
 
-<!-- HERO -->
-<div class="container">
+<!-- 🔥 ULTRA MINIMAL HERO -->
+<div class="hero">
 
   <h1>
-    U denkt dat u eigenaar bent van uw digitale infrastructuur.<br>
-    Maar als het misgaat, bent u wel verantwoordelijk.
+    U bent verantwoordelijk.<br>
+    Maar bestuurt u het ook?
   </h1>
 
   <p class="sub">
-    Afhankelijkheden ontstaan niet door slechte keuzes.<br>
-    Ze ontstaan door logische keuzes — die nooit samen worden bekeken.
+    Digitale afhankelijkheid ontstaat ongemerkt — tot het uw speelruimte bepaalt.
   </p>
 
-  <p class="friction">
-    De meeste bestuurders ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
-  </p>
-
-  <!-- 🔥 PRIMARY FLOW CTA -->
   <div class="cta">
     <a href="/scan/index.html">
       Maak uw afhankelijkheid zichtbaar
@@ -196,7 +187,11 @@ h1{
     </div>
   </div>
 
-  <!-- CARDS (context, niet primair) -->
+</div>
+
+<!-- 🔽 BELOW THE FOLD -->
+<div class="section">
+
   <div class="cards">
 
     <div class="card">
@@ -216,7 +211,6 @@ h1{
 
   </div>
 
-  <!-- FLOW END -->
   <div class="trigger">
     De vraag is niet óf dit speelt.<br>
     De vraag is: waar.<br><br>
