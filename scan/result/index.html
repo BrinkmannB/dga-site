@@ -29,24 +29,22 @@ body{
 h1{
   font-family:'Libre Baskerville', serif;
   font-size:38px;
-  margin-bottom:24px;
+  margin-bottom:30px;
 }
 
 .result{
   font-size:18px;
   line-height:1.6;
   color:#d0d7e2;
-  margin-bottom:30px;
 }
 
 .block{
   margin-top:30px;
   color:#9aa6b2;
-  line-height:1.6;
 }
 
 .cta{
-  margin-top:40px;
+  margin-top:50px;
 }
 
 button{
@@ -56,8 +54,6 @@ button{
   color:#e8edf5;
   border-radius:8px;
   cursor:pointer;
-  font-size:16px;
-  transition:all 0.3s ease;
 }
 
 button:hover{
@@ -84,11 +80,11 @@ button:hover{
 
   <div class="block">
     Afhankelijkheden verdwijnen niet vanzelf.<br>
-    Ze bouwen zich op — en beperken stap voor stap uw speelruimte.
+    Ze bouwen zich op — en beperken uw speelruimte.
   </div>
 
   <div class="block">
-    De meeste bestuurders zien dit pas wanneer het zichtbaar wordt in een crisis.<br>
+    De meeste bestuurders zien dit pas wanneer het zichtbaar wordt.<br>
     Op dat moment zijn keuzes al beperkt.
   </div>
 
@@ -99,8 +95,7 @@ button:hover{
   </div>
 
   <div class="warning">
-    Ik bespreek dit alleen met bestuurders waar dit daadwerkelijk speelt.<br>
-    Niet elke organisatie is daar klaar voor.
+    Ik bespreek dit alleen met bestuurders waar dit daadwerkelijk speelt.
   </div>
 
 </div>
@@ -113,13 +108,13 @@ const score = parseInt(params.get("score"));
 let text = "";
 
 if(score <= 2){
-  text = "U lijkt controle te hebben.<br><br>De vraag is of dat werkelijk zo is — of dat risico’s nog niet zichtbaar zijn.";
+  text = "U lijkt controle te hebben.<br><br>De vraag is of dat volledig is — of dat afhankelijkheden nog niet zichtbaar zijn.";
 }
 else if(score <= 5){
-  text = "Uw organisatie heeft beperkte bestuurlijke grip.<br><br>Afhankelijkheden sturen waarschijnlijk al meer mee dan zichtbaar is.";
+  text = "Uw organisatie heeft beperkte bestuurlijke grip.<br><br>Afhankelijkheden sturen waarschijnlijk al meer dan zichtbaar is.";
 }
 else{
-  text = "Uw organisatie is waarschijnlijk minder bestuurbaar dan u denkt.<br><br>Afhankelijkheden sturen al mee in uw besluitvorming — zonder dat ze expliciet op tafel liggen.<br><br>Dit is geen IT-risico.<br>Dit is een bestuurlijk risico.";
+  text = "U bent waarschijnlijk minder bestuurbaar dan u denkt.<br><br>Afhankelijkheden sturen al mee in uw besluitvorming — zonder dat ze expliciet op tafel liggen.<br><br>Dit is geen IT-vraagstuk.<br>Dit is een bestuurlijk vraagstuk.";
 }
 
 document.getElementById("resultText").innerHTML = text;
