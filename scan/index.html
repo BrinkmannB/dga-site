@@ -51,6 +51,10 @@ h1{
   color:#8fa0b3;
 }
 
+.options input{
+  margin-right:10px;
+}
+
 button{
   margin-top:20px;
   padding:12px 18px;
@@ -152,7 +156,7 @@ function render(){
     optionsDiv.appendChild(el);
   });
 
-  // mid trigger na vraag 2
+  // trigger na vraag 2
   if(step === 2){
     document.getElementById('trigger').innerText =
     "Dit is het punt waar de meeste organisaties het overzicht verliezen.";
@@ -168,13 +172,13 @@ function next(){
   if(!selected) return;
 
   score += parseInt(selected.value);
-
   step++;
 
   if(step < questions.length){
     render();
   } else {
-  window.location.href = "/scan/result/index.html?score=" + score;
+    // 🔥 JOUW FIX — HIER ZIT DE MAGIC
+    window.location.href = "/scan/result/index.html?score=" + score;
   }
 
 }
