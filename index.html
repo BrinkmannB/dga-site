@@ -13,7 +13,7 @@
 :root{
   --bg:#0b1320;
   --text:#e8edf5;
-  --muted:#9aa6b2;
+  --muted:#8fa0b3;
   --accent:#c9a96e;
   --card:#111a2b;
 }
@@ -31,7 +31,7 @@ body{
   position:absolute;
   top:0;
   width:100%;
-  padding:24px 40px;
+  padding:28px 40px;
 }
 
 .nav-inner{
@@ -43,7 +43,7 @@ body{
 
 .nav a{
   color:var(--muted);
-  margin-left:24px;
+  margin-left:28px;
   text-decoration:none;
 }
 
@@ -56,43 +56,71 @@ body{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:120px 24px;
+  padding:140px 24px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:48px;
-  line-height:1.2;
+  font-size:52px;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+  max-width:900px;
   opacity:0;
   transform:translateY(20px);
   animation:fadeIn 1s ease forwards;
 }
 
 .sub{
-  margin-top:20px;
+  margin-top:28px;
   color:var(--muted);
-  max-width:600px;
+  max-width:560px;
+  line-height:1.6;
   opacity:0;
   animation:fadeIn 1s ease 0.3s forwards;
 }
 
 .friction{
-  margin-top:20px;
+  margin-top:24px;
+  font-size:18px;
+  max-width:560px;
   opacity:0;
   animation:fadeIn 1s ease 0.6s forwards;
+}
+
+/* CTA */
+
+.cta{
+  margin-top:40px;
+  opacity:0;
+  animation:fadeIn 1s ease 0.9s forwards;
+}
+
+.cta a{
+  display:inline-block;
+  padding:14px 22px;
+  border:1px solid var(--accent);
+  color:var(--text);
+  text-decoration:none;
+  border-radius:8px;
+  transition:all 0.3s ease;
+}
+
+.cta a:hover{
+  background:var(--accent);
+  color:#0b1320;
 }
 
 /* CARDS */
 
 .cards{
-  margin-top:60px;
+  margin-top:80px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:24px;
 }
 
 .card{
-  padding:28px;
+  padding:32px;
   background:var(--card);
   border-radius:12px;
   transition:all 0.3s ease;
@@ -102,31 +130,44 @@ h1{
 
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  box-shadow:0 25px 50px rgba(0,0,0,0.5);
 }
 
 .card.highlight{
   border:1px solid var(--accent);
-  background:linear-gradient(180deg,#111a2b,#14233d);
+  background:linear-gradient(180deg,#111a2b,#162742);
 }
 
 .card h3{
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .card p{
   color:var(--muted);
+  line-height:1.5;
 }
 
+/* TRIGGER */
+
 .trigger{
-  margin-top:40px;
-  font-size:18px;
+  margin-top:60px;
+  font-size:20px;
+  line-height:1.5;
+}
+
+/* AUTHORITY */
+
+.authority{
+  margin-top:60px;
+  color:var(--muted);
+  font-size:14px;
+  max-width:600px;
 }
 
 /* SECTION */
 
 .section{
-  margin-top:120px;
+  margin-top:140px;
   opacity:0;
   transform:translateY(20px);
   transition:all 0.6s ease;
@@ -168,49 +209,59 @@ h1{
 
   <h1>
     U denkt dat u eigenaar bent van uw digitale infrastructuur.<br>
-    Maar dat bent u niet.
+    Maar als het misgaat, bent u wel verantwoordelijk.
   </h1>
 
   <p class="sub">
-    Besluiten over cloud, leveranciers en AI lijken logisch op zichzelf.
-    In samenhang beperken ze ongemerkt uw bestuurlijke speelruimte.
+    Afhankelijkheden ontstaan niet door slechte keuzes.  
+    Ze ontstaan door logische keuzes—die nooit samen worden bekeken.
   </p>
 
   <p class="friction">
-    De meeste organisaties ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
+    De meeste bestuurders ontdekken dit pas wanneer sturen niet meer vanzelf gaat.
   </p>
+
+  <div class="cta">
+    <a href="/scan">Start met de afhankelijkheidsscan</a>
+  </div>
 
   <!-- CARDS -->
   <div class="cards">
 
     <div class="card" onclick="location.href='/gesprek'">
       <h3>Strategische sessie</h3>
-      <p>Het vraagstuk bestuurlijk scherp trekken.</p>
+      <p>Het vraagstuk bestuurlijk scherp krijgen voordat het escaleert.</p>
     </div>
 
     <div class="card highlight" onclick="location.href='/scan'">
       <h3>Afhankelijkheidsscan</h3>
-      <p>Zichtbaar maken waar afhankelijkheid zich heeft opgebouwd.</p>
+      <p>Waar zit uw afhankelijkheid écht? Inzicht dat bestuurders zelden hebben.</p>
     </div>
 
     <div class="card" onclick="location.href='/gesprek'">
       <h3>Advisering</h3>
-      <p>Regie terugbrengen in besluitvorming.</p>
+      <p>Van inzicht naar bestuurlijke regie en concrete keuzes.</p>
     </div>
 
   </div>
 
   <div class="trigger">
     De vraag is niet óf dit speelt.<br>
-    De vraag is: waar.
+    De vraag is: waar.<br><br>
+    En of u het nu al wilt zien.
+  </div>
+
+  <div class="authority">
+    Ik werk met een beperkt aantal bestuurders per jaar.  
+    Dit vraagstuk speelt in vrijwel elke organisatie met complexe digitale ketens.
   </div>
 
   <!-- SECTION -->
   <div class="section" id="section2">
     <h2>De verschuiving gebeurt geleidelijk</h2>
     <p class="sub">
-      Digitale afhankelijkheid ontstaat stap voor stap.
-      Afzonderlijk logisch. In samenhang bepalend.
+      Geen enkel besluit lijkt risicovol.  
+      Tot de samenhang dat wel wordt.
     </p>
   </div>
 
