@@ -56,12 +56,12 @@ body{
 .hero{
   max-width:900px;
   margin:auto;
-  padding:200px 24px 160px;
+  padding:200px 24px 140px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:56px;
+  font-size:58px;
   line-height:1.1;
   letter-spacing:-0.5px;
 }
@@ -69,19 +69,20 @@ h1{
 .sub{
   margin-top:32px;
   color:var(--muted);
-  max-width:460px;
-  line-height:1.6;
+  max-width:520px;
+  line-height:1.7;
+  font-size:18px;
 }
 
-/* CTA — EXTRA LUCHT */
+/* CTA */
 
 .cta{
-  margin-top:80px;
+  margin-top:70px;
 }
 
 .cta a{
   display:inline-block;
-  padding:16px 28px;
+  padding:18px 32px;
   border:1px solid var(--accent);
   color:var(--text);
   text-decoration:none;
@@ -96,12 +97,12 @@ h1{
 }
 
 .cta-sub{
-  margin-top:14px;
+  margin-top:16px;
   font-size:13px;
   color:var(--muted);
 }
 
-/* BELOW THE FOLD */
+/* SECTIONS */
 
 .section{
   max-width:1100px;
@@ -109,10 +110,30 @@ h1{
   padding:120px 24px;
 }
 
+.narrow{
+  max-width:680px;
+}
+
+h2{
+  font-family:'Libre Baskerville', serif;
+  font-weight:400;
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:18px;
+}
+
+/* CARDS */
+
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
+  margin-top:40px;
 }
 
 .card{
@@ -131,22 +152,22 @@ h1{
   margin-bottom:12px;
 }
 
-.card p{
-  color:var(--muted);
-  line-height:1.5;
-}
+/* TRIGGER */
 
 .trigger{
-  margin-top:80px;
-  font-size:20px;
-  line-height:1.5;
+  margin-top:100px;
+  font-size:22px;
+  line-height:1.6;
 }
 
-.authority{
-  margin-top:40px;
+/* FOOTER */
+
+.footer{
+  margin-top:120px;
+  padding-top:40px;
+  border-top:1px solid rgba(180,154,83,0.35);
   font-size:14px;
   color:var(--muted);
-  max-width:600px;
 }
 
 </style>
@@ -166,7 +187,7 @@ h1{
   </div>
 </div>
 
-<!-- 🔥 ULTRA MINIMAL HERO -->
+<!-- HERO -->
 <div class="hero">
 
   <h1>
@@ -175,53 +196,145 @@ h1{
   </h1>
 
   <p class="sub">
-    Digitale afhankelijkheid ontstaat ongemerkt — tot het uw speelruimte bepaalt.
+    Digitale afhankelijkheid ontstaat zelden zichtbaar.<br>
+    Tot het moment waarop duidelijk wordt dat u er niet meer op stuurt.
   </p>
 
   <div class="cta">
     <a href="/scan/index.html">
-      Maak uw afhankelijkheid zichtbaar
+      Ontdek wat u niet als geheel ziet
     </a>
     <div class="cta-sub">
-      Duur: 2 minuten
+      Duur: 2 minuten · Geen voorbereiding nodig
     </div>
+  </div>
+
+  <div class="cta-sub">
+    Of lees eerst de <a href="/papers" style="color:var(--accent);text-decoration:none;">DGA Papers</a> →
   </div>
 
 </div>
 
-<!-- 🔽 BELOW THE FOLD -->
+<!-- PROBLEM -->
+<div class="section narrow">
+
+  <h2>Het probleem is niet nieuw.</h2>
+
+  <p>
+    Digitale afhankelijkheid ontstaat niet in één keer.
+    Ze groeit.
+  </p>
+
+  <p>
+    Beslissing voor beslissing.
+    Leverancier voor leverancier.
+    Systeem voor systeem.
+  </p>
+
+  <p>
+    Iedere stap is logisch op zichzelf.
+    Maar samen ontstaat iets wat niemand meer als geheel overziet.
+  </p>
+
+  <p>
+    Niet omdat het verborgen is.
+    Maar omdat het verspreid is.
+  </p>
+
+</div>
+
+<!-- CONSEQUENCE -->
+<div class="section narrow">
+
+  <h2>En precies daar gaat het mis.</h2>
+
+  <p>
+    Organisaties sturen op onderdelen.
+    Maar niet op het geheel.
+  </p>
+
+  <p>
+    Daardoor ontstaat een situatie waarin alles lijkt te werken —
+    terwijl de werkelijke sturing zich buiten de organisatie verplaatst.
+  </p>
+
+  <p>
+    Een organisatie kan volledig compliant zijn —
+    en tegelijkertijd structureel afhankelijk.
+  </p>
+
+</div>
+
+<!-- SOLUTION -->
 <div class="section">
+
+  <h2>Wat nodig is, is geen optimalisatie.</h2>
+
+  <p class="narrow">
+    Niet meer tooling. Niet meer rapportages. Niet een nieuwe structuur.
+    Maar inzicht op een niveau waar bestuurlijk gestuurd kan worden.
+  </p>
 
   <div class="cards">
 
     <div class="card">
       <h3>Strategische sessie</h3>
-      <p>Het vraagstuk bestuurlijk scherp krijgen voordat het escaleert.</p>
+      <p>
+        De vraag achter de vraag zichtbaar maken —
+        voordat duidelijk wordt dat het al speelt.
+      </p>
     </div>
 
     <div class="card highlight">
       <h3>Afhankelijkheidsscan</h3>
-      <p>Waar zit uw afhankelijkheid écht? Inzicht dat bestuurders zelden hebben.</p>
+      <p>
+        Waar u afhankelijk bent — en waar dat niet zichtbaar is.
+        Inzicht dat bestuurlijk zelden als geheel bestaat.
+      </p>
     </div>
 
     <div class="card">
       <h3>Advisering</h3>
-      <p>Van inzicht naar bestuurlijke regie en concrete keuzes.</p>
+      <p>
+        Van inzicht naar keuzes.
+        Niet technisch — maar bestuurlijk.
+      </p>
     </div>
 
   </div>
 
+</div>
+
+<!-- TRIGGER -->
+<div class="section narrow">
+
   <div class="trigger">
     De vraag is niet óf dit speelt.<br>
     De vraag is: waar.<br><br>
-    En of u het nu al wilt zien.
+
+    En wie het als geheel overziet.
   </div>
 
-  <div class="authority">
-    Ik werk met een beperkt aantal bestuurders per jaar.<br>
+</div>
+
+<!-- AUTHORITY -->
+<div class="section narrow">
+
+  <p>
+    Ik werk met een beperkt aantal bestuurders per jaar.
+    Niet omdat het exclusief moet zijn —
+    maar omdat dit alleen werkt als het scherp blijft.
+  </p>
+
+  <p>
     Dit vraagstuk speelt in vrijwel elke organisatie met complexe digitale ketens.
-  </div>
+  </p>
 
+</div>
+
+<!-- FOOTER -->
+<div class="section footer">
+  Onafhankelijke publicatie · Geen sponsoring · Geen platformafhankelijkheid
 </div>
 
 </body>
