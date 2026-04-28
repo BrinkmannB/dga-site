@@ -18,31 +18,43 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 
 .container{
   max-width:720px;
-  padding:40px;
+  padding:60px 32px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:38px;
+  font-size:42px;
+  line-height:1.2;
   margin-bottom:30px;
 }
 
 .lead{
   font-size:18px;
-  line-height:1.6;
+  line-height:1.7;
   color:#d0d7e2;
   margin-bottom:30px;
 }
 
 .block{
-  margin-top:20px;
+  margin-top:30px;
   color:#9aa6b2;
-  line-height:1.6;
+  line-height:1.7;
+  font-size:17px;
+}
+
+ul{
+  margin-top:16px;
+  padding-left:20px;
+  color:#9aa6b2;
+}
+
+li{
+  margin-bottom:10px;
 }
 
 .cta{
@@ -50,13 +62,14 @@ h1{
 }
 
 button{
-  padding:14px 26px;
+  padding:16px 28px;
   border:1px solid #c9a96e;
   background:none;
   color:#e8edf5;
   border-radius:8px;
   cursor:pointer;
   font-size:16px;
+  transition:all 0.3s ease;
 }
 
 button:hover{
@@ -64,16 +77,47 @@ button:hover{
   color:#0b1320;
 }
 
+.micro{
+  margin-top:12px;
+  font-size:13px;
+  color:#8fa0b3;
+}
+
 .push{
-  margin-top:18px;
+  margin-top:20px;
   font-size:14px;
   color:#c9a96e;
 }
 
 .warning{
-  margin-top:30px;
-  font-size:14px;
+  margin-top:36px;
+  font-size:13px;
   color:#c9a96e;
+}
+
+.divider{
+  margin-top:40px;
+  height:1px;
+  background:rgba(255,255,255,0.05);
+}
+
+form{
+  margin-top:40px;
+}
+
+input, textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:#111a2b;
+  color:#e8edf5;
+  font-family:'Inter', sans-serif;
+}
+
+textarea{
+  min-height:100px;
 }
 
 </style>
@@ -84,36 +128,58 @@ button:hover{
 <div class="container">
 
   <h1>
-    Dit is geen standaard gesprek.
+    Dit vraagt geen traject.<br>
+    Dit vraagt helderheid.
   </h1>
 
   <div class="lead">
-    Uw uitkomst suggereert dat afhankelijkheden al invloed hebben op uw bestuurlijke speelruimte.
+    Op basis van uw uitkomst is het waarschijnlijk dat afhankelijkheden al invloed hebben — zonder dat ze volledig zichtbaar zijn.
   </div>
 
   <div class="block">
-    In dit gesprek maken we dat concreet:<br>
-    waar u nog stuurt — en waar u al gestuurd wordt.
+    In een kort gesprek maken we dat concreet:
+    <ul>
+      <li>waar het in uw situatie wringt</li>
+      <li>waar afhankelijkheden zich concentreren</li>
+      <li>of dit bestuurlijk expliciet is — of impliciet blijft</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="block">
+    Dit is geen open agenda.
   </div>
 
   <div class="block">
-    Dit is geen verkennend gesprek.<br>
-    Dit is een bestuurlijke reality check.
+    Ik kijk eerst of dit gesprek zinvol is.<br>
+    Als dat zo is, ontvangt u direct een paar concrete momenten.
   </div>
 
-  <div class="cta">
-    <button onclick="location.href='mailto:info@dutchgovernanceadvisory.nl'">
-      Plan dit gesprek
-    </button>
+  <!-- FORMULIER -->
+  <form action="https://formspree.io/f/YOUR_ID" method="POST">
 
-    <div class="push">
-      De meeste bestuurders wachten tot dit zichtbaar wordt.<br>
-      Dan is de speelruimte al kleiner.
+    <input type="text" name="naam" placeholder="Naam" required>
+
+    <input type="email" name="email" placeholder="E-mail" required>
+
+    <textarea name="context" placeholder="Wat maakt dat u dit gesprek wilt plannen?" required></textarea>
+
+    <button type="submit">Verstuur aanvraag</button>
+
+    <div class="micro">
+      Reactie meestal binnen 24 uur · geen voorbereiding nodig
     </div>
+
+  </form>
+
+  <div class="push">
+    De meeste bestuurders zien dit pas wanneer het zichtbaar wordt.<br>
+    Op dat moment zijn keuzes vaak al beperkt.
   </div>
 
   <div class="warning">
-    Ik werk met een beperkt aantal bestuurders per jaar.<br>
+    Ik werk met een beperkt aantal organisaties per jaar.<br>
     Niet elke aanvraag leidt tot een gesprek.
   </div>
 
