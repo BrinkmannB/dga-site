@@ -18,42 +18,46 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 
 .container{
   max-width:720px;
-  padding:40px;
+  padding:60px 32px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
-  font-size:38px;
+  font-size:40px;
   margin-bottom:30px;
+  line-height:1.2;
 }
 
 .result{
   font-size:18px;
-  line-height:1.6;
+  line-height:1.7;
   color:#d0d7e2;
 }
 
 .block{
-  margin-top:30px;
+  margin-top:36px;
   color:#9aa6b2;
+  line-height:1.7;
 }
 
 .cta{
-  margin-top:50px;
+  margin-top:60px;
 }
 
 button{
-  padding:14px 24px;
+  padding:16px 28px;
   border:1px solid #c9a96e;
   background:none;
   color:#e8edf5;
   border-radius:8px;
   cursor:pointer;
+  font-size:16px;
+  transition:all 0.3s ease;
 }
 
 button:hover{
@@ -61,10 +65,22 @@ button:hover{
   color:#0b1320;
 }
 
+.micro{
+  margin-top:12px;
+  font-size:13px;
+  color:#8fa0b3;
+}
+
 .warning{
-  margin-top:30px;
-  font-size:14px;
+  margin-top:36px;
+  font-size:13px;
   color:#c9a96e;
+}
+
+.divider{
+  margin-top:40px;
+  height:1px;
+  background:rgba(255,255,255,0.05);
 }
 
 </style>
@@ -78,20 +94,29 @@ button:hover{
 
   <div class="result" id="resultText"></div>
 
+  <div class="divider"></div>
+
   <div class="block">
-    Afhankelijkheden verdwijnen niet vanzelf.<br>
-    Ze bouwen zich op — en beperken uw speelruimte.
+    Dit blijft in veel organisaties onzichtbaar.<br>
+    Tot het moment dat er vragen komen.<br><br>
+
+    Dan wordt duidelijk wie het overzicht heeft.<br>
+    Of dat niemand dat heeft.
   </div>
 
   <div class="block">
-    De meeste bestuurders zien dit pas wanneer het zichtbaar wordt.<br>
-    Op dat moment zijn keuzes al beperkt.
+    Dit is geen technisch probleem.<br>
+    Dit is een bestuurlijke realiteit.
   </div>
 
   <div class="cta">
     <button onclick="location.href='/gesprek'">
-      Leg dit op tafel
+      Plan een kort gesprek
     </button>
+
+    <div class="micro">
+      20 minuten · u krijgt direct helderheid op uw situatie
+    </div>
   </div>
 
   <div class="warning">
@@ -103,18 +128,55 @@ button:hover{
 <script>
 
 const params = new URLSearchParams(window.location.search);
-const score = parseInt(params.get("score"));
+const score = parseInt(params.get("score")) || 0;
 
 let text = "";
 
+/*
+Score ranges:
+0–2 = hoog vertrouwen (maar subtiele twijfel injecteren)
+3–5 = midden (meest voorkomend)
+6–8 = duidelijk probleem
+*/
+
 if(score <= 2){
-  text = "U lijkt controle te hebben.<br><br>De vraag is of dat volledig is — of dat afhankelijkheden nog niet zichtbaar zijn.";
+  text = `
+  U lijkt het overzicht te hebben.<br><br>
+
+  De vraag is:<br>
+  is dat volledig —<br>
+  of voelt het zo omdat het nog niet getest is?<br><br>
+
+  In de praktijk blijkt vaak dat afhankelijkheden pas zichtbaar worden<br>
+  wanneer er echt op gestuurd moet worden.
+  `;
 }
+
 else if(score <= 5){
-  text = "Uw organisatie heeft beperkte bestuurlijke grip.<br><br>Afhankelijkheden sturen waarschijnlijk al meer dan zichtbaar is.";
+  text = `
+  Het is waarschijnlijk dat u niet het volledige overzicht heeft.<br><br>
+
+  Dat is geen uitzondering.<br>
+  Maar het betekent wel dat afhankelijkheden al invloed hebben<br>
+  zonder dat ze expliciet op tafel liggen.<br><br>
+
+  Beslissingen lijken autonoom —<br>
+  maar worden in werkelijkheid deels bepaald door bestaande afhankelijkheden.
+  `;
 }
+
 else{
-  text = "U bent waarschijnlijk minder bestuurbaar dan u denkt.<br><br>Afhankelijkheden sturen al mee in uw besluitvorming — zonder dat ze expliciet op tafel liggen.<br><br>Dit is geen IT-vraagstuk.<br>Dit is een bestuurlijk vraagstuk.";
+  text = `
+  Het is zeer waarschijnlijk dat u minder stuurt dan u denkt.<br><br>
+
+  Afhankelijkheden bepalen al mee in richting en keuzes —<br>
+  zonder dat ze als geheel zichtbaar zijn.<br><br>
+
+  Dit wordt vaak pas duidelijk<br>
+  wanneer er geen ruimte meer is om bij te sturen.<br><br>
+
+  Op dat moment zijn opties al beperkt.
+  `;
 }
 
 document.getElementById("resultText").innerHTML = text;
