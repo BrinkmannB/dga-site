@@ -35,7 +35,7 @@ h1{
 
 .result{
   font-size:18px;
-  line-height:1.7;
+  line-height:1.8;
   color:#d0d7e2;
 }
 
@@ -97,30 +97,31 @@ button:hover{
   <div class="divider"></div>
 
   <div class="block">
-    Dit blijft in veel organisaties onzichtbaar.<br>
-    Tot het moment dat er vragen komen.<br><br>
+    Cumulatieve afhankelijkheid ontstaat niet door één besluit.<br>
+    Zij ontstaat doordat samenhang ontbreekt.<br><br>
 
-    Dan wordt duidelijk wie het overzicht heeft.<br>
-    Of dat niemand dat heeft.
+    Daardoor verschuift de bestuurlijke positie —<br>
+    zonder dat dit expliciet wordt vastgesteld.
   </div>
 
   <div class="block">
-    Dit is geen technisch probleem.<br>
-    Dit is een bestuurlijke realiteit.
+    Dit is geen IT-vraagstuk.<br>
+    Dit is een vraagstuk van bestuurlijke regie.
   </div>
 
   <div class="cta">
-    <button onclick="location.href='/gesprek'">
-      Plan een kort gesprek
+    <button onclick="location.href='/contact/'">
+      Bespreek uw situatie
     </button>
 
     <div class="micro">
-      20 minuten · u krijgt direct helderheid op uw situatie
+      20 minuten · direct inzicht in uw bestuurlijke positie
     </div>
   </div>
 
   <div class="warning">
-    Ik bespreek dit alleen met bestuurders waar dit daadwerkelijk speelt.
+    Deze analyse is indicatief.<br>
+    In de praktijk ligt de werkelijke afhankelijkheid vrijwel altijd hoger.
   </div>
 
 </div>
@@ -133,55 +134,60 @@ const score = parseInt(params.get("score")) || 0;
 let text = "";
 
 /*
-Score ranges:
-0–2 = hoog vertrouwen (maar subtiele twijfel injecteren)
-3–5 = midden (meest voorkomend)
-6–8 = duidelijk probleem
+0–3 = operationele controle
+4–8 = verborgen afhankelijkheid
+9–12 = structurele afhankelijkheid
+13–15 = kritische afhankelijkheid
 */
 
-if(score <= 2){
+if(score <= 3){
   text = `
-  U lijkt het overzicht te hebben.<br><br>
+  Uw organisatie beschikt aantoonbaar over operationele controle.<br><br>
 
-  De vraag is:<br>
-  is dat volledig —<br>
-  of voelt het zo omdat het nog niet getest is?<br><br>
+  Digitale afhankelijkheid is aanwezig — maar wordt actief begrensd.<br><br>
 
-  In de praktijk blijkt vaak dat afhankelijkheden pas zichtbaar worden<br>
-  wanneer er echt op gestuurd moet worden.
+  De relevante vraag is of deze positie aantoonbaar standhoudt
+  zodra externe druk ontstaat of omstandigheden veranderen.
   `;
 }
 
-else if(score <= 5){
+else if(score <= 8){
   text = `
-  Het is waarschijnlijk dat u niet het volledige overzicht heeft.<br><br>
+  Uw organisatie functioneert ogenschijnlijk zelfstandig,<br>
+  maar onderliggend is afhankelijkheid aanwezig.<br><br>
 
-  Dat is geen uitzondering.<br>
-  Maar het betekent wel dat afhankelijkheden al invloed hebben<br>
-  zonder dat ze expliciet op tafel liggen.<br><br>
+  Besluiten zijn afzonderlijk rationeel genomen —<br>
+  maar niet in samenhang beoordeeld.<br><br>
 
-  Beslissingen lijken autonoom —<br>
-  maar worden in werkelijkheid deels bepaald door bestaande afhankelijkheden.
+  De afhankelijkheid zit niet in één keuze,<br>
+  maar in de cumulatie ervan.
+  `;
+}
+
+else if(score <= 12){
+  text = `
+  Uw organisatie is in toenemende mate afhankelijk<br>
+  van externe digitale infrastructuur.<br><br>
+
+  Autonomie bestaat formeel —<br>
+  maar is operationeel beperkt.<br><br>
+
+  Onderhandelingspositie, kostenontwikkeling en flexibiliteit<br>
+  worden hierdoor extern beïnvloed.
   `;
 }
 
 else{
   text = `
-  Het is zeer waarschijnlijk dat u minder stuurt dan u denkt.<br><br>
+  Uw organisatie beschikt niet aantoonbaar over zelfstandig handelingsvermogen.<br><br>
 
-  Afhankelijkheden bepalen al mee in richting en keuzes —<br>
-  zonder dat ze als geheel zichtbaar zijn.<br><br>
+  Digitale infrastructuur functioneert als externe machtslaag.<br><br>
 
-  Dit wordt vaak pas duidelijk<br>
-  wanneer er geen ruimte meer is om bij te sturen.<br><br>
-
-  Op dat moment zijn opties al beperkt.
+  De vraag is niet of dit een probleem wordt —<br>
+  maar wanneer en onder welke omstandigheden.
   `;
 }
 
 document.getElementById("resultText").innerHTML = text;
 
 </script>
-
-</body>
-</html>
