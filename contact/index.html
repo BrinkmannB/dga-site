@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Verken dit in uw context | Dutch Governance Advisory</title>
+<title>Bespreek dit op bestuursniveau</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -12,55 +12,62 @@
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#0b1320 0%,#080f18 100%);
-  color:#e6edf3;
   font-family:'Inter', sans-serif;
+  background:#0b1320;
+  color:#e8edf5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
 }
 
 .container{
   max-width:720px;
-  margin:auto;
-  padding:120px 24px;
+  padding:60px 32px;
 }
 
 h1{
   font-family:'Libre Baskerville', serif;
   font-size:40px;
-  font-weight:400;
-  margin-bottom:24px;
+  margin-bottom:30px;
+  line-height:1.2;
 }
 
 p{
   font-size:18px;
-  color:#9fb0c2;
-  line-height:1.7;
-  margin-bottom:16px;
+  line-height:1.8;
+  color:#d0d7e2;
+  margin-bottom:24px;
 }
 
-.highlight{
-  color:#ffffff;
+.block{
+  margin-top:40px;
+  color:#9aa6b2;
 }
 
-input, textarea{
-  width:100%;
-  padding:16px;
-  margin-top:14px;
-  background:#111a2b;
-  border:1px solid rgba(255,255,255,0.08);
-  color:#fff;
-  border-radius:8px;
-  font-size:16px;
+ul{
+  margin-top:20px;
+  padding-left:20px;
+  color:#c4d0dc;
+}
+
+li{
+  margin-bottom:10px;
+}
+
+.cta{
+  margin-top:60px;
 }
 
 button{
-  margin-top:24px;
-  padding:16px 26px;
+  padding:16px 28px;
   border:1px solid #c9a96e;
   background:none;
-  color:#c9a96e;
+  color:#e8edf5;
+  border-radius:8px;
   cursor:pointer;
-  font-size:15px;
-  transition:all .2s ease;
+  font-size:16px;
+  transition:all 0.3s ease;
 }
 
 button:hover{
@@ -68,10 +75,22 @@ button:hover{
   color:#0b1320;
 }
 
-.small{
-  margin-top:14px;
-  font-size:14px;
-  color:#6f7b88;
+.micro{
+  margin-top:12px;
+  font-size:13px;
+  color:#8fa0b3;
+}
+
+.warning{
+  margin-top:40px;
+  font-size:13px;
+  color:#c9a96e;
+}
+
+.divider{
+  margin-top:40px;
+  height:1px;
+  background:rgba(255,255,255,0.05);
 }
 
 </style>
@@ -81,54 +100,51 @@ button:hover{
 
 <div class="container">
 
-<h1>Kort verkennen waar dit bij u speelt</h1>
+<h1>Bespreek dit op bestuursniveau</h1>
 
-<p>Dit is geen intake. Geen adviesgesprek.</p>
-
-<p class="highlight">
-Alleen scherp krijgen of en waar dit vraagstuk bij u speelt.
+<p>
+Op basis van uw uitkomst is het aannemelijk dat digitale afhankelijkheid
+een rol speelt in uw bestuurlijke positie.
 </p>
 
-<form id="contact-form" action="https://formspree.io/f/xyklkkvq" method="POST">
+<p>
+Niet als incident — maar als gevolg van cumulatieve keuzes
+die zelden in samenhang worden beoordeeld.
+</p>
 
-  <input type="hidden" name="_subject" value="Nieuwe aanvraag DGA">
+<div class="divider"></div>
 
-  <input type="text" name="name" placeholder="Naam" required>
-  <input type="email" name="email" placeholder="E-mail" required>
-  <textarea name="message" rows="4" placeholder="Waar merkt u dat het begint te knellen?"></textarea>
+<p>
+In een kort gesprek maken we dit expliciet.
+</p>
 
-  <button type="submit">
-    Verken dit in uw context →
-  </button>
+<ul>
+<li>Waar zit de feitelijke afhankelijkheid?</li>
+<li>Wat betekent dit voor uw handelingsvermogen?</li>
+<li>Welke ruimte is er nog om bij te sturen?</li>
+</ul>
 
-  <div class="small">
-    U ontvangt binnen korte tijd een reactie.
-  </div>
-
-</form>
-
+<div class="block">
+Dit is geen verkennend gesprek.<br>
+Dit is een eerste bestuurlijke duiding van uw situatie.
 </div>
 
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault();
+<div class="cta">
+<button onclick="window.location.href='https://calendar.proton.me/YOUR-LINK-HERE'">
+Plan een gesprek
+</button>
 
-  const form = e.target;
-  const data = new FormData(form);
+<div class="micro">
+20 minuten · direct helderheid op bestuursniveau
+</div>
+</div>
 
-  fetch(form.action, {
-    method: "POST",
-    body: data,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    window.location.href = "/contact/bedankt/";
-  }).catch(error => {
-    alert("Er ging iets mis. Probeer het opnieuw.");
-  });
-});
-</script>
+<div class="warning">
+Ik voer deze gesprekken selectief.<br>
+Alleen wanneer er daadwerkelijk bestuurlijke relevantie is.
+</div>
+
+</div>
 
 </body>
 </html>
