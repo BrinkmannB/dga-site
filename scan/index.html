@@ -37,6 +37,7 @@ body{
   color:#8fa0b3;
   font-size:14px;
   margin-bottom:30px;
+  line-height:1.6;
 }
 
 h1{
@@ -51,7 +52,7 @@ h1{
   margin-bottom:16px;
   cursor:pointer;
   color:#8fa0b3;
-  padding:10px 12px;
+  padding:12px 14px;
   border-radius:6px;
   transition:all 0.2s ease;
 }
@@ -101,11 +102,13 @@ button:disabled{
 <div class="container">
 
   <div class="progress">
-    Vraag <span id="step">1</span> van 4
+    Vraag <span id="step">1</span> van 5
   </div>
 
   <div class="intro">
-    4 korte vragen · geen voorbereiding nodig
+    De meeste organisaties kennen hun digitale afhankelijkheid niet.<br>
+    Niet omdat zij nalatig zijn — maar omdat deze zich cumulatief opbouwt.<br><br>
+    Deze scan maakt zichtbaar in hoeverre uw organisatie nog zelfstandig kan handelen.
   </div>
 
   <h1 id="question"></h1>
@@ -125,38 +128,52 @@ button:disabled{
 const questions = [
 
 {
-q: "Kunt u als bestuur in één overzicht uitleggen<br>van welke leveranciers u afhankelijk bent?",
+q: "Kunt u binnen 12 maanden één kritische digitale leverancier vervangen<br>zonder verstoring van uw primaire proces?",
 a: [
-{t:"Ja, volledig", v:0},
-{t:"Gedeeltelijk", v:1},
-{t:"Nee", v:2}
+{t:"Ja, aantoonbaar en getest", v:0},
+{t:"In theorie mogelijk", v:1},
+{t:"Alleen met significante impact", v:2},
+{t:"Nee / onbekend", v:3}
 ]
 },
 
 {
-q: "Als morgen een kritische leverancier wegvalt —<br>weet u wat er direct gebeurt?",
+q: "Is uw kern data volledig overdraagbaar naar een alternatief systeem<br>zonder functioneel verlies?",
 a: [
-{t:"Ja, scenario’s zijn helder", v:0},
-{t:"Beperkt inzicht", v:1},
-{t:"Nee", v:2}
+{t:"Ja, volledig en gevalideerd", v:0},
+{t:"Grotendeels overdraagbaar", v:1},
+{t:"Alleen met conversie/verlies", v:2},
+{t:"Nee / onbekend", v:3}
 ]
 },
 
 {
-q: "Is er één persoon die deze afhankelijkheid<br>als geheel overziet?",
+q: "Heeft u inzicht in de langetermijnkosten (5+ jaar)<br>van uw huidige digitale keuzes?",
 a: [
-{t:"Ja", v:0},
-{t:"Gedeeltelijk", v:1},
-{t:"Nee", v:2}
+{t:"Ja, integraal en scenario-gebaseerd", v:0},
+{t:"Redelijk inzicht", v:1},
+{t:"Fragmentarisch", v:2},
+{t:"Nee / onbekend", v:3}
 ]
 },
 
 {
-q: "Wanneer is dit voor het laatst expliciet besproken<br>op bestuurlijk niveau?",
+q: "Worden digitale keuzes op bestuursniveau expliciet afgewogen<br>op afhankelijkheid?",
 a: [
-{t:"Recent en structureel", v:0},
+{t:"Ja, structureel", v:0},
 {t:"Af en toe", v:1},
-{t:"Niet of nauwelijks", v:2}
+{t:"Zelden expliciet", v:2},
+{t:"Nee", v:3}
+]
+},
+
+{
+q: "Beschikt u over een reëel alternatief<br>voor uw huidige digitale kerninfrastructuur?",
+a: [
+{t:"Ja, concreet en voorbereid", v:0},
+{t:"In theorie", v:1},
+{t:"Beperkt", v:2},
+{t:"Nee", v:3}
 ]
 }
 
@@ -182,11 +199,20 @@ function render(){
     optionsDiv.appendChild(el);
   });
 
-  // Trigger moment eerder in flow
+  // Strategische triggers
   if(step === 1){
     document.getElementById('trigger').innerText =
-    "Hier wordt vaak zichtbaar dat het overzicht ontbreekt.";
-  } else {
+    "In de praktijk blijkt overdraagbaarheid vaak een aanname.";
+  }
+  else if(step === 2){
+    document.getElementById('trigger').innerText =
+    "Kosten ontwikkelen zich zelden lineair — maar cumulatief.";
+  }
+  else if(step === 3){
+    document.getElementById('trigger').innerText =
+    "Hier ontstaat vaak het verschil tussen IT en bestuur.";
+  }
+  else{
     document.getElementById('trigger').innerText = "";
   }
 
@@ -204,7 +230,6 @@ function next(){
     document.getElementById('nextBtn').disabled = true;
     render();
   } else {
-    // redirect naar resultaatpagina
     window.location.href = "/scan/result/index.html?score=" + score;
   }
 
