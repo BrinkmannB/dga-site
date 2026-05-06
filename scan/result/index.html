@@ -1,193 +1,99 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Uw uitkomst</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0b1320;
-  color:#e8edf5;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
-
-.container{
-  max-width:720px;
-  padding:60px 32px;
-}
-
-h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:40px;
-  margin-bottom:30px;
-  line-height:1.2;
-}
-
-.result{
-  font-size:18px;
-  line-height:1.8;
-  color:#d0d7e2;
-}
-
-.block{
-  margin-top:36px;
-  color:#9aa6b2;
-  line-height:1.7;
-}
-
-.cta{
-  margin-top:60px;
-}
-
-button{
-  padding:16px 28px;
-  border:1px solid #c9a96e;
-  background:none;
-  color:#e8edf5;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:16px;
-  transition:all 0.3s ease;
-}
-
-button:hover{
-  background:#c9a96e;
-  color:#0b1320;
-}
-
-.micro{
-  margin-top:12px;
-  font-size:13px;
-  color:#8fa0b3;
-}
-
-.warning{
-  margin-top:36px;
-  font-size:13px;
-  color:#c9a96e;
-}
-
-.divider{
-  margin-top:40px;
-  height:1px;
-  background:rgba(255,255,255,0.05);
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <h1>Uw uitkomst</h1>
-
-  <div class="result" id="resultText"></div>
-
-  <div class="divider"></div>
-
-  <div class="block">
-    Cumulatieve afhankelijkheid ontstaat niet door één besluit.<br>
-    Zij ontstaat doordat samenhang ontbreekt.<br><br>
-
-    Daardoor verschuift de bestuurlijke positie —<br>
-    zonder dat dit expliciet wordt vastgesteld.
-  </div>
-
-  <div class="block">
-    Dit is geen IT-vraagstuk.<br>
-    Dit is een vraagstuk van bestuurlijke regie.
-  </div>
-
-  <div class="cta">
-    <button onclick="location.href='/contact/'">
-      Bespreek uw situatie
-    </button>
-
-    <div class="micro">
-      20 minuten · direct inzicht in uw bestuurlijke positie
-    </div>
-  </div>
-
-  <div class="warning">
-    Deze analyse is indicatief.<br>
-    In de praktijk ligt de werkelijke afhankelijkheid vrijwel altijd hoger.
-  </div>
-
-</div>
-
-<script>
-
 const params = new URLSearchParams(window.location.search);
 const score = parseInt(params.get("score")) || 0;
 
+let title = "";
 let text = "";
+let implication = "";
 
 /*
-0–3 = operationele controle
-4–8 = verborgen afhankelijkheid
-9–12 = structurele afhankelijkheid
+0–4 = schijnbare controle
+5–9 = verborgen afhankelijkheid
+10–12 = structurele afhankelijkheid
 13–15 = kritische afhankelijkheid
 */
 
-if(score <= 3){
+if(score <= 4){
+
+  title = "Schijnbare controle";
+
   text = `
-  Uw organisatie beschikt aantoonbaar over operationele controle.<br><br>
+  Uw antwoorden suggereren grip op uw digitale omgeving.<br><br>
 
-  Digitale afhankelijkheid is aanwezig — maar wordt actief begrensd.<br><br>
+  In de praktijk blijkt deze controle zelden getest onder reële omstandigheden.<br><br>
 
-  De relevante vraag is of deze positie aantoonbaar standhoudt
-  zodra externe druk ontstaat of omstandigheden veranderen.
+  De meeste organisaties in deze categorie ontdekken hun afhankelijkheid
+  pas wanneer systemen uitvallen of leveranciersvoorwaarden veranderen.
+  `;
+
+  implication = `
+  De relevante vraag is niet of u controle heeft —<br>
+  maar of deze standhoudt onder druk.
   `;
 }
 
-else if(score <= 8){
+else if(score <= 9){
+
+  title = "Verborgen afhankelijkheid";
+
   text = `
-  Uw organisatie functioneert ogenschijnlijk zelfstandig,<br>
+  Uw organisatie functioneert zelfstandig —<br>
   maar onderliggend is afhankelijkheid aanwezig.<br><br>
 
-  Besluiten zijn afzonderlijk rationeel genomen —<br>
+  Besluiten zijn afzonderlijk logisch genomen,<br>
   maar niet in samenhang beoordeeld.<br><br>
 
-  De afhankelijkheid zit niet in één keuze,<br>
-  maar in de cumulatie ervan.
+  Hierdoor ontstaat afhankelijkheid die niet zichtbaar is in dagelijkse operatie,
+  maar wel bepalend wordt bij verandering.
+  `;
+
+  implication = `
+  De afhankelijkheid zit niet in één systeem,<br>
+  maar in de optelsom van keuzes.
   `;
 }
 
 else if(score <= 12){
+
+  title = "Structurele afhankelijkheid";
+
   text = `
-  Uw organisatie is in toenemende mate afhankelijk<br>
-  van externe digitale infrastructuur.<br><br>
+  Uw organisatie is operationeel afhankelijk van externe systemen en leveranciers.<br><br>
 
   Autonomie bestaat formeel —<br>
-  maar is operationeel beperkt.<br><br>
+  maar is in de praktijk beperkt.<br><br>
 
-  Onderhandelingspositie, kostenontwikkeling en flexibiliteit<br>
-  worden hierdoor extern beïnvloed.
+  Kostenontwikkeling, flexibiliteit en onderhandelingspositie
+  worden hierdoor extern bepaald.
+  `;
+
+  implication = `
+  U kunt opereren — maar niet meer volledig sturen.
   `;
 }
 
 else{
+
+  title = "Kritische afhankelijkheid";
+
   text = `
   Uw organisatie beschikt niet aantoonbaar over zelfstandig handelingsvermogen.<br><br>
 
-  Digitale infrastructuur functioneert als externe machtslaag.<br><br>
+  Digitale infrastructuur functioneert als externe machtslaag
+  binnen uw primaire proces.<br><br>
 
   De vraag is niet of dit een probleem wordt —<br>
-  maar wanneer en onder welke omstandigheden.
+  maar wanneer.
+  `;
+
+  implication = `
+  In deze fase wordt afhankelijkheid een strategisch risico.
   `;
 }
 
-document.getElementById("resultText").innerHTML = text;
+document.querySelector("h1").innerText = title;
 
-</script>
+document.getElementById("resultText").innerHTML = `
+  ${text}
+  <br><br>
+  <strong>${implication}</strong>
+`;
