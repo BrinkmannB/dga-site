@@ -106,8 +106,8 @@ button:disabled{
   </div>
 
   <div class="intro">
-    De meeste organisaties kennen hun digitale afhankelijkheid niet.<br>
-    Niet omdat zij nalatig zijn — maar omdat deze zich cumulatief opbouwt.<br><br>
+    De meeste organisaties denken dat ze controle hebben over hun digitale omgeving.<br>
+    In de praktijk blijkt die controle zelden getest.<br><br>
     Deze scan maakt zichtbaar in hoeverre uw organisatie nog zelfstandig kan handelen.
   </div>
 
@@ -128,51 +128,51 @@ button:disabled{
 const questions = [
 
 {
-q: "Kunt u binnen 12 maanden één kritische digitale leverancier vervangen<br>zonder verstoring van uw primaire proces?",
+q: "Welk proces binnen uw organisatie stopt volledig<br>als morgen uw primaire systeem uitvalt?",
+a: [
+{t:"Dat weten we exact en hebben we getest", v:0},
+{t:"Dat weten we globaal", v:1},
+{t:"Dat vermoeden we", v:2},
+{t:"Dat weten we niet", v:3}
+]
+},
+
+{
+q: "Als uw kernsysteem (bijv. CRM) uitvalt,<br>kunt u uw operatie voortzetten zonder dataverlies?",
 a: [
 {t:"Ja, aantoonbaar en getest", v:0},
-{t:"In theorie mogelijk", v:1},
+{t:"Met beperkte verstoring", v:1},
 {t:"Alleen met significante impact", v:2},
 {t:"Nee / onbekend", v:3}
 ]
 },
 
 {
-q: "Is uw kern data volledig overdraagbaar naar een alternatief systeem<br>zonder functioneel verlies?",
+q: "In hoeverre is uw kern data direct overdraagbaar<br>naar een alternatief systeem zonder verlies?",
 a: [
-{t:"Ja, volledig en gevalideerd", v:0},
+{t:"Volledig overdraagbaar en gevalideerd", v:0},
 {t:"Grotendeels overdraagbaar", v:1},
 {t:"Alleen met conversie/verlies", v:2},
-{t:"Nee / onbekend", v:3}
+{t:"Niet realistisch", v:3}
 ]
 },
 
 {
-q: "Heeft u inzicht in de langetermijnkosten (5+ jaar)<br>van uw huidige digitale keuzes?",
+q: "Wanneer is voor het laatst concreet getest<br>of u een kritische leverancier kunt vervangen?",
 a: [
-{t:"Ja, integraal en scenario-gebaseerd", v:0},
-{t:"Redelijk inzicht", v:1},
-{t:"Fragmentarisch", v:2},
-{t:"Nee / onbekend", v:3}
+{t:"Recent getest en gevalideerd", v:0},
+{t:"Scenario uitgewerkt maar niet getest", v:1},
+{t:"Alleen theoretisch besproken", v:2},
+{t:"Nog nooit", v:3}
 ]
 },
 
 {
-q: "Worden digitale keuzes op bestuursniveau expliciet afgewogen<br>op afhankelijkheid?",
+q: "Worden afhankelijkheden expliciet besproken<br>op bestuursniveau bij strategische keuzes?",
 a: [
-{t:"Ja, structureel", v:0},
-{t:"Af en toe", v:1},
-{t:"Zelden expliciet", v:2},
-{t:"Nee", v:3}
-]
-},
-
-{
-q: "Beschikt u over een reëel alternatief<br>voor uw huidige digitale kerninfrastructuur?",
-a: [
-{t:"Ja, concreet en voorbereid", v:0},
-{t:"In theorie", v:1},
-{t:"Beperkt", v:2},
+{t:"Structureel en aantoonbaar", v:0},
+{t:"Regelmatig", v:1},
+{t:"Incidenteel", v:2},
 {t:"Nee", v:3}
 ]
 }
@@ -199,21 +199,22 @@ function render(){
     optionsDiv.appendChild(el);
   });
 
-  // Strategische triggers
-  if(step === 1){
-    document.getElementById('trigger').innerText =
-    "In de praktijk blijkt overdraagbaarheid vaak een aanname.";
+  const trigger = document.getElementById('trigger');
+
+  if(step === 0){
+    trigger.innerText = "De meeste organisaties kunnen dit niet concreet beantwoorden.";
+  }
+  else if(step === 1){
+    trigger.innerText = "‘Beperkte verstoring’ blijkt in de praktijk vaak optimistisch.";
   }
   else if(step === 2){
-    document.getElementById('trigger').innerText =
-    "Kosten ontwikkelen zich zelden lineair — maar cumulatief.";
+    trigger.innerText = "Overdraagbaarheid wordt vaak aangenomen, zelden getest.";
   }
   else if(step === 3){
-    document.getElementById('trigger').innerText =
-    "Hier ontstaat vaak het verschil tussen IT en bestuur.";
+    trigger.innerText = "Hier ontstaat afhankelijkheid die vrijwel nooit wordt teruggedraaid.";
   }
-  else{
-    document.getElementById('trigger').innerText = "";
+  else if(step === 4){
+    trigger.innerText = "Dit onderscheidt operationele realiteit van bestuurlijke aanname.";
   }
 
 }
@@ -230,7 +231,18 @@ function next(){
     document.getElementById('nextBtn').disabled = true;
     render();
   } else {
-    window.location.href = "/scan/result/index.html?score=" + score;
+
+    // 🔥 MICRO-CONVERSIE MOMENT
+    const proceed = confirm(
+      "Wilt u een korte verdiepende analyse waarin we deze afhankelijkheid concreet maken voor uw organisatie?"
+    );
+
+    if(proceed){
+      window.location.href = "/plan-sessie";
+    } else {
+      window.location.href = "/scan/result/index.html?score=" + score;
+    }
+
   }
 
 }
