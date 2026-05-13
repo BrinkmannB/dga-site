@@ -4,85 +4,332 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Analyse resultaat</title>
+<title>Analyse resultaat | Dutch Governance Advisory</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+:root{
+
+  --bg:#08111d;
+  --bg2:#0d1726;
+
+  --card:#101a2b;
+
+  --text:#edf2f7;
+  --muted:#8ea0b5;
+
+  --accent:#c9a96e;
+
+  --line:rgba(255,255,255,0.06);
+
+}
+
+*{
   margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0b1320;
-  color:#e8edf5;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  background:
+  radial-gradient(circle at top left, rgba(201,169,110,0.08), transparent 28%),
+  linear-gradient(180deg,#08111d 0%,#0d1726 100%);
+
+  color:var(--text);
+
+  min-height:100vh;
+
   display:flex;
   justify-content:center;
-  min-height:100vh;
+
+  padding:60px 24px;
 }
 
 .container{
-  max-width:760px;
-  padding:70px 32px;
+  width:100%;
+  max-width:860px;
+}
+
+.result-box{
+
+  background:
+  linear-gradient(180deg,#111b2c 0%,#0d1726 100%);
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  border-radius:38px;
+
+  padding:60px;
+}
+
+.label{
+
+  color:var(--accent);
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  font-size:12px;
+
+  margin-bottom:22px;
 }
 
 h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:40px;
-  margin-bottom:20px;
+
+  font-family:'Libre Baskerville',serif;
+
+  font-size:56px;
+
+  line-height:1.08;
+
+  font-weight:400;
+
+  margin-bottom:30px;
+
+  letter-spacing:-1px;
 }
 
 .subtitle{
-  color:#9aa6b2;
-  font-size:15px;
-  margin-bottom:40px;
-  line-height:1.6;
+
+  color:var(--muted);
+
+  font-size:17px;
+
+  line-height:1.8;
+
+  max-width:720px;
+
+  margin-bottom:60px;
+}
+
+.analysis{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:34px;
 }
 
 .block{
-  margin-top:30px;
-  color:#cfd6e2;
-  line-height:1.8;
-  font-size:17px;
+
+  color:#d6deea;
+
+  line-height:1.9;
+
+  font-size:18px;
 }
 
 .highlight{
-  margin-top:30px;
-  padding:18px;
-  border-left:2px solid #c9a96e;
-  color:#e8edf5;
+
+  margin-top:18px;
+
+  padding:30px;
+
+  border-radius:24px;
+
+  background:
+  linear-gradient(180deg,rgba(201,169,110,0.08),rgba(255,255,255,0.02));
+
+  border:1px solid rgba(201,169,110,0.18);
+}
+
+.highlight-title{
+
+  color:var(--accent);
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  font-size:12px;
+
+  margin-bottom:16px;
+}
+
+.highlight-text{
+
+  font-size:20px;
+
+  line-height:1.8;
+}
+
+.divider{
+
+  width:100%;
+
+  height:1px;
+
+  background:var(--line);
+
+  margin:50px 0;
+}
+
+.quote{
+
+  font-family:'Libre Baskerville',serif;
+
+  font-size:34px;
+
+  line-height:1.6;
+
+  margin-top:20px;
+}
+
+.quote span{
+  color:var(--accent);
 }
 
 .cta{
-  margin-top:60px;
+
+  margin-top:70px;
+
+  padding:42px;
+
+  border-radius:28px;
+
+  background:
+  linear-gradient(180deg,#132038 0%,#101a2b 100%);
+
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.cta h2{
+
+  font-family:'Libre Baskerville',serif;
+
+  font-size:34px;
+
+  font-weight:400;
+
+  margin-bottom:20px;
+}
+
+.cta p{
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+  margin-bottom:34px;
+
+  max-width:620px;
+}
+
+.cta-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:22px;
+
+  flex-wrap:wrap;
 }
 
 button{
-  padding:16px 28px;
-  border:1px solid #c9a96e;
+
+  padding:17px 30px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(201,169,110,0.35);
+
   background:none;
-  color:#e8edf5;
-  border-radius:8px;
+
+  color:var(--text);
+
   cursor:pointer;
-  font-size:16px;
-  transition:all 0.3s ease;
+
+  font-size:15px;
+
+  transition:0.3s;
 }
 
 button:hover{
-  background:#c9a96e;
-  color:#0b1320;
+
+  background:var(--accent);
+
+  color:#08111d;
 }
 
 .micro{
-  margin-top:12px;
+
+  color:var(--muted);
+
   font-size:13px;
-  color:#8fa0b3;
+
+  line-height:1.7;
 }
 
 .warning{
+
   margin-top:50px;
+
+  color:var(--accent);
+
   font-size:13px;
-  color:#c9a96e;
-  line-height:1.6;
+
+  line-height:1.7;
+
+  opacity:0.92;
+}
+
+.footer{
+
+  margin-top:60px;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+.fade{
+  animation:fade 0.5s ease;
+}
+
+@keyframes fade{
+  from{
+    opacity:0;
+    transform:translateY(12px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:640px){
+
+.result-box{
+  padding:38px 30px;
+}
+
+h1{
+  font-size:40px;
+}
+
+.quote{
+  font-size:26px;
+}
+
+.cta{
+  padding:32px 26px;
+}
+
+.cta h2{
+  font-size:28px;
+}
+
+button{
+  width:100%;
+}
+
 }
 
 </style>
@@ -92,87 +339,196 @@ button:hover{
 
 <div class="container">
 
-  <h1 id="title"></h1>
+<div class="result-box fade">
 
-  <div class="subtitle">
-    Deze analyse is gebaseerd op uw antwoorden in de afhankelijkheidsscan.
-  </div>
+<div class="label">
+Analyse resultaat
+</div>
 
-  <div id="text"></div>
+<h1 id="title"></h1>
 
-  <div class="highlight">
-    Wat hier zichtbaar wordt, ontstaat niet door één keuze —<br>
-    maar door cumulatie van beslissingen over tijd.
-  </div>
+<div class="subtitle">
 
-  <div class="block">
-    In veel organisaties wordt dit pas zichtbaar wanneer flexibiliteit nodig is,<br>
-    maar niet meer beschikbaar blijkt.
-  </div>
+Deze analyse is gebaseerd op uw antwoorden in de afhankelijkheidsscan.
 
-  <div class="cta">
-    <button onclick="location.href='/contact/'">
-      Laat dit concreet doorlichten
-    </button>
+De uitkomst laat niet alleen operationele afhankelijkheid zien —
+maar vooral in hoeverre bestuurlijke controle expliciet, overdraagbaar en aantoonbaar is gebleven.
 
-    <div class="micro">
-      20 minuten · geen voorbereiding nodig
-    </div>
+</div>
 
-    <div class="micro" style="margin-top:20px;">
-      In vergelijkbare organisaties blijkt deze analyse vaak structurele blinde vlekken bloot te leggen.
-    </div>
-  </div>
+<div class="analysis">
 
-  <div class="warning">
-    Let op: deze uitkomst is indicatief.<br>
-    De werkelijke afhankelijkheid is in de praktijk vaak hoger dan zelfinschatting.
-  </div>
+<div class="block" id="text"></div>
+
+<div class="highlight">
+
+<div class="highlight-title">
+Kernobservatie
+</div>
+
+<div class="highlight-text">
+
+Wat hier zichtbaar wordt,
+ontstaat zelden door één beslissing.
+
+Het ontstaat door cumulatie —
+leverancier voor leverancier,
+integratie voor integratie,
+jaar na jaar.
+
+</div>
+
+</div>
+
+<div class="block">
+
+In veel organisaties blijft dit onzichtbaar zolang de operatie functioneert.
+
+Pas wanneer flexibiliteit nodig is,
+wordt zichtbaar hoeveel bewegingsruimte feitelijk nog beschikbaar is.
+
+</div>
+
+<div class="divider"></div>
+
+<div class="quote">
+
+“Digitale afhankelijkheid voelt vaak beheersbaar —
+tot expliciet zichtbaar moet worden
+waar de <span>feitelijke controle</span> ligt.”
+
+</div>
+
+</div>
+
+<div class="cta">
+
+<h2>
+Bespreek dit op bestuursniveau.
+</h2>
+
+<p>
+
+Veel organisaties herkennen signalen van afhankelijkheid,
+maar hebben deze nooit expliciet als samenhangend bestuurlijk vraagstuk onderzocht.
+
+Een korte strategische sessie maakt zichtbaar:
+waar afhankelijkheden zich opstapelen,
+waar bestuurlijke grip diffuus wordt,
+en welke kwetsbaarheid operationeel al voelbaar is.
+
+</p>
+
+<div class="cta-row">
+
+<button onclick="location.href='/contact/'">
+Plan een strategische sessie
+</button>
+
+<div class="micro">
+
+20 minuten · geen voorbereiding nodig<br>
+Beperkt aantal trajecten per periode
+
+</div>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+Let op:
+de werkelijke afhankelijkheid ligt in de praktijk vaak hoger dan zelfinschatting,
+omdat operationele gewenning bestuurlijke kwetsbaarheid normaliseert.
+
+</div>
+
+<div class="footer">
+
+Dutch Governance Advisory · Digitale afhankelijkheid. Bestuurlijk gemaakt.
+
+</div>
+
+</div>
 
 </div>
 
 <script>
 
 const params = new URLSearchParams(window.location.search);
-const score = parseInt(params.get("score")) || 0;
+
+const score =
+parseInt(params.get("score")) || 0;
 
 let title = "";
 let text = "";
 
 if(score <= 4){
-  title = "Schijnbare controle";
-  text = `
-  Uw organisatie lijkt controle te hebben over de digitale omgeving.<br><br>
-  Deze controle is echter zelden getest onder verstorende omstandigheden.<br><br>
-  `;
+
+title = "Schijnbare controle";
+
+text = `
+Uw organisatie lijkt bestuurlijk overzicht te hebben op de digitale omgeving.
+
+Tegelijkertijd blijkt in veel organisaties dat deze controle vooral gebaseerd is op operationele continuïteit —
+niet op expliciet gevalideerde onafhankelijkheid.
+
+Afhankelijkheden zijn aanwezig,
+maar voelen beheersbaar zolang systemen functioneren zoals verwacht.
+`;
+
 }
 
 else if(score <= 9){
-  title = "Verborgen afhankelijkheid";
-  text = `
-  Uw organisatie functioneert zelfstandig,<br>
-  maar afhankelijkheden zijn niet expliciet in samenhang beoordeeld.<br><br>
-  `;
+
+title = "Verborgen afhankelijkheid";
+
+text = `
+Uw organisatie functioneert zelfstandig,
+maar afhankelijkheden lijken niet integraal als samenhangend geheel beoordeeld.
+
+Daardoor ontstaat bestuurlijke kwetsbaarheid die operationeel vaak nog niet zichtbaar is —
+maar strategische flexibiliteit geleidelijk beperkt.
+`;
+
 }
 
 else if(score <= 12){
-  title = "Structurele afhankelijkheid";
-  text = `
-  Uw organisatie is operationeel afhankelijk van externe digitale systemen.<br><br>
-  Deze afhankelijkheid beïnvloedt flexibiliteit en besluitruimte.
-  `;
+
+title = "Structurele afhankelijkheid";
+
+text = `
+Uw organisatie is operationeel sterk verweven geraakt met externe digitale systemen en leveranciers.
+
+Hierdoor ontstaat afhankelijkheid die niet alleen technisch,
+maar ook bestuurlijk invloed krijgt op besluitvorming,
+tempo,
+en strategische bewegingsruimte.
+`;
+
 }
 
 else{
-  title = "Kritische afhankelijkheid";
-  text = `
-  Uw organisatie is sterk afhankelijk van externe digitale infrastructuur.<br><br>
-  Autonomie is in de praktijk beperkt.
-  `;
+
+title = "Kritische afhankelijkheid";
+
+text = `
+Uw organisatie lijkt in hoge mate afhankelijk van externe digitale infrastructuur,
+leveranciers en systemen.
+
+Daardoor wordt bestuurlijke autonomie geleidelijk vervangen door operationele noodzaak.
+
+In veel organisaties wordt dit pas expliciet zichtbaar
+wanneer verandering noodzakelijk blijkt —
+maar praktisch nauwelijks nog uitvoerbaar is.
+`;
+
 }
 
 document.getElementById("title").innerText = title;
-document.getElementById("text").innerHTML = `<div class="block">${text}</div>`;
+
+document.getElementById("text").innerHTML = text;
 
 </script>
 
