@@ -1,4 +1,4 @@
-html id="dga-premium-homepage"
+```html id="dga-mobile-premium-homepage"
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -12,15 +12,18 @@ html id="dga-premium-homepage"
 <style>
 
 :root{
+
     --bg:#08111d;
-    --bg2:#0d1828;
-    --card:#101a2c;
+    --bg2:#0d1726;
+
+    --card:#101a2b;
 
     --text:#edf2f7;
     --muted:#8ea0b5;
 
     --accent:#c9a96e;
-    --line:rgba(255,255,255,0.07);
+
+    --line:rgba(255,255,255,0.06);
 
     --max:1180px;
 }
@@ -36,12 +39,17 @@ html{
 }
 
 body{
+
     font-family:'Inter',sans-serif;
+
     background:
     radial-gradient(circle at top left, rgba(201,169,110,0.08), transparent 26%),
-    linear-gradient(180deg,#08111d 0%,#0d1828 45%,#08111d 100%);
+    linear-gradient(180deg,#08111d 0%,#0d1726 45%,#08111d 100%);
+
     color:var(--text);
+
     overflow-x:hidden;
+
     line-height:1.7;
 }
 
@@ -51,34 +59,48 @@ a{
 }
 
 .container{
+
     width:100%;
     max-width:var(--max);
+
     margin:auto;
-    padding:0 32px;
+
+    padding:0 34px;
 }
 
 /* NAV */
 
 .nav{
+
     position:fixed;
-    width:100%;
+
     top:0;
+    width:100%;
+
     z-index:1000;
+
     backdrop-filter:blur(18px);
+
     background:rgba(8,17,29,0.72);
+
     border-bottom:1px solid rgba(255,255,255,0.04);
 }
 
 .nav-inner{
-    height:84px;
+
+    height:86px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
+
     font-family:'Libre Baskerville',serif;
+
     font-size:18px;
+
     letter-spacing:0.3px;
 }
 
@@ -87,14 +109,19 @@ a{
 }
 
 .nav-links{
+
     display:flex;
     align-items:center;
+
     gap:34px;
 }
 
 .nav-links a{
+
     color:var(--muted);
+
     font-size:15px;
+
     transition:0.25s;
 }
 
@@ -103,10 +130,16 @@ a{
 }
 
 .nav-cta{
+
     padding:13px 22px;
-    border:1px solid rgba(201,169,110,0.35);
-    border-radius:999px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(201,169,110,0.32);
+
     color:var(--accent);
+
+    transition:0.3s;
 }
 
 .nav-cta:hover{
@@ -116,67 +149,125 @@ a{
 /* HERO */
 
 .hero{
+
     min-height:100vh;
+
     display:flex;
     align-items:center;
-    position:relative;
+
+    padding-top:120px;
+    padding-bottom:80px;
 }
 
 .hero-grid{
+
     display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:90px;
+
+    grid-template-columns:1.05fr 0.95fr;
+
+    gap:92px;
+
     align-items:center;
 }
 
 .eyebrow{
+
     color:var(--accent);
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
     font-size:12px;
+
     margin-bottom:26px;
 }
 
 .hero h1{
+
     font-family:'Libre Baskerville',serif;
-    font-size:74px;
-    line-height:1.04;
+
+    font-size:66px;
+
+    line-height:1.02;
+
+    letter-spacing:-1.8px;
+
     font-weight:400;
+
     margin-bottom:34px;
-    letter-spacing:-1.5px;
+
+    max-width:760px;
 }
 
 .hero-sub{
+
     color:var(--muted);
+
     font-size:21px;
+
+    line-height:1.85;
+
     max-width:620px;
-    margin-bottom:46px;
+
+    margin-bottom:34px;
+}
+
+.hero-trigger{
+
+    color:var(--accent);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+    max-width:520px;
 }
 
 .hero-buttons{
+
     display:flex;
+
     gap:18px;
+
     flex-wrap:wrap;
 }
 
 .btn-primary{
+
     background:var(--accent);
+
     color:#08111d;
-    padding:18px 30px;
-    border-radius:999px;
-    font-weight:600;
+
+    padding:18px 28px;
+
+    border-radius:14px;
+
+    font-weight:500;
+
     transition:0.3s;
 }
 
 .btn-primary:hover{
+
     transform:translateY(-2px);
+
+    opacity:0.96;
 }
 
 .btn-secondary{
-    padding:18px 30px;
-    border-radius:999px;
+
+    padding:18px 28px;
+
+    border-radius:14px;
+
     border:1px solid rgba(255,255,255,0.08);
+
     color:var(--text);
+
+    transition:0.3s;
 }
 
 .btn-secondary:hover{
@@ -184,43 +275,81 @@ a{
 }
 
 .hero-note{
+
     margin-top:18px;
+
     font-size:13px;
+
     color:var(--muted);
+}
+
+.authority{
+
+    margin-top:34px;
+
+    padding-left:20px;
+
+    border-left:1px solid rgba(201,169,110,0.25);
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.9;
 }
 
 /* PANEL */
 
 .hero-panel{
+
     background:
     linear-gradient(180deg,#111b2c 0%,#0d1726 100%);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:30px;
-    padding:46px;
-    position:relative;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    border-radius:34px;
+
+    padding:48px;
+
+    backdrop-filter:blur(12px);
 }
 
 .panel-line{
-    width:52px;
+
+    width:54px;
     height:1px;
-    background:rgba(201,169,110,0.5);
-    margin-bottom:30px;
+
+    background:rgba(201,169,110,0.45);
+
+    margin-bottom:32px;
 }
 
 .hero-panel h3{
+
     font-family:'Libre Baskerville',serif;
-    font-size:30px;
-    line-height:1.3;
-    margin-bottom:28px;
+
+    font-size:34px;
+
+    line-height:1.25;
+
+    font-weight:400;
+
+    margin-bottom:24px;
 }
 
 .hero-panel p{
+
     color:var(--muted);
-    margin-bottom:30px;
+
+    margin-bottom:34px;
+
+    line-height:1.9;
 }
 
 .observation{
-    padding:22px 0;
+
+    padding:24px 0;
+
     border-top:1px solid var(--line);
 }
 
@@ -229,22 +358,29 @@ a{
 }
 
 .observation-title{
+
     color:var(--accent);
-    font-size:13px;
+
+    font-size:12px;
+
     letter-spacing:1px;
+
     text-transform:uppercase;
-    margin-bottom:10px;
+
+    margin-bottom:12px;
 }
 
 .observation-text{
+
     font-size:19px;
-    line-height:1.6;
+
+    line-height:1.75;
 }
 
 /* SECTIONS */
 
 .section{
-    padding:140px 0;
+    padding:150px 0;
 }
 
 .narrow{
@@ -252,147 +388,222 @@ a{
 }
 
 .section-title{
+
     font-family:'Libre Baskerville',serif;
-    font-size:54px;
-    line-height:1.15;
-    margin-bottom:28px;
+
+    font-size:56px;
+
+    line-height:1.14;
+
+    font-weight:400;
+
+    margin-bottom:30px;
 }
 
 .section-text{
+
     color:var(--muted);
+
     font-size:19px;
+
+    line-height:1.95;
 }
 
 /* STACK */
 
 .stack{
-    margin-top:70px;
+    margin-top:72px;
 }
 
 .stack-line{
+
     font-family:'Libre Baskerville',serif;
+
     font-size:42px;
+
     line-height:1.35;
-    margin-bottom:24px;
+
+    margin-bottom:22px;
 }
 
 /* CARDS */
 
 .cards{
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:26px;
-    margin-top:60px;
+
+    margin-top:62px;
 }
 
 .card{
+
     background:
     linear-gradient(180deg,#111b2c 0%,#0d1726 100%);
-    border-radius:28px;
-    padding:42px;
+
+    border-radius:30px;
+
+    padding:44px;
+
     border:1px solid rgba(255,255,255,0.05);
+
     transition:0.35s;
 }
 
 .card:hover{
+
     transform:translateY(-4px);
-    border-color:rgba(201,169,110,0.2);
+
+    border-color:rgba(201,169,110,0.18);
 }
 
 .card.highlight{
-    border:1px solid rgba(201,169,110,0.4);
+
+    border:1px solid rgba(201,169,110,0.32);
+
     background:
     radial-gradient(circle at top, rgba(201,169,110,0.08), transparent 40%),
-    linear-gradient(180deg,#132038 0%,#101b2c 100%);
+    linear-gradient(180deg,#132038 0%,#101a2b 100%);
 }
 
 .card-number{
+
     color:var(--accent);
-    font-size:13px;
-    letter-spacing:1px;
+
+    font-size:12px;
+
     text-transform:uppercase;
-    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
 }
 
 .card h3{
+
     font-family:'Libre Baskerville',serif;
+
     font-size:30px;
+
     line-height:1.3;
-    margin-bottom:20px;
+
+    font-weight:400;
+
+    margin-bottom:18px;
 }
 
 .card p{
+
     color:var(--muted);
+
     font-size:17px;
+
+    line-height:1.9;
 }
 
 /* QUOTE */
 
 .quote{
-    padding:80px;
-    border-radius:38px;
+
+    padding:92px;
+
+    border-radius:42px;
+
     background:
     linear-gradient(180deg,#101b2c 0%,#0c1625 100%);
+
     border:1px solid rgba(255,255,255,0.05);
 }
 
 .quote p{
+
     font-family:'Libre Baskerville',serif;
-    font-size:46px;
-    line-height:1.45;
-    max-width:980px;
+
+    font-size:48px;
+
+    line-height:1.5;
+
+    max-width:900px;
 }
 
 .quote span{
     color:var(--accent);
 }
 
-/* CTA FINAL */
+/* CTA */
 
 .final-cta{
     text-align:center;
 }
 
 .cta-box{
-    padding:100px 50px;
-    border-radius:40px;
+
+    padding:110px 50px;
+
+    border-radius:44px;
+
     background:
     radial-gradient(circle at top, rgba(201,169,110,0.10), transparent 40%),
     linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
-    border:1px solid rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 .cta-box h2{
+
     font-family:'Libre Baskerville',serif;
-    font-size:58px;
-    line-height:1.15;
+
+    font-size:60px;
+
+    line-height:1.08;
+
+    font-weight:400;
+
     margin-bottom:28px;
 }
 
 .cta-box p{
+
     color:var(--muted);
-    max-width:760px;
-    margin:auto auto 44px auto;
+
     font-size:20px;
+
+    line-height:1.95;
+
+    max-width:760px;
+
+    margin:auto auto 46px auto;
 }
 
 /* FOOTER */
 
 .footer{
+
     padding:80px 0;
+
     border-top:1px solid rgba(255,255,255,0.05);
 }
 
 .footer-inner{
+
     display:flex;
+
     justify-content:space-between;
-    gap:20px;
+
     align-items:center;
+
+    gap:20px;
+
     flex-wrap:wrap;
 }
 
 .footer-text{
+
     color:var(--muted);
+
     font-size:14px;
 }
 
@@ -405,17 +616,20 @@ a{
     grid-template-columns:1fr;
 }
 
+.hero-panel{
+    order:-1;
+}
+
 .hero{
-    padding-top:150px;
-    padding-bottom:120px;
+    padding-top:140px;
 }
 
 .hero h1{
-    font-size:56px;
+    font-size:54px;
 }
 
 .quote p{
-    font-size:34px;
+    font-size:36px;
 }
 
 .stack-line{
@@ -430,32 +644,110 @@ a{
     padding:0 24px;
 }
 
+.hero{
+    padding-top:120px;
+    padding-bottom:60px;
+}
+
+.hero-grid{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.hero-panel{
+    order:-1;
+    padding:36px 30px;
+}
+
 .hero h1{
-    font-size:44px;
-}
 
-.section-title{
     font-size:38px;
+
+    line-height:1.05;
+
+    letter-spacing:-1.2px;
 }
 
-.quote{
-    padding:42px 32px;
+.hero-sub{
+
+    font-size:18px;
+
+    line-height:1.95;
 }
 
-.quote p{
-    font-size:28px;
+.hero-trigger{
+
+    font-size:14px;
+
+    line-height:1.8;
 }
 
-.cta-box{
-    padding:70px 28px;
+.hero-buttons{
+    flex-direction:column;
 }
 
-.cta-box h2{
-    font-size:40px;
+.btn-primary,
+.btn-secondary{
+
+    width:100%;
+
+    text-align:center;
+}
+
+.nav-links a:not(.nav-cta){
+    display:none;
 }
 
 .nav-links{
-    display:none;
+    display:flex;
+}
+
+.section{
+    padding:110px 0;
+}
+
+.section-title{
+    font-size:40px;
+}
+
+.section-text{
+
+    font-size:18px;
+
+    line-height:2;
+}
+
+.stack-line{
+    font-size:30px;
+}
+
+.quote{
+
+    padding:38px 26px;
+}
+
+.quote p{
+
+    font-size:26px;
+
+    line-height:1.6;
+}
+
+.cta-box{
+
+    padding:74px 28px;
+}
+
+.cta-box h2{
+    font-size:42px;
+}
+
+.cta-box p{
+
+    font-size:18px;
+
+    line-height:2;
 }
 
 }
@@ -476,16 +768,27 @@ Dutch Governance <span>Advisory</span>
 </div>
 
 <div class="nav-links">
-<a href="#">Visie</a>
-<a href="#">Paper Nr. 2</a>
-<a href="#">Afhankelijkheidsscan</a>
+
+<a href="#">
+Bestuurlijke observaties
+</a>
+
+<a href="#">
+Paper Nr. 2
+</a>
+
+<a href="#">
+Doe de scan
+</a>
 
 <a href="#" class="nav-cta">
 Bespreek dit op bestuursniveau
 </a>
+
 </div>
 
 </div>
+
 </div>
 
 <!-- HERO -->
@@ -502,29 +805,46 @@ Bestuurlijke grip op digitale afhankelijkheid
 
 <h1>
 U bent verantwoordelijk.<br>
-Maar kunt u aanwijzen<br>
+Maar kunt u nog aanwijzen<br>
 waar de controle feitelijk ligt?
 </h1>
 
 <p class="hero-sub">
-Digitale afhankelijkheden ontstaan zelden bewust. 
-Ze groeien geleidelijk — leverancier voor leverancier, systeem voor systeem — totdat bestuurlijke grip impliciet is geworden.
+
+Veel afhankelijkheden voelen beheersbaar —
+tot expliciet zichtbaar moet worden
+hoe afhankelijk de organisatie werkelijk is geworden.
+
 </p>
+
+<div class="hero-trigger">
+
+Veel organisaties merken pas laat
+hoe afhankelijk zij werkelijk zijn geworden.
+
+</div>
 
 <div class="hero-buttons">
 
 <a href="/scan/index.html" class="btn-primary">
-Doe de Afhankelijkheidsscan
+Doe de scan
 </a>
 
 <a href="#" class="btn-secondary">
-Lees Paper Nr. 2
+Herken de signalen
 </a>
 
 </div>
 
 <div class="hero-note">
-2 minuten · Vaak confronterender dan verwacht
+2 minuten · Geen voorbereiding nodig · Vaak confronterender dan verwacht
+</div>
+
+<div class="authority">
+
+Bestuurlijke observaties over AI, toezicht,
+digitale afhankelijkheid en strategische autonomie.
+
 </div>
 
 </div>
@@ -538,8 +858,10 @@ Wat wij vaak zien
 </h3>
 
 <p>
+
 De meeste organisaties functioneren operationeel stabiel —
 terwijl bestuurlijke afhankelijkheid zich ongemerkt opstapelt.
+
 </p>
 
 <div class="observation">
@@ -549,8 +871,8 @@ Observatie
 </div>
 
 <div class="observation-text">
-AI wordt gebruikt in kritieke processen —
-zonder integraal bestuurlijk overzicht.
+AI beïnvloedt kritieke processen —
+terwijl bestuurlijke uitlegbaarheid beperkt blijft.
 </div>
 
 </div>
@@ -562,8 +884,8 @@ Observatie
 </div>
 
 <div class="observation-text">
-Leveranciers worden strategisch essentieel —
-zonder realistisch alternatief.
+Leveranciers worden operationeel onvervangbaar —
+zonder expliciete strategische keuze.
 </div>
 
 </div>
@@ -575,7 +897,7 @@ Observatie
 </div>
 
 <div class="observation-text">
-Verantwoordelijkheid is formeel belegd —
+Verantwoordelijkheid is formeel verdeeld —
 maar feitelijke sturing diffuus geworden.
 </div>
 
@@ -587,20 +909,22 @@ maar feitelijke sturing diffuus geworden.
 
 </section>
 
-<!-- TENSION -->
+<!-- SECTION -->
 
 <section class="section">
 
 <div class="container narrow">
 
 <h2 class="section-title">
-Het probleem is zelden zichtbaar tijdens groei.
+Het probleem ontstaat zelden abrupt.
 </h2>
 
 <p class="section-text">
-Elke beslissing lijkt logisch. 
-Elke integratie efficiënt. 
+
+Elke beslissing lijkt logisch.
+Elke koppeling efficiënt.
 Elke afhankelijkheid tijdelijk of beheersbaar.
+
 </p>
 
 <div class="stack">
@@ -610,7 +934,7 @@ leverancier voor leverancier.
 </div>
 
 <div class="stack-line">
-platform voor platform.
+koppeling voor koppeling.
 </div>
 
 <div class="stack-line">
@@ -619,66 +943,82 @@ systeem voor systeem.
 
 </div>
 
-<p class="section-text" style="margin-top:50px;">
-Tot niemand nog als geheel kan aanwijzen waar de organisatie werkelijk afhankelijk van is —
+<p class="section-text" style="margin-top:54px;">
+
+Tot niemand nog als geheel kan aanwijzen
+waar de organisatie werkelijk afhankelijk van is —
 en wie daar bestuurlijk op stuurt.
+
 </p>
 
 </div>
 
 </section>
 
-<!-- CONSEQUENCE -->
+<!-- SECTION -->
 
 <section class="section">
 
 <div class="container narrow">
 
 <h2 class="section-title">
-En precies daar ontstaat bestuurlijke kwetsbaarheid.
+Bestuurlijke kwetsbaarheid ontstaat vaak pas onder druk.
 </h2>
 
 <p class="section-text">
+
 Niet tijdens normale operatie.
-Maar op momenten van verantwoording.
+
+Maar tijdens audits,
+incidenten,
+toezicht,
+strategische druk
+of noodzakelijke verandering.
+
 </p>
 
-<p class="section-text" style="margin-top:24px;">
-Tijdens audits. Incidenten. Toezicht. Strategische druk.
-</p>
+<p class="section-text" style="margin-top:30px;">
 
-<p class="section-text" style="margin-top:24px;">
 Dan blijkt vaak:
+
 </p>
 
-<p class="section-text" style="margin-top:24px;">
+<p class="section-text" style="margin-top:30px;">
+
 afhankelijkheden liggen verspreid.<br>
 risico’s worden afzonderlijk beoordeeld.<br>
 sturing is impliciet geworden.
+
 </p>
 
-<p class="section-text" style="margin-top:34px;">
+<p class="section-text" style="margin-top:38px;">
+
 U bent formeel verantwoordelijk —
 zonder volledig bestuurlijk overzicht.
+
 </p>
 
 </div>
 
 </section>
 
-<!-- SERVICES -->
+<!-- SECTION -->
 
 <section class="section">
 
 <div class="container">
 
 <h2 class="section-title">
-Wat wij doen
+Waar bestuurlijke grip verschuift
 </h2>
 
 <p class="section-text narrow">
-Wij maken zichtbaar waar bestuurlijke grip geleidelijk is verdwenen —
-zodat organisaties opnieuw kunnen sturen vanuit overzicht, autonomie en strategische rust.
+
+Wij maken zichtbaar waar afhankelijkheden zich opstapelen,
+waar bestuurlijke autonomie geleidelijk afneemt
+en waar organisaties operationeel verder zijn gedigitaliseerd
+dan bestuurlijk wordt overzien.
+
 </p>
 
 <div class="cards">
@@ -694,8 +1034,10 @@ Strategische sessies
 </h3>
 
 <p>
+
 Bestuurlijke spanning vroeg zichtbaar maken —
 voordat afhankelijkheden operationeel problematisch worden.
+
 </p>
 
 </div>
@@ -711,8 +1053,11 @@ Afhankelijkheidsscan
 </h3>
 
 <p>
-In korte tijd zichtbaar maken waar afhankelijkheden zich opstapelen —
+
+In korte tijd zichtbaar maken
+waar afhankelijkheden zich opstapelen —
 en waar bestuurlijke grip diffuus is geworden.
+
 </p>
 
 </div>
@@ -728,8 +1073,10 @@ Bestuurlijke advisering
 </h3>
 
 <p>
-Van inzicht naar strategische keuzes —
+
+Van observatie naar strategische keuzes —
 zonder te verdwijnen in technische abstractie.
+
 </p>
 
 </div>
@@ -749,8 +1096,11 @@ zonder te verdwijnen in technische abstractie.
 <div class="quote">
 
 <p>
-“De grootste digitale kwetsbaarheden zijn vaak niet de risico’s die organisaties niet kennen —
-maar de afhankelijkheden die zij inmiddels <span>normaal</span> zijn gaan vinden.”
+
+“De grootste digitale kwetsbaarheden
+zijn vaak de afhankelijkheden
+die organisaties <span>normaal</span> zijn gaan vinden.”
+
 </p>
 
 </div>
@@ -772,8 +1122,14 @@ Bespreek dit op bestuursniveau.
 </h2>
 
 <p>
-Veel organisaties voelen dat digitale afhankelijkheid groeit. 
-Maar weinig organisaties bespreken expliciet wat dit betekent voor bestuurlijke autonomie, strategische flexibiliteit en langetermijnweerbaarheid.
+
+Veel organisaties voelen dat digitale afhankelijkheid groeit.
+
+Maar weinig organisaties bespreken expliciet
+wat dit betekent voor bestuurlijke autonomie,
+strategische flexibiliteit
+en langetermijnweerbaarheid.
+
 </p>
 
 <div class="hero-buttons" style="justify-content:center;">
@@ -783,7 +1139,7 @@ Doe de scan
 </a>
 
 <a href="/contact" class="btn-secondary">
-Plan een gesprek
+Plan een strategisch gesprek
 </a>
 
 </div>
