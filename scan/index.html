@@ -1,97 +1,249 @@
+Je scan is inhoudelijk al sterk.
+De grootste winst zit nu niet meer in “meer vragen”, maar in:
+
+* psychologische spanning,
+* premium uitstraling,
+* ritme,
+* stilte,
+* micro-conversie,
+* en het gevoel:
+
+> “Dit is geen marketingtool. Dit is een bestuurlijke spiegel.”
+
+Je huidige versie voelt nog iets teveel als:
+
+* nette online vragenlijst.
+
+Je wilt richting:
+
+* private boardroom assessment.
+
+Dat verschil verhoogt direct:
+
+* completion rate,
+* kwaliteit van leads,
+* prijsperceptie,
+* bereidheid tot gesprek.
+
+Dit is hoe ik hem premium zou herschrijven.
+
+```html id="premium-scan-dga"
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Afhankelijkheidsscan</title>
+<title>Afhankelijkheidsscan | Dutch Governance Advisory</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+:root{
+  --bg:#08111d;
+  --bg2:#0d1726;
+
+  --text:#edf2f7;
+  --muted:#8ea0b5;
+
+  --accent:#c9a96e;
+  --line:rgba(255,255,255,0.07);
+
+  --card:#101a2b;
+}
+
+*{
   margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0b1320;
-  color:#e8edf5;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:
+  radial-gradient(circle at top left, rgba(201,169,110,0.08), transparent 28%),
+  linear-gradient(180deg,#08111d 0%,#0d1726 100%);
+  color:var(--text);
+
+  min-height:100vh;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+
+  padding:40px 24px;
 }
 
 .container{
-  max-width:720px;
   width:100%;
-  padding:40px;
+  max-width:760px;
+}
+
+.scan-box{
+
+  background:
+  linear-gradient(180deg,#111b2c 0%,#0d1726 100%);
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  border-radius:34px;
+
+  padding:52px;
+}
+
+.topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:26px;
 }
 
 .progress{
-  color:#8fa0b3;
-  font-size:14px;
-  margin-bottom:10px;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+.time{
+  font-size:13px;
+  color:var(--muted);
 }
 
 .intro{
-  color:#8fa0b3;
-  font-size:14px;
-  margin-bottom:30px;
-  line-height:1.6;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:15px;
+  margin-bottom:50px;
+  max-width:620px;
 }
 
 h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:30px;
-  line-height:1.35;
-  margin-bottom:30px;
+  font-family:'Libre Baskerville',serif;
+  font-size:42px;
+  line-height:1.28;
+  font-weight:400;
+  margin-bottom:42px;
+  letter-spacing:-0.5px;
 }
 
-.options label{
-  display:block;
-  margin-bottom:16px;
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.option{
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  border-radius:18px;
+
+  padding:22px 24px;
+
   cursor:pointer;
-  color:#8fa0b3;
-  padding:12px 14px;
-  border-radius:6px;
-  transition:all 0.2s ease;
+
+  transition:0.25s ease;
 }
 
-.options label:hover{
+.option:hover{
+  border-color:rgba(201,169,110,0.22);
   background:rgba(255,255,255,0.03);
-  color:#e8edf5;
 }
 
-.options input{
-  margin-right:10px;
+.option.active{
+  border-color:rgba(201,169,110,0.55);
+  background:
+  linear-gradient(180deg,rgba(201,169,110,0.08),rgba(255,255,255,0.02));
 }
 
-button{
-  margin-top:30px;
-  padding:14px 24px;
-  border:1px solid #c9a96e;
-  background:none;
-  color:#e8edf5;
-  border-radius:6px;
-  cursor:pointer;
-  transition:all 0.3s ease;
+.option input{
+  display:none;
 }
 
-button:hover{
-  background:#c9a96e;
-  color:#0b1320;
+.option-text{
+  font-size:17px;
+  line-height:1.6;
 }
 
-button:disabled{
-  opacity:0.3;
-  cursor:not-allowed;
+.bottom{
+  margin-top:42px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
 .trigger{
-  margin-top:20px;
-  color:#c9a96e;
+  color:var(--accent);
   font-size:14px;
-  min-height:20px;
+  line-height:1.6;
+  max-width:420px;
+}
+
+button{
+  padding:16px 28px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(201,169,110,0.35);
+
+  background:none;
+
+  color:var(--text);
+
+  cursor:pointer;
+
+  font-size:15px;
+
+  transition:0.3s;
+}
+
+button:hover{
+  background:var(--accent);
+  color:#08111d;
+}
+
+button:disabled{
+  opacity:0.28;
+  cursor:not-allowed;
+}
+
+.fade{
+  animation:fade 0.4s ease;
+}
+
+@keyframes fade{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:640px){
+
+.scan-box{
+  padding:34px 28px;
+}
+
+h1{
+  font-size:32px;
+}
+
+.bottom{
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+button{
+  width:100%;
+}
+
 }
 
 </style>
@@ -101,25 +253,46 @@ button:disabled{
 
 <div class="container">
 
-  <div class="progress">
-    Vraag <span id="step">1</span> van 5
-  </div>
+<div class="scan-box fade">
 
-  <div class="intro">
-    De meeste organisaties denken dat ze controle hebben over hun digitale omgeving.<br>
-    In de praktijk blijkt die controle zelden getest.<br><br>
-    Deze scan maakt zichtbaar in hoeverre uw organisatie nog zelfstandig kan handelen.
-  </div>
+<div class="topline">
 
-  <h1 id="question"></h1>
+<div class="progress">
+Vraag <span id="step">1</span> van 5
+</div>
 
-  <div class="options" id="options"></div>
+<div class="time">
+± 2 minuten
+</div>
 
-  <button id="nextBtn" onclick="next()" disabled>
-    Volgende
-  </button>
+</div>
 
-  <div class="trigger" id="trigger"></div>
+<div class="intro">
+
+De meeste organisaties ervaren hun digitale omgeving als beheersbaar.
+
+Tot expliciet zichtbaar moet worden:
+waar afhankelijkheden werkelijk liggen,
+hoe overdraagbaar systemen zijn,
+en in hoeverre bestuurlijke controle nog aantoonbaar bestaat.
+
+</div>
+
+<h1 id="question"></h1>
+
+<div class="options" id="options"></div>
+
+<div class="bottom">
+
+<div class="trigger" id="trigger"></div>
+
+<button id="nextBtn" onclick="next()" disabled>
+Volgende
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -128,52 +301,57 @@ button:disabled{
 const questions = [
 
 {
-q: "Welk proces binnen uw organisatie stopt volledig<br>als morgen uw primaire systeem uitvalt?",
-a: [
-{t:"Dat weten we exact en hebben we getest", v:0},
-{t:"Dat weten we globaal", v:1},
-{t:"Dat vermoeden we", v:2},
-{t:"Dat weten we niet", v:3}
+q:"Welk proces binnen uw organisatie stopt volledig<br>als morgen uw primaire systeem uitvalt?",
+trigger:"De meeste organisaties kunnen dit niet concreet beantwoorden.",
+a:[
+{t:"Dat weten we exact en hebben we aantoonbaar getest",v:0},
+{t:"Dat weten we grotendeels",v:1},
+{t:"Dat vermoeden we",v:2},
+{t:"Dat weten we niet",v:3}
 ]
 },
 
 {
-q: "Als uw kernsysteem (bijv. CRM) uitvalt,<br>kunt u uw operatie voortzetten zonder dataverlies?",
-a: [
-{t:"Ja, aantoonbaar en getest", v:0},
-{t:"Met beperkte verstoring", v:1},
-{t:"Alleen met significante impact", v:2},
-{t:"Nee / onbekend", v:3}
+q:"Als uw kernsysteem uitvalt,<br>kunt u operationeel verder zonder structureel dataverlies?",
+trigger:"‘Beperkte verstoring’ blijkt in de praktijk vaak optimistisch.",
+a:[
+{t:"Ja, aantoonbaar getest",v:0},
+{t:"Met beperkte verstoring",v:1},
+{t:"Alleen met significante impact",v:2},
+{t:"Nee of onbekend",v:3}
 ]
 },
 
 {
-q: "In hoeverre is uw kern data direct overdraagbaar<br>naar een alternatief systeem zonder verlies?",
-a: [
-{t:"Volledig overdraagbaar en gevalideerd", v:0},
-{t:"Grotendeels overdraagbaar", v:1},
-{t:"Alleen met conversie/verlies", v:2},
-{t:"Niet realistisch", v:3}
+q:"In hoeverre is uw kern data direct overdraagbaar<br>naar een alternatief systeem?",
+trigger:"Overdraagbaarheid wordt vaker aangenomen dan gevalideerd.",
+a:[
+{t:"Volledig overdraagbaar en getest",v:0},
+{t:"Grotendeels overdraagbaar",v:1},
+{t:"Alleen met conversie/verlies",v:2},
+{t:"Niet realistisch",v:3}
 ]
 },
 
 {
-q: "Wanneer is voor het laatst concreet getest<br>of u een kritische leverancier kunt vervangen?",
-a: [
-{t:"Recent getest en gevalideerd", v:0},
-{t:"Scenario uitgewerkt maar niet getest", v:1},
-{t:"Alleen theoretisch besproken", v:2},
-{t:"Nog nooit", v:3}
+q:"Wanneer is voor het laatst getest<br>of een kritische leverancier vervangbaar is?",
+trigger:"Hier ontstaat afhankelijkheid die zelden nog wordt teruggedraaid.",
+a:[
+{t:"Recent getest en gevalideerd",v:0},
+{t:"Scenario uitgewerkt",v:1},
+{t:"Alleen theoretisch besproken",v:2},
+{t:"Nog nooit",v:3}
 ]
 },
 
 {
-q: "Worden afhankelijkheden expliciet besproken<br>op bestuursniveau bij strategische keuzes?",
-a: [
-{t:"Structureel en aantoonbaar", v:0},
-{t:"Regelmatig", v:1},
-{t:"Incidenteel", v:2},
-{t:"Nee", v:3}
+q:"Worden digitale afhankelijkheden expliciet besproken<br>op bestuursniveau?",
+trigger:"Hier ontstaat het verschil tussen operationele realiteit en bestuurlijke aanname.",
+a:[
+{t:"Structureel en aantoonbaar",v:0},
+{t:"Regelmatig",v:1},
+{t:"Incidenteel",v:2},
+{t:"Nee",v:3}
 ]
 }
 
@@ -184,66 +362,100 @@ let score = 0;
 
 function render(){
 
-  document.getElementById('step').innerText = step + 1;
-  document.getElementById('question').innerHTML = questions[step].q;
+document.getElementById("step").innerText = step + 1;
 
-  const optionsDiv = document.getElementById('options');
-  optionsDiv.innerHTML = "";
+document.getElementById("question").innerHTML =
+questions[step].q;
 
-  questions[step].a.forEach(opt => {
-    const el = document.createElement('label');
-    el.innerHTML = `<input type="radio" name="q" value="${opt.v}"> ${opt.t}`;
-    el.onclick = () => {
-      document.getElementById('nextBtn').disabled = false;
-    };
-    optionsDiv.appendChild(el);
-  });
+document.getElementById("trigger").innerText =
+questions[step].trigger;
 
-  const trigger = document.getElementById('trigger');
+const optionsDiv = document.getElementById("options");
 
-  if(step === 0){
-    trigger.innerText = "De meeste organisaties kunnen dit niet concreet beantwoorden.";
-  }
-  else if(step === 1){
-    trigger.innerText = "‘Beperkte verstoring’ blijkt in de praktijk vaak optimistisch.";
-  }
-  else if(step === 2){
-    trigger.innerText = "Overdraagbaarheid wordt vaak aangenomen, zelden getest.";
-  }
-  else if(step === 3){
-    trigger.innerText = "Hier ontstaat afhankelijkheid die vrijwel nooit wordt teruggedraaid.";
-  }
-  else if(step === 4){
-    trigger.innerText = "Dit onderscheidt operationele realiteit van bestuurlijke aanname.";
-  }
+optionsDiv.innerHTML = "";
+
+questions[step].a.forEach((opt,index)=>{
+
+const option = document.createElement("div");
+
+option.className = "option fade";
+
+option.innerHTML = `
+<input type="radio" name="q" value="${opt.v}" id="opt${index}">
+<div class="option-text">${opt.t}</div>
+`;
+
+option.onclick = ()=>{
+
+document.querySelectorAll(".option")
+.forEach(el=>el.classList.remove("active"));
+
+option.classList.add("active");
+
+document.getElementById("nextBtn").disabled = false;
+
+document.getElementById(`opt${index}`).checked = true;
+};
+
+optionsDiv.appendChild(option);
+
+});
 
 }
 
 function next(){
 
-  const selected = document.querySelector('input[name="q"]:checked');
-  if(!selected) return;
+const selected =
+document.querySelector('input[name="q"]:checked');
 
-  score += parseInt(selected.value);
-  step++;
+if(!selected) return;
 
-  if(step < questions.length){
-    document.getElementById('nextBtn').disabled = true;
-    render();
-  } else {
+score += parseInt(selected.value);
 
-    // 🔥 MICRO-CONVERSIE MOMENT
-    const proceed = confirm(
-      "Wilt u een korte verdiepende analyse waarin we deze afhankelijkheid concreet maken voor uw organisatie?"
-    );
+step++;
 
-    if(proceed){
-      window.location.href = "/plan-sessie";
-    } else {
-      window.location.href = "/scan/result/index.html?score=" + score;
-    }
+if(step < questions.length){
 
-  }
+document.getElementById("nextBtn").disabled = true;
+
+render();
+
+}else{
+
+if(score <= 3){
+
+window.location.href =
+"/scan/result/index.html?level=laag";
+
+}
+
+else if(score <= 7){
+
+window.location.href =
+"/scan/result/index.html?level=middel";
+
+}
+
+else{
+
+const proceed = confirm(
+"Veel organisaties ontdekken pas laat hoeveel bestuurlijke grip impliciet is geworden.\n\nWilt u een korte verdiepende analyse voor uw situatie?"
+);
+
+if(proceed){
+
+window.location.href = "/plan-sessie";
+
+}else{
+
+window.location.href =
+"/scan/result/index.html?level=hoog";
+
+}
+
+}
+
+}
 
 }
 
@@ -253,3 +465,4 @@ render();
 
 </body>
 </html>
+```
