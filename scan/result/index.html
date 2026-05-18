@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -52,7 +53,7 @@ body{
 
 .container{
   width:100%;
-  max-width:860px;
+  max-width:900px;
 }
 
 .result-box{
@@ -62,9 +63,9 @@ body{
 
   border:1px solid rgba(255,255,255,0.05);
 
-  border-radius:38px;
+  border-radius:40px;
 
-  padding:60px;
+  padding:64px;
 }
 
 .label{
@@ -77,22 +78,22 @@ body{
 
   font-size:12px;
 
-  margin-bottom:22px;
+  margin-bottom:24px;
 }
 
 h1{
 
   font-family:'Libre Baskerville',serif;
 
-  font-size:56px;
+  font-size:58px;
 
-  line-height:1.08;
+  line-height:1.06;
 
   font-weight:400;
 
-  margin-bottom:30px;
-
   letter-spacing:-1px;
+
+  margin-bottom:34px;
 }
 
 .subtitle{
@@ -101,42 +102,40 @@ h1{
 
   font-size:17px;
 
-  line-height:1.8;
+  line-height:1.9;
 
-  max-width:720px;
+  max-width:760px;
 
-  margin-bottom:60px;
-}
-
-.analysis{
-
-  display:flex;
-  flex-direction:column;
-
-  gap:34px;
+  margin-bottom:64px;
 }
 
 .block{
 
-  color:#d6deea;
+  color:#dce4ef;
 
-  line-height:1.9;
+  font-size:19px;
 
-  font-size:18px;
+  line-height:1.95;
+
+  max-width:760px;
 }
 
 .highlight{
 
-  margin-top:18px;
+  margin-top:42px;
 
-  padding:30px;
+  padding:34px;
 
-  border-radius:24px;
+  border-radius:28px;
 
   background:
-  linear-gradient(180deg,rgba(201,169,110,0.08),rgba(255,255,255,0.02));
+  linear-gradient(
+  180deg,
+  rgba(201,169,110,0.08),
+  rgba(255,255,255,0.02)
+  );
 
-  border:1px solid rgba(201,169,110,0.18);
+  border:1px solid rgba(201,169,110,0.16);
 }
 
 .highlight-title{
@@ -149,14 +148,14 @@ h1{
 
   font-size:12px;
 
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 .highlight-text{
 
-  font-size:20px;
+  font-size:22px;
 
-  line-height:1.8;
+  line-height:1.9;
 }
 
 .divider{
@@ -167,18 +166,18 @@ h1{
 
   background:var(--line);
 
-  margin:50px 0;
+  margin:60px 0;
 }
 
 .quote{
 
   font-family:'Libre Baskerville',serif;
 
-  font-size:34px;
+  font-size:36px;
 
-  line-height:1.6;
+  line-height:1.7;
 
-  margin-top:20px;
+  max-width:760px;
 }
 
 .quote span{
@@ -187,11 +186,11 @@ h1{
 
 .cta{
 
-  margin-top:70px;
+  margin-top:74px;
 
-  padding:42px;
+  padding:44px;
 
-  border-radius:28px;
+  border-radius:30px;
 
   background:
   linear-gradient(180deg,#132038 0%,#101a2b 100%);
@@ -203,31 +202,33 @@ h1{
 
   font-family:'Libre Baskerville',serif;
 
-  font-size:34px;
+  font-size:36px;
 
   font-weight:400;
 
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .cta p{
 
   color:var(--muted);
 
-  line-height:1.8;
+  line-height:1.9;
+
+  font-size:16px;
+
+  max-width:680px;
 
   margin-bottom:34px;
-
-  max-width:620px;
 }
 
 .cta-row{
 
   display:flex;
 
-  align-items:center;
+  gap:24px;
 
-  gap:22px;
+  align-items:center;
 
   flex-wrap:wrap;
 }
@@ -269,15 +270,17 @@ button:hover{
 
 .warning{
 
-  margin-top:50px;
+  margin-top:54px;
 
   color:var(--accent);
 
   font-size:13px;
 
-  line-height:1.7;
+  line-height:1.8;
 
   opacity:0.92;
+
+  max-width:760px;
 }
 
 .footer{
@@ -294,17 +297,20 @@ button:hover{
 }
 
 @keyframes fade{
+
   from{
     opacity:0;
     transform:translateY(12px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
-@media(max-width:640px){
+@media(max-width:700px){
 
 .result-box{
   padding:38px 30px;
@@ -315,15 +321,15 @@ h1{
 }
 
 .quote{
-  font-size:26px;
+  font-size:28px;
 }
 
 .cta{
-  padding:32px 26px;
+  padding:32px 28px;
 }
 
 .cta h2{
-  font-size:28px;
+  font-size:30px;
 }
 
 button{
@@ -349,14 +355,19 @@ Analyse resultaat
 
 <div class="subtitle">
 
-Deze analyse is gebaseerd op uw antwoorden in de afhankelijkheidsscan.
+Deze analyse laat niet alleen operationele afhankelijkheid zien —
+maar vooral in hoeverre digitale systemen,
+leveranciers,
+AI-output
+en platformstructuren bestuurlijke autonomie beïnvloeden.
 
-De uitkomst laat niet alleen operationele afhankelijkheid zien —
-maar vooral in hoeverre bestuurlijke controle expliciet, overdraagbaar en aantoonbaar is gebleven.
+Cumulatieve digitale afhankelijkheid ontstaat zelden zichtbaar.
+Meestal ontstaat zij geleidelijk —
+integratie voor integratie,
+proces voor proces,
+jaar na jaar.
 
 </div>
-
-<div class="analysis">
 
 <div class="block" id="text"></div>
 
@@ -368,24 +379,16 @@ Kernobservatie
 
 <div class="highlight-text">
 
-Wat hier zichtbaar wordt,
-ontstaat zelden door één beslissing.
+Digitale afhankelijkheid ontstaat vrijwel nooit door één systeem.
 
-Het ontstaat door cumulatie —
-leverancier voor leverancier,
-integratie voor integratie,
-jaar na jaar.
+Kwetsbaarheid ontstaat meestal wanneer:
+operationele afhankelijkheid,
+cognitieve afhankelijkheid,
+structurele verwevenheid
+en psychologische gewenning
+elkaar langzaam versterken.
 
 </div>
-
-</div>
-
-<div class="block">
-
-In veel organisaties blijft dit onzichtbaar zolang de operatie functioneert.
-
-Pas wanneer flexibiliteit nodig is,
-wordt zichtbaar hoeveel bewegingsruimte feitelijk nog beschikbaar is.
 
 </div>
 
@@ -393,11 +396,10 @@ wordt zichtbaar hoeveel bewegingsruimte feitelijk nog beschikbaar is.
 
 <div class="quote">
 
-“Digitale afhankelijkheid voelt vaak beheersbaar —
-tot expliciet zichtbaar moet worden
-waar de <span>feitelijke controle</span> ligt.”
-
-</div>
+“Bestuurlijke autonomie verdwijnt zelden abrupt —
+maar vaak geleidelijk,
+tot zichtbaar wordt
+waar de <span>feitelijke beslissingsruimte</span> nog ligt.”
 
 </div>
 
@@ -409,26 +411,25 @@ Bespreek dit op bestuursniveau.
 
 <p>
 
-Veel organisaties herkennen signalen van afhankelijkheid,
-maar hebben deze nooit expliciet als samenhangend bestuurlijk vraagstuk onderzocht.
+Veel organisaties herkennen afzonderlijke signalen,
+maar beoordelen afhankelijkheden zelden als één samenhangend bestuurlijk vraagstuk.
 
-Een korte strategische sessie maakt zichtbaar:
+Een strategische sessie maakt zichtbaar:
 waar afhankelijkheden zich opstapelen,
-waar bestuurlijke grip diffuus wordt,
-en welke kwetsbaarheid operationeel al voelbaar is.
+waar bestuurlijke aannames impliciet zijn geworden,
+en waar operationele logica langzaam strategische autonomie begint te vervangen.
 
 </p>
 
 <div class="cta-row">
 
-<button onclick="location.href='/contact/'">
+<button onclick="location.href='/gesprek/'">
 Plan een strategische sessie
 </button>
 
 <div class="micro">
 
-20 minuten · geen voorbereiding nodig<br>
-Beperkt aantal trajecten per periode
+20 minuten · vertrouwelijk · beperkt aantal trajecten per periode
 
 </div>
 
@@ -438,15 +439,14 @@ Beperkt aantal trajecten per periode
 
 <div class="warning">
 
-Let op:
-de werkelijke afhankelijkheid ligt in de praktijk vaak hoger dan zelfinschatting,
+Werkelijke afhankelijkheid ligt in de praktijk vaak hoger dan zelfinschatting,
 omdat operationele gewenning bestuurlijke kwetsbaarheid normaliseert.
 
 </div>
 
 <div class="footer">
 
-Dutch Governance Advisory · Digitale afhankelijkheid. Bestuurlijk gemaakt.
+Dutch Governance Advisory · Cumulatieve digitale afhankelijkheid · Bestuurlijk gemaakt.
 
 </div>
 
@@ -458,70 +458,73 @@ Dutch Governance Advisory · Digitale afhankelijkheid. Bestuurlijk gemaakt.
 
 const params = new URLSearchParams(window.location.search);
 
-const score =
-parseInt(params.get("score")) || 0;
+const level =
+params.get("level");
 
 let title = "";
 let text = "";
 
-if(score <= 4){
+if(level === "laag"){
 
-title = "Schijnbare controle";
+title = "Beheersbare afhankelijkheid";
 
 text = `
-Uw organisatie lijkt bestuurlijk overzicht te hebben op de digitale omgeving.
 
-Tegelijkertijd blijkt in veel organisaties dat deze controle vooral gebaseerd is op operationele continuïteit —
-niet op expliciet gevalideerde onafhankelijkheid.
+Uw organisatie lijkt digitale systemen primair als ondersteuning te gebruiken —
+niet als impliciete randvoorwaarde voor bestuurlijke controle.
 
 Afhankelijkheden zijn aanwezig,
-maar voelen beheersbaar zolang systemen functioneren zoals verwacht.
+maar lijken relatief expliciet,
+overdraagbaar
+en bestuurlijk bespreekbaar.
+
+Tegelijkertijd blijkt in veel organisaties
+dat afhankelijkheid sneller groeit dan governance zich ontwikkelt.
+
 `;
 
 }
 
-else if(score <= 9){
+else if(level === "middel"){
 
-title = "Verborgen afhankelijkheid";
-
-text = `
-Uw organisatie functioneert zelfstandig,
-maar afhankelijkheden lijken niet integraal als samenhangend geheel beoordeeld.
-
-Daardoor ontstaat bestuurlijke kwetsbaarheid die operationeel vaak nog niet zichtbaar is —
-maar strategische flexibiliteit geleidelijk beperkt.
-`;
-
-}
-
-else if(score <= 12){
-
-title = "Structurele afhankelijkheid";
+title = "Toenemende afhankelijkheid";
 
 text = `
-Uw organisatie is operationeel sterk verweven geraakt met externe digitale systemen en leveranciers.
 
-Hierdoor ontstaat afhankelijkheid die niet alleen technisch,
-maar ook bestuurlijk invloed krijgt op besluitvorming,
-tempo,
-en strategische bewegingsruimte.
+Uw organisatie vertoont signalen van cumulatieve digitale afhankelijkheid.
+
+Besluitvorming,
+processen
+en operationele continuïteit lijken steeds sterker verweven geraakt met digitale systemen,
+leveranciers
+en platformstructuren.
+
+Dit betekent niet direct verhoogd risico —
+maar wel dat bestuurlijke autonomie geleidelijk diffuser kan worden.
+
 `;
 
 }
 
 else{
 
-title = "Kritische afhankelijkheid";
+title = "Structurele afhankelijkheid";
 
 text = `
-Uw organisatie lijkt in hoge mate afhankelijk van externe digitale infrastructuur,
-leveranciers en systemen.
 
-Daardoor wordt bestuurlijke autonomie geleidelijk vervangen door operationele noodzaak.
+Uw organisatie lijkt in toenemende mate afhankelijk van externe digitale infrastructuren,
+platforms
+en operationele systeemlogica.
 
-In veel organisaties wordt dit pas expliciet zichtbaar
+Hierdoor ontstaat afhankelijkheid die niet alleen technisch,
+maar ook cognitief,
+structureel
+en bestuurlijk invloed krijgt.
+
+In veel organisaties wordt dit pas zichtbaar
 wanneer verandering noodzakelijk blijkt —
 maar praktisch nauwelijks nog uitvoerbaar is.
+
 `;
 
 }
