@@ -1,219 +1,278 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Bespreek dit op bestuursniveau</title>
+<title>Plan gesprek | Dutch Governance Advisory</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --bg:#08111d;
+  --card:#101a2b;
+  --text:#edf2f7;
+  --muted:#9aabc0;
+  --accent:#c9a96e;
+  --line:rgba(255,255,255,.08);
+  --max:920px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0b1320;
-  color:#e8edf5;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201,169,110,.10), transparent 30%),
+    linear-gradient(180deg,#08111d 0%,#0d1726 55%,#08111d 100%);
+  color:var(--text);
+  line-height:1.7;
   min-height:100vh;
 }
 
+a{text-decoration:none;color:inherit;}
+
 .container{
-  max-width:720px;
-  padding:60px 32px;
+  max-width:var(--max);
+  margin:auto;
+  padding:0 34px;
+}
+
+.nav{
+  width:100%;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  background:rgba(8,17,29,.72);
+  backdrop-filter:blur(18px);
+}
+
+.nav-inner{
+  height:84px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;
+}
+
+.logo span{color:var(--accent);}
+
+.nav-link{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.nav-link:hover{color:var(--text);}
+
+.main{
+  padding:120px 0;
+}
+
+.eyebrow{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  margin-bottom:26px;
+}
+
+.card{
+  background:
+    radial-gradient(circle at top, rgba(201,169,110,.08), transparent 40%),
+    linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:36px;
+  padding:64px;
 }
 
 h1{
-  font-family:'Libre Baskerville', serif;
-  font-size:40px;
+  font-family:'Libre Baskerville',serif;
+  font-size:54px;
+  line-height:1.1;
+  font-weight:400;
   margin-bottom:30px;
-  line-height:1.2;
 }
 
 p{
-  font-size:18px;
-  line-height:1.8;
-  color:#d0d7e2;
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.9;
   margin-bottom:24px;
 }
 
-.block{
-  margin-top:40px;
-  color:#9aa6b2;
+.divider{
+  height:1px;
+  background:var(--line);
+  margin:42px 0;
+}
+
+h2{
+  font-family:'Libre Baskerville',serif;
+  font-size:32px;
+  line-height:1.25;
+  font-weight:400;
+  margin-bottom:22px;
 }
 
 ul{
-  margin-top:20px;
+  color:var(--muted);
   padding-left:20px;
-  color:#c4d0dc;
+  margin-bottom:36px;
 }
 
 li{
-  margin-bottom:10px;
+  margin-bottom:12px;
+  font-size:17px;
+}
+
+.quote{
+  margin:34px 0;
+  padding-left:22px;
+  border-left:1px solid rgba(201,169,110,.45);
+  color:var(--text);
+  font-size:20px;
+  line-height:1.7;
 }
 
 .cta{
-  margin-top:60px;
+  margin-top:46px;
 }
 
-button{
-  padding:16px 28px;
-  border:1px solid #c9a96e;
-  background:none;
-  color:#e8edf5;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:16px;
-  transition:all 0.3s ease;
+.button{
+  display:inline-block;
+  padding:18px 30px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#08111d;
+  font-weight:600;
+  transition:.25s;
 }
 
-button:hover{
-  background:#c9a96e;
-  color:#0b1320;
+.button:hover{
+  transform:translateY(-2px);
+  opacity:.96;
 }
 
 .micro{
-  margin-top:12px;
+  margin-top:14px;
+  color:var(--muted);
   font-size:13px;
-  color:#8fa0b3;
 }
 
 .warning{
-  margin-top:40px;
-  font-size:13px;
+  margin-top:36px;
   color:#c9a96e;
+  font-size:14px;
+  line-height:1.8;
 }
 
-.divider{
-  margin-top:40px;
-  height:1px;
-  background:rgba(255,255,255,0.05);
+.footer{
+  padding:60px 0;
+  border-top:1px solid rgba(255,255,255,.05);
 }
 
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-text{
+  color:var(--muted);
+  font-size:14px;
+}
+
+@media(max-width:640px){
+  .container{padding:0 24px;}
+  .main{padding:70px 0;}
+  .card{padding:38px 28px;border-radius:28px;}
+  h1{font-size:38px;}
+  h2{font-size:28px;}
+  p{font-size:17px;}
+  .button{width:100%;text-align:center;}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">Dutch Governance <span>Advisory</span></a>
+    <a href="/" class="nav-link">Terug naar home</a>
+  </div>
+</nav>
 
-<h1>Bespreek dit op bestuursniveau</h1>
+<main class="main">
+  <div class="container">
+    <div class="card">
 
-<p>
-Op basis van uw uitkomst is het aannemelijk dat digitale afhankelijkheid
-een rol speelt in uw bestuurlijke positie.
-</p>
+      <div class="eyebrow">Strategisch gesprek</div>
 
-<p>
-Niet als incident — maar als gevolg van cumulatieve keuzes
-die zelden in samenhang worden beoordeeld.
-</p>
+      <h1>Bespreek dit op bestuursniveau.</h1>
 
-<div class="divider"></div>
+      <p>
+        Uw uitkomst suggereert dat digitale afhankelijkheid invloed kan hebben
+        op de handelingsruimte van uw organisatie.
+      </p>
 
-<p>
-In een kort gesprek maken we dit expliciet.
-</p>
+      <p>
+        Niet als incident, maar als gevolg van keuzes die zich in de loop der tijd
+        hebben opgestapeld.
+      </p>
 
-<ul>
-<li>Waar zit de feitelijke afhankelijkheid?</li>
-<li>Wat betekent dit voor uw handelingsvermogen?</li>
-<li>Welke ruimte is er nog om bij te sturen?</li>
-</ul>
+      <div class="divider"></div>
 
-<div class="container">
+      <h2>Wat bespreken we?</h2>
 
-<h1>Bespreek uw digitale afhankelijkheid</h1>
+      <ul>
+        <li>Waar bevindt zich de feitelijke afhankelijkheid?</li>
+        <li>Welke bestuurlijke risico’s worden zichtbaar?</li>
+        <li>Welke handelingsruimte is nog beschikbaar?</li>
+        <li>Welke vervolgstap past bij de situatie?</li>
+      </ul>
 
-<p>
-Uw uitkomst wijst op een patroon dat in veel organisaties pas zichtbaar wordt
-wanneer flexibiliteit nodig is — maar niet meer beschikbaar blijkt.
-</p>
+      <h2>Wat levert het op?</h2>
 
-<p>
-Dit ontstaat niet door één systeem of keuze,
-maar door een opeenstapeling van beslissingen zonder integrale afweging.
-</p>
+      <p>
+        In ongeveer 20 minuten krijgt u een eerste bestuurlijke duiding van de uitkomst.
+        Geen technische audit. Wel een scherp gesprek over afhankelijkheid, autonomie
+        en bestuurlijke weerbaarheid.
+      </p>
 
-<div class="divider"></div>
+      <div class="quote">
+        Wat betekent dit voor onze autonomie, flexibiliteit en toekomstige handelingsruimte?
+      </div>
 
-<p>
-In dit gesprek maken we één ding expliciet:
-</p>
+      <div class="cta">
+        <a class="button" href="https://calendar.proton.me/u/4/bookings#wccH9X3m60K0n0yB9OV9Z579rVvpSiD-205TYUURZhg=">
+          Plan een strategisch gesprek
+        </a>
 
-<ul>
-<li>Waar uw organisatie feitelijk afhankelijk is geworden van externe systemen</li>
-<li>Wat dit betekent voor uw operationele en bestuurlijke ruimte</li>
-<li>Welke risico’s structureel worden onderschat</li>
-</ul>
+        <div class="micro">
+          ±20 minuten · geen voorbereiding nodig
+        </div>
+      </div>
 
-<div class="container">
+      <div class="warning">
+        Deze gesprekken zijn bedoeld voor situaties waarin digitale afhankelijkheid
+        bestuurlijke betekenis heeft — of dreigt te krijgen.
+      </div>
 
-<h1>Bespreek uw digitale afhankelijkheid</h1>
+    </div>
+  </div>
+</main>
 
-<p>
-Uw uitkomst wijst op een patroon dat in veel organisaties pas zichtbaar wordt
-wanneer flexibiliteit nodig is — maar niet meer beschikbaar blijkt.
-</p>
-
-<p>
-Dit ontstaat niet door één systeem of keuze,
-maar door een opeenstapeling van beslissingen zonder integrale afweging.
-</p>
-
-<div class="divider"></div>
-
-<p>
-In dit gesprek maken we één ding expliciet:
-</p>
-
-<ul>
-<li>Waar uw organisatie feitelijk afhankelijk is geworden van externe systemen</li>
-<li>Wat dit betekent voor uw operationele en bestuurlijke ruimte</li>
-<li>Welke risico’s structureel worden onderschat</li>
-</ul>
-
-<div class="block">
-Dit is geen kennismaking.<br>
-Dit is een gerichte analyse van uw bestuurlijke afhankelijkheidspositie.
-</div>
-
-<div class="cta">
-<button onclick="window.location.href='https://calendar.proton.me/u/4/bookings#wccH9X3m60K0n0yB9OV9Z579rVvpSiD-205TYUURZhg='">
-Plan analyse op bestuursniveau
-</button>
-
-<div class="micro">
-±20 minuten · geen voorbereiding nodig
-</div>
-</div>
-
-<div class="warning">
-Toegang tot deze analyse is bewust beperkt.<br>
-Niet elke situatie vraagt om dit niveau van duiding — maar uw uitkomst suggereert van wel.
-</div>
-
-</div>
-
-<div class="cta">
-<button onclick="window.location.href='https://calendar.proton.me/u/4/bookings#wccH9X3m60K0n0yB9OV9Z579rVvpSiD-205TYUURZhg='">
-Bespreek dit op bestuursniveau
-</button>
-
-<div class="micro">
-±20 minuten · directe bestuurlijke duiding
-</div>
-</div>
-
-<div class="warning">
-Deze gesprekken zijn selectief.<br>
-In de praktijk blijkt de onderliggende afhankelijkheid vaak groter dan vooraf wordt ingeschat.
-</div>
-
-</div>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="/" class="logo">Dutch Governance <span>Advisory</span></a>
+    <div class="footer-text">Handelingsruimte. Bestuurlijk beschermd.</div>
+  </div>
+</footer>
 
 </body>
 </html>
