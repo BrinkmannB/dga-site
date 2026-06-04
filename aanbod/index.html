@@ -1,1 +1,563 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<title>Aanbod | Dutch Governance Advisory</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#08111d;
+  --bg2:#0d1726;
+  --card:#101a2b;
+  --text:#edf2f7;
+  --muted:#9aabc0;
+  --accent:#c9a96e;
+  --line:rgba(255,255,255,0.08);
+  --max:1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201,169,110,0.10), transparent 28%),
+    linear-gradient(180deg,#08111d 0%,#0d1726 48%,#08111d 100%);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit;}
+
+.container{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 34px;
+}
+
+/* NAV */
+
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(8,17,29,0.76);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner{
+  height:84px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;
+  letter-spacing:.2px;
+}
+
+.logo span{color:var(--accent);}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.nav-links a{
+  font-size:14px;
+  color:var(--muted);
+  transition:.25s;
+}
+
+.nav-links a:hover{color:var(--text);}
+
+.nav-cta{
+  padding:12px 20px;
+  border:1px solid rgba(201,169,110,.35);
+  border-radius:14px;
+  color:var(--accent)!important;
+}
+
+/* HERO */
+
+.hero{
+  padding-top:170px;
+  padding-bottom:100px;
+}
+
+.eyebrow{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  margin-bottom:26px;
+}
+
+.hero h1{
+  font-family:'Libre Baskerville',serif;
+  font-size:64px;
+  line-height:1.06;
+  letter-spacing:-1.6px;
+  font-weight:400;
+  max-width:900px;
+  margin-bottom:34px;
+}
+
+.hero-sub{
+  color:var(--muted);
+  font-size:21px;
+  max-width:760px;
+  line-height:1.85;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:110px 0;
+}
+
+.section-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:50px;
+  line-height:1.14;
+  font-weight:400;
+  margin-bottom:28px;
+}
+
+.section-text{
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.95;
+  max-width:780px;
+}
+
+/* OFFER CARDS */
+
+.offers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:60px;
+}
+
+.offer{
+  background:
+    linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:32px;
+  padding:44px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.offer.highlight{
+  border-color:rgba(201,169,110,.38);
+  background:
+    radial-gradient(circle at top, rgba(201,169,110,.12), transparent 40%),
+    linear-gradient(180deg,#132038 0%,#101a2b 100%);
+}
+
+.offer-number{
+  color:var(--accent);
+  font-size:12px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.offer h2{
+  font-family:'Libre Baskerville',serif;
+  font-size:32px;
+  line-height:1.25;
+  font-weight:400;
+  margin-bottom:18px;
+}
+
+.offer p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.9;
+  margin-bottom:24px;
+}
+
+.price{
+  margin:26px 0;
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.price-label{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.price-value{
+  font-family:'Libre Baskerville',serif;
+  color:var(--accent);
+  font-size:34px;
+  line-height:1.2;
+}
+
+.offer ul{
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  text-align:center;
+  padding:16px 24px;
+  border-radius:14px;
+  font-weight:500;
+  transition:.25s;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#08111d;
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+}
+
+.btn:hover{transform:translateY(-2px);}
+
+/* QUESTIONS */
+
+.questions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:50px;
+}
+
+.question{
+  padding:28px;
+  border-radius:24px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  color:var(--text);
+  font-size:18px;
+}
+
+/* CTA */
+
+.cta-box{
+  text-align:center;
+  padding:94px 50px;
+  border-radius:44px;
+  background:
+    radial-gradient(circle at top, rgba(201,169,110,.12), transparent 42%),
+    linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.cta-box h2{
+  font-family:'Libre Baskerville',serif;
+  font-size:54px;
+  line-height:1.12;
+  font-weight:400;
+  margin-bottom:28px;
+}
+
+.cta-box p{
+  color:var(--muted);
+  font-size:20px;
+  max-width:760px;
+  margin:0 auto 42px auto;
+  line-height:1.9;
+}
+
+.cta-buttons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
+
+.footer{
+  padding:72px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.footer-text{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:1024px){
+  .offers,
+  .questions{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+}
+
+@media(max-width:640px){
+  .container{padding:0 24px;}
+
+  .nav-links a:not(.nav-cta){
+    display:none;
+  }
+
+  .hero{
+    padding-top:130px;
+    padding-bottom:70px;
+  }
+
+  .hero h1{
+    font-size:38px;
+    line-height:1.08;
+  }
+
+  .hero-sub{
+    font-size:18px;
+  }
+
+  .section{
+    padding:84px 0;
+  }
+
+  .section-title{
+    font-size:36px;
+  }
+
+  .offer{
+    padding:32px;
+  }
+
+  .cta-box{
+    padding:68px 26px;
+  }
+
+  .cta-box h2{
+    font-size:38px;
+  }
+
+  .btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">Dutch Governance <span>Advisory</span></a>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/aanbod/">Aanbod</a>
+      <a href="/scan/index.html">Scan</a>
+      <a href="/contact" class="nav-cta">Plan gesprek</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Aanbod</div>
+
+    <h1>
+      Van digitale afhankelijkheid naar bestuurlijke handelingsruimte.
+    </h1>
+
+    <p class="hero-sub">
+      DGA helpt bestuurders zichtbaar maken waar organisaties afhankelijk zijn geworden
+      van systemen, leveranciers, platformen en ketens — en wat zij kunnen doen om
+      grip, autonomie en weerbaarheid te versterken.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title">Hoe DGA helpt</h2>
+
+    <p class="section-text">
+      Geen technische audit. Geen abstract adviesrapport.
+      Wel bestuurlijk zicht op afhankelijkheden, risico’s en keuzes.
+      Elk aanbod is gericht op één vraag:
+      waar is de organisatie minder vrij dan zij denkt?
+    </p>
+
+    <div class="offers">
+
+      <div class="offer">
+        <div>
+          <div class="offer-number">01</div>
+          <h2>DGA Afhankelijkheidsscan</h2>
+
+          <p>
+            Een compacte scan om snel zichtbaar te maken waar bestuurlijke
+            afhankelijkheden zich opstapelen.
+          </p>
+
+          <div class="price">
+            <div class="price-label">Vanaf</div>
+            <div class="price-value">€ 2.500</div>
+          </div>
+
+          <ul>
+            <li>90 minuten sessie</li>
+            <li>Bestuurlijk overzicht</li>
+            <li>Top 3 afhankelijkheden</li>
+            <li>Top 3 risico’s</li>
+            <li>Eerste interventierichtingen</li>
+          </ul>
+        </div>
+
+        <a href="/contact" class="btn btn-secondary">Plan een scan</a>
+      </div>
+
+      <div class="offer highlight">
+        <div>
+          <div class="offer-number">02</div>
+          <h2>DGA Strategische Sessie</h2>
+
+          <p>
+            Voor bestuurders en managementteams die afhankelijkheden willen bespreken
+            voordat zij bestuurlijke problemen worden.
+          </p>
+
+          <div class="price">
+            <div class="price-label">Vanaf</div>
+            <div class="price-value">€ 5.000</div>
+          </div>
+
+          <ul>
+            <li>2 tot 3 uur sessie</li>
+            <li>Bestuurlijke dialoog</li>
+            <li>DGA-caseanalyse</li>
+            <li>Prioriteiten en dilemma’s</li>
+            <li>Concrete vervolgstappen</li>
+          </ul>
+        </div>
+
+        <a href="/contact" class="btn btn-primary">Plan een sessie</a>
+      </div>
+
+      <div class="offer">
+        <div>
+          <div class="offer-number">03</div>
+          <h2>DGA Governance Review</h2>
+
+          <p>
+            Verdiepende analyse van digitale afhankelijkheden, strategische autonomie
+            en bestuurlijke weerbaarheid.
+          </p>
+
+          <div class="price">
+            <div class="price-label">Vanaf</div>
+            <div class="price-value">€ 15.000</div>
+          </div>
+
+          <ul>
+            <li>Doorlooptijd 2 tot 6 weken</li>
+            <li>Interviews en documentanalyse</li>
+            <li>Afhankelijkheidskaart</li>
+            <li>Bestuurlijke risicoanalyse</li>
+            <li>Advies en roadmap</li>
+          </ul>
+        </div>
+
+        <a href="/contact" class="btn btn-secondary">Bespreek review</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title">Typische vraagstukken</h2>
+
+    <p class="section-text">
+      DGA is relevant wanneer digitale keuzes niet alleen operationele gevolgen hebben,
+      maar ook raken aan autonomie, toezicht, continuïteit en bestuurlijke verantwoordelijkheid.
+    </p>
+
+    <div class="questions">
+      <div class="question">Zijn wij afhankelijker geworden dan wij denken?</div>
+      <div class="question">Welke leveranciers zijn feitelijk onvervangbaar?</div>
+      <div class="question">Welke AI-afhankelijkheden bouwen wij op?</div>
+      <div class="question">Waar zit onze grootste bestuurlijke kwetsbaarheid?</div>
+      <div class="question">Kunnen wij nog weg bij kritieke platformen?</div>
+      <div class="question">Welke afhankelijkheden worden normaal gevonden?</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-box">
+
+      <h2>Bespreek dit voordat het urgent wordt.</h2>
+
+      <p>
+        De meeste afhankelijkheden voelen beheersbaar zolang alles werkt.
+        Juist daarom is het verstandig ze bestuurlijk zichtbaar te maken
+        voordat druk, incidenten of toezicht dat afdwingen.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="/scan/index.html" class="btn btn-primary">Doe de scan</a>
+        <a href="/contact" class="btn btn-secondary">Plan een strategisch gesprek</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="/" class="logo">Dutch Governance <span>Advisory</span></a>
+    <div class="footer-text">Digitale afhankelijkheid. Bestuurlijk gemaakt.</div>
+  </div>
+</footer>
+
+</body>
+</html>
