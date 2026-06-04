@@ -11,86 +11,46 @@
 <style>
 :root{
   --bg:#08111d;
-  --bg2:#0d1726;
   --card:#101a2b;
   --text:#edf2f7;
   --muted:#9aabc0;
   --accent:#c9a96e;
-  --line:rgba(255,255,255,0.08);
+  --line:rgba(255,255,255,.08);
   --max:1180px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
 html{scroll-behavior:smooth;}
-
 body{
   font-family:'Inter',sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(201,169,110,0.10), transparent 28%),
+    radial-gradient(circle at top left, rgba(201,169,110,.10), transparent 28%),
     linear-gradient(180deg,#08111d 0%,#0d1726 48%,#08111d 100%);
   color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
 }
-
 a{text-decoration:none;color:inherit;}
-
-.container{
-  max-width:var(--max);
-  margin:auto;
-  padding:0 34px;
-}
-
-/* NAV */
+.container{max-width:var(--max);margin:auto;padding:0 34px;}
 
 .nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  background:rgba(8,17,29,0.76);
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(8,17,29,.78);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
 }
-
-.nav-inner{
-  height:84px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  font-family:'Libre Baskerville',serif;
-  font-size:18px;
-  letter-spacing:.2px;
-}
-
+.nav-inner{height:84px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Libre Baskerville',serif;font-size:18px;}
 .logo span{color:var(--accent);}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
-
-.nav-links a{
-  font-size:14px;
-  color:var(--muted);
-  transition:.25s;
-}
-
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{font-size:14px;color:var(--muted);}
 .nav-links a:hover{color:var(--text);}
-
 .nav-cta{
   padding:12px 20px;
   border:1px solid rgba(201,169,110,.35);
   border-radius:14px;
   color:var(--accent)!important;
 }
-
-/* HERO */
 
 .hero{
   min-height:100vh;
@@ -99,14 +59,12 @@ a{text-decoration:none;color:inherit;}
   padding-top:130px;
   padding-bottom:80px;
 }
-
 .hero-grid{
   display:grid;
   grid-template-columns:1.05fr .95fr;
   gap:80px;
   align-items:center;
 }
-
 .eyebrow{
   color:var(--accent);
   text-transform:uppercase;
@@ -114,7 +72,6 @@ a{text-decoration:none;color:inherit;}
   font-size:12px;
   margin-bottom:26px;
 }
-
 .hero h1{
   font-family:'Libre Baskerville',serif;
   font-size:64px;
@@ -123,48 +80,24 @@ a{text-decoration:none;color:inherit;}
   font-weight:400;
   margin-bottom:34px;
 }
-
 .hero-sub{
   color:var(--muted);
   font-size:21px;
-  max-width:650px;
+  max-width:660px;
   line-height:1.85;
   margin-bottom:38px;
 }
-
-.hero-buttons{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
+.hero-buttons{display:flex;gap:18px;flex-wrap:wrap;}
+.btn-primary,.btn-secondary{
   padding:17px 28px;
   border-radius:14px;
   font-weight:500;
   transition:.25s;
 }
-
-.btn-primary{
-  background:var(--accent);
-  color:#08111d;
-}
-
-.btn-primary:hover{transform:translateY(-2px);}
-
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.10);
-  color:var(--text);
-}
-
-.btn-secondary:hover{background:rgba(255,255,255,.04);}
-
-.hero-note{
-  margin-top:18px;
-  font-size:13px;
-  color:var(--muted);
-}
+.btn-primary{background:var(--accent);color:#08111d;}
+.btn-secondary{border:1px solid rgba(255,255,255,.10);color:var(--text);}
+.btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);}
+.hero-note{margin-top:18px;font-size:13px;color:var(--muted);}
 
 .hero-panel{
   background:
@@ -174,14 +107,11 @@ a{text-decoration:none;color:inherit;}
   border-radius:34px;
   padding:46px;
 }
-
 .panel-line{
-  width:56px;
-  height:1px;
+  width:56px;height:1px;
   background:rgba(201,169,110,.55);
   margin-bottom:28px;
 }
-
 .hero-panel h3{
   font-family:'Libre Baskerville',serif;
   font-size:34px;
@@ -189,18 +119,8 @@ a{text-decoration:none;color:inherit;}
   font-weight:400;
   margin-bottom:22px;
 }
-
-.hero-panel p{
-  color:var(--muted);
-  line-height:1.9;
-  margin-bottom:28px;
-}
-
-.signal{
-  padding:22px 0;
-  border-top:1px solid var(--line);
-}
-
+.hero-panel p{color:var(--muted);line-height:1.9;margin-bottom:28px;}
+.signal{padding:22px 0;border-top:1px solid var(--line);}
 .signal-title{
   color:var(--accent);
   font-size:12px;
@@ -208,20 +128,10 @@ a{text-decoration:none;color:inherit;}
   letter-spacing:1.3px;
   margin-bottom:10px;
 }
+.signal-text{font-size:18px;line-height:1.7;}
 
-.signal-text{
-  font-size:18px;
-  line-height:1.7;
-}
-
-/* SECTIONS */
-
-.section{
-  padding:130px 0;
-}
-
-.narrow{max-width:780px;}
-
+.section{padding:120px 0;}
+.narrow{max-width:800px;}
 .section-title{
   font-family:'Libre Baskerville',serif;
   font-size:54px;
@@ -229,17 +139,12 @@ a{text-decoration:none;color:inherit;}
   font-weight:400;
   margin-bottom:30px;
 }
-
 .section-text{
   color:var(--muted);
   font-size:19px;
   line-height:1.95;
 }
-
-.stack{
-  margin-top:58px;
-}
-
+.stack{margin-top:58px;}
 .stack-line{
   font-family:'Libre Baskerville',serif;
   font-size:40px;
@@ -247,22 +152,18 @@ a{text-decoration:none;color:inherit;}
   margin-bottom:18px;
 }
 
-/* METHOD */
-
 .method{
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:18px;
   margin-top:58px;
 }
-
 .step{
   background:linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
   border:1px solid rgba(255,255,255,.06);
   border-radius:24px;
   padding:28px;
 }
-
 .step-number{
   color:var(--accent);
   font-size:12px;
@@ -270,21 +171,13 @@ a{text-decoration:none;color:inherit;}
   text-transform:uppercase;
   margin-bottom:14px;
 }
-
 .step h3{
   font-family:'Libre Baskerville',serif;
   font-size:24px;
   font-weight:400;
   margin-bottom:14px;
 }
-
-.step p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.75;
-}
-
-/* CARDS */
+.step p{color:var(--muted);font-size:15px;line-height:1.75;}
 
 .cards{
   display:grid;
@@ -292,21 +185,18 @@ a{text-decoration:none;color:inherit;}
   gap:26px;
   margin-top:60px;
 }
-
 .card{
   background:linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
   border:1px solid rgba(255,255,255,.06);
   border-radius:30px;
   padding:42px;
 }
-
 .card.highlight{
   border-color:rgba(201,169,110,.35);
   background:
     radial-gradient(circle at top, rgba(201,169,110,.10), transparent 42%),
     linear-gradient(180deg,#132038 0%,#101a2b 100%);
 }
-
 .card-number{
   color:var(--accent);
   font-size:12px;
@@ -314,7 +204,6 @@ a{text-decoration:none;color:inherit;}
   letter-spacing:1.3px;
   margin-bottom:18px;
 }
-
 .card h3{
   font-family:'Libre Baskerville',serif;
   font-size:30px;
@@ -322,13 +211,19 @@ a{text-decoration:none;color:inherit;}
   font-weight:400;
   margin-bottom:18px;
 }
-
-.card p{
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.9;
+.card p{color:var(--muted);font-size:17px;line-height:1.9;}
+.price{
+  color:var(--accent);
+  font-family:'Libre Baskerville',serif;
+  font-size:30px;
+  line-height:1.25;
+  margin:26px 0 6px;
 }
-
+.price-note{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:22px;
+}
 .card ul{
   margin-top:20px;
   padding-left:18px;
@@ -336,7 +231,19 @@ a{text-decoration:none;color:inherit;}
   line-height:1.9;
 }
 
-/* QUOTE */
+.questions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:50px;
+}
+.question{
+  padding:28px;
+  border-radius:24px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  font-size:18px;
+}
 
 .quote{
   padding:82px;
@@ -344,16 +251,12 @@ a{text-decoration:none;color:inherit;}
   background:linear-gradient(180deg,#101b2c 0%,#0c1625 100%);
   border:1px solid rgba(255,255,255,.06);
 }
-
 .quote p{
   font-family:'Libre Baskerville',serif;
   font-size:46px;
   line-height:1.45;
 }
-
 .quote span{color:var(--accent);}
-
-/* CTA */
 
 .cta-box{
   text-align:center;
@@ -364,7 +267,6 @@ a{text-decoration:none;color:inherit;}
     linear-gradient(180deg,#111b2c 0%,#0c1625 100%);
   border:1px solid rgba(255,255,255,.06);
 }
-
 .cta-box h2{
   font-family:'Libre Baskerville',serif;
   font-size:58px;
@@ -372,22 +274,18 @@ a{text-decoration:none;color:inherit;}
   font-weight:400;
   margin-bottom:28px;
 }
-
 .cta-box p{
   color:var(--muted);
   font-size:20px;
   max-width:760px;
-  margin:0 auto 42px auto;
+  margin:0 auto 42px;
   line-height:1.9;
 }
-
-/* FOOTER */
 
 .footer{
   padding:72px 0;
   border-top:1px solid rgba(255,255,255,.06);
 }
-
 .footer-inner{
   display:flex;
   justify-content:space-between;
@@ -395,112 +293,35 @@ a{text-decoration:none;color:inherit;}
   gap:22px;
   flex-wrap:wrap;
 }
-
-.footer-text{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* MOBILE */
+.footer-text{color:var(--muted);font-size:14px;}
 
 @media(max-width:1024px){
-  .hero-grid,
-  .cards,
-  .method{
-    grid-template-columns:1fr;
-  }
-
+  .hero-grid,.cards,.method,.questions{grid-template-columns:1fr;}
   .hero-panel{order:-1;}
-
   .hero h1{font-size:52px;}
-
   .section-title{font-size:46px;}
-
   .quote p{font-size:36px;}
 }
 
 @media(max-width:640px){
   .container{padding:0 24px;}
-
-  .hero{
-    padding-top:120px;
-    padding-bottom:60px;
-  }
-
-  .hero-grid{
-    display:flex;
-    flex-direction:column;
-    gap:38px;
-  }
-
-  .hero h1{
-    font-size:38px;
-    line-height:1.08;
-  }
-
-  .hero-sub{
-    font-size:18px;
-    line-height:1.9;
-  }
-
-  .hero-panel{
-    padding:34px 28px;
-  }
-
-  .nav-links a:not(.nav-cta){
-    display:none;
-  }
-
-  .section{
-    padding:96px 0;
-  }
-
-  .section-title{
-    font-size:38px;
-  }
-
-  .section-text{
-    font-size:18px;
-  }
-
-  .stack-line{
-    font-size:28px;
-  }
-
-  .cards{
-    gap:20px;
-  }
-
-  .card{
-    padding:32px;
-  }
-
-  .quote{
-    padding:38px 26px;
-  }
-
-  .quote p{
-    font-size:26px;
-    line-height:1.6;
-  }
-
-  .cta-box{
-    padding:70px 26px;
-  }
-
-  .cta-box h2{
-    font-size:38px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .btn-primary,
-  .btn-secondary{
-    width:100%;
-    text-align:center;
-  }
+  .hero{padding-top:120px;padding-bottom:60px;}
+  .hero-grid{display:flex;flex-direction:column;gap:38px;}
+  .hero h1{font-size:38px;line-height:1.08;}
+  .hero-sub{font-size:18px;line-height:1.9;}
+  .hero-panel{padding:34px 28px;}
+  .nav-links a:not(.nav-cta){display:none;}
+  .section{padding:88px 0;}
+  .section-title{font-size:38px;}
+  .section-text{font-size:18px;}
+  .stack-line{font-size:28px;}
+  .card{padding:32px;}
+  .quote{padding:38px 26px;}
+  .quote p{font-size:26px;line-height:1.6;}
+  .cta-box{padding:70px 26px;}
+  .cta-box h2{font-size:38px;}
+  .hero-buttons{flex-direction:column;}
+  .btn-primary,.btn-secondary{width:100%;text-align:center;}
 }
 </style>
 </head>
@@ -514,6 +335,7 @@ a{text-decoration:none;color:inherit;}
     <div class="nav-links">
       <a href="#werkwijze">Werkwijze</a>
       <a href="#aanbod">Aanbod</a>
+      <a href="#vraagstukken">Vraagstukken</a>
       <a href="/scan/index.html">Scan</a>
       <a href="/contact" class="nav-cta">Plan gesprek</a>
     </div>
@@ -524,16 +346,16 @@ a{text-decoration:none;color:inherit;}
   <div class="container hero-grid">
 
     <div>
-      <div class="eyebrow">Digitale afhankelijkheid · Bestuurlijk gemaakt</div>
+      <div class="eyebrow">Handelingsruimte · Bestuurlijk beschermd</div>
 
       <h1>
-        Waar is uw organisatie minder vrij dan u denkt?
+        Waar verliest uw organisatie ongemerkt handelingsruimte?
       </h1>
 
       <p class="hero-sub">
         DGA maakt zichtbaar waar organisaties afhankelijk zijn geworden van systemen,
-        leveranciers, platformen en ketens — voordat die afhankelijkheden bestuurlijke
-        problemen worden.
+        leveranciers, platformen, AI en ketens — voordat die afhankelijkheden
+        bestuurlijke problemen worden.
       </p>
 
       <div class="hero-buttons">
@@ -631,7 +453,6 @@ a{text-decoration:none;color:inherit;}
     </p>
 
     <div class="method">
-
       <div class="step">
         <div class="step-number">01</div>
         <h3>Case</h3>
@@ -661,7 +482,6 @@ a{text-decoration:none;color:inherit;}
         <h3>Weerbaarheid</h3>
         <p>Hoe behoudt de organisatie handelingsruimte?</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -674,6 +494,7 @@ a{text-decoration:none;color:inherit;}
     <p class="section-text narrow">
       Geen technische audit. Geen abstract adviesrapport.
       Wel bestuurlijk zicht op afhankelijkheden, risico’s en keuzes.
+      Met duidelijke producten en heldere investeringen.
     </p>
 
     <div class="cards">
@@ -681,26 +502,38 @@ a{text-decoration:none;color:inherit;}
       <div class="card">
         <div class="card-number">01</div>
         <h3>DGA Afhankelijkheidsscan</h3>
+
         <p>
-          In korte tijd zichtbaar maken waar afhankelijkheden zich opstapelen.
+          In korte tijd zichtbaar maken waar bestuurlijke afhankelijkheden zich opstapelen.
         </p>
+
+        <div class="price">€ 3.500</div>
+        <div class="price-note">Compacte eerste scan · 90 minuten</div>
+
         <ul>
           <li>Bestuurlijk overzicht</li>
           <li>Top 3 afhankelijkheden</li>
-          <li>Eerste interventies</li>
+          <li>Top 3 bestuurlijke risico’s</li>
+          <li>Eerste interventierichtingen</li>
         </ul>
       </div>
 
       <div class="card highlight">
         <div class="card-number">02</div>
         <h3>DGA Strategische Sessie</h3>
+
         <p>
           Voor bestuurders die afhankelijkheden willen bespreken voordat zij
-          een probleem worden.
+          bestuurlijke problemen worden.
         </p>
+
+        <div class="price">€ 7.500</div>
+        <div class="price-note">Bestuurderssessie · 2 tot 3 uur</div>
+
         <ul>
           <li>Bestuurlijke dialoog</li>
-          <li>Prioriteiten</li>
+          <li>DGA-caseanalyse</li>
+          <li>Prioriteiten en dilemma’s</li>
           <li>Concrete vervolgstappen</li>
         </ul>
       </div>
@@ -708,17 +541,45 @@ a{text-decoration:none;color:inherit;}
       <div class="card">
         <div class="card-number">03</div>
         <h3>DGA Governance Review</h3>
+
         <p>
           Verdiepende analyse van afhankelijkheden, autonomie en bestuurlijke weerbaarheid.
         </p>
+
+        <div class="price">Vanaf € 25.000</div>
+        <div class="price-note">Traject van 2 tot 6 weken</div>
+
         <ul>
-          <li>Analyse</li>
-          <li>Advies</li>
-          <li>Roadmap</li>
+          <li>Interviews en documentanalyse</li>
+          <li>Afhankelijkheidskaart</li>
+          <li>Bestuurlijke risicoanalyse</li>
+          <li>Advies en roadmap</li>
         </ul>
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="section" id="vraagstukken">
+  <div class="container">
+
+    <h2 class="section-title">Typische vraagstukken</h2>
+
+    <p class="section-text narrow">
+      DGA is relevant wanneer digitale keuzes niet alleen operationele gevolgen hebben,
+      maar raken aan autonomie, toezicht, continuïteit en bestuurlijke verantwoordelijkheid.
+    </p>
+
+    <div class="questions">
+      <div class="question">Zijn wij afhankelijker geworden dan wij denken?</div>
+      <div class="question">Welke leveranciers zijn feitelijk onvervangbaar?</div>
+      <div class="question">Welke AI-afhankelijkheden bouwen wij op?</div>
+      <div class="question">Waar zit onze grootste bestuurlijke kwetsbaarheid?</div>
+      <div class="question">Kunnen wij nog weg bij kritieke platformen?</div>
+      <div class="question">Welke afhankelijkheden zijn normaal geworden?</div>
+    </div>
+
   </div>
 </section>
 
@@ -736,12 +597,12 @@ a{text-decoration:none;color:inherit;}
 <section class="section">
   <div class="container">
     <div class="cta-box">
-      <h2>Bespreek dit op bestuursniveau.</h2>
+      <h2>Bespreek dit voordat het urgent wordt.</h2>
 
       <p>
-        Veel organisaties voelen dat digitale afhankelijkheid groeit.
-        Maar weinig organisaties bespreken expliciet wat dit betekent voor
-        autonomie, flexibiliteit en toekomstige handelingsruimte.
+        De meeste afhankelijkheden voelen beheersbaar zolang alles werkt.
+        Juist daarom is het verstandig ze bestuurlijk zichtbaar te maken
+        voordat druk, incidenten of toezicht dat afdwingen.
       </p>
 
       <div class="hero-buttons" style="justify-content:center;">
@@ -755,7 +616,7 @@ a{text-decoration:none;color:inherit;}
 <footer class="footer">
   <div class="container footer-inner">
     <div class="logo">Dutch Governance <span>Advisory</span></div>
-    <div class="footer-text">Digitale afhankelijkheid. Bestuurlijk gemaakt.</div>
+    <div class="footer-text">Handelingsruimte. Bestuurlijk beschermd.</div>
   </div>
 </footer>
 
