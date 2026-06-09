@@ -1,4 +1,185 @@
-<section class="page-hero">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Executive Conversation | Dutch Governance Advisory</title>
+
+<meta name="description" content="A confidential conversation about strategic autonomy, governance and digital dependency.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#08111d;
+--surface:#101a2b;
+--accent:#c8a46a;
+--text:#eef2f7;
+--muted:#9aa8b8;
+--border:rgba(255,255,255,.08);
+--max-width:1100px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.8;
+}
+
+.container{
+width:min(92%,var(--max-width));
+margin:auto;
+}
+
+nav{
+position:sticky;
+top:0;
+background:rgba(8,17,29,.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
+z-index:100;
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px 0;
+}
+
+.logo{
+font-weight:600;
+}
+
+.logo span{
+color:var(--accent);
+}
+
+.hero{
+padding:140px 0 120px;
+}
+
+.small{
+font-size:.9rem;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--accent);
+margin-bottom:24px;
+}
+
+h1,h2{
+font-family:'Libre Baskerville',serif;
+font-weight:400;
+}
+
+h1{
+font-size:clamp(3rem,5vw,5rem);
+line-height:1.05;
+max-width:950px;
+margin-bottom:40px;
+}
+
+h2{
+font-size:clamp(2rem,3vw,3rem);
+margin-bottom:24px;
+}
+
+.lead{
+font-size:1.35rem;
+max-width:850px;
+color:#d8e0ea;
+}
+
+section{
+padding:100px 0;
+}
+
+.statement{
+font-size:1.25rem;
+max-width:900px;
+color:#d8e0ea;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+margin-top:40px;
+}
+
+.card{
+background:var(--surface);
+border:1px solid var(--border);
+border-radius:18px;
+padding:32px;
+}
+
+.card h3{
+margin-bottom:12px;
+font-size:1.15rem;
+}
+
+.card p{
+color:#cfd8e3;
+}
+
+.cta{
+text-align:center;
+padding:140px 0;
+border-top:1px solid var(--border);
+}
+
+.btn{
+display:inline-block;
+padding:16px 34px;
+background:var(--accent);
+color:#08111d;
+font-weight:600;
+text-decoration:none;
+border-radius:10px;
+margin-top:30px;
+}
+
+footer{
+padding:60px 0;
+text-align:center;
+border-top:1px solid var(--border);
+color:var(--muted);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="container nav-inner">
+
+<div class="logo">
+Dutch Governance <span>Advisory</span>
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
 
 <div class="container">
 
@@ -10,193 +191,131 @@ Executive Conversation
 The question is not whether dependency exists.
 
 The question is whether it is understood.
-
-Because what is not understood cannot be governed.
-
 </h1>
 
 <p class="lead">
-A confidential conversation about dependency, governance and strategic autonomy.
+A confidential conversation about strategic autonomy, governance and digital dependency.
 </p>
 
 </div>
 
 </section>
 
-
-<section class="content-block">
+<section>
 
 <div class="container">
 
 <h2>
-What is this conversation about?
+Why this conversation?
 </h2>
 
-<p>
+<p class="statement">
 Most organizations believe they are managing technology.
-</p>
 
-<p>
-In reality, many are managing the consequences of accumulated dependency.
-</p>
+In reality, they may be managing the consequences of accumulated dependency.
 
-<p>
 Cloud platforms. AI systems. External suppliers. Digital ecosystems.
-</p>
 
-<p>
-Each decision may appear rational in isolation.
-Together, they can reshape what an organization can do, how it makes decisions and how much freedom of action it retains.
-</p>
-
-<p>
-The purpose of this conversation is to understand how dependency accumulates, where strategic autonomy may already be constrained, and what this means for governance, decision-making and long-term resilience.
-
+Over time these dependencies shape decision-making, constrain strategic options and influence organizational autonomy.
 </p>
 
 </div>
 
 </section>
 
-
-<section class="content-block">
+<section>
 
 <div class="container">
 
 <h2>
-What do we explore?
+Questions we explore
 </h2>
 
-<ul>
+<div class="grid">
 
-<li>Where are critical dependencies emerging?</li>
+<div class="card">
+<h3>Dependency</h3>
+<p>
+Where are critical dependencies emerging?
+</p>
+</div>
 
-<li>Which dependencies are operational and which are strategic?</li>
+<div class="card">
+<h3>Control</h3>
+<p>
+Which assumptions about control may no longer be valid?
+</p>
+</div>
 
-<li>How do external platforms influence decision-making?</li>
+<div class="card">
+<h3>Autonomy</h3>
+<p>
+Which capabilities remain genuinely under organizational control?
+</p>
+</div>
 
-<li>What assumptions about control may no longer be valid?</li>
+<div class="card">
+<h3>Governance</h3>
+<p>
+How should governance evolve as dependencies accumulate?
+</p>
+</div>
 
-<li>Which capabilities remain genuinely under organizational control?</li>
-
-<li>What risks emerge when dependency accumulates unnoticed?</li>
-
-</ul>
+</div>
 
 </div>
 
 </section>
 
-
-<section class="content-block">
-
-<div class="container">
-
-<h2>
-Who is this for?
-</h2>
-
-<p>
-This conversation is designed for those responsible for strategic decisions:
-
-• Board members
-• Executives
-• Public leaders
-• Policy makers
-
-</p>
-
-</div>
-
-</section>
-
-
-<section class="content-block">
+<section>
 
 <div class="container">
 
 <h2>
-What can you expect?
+Who is it for?
 </h2>
 
-<p>
-A focused and confidential conversation.
-</p>
+<p class="statement">
+Board members.
 
-<p>
-An opportunity to examine governance questions from a different perspective.
-</p>
+Executives.
 
-<p>
-A chance to identify patterns that may otherwise remain invisible.
-</p>
+Public leaders.
 
-<p>
-No sales presentation.
-</p>
+Policy makers.
 
-<p>
-No obligation.
-</p>
-
-<p>
-No predefined answers.
-</p>
-
-<p>
-Just disciplined inquiry.
+Anyone responsible for strategic decisions in increasingly complex digital ecosystems.
 </p>
 
 </div>
 
 </section>
 
-
-<section class="content-block">
-
-<div class="container">
-
-<h2>
-Why this matters
-</h2>
-
-<p>
-Dependency rarely appears as a strategic decision.
-</p>
-
-<p>
-More often it emerges through convenience, efficiency, automation and optimization.
-</p>
-
-<p>
-The result is that organizations may become increasingly dependent while simultaneously believing they have greater control.
-</p>
-
-<p>
-Understanding that paradox is often where the most valuable conversations begin.
-</p>
-
-</div>
-
-</section>
-
-
-<section class="content-block">
+<section class="cta">
 
 <div class="container">
 
 <h2>
-Continue the conversation
+Continue the exploration
 </h2>
 
-<p>
-If these questions resonate, I would be pleased to continue the conversation.
+<p class="lead">
+If these questions resonate, the next step is to assess where dependency may already be shaping strategic autonomy.
 </p>
 
-<a href="mailto:basbrinkmann67@gmail.com" class="btn btn-primary">
-Schedule a Conversation
+<a href="strategic-autonomy-assessment.html" class="btn">
+Start the Assessment
 </a>
 
 </div>
 
 </section>
+
+<footer>
+
+Dutch Governance Advisory
+
+</footer>
+
+</body>
+</html>
