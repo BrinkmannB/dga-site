@@ -1,4 +1,184 @@
-section class="page-hero">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Executive Conversation | Dutch Governance Advisory</title>
+
+<meta name="description" content="A confidential conversation about strategic autonomy, governance and digital dependency.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#08111d;
+--surface:#101a2b;
+--accent:#c8a46a;
+--text:#eef2f7;
+--muted:#9aa8b8;
+--border:rgba(255,255,255,.08);
+--max-width:1100px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.8;
+}
+
+.container{
+width:min(92%,var(--max-width));
+margin:auto;
+}
+
+nav{
+position:sticky;
+top:0;
+background:rgba(8,17,29,.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
+z-index:100;
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px 0;
+}
+
+.logo{
+font-weight:600;
+}
+
+.logo span{
+color:var(--accent);
+}
+
+.hero{
+padding:140px 0 120px;
+}
+
+.small{
+font-size:.9rem;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--accent);
+margin-bottom:24px;
+}
+
+h1,h2{
+font-family:'Libre Baskerville',serif;
+font-weight:400;
+}
+
+h1{
+font-size:clamp(1.8rem,2.8vw,2.8rem);
+line-height:1.05;
+max-width:750px;
+margin-bottom:40px;
+}
+
+h2{
+font-size:clamp(2rem,3vw,3rem);
+margin-bottom:24px;
+}
+
+.lead{
+font-size:1.35rem;
+max-width:850px;
+color:#d8e0ea;
+}
+
+section{
+padding:100px 0;
+}
+
+.statement{
+font-size:1.25rem;
+max-width:900px;
+color:#d8e0ea;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+margin-top:40px;
+}
+
+.card{
+background:var(--surface);
+border:1px solid var(--border);
+border-radius:18px;
+padding:32px;
+}
+
+.card h3{
+margin-bottom:12px;
+font-size:1.15rem;
+}
+
+.card p{
+color:#cfd8e3;
+}
+
+.cta{
+text-align:center;
+padding:140px 0;
+border-top:1px solid var(--border);
+}
+
+.btn{
+display:inline-block;
+padding:16px 34px;
+background:var(--accent);
+color:#08111d;
+font-weight:600;
+text-decoration:none;
+border-radius:10px;
+margin-top:30px;
+}
+
+footer{
+padding:60px 0;
+text-align:center;
+border-top:1px solid var(--border);
+color:var(--muted);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="container nav-inner">
+
+<div class="logo">
+Dutch Governance <span>Advisory</span>
+</div>
+
+</div>
+
+</nav>
+<section class="hero">
 
 <div class="container">
 
@@ -18,33 +198,7 @@ A structured governance review that helps boards and executives understand how d
 
 </section>
 
-<section class="content-block">
-
-<div class="container">
-
-<h2>
-What is a Strategic Autonomy Review?
-</h2>
-
-<p>
-Most organizations understand the technologies they use.
-Far fewer understand the dependencies those technologies create.
-</p>
-
-<p>
-The Strategic Autonomy Review provides a structured analysis of the dependencies that influence an organization's strategic autonomy, decision-making and future options.
-</p>
-
-<p>
-The purpose is not to eliminate dependency.
-The purpose is to understand it.
-</p>
-
-</div>
-
-</section>
-
-<section class="content-block">
+<section>
 
 <div class="container">
 
@@ -52,27 +206,45 @@ The purpose is to understand it.
 Why does it matter?
 </h2>
 
-<p>
+<p class="statement">
+Most organizations focus on adopting new technologies.
+
+Far fewer examine how those choices influence autonomy, decision-making and future freedom of action.
+
 Dependencies rarely emerge as strategic decisions.
-</p>
 
-<p>
 They accumulate through convenience, efficiency, integration and optimization.
-</p>
 
-<p>
-Over time these dependencies may influence governance, decision-making and an organization's freedom of action.
-</p>
+Over time these dependencies shape what organizations can do, how they make decisions and how much strategic flexibility they retain.
 
-<p>
-Understanding those dynamics is becoming increasingly important for boards and executives.
 </p>
 
 </div>
 
 </section>
 
-<section class="content-block">
+<section>
+
+<div class="container">
+
+<h2>
+What is a Strategic Autonomy Review?
+</h2>
+
+<p class="statement">
+The Strategic Autonomy Review is a structured governance review that helps organizations understand which dependencies matter, how they influence decision-making and where strategic vulnerabilities may be emerging.
+
+The objective is not to eliminate dependency.
+
+The objective is to understand its influence on future choices.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
 
 <div class="container">
 
@@ -80,25 +252,50 @@ Understanding those dynamics is becoming increasingly important for boards and e
 What does the Review examine?
 </h2>
 
-<ul>
+<div class="grid">
 
-<li>Supply chains and external suppliers</li>
+<div class="card">
+<h3>Supply Chains</h3>
+<p>
+Dependencies on suppliers, ecosystems and external partners.
+</p>
+</div>
 
-<li>Knowledge and technology dependencies</li>
+<div class="card">
+<h3>Technology & Knowledge</h3>
+<p>
+Critical technologies, expertise and capabilities outside the organization.
+</p>
+</div>
 
-<li>Financial dependencies</li>
+<div class="card">
+<h3>Financial Dependencies</h3>
+<p>
+Financial relationships that may influence strategic flexibility.
+</p>
+</div>
 
-<li>Data and information dependencies</li>
+<div class="card">
+<h3>Data & Information</h3>
+<p>
+Dependencies involving data ownership, information access and digital infrastructure.
+</p>
+</div>
 
-<li>Governance and decision-making structures</li>
+<div class="card">
+<h3>Governance</h3>
+<p>
+How governance structures influence oversight, accountability and control.
+</p>
+</div>
 
-</ul>
+</div>
 
 </div>
 
 </section>
 
-<section class="content-block">
+<section>
 
 <div class="container">
 
@@ -106,23 +303,20 @@ What does the Review examine?
 How does the Review work?
 </h2>
 
-<p>
+<p class="statement">
 The Review is based on a structured governance analysis.
-</p>
 
-<p>
-It examines dependencies, assesses their strategic relevance, evaluates their influence on decision-making and identifies potential vulnerabilities.
-</p>
+It examines dependencies, assesses their strategic relevance, evaluates their influence on decision-making and identifies potential governance implications.
 
-<p>
-The objective is to understand how these factors influence strategic autonomy and future freedom of action.
+The outcome is a clearer understanding of how dependencies influence strategic autonomy and future freedom of action.
+
 </p>
 
 </div>
 
 </section>
 
-<section class="content-block">
+<section>
 
 <div class="container">
 
@@ -130,43 +324,20 @@ The objective is to understand how these factors influence strategic autonomy an
 Expected Output
 </h2>
 
-<p>
-Each Review results in an Executive Briefing.
-</p>
+<p class="statement">
+Each Strategic Autonomy Review results in an Executive Briefing.
 
-<p>
-The briefing summarizes key observations, strategic implications and potential areas requiring further discussion.
-</p>
+The briefing summarizes key observations, governance implications and areas requiring further discussion.
 
-<p>
-Its purpose is to support informed decision-making at board and executive level.
+Its purpose is to support better-informed strategic decision-making.
+
 </p>
 
 </div>
 
 </section>
 
-<section class="content-block">
-
-<div class="container">
-
-<h2>
-Executive Briefing
-</h2>
-
-<p>
-The Executive Briefing translates observations into governance questions.
-</p>
-
-<p>
-It helps leaders understand which dependencies matter, where strategic vulnerabilities may exist and what options remain available.
-</p>
-
-</div>
-
-</section>
-
-<section class="content-block">
+<section class="cta">
 
 <div class="container">
 
@@ -174,18 +345,26 @@ It helps leaders understand which dependencies matter, where strategic vulnerabi
 Continue the Conversation
 </h2>
 
-<p>
-The Strategic Autonomy Review often starts with a conversation.
+<p class="lead">
+Understanding strategic autonomy often begins with understanding dependency.
+
+If you would like to explore how dependencies may be influencing your organization's future freedom of action, I would be pleased to continue the discussion.
+
 </p>
 
-<p>
-If you would like to explore whether strategic autonomy is becoming constrained by accumulated dependencies, I would be pleased to continue the discussion.
-</p>
-
-<a href="mailto:bas@dutchgovernanceadvisory.nl" class="btn btn-primary">
+<a href="mailto:bas@dutchgovernanceadvisory.nl" class="btn">
 Schedule a Conversation
 </a>
 
 </div>
 
 </section>
+
+<footer>
+
+Dutch Governance Advisory
+
+</footer>
+
+</body>
+</html>
